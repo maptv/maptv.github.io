@@ -381,7 +381,7 @@ $$\text{mst} = (0.95 + \text{tod} + \text{w}) \bmod 1$$ {#eq-mst}
 $$\text{ast} = (0.95 + \text{tod} + \text{w} +  \text{eot(toy)}) \bmod 1$$ {#eq-ast}
 :::
 
-After we divide an [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} by a "solar year length" ([syl](#syl){#solaryearlength .tool data-bs-toggle="tooltip" data-bs-title="solar year length"}) to obtain a [toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="time of year"}, we may need To calculate [eot](#eot){.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}, Dec uses [sin](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20side%20opposite%20that%20angle%20to%20the%20length%20of%20the%20longest%20side%20of%20the%20triangle) and [cos](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse) [trigonometric functions](https://en.wikipedia.org/wiki/Trigonometric_functions#:~:text=functions%20which%20relate%20an%20angle%20of%20a%20right%2Dangled%20triangle%20to%20ratios%20of%20two%20side%20lengths) that  use   provided by Dec, we can pass [toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="times of year"} directly from @eq-toy to @eq-eot without the need to multiply it by 2[&pi;]{.mono} or [&tau;]{.mono} to convert it from [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) ([t](#t){#turn .tool data-bs-toggle="tooltip" data-bs-title="turns"}) to [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units) ([rad](#rad){#radian .tool data-bs-toggle="tooltip" data-bs-title="radians"}).     below are  require that In the code beneath @eq-eot, the `sincos` function assumes that it will get [rad](#rad){.tool data-bs-toggle="tooltip" data-bs-title="radians"} and the `sincost` function expects to receive [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"}. 
+To obtain a [toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="time of year"}, we divide an [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} by a "solar year length" ([syl](#syl){#solaryearlength .tool data-bs-toggle="tooltip" data-bs-title="solar year length"}), which is the number of days in the year. Dec passes the [toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="time of year"} directly from @eq-toy to the [eot](#eot){.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} function in @eq-eot without first multiplying it by 2[&pi;]{.mono} or [&tau;]{.mono} to convert it from [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) ([t](#t){#turn .tool data-bs-toggle="tooltip" data-bs-title="turns"}) to [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units) ([rad](#rad){#radian .tool data-bs-toggle="tooltip" data-bs-title="radians"}) because the [sin](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20side%20opposite%20that%20angle%20to%20the%20length%20of%20the%20longest%20side%20of%20the%20triangle) and [cos](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse) [trigonometric functions](https://en.wikipedia.org/wiki/Trigonometric_functions#:~:text=functions%20which%20relate%20an%20angle%20of%20a%20right%2Dangled%20triangle%20to%20ratios%20of%20two%20side%20lengths) used by Dec are designed for [t](#t){#turn .tool data-bs-toggle="tooltip" data-bs-title="turns"} instead of [rad](#rad){#radian .tool data-bs-toggle="tooltip" data-bs-title="radians"}.
 
 ::: {.equationgroup #equationgroup09}
 $$\begin{split}
@@ -393,6 +393,8 @@ $$\begin{split}
 \end{split}$$ {#eq-eot}
 :::
 
+By comparing the `sincost` and `sincos` functions, the code below demonstrates that using [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"} rather than [rad](#rad){.tool data-bs-toggle="tooltip" data-bs-title="radians"} can [yield more accurate results](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=Representing%20angles%20in%20turns%20or%20half%2Dturns%20has%20accuracy%20advantages). Whereas `sincost` expects to receive [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"} and is always correct, `sincos` assumes that it will get [rad](#rad){.tool data-bs-toggle="tooltip" data-bs-title="radians"} and generates the slightly incorrect [E notation](https://en.wikipedia.org/wiki/Scientific_notation#E_notation) values below because it cannot produce zero unless its input is zero.
+
 :::{.panel-tabset group="language"}
 ### Julia
 
@@ -400,8 +402,12 @@ $$\begin{split}
 sincost(x) = sincospi(2 * x)
 sincost(0.25)
 sincost(0.5)
+sincost(0.75)
+sincost(1)
 sincos(0.25 * 2 * pi)
 sincos(0.5 * 2 * pi)
+sincos(0.75 * 2 * pi)
+sincos(1 * 2 * pi)
 ```
 
 ### Observable JavaScript
@@ -414,13 +420,16 @@ function sincost(x) {
   return sincospi(2 * x);
 }
 function sincos(x) {
-  x *= 2 * Math.PI
   return [Math.sin(x), Math.cos(x)]
 }
 sincost(0.25)
 sincost(0.5)
-sincos(0.25)
-sincos(0.5)
+sincost(0.75)
+sincost(1)
+sincos(0.25 * 2 * Math.PI)
+sincos(0.5 * 2 * Math.PI)
+sincos(0.75 * 2 * Math.PI)
+sincos(1 * 2 * Math.PI)
 ```
 
 ### Python
@@ -433,13 +442,16 @@ def sincost(x):
     return sinpi(x), cospi(x)
 
 def sincos(x):
-    x *= 2 * pi
     return sin(x), cos(x)
 
 sincost(0.25)
 sincost(0.5)
-sincos(0.25)
-sincos(0.5)
+sincost(0.75)
+sincost(1)
+sincos(0.25 * 2 * pi)
+sincos(0.5 * 2 * pi)
+sincos(0.75 * 2 * pi)
+sincos(1 * 2 * pi)
 ```
 
 ### R
@@ -451,19 +463,20 @@ sincost <- function(x) {
 }
 
 sincos <- function(x) {
-  x <- 2 * x * pi
   c(sin(x), cos(x))
 }
 
 sincost(0.25)
 sincost(0.5)
-sincos(0.25)
-sincos(0.5)
+sincost(0.75)
+sincost(1)
+sincos(0.25 * 2 * pi)
+sincos(0.5 * 2 * pi)
+sincos(0.75 * 2 * pi)
+sincos(1 * 2 * pi)
 ```
 
 :::
-
-The code above compares two functions which return both the of their input. In general, working with turns is more convenient and intuitive. The examples above demonstrate that using turns instead of radians can [yield more accurate results](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=Representing%20angles%20in%20turns%20or%20half%2Dturns%20has%20accuracy%20advantages).
 
 The values below are the coefficients of a model adapted from the [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA](#noaa){#nationaloceanicandatmosphericadministration .tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF). Before [fitting](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) the model to [NOAA](#noaa){.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html), we need to convert eot([toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) values from minutes to [centidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=14.4%20minutes%2C%20or%20864%20seconds){.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"}, combine [ymd](#ymd){.tool data-bs-toggle="tooltip" data-bs-title="year month day"} triplet dates and [hms](#hms){.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet times into [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregates"}, and sort by [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}.
 

@@ -3,6 +3,24 @@
 Durable preferences for working on this Quarto site (maptv.github.io). Keep this file
 updated as new preferences come up; don't let it grow into a changelog.
 
+## Build environment
+
+- Use bash (`/opt/homebrew/bin/bash`, kept current with Homebrew), never zsh, for every
+  command, script, and build. The user's `.zshrc` is heavily customized for interactive use.
+  `CLAUDE_CODE_SHELL` in `~/.claude/settings.json` sets this; if a session still reports
+  zsh, wrap commands in `/opt/homebrew/bin/bash -c '…'`.
+- The site is built with Python 3.16 (`/usr/local/bin/python3`). This is a deliberate
+  choice: published code such as the dec/time `sincost` example imports `math.sinpi` and
+  `math.cospi`, which exist only in Python 3.16+. Don't rewrite that code for older Pythons.
+- Python cells in knitr-engine pages run through reticulate. The dec/time Python code needs
+  `export RETICULATE_PYTHON=/usr/local/bin/python3` to run (it's in `~/.zshrc`, which bash
+  doesn't read, so export it in the bash command that renders). The first `python3` on
+  `PATH` is still miniforge's 3.15, so don't call bare `python3` to check build behavior;
+  use `/usr/local/bin/python3` or `reticulate::py_config()`.
+- The root `_quarto.yml` sets `freeze: true` and `cache: true`, so a project render reuses
+  the frozen output and doesn't rerun the code. The variable matters only when that code
+  actually reruns, e.g. when dec/time is rendered on its own or its freeze is cleared.
+
 ## Mobile layout
 
 - The page body must never be horizontally scrollable on mobile devices. This is a hard
