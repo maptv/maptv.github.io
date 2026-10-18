@@ -1,16 +1,19 @@
 ---
 title: Dec time
 description: >
-  Introducing Declock, a timekeeping system that displays time in decimal days using math notation without the need for hours, minutes, or seconds.
+  Introducing Declock, a timekeeping system
+  that displays time in decimal days without
+  the need for hours, minutes, or seconds.
 image: /asset/daywide.svg
 url: https://maptv.github.io/dec/time
 decdate: 2026+225
-draft: true
+path: /dec/date
 slug: time
 aliases:
   - /time
   - /dt
 engine: knitr
+draft: true
 ---
 
 ::: {.timenav}
@@ -478,7 +481,7 @@ sincos(1 * 2 * pi)
 
 :::
 
-The values below are the coefficients of a model adapted from the [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA](#noaa){#nationaloceanicandatmosphericadministration .tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF). Before [fitting](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) the model to [NOAA](#noaa){.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html), we need to convert eot([toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) values from minutes to [centidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=14.4%20minutes%2C%20or%20864%20seconds){.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"}, combine [ymd](#ymd){.tool data-bs-toggle="tooltip" data-bs-title="year month day"} triplet dates and [hms](#hms){.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet times into [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregates"}, and sort by [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}.
+The values below are the coefficients of a [harmonic](https://en.wikipedia.org/wiki/Harmonic#:~:text=positive%20integer%20multiple%20of%20the%20fundamental%20frequency) [model](https://en.wikipedia.org/wiki/Statistical_model#:~:text=embodies%20a%20set%20of%20statistical%20assumptions%20concerning%20the%20generation%20of%20sample%20data), adapted from the [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA](#noaa){#nationaloceanicandatmosphericadministration .tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF). Before [fitting](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) the model to [NOAA](#noaa){.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html), we need to convert eot([toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) values from minutes to [centidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=14.4%20minutes%2C%20or%20864%20seconds){.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"}, combine [ymd](#ymd){.tool data-bs-toggle="tooltip" data-bs-title="year month day"} triplet dates and [hms](#hms){.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet times into [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregates"}, and sort by [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}.
 
 {{< embed eot.ipynb#eotcoef >}}
 

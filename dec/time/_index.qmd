@@ -2802,9 +2802,6 @@ svg.barclock {
   padding: 0px;
   text-align: center;
 }
-#title-block-header > div:nth-child(2) {
-  display: none;
-}
 div.cell-output:has(#daylightapp) {
   overflow: visible;
 }
