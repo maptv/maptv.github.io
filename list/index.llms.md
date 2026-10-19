@@ -36,9 +36,9 @@ Introducing Declock, a timekeeping system that displays time in decimal days wit
 
 |            |             |
 |------------|-------------|
-| Word Count | 7,988 words |
+| Word Count | 7,986 words |
 
-1792392079
+1792431840
 
 ![](../asset/1939ww2europe.svg)
 

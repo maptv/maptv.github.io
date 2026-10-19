@@ -679,7 +679,7 @@ Whereas [b24](#b24) is like glue that allows us to combine [s](#s) and [sid](#si
 
 Table 2
 
-A [tod](#tod) with four [b10](#b10) digits, one [b9](#b9), and one [b24](#b24) digit can match the time represented by any [hms](#hms) triplet, because the product of the bases of its digits is evenly divisible by the number of [sis](#sis) in a day: 1000 × 9 × 24 ÷ 86400 = 216000 ÷ 86400 = 25. For [hod](#hod), one [b24](#b24) digit is sufficient. The [hms](#hms) triplet selected by the range inputs below corresponds to [Hod](#hod) and [Tod](#tod) .
+A [tod](#tod) with four [b10](#b10) digits, one [b9](#b9), and one [b24](#b24) digit can match the time represented by any [hms](#hms) triplet, because the product of the bases of its digits is evenly divisible by the number of [sis](#sis) in a day: 10000 × 9 × 24 ÷ 86400 = 216000 ÷ 86400 = 25. For [hod](#hod), one [b24](#b24) digit is sufficient. The [hms](#hms) triplet selected by the range inputs below corresponds to [Hod](#hod) and [Tod](#tod) .
 
 ``` js
 viewof hmsinput = Inputs.form([
@@ -736,7 +736,7 @@ Adding one day to the [doy](#doy) has no effect on the [tod](#tod), but it incre
 
 In Dec, “time zone offsets” ([tzo](#tzo)) are derived solely from longitude. Dec measures [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda) in [wěi](https://en.wiktionary.org/wiki/%E7%B7%AF#:~:text=(geography)-,latitude,-coordinate%20terms%C2%A0%E2%96%B2) ([w](#w)), arcbeats ([a](#a)), or submultiples thereof. If we travel East or West until we reach our starting point, we will cover 1 [w](#w) or 100000 (10⁵) [a](#a). A [tzo](#tzo) is essentially a deciwěi ([dw](#dw)) longitude that became a single-digit [b10](#b10) integer via [rounding](https://en.wikipedia.org/wiki/Rounding#:~:text=the%20process%20of%20adjusting%20a%20number%20to%20an%20approximate%2C%20more%20convenient%20value), [flooring](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=takes%20as%20input%20a%20real%20number%20x%2C%20and%20gives%20as%20output%20the%20greatest%20integer%20less%20than%20or%20equal%20to%20x), [truncation](https://en.wikipedia.org/wiki/Truncation#Truncation_and_floor_function:~:text=truncation%20is%20limiting%20the%20number%20of%20digits%20right%20of%20the%20decimal%20point), or [ceiling](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=maps%20x%20to%20the%20least%20integer%20greater%20than%20or%20equal%20to%20x).
 
-Near the [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20Hemispheres), a longitude that has a [precision](https://en.wikipedia.org/wiki/Decimal_degrees#Precision) of a tenth of microwěi (µw) or ten [a](#a) is accurate to within about a tenth of a microtaur (µc) or ten “zone equatorial meters” (zem), which is roughly the length of a [subcompact car](https://www.dimensions.com/collection/subcompact-cars-b-segment) or the width of a [U-shaped living room layout](https://www.dimensions.com/collection/living-room-layouts). The Equator is approximately (~) 1 taur ([c](#c)) or ~100000 (10⁵) kilozem ([kz](#kz)) long.
+The [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20Hemispheres) is approximately (~) 1 taur ([c](#c)) or ~10⁵ kilozem ([kz](#kz)) long. Near the Equator, a longitude that has a [precision](https://en.wikipedia.org/wiki/Decimal_degrees#Precision) of 0.1 microwěi (µw) or 10 milliarcbeats ([ma](#ma)) is accurate to within ~0.1 microtaur (µc), ~10 “zone equatorial meters” (zem), or 4 [meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units), which is about the width of a [U-shaped living room layout](https://www.dimensions.com/collection/living-room-layouts) or the length of a typical [subcompact car](https://www.dimensions.com/collection/subcompact-cars-b-segment).
 
 For precise [geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:text=estimating%20the%20geographic%20position%20of%20an%20object%20or%20a%20person), we may have to show [geographic coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=for%20measuring%20and%20communicating%20positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude) in submultiples of [a](#a), but we are unlikely to need units smaller than [md](#md) when displaying the [solar time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky) or estimates of what the [tod](#tod) will be when the Sun rises, reaches its [zenith](https://en.m.wikipedia.org/wiki/Noon#:~:text=highest%20position%20above%20the%20horizon), or sets. By default, Dec uses [md](#md) precision to display a solar time and the “solar time offset” ([sto](#sto)) used to obtain it.
 
@@ -1024,17 +1024,17 @@ Apart from transforming an [mst](#mst) into an [ast](#ast), we can also use [eot
 
 #### 9 Cambridge and Cambridge
 
-To compare the solar noon [tod](#tod) in two cities, we can plug in the longitude of each city into [Equation 19](#eq-solarnoon) above. If all of the variables other than longitude in [Equation 19](#eq-solarnoon) are set to zero, the resulting solar noon [tod](#tod) is almost five decidays for [Cambridge, England](https://en.wikipedia.org/wiki/Cambridge#:~:text=a%20city%20and%20non%2Dmetropolitan%20district%20in%20the%20county%20of%20Cambridgeshire%2C%20England) in the [United Kingdom](https://en.wikipedia.org/wiki/United_Kingdom#:~:text=a%20country%20in%20Northwestern%20Europe) and nearly seven decidays for [Cambridge, Massachusetts](https://en.wikipedia.org/wiki/Cambridge,_Massachusetts#:~:text=a%20city%20in%20Middlesex%20County%2C%20Massachusetts%2C%20United%20States) in the [United States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primarily%20located%20in%20North%20America).
+To compare the solar noon [tod](#tod) in two cities, we can plug the longitude of each city into [Equation 19](#eq-solarnoon) above. If all of the variables other than longitude in [Equation 19](#eq-solarnoon) are set to zero, the resulting solar noon [tod](#tod) is almost five decidays for [Cambridge, England](https://en.wikipedia.org/wiki/Cambridge#:~:text=a%20city%20and%20non%2Dmetropolitan%20district%20in%20the%20county%20of%20Cambridgeshire%2C%20England) in the [United Kingdom](https://en.wikipedia.org/wiki/United_Kingdom#:~:text=a%20country%20in%20Northwestern%20Europe) and nearly seven decidays for [Cambridge, Massachusetts](https://en.wikipedia.org/wiki/Cambridge,_Massachusetts#:~:text=a%20city%20in%20Middlesex%20County%2C%20Massachusetts%2C%20United%20States) in the [United States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primarily%20located%20in%20North%20America).
 
 \\4.99635 = (9.55 - 0.050365) \bmod 1 \ast 10 \tag{20}\\
 
-\\6.97516 = (9.55 - 0.852484) \bmod 1 \ast 10 \tag{21}\\
+\\6.97517 = (9.55 - 0.852484) \bmod 1 \ast 10 \tag{21}\\
 
 The two homonymous cities are about two [dw](#dw) apart and therefore will always differ by around two decidays in solar time, regardless of what time zone we use as our frame of reference. England is in Zone 0 and Massachusetts is in Zone 8. From the perspective of Zone 8, solar noon is roughly [Tod](#tod) 5 in Cambridge, MA and about [Tod](#tod) 3 in Cambridge, UK.
 
 \\2.99635 = (9.55 + 0.8 - 0.050365) \bmod 1 \ast 10 \tag{22}\\
 
-\\4.97516 = (9.55 + 0.8 - 0.852484) \bmod 1 \ast 10 \tag{23}\\
+\\4.97517 = (9.55 + 0.8 - 0.852484) \bmod 1 \ast 10 \tag{23}\\
 
 #### 10 Full day arc
 
