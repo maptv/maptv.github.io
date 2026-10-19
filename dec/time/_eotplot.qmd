@@ -6,25 +6,25 @@
   let w = 800;
   let h = 0.625 * w;
   let samples = build_samples(
-    getEot, -366, 365, { N: 150 }
+    getEot, -365, 365, { N: 150 }
   );
   let plot = Plot.plot({
     marginLeft: 60,
     width: w,
     height: h,
     style: "font-size:19;",
-    y: {label: "milliday eot(toy)"},
-    x: {label: "day of year"},
+    y: {label: "Equation of time (md)"},
+    x: {label: "Day of year"},
     marks: [
       Plot.line(samples, {
         strokeWidth: 4,
         stroke: "steelblue",
         tip: true
       }),
-      Plot.ruleX([-366]),
+      Plot.ruleX([-365]),
       Plot.ruleY([0]),
       Plot.axisX({ y: 0 }),
-      Plot.axisY({ x: -366 })
+      Plot.axisY({ x: -365 })
     ]
   });
   return plot;

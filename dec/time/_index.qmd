@@ -2603,6 +2603,42 @@ html`
   padding: 0px .5px;
   border-radius: 4px;
 }
+.color045by365 {
+  background: #ffb900;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color103by365 {
+  background: #c2ff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color184by365 {
+  background: #00f7ff;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color244by365 {
+  background: #0048ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color299by365 {
+  background: #b300ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color350by365 {
+  background: #ff007c;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
 .color081by366 {
   background: #f1ff00;
   color: black;
