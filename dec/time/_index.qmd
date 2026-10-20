@@ -1309,7 +1309,10 @@ leapTod = (zeroTime + leapCount / 86400) % 1
 leapDecidayTod = (leapTod * 10).toFixed(4)
 leapTodHsl0 = textcolor(leapDecidayTod, piecewiseColor(leapTod))
 leapTodHsl1 = textcolor(leapDecidayTod, piecewiseColor(leapTod))
-longInputHsl = textcolor(lonInput, piecewiseColor(lonInput / 1000))
+longPiece = piecewiseColor(lonInput / 1000)
+longInputHsl = textcolor(lonInput, longPiece)
+longFloor = Math.floor(lonInput / 100)
+longFloorHsl = textcolor(longFloor, piecewiseColor(longFloor / 10))
 eot = getEot(leapSecondDate)
 astTzo = eot + lonInput
 astTzoHsl = textcolor(astTzo.toFixed(4), piecewiseColor((astTzo + 1000) % 1000 / 1000))
@@ -2621,7 +2624,7 @@ html`
   padding: 0px .5px;
   border-radius: 4px;
 }
-.color244by365 {
+.color245by365 {
   background: #0048ff;
   color: white;
   padding: 0px .5px;
@@ -2633,7 +2636,7 @@ html`
   padding: 0px .5px;
   border-radius: 4px;
 }
-.color350by365 {
+.color349by365 {
   background: #ff007c;
   color: white;
   padding: 0px .5px;
