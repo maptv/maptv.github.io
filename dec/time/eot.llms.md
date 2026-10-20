@@ -6,11 +6,11 @@ Author
 
 Published
 
-1764870764
+1792470415
 
 Modified
 
-2025+278
+2026+233
 
     In [1]:
 
@@ -129,7 +129,7 @@ def yda2toy(incol: str, diy: int, outcol: str) -> pl.Expr:
     In [12]:
 
 ``` python
-def min2cd(incol: str, outcol: str) -> pl.Expr:
+def min2md(incol: str, outcol: str) -> pl.Expr:
     return (pl.col(incol) / 1.44).alias(outcol)
 ```
 
@@ -153,7 +153,7 @@ df = (
     ).with_columns(
         yda2toy("yda", 365, "toy"),
         yda2doy("yda", "doy"),
-        min2cd(
+        min2md(
             "Eq of Time (minutes)",
             "eot",
         )

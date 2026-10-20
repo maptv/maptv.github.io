@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.10.18">
+    <meta name="generator" content="quarto-1.10.19">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -167,14 +167,14 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2bec29a9bacf2b598905820d71afb463.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5fc413f607176f2629b9db3f72267386.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2bec29a9bacf2b598905820d71afb463.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-cda858a997f762f21442baaf74cb975e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-e87069830987fa4ea7a3f95f8592f767.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-cda858a997f762f21442baaf74cb975e.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-77c566c7bd2e4bf40eac17ee704976ad.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-0ad45527d35d8bc6e3a3c1c2fba09033.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-77c566c7bd2e4bf40eac17ee704976ad.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-f97d782d7ec9a09e785038e647323da4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-5bd1a23aef898fe2515220ba88955ed8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-f97d782d7ec9a09e785038e647323da4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -640,14 +640,14 @@
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">1764870764</p>
+      <p class="date">1792470415</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025+278</p>
+      <p class="date-modified">2026+233</p>
     </div>
   </div>
     
@@ -738,7 +738,7 @@ Could not determine dtype for column 7, falling back to string</code></pre>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (pl.col(incol) <span class="op">/</span> diy).alias(outcol)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [12]:</pre></div><div id="4b350589-50cb-493e-a7a7-e48dcd5d7302" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> min2cd(incol: <span class="bu">str</span>, outcol: <span class="bu">str</span>) <span class="op">-&gt;</span> pl.Expr:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> min2md(incol: <span class="bu">str</span>, outcol: <span class="bu">str</span>) <span class="op">-&gt;</span> pl.Expr:</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (pl.col(incol) <span class="op">/</span> <span class="fl">1.44</span>).alias(outcol)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [13]:</pre></div><div id="53bfec54-6b3a-4c22-b7d6-f143b13fe915" class="cell" data-execution_count="13">
@@ -759,7 +759,7 @@ Could not determine dtype for column 7, falling back to string</code></pre>
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    ).with_columns(</span>
 <span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>        yda2toy(<span class="st">"yda"</span>, <span class="dv">365</span>, <span class="st">"toy"</span>),</span>
 <span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>        yda2doy(<span class="st">"yda"</span>, <span class="st">"doy"</span>),</span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        min2cd(</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        min2md(</span>
 <span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Eq of Time (minutes)"</span>,</span>
 <span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>            <span class="st">"eot"</span>,</span>
 <span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>        )</span>
@@ -1127,8 +1127,19 @@ Could not determine dtype for column 7, falling back to string</code></pre>
 </div></div>
 
 
-     <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->  <script src="../../asset/math.js"></script>
-  <style>
+     <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->  <script>
+// Left-align display equations on phones only (centered elsewhere); tags
+// (equation numbers) stay on the right. MathJax reads this once at startup,
+// so the choice is fixed at page load. Must be set before MathJax's deferred
+// script runs. Breakpoint matches the mobile rules in asset/style.css.
+window.MathJax = {
+  output: {
+    displayAlign: matchMedia("(max-width: 479.98px)").matches ? "left" : "center",
+    displayIndent: "0"
+  }
+};
+</script>
+<script src="../../asset/math.js"></script>  <style>
 #title-block-header > div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }
 #title-block-header { margin: 0px; }
 main#quarto-document-content { margin: 0px; padding: 0px; }
@@ -1153,7 +1164,7 @@ a.navbar-brand { overflow: visible !important; }
 </style>  <script src="../../asset/stamp.js"></script>  <script>
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-</script>  <script src="../../asset/footnote.js"></script>  <script src="../../asset/crossref.js"></script>  <script src="../../asset/mermaid-fix.js"></script>  <script id="quarto-html-after-body" type="application/javascript">
+</script>  <script src="../../asset/footnote.js"></script>  <script src="../../asset/crossref.js"></script>  <script src="../../asset/mermaid-fix.js"></script>  <script src="../../asset/combining.js"></script>  <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {

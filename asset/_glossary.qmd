@@ -1,7 +1,7 @@
 # Glossary {.unnumbered #glos}
 
 ::: {.column-page-right #gloslist}
-- [a](#arcbeat){#ab}: arcbeat, a hundred thousandth of a circle, 0.0036 degrees, 0.216 arcminutes, 12.96 arcseconds
+- [a](#arcbeat){#a}: arcbeat, a hundred thousandth of a circle, 0.0036 degrees, 0.216 arcminutes, 12.96 arcseconds
 - [b](#beat){#b}: beat, centimilliday, a hundred thousandth of a day, 864 milliseconds
     - [mb](#millibeat){#mb}: millibeat, centimicroday, a thousandth of a beat, a hundred millionth of a day, 864 microseconds
 - [bpc](#beatpercentiday){#bpc}: a musical or heart beat per centiday, a tenth of a beat per milliday, 0.069[4]{.vinculum} beats per minute, 100 beats per day
@@ -54,6 +54,7 @@
     - [dd](#deciday){#dd}: deciday, a tenth of a day, 2.4 hours, 144 minutes
     - [cd](#centiday){#cd}: centiday, a hundredth of a day, 0.24 hours, 14.4 minutes
     - [md](#milliday){#md}: milliday, a thousandth of a day, 1.44 minutes
+    - [dmd](#centimilliday){#dmd}: decimilliday, a ten thousandth of a day, 10 beats, 8640 milliseconds
     - [cmd](#centimilliday){#cmd}: centimilliday, a hundred thousandth of a day, 1 beat, 864 milliseconds
     - [µd](#microday){#ud}: microday, a millionth of a day, 86.4 milliseconds
     - [nd](#nanoday){#nd}: nanoday, a billionth of a day, 86.4 microseconds
@@ -75,7 +76,7 @@
 - [hsv](#huesaturationvalue){#hsv}: hue saturation value
 - [i](#inch){#i}: inch, a sixteenth of a zem, 25 millimeters
 - [iso](#internationalorganizationforstandardization){#iso}: [International Organization for Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization), the body behind ISO 8601 dates such as 1970-01-01 (ISO month date) and 1970-W01-4 (ISO week date)
-- [j](#jing){#j}: jīng (经), a full circle around the Earth moving North or South through both Poles, a measure of latitude; short for 经圈 (jīngquān), "meridian circle," to emphasize a full circle rather than a meridian, which can be a half circle; an uppercase "J" without a serif is a vertical line drawn from top to bottom, like a jīng running from the North Pole to the South Pole, with a curve at the bottom where the jīng turns to come back up the other side of the Earth; on a loom, 经 is the warp, the threads that run lengthwise
+- [j](#jing){#j}: jīng (经), a full circle around the Earth moving North or South through both Poles, a measure of latitude; short for 经圈 (jīngquān), "meridian circle," to emphasize a full circle rather than a meridian, which can be a half circle; an uppercase "J" without a serif is a vertical line drawn from top to bottom, like a jīng running from the North Pole to the South Pole, with a curve at the bottom where the jīng turns to come back up the other side of the Earth; although not the same as the jīng in Běijīng (北京) and Nánjīng (南京), jīng (经) is related to North (Běi) and South (Nán); on a loom, 经 is the warp, the threads that run lengthwise
     - [dj](#decijing){#dj}: decijīng, a tenth of a jīng (经)
     - [mj](#millijing){#mj}: millijīng, a thousandth of a jīng (经)
 - [k](#keg){#k}: keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel
