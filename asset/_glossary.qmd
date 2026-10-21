@@ -24,7 +24,7 @@
     - [dow](#dayofweek){#dow}: day of week
     - [doy](#dayofyear){#doy}: day of year, xún * 10 + dox
     - [pid](#positiveintegerdoy){#pid}: positive integer day of year, days elapsed since the beginning of the year, 0 to 364 or 365
-    - [nid](#negativeintegerdoy){#nid}: negative integer day of year, pid - syl, -365 or -366 to -1, the negative of the days left in the year
+    - [nid](#negativeintegerdoy){#nid}: negative integer day of year, pid [-]{.mono} syl, -365 or -366 to -1, the negative of the days left in the year
     - [mid](#mixedintegerdoy){#mid}: mixed integer day of year, an nid rewritten with negative leading digits (marked by a vinculum) and a positive last digit or two
     - [doe](#dayofera){#doe}: day of era, days since the Dec epoch
     - [eda](#epochaldayaggregate){#eda}: epochal day aggregate, doe + tod, days since the Dec epoch including the time of day
@@ -37,20 +37,20 @@
     - dob~♀~: Decyther day of bimester, 0 to 57 in antes and the post of Qoc 2 or 0 to 58 in the other posts
     - [dot](#dayoftricennium){#dot}: day of tricennium, days since the start of the current 30-year lunar cycle, 0 to 10630
     - [doq](#dayofquadrimester){#doq}: day of quadrimester, days since the beginning of a Decyther quadrimester, 0 to 115 or 116
-    - [boq](#beginningofquadrimester){#boq}: beginning of quadrimester, the pid of Doq 0, pid - doq
+    - [boq](#beginningofquadrimester){#boq}: beginning of quadrimester, the pid of Doq 0, pid [-]{.mono} doq
     - [qoc](#quadrimesterofcycle){#qoc}: quadrimester of cycle, zero-based index of a Decyther quadrimester, 0 to 3
-    - [bob](#beginningofbimester){#bob}: beginning of bimester, the pid of Dob 0, pid - dob
-    - [bom](#beginningofmonth){#bom}: beginning of month, the pid of the day before the first day of the month, pid - dom
+    - [bob](#beginningofbimester){#bob}: beginning of bimester, the pid of Dob 0, pid [-]{.mono} dob
+    - [bom](#beginningofmonth){#bom}: beginning of month, the pid of the day before the first day of the month, pid [-]{.mono} dom
     - [moc](#monthofcycle){#moc}: month of cycle, zero-based index of a Venusian month, 0 to 15
-    - [bow](#beginningofweek){#bow}: beginning of week, the pid of Dow 0, pid - dow
+    - [bow](#beginningofweek){#bow}: beginning of week, the pid of Dow 0, pid [-]{.mono} dow
     - [boy](#beginningofyear){#boy}: beginning of year, midnight at the start of Day 0
     - [boe](#beginningofera){#boe}: beginning of era, midnight at the start of Day 0 of Year 0
     - [boc](#beginningofcycle){#boc}: beginning of cycle, the start of Doc~♀~ 0 and of the first ante in a Decyther cycle
     - [eoy](#endofyear){#eoy}: end of year, midnight at the end of Day 364 or 365
     - [jdn](#Juliandaynumber){#jdn}: Julian day number, days since the start of the Julian period; increments at noon UTC
     - [lid](#lunarintercalationdifference){#lid}: lunar intercalation difference, a lunar nid that only resets after lunar leap years, -1063 to -1
-    - [ved](#venusianextracalationdifference){#ved}: Venusian extracalation difference, days until the end of Doc~♀~ 349, the last day of the one-day-shorter Qoc 2, Bimester 5, and Moc 11, (doc~♀~ + 117) mod 467 - 467, -467 to -1
-    - [mud](#misalignedunitdifference){#mud}: misaligned unit difference, pid - dom - dow
+    - [ved](#venusianextracalationdifference){#ved}: Venusian extracalation difference, days until the end of Doc~♀~ 349, the last day of the one-day-shorter Qoc 2, Bimester 5, and Moc 11, (doc~♀~ + 117) mod 467 [-]{.mono} 467, -467 to -1
+    - [mud](#misalignedunitdifference){#mud}: misaligned unit difference, pid [-]{.mono} dom [-]{.mono} dow
     - [dd](#deciday){#dd}: deciday, a tenth of a day, 2.4 hours, 144 minutes
     - [cd](#centiday){#cd}: centiday, a hundredth of a day, 0.24 hours, 14.4 minutes
     - [md](#milliday){#md}: milliday, a thousandth of a day, 1.44 minutes
@@ -62,7 +62,7 @@
     - [c°](#compassdegree){#cdeg}: compass degree
     - [h°](#huedegree){#hdeg}: hue degree
 - [e](#egg){#e}: egg, 1000 grains, 2 ounces, 64 grams
-- [eot](#equationoftime){#eot}: equation of time, ast - mst as a function of toy, about -9.8 to 11.4 millidays
+- [eot](#equationoftime){#eot}: equation of time, ast [-]{.mono} mst as a function of toy, about -9.8 to 11.4 millidays
 - [ℓ](#cubit){#ell}: ell, cubit, 10/9 zem
 - [f](#foot){#f}: foot, 0.75 zem, 75 millimeters 
 - [g](#gutta){#g}: drop (gutta in Latin) or grain (granum in Latin), 64 microliters or 64 milligrams
@@ -105,11 +105,11 @@
 - [r](#rose){#r}: compass rose, a full *r*otation along the horizon, 360 compass degrees
     - [saa](#solarazimuthangle){#saa}: solar azimuth angle, the direction of the Sun along the horizon measured clockwise from North
     - [mr](#millirose){#mr}: compass millirose, a thousandth of a *r*otation along the horizon, .36 compass degrees
-- [rad](#radian){#rad}: radian, 1/[&tau;]{.mono} turns, 360/[&tau;]{.mono} degrees, 1/[2&pi;]{.mono} turns, 180/[&pi;]{.mono} degrees
+- [rad](#radian){#rad}: radian, 1/𝜏 turns, 360/𝜏 degrees, 1/𝜋 turns, 180/𝜋 degrees
 - [rgb](#redgreenblue){#rgb}: red green blue
 - [s](#second){#s}: second, 1/90 millidays, 10/9 beats, 1 Dec second = 0.96 SI seconds
     - [ds](#decisecond){#ds}: decisecond, a tenth of a Dec second, 1/900 millidays, 1/9 beats, 96 milliseconds
-    - [sid](#secondintervaldifference){#sid}: second interval difference, 1 SI second - 1 Dec second, 1/24 Dec second, 1/25 SI second, 40 milliseconds
+    - [sid](#secondintervaldifference){#sid}: second interval difference, 1 SI second [-]{.mono} 1 Dec second, 1/24 Dec second, 1/25 SI second, 40 milliseconds
     - [sis](#sisecond){#sis}: SI second, 25/24 Dec seconds, 1/86.4 millidays, 1/86400 days
 - [soi](#spinorbitinterval){#soi}: spin orbit interval, a lunar day, 1.03505 days
     - [soy](#soiofyear){#soy}: soi of year
@@ -133,10 +133,10 @@
     - [som](#secondofminute){#som}: second of minute, &LeftFloor;hsa mod 60&RightFloor;, 0 to 59
     - [mst](#meansolartime){#mst}: mean solar time, solar time based only on longitude and the Zone 0 tod
     - [ast](#apparentsolartime){#ast}: apparent solar time, mst + eot(toy), solar time based on the actual position of the Sun
-    - [da](#dayarc){#da}: day arc, the time from sunrise to sunset, sunset - sunrise
-    - [da/2](#halfdayarc){#da2}: half day arc, the time from sunrise to solar noon or from solar noon to sunset
-    - [na](#nightarc){#na}: night arc, the time from sunset to sunrise, 1 - da
-    - [na/2](#halfnightarc){#na2}: half night arc, the time from sunset to solar midnight or from solar midnight to sunrise
+    - [law](#lightarcwhole){#law}: light arc whole, the time from sunrise to sunset, 1 [-]{.mono} naw, sunset [-]{.mono} sunrise
+    - [lah](#lightarchalf){#da2}: light arc half, law/2, the time from sunrise to solar noon or from solar noon to sunset
+    - [naw](#nightarcwhole){#naw}: night arc whole, the time from sunset to sunrise, 1 [-]{.mono} law
+    - [nah](#nightarchalf){#nah}: night arc half, naw/2, the time from sunset to solar midnight or from solar midnight to sunrise
 - [t](#turn){#t}: turn, 360 degrees, 𝜏 or 2𝜋 radians
     - [ct](#centiturn){#ct}: centiturn, a hundredth of a turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
     - [dt](#deciturn){#dt}: deciturn, a tenth of a turn, 36 degrees, 𝜏/10 or 𝜋/5 radians
@@ -165,7 +165,7 @@
     - [eya](#epochalyearaggregate){#eya}: epochal year aggregate, yoe + toy, years since the Dec epoch including the fraction of the current year
     - [toy](#timeofyear){#toy}: time of year, the fraction of the year that has elapsed, eya mod 1, ada &div; syl
     - [ymd](#yearmonthday){#ymd}: year month day, a Gregorian calendar date triplet
-    - [syl](#solaryearlength){#syl}: solar year length, 365 or 366 days, pid - nid
+    - [syl](#solaryearlength){#syl}: solar year length, 365 or 366 days, pid [-]{.mono} nid
     - [lyl](#lunaryearlength){#lyl}: lunar year length, 354 or 355 days
     - [cey](#commonerayear){#cey}: common era year, an ISO 8601 (Gregorian calendar) year number
     - [coe](#cycleofera){#coe}: cycle of era, 400-year cycles since the Dec epoch
