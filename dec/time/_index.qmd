@@ -3057,7 +3057,7 @@ div.slider form.oi-3a86ea {
   overflow-x: visible;
 }
 div.slider form.oi-3a86ea > label {
-  width: 100px;
+  width: 110px;
   flex-shrink: 0;
   white-space: nowrap;
 }
