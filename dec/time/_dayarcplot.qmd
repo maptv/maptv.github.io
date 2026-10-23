@@ -1,5 +1,12 @@
 ```{ojs}
 //| echo: false
+//| label: dayarcradio
+//| className: radiobuttons
+viewof dayArcSouth = Inputs.radio(new Map([["Northern", false], ["Southern", true]]), {label: "Hemisphere", value: false})
+```
+
+```{ojs}
+//| echo: false
 //| label: dayarcinput
 //| class: slider
 viewof dayArcInput = Inputs.range([0, 1000], {label: "Light arc whole", value: 375, step: 1})
@@ -32,31 +39,34 @@ viewof dayArcInput = Inputs.range([0, 1000], {label: "Light arc whole", value: 3
       .attr("font-size", 16)
       .attr("fill", window.darkmode ? "white" : "black")
       .text(d => `${(1000-((d+270)%360)/.36)%1000}`);
-  svg.append("polyline")
+  // flip the law and naw vertically so the law is centered on 0 in the Southern Hemisphere
+  const arcs = svg.append("g")
+      .attr("transform", dayArcSouth ? `translate(0, ${2 * dacenter[1]}) scale(1, -1)` : null);
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "violet" : "darkviolet")
       .attr("points", [dacenter, [daend[0], dacenter[1]]]);
-  svg.append("polyline")
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "red" : "darkred")
       .attr("points", [[daend[0], dacenter[1]], daend]);
-  svg.append("polyline")
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "slateblue" : "darkslateblue")
       .attr("points", [[dacenter, daend]]);
-  svg.append("polyline")
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "violet" : "darkviolet")
       .attr("points", [dacenter, [daend1[0], dacenter[1]]]);
-  svg.append("polyline")
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "red" : "darkred")
       .attr("points", [[daend1[0], dacenter[1]], [daend1[0], daend1[1]]]);
-  svg.append("polyline")
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "slateblue" : "darkslateblue")
       .attr("points", [[dacenter, [daend1[0], daend1[1]]]]);
-  svg.append("path")
+  arcs.append("path")
     .attr("transform", `translate(${dacenter})`)
     .attr("d", d3.arc()({
       innerRadius: 105,
@@ -66,7 +76,7 @@ viewof dayArcInput = Inputs.range([0, 1000], {label: "Light arc whole", value: 3
     }))
     .attr("stroke", window.darkmode ? "white" : "black")
     .attr("fill", "gold");
-  svg.append("path")
+  arcs.append("path")
     .attr("transform", `translate(${dacenter})`)
     .attr("d", d3.arc()({
       innerRadius: 105,
