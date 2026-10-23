@@ -14,7 +14,7 @@ Published
 
 Modified
 
-2026+235
+2026+236
 
 ![](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODI5LjY4NzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIGNsYXNzPSJmbG93Y2hhcnQgZGVjbmF2LXN2ZyIgdmlld2JveD0iMCAwIDgyOS42ODc1IDk0IiByb2xlPSJncmFwaGljcy1kb2N1bWVudCBkb2N1bWVudCIgYXJpYS1yb2xlZGVzY3JpcHRpb249ImZsb3djaGFydC12MiIgaGVpZ2h0PSI5NCI+CjxnPjxtYXJrZXIgaWQ9Im1lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItcG9pbnRFbmQiIGNsYXNzPSJtYXJrZXIgZmxvd2NoYXJ0LXYyIiB2aWV3Ym94PSIwIDAgMTAgMTAiIHJlZng9IjUiIHJlZnk9IjUiIG1hcmtlcnVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgbWFya2Vyd2lkdGg9IjgiIG1hcmtlcmhlaWdodD0iOCIgb3JpZW50PSJhdXRvIj48cGF0aCBkPSJNIDAgMCBMIDEwIDUgTCAwIDEwIHoiIGNsYXNzPSJhcnJvd01hcmtlclBhdGgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDE7IHN0cm9rZS1kYXNoYXJyYXk6IDEsIDA7IiAvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im1lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItcG9pbnRTdGFydCIgY2xhc3M9Im1hcmtlciBmbG93Y2hhcnQtdjIiIHZpZXdib3g9IjAgMCAxMCAxMCIgcmVmeD0iNC41IiByZWZ5PSI1IiBtYXJrZXJ1bml0cz0idXNlclNwYWNlT25Vc2UiIG1hcmtlcndpZHRoPSI4IiBtYXJrZXJoZWlnaHQ9IjgiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTSAwIDUgTCAxMCAxMCBMIDEwIDAgeiIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiIC8+PC9tYXJrZXI+PG1hcmtlciBpZD0ibWVybWFpZC0xNzg5Nzk1ODg3NTk3X2Zsb3djaGFydC12Mi1jaXJjbGVFbmQiIGNsYXNzPSJtYXJrZXIgZmxvd2NoYXJ0LXYyIiB2aWV3Ym94PSIwIDAgMTAgMTAiIHJlZng9IjExIiByZWZ5PSI1IiBtYXJrZXJ1bml0cz0idXNlclNwYWNlT25Vc2UiIG1hcmtlcndpZHRoPSIxMSIgbWFya2VyaGVpZ2h0PSIxMSIgb3JpZW50PSJhdXRvIj48Y2lyY2xlIGN4PSI1IiBjeT0iNSIgcj0iNSIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiPjwvY2lyY2xlPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im1lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItY2lyY2xlU3RhcnQiIGNsYXNzPSJtYXJrZXIgZmxvd2NoYXJ0LXYyIiB2aWV3Ym94PSIwIDAgMTAgMTAiIHJlZng9Ii0xIiByZWZ5PSI1IiBtYXJrZXJ1bml0cz0idXNlclNwYWNlT25Vc2UiIG1hcmtlcndpZHRoPSIxMSIgbWFya2VyaGVpZ2h0PSIxMSIgb3JpZW50PSJhdXRvIj48Y2lyY2xlIGN4PSI1IiBjeT0iNSIgcj0iNSIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiPjwvY2lyY2xlPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im1lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItY3Jvc3NFbmQiIGNsYXNzPSJtYXJrZXIgY3Jvc3MgZmxvd2NoYXJ0LXYyIiB2aWV3Ym94PSIwIDAgMTEgMTEiIHJlZng9IjEyIiByZWZ5PSI1LjIiIG1hcmtlcnVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgbWFya2Vyd2lkdGg9IjExIiBtYXJrZXJoZWlnaHQ9IjExIiBvcmllbnQ9ImF1dG8iPjxwYXRoIGQ9Ik0gMSwxIGwgOSw5IE0gMTAsMSBsIC05LDkiIGNsYXNzPSJhcnJvd01hcmtlclBhdGgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1kYXNoYXJyYXk6IDEsIDA7IiAvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im1lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItY3Jvc3NTdGFydCIgY2xhc3M9Im1hcmtlciBjcm9zcyBmbG93Y2hhcnQtdjIiIHZpZXdib3g9IjAgMCAxMSAxMSIgcmVmeD0iLTEiIHJlZnk9IjUuMiIgbWFya2VydW5pdHM9InVzZXJTcGFjZU9uVXNlIiBtYXJrZXJ3aWR0aD0iMTEiIG1hcmtlcmhlaWdodD0iMTEiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTSAxLDEgbCA5LDkgTSAxMCwxIGwgLTksOSIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiIC8+PC9tYXJrZXI+PGcgY2xhc3M9InJvb3QiPjxnIGNsYXNzPSJjbHVzdGVycyI+PC9nPjxnIGNsYXNzPSJlZGdlUGF0aHMiPjxwYXRoIGQ9Ik0xMjAuOTIyLDQ3TDEyNS4wODksNDdDMTI5LjI1NSw0NywxMzcuNTg5LDQ3LDE0NS4yNTUsNDdDMTUyLjkyMiw0NywxNTkuOTIyLDQ3LDE2My40MjIsNDdMMTY2LjkyMiw0NyIgaWQ9IkxfQV9CXzAiIGNsYXNzPSJlZGdlLXRoaWNrbmVzcy1ub3JtYWwgZWRnZS1wYXR0ZXJuLXNvbGlkIGVkZ2UtdGhpY2tuZXNzLW5vcm1hbCBlZGdlLXBhdHRlcm4tc29saWQgZmxvd2NoYXJ0LWxpbmsiIHN0eWxlPSI7IiBkYXRhLWVkZ2U9InRydWUiIGRhdGEtZXQ9ImVkZ2UiIGRhdGEtaWQ9IkxfQV9CXzAiIGRhdGEtcG9pbnRzPSJXM3NpZUNJNk1USXdMamt5TVRnM05Td2llU0k2TkRkOUxIc2llQ0k2TVRRMUxqa3lNVGczTlN3aWVTSTZORGQ5TEhzaWVDSTZNVGN3TGpreU1UZzNOU3dpZVNJNk5EZDlYUT09IiBtYXJrZXItZW5kPSJ1cmwoI21lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItcG9pbnRFbmQpIiAvPjxwYXRoIGQ9Ik0yOTUuNzAzLDQ3TDI5OS44Nyw0N0MzMDQuMDM2LDQ3LDMxMi4zNyw0NywzMjAuMDM2LDQ3QzMyNy43MDMsNDcsMzM0LjcwMyw0NywzMzguMjAzLDQ3TDM0MS43MDMsNDciIGlkPSJMX0JfQ18wIiBjbGFzcz0iZWRnZS10aGlja25lc3Mtbm9ybWFsIGVkZ2UtcGF0dGVybi1zb2xpZCBlZGdlLXRoaWNrbmVzcy1ub3JtYWwgZWRnZS1wYXR0ZXJuLXNvbGlkIGZsb3djaGFydC1saW5rIiBzdHlsZT0iOyIgZGF0YS1lZGdlPSJ0cnVlIiBkYXRhLWV0PSJlZGdlIiBkYXRhLWlkPSJMX0JfQ18wIiBkYXRhLXBvaW50cz0iVzNzaWVDSTZNamsxTGpjd016RXlOU3dpZVNJNk5EZDlMSHNpZUNJNk16SXdMamN3TXpFeU5Td2llU0k2TkRkOUxIc2llQ0k2TXpRMUxqY3dNekV5TlN3aWVTSTZORGQ5WFE9PSIgbWFya2VyLWVuZD0idXJsKCNtZXJtYWlkLTE3ODk3OTU4ODc1OTdfZmxvd2NoYXJ0LXYyLXBvaW50RW5kKSIgLz48cGF0aCBkPSJNNDcxLjUzMSw0N0w0NzUuNjk4LDQ3QzQ3OS44NjUsNDcsNDg4LjE5OCw0Nyw0OTUuODY1LDQ3QzUwMy41MzEsNDcsNTEwLjUzMSw0Nyw1MTQuMDMxLDQ3TDUxNy41MzEsNDciIGlkPSJMX0NfRF8wIiBjbGFzcz0iZWRnZS10aGlja25lc3Mtbm9ybWFsIGVkZ2UtcGF0dGVybi1zb2xpZCBlZGdlLXRoaWNrbmVzcy1ub3JtYWwgZWRnZS1wYXR0ZXJuLXNvbGlkIGZsb3djaGFydC1saW5rIiBzdHlsZT0iOyIgZGF0YS1lZGdlPSJ0cnVlIiBkYXRhLWV0PSJlZGdlIiBkYXRhLWlkPSJMX0NfRF8wIiBkYXRhLXBvaW50cz0iVzNzaWVDSTZORGN4TGpVek1USTFMQ0o1SWpvME4zMHNleUo0SWpvME9UWXVOVE14TWpVc0lua2lPalEzZlN4N0luZ2lPalV5TVM0MU16RXlOU3dpZVNJNk5EZDlYUT09IiBtYXJrZXItZW5kPSJ1cmwoI21lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItcG9pbnRFbmQpIiAvPjxwYXRoIGQ9Ik02NDYuNjA5LDQ3TDY1MC43NzYsNDdDNjU0Ljk0Myw0Nyw2NjMuMjc2LDQ3LDY3MC45NDMsNDdDNjc4LjYwOSw0Nyw2ODUuNjA5LDQ3LDY4OS4xMDksNDdMNjkyLjYwOSw0NyIgaWQ9IkxfRF9FXzAiIGNsYXNzPSJlZGdlLXRoaWNrbmVzcy1ub3JtYWwgZWRnZS1wYXR0ZXJuLXNvbGlkIGVkZ2UtdGhpY2tuZXNzLW5vcm1hbCBlZGdlLXBhdHRlcm4tc29saWQgZmxvd2NoYXJ0LWxpbmsiIHN0eWxlPSI7IiBkYXRhLWVkZ2U9InRydWUiIGRhdGEtZXQ9ImVkZ2UiIGRhdGEtaWQ9IkxfRF9FXzAiIGRhdGEtcG9pbnRzPSJXM3NpZUNJNk5qUTJMall3T1RNM05Td2llU0k2TkRkOUxIc2llQ0k2TmpjeExqWXdPVE0zTlN3aWVTSTZORGQ5TEhzaWVDSTZOamsyTGpZd09UTTNOU3dpZVNJNk5EZDlYUT09IiBtYXJrZXItZW5kPSJ1cmwoI21lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItcG9pbnRFbmQpIiAvPjwvZz48ZyBjbGFzcz0iZWRnZUxhYmVscyI+PGcgY2xhc3M9ImVkZ2VMYWJlbCI+PGcgY2xhc3M9ImxhYmVsIiBkYXRhLWlkPSJMX0FfQl8wIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+PGZvcmVpZ25vYmplY3Qgd2lkdGg9IjAiIGhlaWdodD0iMCI+PGRpdiBjbGFzcz0ibGFiZWxCa2ciIGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHA+PHNwYW4gY2xhc3M9ImVkZ2VMYWJlbCI+PC9zcGFuPjwvcD4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjxnIGNsYXNzPSJlZGdlTGFiZWwiPjxnIGNsYXNzPSJsYWJlbCIgZGF0YS1pZD0iTF9CX0NfMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgMCkiPjxmb3JlaWdub2JqZWN0IHdpZHRoPSIwIiBoZWlnaHQ9IjAiPjxkaXYgY2xhc3M9ImxhYmVsQmtnIiBkYXRhLXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzdHlsZT0iZGlzcGxheTogdGFibGUtY2VsbDsgd2hpdGUtc3BhY2U6IG5vd3JhcDsgbGluZS1oZWlnaHQ6IDEuNTsgbWF4LXdpZHRoOiAyMDBweDsgdGV4dC1hbGlnbjogY2VudGVyOyI+CjxwPjxzcGFuIGNsYXNzPSJlZGdlTGFiZWwiPjwvc3Bhbj48L3A+CjwvZGl2Pgo8L2ZvcmVpZ25vYmplY3Q+PC9nPjwvZz48ZyBjbGFzcz0iZWRnZUxhYmVsIj48ZyBjbGFzcz0ibGFiZWwiIGRhdGEtaWQ9IkxfQ19EXzAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj48Zm9yZWlnbm9iamVjdCB3aWR0aD0iMCIgaGVpZ2h0PSIwIj48ZGl2IGNsYXNzPSJsYWJlbEJrZyIgZGF0YS14bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgc3R5bGU9ImRpc3BsYXk6IHRhYmxlLWNlbGw7IHdoaXRlLXNwYWNlOiBub3dyYXA7IGxpbmUtaGVpZ2h0OiAxLjU7IG1heC13aWR0aDogMjAwcHg7IHRleHQtYWxpZ246IGNlbnRlcjsiPgo8cD48c3BhbiBjbGFzcz0iZWRnZUxhYmVsIj48L3NwYW4+PC9wPgo8L2Rpdj4KPC9mb3JlaWdub2JqZWN0PjwvZz48L2c+PGcgY2xhc3M9ImVkZ2VMYWJlbCI+PGcgY2xhc3M9ImxhYmVsIiBkYXRhLWlkPSJMX0RfRV8wIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+PGZvcmVpZ25vYmplY3Qgd2lkdGg9IjAiIGhlaWdodD0iMCI+PGRpdiBjbGFzcz0ibGFiZWxCa2ciIGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHA+PHNwYW4gY2xhc3M9ImVkZ2VMYWJlbCI+PC9zcGFuPjwvcD4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvZz48ZyBjbGFzcz0ibm9kZXMiPjxhIGhyZWY9Ii4uLy4uL2RlYyIgY2xhc3M9ImRlY25hdi1saW5rIG5vLWV4dGVybmFsIj48ZyBjbGFzcz0ibm9kZSBkZWZhdWx0IiBpZD0iZmxvd2NoYXJ0LUEtMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjQuNDYwOTM3NSwgNDcpIj48cmVjdCBjbGFzcz0iYmFzaWMgbGFiZWwtY29udGFpbmVyIiBzdHlsZSB4PSItNTYuNDYwOTM3NSIgeT0iLTM5IiB3aWR0aD0iMTEyLjkyMTg3NSIgaGVpZ2h0PSI3OCIgLz48ZyBjbGFzcz0ibGFiZWwiIHN0eWxlIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yNi40NjA5Mzc1LCAtMjQpIj48cmVjdCAvPjxmb3JlaWdub2JqZWN0IHdpZHRoPSI1Mi45MjE4NzUiIGhlaWdodD0iNDgiPjxkaXYgZGF0YS14bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgc3R5bGU9ImRpc3BsYXk6IHRhYmxlLWNlbGw7IHdoaXRlLXNwYWNlOiBub3dyYXA7IGxpbmUtaGVpZ2h0OiAxLjU7IG1heC13aWR0aDogMjAwcHg7IHRleHQtYWxpZ246IGNlbnRlcjsiPgo8c3BhbiBjbGFzcz0ibm9kZUxhYmVsIj4KPHA+CkRlYwo8L3A+CjxwPjwvcD48L3NwYW4+CjwvZGl2Pgo8L2ZvcmVpZ25vYmplY3Q+PC9nPjwvZz48L2E+PGEgaHJlZj0iLi4vLi4vZGVjL2RhdGUiIGNsYXNzPSJkZWNuYXYtbGluayBuby1leHRlcm5hbCI+PGcgY2xhc3M9Im5vZGUgZGVmYXVsdCIgaWQ9ImZsb3djaGFydC1CLTEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIzMy4zMTI1LCA0NykiPjxyZWN0IGNsYXNzPSJiYXNpYyBsYWJlbC1jb250YWluZXIiIHN0eWxlIHg9Ii02Mi4zOTA2MjUiIHk9Ii0zOSIgd2lkdGg9IjEyNC43ODEyNSIgaGVpZ2h0PSI3OCIgLz48ZyBjbGFzcz0ibGFiZWwiIHN0eWxlIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zMi4zOTA2MjUsIC0yNCkiPjxyZWN0IC8+PGZvcmVpZ25vYmplY3Qgd2lkdGg9IjY0Ljc4MTI1IiBoZWlnaHQ9IjQ4Ij48ZGl2IGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHNwYW4gY2xhc3M9Im5vZGVMYWJlbCI+CjxwPgpkYXRlCjwvcD4KPHA+PC9wPjwvc3Bhbj4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvYT48YSBocmVmPSIuLi8uLi9kZWMvdGltZSIgY2xhc3M9ImRlY25hdi1saW5rIG5vLWV4dGVybmFsIj48ZyBjbGFzcz0ibm9kZSBkZWZhdWx0IiBpZD0iZmxvd2NoYXJ0LUMtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDA4LjYxNzE4NzUsIDQ3KSI+PHJlY3QgY2xhc3M9ImJhc2ljIGxhYmVsLWNvbnRhaW5lciIgc3R5bGUgeD0iLTYyLjkxNDA2MjUiIHk9Ii0zOSIgd2lkdGg9IjEyNS44MjgxMjUiIGhlaWdodD0iNzgiIC8+PGcgY2xhc3M9ImxhYmVsIiBzdHlsZSB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzIuOTE0MDYyNSwgLTI0KSI+PHJlY3QgLz48Zm9yZWlnbm9iamVjdCB3aWR0aD0iNjUuODI4MTI1IiBoZWlnaHQ9IjQ4Ij48ZGl2IGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHNwYW4gY2xhc3M9Im5vZGVMYWJlbCI+CjxwPgp0aW1lCjwvcD4KPHA+PC9wPjwvc3Bhbj4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvYT48YSBocmVmPSIuLi8uLi9kZWMvc25hcCIgY2xhc3M9ImRlY25hdi1saW5rIG5vLWV4dGVybmFsIj48ZyBjbGFzcz0ibm9kZSBkZWZhdWx0IiBpZD0iZmxvd2NoYXJ0LUQtMyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTg0LjA3MDMxMjUsIDQ3KSI+PHJlY3QgY2xhc3M9ImJhc2ljIGxhYmVsLWNvbnRhaW5lciIgc3R5bGUgeD0iLTYyLjUzOTA2MjUiIHk9Ii0zOSIgd2lkdGg9IjEyNS4wNzgxMjUiIGhlaWdodD0iNzgiIC8+PGcgY2xhc3M9ImxhYmVsIiBzdHlsZSB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzIuNTM5MDYyNSwgLTI0KSI+PHJlY3QgLz48Zm9yZWlnbm9iamVjdCB3aWR0aD0iNjUuMDc4MTI1IiBoZWlnaHQ9IjQ4Ij48ZGl2IGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHNwYW4gY2xhc3M9Im5vZGVMYWJlbCI+CjxwPgpzbmFwCjwvcD4KPHA+PC9wPjwvc3Bhbj4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvYT48YSBocmVmPSIuLi8uLi9kZWMvc3BhbiIgY2xhc3M9ImRlY25hdi1saW5rIG5vLWV4dGVybmFsIj48ZyBjbGFzcz0ibm9kZSBkZWZhdWx0IiBpZD0iZmxvd2NoYXJ0LUUtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNzU5LjE0ODQzNzUsIDQ3KSI+PHJlY3QgY2xhc3M9ImJhc2ljIGxhYmVsLWNvbnRhaW5lciIgc3R5bGUgeD0iLTYyLjUzOTA2MjUiIHk9Ii0zOSIgd2lkdGg9IjEyNS4wNzgxMjUiIGhlaWdodD0iNzgiIC8+PGcgY2xhc3M9ImxhYmVsIiBzdHlsZSB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzIuNTM5MDYyNSwgLTI0KSI+PHJlY3QgLz48Zm9yZWlnbm9iamVjdCB3aWR0aD0iNjUuMDc4MTI1IiBoZWlnaHQ9IjQ4Ij48ZGl2IGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHNwYW4gY2xhc3M9Im5vZGVMYWJlbCI+CjxwPgpzcGFuCjwvcD4KPHA+PC9wPjwvc3Bhbj4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvYT48L2c+PC9nPjwvZz48L3N2Zz4=)
 
@@ -1063,6 +1063,10 @@ The Sun continues its path after it disappears below the horizon, moving from su
 The range input below controls the yellow [law](#law) and the blue [naw](#naw) in the diagram beneath it. At the Equator, the sun always rises about a quarter turn from North and sets around three quarter turns from North, resulting in a [law](#law) of roughly half a day: 75% - 25% = 50%. If the [law](#law) is zero, a [polar night](https://en.wikipedia.org/wiki/Polar_night#:~:text=the%20Sun%20remains%20below%20the%20horizon%20for%20more%20than%2024%C2%A0hours) occurs. A day without a [naw](#naw) is called a [polar day](https://en.wikipedia.org/wiki/Midnight_sun#:~:text=the%20Sun%20remains%20visible%20at%20the%20local%20midnight).
 
 ``` js
+viewof dayArcSouth = Inputs.radio(new Map([["Northern", false], ["Southern", true]]), {label: "Hemisphere", value: false})
+```
+
+``` js
 viewof dayArcInput = Inputs.range([0, 1000], {label: "Light arc whole", value: 375, step: 1})
 ```
 
@@ -1091,31 +1095,34 @@ viewof dayArcInput = Inputs.range([0, 1000], {label: "Light arc whole", value: 3
       .attr("font-size", 16)
       .attr("fill", window.darkmode ? "white" : "black")
       .text(d => `${(1000-((d+270)%360)/.36)%1000}`);
-  svg.append("polyline")
+  // flip the law and naw vertically so the law is centered on 0 in the Southern Hemisphere
+  const arcs = svg.append("g")
+      .attr("transform", dayArcSouth ? `translate(0, ${2 * dacenter[1]}) scale(1, -1)` : null);
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "violet" : "darkviolet")
       .attr("points", [dacenter, [daend[0], dacenter[1]]]);
-  svg.append("polyline")
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "red" : "darkred")
       .attr("points", [[daend[0], dacenter[1]], daend]);
-  svg.append("polyline")
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "slateblue" : "darkslateblue")
       .attr("points", [[dacenter, daend]]);
-  svg.append("polyline")
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "violet" : "darkviolet")
       .attr("points", [dacenter, [daend1[0], dacenter[1]]]);
-  svg.append("polyline")
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "red" : "darkred")
       .attr("points", [[daend1[0], dacenter[1]], [daend1[0], daend1[1]]]);
-  svg.append("polyline")
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "slateblue" : "darkslateblue")
       .attr("points", [[dacenter, [daend1[0], daend1[1]]]]);
-  svg.append("path")
+  arcs.append("path")
     .attr("transform", `translate(${dacenter})`)
     .attr("d", d3.arc()({
       innerRadius: 105,
@@ -1125,7 +1132,7 @@ viewof dayArcInput = Inputs.range([0, 1000], {label: "Light arc whole", value: 3
     }))
     .attr("stroke", window.darkmode ? "white" : "black")
     .attr("fill", "gold");
-  svg.append("path")
+  arcs.append("path")
     .attr("transform", `translate(${dacenter})`)
     .attr("d", d3.arc()({
       innerRadius: 105,
@@ -1141,17 +1148,17 @@ viewof dayArcInput = Inputs.range([0, 1000], {label: "Light arc whole", value: 3
 
 The numbers in the diagram above are [“solar azimuth angle”](https://en.wikipedia.org/wiki/Solar_azimuth_angle#:~:text=horizontal%20angle%20with%20respect%20to%20north) ([saa](#saa)) milliturns ([mt](#mt)). At solar noon, the [saa](#saa) is 0 [mt](#mt) in the [Southern Hemisphere](https://en.wikipedia.org/wiki/Southern_Hemisphere#:~:text=the%20half%20%28hemisphere%29%20of%20Earth%20that%20is%20south%20of%20the%20equator) and 500 [mt](#mt) in the [Northern Hemisphere](https://en.wikipedia.org/wiki/Northern_Hemisphere#:~:text=the%20half%20of%20Earth%20that%20is%20north%20of%20the%20equator). The [radio](https://observablehq.github.io/framework/inputs/radio#:~:text=allows%20the%20user%20to%20choose%20one%20of%20a%20given%20set%20of%20values)📻input above controls whether the midpoint of the [law](#law) is 0 or 500 [mt](#mt). To measure the [saa](#saa) during the [daytime](https://en.wikipedia.org/wiki/Daytime#:~:text=the%20period%20of%20the%20day%20in%20which%20the%20Sun%20is%20above%20the%20local%20horizon%20in%20a%20given%20location), point a compass🧭at the spot on the horizon below the Sun.
 
-During an [equinox](https://en.wikipedia.org/wiki/Equinox#:~:text=a%20moment%20in%20time%20when%20the%20Sun%20appears%20directly%20above%20the%20equator) at the Equator, the Sun goes directly from East to West, the [saa](#saa) flips like a switch from 0.25 [t](#t) to 0.75 [t](#t) at solar noon, the “[solar elevation angle](https://en.wikipedia.org/wiki/Solar_zenith_angle#Summary_of_special_angles:~:text=For%20example%2C%20the-,solar,-elevation%20angle%20is)” ([sea](#sea)) peaks at 0.25 [t](#t), and solar time is 0.5 − sin([saa](#saa)) × (0.25 − [sea](#sea)). To find the [sea](#sea), we can use the height (h) of a vertical rod on a level surface and the length (L) of its shadow: [sea](#sea) = atan2(h, L).
+During an [equinox](https://en.wikipedia.org/wiki/Equinox#:~:text=a%20moment%20in%20time%20when%20the%20Sun%20appears%20directly%20above%20the%20equator) at the Equator, the Sun goes directly from East to West, the [saa](#saa) flips like a switch from 0.25 [t](#t) to 0.75 [t](#t) at solar noon, the “[solar elevation angle](https://en.wikipedia.org/wiki/Solar_zenith_angle#Summary_of_special_angles:~:text=For%20example%2C%20the-,solar,-elevation%20angle%20is)” ([sea](#sea)) peaks at 0.25 [t](#t), and solar time is 0.5 − sin([saa](#saa)) × (0.25 − [sea](#sea)). To obtain the [sea](#sea), we can use the height (h) of a vertical rod on a level surface and the length (L) of its shadow: [sea](#sea) = atan2(h, L).
 
-Given an [atan2](https://en.wikipedia.org/wiki/Atan2#:~:text=function%20atan2%20is-,the%202%2Dargument%20arctangent,-.%20By%20definition%2C) [inverse trigonometric](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#:~:text=obtain%20an%20angle%20from%20any%20of%20the%20angle%27s%20trigonometric%20ratios) function that yields turns, solar time at the Equator is 0.5 + arctan(−sin([saa](#saa)) × cos(sea), sin([sea](#sea))). At the Equator, the [saa](#saa) cannot estimate solar time on its own, but as we move away from the Equator, the solar time estimate provided by the [saa](#saa) becomes more accurate. At the North Pole, solar time is equal to the [saa](#saa).
+In addition to determining the [sea](#sea), the [atan2](https://en.wikipedia.org/wiki/Atan2#:~:text=function%20atan2%20is-,the%202%2Dargument%20arctangent,-.%20By%20definition%2C) function can also be used to calculate solar time, as shown in [Equation 30](#eq-solartime), where [j](#j) is a latitude measured in [jīng](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian) ([j](#j)). In Dec, [inverse trigonometric](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#:~:text=obtain%20an%20angle%20from%20any%20of%20the%20angle%27s%20trigonometric%20ratios) functions such as [atan2](https://en.wikipedia.org/wiki/Atan2#:~:text=function%20atan2%20is-,the%202%2Dargument%20arctangent,-.%20By%20definition%2C) yield [t](#t) rather than [rad](#rad). At the Equator, the latitude is zero [j](#j) and the [right-hand side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=The%20expression%20on%20the%20right%20side%20of%20the%20%22%3D%22%20sign) of [Equation 30](#eq-solartime) simplies to 0.5 + atan2(-sin([saa](#saa))cos([sea](#sea)), sin([sea](#sea))).
 
-North of the Equator, [saa](#saa) itself serves as an approximation of solar time, because South of the Equator, the South Pole, solar time is (1.5 − [saa](#saa)) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1. In between the Equator and either one of the poles,
+\\ \text{solartime} = 0.5 + \text{atan2}\left( \begin{aligned} & \text{-sin(saa)cos(sea),} \\ & \text{sin(sea)cos(j) } - \\ & \text{cos(saa)cos(sea)sin(j)} \end{aligned} \right) \tag{30}\\
 
-solartime = 0.5 + atan2(−sin saa·cos sea, sin sea·cos j − cos saa·cos sea·sin j)
+At the North Pole, the latitude is 0.25 [j](#j) and the right-hand side of [Equation 30](#eq-solartime) simplifies to [saa](#saa). At the South Pole, the latitude is -0.25 [j](#j) and the right-hand side of [Equation 30](#eq-solartime) simplifies to 0.5 − [saa](#saa) if [saa](#saa) is less than or equal to 0.5 a. We can approximate solar time with [saa](#saa) in the Northern Hemisphere and is roughly equal to the to Southern Hemisphere. As we approach either one of the poles, the solar time approximation provided by [saa](#saa) becomes more accurate. As we solar time is exactly equal to the [saa](#saa). Likewise, solar time is approximately equal to Equator and the South Pole, solar time is
 
-Dec measures latitude in turns called jīng ([j](#j)) or submultiples thereof such as millijīng ([mj](#mj)). [j](#j) is 0 and In the Northern Hemisphere, [j](#j) is above 0 and we can interpret the [saa](#saa) as the solar time. In the Southern Hemisphere [j](#j) is less than 0 and solar time the difference between 1.5 [t](#t) and [saa](#saa): solartime = 1.5 - [saa](#saa).
+Dec measures latitude in turns called or submultiples thereof such as millijīng ([mj](#mj)). [j](#j) is 0 and In the Northern Hemisphere, [j](#j) is above 0 and we can interpret the [saa](#saa) as the solar time. In the Southern Hemisphere [j](#j) is less than 0 and solar time the difference between 1.5 [t](#t) and [saa](#saa): solartime = 1.5 - [saa](#saa).
 
-The bar chart beneath **?@eq-solartime** compares the populations of the Northern and Southern Hemispheres.
+The bar chart beneath [Equation 30](#eq-solartime) compares the populations of the Northern and Southern Hemispheres.
 
 ``` js
 // https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
@@ -1186,15 +1193,15 @@ The clockwise path that the Sun follows in the Northern Hemisphere is ingrained 
 
 If we only want to know how long the Sun will shine on a given day, we can use the top equation below to obtain a [da](#da). Alternatively, if we are interested in finding out when the Sun will rise or set on a given day, we will need to calculate a [da/2](#da2) using the bottom equation below and then combine it with a solar noon [tod](#tod) to get a sunrise or sunset [tod](#tod).
 
-\\\text{da} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\pi} \tag{30}\\
+\\\text{da} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\pi} \tag{31}\\
 
-\\\dfrac{\text{da}}{2} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\tau} \tag{31}\\
+\\\dfrac{\text{da}}{2} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\tau} \tag{32}\\
 
 ##### Solar declination angle
 
 The [da](#da) and [da/2](#da2) equations above require a latitude and a “solar [declination](https://en.wikipedia.org/wiki/Declination#:~:text=one%20of%20the%20two%20angles%20that%20locate%20a%20point%20on%20the%20celestial%20sphere%20in%20the%20equatorial%20coordinate%20system) angle” ([sda](#sda)). For simplicity, we can fit our [eot](#eot) model to [sda](#sda) data instead of fitting the needlessly complex [sda](#sda) model provided by the NOAA General Solar Position Calculations:
 
-\\\begin{split} \text{sda(toy)} & = \beta_0 \\ & + \beta_1 \ast \text{costau(toy)} \\ & + \beta_2 \ast \text{sintau(toy)} \\ & + \beta_3 \ast \text{costau(2} \ast \text{toy)} \\ & + \beta_4 \ast \text{sintau(2} \ast \text{toy)} \\ & + \beta_5 \ast \text{costau(3} \ast \text{toy)} \\ & + \beta_6 \ast \text{sintau(3} \ast \text{toy)} \\ \end{split} \tag{32}\\
+\\\begin{split} \text{sda(toy)} & = \beta_0 \\ & + \beta_1 \ast \text{costau(toy)} \\ & + \beta_2 \ast \text{sintau(toy)} \\ & + \beta_3 \ast \text{costau(2} \ast \text{toy)} \\ & + \beta_4 \ast \text{sintau(2} \ast \text{toy)} \\ & + \beta_5 \ast \text{costau(3} \ast \text{toy)} \\ & + \beta_6 \ast \text{sintau(3} \ast \text{toy)} \\ \end{split} \tag{33}\\
 
 The top range input below picks the [doy](#doy) that will become the [toy](#toy) in our fitted [sda](#sda) model. The other two range inputs below chose the geographic coordinates that we need to find the sunrise and sunset [tod](#tod). While the sunrise and sunset [tod](#tod) depend on both geographic coordinates, the [da](#da) varies only by latitude and not by longitude: – = .
 
@@ -1216,7 +1223,7 @@ The latest equation above is an example of a Dec span. From left to right, this 
 
 The difference shows the [remaining time](https://en.wikipedia.org/wiki/Countdown#:~:text=the%20time%20remaining%20before%20an%20event) as a negative number if the minuend is less than the substrahend or displays the [elapsed time](https://en.wikipedia.org/wiki/Mission_Elapsed_Time) as a positive number if the minuend is greater than the subtrahend. In this way, the difference can act like a [“T minus countdown”](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining) that becomes a [“T plus countup”](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time) after an event like a rocket🚀launch.
 
-\\\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \tag{33}\\
+\\\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \tag{34}\\
 
 When the minuend is the current time and the subtrahend is the [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred) of an event which occurred in the past, the difference is the time elapsed since that event. A Dec timestamp consists of a year, a day, . can be an [eda](#eda), a “epochal year aggregate” ([eya](#eya)), or a snap🫰. Eda and eya are the time The typical snap format is year+[ada](#ada)-[tzo](#tzo). The snap +-0 represents the [b](#b) when this webpage loaded [b](#b) ago.
 
@@ -1224,41 +1231,41 @@ When the minuend is the current time and the subtrahend is the [timestamp](https
 
 A [doe](#doe) is essentially a Dec date with a [yoe](#yoe) that is always equal to 0 and a [doy](#doy) that is [not restricted](https://en.wikipedia.org/wiki/Bounded_set#:~:text=a%20set%20which%20is%20not%20bounded) to 0 ≤ [doy](#doy) ≤ 365. Similarly, a Dec “epochal year aggregate” ([eya](#eya)) is basically a Dec date with a non-integer year and a day permanently set to 0. We can obtain a Dec date by passing a doe Both [doe](#doe) and [eya](#eya) allow us to represent a date as a single number and obtain the difference between two dates.
 
-\\\text{cda} = \text{de} - \text{coe} \ast 146097 \tag{34}\\
+\\\text{cda} = \text{de} - \text{coe} \ast 146097 \tag{35}\\
 
-\\\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{35}\\
+\\\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{36}\\
 
-\\\text{yoe} = \text{yoc} + \text{coe} \ast 400 \tag{36}\\
+\\\text{yoe} = \text{yoc} + \text{coe} \ast 400 \tag{37}\\
 
-\\\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \biggr \rfloor \tag{37}\\
+\\\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \biggr \rfloor \tag{38}\\
 
 Compared to a [doe](#doe), it is much easier to convert between an [eya](#eya) and a to turn into Dec dates. The decimal part of an [eya](#eya) is a called a [toy](#toy). We can convert between dates to [eya](#eya) with the equations below. We can obtain a [yoe](#yoe) by flooring an [eya](#eya). Likewise, we can obtain a doy by flooring the product of [syl](#syl) and the decimal part of an [eya](#eya), which is called a [toy](#toy). The current [eya](#eya) equation values are =  + ÷ . We can floor an [eya](#eya) to get a yoe or divide its , we can obtain a
 
-\\\text{eya} = \text{yoe} + \text{toy} = \text{yoe} + \text{doy} \div \text{syl} \tag{38}\\
+\\\text{eya} = \text{yoe} + \text{toy} = \text{yoe} + \text{doy} \div \text{syl} \tag{39}\\
 
-\\\text{toy} = \text{eya} \bmod 1 = \text{doy} \div \text{syl} \tag{39}\\
+\\\text{toy} = \text{eya} \bmod 1 = \text{doy} \div \text{syl} \tag{40}\\
 
-\\\text{doy} = \lfloor\text{toy}\ast\text{syl}\rfloor \tag{40}\\
+\\\text{doy} = \lfloor\text{toy}\ast\text{syl}\rfloor \tag{41}\\
 
-\\\text{eya} = \text{yoe} + \text{doy} \ast \text{syl} \tag{41}\\
+\\\text{eya} = \text{yoe} + \text{doy} \ast \text{syl} \tag{42}\\
 
-\\\text{eya} = \text{yoe} + \text{coe} \ast 400 \tag{42}\\
+\\\text{eya} = \text{yoe} + \text{coe} \ast 400 \tag{43}\\
 
 [eya](#eya) = [yoe](#yoe) + [doy](#doy) ÷ [syl](#syl).
 
 We can omit the year from a snap if we replace the [ada](#ada) with a subtrahend and a difference or just a difference. If needed, we can obtain a snap from a difference using the equations below. First, we subtract the difference from the current [eda](#eda) to obtain the “[eda](#eda) difference difference” ([edd](#edd)). Then, we use the [edd](#edd) to get the “cycle of era” ([coe](#coe)), “day of cycle” ([doc](#doc)), “year of cycle” ([yoc](#yoc)), and then finally the year and [ada](#ada).
 
-\\\text{edd} = \text{eda} - \text{difference} \tag{43}\\
+\\\text{edd} = \text{eda} - \text{difference} \tag{44}\\
 
-\\\text{coe} = \Biggl \lfloor \dfrac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \tag{44}\\
+\\\text{coe} = \Biggl \lfloor \dfrac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \tag{45}\\
 
-\\\text{doc} = \text{edd} - \text{coe} \ast 146097 \tag{45}\\
+\\\text{doc} = \text{edd} - \text{coe} \ast 146097 \tag{46}\\
 
-\\\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{46}\\
+\\\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{47}\\
 
-\\\text{year} = \text{yoc} + \text{coe} \ast 400 \tag{47}\\
+\\\text{year} = \text{yoc} + \text{coe} \ast 400 \tag{48}\\
 
-\\\text{ada} = \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \tag{48}\\
+\\\text{ada} = \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \tag{49}\\
 
 In the equations above, [eda](#eda) is “epochal day aggregate”, [coe](#coe) is “cycle of era”, [doc](#doc) is “day of cycle”, and [yoc](#yoc) is “year of cycle”.
 
