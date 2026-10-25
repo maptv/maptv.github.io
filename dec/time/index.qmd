@@ -571,19 +571,40 @@ The numbers in the diagram above are ["solar azimuth angle"](https://en.wikipedi
 
 During an [equinox](https://en.wikipedia.org/wiki/Equinox#:~:text=a%20moment%20in%20time%20when%20the%20Sun%20appears%20directly%20above%20the%20equator) at the Equator, the Sun goes from East to West directly overhead, the [saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} flips like a switch from 0.25 [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"} to 0.75 [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"} at solar noon, the "[solar elevation angle](https://en.wikipedia.org/wiki/Solar_zenith_angle#Summary_of_special_angles:~:text=For%20example%2C%20the-,solar,-elevation%20angle%20is)" ([sea](#sea){#solarelevationangle .tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"}) peaks at 0.25 [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"}, and [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} is 0.5 [−]{.mono} sin([saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"}) &times; (0.25 [−]{.mono} [sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"}). To obtain the [sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"}, we can use the height (h) of a vertical rod on a level surface and the length (L) of its shadow: [sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"} = atan2(h, L).
 
-In addition to determining the [sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"}, the  [atan2](https://en.wikipedia.org/wiki/Atan2#:~:text=function%20atan2%20is-,the%202%2Dargument%20arctangent,-.%20By%20definition%2C) function can also be used to calculate [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"}, as shown in @eq-solartime, where [j](#j){#jing .tool data-bs-toggle="tooltip" data-bs-title="jīng"} is a latitude measured in turns called [jīng](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian) ([j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"}). In Dec, [inverse trigonometric](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#:~:text=obtain%20an%20angle%20from%20any%20of%20the%20angle%27s%20trigonometric%20ratios) functions like [atan2](https://en.wikipedia.org/wiki/Atan2#:~:text=function%20atan2%20is-,the%202%2Dargument%20arctangent,-.%20By%20definition%2C) yield [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"} as opposed to [rad](#rad){.tool data-bs-toggle="tooltip" data-bs-title="radians"}. At the Equator ([j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"} = 0), the latitude is zero and @eq-solartime simplifies to [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} = 0.5 + atan2(-sin([saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"})cos([sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"}), sin([sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"})).
+In addition to determining the [sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"}, the  [atan2](https://en.wikipedia.org/wiki/Atan2#:~:text=function%20atan2%20is-,the%202%2Dargument%20arctangent,-.%20By%20definition%2C) function can also be used to calculate [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"}, as shown in @eq-astjing, where [j](#j){#jing .tool data-bs-toggle="tooltip" data-bs-title="jīng"} is a latitude measured in turns called [jīng](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian) ([j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"}). In Dec, [inverse trigonometric](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#:~:text=obtain%20an%20angle%20from%20any%20of%20the%20angle%27s%20trigonometric%20ratios) functions like [atan2](https://en.wikipedia.org/wiki/Atan2#:~:text=function%20atan2%20is-,the%202%2Dargument%20arctangent,-.%20By%20definition%2C) yield [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"} as opposed to [rad](#rad){.tool data-bs-toggle="tooltip" data-bs-title="radians"}. At the Equator ([j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"} = 0), the latitude is zero and @eq-astjing simplifies to [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} = 0.5 + atan2(-sin([saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"})cos([sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"}), sin([sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"})).
 
 $$
-\text{ast} = 0.5 + \text{atan2}\left(
+\text{ast} = 0.5 + \text{atan2}\!\!\left(
 \begin{aligned}
 & \text{-sin(saa)cos(sea),} \\
 & \text{sin(sea)cos(j) } - \\
 & \text{cos(saa)cos(sea)sin(j)}
 \end{aligned}
 \right)
-$$ {#eq-solartime}
+$$ {#eq-astjing}
 
-At the North Pole ([j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"} = 0.25), the latitude is 0.25 [j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"} and @eq-solartime simplifies to [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} = [saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"}. At the South Pole ([j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"} = -0.25), the latitude is -0.25 [j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"} and @eq-solartime simplifies to [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} = 0.5 [−]{.mono} [saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} before solar noon or [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} = 1.5 [−]{.mono} [saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} after solar noon. In between the Equator and the South or North Pole (-0.25 < [j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"} < 0 &or; 0 < [j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"} < 0.25), we can use the [saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} to estimate [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"}.
+$$
+\text{ast} =
+\begin{cases}
+\text{saa} & \text{j} = 0.25 \\
+\text{atan2(-sin(saa)cos(sea), sin(sea))} & \text{j} = 0 \\
+(1.5 - \text{saa}) \bmod 1 & \text{j} = -0.25
+\end{cases}
+$$ {#eq-extremes}
+
+At the North Pole ([j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"} = 0.25), the latitude is 0.25 [j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"} and @eq-astjing simplifies to [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} = [saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"}. At the South Pole ([j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"} = -0.25), the latitude is -0.25 [j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"} and @eq-astjing simplifies to [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} = 0.5 [−]{.mono} [saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} before solar noon or [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} = 1.5 [−]{.mono} [saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} after solar noon. In between the Equator and the South or North Pole (-0.25 < [j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"} < 0 &or; 0 < [j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"} < 0.25), we should use Equation -@eq-ast, -@eq-astjing, or -@eq-astsha.
+
+$$
+\text{ast} = 0.5 + \text{arccos}\!\!\left(\dfrac{\text{sin(sea)} - \text{sin(j)sin(sda)}}{\text{cos(j)cos(sda)}}\right) \ast
+\begin{cases}
+\text{-}1 & 0 \le \text{saa} < 0.5 \\
+1 & 0.5 \le \text{saa} < 1
+\end{cases}
+$$ {#eq-astsha}
+
+$$
+\text{lah} = \text{arccos}\!\!\left(\dfrac{\text{sin(−0.002314)} - \text{sin(j)sin(sda)}}{\text{cos(j)cos(sda)}}\right)
+$$ {#eq-lah}
 
 
 If 0.5 [−]{.mono} [saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} or 1.5 [−]{.mono} [saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} in the Southern Hemisphere.
@@ -592,7 +613,7 @@ If 0.5 [−]{.mono} [saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="so
 
 ([saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} &gt; 0.5 [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"})
 
-The Northern Hemisphere The bar chart beneath @eq-solartime compares the populations of the Northern and Southern Hemispheres.
+The Northern Hemisphere The bar chart beneath @eq-astjing compares the populations of the Northern and Southern Hemispheres.
 
 {{< include /dec/time/_hemipopplot.qmd >}}
 
