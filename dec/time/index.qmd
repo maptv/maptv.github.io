@@ -602,56 +602,21 @@ $$
 \end{cases}
 $$ {#eq-astsha}
 
-$$
-\text{lah} = \text{arccos}\!\!\left(\dfrac{\text{sin(−0.002314)} - \text{sin(j)sin(sda)}}{\text{cos(j)cos(sda)}}\right)
-$$ {#eq-lah}
-
-
-If 0.5 [−]{.mono} [saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} or 1.5 [−]{.mono} [saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} in the Southern Hemisphere.
-
-([saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} &le; 0.5 [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"})
-
-([saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} &gt; 0.5 [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"})
-
-The Northern Hemisphere The bar chart beneath @eq-astjing compares the populations of the Northern and Southern Hemispheres.
-
-{{< include /dec/time/_hemipopplot.qmd >}}
-
-The clockwise path that the Sun follows in the Northern Hemisphere is ingrained in the Belarussian, Polish, and Ukrainian languages. As shown in @tbl-slav, these three Slavic languages each have one word for north or midnight and another word for south or noon. In Dec, zero represents both north and midnight, while both south and noon can be expressed as a half turn.
-
-::: {.overflowtable}
- | Turns | Direction | Time     | Belarussian | Polish   | Ukrainian |
- | ----- | --------- | -------- | ----------- | -------- | --------- |
- | 0     | north     | midnight | поўнач      | północ   | північ    |
- | 0.5   | south     | noon     | поўдзень    | południe | південь   |
-::: {#tbl-slav}
-
-If we only want to know how long the Sun will shine on a given day, we can use the top equation below to obtain a [da](#da){.tool data-bs-toggle="tooltip" data-bs-title="day arc"}. Alternatively, if we are interested in finding out when the Sun will rise or set on a given day, we will need to calculate a [da/2](#da2){.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} using the bottom equation below and then combine it with a solar noon [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to get a sunrise or sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
-
-
-::: {.equationgroup #equationgroup15}
-$$\text{da} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\pi}$$ {#eq-da}
-
-$$\dfrac{\text{da}}{2} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\tau}$$ {#eq-halfda}
-:::
-
-## Solar declination angle {#sec-sda .unnumbered .hiddenheading}
-
-The [da](#da){.tool data-bs-toggle="tooltip" data-bs-title="day arc"} and [da/2](#da2){.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} equations above require a latitude and a "solar [declination](https://en.wikipedia.org/wiki/Declination#:~:text=one%20of%20the%20two%20angles%20that%20locate%20a%20point%20on%20the%20celestial%20sphere%20in%20the%20equatorial%20coordinate%20system) angle" ([sda](#sda){#solardeclinationangle .tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}). For simplicity, we can fit our [eot](#eot){.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} model to [sda](#sda){.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"} data instead of fitting the needlessly complex [sda](#sda){.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"} model provided by the NOAA General Solar Position Calculations:
+Unlike @eq-astjing, @eq-astsha requires finding the "solar declination angle" ([sda](#sda){#solardeclinationangle .tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}). Whereas latitude is the angle from the Equator in the [geographic coordinate system](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=a%20spherical%20or%20geodetic%20coordinate%20system%20for%20measuring%20and%20communicating%20positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude), [declination](https://en.wikipedia.org/wiki/Declination#:~:text=the%20angular%20distance%20from%20the%20celestial%20equator%20on%20the%20celestial%20sphere) is the angle from the [celestial equator](https://en.wikipedia.org/wiki/Celestial_equator) in the [equatorial coordinate system](https://en.wikipedia.org/wiki/Equatorial_coordinate_system#:~:text=a%20celestial%20coordinate%20system%20widely%20used%20to%20specify%20the%20positions%20of%20celestial%20objects) to latitude but in the [sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"} vertical coordinate. For simplicity, we can model both [eot](#eot){.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} and [sda](#sda){.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"} data with @eq-eot instead of @eq-sda, which is also included in the NOAA General Solar Position Calculations.
 
 ::: {.equationgroup #equationgroup16}
 $$\begin{split}
 \text{sda(toy)} & = \beta_0 \\
-& + \beta_1 \ast \text{costau(toy)} \\
-& + \beta_2 \ast \text{sintau(toy)} \\
-& + \beta_3 \ast \text{costau(2} \ast \text{toy)} \\
-& + \beta_4 \ast \text{sintau(2} \ast \text{toy)} \\
-& + \beta_5 \ast \text{costau(3} \ast \text{toy)} \\
-& + \beta_6 \ast \text{sintau(3} \ast \text{toy)} \\
+& + \beta_1 \ast \text{cos(toy)} \\
+& + \beta_2 \ast \text{sin(toy)} \\
+& + \beta_3 \ast \text{cos(2} \ast \text{toy)} \\
+& + \beta_4 \ast \text{sin(2} \ast \text{toy)} \\
+& + \beta_5 \ast \text{cos(3} \ast \text{toy)} \\
+& + \beta_6 \ast \text{sin(3} \ast \text{toy)} \\
 \end{split}$$ {#eq-sda}
 :::
 
-The top range input below picks the [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} that will become the [toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="time of year"} in our fitted [sda](#sda){.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"} model. The other two range inputs below chose the geographic coordinates that we need to find the sunrise and sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="times of day"}. While the sunrise and sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="times of day"} depend on both geographic coordinates, the [da](#da){.tool data-bs-toggle="tooltip" data-bs-title="day arc"} varies only by latitude and not by longitude: ${selectedSunset.toFixed(3)} -- ${selectedSunrise.toFixed(3)} = \${parseFloat(daytimeDuration.toFixed(3))}.
+The top range input below picks the [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} that will become the [toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="time of year"} in our fitted [sda](#sda){.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"} model. The other two range inputs below chose the geographic coordinates that we need to find the sunrise and sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="times of day"}. While the sunrise and sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="times of day"} depend on both geographic coordinates, the [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc whole"} varies only by latitude and not by longitude: \${selectedSunset.toFixed(3)} [-]{.mono} \${selectedSunrise.toFixed(3)} = \${parseFloat(daytimeDuration.toFixed(3))}.
 
 ```{ojs}
 //| echo: false
@@ -674,9 +639,9 @@ viewof latInput = Inputs.range([-250, 250], {label: "Latitude", value: 0, step: 
 Inputs.bind(Inputs.range([0, 1000], {step: 1, label: "Longitude"}), viewof lonInput)
 ```
 
-The equation controlled by range inputs above can be summarized as sunset -- sunrise = [da](#da){.tool data-bs-toggle="tooltip" data-bs-title="day arc"} and can be rearranged into the sunrise equation: sunrise = sunset -- [da](#da){.tool data-bs-toggle="tooltip" data-bs-title="day arc"}. If we plug the current [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} in place of the sunrise [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} in the sunrise equation without changing the sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, the [da](#da){.tool data-bs-toggle="tooltip" data-bs-title="day arc"} will be replaced with the time until or since sunset: ${selectedCurrent.toFixed(3)} = ${selectedSunset.toFixed(3)} ${selectedDifference < 0 ? "--" : "+"} ${parseFloat(Math.abs(selectedDifference).toFixed(3))}.
+The equation controlled by range inputs above can be summarized as sunset [-]{.mono} sunrise = [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc whole"} and can be rearranged into the sunrise equation: sunrise = sunset [-]{.mono} [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc whole"}. If we plug the current [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} in place of the sunrise [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} in the sunrise equation without changing the sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, the [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc whole"} will be replaced with the time until or since sunset: ${selectedCurrent.toFixed(3)} = ${selectedSunset.toFixed(3)} [${selectedDifference < 0 ? "-" : "+"}]{.mono} ${parseFloat(Math.abs(selectedDifference).toFixed(3))}.
 
-The latest equation above is an example of a Dec span. From left to right, this span consists of a [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted), an equals sign (=), [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted), a plus (+) or a minus (--) sign, and a [difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference). A minus sign indicates the difference is the time remaining **until** sunset, whereas a plus sign means that the difference is the time that has passed **since** sunset.
+The latest equation above is an example of a Dec span. From left to right, this span consists of a [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted), an equals sign (=), [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted), a plus (+) or a minus ([-]{.mono}) sign, and a [difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference). A minus sign indicates the difference is the time remaining **until** sunset, whereas a plus sign means that the difference is the time that has passed **since** sunset.
 
 The difference shows the [remaining time](https://en.wikipedia.org/wiki/Countdown#:~:text=the%20time%20remaining%20before%20an%20event) as a negative number if the minuend is less than the substrahend or displays the [elapsed time](https://en.wikipedia.org/wiki/Mission_Elapsed_Time) as a positive number if the minuend is greater than the subtrahend. In this way, the difference can act like a ["T minus countdown"](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining) that becomes a ["T plus countup"](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time) after an event like a rocket🚀launch.
 
@@ -685,6 +650,8 @@ $$\begin{cases}\text{difference}<0&{\text{if } \text{minuend} < \text{subtrahend
 :::
 
 When the minuend is the current time and the subtrahend is the [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred) of an event which occurred in the past, the difference is the time elapsed since that event. A Dec timestamp consists of a year, a day, . can be an [eda](#eda){.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"}, a "epochal year aggregate" ([eya](#eya){#epochalyearaggregate .tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}), or a snap🫰. Eda and eya are  the time The typical snap format is year[+]{.mono}[ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}[-]{.mono}[tzo](#tzo){.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. The snap \${loadYearHsl}[+]{.mono}\${loadAdaHsl}[-]{.mono}[0]{.color0} represents the [b](#b){.tool data-bs-toggle="tooltip" data-bs-title="beat"} when this webpage loaded ${elaTimeHsl} [b](#b){.tool data-bs-toggle="tooltip" data-bs-title="beats"} ago.
+
+{{< include /dec/time/_hemipopplot.qmd >}}
 
 # Epochal year aggregate (eya) {#sec-eya .hiddenheading}
 
@@ -767,12 +734,12 @@ For distances that we can measure on Earth, we may want to use submultiples of c
 
 Around the world in 80 days is a book published by Jules Verne in 1872. The average speed of a trip around the circumference of the earth in 80 days would be about 1 / 80 v or 12.5 mv, which is a typical speed for a bicycle. If we flew in a “[pedal powered airship](https://en.wikipedia.org/wiki/Airship#:~:text=pedal%20powered%20airship)” from Cambridge MA to Cambridge UK at an average speed of 12.5 mv, we could complete the journey in ten days: 12500 kz / 12.5 mv = 1000 cd.
 
-At sunrise, the [da](#da){.tool data-bs-toggle="tooltip" data-bs-title="day arc"} is the amount of time until sunset. At solar noon, the time remaining before sunset will be [da/2](#da2){.tool data-bs-toggle="tooltip" data-bs-title="half day arc"}. Throughout the day, the current [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is equal to the sum of sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and the difference between the current and sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="times of day"}: ${selectedSunset.toFixed(3)} -- ${selectedSunrise.toFixed(3)} = \${parseFloat(daytimeDuration.toFixed(3))}.
+At sunrise, the [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc whole"} is the amount of time until sunset. At solar noon, the time remaining before sunset will be [lah](#lah){.tool data-bs-toggle="tooltip" data-bs-title="light arc halves"}. Throughout the day, the current [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is equal to the sum of sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and the difference between the current and sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="times of day"}: ${selectedSunset.toFixed(3)} [-]{.mono} ${selectedSunrise.toFixed(3)} = \${parseFloat(daytimeDuration.toFixed(3))}.
 
 
-Like a countdown sequence, we can keep track of the time relative to sunset throughout the day. Instead of the current [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, we can display the , the  and the current [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is equal to the difference between the sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and the [da](#da){.tool data-bs-toggle="tooltip" data-bs-title="day arc"} and the current [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is equal to the difference between the sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and the [da/2](#da2){.tool data-bs-toggle="tooltip" data-bs-title="half day arc"}. The Given a sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of We can replace the current [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} with an expression that provides the time relative to a given tod.
+Like a countdown sequence, we can keep track of the time relative to sunset throughout the day. Instead of the current [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, we can display the , the  and the current [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is equal to the difference between the sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and the [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc whole"} and the current [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is equal to the difference between the sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and the [lah](#lah){.tool data-bs-toggle="tooltip" data-bs-title="light arc halves"}. The Given a sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of We can replace the current [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} with an expression that provides the time relative to a given tod.
 
-can keep track of the remaining time until sunset by minuend The [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of sunrise is found by subtracting half the [da](#da){.tool data-bs-toggle="tooltip" data-bs-title="day arc"} from solar noon [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. The [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of sunset is found by adding half the [da](#da){.tool data-bs-toggle="tooltip" data-bs-title="day arc"} to solar noon [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
+can keep track of the remaining time until sunset by minuend The [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of sunrise is found by subtracting half the [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc whole"} from solar noon [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. The [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of sunset is found by adding half the [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc whole"} to solar noon [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
 
 # Sunrise and sunset {#sec-sas .hiddenheading}
 
