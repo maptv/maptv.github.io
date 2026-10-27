@@ -1,4 +1,4 @@
-# Dec time
+# Declock
 Martin Laptev
 2026+225
 
@@ -12,15 +12,19 @@ Martin Laptev
 - [Second interval difference](#sec-sid)
   - [Base24](#sec-b24)
   - [Base9](#sec-b9)
-- [Time zone offset](#sec-tzo)
   - [Coordinated Universal Time (UTC)](#sec-utc)
 - [Day of week](#sec-dow)
-- [Longitude and offsets](#sec-lao)
-- [Number of digits](#sec-nod)
+- [Time zone offset](#sec-tzo)
 - [Equation of time](#sec-eot)
 - [Cambridge and Cambridge](#sec-cac)
-- [Full day arc](#sec-fda)
-  - [Full night arc](#sec-fna)
+- [Light arc whole](#sec-law)
+  - [Night arc whole](#sec-naw)
+- [Epochal year aggregate (eya)](#sec-eya)
+- [Sunrise and sunset](#sec-sas)
+  - [Solar hour angle](#sec-sha)
+- [Next](#next)
+- [Cite](#cite)
+- [Glossary](#glos)
 
 <div class="timenav">
 
@@ -637,7 +641,7 @@ app = {
 
 # Annual day aggregate (ada)
 
-The red line indicates a “day of year”,
+The red line indicates a “day of year”
 (<a href="#doy" id="dayofyear" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</a>): ${selDateHsl}, which identifies a
 day in a year like a [Gregorian
@@ -655,7 +659,7 @@ triplet. Together, a
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</a> and
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> can form a “annual day aggregate”
+data-bs-title="time of day">tod</a> can form an “annual day aggregate”
 (<a href="#ada" id="annualdayaggregate" class="tool"
 data-bs-toggle="tooltip" data-bs-title="annual day aggregate">ada</a>):
 ${selDateHsl1} + ${selTimeDay1} ÷ 1000 = ${selDateHsl2}.${selTimeDay2}.
@@ -779,10 +783,8 @@ simply by keeping the remainder after dividing by one. If we want a Zone
 data-bs-title="time of day">tod</a> instead, we should add
 <span class="color5">5</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
-to the Julian date before converting it to a
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> to ensure that the final result is
-less than 1 day.
+to the Julian date, divide the sum by one, and then keep the remainder
+as in <a href="#eq-juliantod" class="quarto-xref">Equation 4</a> below.
 
 <div id="equationgroup03" class="equationgroup">
 
@@ -1039,8 +1041,8 @@ only
 leap seconds have been inserted, which is 0.75% of 3750
 <a href="#s" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Dec seconds">s</a>, and at this rate it will take over
-five millenia for the disparity between
-<a href="#ut" id="universaltime" class="tool" data-bs-toggle="tooltip"
+five millennia for the disparity between
+<a href="#ut" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Universal Time">UT</a> and
 <a href="#utc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</a> to reach 3750
@@ -1093,7 +1095,7 @@ data-bs-toggle="tooltip"
 data-bs-title="tenths of a second">deciseconds</span>
 (<a href="#ds" id="decisecond" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Dec deciseconds">ds</a>) in a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="a tenth of a day">deciday</span>
+data-bs-toggle="tooltip" data-bs-title="tenth of a day">deciday</span>
 (<a href="#dd" id="deciday" class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</a>): 8640
 <a href="#sis" class="tool" data-bs-toggle="tooltip"
@@ -1103,18 +1105,17 @@ data-bs-title="Dec deciseconds">ds</a> = 1
 <a href="#dd" class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</a>. To avoid [repeating
 decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever)
-when converting <a href="#sis" class="tool" data-bs-toggle="tooltip"
+when turning <a href="#sis" class="tool" data-bs-toggle="tooltip"
 data-bs-title="SI seconds">sis</a> into
 <a href="#ds" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec deciseconds">ds</a>, we can replace the ones digit
-and the decimal part of the
-<a href="#ds" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec deciseconds">ds</a> with a Dec
+data-bs-title="Dec deciseconds">ds</a>, we can put a Dec
 [quadravigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="quadravigesimal">base24</span>) digit:
-${leapSdecHsl1}${leapSb24hsl1} = ${leapSdecHsl2} × 10 + ${leapSsidHsl} ÷
-2.4.
+data-bs-title="quadravigesimal">base24</span>) digit in place of the
+ones digit and decimal part of the
+<a href="#ds" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec deciseconds">ds</a>: ${leapSdecHsl1}${leapSb24hsl1} =
+${leapSdecHsl2} × 10 + ${leapSsidHsl} ÷ 2.4.
 
 Known as a “second interval difference”
 (<a href="#sid" id="secondintervaldifference" class="tool"
@@ -1130,8 +1131,7 @@ To display <a href="#sis" class="tool" data-bs-toggle="tooltip"
 data-bs-title="SI seconds">sis</a> in
 <a href="#ds" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Dec deciseconds">ds</a>, we can concatenate the integer
-part of the
-<a href="#s" id="second" class="tool" data-bs-toggle="tooltip"
+part of the <a href="#s" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Dec seconds">s</a> we obtain from
 <a href="#eq-sis" class="quarto-xref">Equation 11</a> with the
 <a href="#b24" class="tool" data-bs-toggle="tooltip"
@@ -1790,7 +1790,7 @@ any <a href="#hms" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hour minute second">hms</a> triplet, because the product
 of the bases of its digits is evenly divisible by the number of
 <a href="#sis" class="tool" data-bs-toggle="tooltip"
-data-bs-title="SI seconds">sis</a> in a day: 1000 × 9 × 24 ÷ 86400 =
+data-bs-title="SI seconds">sis</a> in a day: 10000 × 9 × 24 ÷ 86400 =
 216000 ÷ 86400 = 25. For
 <a href="#hod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hour of day">hod</a>, one
@@ -1816,13 +1816,12 @@ viewof hmsinput = Inputs.form([
 ])
 ```
 
-# Time zone offset
+## Coordinated Universal Time (UTC)
 
-Out of the [38](https://en.wikipedia.org/wiki/List_of_UTC_offsets)
-<a href="#utc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</a> offsets, 12 are
+There are 12 <a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a> offsets that become a
 [terminating
-decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits)
+decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits)
 in <a href="#b10" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base10">b10</a> after being converted from hours to days
 and therefore could be displayed in either
@@ -1840,11 +1839,13 @@ data-bs-title="base24">b24</a> digit and 11 that need two
 <a href="#b24" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base24">b24</a> digits.
 
-## Coordinated Universal Time (UTC)
-
-There are 14 negative (\<0) and 24 non-negative (≥0)
+Out of the [38](https://en.wikipedia.org/wiki/List_of_UTC_offsets)
 <a href="#utc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</a> offsets. The
+data-bs-title="Coordinated Universal Time">UTC</a> offsets, 14 are
+negative (\<<a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a>) and 24 are
+non-negative (≥<a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a>). The
 <a href="#utc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</a> time zone with [the
 most negative
@@ -1858,7 +1859,8 @@ data-bs-title="Coordinated Universal Time">UTC</a> time zone. The vast
 majority of all people live in
 <a href="#utc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</a> time zones with
-non-negative offsets.
+≥<a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a> offsets.
 
 ``` {ojs}
 //| echo: false
@@ -1906,27 +1908,24 @@ Affairs](https://en.wikipedia.org/wiki/United_Nations_Department_of_Economic_and
 data, about one billion out of a total of almost eight billion people
 live in the Americas.
 
-Whenever a negative offset is associated with a Dec date, a
+Dec forbids the association of dates with negative offsets. Therefore,
+Dec will add ten <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</span> to any negative offset
+and add one day to the date associated with that offset. Negative offset
+handling has no effect on the
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>, or both a Dec date and a
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>, Dec will add one day to the date
-and ten <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</span> to the offset without
-modifying the <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>. This typically occurs after the
-conversion of an <a href="#hms" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> or the conversion of an
+<a href="#hms" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hour minute second">hms</a> triplet to a
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> or a “year month day”
+data-bs-title="time of day">tod</a> and is typically only necessary
+after a “year month day”
 (<a href="#ymd" id="yearmonthday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year month day">ymd</a>) triplet to a Dec date. As a
-result, all Dec dates and
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="times of day">tod</a> have non-negative offsets.
+data-bs-title="year month day">ymd</a>) triplet is converted into a Dec
+date.
 
-If we do know not whether Day <span class="color364by365">364</span>
-belongs to a common or leap year, adding one day to it yields either Day
+If we do know whether Day <span class="color364by365">364</span> belongs
+to a common or leap year, adding one day to it yields either Day
 <span class="color0">0</span> or Day
 <span class="color365by366">365</span> and this uncertainty is expressed
 as a [multiplication
@@ -1982,7 +1981,7 @@ data-bs-title="days of week">dow</a> from the current
 data-bs-title="day of year">doy</a> if a location in the Americas is
 provided without an offset or with a negative offset.
 
-# Longitude and offsets
+# Time zone offset
 
 In Dec, “time zone offsets”
 (<a href="#tzo" id="timezoneoffset" class="tool" data-bs-toggle="tooltip"
@@ -1994,8 +1993,8 @@ in
 (<a href="#w" id="wei" class="tool" data-bs-toggle="tooltip"
 data-bs-title="horizontal lines on a map">w</a>), arcbeats
 (<a href="#a" id="arcbeat" class="tool" data-bs-toggle="tooltip"
-data-bs-title="arcbeats">a</a>), or submultiples thereof. If we go
-around the Earth heading only East or West, we will cover 1
+data-bs-title="arcbeats">a</a>), or submultiples thereof. If we travel
+East or West until we reach our starting point, we will cover 1
 <a href="#w" class="tool" data-bs-toggle="tooltip"
 data-bs-title="horizontal line on a map">w</a> or 100000
 (<span class="tool" data-bs-toggle="tooltip"
@@ -2005,181 +2004,84 @@ data-bs-title="arcbeats">a</a>. A
 <a href="#tzo" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time zone offsets">tzo</a> is essentially a
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a wěi">deciwěi</span>
+data-bs-title="tenth of a wěi">deciwěi</span>
 (<a href="#dw" id="deciwei" class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciwěi">dw</a>) longitude that became a single-digit
 <a href="#b10" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base10">b10</a> integer via
-[rounding](https://en.wikipedia.org/wiki/Rounding#:~:text=the%20process%20of%20adjusting%20a%20number%20to%20an%20approximate%2C%20more%20convenient%20value),
-[flooring](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=takes%20as%20input%20a%20real%20number%20x%2C%20and%20gives%20as%20output%20the%20greatest%20integer%20less%20than%20or%20equal%20to%20x),
-[truncation](https://en.wikipedia.org/wiki/Truncation#Truncation_and_floor_function:~:text=truncation%20is%20limiting%20the%20number%20of%20digits%20right%20of%20the%20decimal%20point),
+[truncation](https://en.wikipedia.org/wiki/Truncation#Truncation_and_floor_function:~:text=truncation%20is%20limiting%20the%20number%20of%20digits%20right%20of%20the%20decimal%20point)
 or
-[ceiling](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=maps%20x%20to%20the%20least%20integer%20greater%20than%20or%20equal%20to%20x).
+[flooring](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=takes%20as%20input%20a%20real%20number%20x%2C%20and%20gives%20as%20output%20the%20greatest%20integer%20less%20than%20or%20equal%20to%20x):
+⌊${longInputHsl} ÷ 100⌋ = ${longFloorHsl}.
 
-Near the
-[Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20Hemispheres),
-a longitude with a precision of a tenth of <span id="microwei"
-class="tool" data-bs-toggle="tooltip"
-data-bs-title="millionths of wěi">microwěi</span> (<span id="microwei"
-class="tool" data-bs-toggle="tooltip"
-data-bs-title="microwěi">µw</span>) or ten
-<a href="#a" class="tool" data-bs-toggle="tooltip"
-data-bs-title="arcbeats">a</a> is accurate to within about a tenth of a
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millionths of taur">microtaur</span>
-(<span id="microtaur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="microtaur">µc</span>) or ten “zone equatorial meters”
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meters">zem</span>), which is roughly the
-length of a [subcompact
-car](https://www.dimensions.com/collection/subcompact-cars-b-segment) or
-the width of a [U-shaped living room
-layout](https://www.dimensions.com/collection/living-room-layouts). The
-Equator is approximately (<span class="tool" data-bs-toggle="tooltip"
+``` {ojs}
+//| echo: false
+//| label: loninput
+//| class: slider
+viewof lonInput = Inputs.range([0, 999], {label: "Milliwěi", value: 500, step: 1})
+```
+
+The
+[Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20Hemispheres)
+is approximately (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span>) 1 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="circumference = τr">taur</span>
+data-bs-toggle="tooltip" data-bs-title="circumference = 𝜏r">taur</span>
 (<a href="#c" id="taur" class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</a>) or <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="approximately">~</span>100000
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a hundred thousand">10<sup>5</sup></span>)
+data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span><span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="a hundred thousand">10<sup>5</sup></span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of zone equatorial meters">kilozem</span>
 (<a href="#kz" id="kilozem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of zone equatorial meters">kz</a>) long.
-
-If we move 1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a thousandth of a taur">millitaur</span>
-(<a href="#mc" id="millitaur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millitaur">mc</a>), 40
-<a href="#km" id="kilometer" class="tool" data-bs-toggle="tooltip"
-data-bs-title="kilometers">km</a>, or 100
-<a href="#kz" class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of zone equatorial meters">kz</a> to the East
-or West on or near the Equator, our
-<a href="#sto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offset">sto</a> will change by
+data-bs-title="thousands of zone equatorial meters">kz</a>) long. Near
+the Equator, a longitude that has a
+[precision](https://en.wikipedia.org/wiki/Decimal_degrees#Precision) of
+0.1 <span id="microwei" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millionths of wěi">microwěi</span>
+(<a href="#uw" id="microwei" class="tool" data-bs-toggle="tooltip"
+data-bs-title="microwěi">µw</a>) or 10 milliarcbeats
+(<a href="#ma" id="milliarcbeats" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliarcbeats">ma</a>) is accurate to within
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>1
-<a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a>, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1.44
-minutes, or <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>100
-<a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beat">b</a> and our longitude will shift by
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>0.36 degrees, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1
-milliwěi
-(<a href="#mw" id="milliwei" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliwěi">mw</a>), <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="approximately">~</span>21.6
-<a href="https://en.wikipedia.org/wiki/Minute_and_second_of_arc"
-class="tool" data-bs-toggle="tooltip"
-data-bs-title="a sixtieth of a degree">arcminutes</a>, or
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>100 arcbeats
-(<a href="#ab" id="arcbeat" class="tool" data-bs-toggle="tooltip"
-data-bs-title="arcbeats">ab</a>).
-
-# Number of digits
-
-The <a href="#cmd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="centimillidays">cmd</a> digit in a
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> increments 100000
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a hundred thousand">10<sup>5</sup></span>) times per day,
-100 times per <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a thousandth of a day">milliday</span>, or once per
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a hundred thousandth of a day">beat</span>
-(<a href="#per" id="perbeat" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeat">þ</a>), which is the [lower
-bound](https://en.wikipedia.org/wiki/Upper_and_lower_bounds#:~:text=an%20element%20of%20K%20that%20is%20less%20than%20or%20equal%20to%20every%20element%20of%20S)
-of the [normal resting heart
-rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=normal%20resting%20adult%20human%20heart%20rate%20is%2060–100%20bpm)
-of an adult or the
-[tempo](https://en.wikipedia.org/wiki/Tempo#:~:text=pace%20of%20a%20given%20composition)
-of the <span class="color88by100">1988</span> song “[Don’t Worry, Be
-Happy](https://en.wikipedia.org/wiki/Don%27t_Worry,_Be_Happy#:~:text=a%201988%20song%20by%20Bobby%20McFerrin)”.
-Dec refers to <a href="#cmd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="centimillidays">cmd</a> as <span class="tool"
+data-bs-title="approximately">~</span>0.1 <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="hundred thousandths of a day">beats</span>
-(<a href="#b" id="beat" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</a>).
-
-In a tod, the <a href="#b9" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9">b9</a>
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a> digit can be followed by a
-<a href="#b10" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base10">b10</a>
-<a href="#ds" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec deciseconds">ds</a> digit or a
-<a href="#b24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a>
-<a href="#sid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="second interval difference">sid</a> digit, whereas the
-<a href="#b10" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base10">b10</a>
-<a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</a> digit can be followed by a
-<a href="#b10" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base10">b10</a> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millionths of a day">microdays</span>
-(<a href="#ud" id="microday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="microdays">µd</a>) digit. The
-<a href="#ds" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec deciseconds">ds</a>,
-<a href="#sid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="second interval difference">sid</a>, and
-<a href="#ud" id="microday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="microdays">µd</a> digits change too quickly to be read
-out loud and any digit after that increments so fast that it appears as
-a blur. For [everyday
-life](https://en.wikipedia.org/wiki/Everyday_life), we only need the
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="times of day">tod</a> to show <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of a day">millidays</span>
-(<a href="#md" id="milliday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a>) or
-<a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a> followed by either
-<a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</a> or
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>.
+data-bs-title="millionths of taur">microtaur</span>
+(<a href="#uc" id="microtaur" class="tool" data-bs-toggle="tooltip"
+data-bs-title="microtaur">µc</a>), <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="approximately">~</span>10 “zone
+equatorial meters” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meters">zem</span>), or 4
+[meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units),
+which is about the width of a [U-shaped living room
+layout](https://www.dimensions.com/collection/living-room-layouts) or
+the length of a typical [subcompact
+car](https://www.dimensions.com/collection/subcompact-cars-b-segment).
 
 For precise
 [geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:text=estimating%20the%20geographic%20position%20of%20an%20object%20or%20a%20person),
-it may be helpful to show [geographic
+we may want to express [geographic
 coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=for%20measuring%20and%20communicating%20positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude)
-in submultiples of <a href="#ab" class="tool" data-bs-toggle="tooltip"
-data-bs-title="arcbeats">ab</a>, but we are unlikely to benefit from
-units smaller than <a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a> when displaying the [solar
+in <a href="#ma" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliarcbeats">ma</a>, but we are unlikely to need
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a> or
+<a href="#cmd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimillidays">cmd</a> when displaying the [solar
 time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky)
 or estimates of what the
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> will be when the Sun rises, reaches
-its
-[zenith](https://en.m.wikipedia.org/wiki/Noon#:~:text=highest%20position%20above%20the%20horizon),
-or sets on a given day. By default, Dec uses three digits to show each
-solar time and <a href="#sto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offset">sto</a>.
-
-A Dec offset with more than one
-<a href="#b10" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base10">b10</a>
-<a href="#dd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciday">dd</a> digit is called a “solar time offset”
+its [highest point of the
+day](https://en.m.wikipedia.org/wiki/Noon#:~:text=highest%20position%20above%20the%20horizon),
+or sets. By default, Dec uses
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a> precision to display a solar time and
+the “solar time offset”
 (<a href="#sto" id="solartimeoffset" class="tool"
-data-bs-toggle="tooltip" data-bs-title="solar time offset">sto</a>).
+data-bs-toggle="tooltip" data-bs-title="solar time offset">sto</a>) used
+to produce it.
 
 # Equation of time
 
@@ -2189,14 +2091,14 @@ are [“mean solar
 time”](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year)
 (<a href="#mst" id="meansolartime" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mean solar time">mst</a>) and [“apparent solar
-time”](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year)
+time”](https://en.wikipedia.org/wiki/Solar_time#Apparent_solar_time:~:text=the%20apparent%20motion%20of%20the%20actual%20Sun)
 (<a href="#ast" id="apparentsolartime" class="tool"
 data-bs-toggle="tooltip" data-bs-title="apparent solar time">ast</a>).
-To calculate <a href="#mst" class="tool" data-bs-toggle="tooltip"
+To calculate an <a href="#mst" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mean solar time">mst</a>, we keep only the decimal part
 of the sum of 0.95, the Zone <span class="color0">0</span>
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> measured in days, and our longitude
+data-bs-title="time of day">tod</a> measured in days, and a longitude
 measured in <a href="#w" class="tool" data-bs-toggle="tooltip"
 data-bs-title="horizontal lines on a map">w</a>. If we want
 <a href="#ast" class="tool" data-bs-toggle="tooltip"
@@ -2212,76 +2114,117 @@ data-bs-title="equation of time">eot</a>).
 
 <div id="equationgroup08" class="equationgroup">
 
+<span id="eq-syl">
+syl = leap + 365   (14)
+</span>
+
 <span id="eq-toy">
-toy = ada ÷ syl   (14)
+toy = ada ÷ syl   (15)
 </span>
 
 <span id="eq-mst">
-mst = (0.95 + tod + w) mod  1   (15)
+mst = (0.95 + tod + w) mod  1   (16)
 </span>
 
 <span id="eq-ast">
-ast = (0.95 + tod + w + eot(toy)) mod  1   (16)
+ast = (0.95 + tod + w + eot) mod  1   (17)
 </span>
 
 </div>
 
-To obtain the <a href="#toy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of year">toy</a>, we divide the
+To obtain a <a href="#toy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of year">toy</a>, we divide an
 <a href="#ada" class="tool" data-bs-toggle="tooltip"
-data-bs-title="annual day aggregate">ada</a> by the number of days in
-the year (<a href="#syl" id="solaryearlength" class="tool"
-data-bs-toggle="tooltip" data-bs-title="solar year length">syl</a>). If
-we use [trigonometric
-functions](https://en.wikipedia.org/wiki/Trigonometric_functions#:~:text=functions%20which%20relate%20an%20angle%20of%20a%20right%2Dangled%20triangle%20to%20ratios%20of%20two%20side%20lengths)
-that are designed to work with
-[radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units),
-we will have to multiply the
+data-bs-title="annual day aggregate">ada</a> by a “solar year length”
+(<a href="#syl" id="solaryearlength" class="tool"
+data-bs-toggle="tooltip" data-bs-title="solar year length">syl</a>),
+which is the number of days in the year. Dec passes the
 <a href="#toy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of year">toy</a> by 2*π* or *τ*. We do not need to
-modify the <a href="#toy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of year">toy</a> before passing it to the
+data-bs-title="time of year">toy</a> directly from
+<a href="#eq-toy" class="quarto-xref">Equation 15</a> to the
 <a href="#eot" class="tool" data-bs-toggle="tooltip"
-data-bs-title="equation of time">eot</a>() function defined below
-because its trigonometric functions expect
+data-bs-title="equation of time">eot</a> function in
+<a href="#eq-eot" class="quarto-xref">Equation 18</a> without first
+multiplying it by 2𝜋 or 𝜏 to convert it from
 [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
-instead of radians.
+(<a href="#t" id="turn" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">t</a>) to
+[radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units)
+(<a href="#rad" id="radian" class="tool" data-bs-toggle="tooltip"
+data-bs-title="radians">rad</a>) because the
+[sin](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20side%20opposite%20that%20angle%20to%20the%20length%20of%20the%20longest%20side%20of%20the%20triangle)
+and
+[cos](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)
+[trigonometric
+functions](https://en.wikipedia.org/wiki/Trigonometric_functions#:~:text=functions%20which%20relate%20an%20angle%20of%20a%20right%2Dangled%20triangle%20to%20ratios%20of%20two%20side%20lengths)
+used by Dec are designed for
+<a href="#t" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">t</a> instead of
+<a href="#rad" class="tool" data-bs-toggle="tooltip"
+data-bs-title="radians">rad</a>.
 
 <div id="equationgroup09" class="equationgroup">
 
 <span id="eq-eot">
 $$\begin{split}
-\text{eot(toy)} & = \beta_0 \\
-& + \beta_1 \ast \text{costau(toy)} \\
-& + \beta_2 \ast \text{costau(2} \ast \text{toy)} \\
-& + \beta_3 \ast \text{sintau(toy)} \\
-& + \beta_4 \ast \text{sintau(2} \ast \text{toy)}
-\end{split} \qquad(17)$$
+\text{eot} & = \beta_0 \\
+& + \beta_1 \ast \text{cos(toy)} \\
+& + \beta_2 \ast \text{sin(toy)} \\
+& + \beta_3 \ast \text{cos(2} \ast \text{toy)} \\
+& + \beta_4 \ast \text{sin(2} \ast \text{toy)}
+\end{split} \qquad(18)$$
 </span>
 
 </div>
+
+By comparing the `sincost` and `sincos` functions, the code below
+demonstrates that using
+<a href="#t" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">t</a> rather than
+<a href="#rad" class="tool" data-bs-toggle="tooltip"
+data-bs-title="radians">rad</a> can [yield more accurate
+results](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=Representing%20angles%20in%20turns%20or%20half%2Dturns%20has%20accuracy%20advantages).
+Whereas `sincost` expects to receive
+<a href="#t" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">t</a> and is always correct, `sincos` assumes that
+it will get <a href="#rad" class="tool" data-bs-toggle="tooltip"
+data-bs-title="radians">rad</a> and generates the slightly incorrect [E
+notation](https://en.wikipedia.org/wiki/Scientific_notation#E_notation)
+values below because it cannot produce zero unless its input is zero.
 
 <div class="panel-tabset" data-group="language">
 
 ### Julia
 
 ``` julia
-sincostau(x) = sincospi(2 * x)
+sincost(x) = sincospi(2 * x)
 ```
 
-    sincostau (generic function with 1 method)
+    sincost (generic function with 1 method)
 
 ``` julia
-sincostau(0.25)
+sincost(0.25)
 ```
 
     (1.0, 0.0)
 
 ``` julia
-sincostau(0.5)
+sincost(0.5)
 ```
 
     (0.0, -1.0)
+
+``` julia
+sincost(0.75)
+```
+
+    (-1.0, 0.0)
+
+``` julia
+sincost(1)
+```
+
+    (0.0, 1.0)
 
 ``` julia
 sincos(0.25 * 2 * pi)
@@ -2295,112 +2238,165 @@ sincos(0.5 * 2 * pi)
 
     (1.2246467991473532e-16, -1.0)
 
+``` julia
+sincos(0.75 * 2 * pi)
+```
+
+    (-1.0, -1.8369701987210297e-16)
+
+``` julia
+sincos(1 * 2 * pi)
+```
+
+    (-2.4492935982947064e-16, 1.0)
+
 ### Observable JavaScript
 
 ``` {ojs}
 sincospi = require(
   'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-sincospi@umd/browser.js'
   )
-function sincostau(x) {
+function sincost(x) {
   return sincospi(2 * x);
 }
 function sincos(x) {
-  x *= 2 * Math.PI
   return [Math.sin(x), Math.cos(x)]
 }
-sincostau(0.25)
-sincostau(0.5)
-sincos(0.25)
-sincos(0.5)
+sincost(0.25)
+sincost(0.5)
+sincost(0.75)
+sincost(1)
+sincos(0.25 * 2 * Math.PI)
+sincos(0.5 * 2 * Math.PI)
+sincos(0.75 * 2 * Math.PI)
+sincos(1 * 2 * Math.PI)
 ```
 
 ### Python
 
 ``` python
-from math import cos, sin, pi
-from mpmath import cospi, sinpi
+from math import cos, sin, pi, cospi, sinpi
 
-def sincostau(x):
+def sincost(x):
     x *= 2
     return sinpi(x), cospi(x)
 
 def sincos(x):
-    x *= 2 * pi
     return sin(x), cos(x)
 
-sincostau(0.25)
+sincost(0.25)
 ```
 
-    (mpf('1.0'), mpf('0.0'))
+    (1.0, 0.0)
 
 ``` python
-sincostau(0.5)
+sincost(0.5)
 ```
 
-    (mpf('0.0'), mpf('-1.0'))
+    (0.0, -1.0)
 
 ``` python
-sincos(0.25)
+sincost(0.75)
+```
+
+    (-1.0, 0.0)
+
+``` python
+sincost(1)
+```
+
+    (0.0, 1.0)
+
+``` python
+sincos(0.25 * 2 * pi)
 ```
 
     (1.0, 6.123233995736766e-17)
 
 ``` python
-sincos(0.5)
+sincos(0.5 * 2 * pi)
 ```
 
     (1.2246467991473532e-16, -1.0)
 
+``` python
+sincos(0.75 * 2 * pi)
+```
+
+    (-1.0, -1.8369701987210297e-16)
+
+``` python
+sincos(1 * 2 * pi)
+```
+
+    (-2.4492935982947064e-16, 1.0)
+
 ### R
 
 ``` r
-sincostau <- function(x) {
+sincost <- function(x) {
   x <- 2 * x
   c(sinpi(x), cospi(x))
 }
 
 sincos <- function(x) {
-  x <- 2 * x * pi
   c(sin(x), cos(x))
 }
 
-sincostau(0.25)
+sincost(0.25)
 ```
 
     [1] 1 0
 
 ``` r
-sincostau(0.5)
+sincost(0.5)
 ```
 
     [1]  0 -1
 
 ``` r
-sincos(0.25)
+sincost(0.75)
+```
+
+    [1] -1  0
+
+``` r
+sincost(1)
+```
+
+    [1] 0 1
+
+``` r
+sincos(0.25 * 2 * pi)
 ```
 
     [1] 1.000000e+00 6.123234e-17
 
 ``` r
-sincos(0.5)
+sincos(0.5 * 2 * pi)
 ```
 
     [1]  1.224647e-16 -1.000000e+00
 
+``` r
+sincos(0.75 * 2 * pi)
+```
+
+    [1] -1.00000e+00 -1.83697e-16
+
+``` r
+sincos(1 * 2 * pi)
+```
+
+    [1] -2.449294e-16  1.000000e+00
+
 </div>
 
-The code above compares two functions which return both the
-[sine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20side%20opposite%20that%20angle%20to%20the%20length%20of%20the%20longest%20side%20of%20the%20triangle)
-and
-[cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)
-of their input. The sincos() function assumes it will receive radians
-and the sincostau() works with turns. In general, working with turns is
-more convenient and intuitive. The examples above demonstrate that using
-turns instead of radians can [yield more accurate
-results](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=Representing%20angles%20in%20turns%20or%20half%2Dturns%20has%20accuracy%20advantages).
-
-The values below are the coefficients of a model adapted from the
-[National Oceanic and Atmospheric Administration](https://www.noaa.gov)
+The values below are the coefficients of a
+[harmonic](https://en.wikipedia.org/wiki/Harmonic#:~:text=positive%20integer%20multiple%20of%20the%20fundamental%20frequency)
+[model](https://en.wikipedia.org/wiki/Statistical_model#:~:text=embodies%20a%20set%20of%20statistical%20assumptions%20concerning%20the%20generation%20of%20sample%20data),
+adapted from the [National Oceanic and Atmospheric
+Administration](https://www.noaa.gov)
 (<a href="#noaa" id="nationaloceanicandatmosphericadministration"
 class="tool" data-bs-toggle="tooltip"
 data-bs-title="National Oceanic and Atmospheric Administration">NOAA</a>)
@@ -2410,18 +2406,16 @@ Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF). Before
 the model to <a href="#noaa" class="tool" data-bs-toggle="tooltip"
 data-bs-title="National Oceanic and Atmospheric Administration">NOAA</a>
 [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html),
-we need to convert
-eot(<a href="#toy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of year">toy</a>) values from minutes to <a
-href="https://en.wikipedia.org/wiki/Unit_of_time#:~:text=14.4%20minutes%2C%20or%20864%20seconds"
-class="tool" data-bs-toggle="tooltip"
-data-bs-title="hundredths of a day">centidays</a>, combine
+Dec divides <a href="#eot" class="tool" data-bs-toggle="tooltip"
+data-bs-title="equation of time">eot</a> values by 1.44 to convert
+minutes to <a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a>, converts
 <a href="#ymd" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year month day">ymd</a> triplet dates and
 <a href="#hms" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hour minute second">hms</a> triplet times into
 <a href="#ada" class="tool" data-bs-toggle="tooltip"
-data-bs-title="annual day aggregates">ada</a>, and sort by
+data-bs-title="annual day aggregates">ada</a>, and sorts by
 <a href="#ada" class="tool" data-bs-toggle="tooltip"
 data-bs-title="annual day aggregate">ada</a>.
 
@@ -2446,90 +2440,88 @@ data-notebook-cellId="cell-eotcoef">
   let w = 800;
   let h = 0.625 * w;
   let samples = build_samples(
-    getEot, -366, 365, { N: 150 }
+    getEot, -365, 365, { N: 150 }
   );
   let plot = Plot.plot({
     marginLeft: 60,
     width: w,
     height: h,
     style: "font-size:19;",
-    y: {label: "milliday eot(toy)"},
-    x: {label: "day of year"},
+    y: {label: "Equation of time (md)"},
+    x: {label: "Day of year"},
     marks: [
       Plot.line(samples, {
         strokeWidth: 4,
         stroke: "steelblue",
         tip: true
       }),
-      Plot.ruleX([-366]),
+      Plot.ruleX([-365]),
       Plot.ruleY([0]),
       Plot.axisX({ y: 0 }),
-      Plot.axisY({ x: -366 })
+      Plot.axisY({ x: -365 })
     ]
   });
   return plot;
 }
 ```
 
-The
+In the
 [line📈chart](https://en.wikipedia.org/wiki/Line_chart#:~:text=a%20type%20of%20chart%20that%20displays%20information%20as%20a%20series%20of%20data%20points%20called%20%27markers%27%20connected%20by%20straight%20line%20segments)
-above uses <a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a> to display
-<a href="#eot" class="tool" data-bs-toggle="tooltip"
-data-bs-title="equation of time">eot</a>(<a href="#toy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of year">toy</a>) values as integers. There is
-little difference between
+above, the <a href="#eot" class="tool" data-bs-toggle="tooltip"
+data-bs-title="equation of time">eot</a> values range from -9.8 to 11.4
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a> and the range of
+<a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of year">doy</a>, <span class="color0">-365</span>
+to <span class="color365by366">365</span>, represents a common year
+followed by a leap year. The [absolute
+value](https://en.wikipedia.org/wiki/Absolute_value#:~:text=non%2Dnegative%29-,magnitude%20of,measured%20without%20regard%20to%20its%20sign,-.%20Namely%2C)
+of the <a href="#eot" class="tool" data-bs-toggle="tooltip"
+data-bs-title="equation of time">eot</a> reaches about one
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hundredth of a day">centiday</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="centiday">cd</span>) on Days
+<span class="color245by365">245</span> and
+<span class="color349by365">349</span>, but passes through zero on Days
+<span class="color045by365">45</span>,
+<span class="color103by365">103</span>,
+<span class="color184by365">184</span>, and
+<span class="color299by365">299</span>. Therefore,
 <a href="#mst" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mean solar time">mst</a> and
 <a href="#ast" class="tool" data-bs-toggle="tooltip"
-data-bs-title="apparent solar time">ast</a> around Days
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="April 15">45</span>, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="June 12">103</span>,
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="September 1">184</span>, and <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="December 25">299</span>. The
-difference ranges from about -9.8 on <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="October 31">Day 244</span> to
-around 11.4 <a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a> on <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="February 14">Day 350</span>. We
-can calculate <a href="#mst" class="tool" data-bs-toggle="tooltip"
-data-bs-title="mean solar time">mst</a> with just a
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> and a longitude and we will be off
-by at most about a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a hundredth of a day">centiday</span> compared to
-<a href="#ast" class="tool" data-bs-toggle="tooltip"
-data-bs-title="apparent solar time">ast</a>.
+data-bs-title="apparent solar time">ast</a> are equivalent four times
+per year.
 
-Apart from turning a
+Apart from transforming an
 <a href="#mst" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mean solar time">mst</a> into an
 <a href="#ast" class="tool" data-bs-toggle="tooltip"
 data-bs-title="apparent solar time">ast</a>, we can also use
 <a href="#eot" class="tool" data-bs-toggle="tooltip"
-data-bs-title="equation of time">eot</a> to more accurately estimate the
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="equation of time">eot</a> values to more accurately
+estimate the <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="times of day">tod</a> of [solar
 noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow),
-sunrise, and sunset. The equation below creates a [solar
+sunrise, and sunset.
+<a href="#eq-solarnoon" class="quarto-xref">Equation 19</a> below
+creates a [solar
 noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow)
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> measured in days by adding 9.55 to a
-longitude measured in <a href="#w" class="tool" data-bs-toggle="tooltip"
-data-bs-title="horizontal lines on a map">w</a>, subtracting a
-<a href="#tzo" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offset">tzo</a> and a
+data-bs-title="time of day">tod</a> by keeping only the decimal part of
+the result of subtracting a
+<a href="#w" class="tool" data-bs-toggle="tooltip"
+data-bs-title="horizontal lines on a map">w</a> longitude and an
 <a href="#eot" class="tool" data-bs-toggle="tooltip"
-data-bs-title="equation of time">eot</a>(<a href="#toy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of year">toy</a>) value that are both measured in
-days, and keeping only the decimal part of the result.
+data-bs-title="equation of time">eot</a> value that is measured in days
+from the sum of 9.55 and a
+<a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a> that is measured in days.
 
 <div id="equationgroup10" class="equationgroup">
 
 <span id="eq-solarnoon">
-solarnoon = (9.55 + tzo − w − eot(toy)) mod  1   (18)
+solarnoon = (9.55 + tzo − w − eot) mod  1   (19)
 </span>
 
 </div>
@@ -2538,11 +2530,16 @@ solarnoon = (9.55 + tzo − w − eot(toy)) mod  1   (
 
 To compare the solar noon
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> in two cities, we can plug in the
-longitude of each city into the equation above. If all the variables in
-the equation other than longitude are set to zero, the result is almost
-five <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</span> for [Cambridge,
+data-bs-title="time of day">tod</a> in two cities, we can plug the
+longitude of each city into
+<a href="#eq-solarnoon" class="quarto-xref">Equation 19</a> above. If
+all of the variables other than longitude in
+<a href="#eq-solarnoon" class="quarto-xref">Equation 19</a> are set to
+zero, the resulting solar noon
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> is almost five <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
+for [Cambridge,
 England](https://en.wikipedia.org/wiki/Cambridge#:~:text=a%20city%20and%20non%2Dmetropolitan%20district%20in%20the%20county%20of%20Cambridgeshire%2C%20England)
 in the [United
 Kingdom](https://en.wikipedia.org/wiki/United_Kingdom#:~:text=a%20country%20in%20Northwestern%20Europe)
@@ -2555,131 +2552,175 @@ States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primar
 <div id="equationgroup11" class="equationgroup">
 
 <span id="eq-cambridgeuk">
-4.99635 = (9.55 − 0.050365) mod  1 \* 10   (19)
+4.99635 = (9.55 − 0.050365) mod  1 \* 10   (20)
 </span>
 
 <span id="eq-cambridgema">
-6.97516 = (9.55 − 0.852484) mod  1 \* 10   (20)
+6.97517 = (9.55 − 0.852484) mod  1 \* 10   (21)
 </span>
 
 </div>
 
 The two homonymous cities are about two
 <a href="#dw" class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciwěi">dw</a> apart and thus will always differ by
+data-bs-title="deciwěi">dw</a> apart and therefore will always differ by
 around two <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</span> in solar time,
 regardless of what time zone we use as our frame of reference. England
 is in Zone <span class="color0">0</span> and Massachusetts is in Zone
-<span class="color8">8</span>. If we change the
-<a href="#tzo" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offset">tzo</a> from zero to eight
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</span>, the solar noon
+<span class="color8">8</span>. From the perspective of Zone
+<span class="color8">8</span>, solar noon is roughly
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> for each city will be two
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</span> earlier.
+data-bs-title="time of day">Tod</a> <span class="color5">5</span> in
+Cambridge, MA and about
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">Tod</a> <span class="color3">3</span> in
+Cambridge, UK.
 
 <div id="equationgroup12" class="equationgroup">
 
 <span id="eq-cambridgeuk8">
-2.99635 = (9.55 + 0.8 − 0.050365) mod  1 \* 10   (21)
+2.99635 = (9.55 + 0.8 − 0.050365) mod  1 \* 10   (22)
 </span>
 
 <span id="eq-cambridgema8">
-4.97516 = (9.55 + 0.8 − 0.852484) mod  1 \* 10   (22)
+4.97517 = (9.55 + 0.8 − 0.852484) mod  1 \* 10   (23)
 </span>
 
 </div>
 
-# Full day arc
+# Light arc whole
 
 The path in the sky that the Sun appears to follow from a sunrise to a
-sunset is a “[day
-arc](https://en.wikipedia.org/wiki/Sun_path#:~:text=arc%2Dlike%20path%20that%20the%20Sun%20appears%20to%20follow%20across%20the%20sky)”
-(<a href="#da" id="dayarc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="full day arc">da</a>). Solar noon, the midpoint of a
-<a href="#da" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day arc">da</a>, is halfway between sunrise and sunset.
-On each side of solar noon is a “half day arc”
-(<a href="#da2" id="halfdayarc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="half day arc">da/2</a>). The sum of a solar noon
+sunset is a “light
+[arc](https://en.wikipedia.org/wiki/Sun_path#:~:text=arc%2Dlike%20path%20that%20the%20Sun%20appears%20to%20follow%20across%20the%20sky)
+whole”
+(<a href="#law" id="lightarcwhole" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a>). Solar noon, the midpoint of a
+<a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a>, is halfway between sunrise and
+sunset. A <a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> can be evenly split into two
+“light arc halves”
+(<a href="#lah" id="lightarchalf" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc half">lah</a>). Whereas
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="times of day">tod</a> are time points,
+<a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc wholes">law</a> and
+<a href="#lah" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc halves">lah</a> are durations. The difference
+between a solar noon
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> and a
-<a href="#da2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="half day arc">da/2</a> is a sunset
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> and the difference between a solar
-noon <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> and a
-<a href="#da2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="half day arc">da/2</a> is a sunrise
+<a href="#lah" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc half">lah</a> is a sunrise
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a>.
 
 <div id="equationgroup13" class="equationgroup">
 
-<span id="eq-sunsetsunrise">
+<span id="eq-law">
+law = lah \* 2   (24)
+</span>
+
+<span id="eq-sunrise">
 $$\begin{split}
-\text{sunset} & = \text{solarnoon} + \dfrac{\text{da}}{2} && = \text{sunrise} + \text{da} \\
-\text{sunrise} & = \text{solarnoon} - \dfrac{\text{da}}{2} && = \text{sunset} - \text{da}
-\end{split} \qquad(23)$$
+\text{sunrise}
+& = \text{solarmidnight} + \text{nah} \\
+& = \text{solarnoon} - \text{lah} \\
+& = \text{sunset} - \text{law}
+\end{split} \qquad(25)$$
+</span>
+
+<span id="eq-sunset">
+$$\begin{split}
+\text{sunset}
+& = \text{solarmidnight} + \text{nah} + \text{law} \\
+& = \text{sunrise} + \text{law} \\
+& = \text{solarnoon} + \text{lah} \\
+\end{split} \qquad(26)$$
 </span>
 
 </div>
 
-## Full night arc
+## Night arc whole
 
 The Sun continues its path after it disappears below the horizon, moving
-from sunset to sunrise along a “night arc”
-(<a href="#na" id="nightarc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="night arc">na</a>). Like [conjugate
+from sunset to sunrise along a “night arc whole”
+(<a href="#naw" id="nightarcwhole" class="tool" data-bs-toggle="tooltip"
+data-bs-title="night arc">naw</a>). Like [conjugate
 angles](https://en.wikipedia.org/wiki/Angle#:~:text=conjugate%20angles%20sum%20to%20a%20full%20angle),
-a <a href="#da" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day arc">da</a> and a
-<a href="#na" class="tool" data-bs-toggle="tooltip"
-data-bs-title="night arc">na</a> form a full circle that represents one
-day. Likewise, a <a href="#da2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="half day arc">da/2</a> and a “half night arc”
-(<a href="#na2" id="halfnightarc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="half night arc">na/2</a>) are like two [supplementary
+a <a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> and a
+<a href="#naw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="night arc whole">naw</a> form a full circle that
+represents one day. Likewise, a
+<a href="#lah" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc half">lah</a> and a “night arc half”
+(<a href="#nah" id="nightarchalf" class="tool" data-bs-toggle="tooltip"
+data-bs-title="night arc half">nah</a>) are like two [supplementary
 angles](https://en.wikipedia.org/wiki/Angle#:~:text=sum%20to%20a%20straight%20angle)
 that form a semicircle from solar noon to the
-<a href="#na" class="tool" data-bs-toggle="tooltip"
-data-bs-title="night arc">na</a> midpoint: [solar
+<a href="#naw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="night arc whole">naw</a> midpoint: [solar
 midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%20to%20solar%20noon%2C%20when%20the%20Sun%20is%20closest%20to%20the%20nadir%2C%20and%20the%20night%20is%20equidistant%20from%20dusk%20and%20dawn).
 
 <div id="equationgroup14" class="equationgroup">
 
+<span id="eq-naw">
+naw = nah \* 2   (27)
+</span>
+
+<span id="eq-day">
+$$\begin{split}
+\text{day}
+& = \text{law} + \text{naw} \\
+& = (\text{lah} + \text{nah}) \ast 2
+\end{split} \qquad(28)$$
+</span>
+
 <span id="eq-solarmidnight">
-$$\text{solarmidnight} = \text{solarnoon} + \dfrac{\text{da}}{2} + \dfrac{\text{na}}{2} = \text{sunset} + \dfrac{\text{na}}{2} \qquad(24)$$
+$$\begin{split}
+\text{solarmidnight}
+&= \text{sunrise} - \text{nah} \\
+&= \text{solarnoon} - \text{lah} - \text{nah} \\
+&= \text{sunset} - \text{law} - \text{nah}
+\end{split} \qquad(29)$$
 </span>
 
 </div>
 
 The range input below controls the yellow
-<a href="#da" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day arc">da</a> and the blue
-<a href="#na" class="tool" data-bs-toggle="tooltip"
-data-bs-title="night arc">na</a> in the diagram beneath it. At the
-Equator, the sunrise always rises about a quarter turn from North and
+<a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> and the blue
+<a href="#naw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="night arc whole">naw</a> in the diagram beneath it. At
+the Equator, the sun always rises about a quarter turn from North and
 sets around three quarter turns from North, resulting in a
-<a href="#da" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day arc">da</a> of approximately half a day: 75% – 25% =
-50%. If <a href="#da" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day arc">da</a> is zero, a [polar
+<a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> of roughly half a day: 75%
+<span class="mono">-</span> 25% = 50%. If the
+<a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> is zero, a [polar
 night](https://en.wikipedia.org/wiki/Polar_night#:~:text=the%20Sun%20remains%20below%20the%20horizon%20for%20more%20than%2024%C2%A0hours)
 occurs. A day without a
-<a href="#na" class="tool" data-bs-toggle="tooltip"
-data-bs-title="night arc">na</a> is called a [polar
+<a href="#naw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="night arc whole">naw</a> is called a [polar
 day](https://en.wikipedia.org/wiki/Midnight_sun#:~:text=the%20Sun%20remains%20visible%20at%20the%20local%20midnight).
+
+``` {ojs}
+//| echo: false
+//| label: dayarcradio
+//| className: radiobuttons
+viewof dayArcSouth = Inputs.radio(new Map([["Northern", false], ["Southern", true]]), {label: "Hemisphere", value: false})
+```
 
 ``` {ojs}
 //| echo: false
 //| label: dayarcinput
 //| class: slider
-viewof dayArcInput = Inputs.range([0, 1000], {label: "Day arc", value: 375, step: 1})
+viewof dayArcInput = Inputs.range([0, 1000], {label: "Light arc whole", value: 375, step: 1})
 ```
 
 ``` {ojs}
@@ -2709,31 +2750,34 @@ viewof dayArcInput = Inputs.range([0, 1000], {label: "Day arc", value: 375, step
       .attr("font-size", 16)
       .attr("fill", window.darkmode ? "white" : "black")
       .text(d => `${(1000-((d+270)%360)/.36)%1000}`);
-  svg.append("polyline")
+  // flip the law and naw vertically so the law is centered on 0 in the Southern Hemisphere
+  const arcs = svg.append("g")
+      .attr("transform", dayArcSouth ? `translate(0, ${2 * dacenter[1]}) scale(1, -1)` : null);
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "violet" : "darkviolet")
       .attr("points", [dacenter, [daend[0], dacenter[1]]]);
-  svg.append("polyline")
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "red" : "darkred")
       .attr("points", [[daend[0], dacenter[1]], daend]);
-  svg.append("polyline")
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "slateblue" : "darkslateblue")
       .attr("points", [[dacenter, daend]]);
-  svg.append("polyline")
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "violet" : "darkviolet")
       .attr("points", [dacenter, [daend1[0], dacenter[1]]]);
-  svg.append("polyline")
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "red" : "darkred")
       .attr("points", [[daend1[0], dacenter[1]], [daend1[0], daend1[1]]]);
-  svg.append("polyline")
+  arcs.append("polyline")
       .attr("stroke-width", 2)
       .attr("stroke", window.darkmode ? "slateblue" : "darkslateblue")
       .attr("points", [[dacenter, [daend1[0], daend1[1]]]]);
-  svg.append("path")
+  arcs.append("path")
     .attr("transform", `translate(${dacenter})`)
     .attr("d", d3.arc()({
       innerRadius: 105,
@@ -2743,7 +2787,7 @@ viewof dayArcInput = Inputs.range([0, 1000], {label: "Day arc", value: 375, step
     }))
     .attr("stroke", window.darkmode ? "white" : "black")
     .attr("fill", "gold");
-  svg.append("path")
+  arcs.append("path")
     .attr("transform", `translate(${dacenter})`)
     .attr("d", d3.arc()({
       innerRadius: 105,
@@ -2757,19 +2801,369 @@ viewof dayArcInput = Inputs.range([0, 1000], {label: "Day arc", value: 375, step
 }
 ```
 
-The diagram above can represent both a clock and a compass. In the
-[Northern
-Hemisphere](https://en.wikipedia.org/wiki/Northern_Hemisphere#:~:text=the%20half%20of%20Earth%20that%20is%20north%20of%20the%20equator),
-solar time is essentially the same as the [“solar azimuth
+The numbers in the diagram above are [“solar azimuth
 angle”](https://en.wikipedia.org/wiki/Solar_azimuth_angle#:~:text=horizontal%20angle%20with%20respect%20to%20north)
 (<a href="#saa" id="solarazimuthangle" class="tool"
-data-bs-toggle="tooltip" data-bs-title="solar azimuth angle">saa</a>).
-In the [Southern
-Hemisphere](https://en.wikipedia.org/wiki/Southern_Hemisphere#:~:text=the%20half%20(hemisphere)%20of%20Earth%20that%20is%20south%20of%20the%20equator),
-we would need to flip the diagram upside down for it to match the
+data-bs-toggle="tooltip" data-bs-title="solar azimuth angle">saa</a>)
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a turn">milliturns</span>
+(<a href="#mt" id="milliturn" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">mt</a>). At solar noon, the
 <a href="#saa" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar azimuth angle">saa</a>. The bar chart below
-compares the populations of the Northern and Southern Hemispheres.
+data-bs-title="solar azimuth angle">saa</a> is 0
+<a href="#mt" id="milliturn" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">mt</a> in the [Southern
+Hemisphere](https://en.wikipedia.org/wiki/Southern_Hemisphere#:~:text=the%20half%20%28hemisphere%29%20of%20Earth%20that%20is%20south%20of%20the%20equator)
+and 500
+<a href="#mt" id="milliturn" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">mt</a> in the [Northern
+Hemisphere](https://en.wikipedia.org/wiki/Northern_Hemisphere#:~:text=the%20half%20of%20Earth%20that%20is%20north%20of%20the%20equator).
+The
+[radio](https://observablehq.github.io/framework/inputs/radio#:~:text=allows%20the%20user%20to%20choose%20one%20of%20a%20given%20set%20of%20values)📻input
+above controls whether the midpoint of the
+<a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> is 0 or 500
+<a href="#mt" id="milliturn" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">mt</a>. To measure the
+<a href="#saa" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar azimuth angle">saa</a> during the
+[daytime](https://en.wikipedia.org/wiki/Daytime#:~:text=the%20period%20of%20the%20day%20in%20which%20the%20Sun%20is%20above%20the%20local%20horizon%20in%20a%20given%20location),
+point a compass🧭at the spot on the horizon below the Sun.
+
+During an
+[equinox](https://en.wikipedia.org/wiki/Equinox#:~:text=a%20moment%20in%20time%20when%20the%20Sun%20appears%20directly%20above%20the%20equator)
+at the Equator, the Sun goes from East to West directly overhead, the
+<a href="#saa" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar azimuth angle">saa</a> flips like a switch from
+0.25 <a href="#t" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">t</a> to 0.75
+<a href="#t" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">t</a> at solar noon, the “[solar elevation
+angle](https://en.wikipedia.org/wiki/Solar_zenith_angle#Summary_of_special_angles:~:text=For%20example%2C%20the-,solar,-elevation%20angle%20is)”
+(<a href="#sea" id="solarelevationangle" class="tool"
+data-bs-toggle="tooltip" data-bs-title="solar elevation angle">sea</a>)
+peaks at 0.25 <a href="#t" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">t</a>, and
+<a href="#ast" class="tool" data-bs-toggle="tooltip"
+data-bs-title="apparent solar time">ast</a> is 0.5
+<span class="mono">−</span>
+sin(<a href="#saa" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar azimuth angle">saa</a>) × (0.25
+<span class="mono">−</span>
+<a href="#sea" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar elevation angle">sea</a>). To obtain the
+<a href="#sea" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar elevation angle">sea</a>, we can use the height (h)
+of a vertical rod on a level surface and the length (L) of its shadow:
+<a href="#sea" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar elevation angle">sea</a> = atan2(h, L).
+
+In addition to determining the
+<a href="#sea" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar elevation angle">sea</a>, the
+[atan2](https://en.wikipedia.org/wiki/Atan2#:~:text=function%20atan2%20is-,the%202%2Dargument%20arctangent,-.%20By%20definition%2C)
+function can also be used to calculate
+<a href="#ast" class="tool" data-bs-toggle="tooltip"
+data-bs-title="apparent solar time">ast</a>, as shown in
+<a href="#eq-astjing" class="quarto-xref">Equation 30</a>, where
+<a href="#j" id="jing" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a> is a latitude measured in turns called
+[jīng](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)
+(<a href="#j" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a>). In Dec, [inverse
+trigonometric](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#:~:text=obtain%20an%20angle%20from%20any%20of%20the%20angle%27s%20trigonometric%20ratios)
+functions like
+[atan2](https://en.wikipedia.org/wiki/Atan2#:~:text=function%20atan2%20is-,the%202%2Dargument%20arctangent,-.%20By%20definition%2C)
+yield <a href="#t" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">t</a> as opposed to
+<a href="#rad" class="tool" data-bs-toggle="tooltip"
+data-bs-title="radians">rad</a>. At the Equator
+(<a href="#j" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a> = 0), the latitude is zero and
+<a href="#eq-astjing" class="quarto-xref">Equation 30</a> simplifies to
+<a href="#ast" class="tool" data-bs-toggle="tooltip"
+data-bs-title="apparent solar time">ast</a> = 0.5 +
+atan2(-sin(<a href="#saa" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar azimuth angle">saa</a>)cos(<a href="#sea" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar elevation angle">sea</a>),
+sin(<a href="#sea" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar elevation angle">sea</a>)).
+
+<span id="eq-astjing">
+$$
+\text{ast} = 0.5 + \text{atan2}\\\\\left(
+\begin{aligned}
+& \text{-sin(saa)cos(sea),} \\
+& \text{sin(sea)cos(j) } - \\
+& \text{cos(saa)cos(sea)sin(j)}
+\end{aligned}
+\right)
+ \qquad(30)$$
+</span>
+
+<span id="eq-extremes">
+$$
+\text{ast} =
+\begin{cases}
+\text{saa} & \text{j} = 0.25 \\
+\text{atan2(-sin(saa)cos(sea), sin(sea))} & \text{j} = 0 \\
+(1.5 - \text{saa}) \bmod 1 & \text{j} = -0.25
+\end{cases}
+ \qquad(31)$$
+</span>
+
+At the North Pole (<a href="#j" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a> = 0.25), the latitude is 0.25
+<a href="#j" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a> and
+<a href="#eq-astjing" class="quarto-xref">Equation 30</a> simplifies to
+<a href="#ast" class="tool" data-bs-toggle="tooltip"
+data-bs-title="apparent solar time">ast</a> =
+<a href="#saa" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar azimuth angle">saa</a>. At the South Pole
+(<a href="#j" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a> = -0.25), the latitude is -0.25
+<a href="#j" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a> and
+<a href="#eq-astjing" class="quarto-xref">Equation 30</a> simplifies to
+<a href="#ast" class="tool" data-bs-toggle="tooltip"
+data-bs-title="apparent solar time">ast</a> = 0.5
+<span class="mono">−</span>
+<a href="#saa" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar azimuth angle">saa</a> before solar noon or
+<a href="#ast" class="tool" data-bs-toggle="tooltip"
+data-bs-title="apparent solar time">ast</a> = 1.5
+<span class="mono">−</span>
+<a href="#saa" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar azimuth angle">saa</a> after solar noon. In between
+the Equator and the South or North Pole (-0.25 \<
+<a href="#j" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a> \< 0 ∨ 0 \<
+<a href="#j" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a> \< 0.25), we should use Equation
+<a href="#eq-ast" class="quarto-xref">17</a>,
+<a href="#eq-astjing" class="quarto-xref">30</a>, or
+<a href="#eq-astsha" class="quarto-xref">32</a>.
+
+<span id="eq-astsha">
+$$
+\text{ast} = 0.5 + \text{arccos}\\\\\left(\dfrac{\text{sin(sea)} - \text{sin(j)sin(sda)}}{\text{cos(j)cos(sda)}}\right) \ast
+\begin{cases}
+\text{-}1 & 0 \le \text{saa} \< 0.5 \\
+1 & 0.5 \le \text{saa} \< 1
+\end{cases}
+ \qquad(32)$$
+</span>
+
+Unlike <a href="#eq-astjing" class="quarto-xref">Equation 30</a>,
+<a href="#eq-astsha" class="quarto-xref">Equation 32</a> requires
+finding the “solar declination angle”
+(<a href="#sda" id="solardeclinationangle" class="tool"
+data-bs-toggle="tooltip" data-bs-title="solar declination angle">sda</a>).
+Whereas latitude is the angle from the Equator in the [geographic
+coordinate
+system](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=a%20spherical%20or%20geodetic%20coordinate%20system%20for%20measuring%20and%20communicating%20positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude),
+[declination](https://en.wikipedia.org/wiki/Declination#:~:text=the%20angular%20distance%20from%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
+is the angle from the [celestial
+equator](https://en.wikipedia.org/wiki/Celestial_equator) in the
+[equatorial coordinate
+system](https://en.wikipedia.org/wiki/Equatorial_coordinate_system#:~:text=a%20celestial%20coordinate%20system%20widely%20used%20to%20specify%20the%20positions%20of%20celestial%20objects)
+to latitude but in the
+<a href="#sea" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar elevation angle">sea</a> vertical coordinate. For
+simplicity, we can model both
+<a href="#eot" class="tool" data-bs-toggle="tooltip"
+data-bs-title="equation of time">eot</a> and
+<a href="#sda" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar declination angle">sda</a> data with
+<a href="#eq-eot" class="quarto-xref">Equation 18</a> instead of
+<a href="#eq-sda" class="quarto-xref">Equation 33</a>, which is also
+included in the NOAA General Solar Position Calculations.
+
+<div id="equationgroup16" class="equationgroup">
+
+<span id="eq-sda">
+$$\begin{split}
+\text{sda(toy)} & = \beta_0 \\
+& + \beta_1 \ast \text{cos(toy)} \\
+& + \beta_2 \ast \text{sin(toy)} \\
+& + \beta_3 \ast \text{cos(2} \ast \text{toy)} \\
+& + \beta_4 \ast \text{sin(2} \ast \text{toy)} \\
+& + \beta_5 \ast \text{cos(3} \ast \text{toy)} \\
+& + \beta_6 \ast \text{sin(3} \ast \text{toy)} \\
+\end{split} \qquad(33)$$
+</span>
+
+</div>
+
+``` {ojs}
+//| echo: false
+//| label: sdaplot
+// https://observablehq.com/@mcmcclur/plot-for-mathematicians
+{
+  let w = 800;
+  let h = 0.625 * w;
+  let sdaMt = (day) => getSda(day) * 1000;
+  let samples = build_samples(
+    sdaMt, 0, 365, { N: 150 }
+  );
+  // Locate the equinoxes (zeros) and solstices (max and min) of the fitted model
+  let days = d3.range(0, 365, 0.01);
+  let north = d3.greatest(days, sdaMt);
+  let south = d3.least(days, sdaMt);
+  let zeros = days.filter((d) => sdaMt(d) <= 0 && sdaMt(d + 0.01) > 0 ||
+    sdaMt(d) >= 0 && sdaMt(d + 0.01) < 0);
+  let northward = zeros.find((d) => d < north);
+  let southward = zeros.find((d) => d > north && d < south);
+  let events = [
+    {doy: northward, name: "Northward equinox", dx: 10, dy: 16, anchor: "start"},
+    {doy: north, name: "Northern solstice", dx: 0, dy: -18, anchor: "middle"},
+    {doy: southward, name: "Southward equinox", dx: 10, dy: -16, anchor: "start"},
+    {doy: south, name: "Southern solstice", dx: 0, dy: 20, anchor: "middle"}
+  ].map((e) => ({...e, sda: sdaMt(e.doy)}));
+  let plot = Plot.plot({
+    marginLeft: 60,
+    marginTop: 30,
+    marginBottom: 30,
+    width: w,
+    height: h,
+    style: "font-size:19;",
+    y: {label: "Solar declination angle (mt)"},
+    x: {label: "Day of year"},
+    marks: [
+      Plot.line(samples, {
+        strokeWidth: 4,
+        stroke: "steelblue",
+        tip: true
+      }),
+      Plot.ruleX([0]),
+      Plot.ruleY([0]),
+      Plot.axisX({ y: 0 }),
+      Plot.axisY({ x: 0 }),
+      Plot.dot(events, {x: "doy", y: "sda", r: 6, fill: "currentColor"}),
+      ...events.map((e) => Plot.text([e], {
+        x: "doy",
+        y: "sda",
+        text: (d) => `${d.name} (${Math.round(d.doy)})`,
+        dx: e.dx,
+        dy: e.dy,
+        textAnchor: e.anchor,
+        fontSize: 16
+      }))
+    ]
+  });
+  return plot;
+}
+```
+
+The top range input below picks the
+<a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a> that will become the
+<a href="#toy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of year">toy</a> in our fitted
+<a href="#sda" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar declination angle">sda</a> model. The other two
+range inputs below chose the geographic coordinates that we need to find
+the sunrise and sunset
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="times of day">tod</a>. While the sunrise and sunset
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="times of day">tod</a> depend on both geographic
+coordinates, the <a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> varies only by latitude and not
+by longitude: ${selectedSunset.toFixed(3)} <span class="mono">-</span>
+${selectedSunrise.toFixed(3)} =
+${parseFloat(daytimeDuration.toFixed(3))}.
+
+``` {ojs}
+//| echo: false
+//| label: doyinput
+//| class: slider
+viewof doyInput = Inputs.range([0, 365], {label: "Day of year", value: 183, step: 1})
+```
+
+``` {ojs}
+//| echo: false
+//| label: latinput
+//| class: slider
+viewof latInput = Inputs.range([-250, 250], {label: "Latitude", value: 0, step: 1})
+```
+
+``` {ojs}
+//| echo: false
+//| label: loninput1
+//| class: slider
+Inputs.bind(Inputs.range([0, 1000], {step: 1, label: "Longitude"}), viewof lonInput)
+```
+
+The equation controlled by range inputs above can be summarized as
+sunset <span class="mono">-</span> sunrise =
+<a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> and can be rearranged into the
+sunrise equation: sunrise = sunset <span class="mono">-</span>
+<a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a>. If we plug the current
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> in place of the sunrise
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> in the sunrise equation without
+changing the sunset <a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a>, the
+<a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> will be replaced with the time
+until or since sunset: ${selectedCurrent.toFixed(3)} =
+*s**e**l**e**c**t**e**d**S**u**n**s**e**t*.*t**o**F**i**x**e**d*(3)\[{selectedDifference
+\< 0 ? “-” : “+”}\]{.mono}
+${parseFloat(Math.abs(selectedDifference).toFixed(3))}.
+
+The latest equation above is an example of a Dec span. From left to
+right, this span consists of a
+[minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted),
+an equals sign (=),
+[subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted),
+a plus (+) or a minus (<span class="mono">-</span>) sign, and a
+[difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference).
+A minus sign indicates the difference is the time remaining **until**
+sunset, whereas a plus sign means that the difference is the time that
+has passed **since** sunset.
+
+The difference shows the [remaining
+time](https://en.wikipedia.org/wiki/Countdown#:~:text=the%20time%20remaining%20before%20an%20event)
+as a negative number if the minuend is less than the substrahend or
+displays the [elapsed
+time](https://en.wikipedia.org/wiki/Mission_Elapsed_Time) as a positive
+number if the minuend is greater than the subtrahend. In this way, the
+difference can act like a [“T minus
+countdown”](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining)
+that becomes a [“T plus
+countup”](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time) after
+an event like a rocket🚀launch.
+
+<div id="equationgroup17" class="equationgroup">
+
+<span id="eq-difference">
+$$\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \qquad(34)$$
+</span>
+
+</div>
+
+When the minuend is the current time and the subtrahend is the
+[timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred)
+of an event which occurred in the past, the difference is the time
+elapsed since that event. A Dec timestamp consists of a year, a day, .
+can be an <a href="#eda" class="tool" data-bs-toggle="tooltip"
+data-bs-title="epochal day aggregate">eda</a>, a “epochal year
+aggregate” (<a href="#eya" id="epochalyearaggregate" class="tool"
+data-bs-toggle="tooltip" data-bs-title="epochal year aggregate">eya</a>),
+or a snap🫰. Eda and eya are the time The typical snap format is
+year<span class="mono">+</span><a href="#ada" class="tool" data-bs-toggle="tooltip"
+data-bs-title="annual day aggregate">ada</a><span class="mono">-</span><a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a>. The snap
+${loadYearHsl}<span class="mono">+</span>${loadAdaHsl}<span class="mono">-</span><span class="color0">0</span>
+represents the <a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beat">b</a> when this webpage loaded ${elaTimeHsl}
+<a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</a> ago.
 
 ``` {ojs}
 //| echo: false
@@ -2801,234 +3195,6 @@ Plot.plot({
 })
 ```
 
-Anyone can measure the
-<a href="#saa" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar azimuth angle">saa</a> during the daytime by
-pointing a compass at the point on the horizon below the Sun. In the
-Northern Hemisphere, we can use this method to approximate solar time.
-In the Southern Hemisphere, we can obtain solar time by measuring the
-<a href="#saa" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar azimuth angle">saa</a> in turns and then
-subtracting our measurement from one and a half turns:
-
-<div id="equationgroup15" class="equationgroup">
-
-<span id="eq-solartime">
-$$\text{solartime} \approx \begin{cases}\text{saa}&{\text{if m} \geq 0;}\\(1.5 - \text{saa}) \bmod 1&{\text{otherwise.}}\end{cases} \qquad(25)$$
-</span>
-
-</div>
-
-The clockwise path that the Sun follows in the Northern Hemisphere is
-ingrained in the Belarussian, Polish, or Ukrainian languages. These
-three Slavic languages each have one word for north or midnight and
-another word for south or noon. In Dec, zero represents both north and
-midnight, while both south and noon can be expressed as a half turn.
-
-<div class="overflowtable">
-
-<table>
-<thead>
-<tr>
-<th>Turns</th>
-<th>Direction</th>
-<th>Time</th>
-<th>Belarussian</th>
-<th>Polish</th>
-<th>Ukrainian</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>north</td>
-<td>midnight</td>
-<td>поўнач</td>
-<td>północ</td>
-<td>північ</td>
-</tr>
-<tr>
-<td>0.5</td>
-<td>south</td>
-<td>noon</td>
-<td>поўдзень</td>
-<td>południe</td>
-<td>південь</td>
-</tr>
-</tbody>
-</table>
-
-If we only want to know how long the Sun will shine on a given day, we
-can use the top equation below to obtain a
-<a href="#da" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day arc">da</a>. Alternatively, if we are interested in
-finding out when the Sun will rise or set on a given day, we will need
-to calculate a <a href="#da2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="half day arc">da/2</a> using the bottom equation below
-and then combine it with a solar noon
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> to get a sunrise or sunset
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>.
-
-<div id="equationgroup16" class="equationgroup">
-
-<span id="eq-da">
-$$\text{da} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\pi} \qquad(26)$$
-</span>
-
-<span id="eq-halfda">
-$$\dfrac{\text{da}}{2} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\tau} \qquad(27)$$
-</span>
-
-</div>
-
-## Solar declination angle
-
-The <a href="#da" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day arc">da</a> and
-<a href="#da2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="half day arc">da/2</a> equations above require a latitude
-and a “solar
-[declination](https://en.wikipedia.org/wiki/Declination#:~:text=one%20of%20the%20two%20angles%20that%20locate%20a%20point%20on%20the%20celestial%20sphere%20in%20the%20equatorial%20coordinate%20system)
-angle” (<a href="#sda" id="solardeclinationangle" class="tool"
-data-bs-toggle="tooltip" data-bs-title="solar declination angle">sda</a>).
-Dec measures latitude in turns called jīng
-(<a href="#j" id="jing" class="tool" data-bs-toggle="tooltip"
-data-bs-title="jīng">j</a>) or turn submultiples such as millijīng
-(<a href="#mj" id="millijing" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millijīng">mj</a>). For simplicity, we can fit our
-<a href="#eot" class="tool" data-bs-toggle="tooltip"
-data-bs-title="equation of time">eot</a> model to
-<a href="#sda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar declination angle">sda</a> data instead of fitting
-the needlessly complex
-<a href="#sda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar declination angle">sda</a> model provided by the
-NOAA General Solar Position Calculations:
-
-<div id="equationgroup17" class="equationgroup">
-
-<span id="eq-sda">
-$$\begin{split}
-\text{sda(toy)} & = \beta_0 \\
-& + \beta_1 \ast \text{costau(toy)} \\
-& + \beta_2 \ast \text{sintau(toy)} \\
-& + \beta_3 \ast \text{costau(2} \ast \text{toy)} \\
-& + \beta_4 \ast \text{sintau(2} \ast \text{toy)} \\
-& + \beta_5 \ast \text{costau(3} \ast \text{toy)} \\
-& + \beta_6 \ast \text{sintau(3} \ast \text{toy)} \\
-\end{split} \qquad(28)$$
-</span>
-
-</div>
-
-The top range input below picks the
-<a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</a> that will become the
-<a href="#toy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of year">toy</a> in our fitted
-<a href="#sda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar declination angle">sda</a> model. The other two
-range inputs below chose the geographic coordinates that we need to find
-the sunrise and sunset
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="times of day">tod</a>. While the sunrise and sunset
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="times of day">tod</a> depend on both geographic
-coordinates, the <a href="#da" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day arc">da</a> varies only by latitude and not by
-longitude: ${selectedSunset.toFixed(3)} – ${selectedSunrise.toFixed(3)}
-= ${parseFloat(daytimeDuration.toFixed(3))}.
-
-``` {ojs}
-//| echo: false
-//| label: doyinput
-//| class: slider
-viewof doyInput = Inputs.range([0, 365], {label: "Day of year", value: 183, step: 1})
-```
-
-``` {ojs}
-//| echo: false
-//| label: latinput
-//| class: slider
-viewof latInput = Inputs.range([-250, 250], {label: "Latitude", value: 0, step: 1})
-```
-
-``` {ojs}
-//| echo: false
-//| label: loninput
-//| class: slider
-viewof lonInput = Inputs.range([0, 1000], {label: "Longitude", value: 500, step: 1})
-```
-
-The equation controlled by range inputs above can be summarized as
-sunset – sunrise = <a href="#da" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day arc">da</a> and can be rearranged into the sunrise
-equation: sunrise = sunset –
-<a href="#da" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day arc">da</a>. If we plug the current
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> in place of the sunrise
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> in the sunrise equation without
-changing the sunset <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>, the
-<a href="#da" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day arc">da</a> will be replaced with the time until or
-since sunset: ${selectedCurrent.toFixed(3)} =
-${selectedSunset.toFixed(3)} ${selectedDifference \< 0 ? “–” : “+”}
-${parseFloat(Math.abs(selectedDifference).toFixed(3))}.
-
-The latest equation above is an example of a Dec span. From left to
-right, this span consists of a
-[minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted),
-an equals sign (=),
-[subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted),
-a plus (+) or a minus (–) sign, and a
-[difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference).
-A minus sign indicates the difference is the time remaining **until**
-sunset, whereas a plus sign means that the difference is the time that
-has passed **since** sunset.
-
-The difference shows the [remaining
-time](https://en.wikipedia.org/wiki/Countdown#:~:text=the%20time%20remaining%20before%20an%20event)
-as a negative number if the minuend is less than the substrahend or
-displays the [elapsed
-time](https://en.wikipedia.org/wiki/Mission_Elapsed_Time) as a positive
-number if the minuend is greater than the subtrahend. In this way, the
-difference can act like a [“T minus
-countdown”](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining)
-that becomes a [“T plus
-countup”](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time) after
-an event like a rocket🚀launch.
-
-<div id="equationgroup18" class="equationgroup">
-
-<span id="eq-difference">
-$$\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \qquad(29)$$
-</span>
-
-</div>
-
-When the minuend is the current time and the subtrahend is the
-[timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred)
-of an event which occurred in the past, the difference is the time
-elapsed since that event. A Dec timestamp consists of a year, a day, .
-can be an <a href="#eda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="epochal day aggregate">eda</a>, a “epochal year
-aggregate” (<a href="#eya" id="epochalyearaggregate" class="tool"
-data-bs-toggle="tooltip" data-bs-title="epochal year aggregate">eya</a>),
-or a snap🫰. Eda and eya are the time The typical snap format is
-year<span class="mono">+</span><a href="#ada" class="tool" data-bs-toggle="tooltip"
-data-bs-title="annual day aggregate">ada</a><span class="mono">-</span><a href="#tzo" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offset">tzo</a>. The snap
-${loadYearHsl}<span class="mono">+</span>${loadAdaHsl}<span class="mono">-</span><span class="color0">0</span>
-represents the <a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beat">b</a> when this webpage loaded ${elaTimeHsl}
-<a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</a> ago.
-
 # Epochal year aggregate (eya)
 
 A <a href="#doe" id="dayofera" class="tool" data-bs-toggle="tooltip"
@@ -3050,22 +3216,22 @@ data-bs-title="days of era">doe</a> and
 data-bs-title="epochal year aggregates">eya</a> allow us to represent a
 date as a single number and obtain the difference between two dates.
 
-<div id="equationgroup19" class="equationgroup">
+<div id="equationgroup18" class="equationgroup">
 
 <span id="eq-cda">
-cda = de − coe \* 146097   (30)
+cda = de − coe \* 146097   (35)
 </span>
 
 <span id="eq-yocdoc">
-$$\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \qquad(31)$$
+$$\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \qquad(36)$$
 </span>
 
 <span id="eq-yoe">
-yoe = yoc + coe \* 400   (32)
+yoe = yoc + coe \* 400   (37)
 </span>
 
 <span id="eq-doydoc">
-$$\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \biggr \rfloor \qquad(33)$$
+$$\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \biggr \rfloor \qquad(38)$$
 </span>
 
 </div>
@@ -3100,26 +3266,26 @@ an <a href="#eya" class="tool" data-bs-toggle="tooltip"
 data-bs-title="epochal year aggregate">eya</a> to get a yoe or divide
 its , we can obtain a
 
-<div id="equationgroup20" class="equationgroup">
+<div id="equationgroup19" class="equationgroup">
 
 <span id="eq-eya">
-eya = yoe + toy = yoe + doy ÷ syl   (34)
+eya = yoe + toy = yoe + doy ÷ syl   (39)
 </span>
 
 <span id="eq-toyeya">
-toy = eya mod  1 = doy ÷ syl   (35)
+toy = eya mod  1 = doy ÷ syl   (40)
 </span>
 
 <span id="eq-doytoy">
-doy = ⌊toy \* syl⌋   (36)
+doy = ⌊toy \* syl⌋   (41)
 </span>
 
 <span id="eq-eyadoy">
-eya = yoe + doy \* syl   (37)
+eya = yoe + doy \* syl   (42)
 </span>
 
 <span id="eq-eyacoe">
-eya = yoe + coe \* 400   (38)
+eya = yoe + coe \* 400   (43)
 </span>
 
 </div>
@@ -3157,30 +3323,30 @@ data-bs-title="year of cycle">yoc</a>), and then finally the year and
 <a href="#ada" class="tool" data-bs-toggle="tooltip"
 data-bs-title="annual day aggregate">ada</a>.
 
-<div id="equationgroup21" class="equationgroup">
+<div id="equationgroup20" class="equationgroup">
 
 <span id="eq-edd">
-edd = eda − difference   (39)
+edd = eda − difference   (44)
 </span>
 
 <span id="eq-coe">
-$$\text{coe} = \Biggl \lfloor \dfrac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \qquad(40)$$
+$$\text{coe} = \Biggl \lfloor \dfrac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \qquad(45)$$
 </span>
 
 <span id="eq-doc">
-doc = edd − coe \* 146097   (41)
+doc = edd − coe \* 146097   (46)
 </span>
 
 <span id="eq-yocedd">
-$$\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \qquad(42)$$
+$$\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \qquad(47)$$
 </span>
 
 <span id="eq-year">
-year = yoc + coe \* 400   (43)
+year = yoc + coe \* 400   (48)
 </span>
 
 <span id="eq-adadoc">
-$$\text{ada} = \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \qquad(44)$$
+$$\text{ada} = \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \qquad(49)$$
 </span>
 
 </div>
@@ -3304,18 +3470,18 @@ airship](https://en.wikipedia.org/wiki/Airship#:~:text=pedal%20powered%20airship
 from Cambridge MA to Cambridge UK at an average speed of 12.5 mv, we
 could complete the journey in ten days: 12500 kz / 12.5 mv = 1000 cd.
 
-At sunrise, the <a href="#da" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day arc">da</a> is the amount of time until sunset. At
-solar noon, the time remaining before sunset will be
-<a href="#da2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="half day arc">da/2</a>. Throughout the day, the current
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
+At sunrise, the <a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> is the amount of time until
+sunset. At solar noon, the time remaining before sunset will be
+<a href="#lah" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc halves">lah</a>. Throughout the day, the
+current <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> is equal to the sum of sunset
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> and the difference between the
 current and sunset <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="times of day">tod</a>: ${selectedSunset.toFixed(3)} –
-${selectedSunrise.toFixed(3)} =
+data-bs-title="times of day">tod</a>: ${selectedSunset.toFixed(3)}
+<span class="mono">-</span> ${selectedSunrise.toFixed(3)} =
 ${parseFloat(daytimeDuration.toFixed(3))}.
 
 Like a countdown sequence, we can keep track of the time relative to
@@ -3326,14 +3492,14 @@ current <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> is equal to the difference between
 the sunset <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> and the
-<a href="#da" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day arc">da</a> and the current
+<a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> and the current
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> is equal to the difference between
 the sunset <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> and the
-<a href="#da2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="half day arc">da/2</a>. The Given a sunset
+<a href="#lah" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc halves">lah</a>. The Given a sunset
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> of We can replace the current
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
@@ -3343,14 +3509,14 @@ time relative to a given tod.
 can keep track of the remaining time until sunset by minuend The
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> of sunrise is found by subtracting
-half the <a href="#da" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day arc">da</a> from solar noon
+half the <a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> from solar noon
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a>. The
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> of sunset is found by adding half
-the <a href="#da" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day arc">da</a> to solar noon
+the <a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> to solar noon
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a>.
 
@@ -3571,7 +3737,7 @@ references:
   author:
     - family: Laptev
       given: Martin
-  title: Dec time
+  title: Declock
   url: https://maptv.github.io/dec/time
   issued:
     literal: 2026+225
@@ -3613,7 +3779,7 @@ yaml format.
 }
 @misc{laptev2026time,
   author = "Martin Laptev",
-  title = "Dec time",
+  title = "Declock",
   url = "https://maptv.github.io/dec/time",
   year = 2026+225
 }
@@ -3650,7 +3816,7 @@ additional files or configuration. A Quarto output file can have both a
 
 <div id="gloslist" class="column-page-right">
 
-- <a href="#arcbeat" id="ab">a</a>: arcbeat, a hundred thousandth of a
+- <a href="#arcbeat" id="a">a</a>: arcbeat, a hundred thousandth of a
   circle, 0.0036 degrees, 0.216 arcminutes, 12.96 arcseconds
 - <a href="#beat" id="b">b</a>: beat, centimilliday, a hundred
   thousandth of a day, 864 milliseconds
@@ -3702,8 +3868,8 @@ additional files or configuration. A Quarto output file can have both a
     of year, days elapsed since the beginning of the year, 0 to 364 or
     365
   - <a href="#negativeintegerdoy" id="nid">nid</a>: negative integer day
-    of year, pid - syl, -365 or -366 to -1, the negative of the days
-    left in the year
+    of year, pid <span class="mono">-</span> syl, -365 or -366 to -1,
+    the negative of the days left in the year
   - <a href="#mixedintegerdoy" id="mid">mid</a>: mixed integer day of
     year, an nid rewritten with negative leading digits (marked by a
     vinculum) and a positive last digit or two
@@ -3732,17 +3898,18 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#dayofquadrimester" id="doq">doq</a>: day of quadrimester,
     days since the beginning of a Decyther quadrimester, 0 to 115 or 116
   - <a href="#beginningofquadrimester" id="boq">boq</a>: beginning of
-    quadrimester, the pid of Doq 0, pid - doq
+    quadrimester, the pid of Doq 0, pid <span class="mono">-</span> doq
   - <a href="#quadrimesterofcycle" id="qoc">qoc</a>: quadrimester of
     cycle, zero-based index of a Decyther quadrimester, 0 to 3
   - <a href="#beginningofbimester" id="bob">bob</a>: beginning of
-    bimester, the pid of Dob 0, pid - dob
+    bimester, the pid of Dob 0, pid <span class="mono">-</span> dob
   - <a href="#beginningofmonth" id="bom">bom</a>: beginning of month,
-    the pid of the day before the first day of the month, pid - dom
+    the pid of the day before the first day of the month, pid
+    <span class="mono">-</span> dom
   - <a href="#monthofcycle" id="moc">moc</a>: month of cycle, zero-based
     index of a Venusian month, 0 to 15
   - <a href="#beginningofweek" id="bow">bow</a>: beginning of week, the
-    pid of Dow 0, pid - dow
+    pid of Dow 0, pid <span class="mono">-</span> dow
   - <a href="#beginningofyear" id="boy">boy</a>: beginning of year,
     midnight at the start of Day 0
   - <a href="#beginningofera" id="boe">boe</a>: beginning of era,
@@ -3760,16 +3927,19 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#venusianextracalationdifference" id="ved">ved</a>:
     Venusian extracalation difference, days until the end of
     Doc<sub>♀</sub> 349, the last day of the one-day-shorter Qoc 2,
-    Bimester 5, and Moc 11, (doc<sub>♀</sub> + 117) mod 467 - 467, -467
-    to -1
+    Bimester 5, and Moc 11, (doc<sub>♀</sub> + 117) mod 467
+    <span class="mono">-</span> 467, -467 to -1
   - <a href="#misalignedunitdifference" id="mud">mud</a>: misaligned
-    unit difference, pid - dom - dow
+    unit difference, pid <span class="mono">-</span> dom
+    <span class="mono">-</span> dow
   - <a href="#deciday" id="dd">dd</a>: deciday, a tenth of a day, 2.4
     hours, 144 minutes
   - <a href="#centiday" id="cd">cd</a>: centiday, a hundredth of a day,
     0.24 hours, 14.4 minutes
   - <a href="#milliday" id="md">md</a>: milliday, a thousandth of a day,
     1.44 minutes
+  - <a href="#centimilliday" id="dmd">dmd</a>: decimilliday, a ten
+    thousandth of a day, 10 beats, 8640 milliseconds
   - <a href="#centimilliday" id="cmd">cmd</a>: centimilliday, a hundred
     thousandth of a day, 1 beat, 864 milliseconds
   - <a href="#microday" id="ud">µd</a>: microday, a millionth of a day,
@@ -3781,8 +3951,9 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#compassdegree" id="cdeg">c°</a>: compass degree
   - <a href="#huedegree" id="hdeg">h°</a>: hue degree
 - <a href="#egg" id="e">e</a>: egg, 1000 grains, 2 ounces, 64 grams
-- <a href="#equationoftime" id="eot">eot</a>: equation of time, ast -
-  mst as a function of toy, about -9.8 to 11.4 millidays
+- <a href="#equationoftime" id="eot">eot</a>: equation of time, ast
+  <span class="mono">-</span> mst as a function of toy, about -9.8 to
+  11.4 millidays
 - <a href="#cubit" id="ell">ℓ</a>: ell, cubit, 10/9 zem
 - <a href="#foot" id="f">f</a>: foot, 0.75 zem, 75 millimeters
 - <a href="#gutta" id="g">g</a>: drop (gutta in Latin) or grain (granum
@@ -3815,8 +3986,10 @@ additional files or configuration. A Quarto output file can have both a
   uppercase “J” without a serif is a vertical line drawn from top to
   bottom, like a jīng running from the North Pole to the South Pole,
   with a curve at the bottom where the jīng turns to come back up the
-  other side of the Earth; on a loom, 经 is the warp, the threads that
-  run lengthwise
+  other side of the Earth; although not the same as the jīng in Běijīng
+  (北京) and Nánjīng (南京), jīng (经) is related to North (Běi) and
+  South (Nán); on a loom, 经 is the warp, the threads that run
+  lengthwise
   - <a href="#decijing" id="dj">dj</a>: decijīng, a tenth of a jīng (经)
   - <a href="#millijing" id="mj">mj</a>: millijīng, a thousandth of a
     jīng (经)
@@ -3870,23 +4043,23 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#quotidie" id="q">q</a>: quotidie, the inverse of a day, a
   hundred thousandth of a perbeat; the letter “q” in quotidie can be
   flipped vertically to produce the letter “d” in day
-- <a href="#rose" id="r">r</a>: compass rose, a full circle along the
-  horizon, 360 compass degrees
+- <a href="#rose" id="r">r</a>: compass rose, a full *r*otation along
+  the horizon, 360 compass degrees
   - <a href="#solarazimuthangle" id="saa">saa</a>: solar azimuth angle,
     the direction of the Sun along the horizon measured clockwise from
     North
   - <a href="#millirose" id="mr">mr</a>: compass millirose, a thousandth
-    of a circle along the horizon, .36 compass degrees
-- <a href="#radian" id="rad">rad</a>: radian, $1\over\tau$ turns,
-  $360\over\tau$ degrees, $1\over 2\pi$ turns, $180\over\pi$ degrees
+    of a *r*otation along the horizon, .36 compass degrees
+- <a href="#radian" id="rad">rad</a>: radian, 1/𝜏 turns, 360/𝜏 degrees,
+  1/𝜋 turns, 180/𝜋 degrees
 - <a href="#redgreenblue" id="rgb">rgb</a>: red green blue
 - <a href="#second" id="s">s</a>: second, 1/90 millidays, 10/9 beats, 1
   Dec second = 0.96 SI seconds
   - <a href="#decisecond" id="ds">ds</a>: decisecond, a tenth of a Dec
     second, 1/900 millidays, 1/9 beats, 96 milliseconds
   - <a href="#secondintervaldifference" id="sid">sid</a>: second
-    interval difference, 1 SI second - 1 Dec second, 1/24 Dec second,
-    1/25 SI second, 40 milliseconds
+    interval difference, 1 SI second <span class="mono">-</span> 1 Dec
+    second, 1/24 Dec second, 1/25 SI second, 40 milliseconds
   - <a href="#sisecond" id="sis">sis</a>: SI second, 25/24 Dec seconds,
     1/86.4 millidays, 1/86400 days
 - <a href="#spinorbitinterval" id="soi">soi</a>: spin orbit interval, a
@@ -3930,14 +4103,15 @@ additional files or configuration. A Quarto output file can have both a
     time based only on longitude and the Zone 0 tod
   - <a href="#apparentsolartime" id="ast">ast</a>: apparent solar time,
     mst + eot(toy), solar time based on the actual position of the Sun
-  - <a href="#dayarc" id="da">da</a>: day arc, the time from sunrise to
-    sunset, sunset - sunrise
-  - <a href="#halfdayarc" id="da2">da/2</a>: half day arc, the time from
-    sunrise to solar noon or from solar noon to sunset
-  - <a href="#nightarc" id="na">na</a>: night arc, the time from sunset
-    to sunrise, 1 - da
-  - <a href="#halfnightarc" id="na2">na/2</a>: half night arc, the time
-    from sunset to solar midnight or from solar midnight to sunrise
+  - <a href="#lightarcwhole" id="law">law</a>: light arc whole, the time
+    from sunrise to sunset, 1 <span class="mono">-</span> naw, sunset
+    <span class="mono">-</span> sunrise
+  - <a href="#lightarchalf" id="da2">lah</a>: light arc half, law/2, the
+    time from sunrise to solar noon or from solar noon to sunset
+  - <a href="#nightarcwhole" id="naw">naw</a>: night arc whole, the time
+    from sunset to sunrise, 1 <span class="mono">-</span> law
+  - <a href="#nightarchalf" id="nah">nah</a>: night arc half, naw/2, the
+    time from sunset to solar midnight or from solar midnight to sunrise
 - <a href="#turn" id="t">t</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians
   - <a href="#centiturn" id="ct">ct</a>: centiturn, a hundredth of a
     turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
@@ -4010,7 +4184,7 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#yearmonthday" id="ymd">ymd</a>: year month day, a
     Gregorian calendar date triplet
   - <a href="#solaryearlength" id="syl">syl</a>: solar year length, 365
-    or 366 days, pid - nid
+    or 366 days, pid <span class="mono">-</span> nid
   - <a href="#lunaryearlength" id="lyl">lyl</a>: lunar year length, 354
     or 355 days
   - <a href="#commonerayear" id="cey">cey</a>: common era year, an ISO
@@ -5369,7 +5543,10 @@ leapTod = (zeroTime + leapCount / 86400) % 1
 leapDecidayTod = (leapTod * 10).toFixed(4)
 leapTodHsl0 = textcolor(leapDecidayTod, piecewiseColor(leapTod))
 leapTodHsl1 = textcolor(leapDecidayTod, piecewiseColor(leapTod))
-longInputHsl = textcolor(lonInput, piecewiseColor(lonInput / 1000))
+longPiece = piecewiseColor(lonInput / 1000)
+longInputHsl = textcolor(lonInput, longPiece)
+longFloor = Math.floor(lonInput / 100)
+longFloorHsl = textcolor(longFloor, piecewiseColor(longFloor / 10))
 eot = getEot(leapSecondDate)
 astTzo = eot + lonInput
 astTzoHsl = textcolor(astTzo.toFixed(4), piecewiseColor((astTzo + 1000) % 1000 / 1000))
@@ -6663,6 +6840,42 @@ html`
   padding: 0px .5px;
   border-radius: 4px;
 }
+.color045by365 {
+  background: #ffb900;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color103by365 {
+  background: #c2ff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color184by365 {
+  background: #00f7ff;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color245by365 {
+  background: #0048ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color299by365 {
+  background: #b300ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color349by365 {
+  background: #ff007c;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
 .color081by366 {
   background: #f1ff00;
   color: black;
@@ -6860,9 +7073,6 @@ svg.barclock {
   margin: -10px 0px 10px 0px;
   padding: 0px;
   text-align: center;
-}
-#title-block-header > div:nth-child(2) {
-  display: none;
 }
 div.cell-output:has(#daylightapp) {
   overflow: visible;
@@ -7080,7 +7290,7 @@ div.slider form.oi-3a86ea {
   overflow-x: visible;
 }
 div.slider form.oi-3a86ea > label {
-  width: 100px;
+  width: 110px;
   flex-shrink: 0;
   white-space: nowrap;
 }
@@ -7092,8 +7302,6 @@ div.slider input[type="range"] {
   width: 100%;
 }
 </style>
-
-</div>
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 

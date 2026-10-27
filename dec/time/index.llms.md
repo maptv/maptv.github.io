@@ -1160,11 +1160,67 @@ At the North Pole ([j](#j) = 0.25), the latitude is 0.25 [j](#j) and [Equation 
 
 \\ \text{ast} = 0.5 + \text{arccos}\\\\\left(\dfrac{\text{sin(sea)} - \text{sin(j)sin(sda)}}{\text{cos(j)cos(sda)}}\right) \ast \begin{cases} \text{-}1 & 0 \le \text{saa} \< 0.5 \\ 1 & 0.5 \le \text{saa} \< 1 \end{cases} \tag{32}\\
 
-Unlike [Equation 30](#eq-astjing), [Equation 32](#eq-astsha) requires finding the “solar declination angle” ([sda](#sda)). Whereas latitude is the angle from the Equator in the [geographic coordinate system](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=a%20spherical%20or%20geodetic%20coordinate%20system%20for%20measuring%20and%20communicating%20positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude), [declination](https://en.wikipedia.org/wiki/Declination#:~:text=the%20angular%20distance%20from%20the%20celestial%20equator%20on%20the%20celestial%20sphere) is the angle from the [celestial equator](https://en.wikipedia.org/wiki/Celestial_equator) in the [equatorial coordinate system](https://en.wikipedia.org/wiki/Equatorial_coordinate_system#:~:text=a%20celestial%20coordinate%20system%20widely%20used%20to%20specify%20the%20positions%20of%20celestial%20objects) to latitude but in the [sea](#sea) vertical coordinate. For simplicity, we can model both [eot](#eot) and [sda](#sda) data with [Equation 18](#eq-eot) instead of [Equation 33](#eq-sda), which is also included in the NOAA General Solar Position Calculations.
+Unlike [Equation 30](#eq-astjing), [Equation 32](#eq-astsha) requires a “solar declination angle” ([sda](#sda)). Whereas latitude is the angle from the Equator in the [geographic coordinate system](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=a%20spherical%20or%20geodetic%20coordinate%20system%20for%20measuring%20and%20communicating%20positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude), [declination](https://en.wikipedia.org/wiki/Declination#:~:text=the%20angular%20distance%20from%20the%20celestial%20equator%20on%20the%20celestial%20sphere) is the angle from the [celestial equator](https://en.wikipedia.org/wiki/Celestial_equator) in the [equatorial coordinate system](https://en.wikipedia.org/wiki/Equatorial_coordinate_system#:~:text=a%20celestial%20coordinate%20system%20widely%20used%20to%20specify%20the%20positions%20of%20celestial%20objects). For simplicity, we can use [Equation 18](#eq-eot) for both the [eot](#eot) and [sda](#sda). The line plot below shows [sda](#sda) over the course of a year.
 
-\\\begin{split} \text{sda(toy)} & = \beta_0 \\ & + \beta_1 \ast \text{cos(toy)} \\ & + \beta_2 \ast \text{sin(toy)} \\ & + \beta_3 \ast \text{cos(2} \ast \text{toy)} \\ & + \beta_4 \ast \text{sin(2} \ast \text{toy)} \\ & + \beta_5 \ast \text{cos(3} \ast \text{toy)} \\ & + \beta_6 \ast \text{sin(3} \ast \text{toy)} \\ \end{split} \tag{33}\\
+``` js
+// https://observablehq.com/@mcmcclur/plot-for-mathematicians
+{
+  let w = 800;
+  let h = 0.625 * w;
+  let sdaMt = (day) => getSda(day) * 1000;
+  let samples = build_samples(
+    sdaMt, 0, 365, { N: 150 }
+  );
+  // Locate the equinoxes (zeros) and solstices (max and min) of the fitted model
+  let days = d3.range(0, 365, 0.01);
+  let north = d3.greatest(days, sdaMt);
+  let south = d3.least(days, sdaMt);
+  let zeros = days.filter((d) => sdaMt(d) <= 0 && sdaMt(d + 0.01) > 0 ||
+    sdaMt(d) >= 0 && sdaMt(d + 0.01) < 0);
+  let northward = zeros.find((d) => d < north);
+  let southward = zeros.find((d) => d > north && d < south);
+  let events = [
+    {doy: northward, name: "Northward equinox", dx: 15, dy: -12, anchor: "start"},
+    {doy: north, name: "Northern solstice", dx: 36, dy: 0, anchor: "start"},
+    {doy: southward, name: "Southward equinox", dx: -15, dy: -12, anchor: "end"},
+    {doy: south, name: "Southern solstice", dx: -36, dy: 0, anchor: "end"}
+  ].map((e) => ({...e, sda: sdaMt(e.doy)}));
+  let plot = Plot.plot({
+    marginLeft: 60,
+    marginTop: 30,
+    marginBottom: 30,
+    width: w,
+    height: h,
+    style: "font-size:19;",
+    y: {label: "Solar declination angle (mt)"},
+    x: {label: "Day of year", ticks: [50, 100, 150, 200, 250, 300, 350]},
+    marks: [
+      Plot.line(samples, {
+        strokeWidth: 4,
+        stroke: "steelblue",
+        tip: true
+      }),
+      Plot.ruleX([0]),
+      Plot.ruleY([0]),
+      Plot.axisX({y: 0, ticks: [50, 100, 150, 200, 250, 300, 350]}),
+      Plot.axisY({ x: 0 }),
+      Plot.dot(events, {x: "doy", y: "sda", r: 6, fill: "currentColor"}),
+      ...events.map((e) => Plot.text([e], {
+        x: "doy",
+        y: "sda",
+        text: (d) => `${d.name}`,
+        dx: e.dx,
+        dy: e.dy,
+        textAnchor: e.anchor,
+        fontSize: 16
+      }))
+    ]
+  });
+  return plot;
+}
+```
 
-The top range input below picks the [doy](#doy) that will become the [toy](#toy) in our fitted [sda](#sda) model. The other two range inputs below chose the geographic coordinates that we need to find the sunrise and sunset [tod](#tod). While the sunrise and sunset [tod](#tod) depend on both geographic coordinates, the [law](#law) varies only by latitude and not by longitude:  - = .
+The top range input below picks the [doy](#doy) that we will convert into a [toy](#toy) and then pass to our [sda](#sda) model. The two range inputs beneath the [doy](#doy) input chose the geographic coordinates needed to find the sunrise and sunset [tod](#tod). While the sunrise and sunset [tod](#tod) rely on the [doy](#doy) and both geographic coordinates, the [law](#law) varies only by latitude:  - = .
 
 ``` js
 viewof doyInput = Inputs.range([0, 365], {label: "Day of year", value: 183, step: 1})
@@ -1178,13 +1234,11 @@ viewof latInput = Inputs.range([-250, 250], {label: "Latitude", value: 0, step: 
 Inputs.bind(Inputs.range([0, 1000], {step: 1, label: "Longitude"}), viewof lonInput)
 ```
 
-The equation controlled by range inputs above can be summarized as sunset - sunrise = [law](#law) and can be rearranged into the sunrise equation: sunrise = sunset - [law](#law). If we plug the current [tod](#tod) in place of the sunrise [tod](#tod) in the sunrise equation without changing the sunset [tod](#tod), the [law](#law) will be replaced with the time until or since sunset: = \\{selectedSunset.toFixed(3)} \[\\{selectedDifference \< 0 ? “-” : “+”}\]{.mono} .
+The equation above can be summarized as sunset - sunrise = [law](#law) or [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted) - [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted) = [difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference). If we insert the current [tod](#tod) in place of the subtrahend (sunrise [tod](#tod)) in this equation without modifying the minuend (sunset [tod](#tod)), the difference ([law](#law)) will represent the time either until sunset if it is negative or since sunset if it is positive: = .
 
-The latest equation above is an example of a Dec span. From left to right, this span consists of a [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted), an equals sign (=), [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted), a plus (+) or a minus (-) sign, and a [difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference). A minus sign indicates the difference is the time remaining **until** sunset, whereas a plus sign means that the difference is the time that has passed **since** sunset.
+In general, the subtrahend is the time of an event such as a rocket🚀launch and the difference is the negative [remaining time](https://en.wikipedia.org/wiki/Countdown#:~:text=the%20time%20remaining%20before%20an%20event) when the minuend is less than the substrahend or the positive [elapsed time](https://en.wikipedia.org/wiki/Mission_Elapsed_Time) when the minuend is greater than the subtrahend. When the minuend is the current [tod](#tod), the difference acts as a [“T minus countdown”](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining) or [“T plus countup”](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time).
 
-The difference shows the [remaining time](https://en.wikipedia.org/wiki/Countdown#:~:text=the%20time%20remaining%20before%20an%20event) as a negative number if the minuend is less than the substrahend or displays the [elapsed time](https://en.wikipedia.org/wiki/Mission_Elapsed_Time) as a positive number if the minuend is greater than the subtrahend. In this way, the difference can act like a [“T minus countdown”](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining) that becomes a [“T plus countup”](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time) after an event like a rocket🚀launch.
-
-\\\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \tag{34}\\
+\\\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \tag{33}\\
 
 When the minuend is the current time and the subtrahend is the [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred) of an event which occurred in the past, the difference is the time elapsed since that event. A Dec timestamp consists of a year, a day, . can be an [eda](#eda), a “epochal year aggregate” ([eya](#eya)), or a snap🫰. Eda and eya are the time The typical snap format is year+[ada](#ada)-[tzo](#tzo). The snap +-0 represents the [b](#b) when this webpage loaded [b](#b) ago.
 
@@ -1216,41 +1270,41 @@ Plot.plot({
 
 A [doe](#doe) is essentially a Dec date with a [yoe](#yoe) that is always equal to 0 and a [doy](#doy) that is [not restricted](https://en.wikipedia.org/wiki/Bounded_set#:~:text=a%20set%20which%20is%20not%20bounded) to 0 ≤ [doy](#doy) ≤ 365. Similarly, a Dec “epochal year aggregate” ([eya](#eya)) is basically a Dec date with a non-integer year and a day permanently set to 0. We can obtain a Dec date by passing a doe Both [doe](#doe) and [eya](#eya) allow us to represent a date as a single number and obtain the difference between two dates.
 
-\\\text{cda} = \text{de} - \text{coe} \ast 146097 \tag{35}\\
+\\\text{cda} = \text{de} - \text{coe} \ast 146097 \tag{34}\\
 
-\\\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{36}\\
+\\\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{35}\\
 
-\\\text{yoe} = \text{yoc} + \text{coe} \ast 400 \tag{37}\\
+\\\text{yoe} = \text{yoc} + \text{coe} \ast 400 \tag{36}\\
 
-\\\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \biggr \rfloor \tag{38}\\
+\\\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \biggr \rfloor \tag{37}\\
 
 Compared to a [doe](#doe), it is much easier to convert between an [eya](#eya) and a to turn into Dec dates. The decimal part of an [eya](#eya) is a called a [toy](#toy). We can convert between dates to [eya](#eya) with the equations below. We can obtain a [yoe](#yoe) by flooring an [eya](#eya). Likewise, we can obtain a doy by flooring the product of [syl](#syl) and the decimal part of an [eya](#eya), which is called a [toy](#toy). The current [eya](#eya) equation values are =  + ÷ . We can floor an [eya](#eya) to get a yoe or divide its , we can obtain a
 
-\\\text{eya} = \text{yoe} + \text{toy} = \text{yoe} + \text{doy} \div \text{syl} \tag{39}\\
+\\\text{eya} = \text{yoe} + \text{toy} = \text{yoe} + \text{doy} \div \text{syl} \tag{38}\\
 
-\\\text{toy} = \text{eya} \bmod 1 = \text{doy} \div \text{syl} \tag{40}\\
+\\\text{toy} = \text{eya} \bmod 1 = \text{doy} \div \text{syl} \tag{39}\\
 
-\\\text{doy} = \lfloor\text{toy}\ast\text{syl}\rfloor \tag{41}\\
+\\\text{doy} = \lfloor\text{toy}\ast\text{syl}\rfloor \tag{40}\\
 
-\\\text{eya} = \text{yoe} + \text{doy} \ast \text{syl} \tag{42}\\
+\\\text{eya} = \text{yoe} + \text{doy} \ast \text{syl} \tag{41}\\
 
-\\\text{eya} = \text{yoe} + \text{coe} \ast 400 \tag{43}\\
+\\\text{eya} = \text{yoe} + \text{coe} \ast 400 \tag{42}\\
 
 [eya](#eya) = [yoe](#yoe) + [doy](#doy) ÷ [syl](#syl).
 
 We can omit the year from a snap if we replace the [ada](#ada) with a subtrahend and a difference or just a difference. If needed, we can obtain a snap from a difference using the equations below. First, we subtract the difference from the current [eda](#eda) to obtain the “[eda](#eda) difference difference” ([edd](#edd)). Then, we use the [edd](#edd) to get the “cycle of era” ([coe](#coe)), “day of cycle” ([doc](#doc)), “year of cycle” ([yoc](#yoc)), and then finally the year and [ada](#ada).
 
-\\\text{edd} = \text{eda} - \text{difference} \tag{44}\\
+\\\text{edd} = \text{eda} - \text{difference} \tag{43}\\
 
-\\\text{coe} = \Biggl \lfloor \dfrac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \tag{45}\\
+\\\text{coe} = \Biggl \lfloor \dfrac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \tag{44}\\
 
-\\\text{doc} = \text{edd} - \text{coe} \ast 146097 \tag{46}\\
+\\\text{doc} = \text{edd} - \text{coe} \ast 146097 \tag{45}\\
 
-\\\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{47}\\
+\\\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{46}\\
 
-\\\text{year} = \text{yoc} + \text{coe} \ast 400 \tag{48}\\
+\\\text{year} = \text{yoc} + \text{coe} \ast 400 \tag{47}\\
 
-\\\text{ada} = \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \tag{49}\\
+\\\text{ada} = \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \tag{48}\\
 
 In the equations above, [eda](#eda) is “epochal day aggregate”, [coe](#coe) is “cycle of era”, [doc](#doc) is “day of cycle”, and [yoc](#yoc) is “year of cycle”.
 
