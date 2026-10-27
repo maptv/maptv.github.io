@@ -3014,7 +3014,7 @@ div.cell:has(.barclock) * {
   z-index: 99;
   margin-top: -42px !important;
 }
-div#eotplot div div svg g g text{
+div#eotplot div div svg g g text, div#sdaplot div div svg g g text {
   color: black;
 }
 mjx-container[jax="CHTML"][display="true"] {

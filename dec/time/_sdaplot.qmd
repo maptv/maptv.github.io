@@ -1,0 +1,59 @@
+```{ojs}
+//| echo: false
+//| label: sdaplot
+// https://observablehq.com/@mcmcclur/plot-for-mathematicians
+{
+  let w = 800;
+  let h = 0.625 * w;
+  let sdaMt = (day) => getSda(day) * 1000;
+  let samples = build_samples(
+    sdaMt, 0, 365, { N: 150 }
+  );
+  // Locate the equinoxes (zeros) and solstices (max and min) of the fitted model
+  let days = d3.range(0, 365, 0.01);
+  let north = d3.greatest(days, sdaMt);
+  let south = d3.least(days, sdaMt);
+  let zeros = days.filter((d) => sdaMt(d) <= 0 && sdaMt(d + 0.01) > 0 ||
+    sdaMt(d) >= 0 && sdaMt(d + 0.01) < 0);
+  let northward = zeros.find((d) => d < north);
+  let southward = zeros.find((d) => d > north && d < south);
+  let events = [
+    {doy: northward, name: "Northward equinox", dx: 15, dy: -12, anchor: "start"},
+    {doy: north, name: "Northern solstice", dx: 36, dy: 0, anchor: "start"},
+    {doy: southward, name: "Southward equinox", dx: -15, dy: -12, anchor: "end"},
+    {doy: south, name: "Southern solstice", dx: -36, dy: 0, anchor: "end"}
+  ].map((e) => ({...e, sda: sdaMt(e.doy)}));
+  let plot = Plot.plot({
+    marginLeft: 60,
+    marginTop: 30,
+    marginBottom: 30,
+    width: w,
+    height: h,
+    style: "font-size:19;",
+    y: {label: "Solar declination angle (mt)"},
+    x: {label: "Day of year", ticks: [50, 100, 150, 200, 250, 300, 350]},
+    marks: [
+      Plot.line(samples, {
+        strokeWidth: 4,
+        stroke: "steelblue",
+        tip: true
+      }),
+      Plot.ruleX([0]),
+      Plot.ruleY([0]),
+      Plot.axisX({y: 0, ticks: [50, 100, 150, 200, 250, 300, 350]}),
+      Plot.axisY({ x: 0 }),
+      Plot.dot(events, {x: "doy", y: "sda", r: 6, fill: "currentColor"}),
+      ...events.map((e) => Plot.text([e], {
+        x: "doy",
+        y: "sda",
+        text: (d) => `${d.name}`,
+        dx: e.dx,
+        dy: e.dy,
+        textAnchor: e.anchor,
+        fontSize: 16
+      }))
+    ]
+  });
+  return plot;
+}
+```
