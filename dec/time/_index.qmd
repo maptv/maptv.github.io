@@ -3036,6 +3036,9 @@ mjx-container[jax="CHTML"][display="true"] {
   overflow-y: hidden;
   margin-bottom: 10px;
 }
+#tbl-time td, #tbl-time th {
+  white-space: nowrap;
+}
 div.equationgroup {
   margin-top: -9px;
   margin-bottom: -8px;
