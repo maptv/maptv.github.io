@@ -30,6 +30,8 @@
     - [eda](#epochaldayaggregate){#eda}: epochal day aggregate, doe + tod, days since the Dec epoch including the time of day
     - [edd](#edadifferencedifference){#edd}: eda difference difference, an eda minus a difference, used to recover the year and ada of a past event
     - [ada](#annualdayaggregate){#ada}: annual day aggregate, doy + tod
+    - [pia](#positiveintervalada){#pia}: positive interval ada, the time since the start of the current year, equal to the ada
+    - [nia](#negativeintervalada){#nia}: negative interval ada, pia [-]{.mono} syl, the negative of the time until the start of the next year
     - [doc](#dayofcycle){#doc}: day of cycle, days since the start of the current 400-year Gregorian cycle, 0 to 146096
     - doc~♀~: Decyther day of cycle, days since the start of the current 467-day Venusian cycle, doe mod 467, 0 to 466
     - [doh](#dayofhectoday){#doh}: day of hectoday, doy mod 100, the percent of a hectoday that has elapsed
@@ -125,6 +127,8 @@
     - [Xet](#10et){#xet}: Tenet
     - [12et](#twelveequaltemperament){#12et}: twelve equal temperament
 - [tod](#timeofday){#tod}: time of day
+    - [pit](#positiveintervaltod){#pit}: positive interval tod, the time since the start of the current day (previous midnight), equal to the tod
+    - [nit](#negativeintervaltod){#nit}: negative interval tod, pit [-]{.mono} 1, the negative of the time until the start of the next day (next midnight)
     - [hms](#hourminutesecond){#hms}: hour minute second, a tod written as an hod, moh, and som triplet
     - [dsa](#dailysecondaggregate){#dsa}: daily second aggregate, seconds since midnight, tod &times; 86400
     - [hsa](#hourlysecondaggregate){#hsa}: hourly second aggregate, seconds since the top of the hour, dsa mod 3600
