@@ -1222,7 +1222,7 @@ Unlike [Equation 30](#eq-astjing), [Equation 32](#eq-astsha) requires a “sol
 
 In the line plot above, [zero crossings](https://en.wikipedia.org/wiki/Zero_crossing#:~:text=a%20point%20where%20the%20sign%20of%20a%20mathematical%20function%20changes) are [equinoxes](https://en.wikipedia.org/wiki/Equinox#:~:text=a%20moment%20in%20time%20when%20the%20Sun%20appears%20directly%20above%20the%20equator%2C%20rather%20than%20to%20its%20north%20or%20south) and [stationary points](https://en.wikipedia.org/wiki/Stationary_point#:~:text=a%20point%20on%20the%20graph%20of%20the%20function%20where%20the%20function%27s%20derivative%20is%20zero) are [solstices](https://en.wikipedia.org/wiki/Solstice#:~:text=the%20time%20when%20the%20Sun%20reaches%20its%20most%20northerly%20or%20southerly%20sun%20path%20relative%20to%20the%20celestial%20equator%20on%20the%20celestial%20sphere). From the northward to the southward equinox, the [sda](#sda) is positive and every latitude has a [law](#law) that is longer than 0.5 days if it is in the Northern Hemisphere or shorter than 0.5 days if it is in the Southern Hemisphere. This pattern is reversed when the [sda](#sda) is negative.
 
-The chart below splits the [Socioeconomic Data and Applications Center](https://www.earthdata.nasa.gov/centers/sedac-daac) population data into two bars representing the Northern and Southern Hemispheres and then further divides each bar by [UTC](#utc) offset. Nearly 7 billion out of a total of almost 8 billion people live in the Northern Hemisphere where the longest [law](#law) of the year occurs during the [northern solstice](https://en.wikipedia.org/wiki/June_solstice#:~:text=In%20the%20Northern%20Hemisphere%2C%20the%20June%20solstice%20is%20the%20summer%20solstice%20%28the%20day%20with%20the%20longest%20period%20of%20daylight%29%2C%20while%20in%20the%20Southern%20Hemisphere%20it%20is%20the%20winter%20solstice%20%28the%20day%20with%20the%20shortest%20period%20of%20daylight%29).
+The chart below splits the [Socioeconomic Data and Applications Center](https://www.earthdata.nasa.gov/centers/sedac-daac) population data into two bars representing the Northern and Southern Hemispheres and then further divides each bar by [UTC](#utc) offset. Nearly 7 billion out of a total of almost 8 billion people live in the Northern Hemisphere and thus experience the longest [law](#law) of the year at the [northern solstice](https://en.wikipedia.org/wiki/June_solstice#:~:text=In%20the%20Northern%20Hemisphere%2C%20the%20June%20solstice%20is%20the%20summer%20solstice%20%28the%20day%20with%20the%20longest%20period%20of%20daylight%29%2C%20while%20in%20the%20Southern%20Hemisphere%20it%20is%20the%20winter%20solstice%20%28the%20day%20with%20the%20shortest%20period%20of%20daylight%29).
 
 ``` js
 // https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
@@ -1248,7 +1248,7 @@ Plot.plot({
 })
 ```
 
-The top range input below picks the [doy](#doy) that we will convert into a [toy](#toy) and then pass to our [sda](#sda) model. The two range inputs beneath the [doy](#doy) input chose the geographic coordinates needed to find the sunrise and sunset [tod](#tod). While the sunrise and sunset [tod](#tod) rely on the [doy](#doy) and both geographic coordinates, the [law](#law) varies only by latitude:  - = .
+The top range input below picks the [doy](#doy) that we will convert into a [toy](#toy) and then pass to our [sda](#sda) model. The two range inputs beneath the [doy](#doy) input choose the geographic coordinates needed to find the sunrise and sunset [tod](#tod). While the sunrise and sunset [tod](#tod) rely on the [doy](#doy) and both geographic coordinates, the [law](#law) varies only by latitude:  - = .
 
 ``` js
 viewof doyInput = Inputs.range([0, 365], {label: "Day of year", value: 183, step: 1})
@@ -1270,89 +1270,7 @@ In general, the subtrahend is the time of an event such as a rocket🚀launch an
 
 Dec uses the term “minuend expansion” to describe the replacement of a minuend with a subtrahend and a difference. We can replace the current [tod](#tod) with the sum of either zero and a “positive interval [tod](#tod)” ([pit](#pit)) or 1 day ([d](#d)) and a “negative interval [tod](#tod)” ([nit](#nit)): [tod](#tod) = 0 + [pit](#pit) = 1 + [nit](#nit). At [Tod](#tod) 7, the [tod](#tod) and [pit](#pit) are both 0.7 [d](#d) and the [nit](#nit) is -0.3 [d](#d): 0.7 = 0 + 0.7 = 1 + -0.3.
 
-Likewise, a “positive interval [ada](#ada)” ([pia](#pia)) is the time since the start of the current year and a “negative interval [ada](#ada)” ([nia](#nia)) is the time until the start of the next year. A [pia](#pia) equals the current [ada](#ada), and a [nia](#nia) is the [pia](#pia) minus the [syl](#syl), just as an “negative integer [doy](#doy)” ([nid](#nid)) is a “positive integer [doy](#doy)” [pid](#pid) minus the [syl](#syl).
-
-When the minuend is the current time and the subtrahend is the [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred) of an event which occurred in the past, the difference is the time elapsed since that event. A Dec timestamp can be an [eda](#eda), an “epochal year aggregate” ([eya](#eya)), or a snap🫰. An [eda](#eda) and an [eya](#eya) are themselves differences whose subtrahend is the Dec epoch: they count the days or years since it. The typical snap format is year+[ada](#ada)-[tzo](#tzo). The time when this webpage loaded is an example of a subtrahend, and the time since it loaded is an example of a difference: the snap +-0 represents the [b](#b) when this webpage loaded [b](#b) ago.
-
-#### 11 Epochal year aggregate (eya)
-
-A [doe](#doe) is essentially a Dec date with a [yoe](#yoe) that is always equal to 0 and a [doy](#doy) that is [not restricted](https://en.wikipedia.org/wiki/Bounded_set#:~:text=a%20set%20which%20is%20not%20bounded) to 0 ≤ [doy](#doy) ≤ 365. Similarly, a Dec “epochal year aggregate” ([eya](#eya)) is basically a Dec date with a non-integer year and a day permanently set to 0. We can obtain a Dec date by passing a doe Both [doe](#doe) and [eya](#eya) allow us to represent a date as a single number and obtain the difference between two dates.
-
-\\\text{cda} = \text{de} - \text{coe} \ast 146097 \tag{34}\\
-
-\\\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{35}\\
-
-\\\text{yoe} = \text{yoc} + \text{coe} \ast 400 \tag{36}\\
-
-\\\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \biggr \rfloor \tag{37}\\
-
-Compared to a [doe](#doe), it is much easier to convert between an [eya](#eya) and a to turn into Dec dates. The decimal part of an [eya](#eya) is a called a [toy](#toy). We can convert between dates to [eya](#eya) with the equations below. We can obtain a [yoe](#yoe) by flooring an [eya](#eya). Likewise, we can obtain a doy by flooring the product of [syl](#syl) and the decimal part of an [eya](#eya), which is called a [toy](#toy). The current [eya](#eya) equation values are =  + ÷ . We can floor an [eya](#eya) to get a yoe or divide its , we can obtain a
-
-\\\text{eya} = \text{yoe} + \text{toy} = \text{yoe} + \text{doy} \div \text{syl} \tag{38}\\
-
-\\\text{toy} = \text{eya} \bmod 1 = \text{doy} \div \text{syl} \tag{39}\\
-
-\\\text{doy} = \lfloor\text{toy}\ast\text{syl}\rfloor \tag{40}\\
-
-\\\text{eya} = \text{yoe} + \text{doy} \ast \text{syl} \tag{41}\\
-
-\\\text{eya} = \text{yoe} + \text{coe} \ast 400 \tag{42}\\
-
-[eya](#eya) = [yoe](#yoe) + [doy](#doy) ÷ [syl](#syl).
-
-We can omit the year from a snap if we replace the [ada](#ada) with a subtrahend and a difference or just a difference. If needed, we can obtain a snap from a difference using the equations below. First, we subtract the difference from the current [eda](#eda) to obtain the “[eda](#eda) difference difference” ([edd](#edd)). Then, we use the [edd](#edd) to get the “cycle of era” ([coe](#coe)), “day of cycle” ([doc](#doc)), “year of cycle” ([yoc](#yoc)), and then finally the year and [ada](#ada).
-
-\\\text{edd} = \text{eda} - \text{difference} \tag{43}\\
-
-\\\text{coe} = \Biggl \lfloor \dfrac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \tag{44}\\
-
-\\\text{doc} = \text{edd} - \text{coe} \ast 146097 \tag{45}\\
-
-\\\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{46}\\
-
-\\\text{year} = \text{yoc} + \text{coe} \ast 400 \tag{47}\\
-
-\\\text{ada} = \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \tag{48}\\
-
-In the equations above, [eda](#eda) is “epochal day aggregate”, [coe](#coe) is “cycle of era”, [doc](#doc) is “day of cycle”, and [yoc](#yoc) is “year of cycle”.
-
-is “epochal day aggregate” ([eda](#eda)), If a subtrahend does not include a and a difference We do not need to include a with , because can also omit the . The current Zone 0 [yoe](#yoe)+[ada](#ada) timestamp is .
-
-omit the [yoe](#yoe) by passing the subtrahend, difference, and current “epochal day aggregate” ([eda](#eda)) to the
-
-We can omit the [tzo](#tzo) if the timestamp is based on Zone 0. The time since this webpage was loaded is current - load = diff. If needed, calculate the year by subtracting the [ada](#ada) and Δ from the current eda and passing the result to the equations below.
-
-To make it easier to compare timestamps, we should agree to always set the [tzo](#tzo) to zero. If we use a non-zero [tzo](#tzo), we should include it in between the event time and the elapsed time.
-
-Let’s say that you live in Zone 0 and there are four [tod](#tod) that are vital to your typical daily rhythm: you start work at 375 md, take a lunch break from 525 to 575 md, and finish work at 725 md. After one event passes, you can begin tracking the time until the next one and thus cycle through all four over the course of each day: current = 375 diff = 525 diff = 575 diff = 725 diff.
-
-Tzo range input (include tzo only if not zero)
-
-Another use case for minuend expansion is travel. If the current [tod](#tod) is the minuend and your estimated arrival time is the subtrahend, then travel time remaining will be the difference. When traveling, we can replace time with distance so that distance traveled so far is the minuend, the total distance is the subtrahend, and the distance remaining is the difference. Apart from travel, measuring distance in addition to time can be useful for tracking exercise such as running, bicycling, or swimming.
-
-To measure distances, Dec uses taur ([c](#c)) or zem ([z](#z)), with or without metric prefixes, depending on the order of magnitude of the distance being measured. One [c](#c) is close to the circumference of the earth and is equal to 10⁵ kilozem ([kz](#kz)) or 4 &times 10⁵ kilometers ([km](#km)). The distance between the Earth and the Moon ranges from 9.065 to 10.135 c. For larger distances, we can use astronomical units (au), light years (ly), or multiples of [c](#c) such as kilotaur ([kc](#kc)) and gigataur ([gc](#gc)).
-
-au = 3740 c = 3.74 kc ly ‎ =  236525000 c = 236525 kc = 2.36525 gc
-
-Speed is distance over time. Dec measures speed in omegar (v). The speed of the rotation of the Earth is close to one v and is equal to one c per day or one kz per b. The average speed of the orbit of the Moon around the Earth is about 2.2 v and the mean speed of the Earth orbit around the Sun is approximately 64 v. For higher speeds, we can use percent (%) or permille (‰) light speed (ls) and multiples of v like kv.
-
-%ls ‎ =  10‰ls ‎ =  647552 v = 647.552 kv
-
-For distances that we can measure on Earth, we may want to use submultiples of c such as mc or nc. One mc is 100 kz or 40 km and one nc is 1 decizem (dz) or 4 centimeters (cm). Similarly, we can use submultiples of v for speeds on Earth. One milliomegar (mv) is one mc per day, one kz per centiday (cd), or one z per b and is very close to one mile per hour. An airplane flying at an average speed of 500 mv will travel the 12500 kz from Cambridge MA to Cambridge UK in a quarter day: 12500 kz / 500 mv = 25 cd.
-
-Around the world in 80 days is a book published by Jules Verne in 1872. The average speed of a trip around the circumference of the earth in 80 days would be about 1 / 80 v or 12.5 mv, which is a typical speed for a bicycle. If we flew in a “[pedal powered airship](https://en.wikipedia.org/wiki/Airship#:~:text=pedal%20powered%20airship)” from Cambridge MA to Cambridge UK at an average speed of 12.5 mv, we could complete the journey in ten days: 12500 kz / 12.5 mv = 1000 cd.
-
-At sunrise, the [law](#law) is the amount of time until sunset. At solar noon, the time remaining before sunset will be [lah](#lah). Throughout the day, the current [tod](#tod) is equal to the sum of sunset [tod](#tod) and the difference between the current and sunset [tod](#tod):  - = .
-
-Like a countdown sequence, we can keep track of the time relative to sunset throughout the day. Instead of the current [tod](#tod), we can display the , the and the current [tod](#tod) is equal to the difference between the sunset [tod](#tod) and the [law](#law) and the current [tod](#tod) is equal to the difference between the sunset [tod](#tod) and the [lah](#lah). The Given a sunset [tod](#tod) of We can replace the current [tod](#tod) with an expression that provides the time relative to a given tod.
-
-can keep track of the remaining time until sunset by minuend The [tod](#tod) of sunrise is found by subtracting half the [law](#law) from solar noon [tod](#tod). The [tod](#tod) of sunset is found by adding half the [law](#law) to solar noon [tod](#tod).
-
-#### 12 Sunrise and sunset
-
-##### Solar hour angle
-
-To find the [UTC](#utc) [tzo](#tzo) of a given longitude and latitude, we could use an [application programming interface](https://en.wikipedia.org/wiki/API#:~:text=a%20type%20of%20software%20interface%2C%20offering%20a%20service%20to%20other%20pieces%20of%20software) (API) or a [database](https://observablehq.com/@jcolot/time-zone-service). If we only have longitude, we need to first round degrees to zero or the nearest multiple of fifteen for whole hour [tzo](#tzo), 7.5 for half hour [tzo](#tzo), or 3.75 for quarter hour [tzo](#tzo) and then divide by fifteen to convert degrees to hours.
+Likewise, a “positive interval [ada](#ada)” ([pia](#pia)) is the time since the start of the current year and a “negative interval [ada](#ada)” ([nia](#nia)) is the time until the start of the next year. A [pia](#pia) equals the current [ada](#ada), and a [nia](#nia) is the [pia](#pia) minus the [syl](#syl), just as an “negative integer [doy](#doy)” ([nid](#nid)) is a “positive integer [doy](#doy)” ([pid](#pid)) minus the [syl](#syl).
 
 #### Next
 
