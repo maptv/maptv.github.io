@@ -148,7 +148,7 @@
 - [tzo](#timezoneoffset){#tzo}: time zone offset
 - [u](#ounce){#u}: ounce (uncia in Latin), 500 grains, 32 grams, 500 drops, 32 milliliters
 - [uto](#universaltimeoffset){#uto}: universal time offset, the offset in decidays that turns a Zone 0 tod into Universal Time; a tzo is an integer uto
-    - [sto](#solartimeoffset){#sto}: solar time offset, a uto that is a terminating decimal
+    - [sto](#solartimeoffset){#sto}: solar time offset, any offset added to a Zone 0 tod, written after the tod as tod-offset; represents a single longitude, whereas a tzo is one of the 10 single-digit offsets of the Dec time zones
 - [utc](#coordinateduniversaltime){#utc}: [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - [US](#unitedstates){#us}: [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 - [UT](#universaltime){#ut}: [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation), a time standard based on the rotation of the Earth
