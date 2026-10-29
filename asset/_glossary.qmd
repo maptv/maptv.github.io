@@ -4,8 +4,8 @@
 - [a](#arcbeat){#a}: arcbeat, a hundred thousandth of a circle, 0.0036 degrees, 0.216 arcminutes, 12.96 arcseconds
 - [b](#beat){#b}: beat, centimilliday, a hundred thousandth of a day, 864 milliseconds
     - [mb](#millibeat){#mb}: millibeat, centimicroday, a thousandth of a beat, a hundred millionth of a day, 864 microseconds
-- [bpc](#beatpercentiday){#bpc}: a musical or heart beat per centiday, a tenth of a beat per milliday, 0.069[4]{.vinculum} beats per minute, 100 beats per day
-- [bpm](#beatpermilliday){#bpm}: a musical or heart beat per milliday, ten beats per centiday, 0.69[4]{.vinculum} beats per minute, 1000 beats per day
+- [bpc](#beatpercentiday){#bpc}: a musical or heart beat per centiday, a tenth of a beat per milliday, 0.069[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} beats per minute, 100 beats per day
+- [bpm](#beatpermilliday){#bpm}: a musical or heart beat per milliday, ten beats per centiday, 0.69[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} beats per minute, 1000 beats per day
 - [bmi](#bodymassindex){#bmi}: body mass index, kilograins of body mass divided by height in zem squared (kg/z&sup2;)
 - [b9](#base9){#b9}: base9, nonary, 9 digits written as the astronomical symbols of the Sun and the eight planets, ☉ ☿ ♀ ♁ ♂ ♃ ♄ ♅ ♆; the first digit after a tod with Dec seconds appended counts tens of Dec seconds
 - [b10](#base10){#b10}: base10, decimal, the digits 0 to 9
@@ -152,9 +152,9 @@
 - [utc](#coordinateduniversaltime){#utc}: [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - [US](#unitedstates){#us}: [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 - [UT](#universaltime){#ut}: [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation), a time standard based on the rotation of the Earth
-- [v](#omegar){#v}: omegar, ωr, 1041.[6]{.vinculum} miles per hour, 1.[6]{.vinculum} megameters per hour, 0.4[629]{.vinculum} kilometers per second, roughly 1.36 times the speed of sound
-    - [kv](#kiloomegar){#kv}: kiloomegar, kωr, 1.[6]{.vinculum} gigameters per hour, 0.4[629]{.vinculum} megameters per second, approximately 0.1544% of the speed of light
-    - [mv](#milliomegar){#mv}: milliomegar, mωr, 1.041[6]{.vinculum} miles per hour, 1.[6]{.vinculum} kilometers per hour, 0.4[629]{.vinculum} meters per second, approximately 0.136% of the speed of sound
+- [v](#omegar){#v}: omegar, ωr, 1041.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} miles per hour, 1.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} megameters per hour, 0.4[♃♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digits 5 and 6"} kilometers per second, roughly 1.36 times the speed of sound
+    - [kv](#kiloomegar){#kv}: kiloomegar, kωr, 1.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} gigameters per hour, 0.4[♃♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digits 5 and 6"} megameters per second, approximately 0.1544% of the speed of light
+    - [mv](#milliomegar){#mv}: milliomegar, mωr, 1.041[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} miles per hour, 1.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} kilometers per hour, 0.4[♃♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digits 5 and 6"} meters per second, approximately 0.136% of the speed of sound
 - [w](#wei){#w}: wěi (纬), parallel, a full circle around the Earth moving East or West at the same latitude, a measure of longitude; short for 纬圈 (wěiquān), "latitude circle"; can be thought of as a measure of the **w**idth of a jīng on **E**arth; "w" is written from left to right, like a wěi running from **W**est to **E**ast across a map, starts the word "width," as in the width of a map, and is one of the widest letters in proportional fonts; on a loom, 纬 is the weft, the threads that run crosswise
     - [dw](#deciwei){#dw}: deciwěi, a tenth of a wěi (纬), a tenth of a parallel
     - [mw](#milliwei){#mw}: milliwěi, a thousandth of a wěi (纬), a thousandth of a parallel
@@ -181,7 +181,7 @@
 - [z](#zoneequatorialmeter){#z}: zem, zone equatorial meter, 4 decimeters, 16 inches
     - [kz&sup2;](#squarekilozem){#kz2}: square kilozem, a million square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600 ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
     - [kz](#kilozem){#kz}: kilozem, 1000 zem, 400 meters, a quarter mile
-    - [z&sup2;](#squarezem){#z2}: square zem, hexamilliare, 16 square decimeters, 1.[7]{.vinculum} square feet, 256 square inches
+    - [z&sup2;](#squarezem){#z2}: square zem, hexamilliare, 16 square decimeters, 1.[♅]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 7"} square feet, 256 square inches
     - [cz&sup2;](#squarecentizem){#cz2}: square centizem, a ten-thousandth of a square zem, 16 square millimeters
     - [Dz&sup2;](#squaredecazem){#Dz2}: square decazem, 1 hexadeciare, 16 square meters, 19.75 square yards, 100 square zem
     - [z&sup3;](#cubiczem){#z3}: cubic zem, 1 keg, 64 liters, 1000 wine glasses, a million drops, half a barrel
