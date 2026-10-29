@@ -2,11 +2,12 @@
 
 ::: {.column-page-right #gloslist}
 - [a](#arcbeat){#a}: arcbeat, a hundred thousandth of a circle, 0.0036 degrees, 0.216 arcminutes, 12.96 arcseconds
+    - [ma](#milliarcbeats){#ma}: milliarcbeat, a thousandth of an arcbeat, a hundred millionth of a circle, 12.96 milliarcseconds
 - [b](#beat){#b}: beat, centimilliday, a hundred thousandth of a day, 864 milliseconds
     - [mb](#millibeat){#mb}: millibeat, centimicroday, a thousandth of a beat, a hundred millionth of a day, 864 microseconds
 - [bpc](#beatpercentiday){#bpc}: a musical or heart beat per centiday, a tenth of a beat per milliday, 0.069[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} beats per minute, 100 beats per day
 - [bpm](#beatpermilliday){#bpm}: a musical or heart beat per milliday, ten beats per centiday, 0.69[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} beats per minute, 1000 beats per day
-- [bmi](#bodymassindex){#bmi}: body mass index, kilograins of body mass divided by height in zem squared (kg/z&sup2;)
+- [BMI](#bodymassindex){#bmi}: body mass index, kilograins of body mass divided by height in zem squared (kg/z&sup2;)
 - [b9](#base9){#b9}: base9, nonary, 9 digits written as the astronomical symbols of the Sun and the eight planets, ☉ ☿ ♀ ♁ ♂ ♃ ♄ ♅ ♆; the first digit after a tod with Dec seconds appended counts tens of Dec seconds
 - [b10](#base10){#b10}: base10, decimal, the digits 0 to 9
 - [b24](#base24){#b24}: base24, 24 digits written as the lowercase Greek letters α to ω; counts sid after a number of Dec seconds or hours after a UTC offset
@@ -14,6 +15,7 @@
     - [gc](#gigataur){#gc}: gigataur, a billion taur
     - [kc](#kilotaur){#kc}: kilotaur, a thousand taur, 10^8^ kilozem
     - [mc](#millitaur){#mc}: millitaur, *m*𝜏*r*, a thousandth of a taur, 100 kilozem, 40 kilometers
+    - [&micro;c](#microtaur){#uc}: microtaur, *&micro;*𝜏*r*, a millionth of a taur, 100 zem, 40 meters
     - [nc](#nanotaur){#nc}: nanotaur, *n*𝜏*r*, a billionth of a taur, 100 millizem, 1 decizem, 4 centimeters
     - [nc&sup3;](#cubicnanotaur){#nc3}: cubic nanotaur, *n*𝜏*r*&sup3;, 1 cubic decizem
 - [d](#day){#d}: day, a tenth of a decaday, a seventh of a week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays, 1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse of a quotidie
@@ -24,14 +26,14 @@
     - [dow](#dayofweek){#dow}: day of week
     - [doy](#dayofyear){#doy}: day of year, xún * 10 + dox
     - [pid](#positiveintegerdoy){#pid}: positive integer day of year, days elapsed since the beginning of the year, 0 to 364 or 365
-    - [nid](#negativeintegerdoy){#nid}: negative integer day of year, pid [-]{.mono} syl, -365 or -366 to -1, the negative of the days left in the year
+    - [nid](#negativeintegerdoy){#nid}: negative integer day of year, pid &minus; syl, -365 or -366 to -1, the negative of the days left in the year
     - [mid](#mixedintegerdoy){#mid}: mixed integer day of year, an nid rewritten with negative leading digits (marked by a vinculum) and a positive last digit or two
     - [doe](#dayofera){#doe}: day of era, days since the Dec epoch
     - [eda](#epochaldayaggregate){#eda}: epochal day aggregate, doe + tod, days since the Dec epoch including the time of day
     - [edd](#edadifferencedifference){#edd}: eda difference difference, an eda minus a difference, used to recover the year and ada of a past event
     - [ada](#annualdayaggregate){#ada}: annual day aggregate, doy + tod
     - [pia](#positiveintervalada){#pia}: positive interval ada, the time since the start of the current year, equal to the ada
-    - [nia](#negativeintervalada){#nia}: negative interval ada, pia [-]{.mono} syl, the negative of the time until the start of the next year
+    - [nia](#negativeintervalada){#nia}: negative interval ada, pia &minus; syl, the negative of the time until the start of the next year
     - [doc](#dayofcycle){#doc}: day of cycle, days since the start of the current 400-year Gregorian cycle, 0 to 146096
     - doc~♀~: Decyther day of cycle, days since the start of the current 467-day Venusian cycle, doe mod 467, 0 to 466
     - [doh](#dayofhectoday){#doh}: day of hectoday, doy mod 100, the percent of a hectoday that has elapsed
@@ -39,20 +41,20 @@
     - dob~♀~: Decyther day of bimester, 0 to 57 in antes and the post of Qoc 2 or 0 to 58 in the other posts
     - [dot](#dayoftricennium){#dot}: day of tricennium, days since the start of the current 30-year lunar cycle, 0 to 10630
     - [doq](#dayofquadrimester){#doq}: day of quadrimester, days since the beginning of a Decyther quadrimester, 0 to 115 or 116
-    - [boq](#beginningofquadrimester){#boq}: beginning of quadrimester, the pid of Doq 0, pid [-]{.mono} doq
+    - [boq](#beginningofquadrimester){#boq}: beginning of quadrimester, the pid of Doq 0, pid &minus; doq
     - [qoc](#quadrimesterofcycle){#qoc}: quadrimester of cycle, zero-based index of a Decyther quadrimester, 0 to 3
-    - [bob](#beginningofbimester){#bob}: beginning of bimester, the pid of Dob 0, pid [-]{.mono} dob
-    - [bom](#beginningofmonth){#bom}: beginning of month, the pid of the day before the first day of the month, pid [-]{.mono} dom
+    - [bob](#beginningofbimester){#bob}: beginning of bimester, the pid of Dob 0, pid &minus; dob
+    - [bom](#beginningofmonth){#bom}: beginning of month, the pid of the day before the first day of the month, pid &minus; dom
     - [moc](#monthofcycle){#moc}: month of cycle, zero-based index of a Venusian month, 0 to 15
-    - [bow](#beginningofweek){#bow}: beginning of week, the pid of Dow 0, pid [-]{.mono} dow
+    - [bow](#beginningofweek){#bow}: beginning of week, the pid of Dow 0, pid &minus; dow
     - [boy](#beginningofyear){#boy}: beginning of year, midnight at the start of Day 0
     - [boe](#beginningofera){#boe}: beginning of era, midnight at the start of Day 0 of Year 0
     - [boc](#beginningofcycle){#boc}: beginning of cycle, the start of Doc~♀~ 0 and of the first ante in a Decyther cycle
     - [eoy](#endofyear){#eoy}: end of year, midnight at the end of Day 364 or 365
-    - [jdn](#Juliandaynumber){#jdn}: Julian day number, days since the start of the Julian period; increments at noon UTC
+    - [JDN](#Juliandaynumber){#jdn}: Julian day number, days since the start of the Julian period; increments at noon UTC
     - [lid](#lunarintercalationdifference){#lid}: lunar intercalation difference, a lunar nid that only resets after lunar leap years, -1063 to -1
-    - [ved](#venusianextracalationdifference){#ved}: Venusian extracalation difference, days until the end of Doc~♀~ 349, the last day of the one-day-shorter Qoc 2, Bimester 5, and Moc 11, (doc~♀~ + 117) mod 467 [-]{.mono} 467, -467 to -1
-    - [mud](#misalignedunitdifference){#mud}: misaligned unit difference, pid [-]{.mono} dom [-]{.mono} dow
+    - [ved](#venusianextracalationdifference){#ved}: Venusian extracalation difference, days until the end of Doc~♀~ 349, the last day of the one-day-shorter Qoc 2, Bimester 5, and Moc 11, (doc~♀~ + 117) mod 467 &minus; 467, -467 to -1
+    - [mud](#misalignedunitdifference){#mud}: misaligned unit difference, pid &minus; dom &minus; dow
     - [dd](#deciday){#dd}: deciday, a tenth of a day, 2.4 hours, 144 minutes
     - [cd](#centiday){#cd}: centiday, a hundredth of a day, 0.24 hours, 14.4 minutes
     - [md](#milliday){#md}: milliday, a thousandth of a day, 1.44 minutes
@@ -64,7 +66,7 @@
     - [c°](#compassdegree){#cdeg}: compass degree
     - [h°](#huedegree){#hdeg}: hue degree
 - [e](#egg){#e}: egg, 1000 grains, 2 ounces, 64 grams
-- [eot](#equationoftime){#eot}: equation of time, ast [-]{.mono} mst as a function of toy, about -9.8 to 11.4 millidays
+- [eot](#equationoftime){#eot}: equation of time, ast &minus; mst as a function of toy, about -9.8 to 11.4 millidays
 - [ℓ](#cubit){#ell}: ell, cubit, 10/9 zem
 - [f](#foot){#f}: foot, 0.75 zem, 75 millimeters 
 - [g](#gutta){#g}: drop (gutta in Latin) or grain (granum in Latin), 64 microliters or 64 milligrams
@@ -74,10 +76,10 @@
     - [pih](#positiveintegerhectoday){#pih}: positive integer hectoday, &LeftFloor;pid &div; 100&RightFloor;, 0 to 3
     - [nih](#negativeintegerhectoday){#nih}: negative integer hectoday, &LeftFloor;nid &div; 100&RightFloor;, -4 to -1
 - [hex](#hexadecimal){#hex}: hexadecimal, base 16
-- [hsl](#huesaturationlightness){#hsl}: hue saturation lightness
-- [hsv](#huesaturationvalue){#hsv}: hue saturation value
+- [HSL](#huesaturationlightness){#hsl}: hue saturation lightness
+- [HSV](#huesaturationvalue){#hsv}: hue saturation value
 - [i](#inch){#i}: inch, a sixteenth of a zem, 25 millimeters
-- [iso](#internationalorganizationforstandardization){#iso}: [International Organization for Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization), the body behind ISO 8601 dates such as 1970-01-01 (ISO month date) and 1970-W01-4 (ISO week date)
+- [ISO](#internationalorganizationforstandardization){#iso}: [International Organization for Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization), the body behind ISO 8601 dates such as 1970-01-01 (ISO month date) and 1970-W01-4 (ISO week date)
 - [j](#jing){#j}: jīng (经), a full circle around the Earth moving North or South through both Poles, a measure of latitude; short for 经圈 (jīngquān), "meridian circle," to emphasize a full circle rather than a meridian, which can be a half circle; an uppercase "J" without a serif is a vertical line drawn from top to bottom, like a jīng running from the North Pole to the South Pole, with a curve at the bottom where the jīng turns to come back up the other side of the Earth; although not the same as the jīng in Běijīng (北京) and Nánjīng (南京), jīng (经) is related to North (Běi) and South (Nán); on a loom, 经 is the warp, the threads that run lengthwise
     - [dj](#decijing){#dj}: decijīng, a tenth of a jīng (经)
     - [mj](#millijing){#mj}: millijīng, a thousandth of a jīng (经)
@@ -108,10 +110,10 @@
     - [saa](#solarazimuthangle){#saa}: solar azimuth angle, the direction of the Sun along the horizon measured clockwise from North
     - [mr](#millirose){#mr}: compass millirose, a thousandth of a *r*otation along the horizon, .36 compass degrees
 - [rad](#radian){#rad}: radian, 1/𝜏 turns, 360/𝜏 degrees, 1/𝜋 turns, 180/𝜋 degrees
-- [rgb](#redgreenblue){#rgb}: red green blue
+- [RGB](#redgreenblue){#rgb}: red green blue
 - [s](#second){#s}: second, 1/90 millidays, 10/9 beats, 1 Dec second = 0.96 SI seconds
     - [ds](#decisecond){#ds}: decisecond, a tenth of a Dec second, 1/900 millidays, 1/9 beats, 96 milliseconds
-    - [sid](#secondintervaldifference){#sid}: second interval difference, 1 SI second [-]{.mono} 1 Dec second, 1/24 Dec second, 1/25 SI second, 40 milliseconds
+    - [sid](#secondintervaldifference){#sid}: second interval difference, 1 SI second &minus; 1 Dec second, 1/24 Dec second, 1/25 SI second, 40 milliseconds
     - [sis](#sisecond){#sis}: SI second, 25/24 Dec seconds, 1/86.4 millidays, 1/86400 days
 - [soi](#spinorbitinterval){#soi}: spin orbit interval, a lunar day, 1.03505 days
     - [soy](#soiofyear){#soy}: soi of year
@@ -120,6 +122,7 @@
 - [sol](#speedoflight){#sol}: speed of light, 647.55170928 kiloomegar, 299792458 meters per second
 - [sos](#speedofsound){#sos}: speed of sound, 735.048 milliomegar, 340.3 meters per second
 - [sda](#solardeclinationangle){#sda}: solar declination angle, the latitude at which the Sun is directly overhead
+- [sea](#solarelevationangle){#sea}: solar elevation angle, the angle of the Sun above the horizon, negative when the Sun is below the horizon
 - [𝜏](#tau){#2pi}: 2𝜋 or approximately 6.2831853
     - [𝜋](#taudividedby2){#pi}: pi, 𝜏/2 or approximately 3.1415927
     - [ϡ](#taudividedby900){#sampi}: sampi, the Greek numeral for 900, 𝜏/900 or approximately 0.0069813 radians, 0.4 degrees
@@ -128,7 +131,7 @@
     - [12et](#twelveequaltemperament){#12et}: twelve equal temperament
 - [tod](#timeofday){#tod}: time of day
     - [pit](#positiveintervaltod){#pit}: positive interval tod, the time since the start of the current day (previous midnight), equal to the tod
-    - [nit](#negativeintervaltod){#nit}: negative interval tod, pit [-]{.mono} 1, the negative of the time until the start of the next day (next midnight)
+    - [nit](#negativeintervaltod){#nit}: negative interval tod, pit &minus; 1, the negative of the time until the start of the next day (next midnight)
     - [hms](#hourminutesecond){#hms}: hour minute second, a tod written as an hod, moh, and som triplet
     - [dsa](#dailysecondaggregate){#dsa}: daily second aggregate, seconds since midnight, tod &times; 86400
     - [hsa](#hourlysecondaggregate){#hsa}: hourly second aggregate, seconds since the top of the hour, dsa mod 3600
@@ -137,9 +140,9 @@
     - [som](#secondofminute){#som}: second of minute, &LeftFloor;hsa mod 60&RightFloor;, 0 to 59
     - [mst](#meansolartime){#mst}: mean solar time, solar time based only on longitude and the Zone 0 tod
     - [ast](#apparentsolartime){#ast}: apparent solar time, mst + eot(toy), solar time based on the actual position of the Sun
-    - [law](#lightarcwhole){#law}: light arc whole, the time from sunrise to sunset, 1 [-]{.mono} naw, sunset [-]{.mono} sunrise
-    - [lah](#lightarchalf){#da2}: light arc half, law/2, the time from sunrise to solar noon or from solar noon to sunset
-    - [naw](#nightarcwhole){#naw}: night arc whole, the time from sunset to sunrise, 1 [-]{.mono} law
+    - [law](#lightarcwhole){#law}: light arc whole, the time from sunrise to sunset, 1 &minus; naw, sunset &minus; sunrise
+    - [lah](#lightarchalf){#lah}: light arc half, law/2, the time from sunrise to solar noon or from solar noon to sunset
+    - [naw](#nightarcwhole){#naw}: night arc whole, the time from sunset to sunrise, 1 &minus; law
     - [nah](#nightarchalf){#nah}: night arc half, naw/2, the time from sunset to solar midnight or from solar midnight to sunrise
 - [t](#turn){#t}: turn, 360 degrees, 𝜏 or 2𝜋 radians
     - [ct](#centiturn){#ct}: centiturn, a hundredth of a turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
@@ -149,7 +152,7 @@
 - [u](#ounce){#u}: ounce (uncia in Latin), 500 grains, 32 grams, 500 drops, 32 milliliters
 - [uto](#universaltimeoffset){#uto}: universal time offset, the offset in decidays that turns a Zone 0 tod into Universal Time; a tzo is an integer uto
     - [sto](#solartimeoffset){#sto}: solar time offset, any offset added to a Zone 0 tod, written after the tod as tod-offset; represents a single longitude, whereas a tzo is one of the 10 single-digit offsets of the Dec time zones
-- [utc](#coordinateduniversaltime){#utc}: [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
+- [UTC](#coordinateduniversaltime){#utc}: [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - [US](#unitedstates){#us}: [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 - [UT](#universaltime){#ut}: [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation), a time standard based on the rotation of the Earth
 - [v](#omegar){#v}: omegar, ωr, 1041.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} miles per hour, 1.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} megameters per hour, 0.4[♃♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digits 5 and 6"} kilometers per second, roughly 1.36 times the speed of sound
@@ -158,6 +161,7 @@
 - [w](#wei){#w}: wěi (纬), parallel, a full circle around the Earth moving East or West at the same latitude, a measure of longitude; short for 纬圈 (wěiquān), "latitude circle"; can be thought of as a measure of the **w**idth of a jīng on **E**arth; "w" is written from left to right, like a wěi running from **W**est to **E**ast across a map, starts the word "width," as in the width of a map, and is one of the widest letters in proportional fonts; on a loom, 纬 is the weft, the threads that run crosswise
     - [dw](#deciwei){#dw}: deciwěi, a tenth of a wěi (纬), a tenth of a parallel
     - [mw](#milliwei){#mw}: milliwěi, a thousandth of a wěi (纬), a thousandth of a parallel
+    - [&micro;w](#microwei){#uw}: microwěi, a millionth of a wěi (纬), a millionth of a parallel
 - [x](#xun){#x}: xún (旬), decaday, a group of ten days, 2 pentadays, represented by x like the Roman numeral X
     - [pix](#positiveintegerxun){#pix}: positive integer xún, &LeftFloor;pid &div; 10&RightFloor;, 0 to 36
     - [nix](#negativeintegerxun){#nix}: negative integer xún, &LeftFloor;nid &div; 10&RightFloor;, -37 to -1
@@ -169,7 +173,7 @@
     - [eya](#epochalyearaggregate){#eya}: epochal year aggregate, yoe + toy, years since the Dec epoch including the fraction of the current year
     - [toy](#timeofyear){#toy}: time of year, the fraction of the year that has elapsed, eya mod 1, ada &div; syl
     - [ymd](#yearmonthday){#ymd}: year month day, a Gregorian calendar date triplet
-    - [syl](#solaryearlength){#syl}: solar year length, 365 or 366 days, pid [-]{.mono} nid
+    - [syl](#solaryearlength){#syl}: solar year length, 365 or 366 days, pid &minus; nid
     - [lyl](#lunaryearlength){#lyl}: lunar year length, 354 or 355 days
     - [cey](#commonerayear){#cey}: common era year, an ISO 8601 (Gregorian calendar) year number
     - [coe](#cycleofera){#coe}: cycle of era, 400-year cycles since the Dec epoch

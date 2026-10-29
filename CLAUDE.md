@@ -87,9 +87,18 @@ updated as new preferences come up; don't let it grow into a changelog.
   "2 kilotaur" is 2000𝜏r, never "kilotaurs" or "milliomegars". Transliterated foreign
   words are also invariable: jīng, wěi, and xún never take an "s". Naturalized English
   words with Latin or Greek roots (turn, beat, perbeat, degree) pluralize normally.
+- Acronym case: acronyms Dec coins are all lowercase (doy, tod, tzo); external acronyms
+  keep their standard form (UTC, HSL, HSV, RGB, ISO, JDN, BMI). This applies to link text
+  and tooltips, not to anchors like `#utc`. Case can tell them apart: Dec's bpm (beats
+  per milliday) vs. the external BPM (beats per minute).
+- Minus vs. negative: in prose, the binary minus is `&minus;` (as wide as a plus sign in
+  every font) and the unary negative sign is a plain hyphen (`-365`), matching
+  `\text{x} - \text{y}` vs. `\text{-y}` in LaTeX. Don't use `[-]{.mono}`.
 - Retired names: longitude is in wěi (`w`, `dw`, `mw`), not parallels/λ; latitude is in
   jīng (`j`, `dj`, `mj`), not meridians (`m`, `mm`) or φ, but geographic terms like "prime
-  meridian" and "quarter meridian" stay; days in the year is `syl`, not `n` (the glossary's `n` is
+  meridian" and "quarter meridian" stay; "parallel" is fine for explaining what a wěi is,
+  but avoid "lines of longitude/latitude", since Dec measures longitude with lines of
+  latitude and vice versa; days in the year is `syl`, not `n` (the glossary's `n` is
   a musical note); the inverse of a beat is perbeat (`þ`), not `iob`.
 - Dec has no negative time zone offsets: the international date line and the prime meridian
   coincide, so a negative UTC offset becomes a positive Dec offset by adding 1 day. A
