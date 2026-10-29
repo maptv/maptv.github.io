@@ -220,8 +220,8 @@ data-bs-title="day">d</a><span class="color365by366">365</span>. To
 insert or remove <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color365by366">365</span>, use the
 “Year length”
-[radio](https://observablehq.com/@observablehq/input-radio)📻input to
-set the number of days in the year.
+[radio](https://observablehq.github.io/framework/inputs/radio#:~:text=allows%20the%20user%20to%20choose%20one%20of%20a%20given%20set%20of%20values)📻input
+to set the number of days in the year.
 
 The insertion of <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color365by366">365</span> shifts
@@ -761,8 +761,8 @@ data-bs-title="Coordinated Universal Time">UTC</a> date,
 <span class="nowrap">${decYearColor}<span class="mono">+</span>${decDotyPadColor}</span>,
 informs us that Year ${decYearColor1} began ${decDotyColor}
 ${decDotyDays} ago, whereas its countdown equivalent,
-<span class="nowrap">${nextYearColor}<span class="mono">-</span>${TminusPaddedColor}</span>,
-tells us that Year ${nextYearColor1} will begin in ${TminusColor}
+<span class="nowrap">${nextYearColor}−${TminusPaddedColor}</span>, tells
+us that Year ${nextYearColor1} will begin in ${TminusColor}
 ${TminusDays}.
 
 <div id="equationgroup02" class="equationgroup">
@@ -813,11 +813,11 @@ data-bs-title="hexadecimal">hex</a>), “[hue saturation
 lightness](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)”
 (<a href="#hsl" id="huesaturationlightness" class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="hue saturation lightness">hsl</a>), or
+data-bs-title="hue saturation lightness">HSL</a>), or
 “[<span class="color0">red</span> <span class="color4">green</span>
 <span class="color7">blue</span>](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model)”
 (<a href="#rgb" id="redgreenblue" class="tool" data-bs-toggle="tooltip"
-data-bs-title="red green blue">rgb</a>) triplet. Use the “Day of year”
+data-bs-title="red green blue">RGB</a>) triplet. Use the “Day of year”
 range inputs above to choose from the ${nDaysInput}
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</a>, 37
@@ -828,12 +828,12 @@ data-bs-title="days of xún">dox</a> that can be displayed in
 <a href="#tbl-color" class="quarto-xref">Table 1</a> below and compare
 their corresponding
 [hue](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram)
-degrees (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hsl degrees">h°</span>) and
+degrees (<a href="#hdeg" class="tool" data-bs-toggle="tooltip"
+data-bs-title="HSL or HSV degrees">h°</a>) and
 <a href="#hex" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</a> and
 <a href="#rgb" class="tool" data-bs-toggle="tooltip"
-data-bs-title="red green blue">rgb</a> triplets.
+data-bs-title="red green blue">RGB</a> triplets.
 
 <table>
 <colgroup>
@@ -849,8 +849,8 @@ data-bs-title="red green blue">rgb</a> triplets.
 <tr>
 <th></th>
 <th></th>
-<th><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hsl or hsv degrees">h°</span></th>
+<th><a href="#hdeg" class="tool" data-bs-toggle="tooltip"
+data-bs-title="HSL or HSV degrees">h°</a></th>
 <th><span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</span></th>
 <th><span class="color0">red</span></th>
@@ -1436,7 +1436,7 @@ all denote the last day of the Dec year:
 <span class="color364by365"><span class="overline">1̅</span></span> =
 <span class="color364by365"><span class="overline">1̅</span>9</span> =
 -10 + 9. The current Dec countdown date can be written as
-${nextYearColor2}<span class="mono">-</span>${TminusPaddedColor1},
+${nextYearColor2}−${TminusPaddedColor1},
 ${nextYearColor3}+<span class="overline">${TminusPaddedColor2}</span>,
 ${nextYearColor4}+<span class="overline">${decNixAbsColor}</span>${decDoxNidMidColor},
 or
@@ -4169,7 +4169,7 @@ data-bs-title="day">d</a><span class="color316by365">316</span>, is
 close to the center of
 <a href="#h" class="tool" data-bs-toggle="tooltip"
 data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>:
-<span class="color316by365">316</span> <span class="mono">-</span> 365 =
+<span class="color316by365">316</span> − 365 =
 <span class="color316by365">-49</span>.
 
 <div id="equationgroup05" class="equationgroup">
@@ -4337,15 +4337,14 @@ ${decDohNidMidColor}. The [radix
 complement](https://en.wikipedia.org/wiki/Method_of_complements#:~:text=The%20radix%20complement%20of,is%20defined%20as)
 of the <a href="#doh" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of hectoday">doh</a>
-(100<span class="mono">-</span><a href="#doh" class="tool" data-bs-toggle="tooltip"
+(100−<a href="#doh" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of hectoday">doh</a>) is the percent of the
 <a href="#pih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer hectoday">pih</a>, 100
-<span class="mono">-</span> ${decDohPidColor1} = ${decDohPidMidColor},
-or the <a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectoday">nih</a>, 100
-<span class="mono">-</span> ${decDohNidMidColor1} = ${decDohNidColor},
-that is left.
+data-bs-title="positive integer hectoday">pih</a>, 100 −
+${decDohPidColor1} = ${decDohPidMidColor}, or the
+<a href="#nih" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectoday">nih</a>, 100 −
+${decDohNidMidColor1} = ${decDohNidColor}, that is left.
 
 <div id="equationgroup06" class="equationgroup">
 
@@ -4361,7 +4360,7 @@ data-bs-title="days of xún">dox</a> is the number of days in an
 data-bs-title="group of ten days">x</a> that have passed and the radix
 complement of a <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a>
-(10<span class="mono">-</span><a href="#dox" class="tool" data-bs-toggle="tooltip"
+(10−<a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a>) is the number of days in the
 <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of ten days">x</a> that remain. The
@@ -4525,9 +4524,8 @@ The last digit of the
 data-bs-title="days of hectoday">doh</a> is the
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a> and the final digit of the
-100<span class="mono">-</span><a href="#doh" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of hectoday">doh</a> is (10
-<span class="mono">-</span>
+100−<a href="#doh" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of hectoday">doh</a> is (10 −
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a>)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
@@ -4729,7 +4727,7 @@ data-bs-title="day of week">dow</a> above it.
 <td><span class="color6by7">6</span></td>
 </tr>
 <tr>
-<td><span class="mono">-</span></td>
+<td>−</td>
 <td><span class="color0">7</span></td>
 <td><span class="color1by7">6</span></td>
 <td><span class="color2by7">5</span></td>
@@ -4792,8 +4790,8 @@ data-bs-title="day">d</a><span class="color267by365">267</span> as
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a><sub>S</sub> into
 <a href="#eq-dowdif" class="quarto-xref">Equation 19</a>,
-${day266dotwDiffColor} = (<span class="color4by7">4</span>
-<span class="mono">-</span> ${day266dotwColor} + 7)
+${day266dotwDiffColor} = (<span class="color4by7">4</span> −
+${day266dotwColor} + 7)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7, and then add 267: ${day266dotwDiffPlus267Color} =
 ${day266dotwDiffColor1} + <span class="color267by365">267</span>.
@@ -4833,7 +4831,7 @@ data-bs-title="solar year length">syl</a> to find the number of days
 until <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color299by365">299</span> of next
 year:
-${nextYearColor6}+<span class="color299by365">299</span><span class="mono">-</span>${xmasNextColor}.
+${nextYearColor6}+<span class="color299by365">299</span>−${xmasNextColor}.
 
 # Year of era (yoe)
 
@@ -5170,8 +5168,7 @@ data-bs-title="positive integer day of year">pid</a>:
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of week">bow</a> =
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a>
-<span class="mono">-</span>
+data-bs-title="positive integer day of year">pid</a> −
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a>. According to the current Zone
 <span class="color0">0</span>
@@ -5201,7 +5198,7 @@ countdown <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of week">bow</a>. The countdown equivalent of
 <span class="nowrap">${decYearColor4}<span class="mono">${dotw0sign}</span>${dotw0dotyColor3}+${dotwColor2}</span>
 is
-<span class="nowrap">${nextYearColor7}<span class="mono">-</span>${dotw0dotyNegColor}+${dotwColor3}</span>.
+<span class="nowrap">${nextYearColor7}−${dotw0dotyNegColor}+${dotwColor3}</span>.
 Like <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a>, countdown
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
@@ -5219,7 +5216,7 @@ ${decYearLastBowSumColor} + ${decYearLastDowColor1}.
 Based on the calculation above, the Dec
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of week">bow</a> date which is 52 weeks after
-<span class="nowrap">${nextYearColor8}<span class="mono">-</span>${decYearLastBowNegColor1}<span class="mono">+</span>${decYearLastDowColor2}</span>
+<span class="nowrap">${nextYearColor8}−${decYearLastBowNegColor1}<span class="mono">+</span>${decYearLastDowColor2}</span>
 is
 <span class="nowrap">${nextYearColor9}<span class="mono">+</span>${decYearLastBowSumColor1}<span class="mono">+</span>${decYearLastDowColor3}</span>.
 When we see the same
@@ -5322,7 +5319,7 @@ By rearranging <a href="#eq-woy" class="quarto-xref">Equation 30</a>, we
 can see that <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginnings of week">bow</a> should expand to
 <span class="nowrap">7×<a href="#woy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="week of year">woy</a><span class="mono">-</span><a href="#boy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="week of year">woy</a>−<a href="#boy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of year">boy</a><a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a></span>, but
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
@@ -5333,7 +5330,7 @@ as if they were equivalent:
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of week">bow</a> =
 <span class="nowrap"><s>7×</s><a href="#woy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="week of year">woy</a><s><span class="mono">-</span><a href="#boy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="week of year">woy</a><s>−<a href="#boy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of year">boy</a><a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a></s></span>. To make sure that we can
 tell <a href="#bow" class="tool" data-bs-toggle="tooltip"
@@ -5812,7 +5809,7 @@ data-bs-title="day of week">dow</a>, we expand a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> into a
 <span class="nowrap">7×<a href="#woy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="week of year">woy</a><span class="mono">-</span><a href="#boy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="week of year">woy</a>−<a href="#boy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of year">boy</a><a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a>+<a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a></span>, discard everything except
@@ -5889,8 +5886,7 @@ data-bs-title="beginning of month">bom</a>, we can subtract a
 data-bs-title="day of month">dom</a> from a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a>:
-${monthNumberColor} = ${dotyInputColor7} <span class="mono">-</span>
-${dayofmonthColor}.
+${monthNumberColor} = ${dotyInputColor7} − ${dayofmonthColor}.
 
 ``` {ojs}
 //| echo: false
@@ -7535,9 +7531,8 @@ Lunar Month 11 is 325. The length of Lunar Month 11 is 325 less than the
 <a href="#lyl" class="tool" data-bs-toggle="tooltip"
 data-bs-title="lunar year length">lyl</a>.
 
-Unlike lunar months, bimesters maintain a constant length for 2 × 354
-<span class="mono">-</span> 59 = 649 or 3 × 354
-<span class="mono">-</span> 59 = 1003
+Unlike lunar months, bimesters maintain a constant length for 2 × 354 −
+59 = 649 or 3 × 354 − 59 = 1003
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a>. To indicate when the bimester length will
 change, Dec provides “lunar intercalation differences”
@@ -7578,8 +7573,7 @@ data-bs-title="lunar intercalation difference">lid</a> preceded by the
 <a href="#yoe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">yoe</a>+<a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> of the day after a
-lunar leap day:
-${decDob59yColor}+${decDob59dColor}<span class="mono">-</span>${decLidColor}.
+lunar leap day: ${decDob59yColor}+${decDob59dColor}−${decLidColor}.
 
 <div id="equationgroup24" class="equationgroup">
 
@@ -7641,9 +7635,8 @@ data-bs-title="solar year length">syl</a> to 352
 data-bs-title="spin orbit intervals">soi</a> if the year is evenly
 divisible by 8 and to 353
 <a href="#soi" class="tool" data-bs-toggle="tooltip"
-data-bs-title="spin orbit intervals">soi</a> otherwise: 7 ÷ 8
-<span class="mono">-</span> 0.87391999 = 0.00108001 ≈ 1 ÷ 926. For
-greater precision, the Decalunar
+data-bs-title="spin orbit intervals">soi</a> otherwise: 7 ÷ 8 −
+0.87391999 = 0.00108001 ≈ 1 ÷ 926. For greater precision, the Decalunar
 <a href="#syl" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar year length">syl</a> could be calculated as in
 <a href="#eq-lunarsyl" class="quarto-xref">Equation 58</a>.
@@ -8515,21 +8508,24 @@ additional files or configuration. A Quarto output file can have both a
 
 <div id="gloslist" class="column-page-right">
 
-- <a href="#arcbeat" id="ab">a</a>: arcbeat, a hundred thousandth of a
+- <a href="#arcbeat" id="a">a</a>: arcbeat, a hundred thousandth of a
   circle, 0.0036 degrees, 0.216 arcminutes, 12.96 arcseconds
+  - <a href="#milliarcbeats" id="ma">ma</a>: milliarcbeat, a thousandth
+    of an arcbeat, a hundred millionth of a circle, 12.96
+    milliarcseconds
 - <a href="#beat" id="b">b</a>: beat, centimilliday, a hundred
   thousandth of a day, 864 milliseconds
   - <a href="#millibeat" id="mb">mb</a>: millibeat, centimicroday, a
     thousandth of a beat, a hundred millionth of a day, 864 microseconds
 - <a href="#beatpercentiday" id="bpc">bpc</a>: a musical or heart beat
-  per centiday, a tenth of a beat per milliday,
-  0.069<span class="vinculum">4</span> beats per minute, 100 beats per
-  day
+  per centiday, a tenth of a beat per milliday, 0.069<span class="tool"
+  data-bs-toggle="tooltip" data-bs-title="base9 digit 4">♂</span> beats
+  per minute, 100 beats per day
 - <a href="#beatpermilliday" id="bpm">bpm</a>: a musical or heart beat
-  per milliday, ten beats per centiday,
-  0.69<span class="vinculum">4</span> beats per minute, 1000 beats per
-  day
-- <a href="#bodymassindex" id="bmi">bmi</a>: body mass index, kilograins
+  per milliday, ten beats per centiday, 0.69<span class="tool"
+  data-bs-toggle="tooltip" data-bs-title="base9 digit 4">♂</span> beats
+  per minute, 1000 beats per day
+- <a href="#bodymassindex" id="bmi">BMI</a>: body mass index, kilograins
   of body mass divided by height in zem squared (kg/z²)
 - <a href="#base9" id="b9">b9</a>: base9, nonary, 9 digits written as
   the astronomical symbols of the Sun and the eight planets, ☉ ☿ ♀ ♁ ♂ ♃
@@ -8548,6 +8544,8 @@ additional files or configuration. A Quarto output file can have both a
     10<sup>8</sup> kilozem
   - <a href="#millitaur" id="mc">mc</a>: millitaur, *m*𝜏*r*, a
     thousandth of a taur, 100 kilozem, 40 kilometers
+  - <a href="#microtaur" id="uc">µc</a>: microtaur, *µ*𝜏*r*, a millionth
+    of a taur, 100 zem, 40 meters
   - <a href="#nanotaur" id="nc">nc</a>: nanotaur, *n*𝜏*r*, a billionth
     of a taur, 100 millizem, 1 decizem, 4 centimeters
   - <a href="#cubicnanotaur" id="nc3">nc³</a>: cubic nanotaur, *n*𝜏*r*³,
@@ -8567,7 +8565,7 @@ additional files or configuration. A Quarto output file can have both a
     of year, days elapsed since the beginning of the year, 0 to 364 or
     365
   - <a href="#negativeintegerdoy" id="nid">nid</a>: negative integer day
-    of year, pid - syl, -365 or -366 to -1, the negative of the days
+    of year, pid − syl, -365 or -366 to -1, the negative of the days
     left in the year
   - <a href="#mixedintegerdoy" id="mid">mid</a>: mixed integer day of
     year, an nid rewritten with negative leading digits (marked by a
@@ -8582,6 +8580,11 @@ additional files or configuration. A Quarto output file can have both a
     ada of a past event
   - <a href="#annualdayaggregate" id="ada">ada</a>: annual day
     aggregate, doy + tod
+  - <a href="#positiveintervalada" id="pia">pia</a>: positive interval
+    ada, the time since the start of the current year, equal to the ada
+  - <a href="#negativeintervalada" id="nia">nia</a>: negative interval
+    ada, pia − syl, the negative of the time until the start of the next
+    year
   - <a href="#dayofcycle" id="doc">doc</a>: day of cycle, days since the
     start of the current 400-year Gregorian cycle, 0 to 146096
   - doc<sub>♀</sub>: Decyther day of cycle, days since the start of the
@@ -8597,17 +8600,17 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#dayofquadrimester" id="doq">doq</a>: day of quadrimester,
     days since the beginning of a Decyther quadrimester, 0 to 115 or 116
   - <a href="#beginningofquadrimester" id="boq">boq</a>: beginning of
-    quadrimester, the pid of Doq 0, pid - doq
+    quadrimester, the pid of Doq 0, pid − doq
   - <a href="#quadrimesterofcycle" id="qoc">qoc</a>: quadrimester of
     cycle, zero-based index of a Decyther quadrimester, 0 to 3
   - <a href="#beginningofbimester" id="bob">bob</a>: beginning of
-    bimester, the pid of Dob 0, pid - dob
+    bimester, the pid of Dob 0, pid − dob
   - <a href="#beginningofmonth" id="bom">bom</a>: beginning of month,
-    the pid of the day before the first day of the month, pid - dom
+    the pid of the day before the first day of the month, pid − dom
   - <a href="#monthofcycle" id="moc">moc</a>: month of cycle, zero-based
     index of a Venusian month, 0 to 15
   - <a href="#beginningofweek" id="bow">bow</a>: beginning of week, the
-    pid of Dow 0, pid - dow
+    pid of Dow 0, pid − dow
   - <a href="#beginningofyear" id="boy">boy</a>: beginning of year,
     midnight at the start of Day 0
   - <a href="#beginningofera" id="boe">boe</a>: beginning of era,
@@ -8617,7 +8620,7 @@ additional files or configuration. A Quarto output file can have both a
     cycle
   - <a href="#endofyear" id="eoy">eoy</a>: end of year, midnight at the
     end of Day 364 or 365
-  - <a href="#Juliandaynumber" id="jdn">jdn</a>: Julian day number, days
+  - <a href="#Juliandaynumber" id="jdn">JDN</a>: Julian day number, days
     since the start of the Julian period; increments at noon UTC
   - <a href="#lunarintercalationdifference" id="lid">lid</a>: lunar
     intercalation difference, a lunar nid that only resets after lunar
@@ -8625,16 +8628,18 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#venusianextracalationdifference" id="ved">ved</a>:
     Venusian extracalation difference, days until the end of
     Doc<sub>♀</sub> 349, the last day of the one-day-shorter Qoc 2,
-    Bimester 5, and Moc 11, (doc<sub>♀</sub> + 117) mod 467 - 467, -467
+    Bimester 5, and Moc 11, (doc<sub>♀</sub> + 117) mod 467 − 467, -467
     to -1
   - <a href="#misalignedunitdifference" id="mud">mud</a>: misaligned
-    unit difference, pid - dom - dow
+    unit difference, pid − dom − dow
   - <a href="#deciday" id="dd">dd</a>: deciday, a tenth of a day, 2.4
     hours, 144 minutes
   - <a href="#centiday" id="cd">cd</a>: centiday, a hundredth of a day,
     0.24 hours, 14.4 minutes
   - <a href="#milliday" id="md">md</a>: milliday, a thousandth of a day,
     1.44 minutes
+  - <a href="#centimilliday" id="dmd">dmd</a>: decimilliday, a ten
+    thousandth of a day, 10 beats, 8640 milliseconds
   - <a href="#centimilliday" id="cmd">cmd</a>: centimilliday, a hundred
     thousandth of a day, 1 beat, 864 milliseconds
   - <a href="#microday" id="ud">µd</a>: microday, a millionth of a day,
@@ -8646,7 +8651,7 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#compassdegree" id="cdeg">c°</a>: compass degree
   - <a href="#huedegree" id="hdeg">h°</a>: hue degree
 - <a href="#egg" id="e">e</a>: egg, 1000 grains, 2 ounces, 64 grams
-- <a href="#equationoftime" id="eot">eot</a>: equation of time, ast -
+- <a href="#equationoftime" id="eot">eot</a>: equation of time, ast −
   mst as a function of toy, about -9.8 to 11.4 millidays
 - <a href="#cubit" id="ell">ℓ</a>: ell, cubit, 10/9 zem
 - <a href="#foot" id="f">f</a>: foot, 0.75 zem, 75 millimeters
@@ -8663,12 +8668,12 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#negativeintegerhectoday" id="nih">nih</a>: negative
     integer hectoday, ⌊nid ÷ 100⌋, -4 to -1
 - <a href="#hexadecimal" id="hex">hex</a>: hexadecimal, base 16
-- <a href="#huesaturationlightness" id="hsl">hsl</a>: hue saturation
+- <a href="#huesaturationlightness" id="hsl">HSL</a>: hue saturation
   lightness
-- <a href="#huesaturationvalue" id="hsv">hsv</a>: hue saturation value
+- <a href="#huesaturationvalue" id="hsv">HSV</a>: hue saturation value
 - <a href="#inch" id="i">i</a>: inch, a sixteenth of a zem, 25
   millimeters
-- <a href="#internationalorganizationforstandardization" id="iso">iso</a>:
+- <a href="#internationalorganizationforstandardization" id="iso">ISO</a>:
   [International Organization for
   Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization),
   the body behind ISO 8601 dates such as 1970-01-01 (ISO month date) and
@@ -8680,8 +8685,10 @@ additional files or configuration. A Quarto output file can have both a
   uppercase “J” without a serif is a vertical line drawn from top to
   bottom, like a jīng running from the North Pole to the South Pole,
   with a curve at the bottom where the jīng turns to come back up the
-  other side of the Earth; on a loom, 经 is the warp, the threads that
-  run lengthwise
+  other side of the Earth; although not the same as the jīng in Běijīng
+  (北京) and Nánjīng (南京), jīng (经) is related to North (Běi) and
+  South (Nán); on a loom, 经 is the warp, the threads that run
+  lengthwise
   - <a href="#decijing" id="dj">dj</a>: decijīng, a tenth of a jīng (经)
   - <a href="#millijing" id="mj">mj</a>: millijīng, a thousandth of a
     jīng (经)
@@ -8735,22 +8742,22 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#quotidie" id="q">q</a>: quotidie, the inverse of a day, a
   hundred thousandth of a perbeat; the letter “q” in quotidie can be
   flipped vertically to produce the letter “d” in day
-- <a href="#rose" id="r">r</a>: compass rose, a full circle along the
-  horizon, 360 compass degrees
+- <a href="#rose" id="r">r</a>: compass rose, a full *r*otation along
+  the horizon, 360 compass degrees
   - <a href="#solarazimuthangle" id="saa">saa</a>: solar azimuth angle,
     the direction of the Sun along the horizon measured clockwise from
     North
   - <a href="#millirose" id="mr">mr</a>: compass millirose, a thousandth
-    of a circle along the horizon, .36 compass degrees
-- <a href="#radian" id="rad">rad</a>: radian, $1\over\tau$ turns,
-  $360\over\tau$ degrees, $1\over 2\pi$ turns, $180\over\pi$ degrees
-- <a href="#redgreenblue" id="rgb">rgb</a>: red green blue
+    of a *r*otation along the horizon, .36 compass degrees
+- <a href="#radian" id="rad">rad</a>: radian, 1/𝜏 turns, 360/𝜏 degrees,
+  1/𝜋 turns, 180/𝜋 degrees
+- <a href="#redgreenblue" id="rgb">RGB</a>: red green blue
 - <a href="#second" id="s">s</a>: second, 1/90 millidays, 10/9 beats, 1
   Dec second = 0.96 SI seconds
   - <a href="#decisecond" id="ds">ds</a>: decisecond, a tenth of a Dec
     second, 1/900 millidays, 1/9 beats, 96 milliseconds
   - <a href="#secondintervaldifference" id="sid">sid</a>: second
-    interval difference, 1 SI second - 1 Dec second, 1/24 Dec second,
+    interval difference, 1 SI second − 1 Dec second, 1/24 Dec second,
     1/25 SI second, 40 milliseconds
   - <a href="#sisecond" id="sis">sis</a>: SI second, 25/24 Dec seconds,
     1/86.4 millidays, 1/86400 days
@@ -8767,6 +8774,9 @@ additional files or configuration. A Quarto output file can have both a
   milliomegar, 340.3 meters per second
 - <a href="#solardeclinationangle" id="sda">sda</a>: solar declination
   angle, the latitude at which the Sun is directly overhead
+- <a href="#solarelevationangle" id="sea">sea</a>: solar elevation
+  angle, the angle of the Sun above the horizon, negative when the Sun
+  is below the horizon
 - <a href="#tau" id="2pi">𝜏</a>: 2𝜋 or approximately 6.2831853
   - <a href="#taudividedby2" id="pi">𝜋</a>: pi, 𝜏/2 or approximately
     3.1415927
@@ -8779,6 +8789,12 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#twelveequaltemperament" id="12et">12et</a>: twelve equal
     temperament
 - <a href="#timeofday" id="tod">tod</a>: time of day
+  - <a href="#positiveintervaltod" id="pit">pit</a>: positive interval
+    tod, the time since the start of the current day (previous
+    midnight), equal to the tod
+  - <a href="#negativeintervaltod" id="nit">nit</a>: negative interval
+    tod, pit − 1, the negative of the time until the start of the next
+    day (next midnight)
   - <a href="#hourminutesecond" id="hms">hms</a>: hour minute second, a
     tod written as an hod, moh, and som triplet
   - <a href="#dailysecondaggregate" id="dsa">dsa</a>: daily second
@@ -8795,14 +8811,14 @@ additional files or configuration. A Quarto output file can have both a
     time based only on longitude and the Zone 0 tod
   - <a href="#apparentsolartime" id="ast">ast</a>: apparent solar time,
     mst + eot(toy), solar time based on the actual position of the Sun
-  - <a href="#dayarc" id="da">da</a>: day arc, the time from sunrise to
-    sunset, sunset - sunrise
-  - <a href="#halfdayarc" id="da2">da/2</a>: half day arc, the time from
-    sunrise to solar noon or from solar noon to sunset
-  - <a href="#nightarc" id="na">na</a>: night arc, the time from sunset
-    to sunrise, 1 - da
-  - <a href="#halfnightarc" id="na2">na/2</a>: half night arc, the time
-    from sunset to solar midnight or from solar midnight to sunrise
+  - <a href="#lightarcwhole" id="law">law</a>: light arc whole, the time
+    from sunrise to sunset, 1 − naw, sunset − sunrise
+  - <a href="#lightarchalf" id="lah">lah</a>: light arc half, law/2, the
+    time from sunrise to solar noon or from solar noon to sunset
+  - <a href="#nightarcwhole" id="naw">naw</a>: night arc whole, the time
+    from sunset to sunrise, 1 − law
+  - <a href="#nightarchalf" id="nah">nah</a>: night arc half, naw/2, the
+    time from sunset to solar midnight or from solar midnight to sunrise
 - <a href="#turn" id="t">t</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians
   - <a href="#centiturn" id="ct">ct</a>: centiturn, a hundredth of a
     turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
@@ -8816,9 +8832,11 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#universaltimeoffset" id="uto">uto</a>: universal time
   offset, the offset in decidays that turns a Zone 0 tod into Universal
   Time; a tzo is an integer uto
-  - <a href="#solartimeoffset" id="sto">sto</a>: solar time offset, a
-    uto that is a terminating decimal
-- <a href="#coordinateduniversaltime" id="utc">utc</a>: [Coordinated
+  - <a href="#solartimeoffset" id="sto">sto</a>: solar time offset, any
+    offset added to a Zone 0 tod, written after the tod as tod-offset;
+    represents a single longitude, whereas a tzo is one of the 10
+    single-digit offsets of the Dec time zones
+- <a href="#coordinateduniversaltime" id="utc">UTC</a>: [Coordinated
   Universal
   Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - <a href="#unitedstates" id="us">US</a>: [United
@@ -8826,19 +8844,26 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#universaltime" id="ut">UT</a>: [Universal
   Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation),
   a time standard based on the rotation of the Earth
-- <a href="#omegar" id="v">v</a>: omegar, ωr,
-  1041.<span class="vinculum">6</span> miles per hour,
-  1.<span class="vinculum">6</span> megameters per hour,
-  0.4<span class="vinculum">629</span> kilometers per second, roughly
-  1.36 times the speed of sound
+- <a href="#omegar" id="v">v</a>: omegar, ωr, 1041.<span class="tool"
+  data-bs-toggle="tooltip" data-bs-title="base9 digit 6">♄</span> miles
+  per hour, 1.<span class="tool" data-bs-toggle="tooltip"
+  data-bs-title="base9 digit 6">♄</span> megameters per hour,
+  0.4<span class="tool" data-bs-toggle="tooltip"
+  data-bs-title="base9 digits 5 and 6">♃♄</span> kilometers per second,
+  roughly 1.36 times the speed of sound
   - <a href="#kiloomegar" id="kv">kv</a>: kiloomegar, kωr,
-    1.<span class="vinculum">6</span> gigameters per hour,
-    0.4<span class="vinculum">629</span> megameters per second,
-    approximately 0.1544% of the speed of light
+    1.<span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="base9 digit 6">♄</span> gigameters per hour,
+    0.4<span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="base9 digits 5 and 6">♃♄</span> megameters per
+    second, approximately 0.1544% of the speed of light
   - <a href="#milliomegar" id="mv">mv</a>: milliomegar, mωr,
-    1.041<span class="vinculum">6</span> miles per hour,
-    1.<span class="vinculum">6</span> kilometers per hour,
-    0.4<span class="vinculum">629</span> meters per second,
+    1.041<span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="base9 digit 6">♄</span> miles per hour,
+    1.<span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="base9 digit 6">♄</span> kilometers per hour,
+    0.4<span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="base9 digits 5 and 6">♃♄</span> meters per second,
     approximately 0.136% of the speed of sound
 - <a href="#wei" id="w">w</a>: wěi (纬), parallel, a full circle around
   the Earth moving East or West at the same latitude, a measure of
@@ -8852,6 +8877,8 @@ additional files or configuration. A Quarto output file can have both a
     tenth of a parallel
   - <a href="#milliwei" id="mw">mw</a>: milliwěi, a thousandth of a wěi
     (纬), a thousandth of a parallel
+  - <a href="#microwei" id="uw">µw</a>: microwěi, a millionth of a wěi
+    (纬), a millionth of a parallel
 - <a href="#xun" id="x">x</a>: xún (旬), decaday, a group of ten days, 2
   pentadays, represented by x like the Roman numeral X
   - <a href="#positiveintegerxun" id="pix">pix</a>: positive integer
@@ -8875,7 +8902,7 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#yearmonthday" id="ymd">ymd</a>: year month day, a
     Gregorian calendar date triplet
   - <a href="#solaryearlength" id="syl">syl</a>: solar year length, 365
-    or 366 days, pid - nid
+    or 366 days, pid − nid
   - <a href="#lunaryearlength" id="lyl">lyl</a>: lunar year length, 354
     or 355 days
   - <a href="#commonerayear" id="cey">cey</a>: common era year, an ISO
@@ -8900,8 +8927,9 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#kilozem" id="kz">kz</a>: kilozem, 1000 zem, 400 meters, a
     quarter mile
   - <a href="#squarezem" id="z2">z²</a>: square zem, hexamilliare, 16
-    square decimeters, 1.<span class="vinculum">7</span> square feet,
-    256 square inches
+    square decimeters, 1.<span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="base9 digit 7">♅</span> square feet, 256 square
+    inches
   - <a href="#squarecentizem" id="cz2">cz²</a>: square centizem, a
     ten-thousandth of a square zem, 16 square millimeters
   - <a href="#squaredecazem" id="Dz2">Dz²</a>: square decazem, 1

@@ -277,7 +277,7 @@ of [Coordinated Universal
 Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 (<a href="#utc" id="coordinateduniversaltime" class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">utc</a>) time zones, and
+data-bs-title="Coordinated Universal Time">UTC</a>) time zones, and
 [solar
 terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
 shading with a yellow🟡dot denoting the
@@ -861,16 +861,16 @@ directions. Together, the range inputs underneath the hue bar form a
 “hue saturation lightness”
 (<a href="#hsl" id="huesaturationlightness" class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="hue saturation lightness">hsl</a>) triplet. Like
+data-bs-title="hue saturation lightness">HSL</a>) triplet. Like
 “[<span class="color0">red</span> <span class="color4">green</span>
 <span class="color7">blue</span>](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model)”
 (<a href="#rgb" id="redgreenblue" class="tool" data-bs-toggle="tooltip"
-data-bs-title="red green blue">rgb</a>) or
+data-bs-title="red green blue">RGB</a>) or
 [hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
 (<a href="#hex" id="hexadecimal" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</a>) triplets,
 <a href="#hsl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="hue saturation lightness">hsl</a> triplets specify a
+data-bs-title="hue saturation lightness">HSL</a> triplets specify a
 full-fledged color instead of just a hue.
 
 Color labels🏷️provide a general idea of angular
@@ -1590,7 +1590,7 @@ data-bs-toggle="tooltip" data-bs-title="tenths of a zem">decizem</span>
 data-bs-title="decizem">dz</a>) = <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="a million">10<sup>6</sup></span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millionths of a taur">nanotaur</span>
+data-bs-title="billionths of a taur">nanotaur</span>
 (<a href="#nc" id="nanotaur" class="tool" data-bs-toggle="tooltip"
 data-bs-title="nanotaur">nc</a>), and therefore, 1
 <a href="#mv" class="tool" data-bs-toggle="tooltip"
@@ -2295,7 +2295,7 @@ data-bs-title="a tenth of a zone equatorial meter">decizem</span>
 data-bs-title="cubic decizem">dz³</a>) is like a double shot, either of
 espresso☕️or of liquor🥃, and is equal to 1 cu. <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="a millionth of a taur">nanotaur</span>
+data-bs-title="a billionth of a taur">nanotaur</span>
 (<a href="#nc3" id="cubicnanotaur" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic nanotaur">nc³</a>), 1 Dec wineglass (🍷glass), 2
 Dec ounces
@@ -2312,7 +2312,7 @@ data-bs-title="milliliters">mL</a>), 1000 Dec drops
 (<a href="#g" id="gutta" class="tool" data-bs-toggle="tooltip"
 data-bs-title="drops">g</a>), or 1000 cu. <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="a tenth of a zone equatorial meter">centizem</span>
+data-bs-title="a hundredth of a zone equatorial meter">centizem</span>
 (<a href="#cz3" id="cubiccentizem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic centizem">cz³</a>).
 
@@ -2516,7 +2516,7 @@ to his fingertips. If he also weighed 1000 Dec
 data-bs-title="kilograins">kg</a>, his [body mass
 index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
 (<a href="#bmi" id="bodymassindex" class="tool" data-bs-toggle="tooltip"
-data-bs-title="body mass index">bmi</a>) would be 62.5
+data-bs-title="body mass index">BMI</a>) would be 62.5
 <a href="#kg" class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilograins">kg</a> per
 <a href="#z2" class="tool" data-bs-toggle="tooltip"
@@ -2534,14 +2534,14 @@ style="text-align:center;">
 </div>
 
 A normal <a href="#bmi" class="tool" data-bs-toggle="tooltip"
-data-bs-title="body mass index">bmi</a> ranges from 46.25 to 62.5
+data-bs-title="body mass index">BMI</a> ranges from 46.25 to 62.5
 $\text {kg}\over\text z^2$ or 18.5 to 25 $\text {kg}\over\text m^2$. An
 obese person has a <a href="#bmi" class="tool" data-bs-toggle="tooltip"
-data-bs-title="body mass index">bmi</a> above 75
+data-bs-title="body mass index">BMI</a> above 75
 $\text {kg}\over\text z^2$ or 30 $\text {kg}\over\text m^2$. Severe or
 morbid obesity is defined as a
 <a href="#bmi" class="tool" data-bs-toggle="tooltip"
-data-bs-title="body mass index">bmi</a> above 100
+data-bs-title="body mass index">BMI</a> above 100
 $\text {kg}\over\text z^2$ or 40 $\text {kg}\over\text m^2$. A person
 with the weight and height selected by the range inputs below would be
 considered ${bmiStr}: ${kgrains}
@@ -3112,6 +3112,9 @@ videos](https://observablehq.com/resource-center#videos).
 
 - <a href="#arcbeat" id="a">a</a>: arcbeat, a hundred thousandth of a
   circle, 0.0036 degrees, 0.216 arcminutes, 12.96 arcseconds
+  - <a href="#milliarcbeats" id="ma">ma</a>: milliarcbeat, a thousandth
+    of an arcbeat, a hundred millionth of a circle, 12.96
+    milliarcseconds
 - <a href="#beat" id="b">b</a>: beat, centimilliday, a hundred
   thousandth of a day, 864 milliseconds
   - <a href="#millibeat" id="mb">mb</a>: millibeat, centimicroday, a
@@ -3124,7 +3127,7 @@ videos](https://observablehq.com/resource-center#videos).
   per milliday, ten beats per centiday, 0.69<span class="tool"
   data-bs-toggle="tooltip" data-bs-title="base9 digit 4">♂</span> beats
   per minute, 1000 beats per day
-- <a href="#bodymassindex" id="bmi">bmi</a>: body mass index, kilograins
+- <a href="#bodymassindex" id="bmi">BMI</a>: body mass index, kilograins
   of body mass divided by height in zem squared (kg/z²)
 - <a href="#base9" id="b9">b9</a>: base9, nonary, 9 digits written as
   the astronomical symbols of the Sun and the eight planets, ☉ ☿ ♀ ♁ ♂ ♃
@@ -3143,6 +3146,8 @@ videos](https://observablehq.com/resource-center#videos).
     10<sup>8</sup> kilozem
   - <a href="#millitaur" id="mc">mc</a>: millitaur, *m*𝜏*r*, a
     thousandth of a taur, 100 kilozem, 40 kilometers
+  - <a href="#microtaur" id="uc">µc</a>: microtaur, *µ*𝜏*r*, a millionth
+    of a taur, 100 zem, 40 meters
   - <a href="#nanotaur" id="nc">nc</a>: nanotaur, *n*𝜏*r*, a billionth
     of a taur, 100 millizem, 1 decizem, 4 centimeters
   - <a href="#cubicnanotaur" id="nc3">nc³</a>: cubic nanotaur, *n*𝜏*r*³,
@@ -3162,8 +3167,8 @@ videos](https://observablehq.com/resource-center#videos).
     of year, days elapsed since the beginning of the year, 0 to 364 or
     365
   - <a href="#negativeintegerdoy" id="nid">nid</a>: negative integer day
-    of year, pid <span class="mono">-</span> syl, -365 or -366 to -1,
-    the negative of the days left in the year
+    of year, pid − syl, -365 or -366 to -1, the negative of the days
+    left in the year
   - <a href="#mixedintegerdoy" id="mid">mid</a>: mixed integer day of
     year, an nid rewritten with negative leading digits (marked by a
     vinculum) and a positive last digit or two
@@ -3180,8 +3185,8 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#positiveintervalada" id="pia">pia</a>: positive interval
     ada, the time since the start of the current year, equal to the ada
   - <a href="#negativeintervalada" id="nia">nia</a>: negative interval
-    ada, pia <span class="mono">-</span> syl, the negative of the time
-    until the start of the next year
+    ada, pia − syl, the negative of the time until the start of the next
+    year
   - <a href="#dayofcycle" id="doc">doc</a>: day of cycle, days since the
     start of the current 400-year Gregorian cycle, 0 to 146096
   - doc<sub>♀</sub>: Decyther day of cycle, days since the start of the
@@ -3197,18 +3202,17 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#dayofquadrimester" id="doq">doq</a>: day of quadrimester,
     days since the beginning of a Decyther quadrimester, 0 to 115 or 116
   - <a href="#beginningofquadrimester" id="boq">boq</a>: beginning of
-    quadrimester, the pid of Doq 0, pid <span class="mono">-</span> doq
+    quadrimester, the pid of Doq 0, pid − doq
   - <a href="#quadrimesterofcycle" id="qoc">qoc</a>: quadrimester of
     cycle, zero-based index of a Decyther quadrimester, 0 to 3
   - <a href="#beginningofbimester" id="bob">bob</a>: beginning of
-    bimester, the pid of Dob 0, pid <span class="mono">-</span> dob
+    bimester, the pid of Dob 0, pid − dob
   - <a href="#beginningofmonth" id="bom">bom</a>: beginning of month,
-    the pid of the day before the first day of the month, pid
-    <span class="mono">-</span> dom
+    the pid of the day before the first day of the month, pid − dom
   - <a href="#monthofcycle" id="moc">moc</a>: month of cycle, zero-based
     index of a Venusian month, 0 to 15
   - <a href="#beginningofweek" id="bow">bow</a>: beginning of week, the
-    pid of Dow 0, pid <span class="mono">-</span> dow
+    pid of Dow 0, pid − dow
   - <a href="#beginningofyear" id="boy">boy</a>: beginning of year,
     midnight at the start of Day 0
   - <a href="#beginningofera" id="boe">boe</a>: beginning of era,
@@ -3218,7 +3222,7 @@ videos](https://observablehq.com/resource-center#videos).
     cycle
   - <a href="#endofyear" id="eoy">eoy</a>: end of year, midnight at the
     end of Day 364 or 365
-  - <a href="#Juliandaynumber" id="jdn">jdn</a>: Julian day number, days
+  - <a href="#Juliandaynumber" id="jdn">JDN</a>: Julian day number, days
     since the start of the Julian period; increments at noon UTC
   - <a href="#lunarintercalationdifference" id="lid">lid</a>: lunar
     intercalation difference, a lunar nid that only resets after lunar
@@ -3226,11 +3230,10 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#venusianextracalationdifference" id="ved">ved</a>:
     Venusian extracalation difference, days until the end of
     Doc<sub>♀</sub> 349, the last day of the one-day-shorter Qoc 2,
-    Bimester 5, and Moc 11, (doc<sub>♀</sub> + 117) mod 467
-    <span class="mono">-</span> 467, -467 to -1
+    Bimester 5, and Moc 11, (doc<sub>♀</sub> + 117) mod 467 − 467, -467
+    to -1
   - <a href="#misalignedunitdifference" id="mud">mud</a>: misaligned
-    unit difference, pid <span class="mono">-</span> dom
-    <span class="mono">-</span> dow
+    unit difference, pid − dom − dow
   - <a href="#deciday" id="dd">dd</a>: deciday, a tenth of a day, 2.4
     hours, 144 minutes
   - <a href="#centiday" id="cd">cd</a>: centiday, a hundredth of a day,
@@ -3250,9 +3253,8 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#compassdegree" id="cdeg">c°</a>: compass degree
   - <a href="#huedegree" id="hdeg">h°</a>: hue degree
 - <a href="#egg" id="e">e</a>: egg, 1000 grains, 2 ounces, 64 grams
-- <a href="#equationoftime" id="eot">eot</a>: equation of time, ast
-  <span class="mono">-</span> mst as a function of toy, about -9.8 to
-  11.4 millidays
+- <a href="#equationoftime" id="eot">eot</a>: equation of time, ast −
+  mst as a function of toy, about -9.8 to 11.4 millidays
 - <a href="#cubit" id="ell">ℓ</a>: ell, cubit, 10/9 zem
 - <a href="#foot" id="f">f</a>: foot, 0.75 zem, 75 millimeters
 - <a href="#gutta" id="g">g</a>: drop (gutta in Latin) or grain (granum
@@ -3268,12 +3270,12 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#negativeintegerhectoday" id="nih">nih</a>: negative
     integer hectoday, ⌊nid ÷ 100⌋, -4 to -1
 - <a href="#hexadecimal" id="hex">hex</a>: hexadecimal, base 16
-- <a href="#huesaturationlightness" id="hsl">hsl</a>: hue saturation
+- <a href="#huesaturationlightness" id="hsl">HSL</a>: hue saturation
   lightness
-- <a href="#huesaturationvalue" id="hsv">hsv</a>: hue saturation value
+- <a href="#huesaturationvalue" id="hsv">HSV</a>: hue saturation value
 - <a href="#inch" id="i">i</a>: inch, a sixteenth of a zem, 25
   millimeters
-- <a href="#internationalorganizationforstandardization" id="iso">iso</a>:
+- <a href="#internationalorganizationforstandardization" id="iso">ISO</a>:
   [International Organization for
   Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization),
   the body behind ISO 8601 dates such as 1970-01-01 (ISO month date) and
@@ -3351,14 +3353,14 @@ videos](https://observablehq.com/resource-center#videos).
     of a *r*otation along the horizon, .36 compass degrees
 - <a href="#radian" id="rad">rad</a>: radian, 1/𝜏 turns, 360/𝜏 degrees,
   1/𝜋 turns, 180/𝜋 degrees
-- <a href="#redgreenblue" id="rgb">rgb</a>: red green blue
+- <a href="#redgreenblue" id="rgb">RGB</a>: red green blue
 - <a href="#second" id="s">s</a>: second, 1/90 millidays, 10/9 beats, 1
   Dec second = 0.96 SI seconds
   - <a href="#decisecond" id="ds">ds</a>: decisecond, a tenth of a Dec
     second, 1/900 millidays, 1/9 beats, 96 milliseconds
   - <a href="#secondintervaldifference" id="sid">sid</a>: second
-    interval difference, 1 SI second <span class="mono">-</span> 1 Dec
-    second, 1/24 Dec second, 1/25 SI second, 40 milliseconds
+    interval difference, 1 SI second − 1 Dec second, 1/24 Dec second,
+    1/25 SI second, 40 milliseconds
   - <a href="#sisecond" id="sis">sis</a>: SI second, 25/24 Dec seconds,
     1/86.4 millidays, 1/86400 days
 - <a href="#spinorbitinterval" id="soi">soi</a>: spin orbit interval, a
@@ -3374,6 +3376,9 @@ videos](https://observablehq.com/resource-center#videos).
   milliomegar, 340.3 meters per second
 - <a href="#solardeclinationangle" id="sda">sda</a>: solar declination
   angle, the latitude at which the Sun is directly overhead
+- <a href="#solarelevationangle" id="sea">sea</a>: solar elevation
+  angle, the angle of the Sun above the horizon, negative when the Sun
+  is below the horizon
 - <a href="#tau" id="2pi">𝜏</a>: 2𝜋 or approximately 6.2831853
   - <a href="#taudividedby2" id="pi">𝜋</a>: pi, 𝜏/2 or approximately
     3.1415927
@@ -3390,8 +3395,8 @@ videos](https://observablehq.com/resource-center#videos).
     tod, the time since the start of the current day (previous
     midnight), equal to the tod
   - <a href="#negativeintervaltod" id="nit">nit</a>: negative interval
-    tod, pit <span class="mono">-</span> 1, the negative of the time
-    until the start of the next day (next midnight)
+    tod, pit − 1, the negative of the time until the start of the next
+    day (next midnight)
   - <a href="#hourminutesecond" id="hms">hms</a>: hour minute second, a
     tod written as an hod, moh, and som triplet
   - <a href="#dailysecondaggregate" id="dsa">dsa</a>: daily second
@@ -3409,12 +3414,11 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#apparentsolartime" id="ast">ast</a>: apparent solar time,
     mst + eot(toy), solar time based on the actual position of the Sun
   - <a href="#lightarcwhole" id="law">law</a>: light arc whole, the time
-    from sunrise to sunset, 1 <span class="mono">-</span> naw, sunset
-    <span class="mono">-</span> sunrise
-  - <a href="#lightarchalf" id="da2">lah</a>: light arc half, law/2, the
+    from sunrise to sunset, 1 − naw, sunset − sunrise
+  - <a href="#lightarchalf" id="lah">lah</a>: light arc half, law/2, the
     time from sunrise to solar noon or from solar noon to sunset
   - <a href="#nightarcwhole" id="naw">naw</a>: night arc whole, the time
-    from sunset to sunrise, 1 <span class="mono">-</span> law
+    from sunset to sunrise, 1 − law
   - <a href="#nightarchalf" id="nah">nah</a>: night arc half, naw/2, the
     time from sunset to solar midnight or from solar midnight to sunrise
 - <a href="#turn" id="t">t</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians
@@ -3434,7 +3438,7 @@ videos](https://observablehq.com/resource-center#videos).
     offset added to a Zone 0 tod, written after the tod as tod-offset;
     represents a single longitude, whereas a tzo is one of the 10
     single-digit offsets of the Dec time zones
-- <a href="#coordinateduniversaltime" id="utc">utc</a>: [Coordinated
+- <a href="#coordinateduniversaltime" id="utc">UTC</a>: [Coordinated
   Universal
   Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - <a href="#unitedstates" id="us">US</a>: [United
@@ -3475,6 +3479,8 @@ videos](https://observablehq.com/resource-center#videos).
     tenth of a parallel
   - <a href="#milliwei" id="mw">mw</a>: milliwěi, a thousandth of a wěi
     (纬), a thousandth of a parallel
+  - <a href="#microwei" id="uw">µw</a>: microwěi, a millionth of a wěi
+    (纬), a millionth of a parallel
 - <a href="#xun" id="x">x</a>: xún (旬), decaday, a group of ten days, 2
   pentadays, represented by x like the Roman numeral X
   - <a href="#positiveintegerxun" id="pix">pix</a>: positive integer
@@ -3498,7 +3504,7 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#yearmonthday" id="ymd">ymd</a>: year month day, a
     Gregorian calendar date triplet
   - <a href="#solaryearlength" id="syl">syl</a>: solar year length, 365
-    or 366 days, pid <span class="mono">-</span> nid
+    or 366 days, pid − nid
   - <a href="#lunaryearlength" id="lyl">lyl</a>: lunar year length, 354
     or 355 days
   - <a href="#commonerayear" id="cey">cey</a>: common era year, an ISO
