@@ -1161,113 +1161,6 @@ $$
 
 </div>
 
-The table below converts between
-<a href="#hms" class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour minute second">hms</a> units and Dec units. One hour
-is about 41.67 <a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a>, one minute is about 0.694
-<a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a>, and one
-<a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a> is 90
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>, 86.4
-<a href="#sis" class="tool" data-bs-toggle="tooltip"
-data-bs-title="SI seconds">sis</a>, or 1.44 minutes. The shortest unit
-in the table, a beat (<a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beat">b</a>), is 0.9
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a> or 0.864
-<a href="#sis" class="tool" data-bs-toggle="tooltip"
-data-bs-title="SI seconds">sis</a>. Repeating decimals in the table end
-with an ellipsis (…).
-
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr>
-<th>Time units</th>
-<th><a href="#md" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a></th>
-<th><a href="#s" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a></th>
-<th><a href="#sis" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="SI seconds">sis</a></th>
-<th>minutes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="#dd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</a></td>
-<td>100</td>
-<td>9000</td>
-<td>8640</td>
-<td>144</td>
-</tr>
-<tr>
-<td><a href="https://en.wikipedia.org/wiki/Hour">hours</a></td>
-<td>41.666…</td>
-<td>3750</td>
-<td>3600</td>
-<td>60</td>
-</tr>
-<tr>
-<td><a href="#cd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="centidays">cd</a></td>
-<td>10</td>
-<td>900</td>
-<td>864</td>
-<td>14.4</td>
-</tr>
-<tr>
-<td><a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a></td>
-<td>1</td>
-<td>90</td>
-<td>86.4</td>
-<td>1.44</td>
-</tr>
-<tr>
-<td><a href="https://en.wikipedia.org/wiki/Minute">minutes</a></td>
-<td>0.69444…</td>
-<td>62.5</td>
-<td>60</td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="#sis" class="tool" data-bs-toggle="tooltip"
-data-bs-title="SI seconds">sis</a></td>
-<td>0.011574…</td>
-<td>1.041666…</td>
-<td>1</td>
-<td>0.01666…</td>
-</tr>
-<tr>
-<td><a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a></td>
-<td>0.0111…</td>
-<td>1</td>
-<td>0.96</td>
-<td>0.016</td>
-</tr>
-<tr>
-<td><a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</a></td>
-<td>0.01</td>
-<td>0.9</td>
-<td>0.864</td>
-<td>0.0144</td>
-</tr>
-</tbody>
-</table>
-
 Dec is not the first system to divide the day decimally. During the
 [French Revolution](https://en.wikipedia.org/wiki/French_Revolution),
 France adopted [decimal
@@ -1280,8 +1173,10 @@ data-bs-title="deciday">dd</a>,
 <a href="#md" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliday">md</a>, and
 <a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beat">b</a>, respectively. Decimal time was mandatory in
-France for only about seven months in 1794 and 1795, but clocks and
+data-bs-title="beat">b</a>, respectively. Decimal time was mandatory for
+French public records for only 197
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>, from 1794+205 to 1795+037, but clocks and
 watches with decimal dials, some of which also showed the familiar 24
 hours, survive from that period.
 
@@ -1956,6 +1851,119 @@ viewof hmsinput = Inputs.form([
 ])
 ```
 
+The table below converts between
+<a href="#hms" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour minute second">hms</a> units and Dec units. One hour
+is about 41.67 <a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a>, one minute is about 0.694
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a>, and one
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a> is 90
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a>, 86.4
+<a href="#sis" class="tool" data-bs-toggle="tooltip"
+data-bs-title="SI seconds">sis</a>, or 1.44 minutes. The shortest unit
+in the table, a beat (<a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beat">b</a>), is 0.9
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a> or 0.864
+<a href="#sis" class="tool" data-bs-toggle="tooltip"
+data-bs-title="SI seconds">sis</a>. Instead of a repeating decimal, the
+table ends a value with one or two
+<a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a> digits. For example,
+41.<span class="color6by9">♄</span> is 41 and 6/9, and
+0.0115<span class="color6by9">♄</span><span class="color6by9">♄</span>
+is 0.0115 plus 6/9 and then 6/81 of a ten-thousandth.
+
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Time units</th>
+<th><a href="#md" class="bold tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a></th>
+<th><a href="#s" class="bold tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a></th>
+<th><a href="#sis" class="bold tool" data-bs-toggle="tooltip"
+data-bs-title="SI seconds">sis</a></th>
+<th>minutes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#dd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decidays">dd</a></td>
+<td>100</td>
+<td>9000</td>
+<td>8640</td>
+<td>144</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Hour">hours</a></td>
+<td>41.<span class="color6by9">♄</span></td>
+<td>3750</td>
+<td>3600</td>
+<td>60</td>
+</tr>
+<tr>
+<td><a href="#cd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centidays">cd</a></td>
+<td>10</td>
+<td>900</td>
+<td>864</td>
+<td>14.4</td>
+</tr>
+<tr>
+<td><a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a></td>
+<td>1</td>
+<td>90</td>
+<td>86.4</td>
+<td>1.44</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Minute">minutes</a></td>
+<td>0.69<span class="color4by9">♂</span></td>
+<td>62.5</td>
+<td>60</td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#sis" class="tool" data-bs-toggle="tooltip"
+data-bs-title="SI seconds">sis</a></td>
+<td>0.0115<span class="color6by9">♄</span><span
+class="color6by9">♄</span></td>
+<td>1.041<span class="color6by9">♄</span></td>
+<td>1</td>
+<td>0.01<span class="color6by9">♄</span></td>
+</tr>
+<tr>
+<td><a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a></td>
+<td>0.0<span class="color1by9">☿</span></td>
+<td>1</td>
+<td>0.96</td>
+<td>0.016</td>
+</tr>
+<tr>
+<td><a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</a></td>
+<td>0.01</td>
+<td>0.9</td>
+<td>0.864</td>
+<td>0.0144</td>
+</tr>
+</tbody>
+</table>
+
 ## Coordinated Universal Time (UTC)
 
 There are 12 <a href="#utc" class="tool" data-bs-toggle="tooltip"
@@ -2260,10 +2268,19 @@ expression represented by a Dec time, we get a Zone
 <span class="color0">0</span>
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a>, as shown in
-<a href="#eq-zone0tod" class="quarto-xref">Equation 14</a>, where the
-offset is measured in
+<a href="#eq-zone0tod" class="quarto-xref">Equation 14</a>. Unlike a
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a>, which can be written without a dot
+in the unit of its last digit, an offset never has a dot but is always
+read as if it were preceded by one, so its first digit is in
 <a href="#dd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</a>. If my current time is
+data-bs-title="decidays">dd</a>. The offset
+<span class="color8">8</span> is 0.8
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>, and
+700<span class="mono">-</span><span class="color8">8</span> is the same
+time as 900<span class="mono">-</span><span class="color0">0</span>. If
+my current time is
 .520<span class="mono">-</span><span class="color8">8</span>, the time
 in Zone <span class="color0">0</span> is
 .720<span class="mono">-</span><span class="color0">0</span>: (.520
@@ -2272,7 +2289,7 @@ in Zone <span class="color0">0</span> is
 <div id="equationgroup08" class="equationgroup">
 
 <span id="eq-zone0tod">
-zone0tod = (tod − offset ÷ 10) mod  1   (14)
+zone0tod = (tod − .offset) mod  1   (14)
 </span>
 
 </div>
@@ -3907,13 +3924,13 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#millibeat" id="mb">mb</a>: millibeat, centimicroday, a
     thousandth of a beat, a hundred millionth of a day, 864 microseconds
 - <a href="#beatpercentiday" id="bpc">bpc</a>: a musical or heart beat
-  per centiday, a tenth of a beat per milliday,
-  0.069<span class="vinculum">4</span> beats per minute, 100 beats per
-  day
+  per centiday, a tenth of a beat per milliday, 0.069<span class="tool"
+  data-bs-toggle="tooltip" data-bs-title="base9 digit 4">♂</span> beats
+  per minute, 100 beats per day
 - <a href="#beatpermilliday" id="bpm">bpm</a>: a musical or heart beat
-  per milliday, ten beats per centiday,
-  0.69<span class="vinculum">4</span> beats per minute, 1000 beats per
-  day
+  per milliday, ten beats per centiday, 0.69<span class="tool"
+  data-bs-toggle="tooltip" data-bs-title="base9 digit 4">♂</span> beats
+  per minute, 1000 beats per day
 - <a href="#bodymassindex" id="bmi">bmi</a>: body mass index, kilograins
   of body mass divided by height in zem squared (kg/z²)
 - <a href="#base9" id="b9">b9</a>: base9, nonary, 9 digits written as
@@ -4232,19 +4249,26 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#universaltime" id="ut">UT</a>: [Universal
   Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation),
   a time standard based on the rotation of the Earth
-- <a href="#omegar" id="v">v</a>: omegar, ωr,
-  1041.<span class="vinculum">6</span> miles per hour,
-  1.<span class="vinculum">6</span> megameters per hour,
-  0.4<span class="vinculum">629</span> kilometers per second, roughly
-  1.36 times the speed of sound
+- <a href="#omegar" id="v">v</a>: omegar, ωr, 1041.<span class="tool"
+  data-bs-toggle="tooltip" data-bs-title="base9 digit 6">♄</span> miles
+  per hour, 1.<span class="tool" data-bs-toggle="tooltip"
+  data-bs-title="base9 digit 6">♄</span> megameters per hour,
+  0.4<span class="tool" data-bs-toggle="tooltip"
+  data-bs-title="base9 digits 5 and 6">♃♄</span> kilometers per second,
+  roughly 1.36 times the speed of sound
   - <a href="#kiloomegar" id="kv">kv</a>: kiloomegar, kωr,
-    1.<span class="vinculum">6</span> gigameters per hour,
-    0.4<span class="vinculum">629</span> megameters per second,
-    approximately 0.1544% of the speed of light
+    1.<span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="base9 digit 6">♄</span> gigameters per hour,
+    0.4<span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="base9 digits 5 and 6">♃♄</span> megameters per
+    second, approximately 0.1544% of the speed of light
   - <a href="#milliomegar" id="mv">mv</a>: milliomegar, mωr,
-    1.041<span class="vinculum">6</span> miles per hour,
-    1.<span class="vinculum">6</span> kilometers per hour,
-    0.4<span class="vinculum">629</span> meters per second,
+    1.041<span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="base9 digit 6">♄</span> miles per hour,
+    1.<span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="base9 digit 6">♄</span> kilometers per hour,
+    0.4<span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="base9 digits 5 and 6">♃♄</span> meters per second,
     approximately 0.136% of the speed of sound
 - <a href="#wei" id="w">w</a>: wěi (纬), parallel, a full circle around
   the Earth moving East or West at the same latitude, a measure of
@@ -4306,8 +4330,9 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#kilozem" id="kz">kz</a>: kilozem, 1000 zem, 400 meters, a
     quarter mile
   - <a href="#squarezem" id="z2">z²</a>: square zem, hexamilliare, 16
-    square decimeters, 1.<span class="vinculum">7</span> square feet,
-    256 square inches
+    square decimeters, 1.<span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="base9 digit 7">♅</span> square feet, 256 square
+    inches
   - <a href="#squarecentizem" id="cz2">cz²</a>: square centizem, a
     ten-thousandth of a square zem, 16 square millimeters
   - <a href="#squaredecazem" id="Dz2">Dz²</a>: square decazem, 1

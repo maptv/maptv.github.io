@@ -600,22 +600,7 @@ Known as a “second interval difference” ([sid](#sid)), the base24 ([b24](#b2
 
 \\ \text{s} = \dfrac{\text{ds}}{10} = \dfrac{\text{sis}}{0.96} \tag{11}\\ \\ \begin{split} \text{sid} &= \text{sis} \bmod 24\\ &= (\text{s} - \text{sis}) \ast 24 \bmod 24 \end{split} \tag{12}\\
 
-The table below converts between [hms](#hms) units and Dec units. One hour is about 41.67 [md](#md), one minute is about 0.694 [md](#md), and one [md](#md) is 90 [s](#s), 86.4 [sis](#sis), or 1.44 minutes. The shortest unit in the table, a beat ([b](#b)), is 0.9 [s](#s) or 0.864 [sis](#sis). Repeating decimals in the table end with an ellipsis (…).
-
-| Time units | [md](#md) | [s](#s) | [sis](#sis) | minutes |
-|----|----|----|----|----|
-| [dd](#dd) | 100 | 9000 | 8640 | 144 |
-| [hours](https://en.wikipedia.org/wiki/Hour) | 41.666… | 3750 | 3600 | 60 |
-| [cd](#cd) | 10 | 900 | 864 | 14.4 |
-| [md](#md) | 1 | 90 | 86.4 | 1.44 |
-| [minutes](https://en.wikipedia.org/wiki/Minute) | 0.69444… | 62.5 | 60 | 1 |
-| [sis](#sis) | 0.011574… | 1.041666… | 1 | 0.01666… |
-| [s](#s) | 0.0111… | 1 | 0.96 | 0.016 |
-| [b](#b) | 0.01 | 0.9 | 0.864 | 0.0144 |
-
-Table 1
-
-Dec is not the first system to divide the day decimally. During the [French Revolution](https://en.wikipedia.org/wiki/French_Revolution), France adopted [decimal time](https://en.wikipedia.org/wiki/Decimal_time#France), which split the day into 10 decimal hours, each decimal hour into 100 decimal minutes, and each decimal minute into 100 decimal seconds. A French decimal hour, minute, and second are equivalent to a [dd](#dd), [md](#md), and [b](#b), respectively. Decimal time was mandatory in France for only about seven months in 1794 and 1795, but clocks and watches with decimal dials, some of which also showed the familiar 24 hours, survive from that period.
+Dec is not the first system to divide the day decimally. During the [French Revolution](https://en.wikipedia.org/wiki/French_Revolution), France adopted [decimal time](https://en.wikipedia.org/wiki/Decimal_time#France), which split the day into 10 decimal hours, each decimal hour into 100 decimal minutes, and each decimal minute into 100 decimal seconds. A French decimal hour, minute, and second are equivalent to a [dd](#dd), [md](#md), and [b](#b), respectively. Decimal time was mandatory for French public records for only 197 [d](#d), from 1794+205 to 1795+037, but clocks and watches with decimal dials, some of which also showed the familiar 24 hours, survive from that period.
 
 Two centuries later, [Swatch Internet Time](https://en.wikipedia.org/wiki/Swatch_Internet_Time) divided the day into 1000 “.beats”. A Swatch .beat is a [md](#md), which is far too long to be called a beat: a human heart can easily beat 100 times in a [md](#md), and a [tempo](https://en.wikipedia.org/wiki/Tempo) of one beat per [md](#md) would be far too slow for music. In contrast, a Dec [b](#b) corresponds to a tempo of about 69 beats per minute. Swatch Internet Time also has only one time zone, UTC+01:00, and was shown off to the side of the much larger hour and minute displays of the digital watches that Swatch built for it until the end of the 20th century.
 
@@ -672,7 +657,7 @@ Two centuries later, [Swatch Internet Time](https://en.wikipedia.org/wiki/Swatch
 | 22          | ψ           |
 | 23          | ω           |
 
-Table 2
+Table 1
 
 ##### Base9
 
@@ -696,7 +681,7 @@ Whereas [b24](#b24) is like glue that allows us to combine [s](#s) and [sid](#si
 | 7           | ♅         |
 | 8           | ♆         |
 
-Table 3
+Table 2
 
 A [tod](#tod) with four [b10](#b10) digits, one [b9](#b9), and one [b24](#b24) digit can match the time represented by any [hms](#hms) triplet, because the product of the bases of its digits is evenly divisible by the number of [sis](#sis) in a day: 10000 × 9 × 24 ÷ 86400 = 216000 ÷ 86400 = 25. For [hod](#hod), one [b24](#b24) digit is sufficient. The [hms](#hms) triplet selected by the range inputs below corresponds to [Hod](#hod) and [Tod](#tod) .
 
@@ -707,6 +692,21 @@ viewof hmsinput = Inputs.form([
   Inputs.range([0, 59], {label: "Second", value: 0, step: 1}),
 ])
 ```
+
+The table below converts between [hms](#hms) units and Dec units. One hour is about 41.67 [md](#md), one minute is about 0.694 [md](#md), and one [md](#md) is 90 [s](#s), 86.4 [sis](#sis), or 1.44 minutes. The shortest unit in the table, a beat ([b](#b)), is 0.9 [s](#s) or 0.864 [sis](#sis). Instead of a repeating decimal, the table ends a value with one or two [b9](#b9) digits. For example, 41.♄ is 41 and 6/9, and 0.0115♄♄ is 0.0115 plus 6/9 and then 6/81 of a ten-thousandth.
+
+| Time units | [md](#md) | [s](#s) | [sis](#sis) | minutes |
+|----|----|----|----|----|
+| [dd](#dd) | 100 | 9000 | 8640 | 144 |
+| [hours](https://en.wikipedia.org/wiki/Hour) | 41.♄ | 3750 | 3600 | 60 |
+| [cd](#cd) | 10 | 900 | 864 | 14.4 |
+| [md](#md) | 1 | 90 | 86.4 | 1.44 |
+| [minutes](https://en.wikipedia.org/wiki/Minute) | 0.69♂ | 62.5 | 60 | 1 |
+| [sis](#sis) | 0.0115♄♄ | 1.041♄ | 1 | 0.01♄ |
+| [s](#s) | 0.0☿ | 1 | 0.96 | 0.016 |
+| [b](#b) | 0.01 | 0.9 | 0.864 | 0.0144 |
+
+Table 3
 
 ##### Coordinated Universal Time (UTC)
 
@@ -767,9 +767,9 @@ For precise [geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:tex
 
 Dec never forces anyone to change their offset and therefore has nothing like [daylight saving time](https://en.wikipedia.org/wiki/Daylight_saving_time). In Dec, any offset can be referred to as a [sto](#sto), even if it is not used to match solar time, but there are only 10 [tzo](#tzo), because there are only 10 Dec time zones. Dec translates [UTC](#utc) to Zone 0 and UTC-12:00 or UTC+12:00 to Zone 5, but all other [UTC](#utc) offsets are considered [sto](#sto) and not [tzo](#tzo).
 
-Anyone can use any offset at any time, as long as they provide the offset after the [tod](#tod). A Dec time is [tod](#tod)-offset, just like a [Dec date](../../dec/date) is year+day. For example, when I wrote this paragraph, my Dec date was 2026+242 and my Dec time was .520-8. Like Dec dates, Dec times are truncated math expressions. When we evaluate the expression represented by a Dec time, we get a Zone 0 [tod](#tod), as shown in [Equation 14](#eq-zone0tod), where the offset is measured in [dd](#dd). If my current time is .520-8, the time in Zone 0 is .720-0: (.520 - 0.8) mod 1 = .720.
+Anyone can use any offset at any time, as long as they provide the offset after the [tod](#tod). A Dec time is [tod](#tod)-offset, just like a [Dec date](../../dec/date) is year+day. For example, when I wrote this paragraph, my Dec date was 2026+242 and my Dec time was .520-8. Like Dec dates, Dec times are truncated math expressions. When we evaluate the expression represented by a Dec time, we get a Zone 0 [tod](#tod), as shown in [Equation 14](#eq-zone0tod). Unlike a [tod](#tod), which can be written without a dot in the unit of its last digit, an offset never has a dot but is always read as if it were preceded by one, so its first digit is in [dd](#dd). The offset 8 is 0.8 [d](#d), and 700-8 is the same time as 900-0. If my current time is .520-8, the time in Zone 0 is .720-0: (.520 - 0.8) mod 1 = .720.
 
-\\\text{zone0tod} = (\text{tod} - \text{offset} \div 10) \bmod 1 \tag{14}\\
+\\\text{zone0tod} = (\text{tod} - .\text{offset}) \bmod 1 \tag{14}\\
 
 The default offset is like a user preference that Dec can remember and update as needed. If a user does not select a default offset, Dec will try to infer their default offset from their longitude, and if offset inference fails, the final fallback is a default offset of 0. If someone wants to change their default offset for a certain period of time, Dec supports automatic offset changes based on user instructions. Users can share automatic offset changes, but they have to opt in to any change to their default offset instead of opting out of a required change. The [Dec span](../../dec/span) article will describe automatic offset changes in more detail.
 
@@ -1381,8 +1381,8 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
 - [a](#arcbeat): arcbeat, a hundred thousandth of a circle, 0.0036 degrees, 0.216 arcminutes, 12.96 arcseconds
 - [b](#beat): beat, centimilliday, a hundred thousandth of a day, 864 milliseconds
   - [mb](#millibeat): millibeat, centimicroday, a thousandth of a beat, a hundred millionth of a day, 864 microseconds
-- [bpc](#beatpercentiday): a musical or heart beat per centiday, a tenth of a beat per milliday, 0.0694 beats per minute, 100 beats per day
-- [bpm](#beatpermilliday): a musical or heart beat per milliday, ten beats per centiday, 0.694 beats per minute, 1000 beats per day
+- [bpc](#beatpercentiday): a musical or heart beat per centiday, a tenth of a beat per milliday, 0.069♂ beats per minute, 100 beats per day
+- [bpm](#beatpermilliday): a musical or heart beat per milliday, ten beats per centiday, 0.69♂ beats per minute, 1000 beats per day
 - [bmi](#bodymassindex): body mass index, kilograins of body mass divided by height in zem squared (kg/z²)
 - [b9](#base9): base9, nonary, 9 digits written as the astronomical symbols of the Sun and the eight planets, ☉ ☿ ♀ ♁ ♂ ♃ ♄ ♅ ♆; the first digit after a tod with Dec seconds appended counts tens of Dec seconds
 - [b10](#base10): base10, decimal, the digits 0 to 9
@@ -1529,9 +1529,9 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
 - [utc](#coordinateduniversaltime): [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - [US](#unitedstates): [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 - [UT](#universaltime): [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation), a time standard based on the rotation of the Earth
-- [v](#omegar): omegar, ωr, 1041.6 miles per hour, 1.6 megameters per hour, 0.4629 kilometers per second, roughly 1.36 times the speed of sound
-  - [kv](#kiloomegar): kiloomegar, kωr, 1.6 gigameters per hour, 0.4629 megameters per second, approximately 0.1544% of the speed of light
-  - [mv](#milliomegar): milliomegar, mωr, 1.0416 miles per hour, 1.6 kilometers per hour, 0.4629 meters per second, approximately 0.136% of the speed of sound
+- [v](#omegar): omegar, ωr, 1041.♄ miles per hour, 1.♄ megameters per hour, 0.4♃♄ kilometers per second, roughly 1.36 times the speed of sound
+  - [kv](#kiloomegar): kiloomegar, kωr, 1.♄ gigameters per hour, 0.4♃♄ megameters per second, approximately 0.1544% of the speed of light
+  - [mv](#milliomegar): milliomegar, mωr, 1.041♄ miles per hour, 1.♄ kilometers per hour, 0.4♃♄ meters per second, approximately 0.136% of the speed of sound
 - [w](#wei): wěi (纬), parallel, a full circle around the Earth moving East or West at the same latitude, a measure of longitude; short for 纬圈 (wěiquān), “latitude circle”; can be thought of as a measure of the **w**idth of a jīng on **E**arth; “w” is written from left to right, like a wěi running from **W**est to **E**ast across a map, starts the word “width,” as in the width of a map, and is one of the widest letters in proportional fonts; on a loom, 纬 is the weft, the threads that run crosswise
   - [dw](#deciwei): deciwěi, a tenth of a wěi (纬), a tenth of a parallel
   - [mw](#milliwei): milliwěi, a thousandth of a wěi (纬), a thousandth of a parallel
@@ -1558,7 +1558,7 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
 - [z](#zoneequatorialmeter): zem, zone equatorial meter, 4 decimeters, 16 inches
   - [kz²](#squarekilozem): square kilozem, a million square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600 ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
   - [kz](#kilozem): kilozem, 1000 zem, 400 meters, a quarter mile
-  - [z²](#squarezem): square zem, hexamilliare, 16 square decimeters, 1.7 square feet, 256 square inches
+  - [z²](#squarezem): square zem, hexamilliare, 16 square decimeters, 1.♅ square feet, 256 square inches
   - [cz²](#squarecentizem): square centizem, a ten-thousandth of a square zem, 16 square millimeters
   - [Dz²](#squaredecazem): square decazem, 1 hexadeciare, 16 square meters, 19.75 square yards, 100 square zem
   - [z³](#cubiczem): cubic zem, 1 keg, 64 liters, 1000 wine glasses, a million drops, half a barrel
