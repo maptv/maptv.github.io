@@ -1781,6 +1781,18 @@ div.tippy-box div.tippy-content figure figcaption {
   overflow-y: hidden;
   text-align: center;
 }
+/* Column gaps (instead of empty spacer columns); cells normally have .5rem padding. */
+:is(#tbl-vincommon, #tbl-vinculeap) :is(td, th):is(:nth-child(2), :nth-child(3)),
+:is(#tbl-vincommon, #tbl-vinculeap) .d-xl-block :is(td, th):is(:nth-child(6), :nth-child(7)) {
+  padding-left: 2.5rem;
+}
+:is(#tbl-vincommon, #tbl-vinculeap) .d-xl-block :is(td, th):nth-child(5) {
+  padding-left: 8rem;
+}
+#tbl-b32 :is(td, th):is(:nth-child(4), :nth-child(7), :nth-child(10)),
+#tbl-woy .d-xl-block :is(td, th):nth-child(5) {
+  padding-left: 3.5rem;
+}
 main.content:has(section#sec-dox div#fig-zero.doxdiagram) {
   counter-reset: diagnum -1 tblnum -1;
 }

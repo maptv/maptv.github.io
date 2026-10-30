@@ -58,7 +58,7 @@
     - [dd](#deciday){#dd}: deciday, a tenth of a day, 2.4 hours, 144 minutes
     - [cd](#centiday){#cd}: centiday, a hundredth of a day, 0.24 hours, 14.4 minutes
     - [md](#milliday){#md}: milliday, a thousandth of a day, 1.44 minutes
-    - [dmd](#centimilliday){#dmd}: decimilliday, a ten thousandth of a day, 10 beats, 8640 milliseconds
+    - [dmd](#decimilliday){#dmd}: decimilliday, a ten thousandth of a day, 10 beats, 8640 milliseconds
     - [cmd](#centimilliday){#cmd}: centimilliday, a hundred thousandth of a day, 1 beat, 864 milliseconds
     - [µd](#microday){#ud}: microday, a millionth of a day, 86.4 milliseconds
     - [nd](#nanoday){#nd}: nanoday, a billionth of a day, 86.4 microseconds

@@ -1,0 +1,195 @@
+<!--
+Reference notes on number bases for Dec (b9, b10, b12, b24, and others).
+Not included in any article. Kept in case a dozen dozenalists attack.
+-->
+
+# Bases for Dec
+
+## When a fraction ends
+
+A reduced fraction p/q ends (terminates) in base b only if every prime factor of q
+divides b. Otherwise it repeats forever, whatever the precision.
+
+| base | primes | ends | repeats |
+|---|---|---|---|
+| 2, 16 | 2 | halves, quarters | thirds, fifths |
+| 6 | 2·3 | halves, thirds | fifths |
+| 9 | 3² | thirds, ninths | halves, fifths |
+| 10 | 2·5 | halves, fifths, tenths | thirds |
+| 12 | 2²·3 | halves, thirds, quarters | fifths, tenths |
+| 24 | 2³·3 | same set as 12 | fifths, tenths |
+| 30, 60 | 2·3·5 | all of the above | sevenths |
+| 10 + 9 tail | 2·5 · 3² | all of the above | sevenths |
+
+- A numeral with n b10 digits and k b9 digits ends exactly when the reduced denominator
+  divides 10ⁿ·9ᵏ. One b9 digit clears up to 3², two clear up to 3⁴.
+- b10 + b9 ends every fraction whose denominator is 2ᵃ·3ᶜ·5ᵉ: the Babylonian "regular
+  numbers", the same set as b60. b12 ends a strict subset of it (no fifths).
+- No mix of 9, 10, 12, and 24 ends 1/7, 1/11, or 1/13.
+
+## How many digits it takes
+
+For a denominator 2ᵃ·3ᶜ:
+
+| base | digits needed |
+|---|---|
+| b24 | max(⌈a/3⌉, c) |
+| b12 | max(⌈a/2⌉, c) |
+| b9 | ⌈c/2⌉, and only if a = 0 |
+
+- b12 and b24 end the same fractions; b24 can be shorter when 2s dominate
+  (1/8 = 0.γ₂₄ = 0.16₁₂).
+- b9 is about twice as short on pure powers of 3 (1/81 = 0.01₉, four digits in b24).
+- After n b10 digits, the leftover denominator is 2^max(a−n, 0)·3ᶜ. If n ≥ a, a b9 tail
+  is the shorter choice. If n < a, a b9 tail repeats and only b24 (or more b10 digits)
+  can end it.
+
+Worked example, 5/432 (432 = 2⁴·3³):
+
+- b24: 0.αηρ (0.06G₂₄), since 5/432 × 24³ = 160 = 6·24 + 16.
+- b10 + b9: 0.0115♄♄. Four b10 digits clear 2⁴, leaving 20/27 = 0.66₉.
+- b10 + b24: 0.0115στρ. 20/27 × 24³ = 10240 = 17·576 + 18·24 + 16.
+- dec/time tom layout (10, 10, 10, 9, 10, 24): 0.011♃1ρ.
+- 5/432 d = 1000 SI s.
+
+## Fractions of a day
+
+| fraction | b10 | b12 | b10 + b9 |
+|---|---|---|---|
+| 1/2 | 0.5 | 0.6 | 0.5 |
+| 1/3 | 0.333… | 0.4 | 0.♁ |
+| 1/5 | 0.2 | 0.2497… | 0.2 |
+| 1/6 | 0.1666… | 0.2 | 0.1♄ |
+| 1/9 | 0.111… | 0.14 | 0.☿ |
+| 1/10 | 0.1 | 0.12497… | 0.1 |
+| 1/12 | 0.08333… | 0.1 | 0.08♁ |
+
+b12 is shorter for the thirds family; b10 + b9 wins on whether a fraction ends at all and
+keeps percentages and metric units clean.
+
+## Why b9 is the right complement for b10
+
+- It adds only the missing prime. A b6 or b12 tail would waste capacity on 2s that b10
+  already handles, and each b9 digit absorbs two factors of 3.
+- A b9 digit g equals the b10 digit g repeated forever from its slot, because
+  g/9 = 0.ggg…: 0.♁ = 0.333…, 0.1♄ = 0.1666…, 0.08♁ = 0.08333…. Later digits add on
+  top. There is no glyph for 9 because 0.999… = 1 is a carry. Only b9 turns decimal's
+  repeating tails into single glyphs, since a repeating decimal digit always means g/9.
+- The same fact (10 ≡ 1 mod 9) gives decimal its digit-sum tests for 3 and 9
+  ("casting out nines"): 4 + 3 + 2 = 9, so 9 divides 432. Decimal is already
+  "9-aware".
+- In its slot's unit a b9 glyph is worth g × 10/9, at most 0.89 above g, so it reads
+  almost like a decimal digit. A b24 letter is worth g × 10/24 (ω = 9.58), far from
+  its index.
+- A b9 slot holds log₁₀ 9 ≈ 0.95 of a decimal digit's information, so swapping a b10
+  digit for a b9 digit costs almost nothing. A b24 slot holds about 1.38 decimal
+  digits.
+- Note: 9 < 10 does not decide whether a glyph fits a slot; Dec's convention does. The
+  b24 sid digit also fills one slot.
+- Separate glyphs make the radix visible. Dozenal "10" means twelve, so a dozenal
+  numeral is ambiguous unless you know the base; Dec never changes what a decimal digit
+  means.
+
+## Finger tricks
+
+![9 × 8 = ♅2: fold finger 8, then count the fingers to its left in b9 and to its right in
+b10. Adapted from [Multiplication by 9
+mnemonic.svg](https://commons.wikimedia.org/wiki/File:Multiplication_by_9_mnemonic.svg) by
+CMG Lee, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0).](/dec/time/b9fingers.svg){#fig-b9fingers}
+
+To multiply n by 9, fold finger n. Since 9n = 10(n − 1) + (10 − n), the n − 1 fingers to
+its left are the tens digit and the 10 − n fingers to its right are the ones digit. When the
+fingers on the left are counted in b9 and those on the right in b10, the result is a b9
+glyph followed by a b10 digit.
+
+**b10 to b9.** A decimilliday (dmd) is 9 Dec seconds, and in a tod the b9 glyph that
+replaces the dmd digit counts tens of Dec seconds, followed by a Dec-second digit. So
+converting a dmd digit n is 9 × n: fold finger n and read the glyph on the left and the
+seconds digit on the right.
+
+- 3753 decimillidays: fold finger 3 → ♀7, so 375♀7.
+- 8 dmd: fold finger 8 → ♅2 (72 Dec seconds).
+- 0 dmd → ☉0.
+
+Later decimal digits add 0.9 s each and can carry; the finger step stays the same.
+
+**Repeating decimals.** The finger trick converts an exact decimal digit, so it does not by
+itself end a repeating decimal. For that, use the fact that a b9 glyph g is the b10 digit g
+repeated forever (g/9 = 0.ggg…):
+
+- A tail that repeats one digit becomes that glyph: 1/3 = 0.♁, 2/3 = 0.♄, and
+  1 h = 0.41666… dd = 0.41♄ dd.
+- A tail with a longer period becomes single-digit repeats after multiplying by 9
+  (9x = 10x − x): 9 × 0.740740… = 7.407407… − 0.740740… = 6.666…, so 0.740740… =
+  0.♄♄ and 5/432 = 0.011574074… = 0.0115♄♄.
+
+**b9 to b10.** Since 10g + s = 9g + (g + s), a glyph g followed by a decimal digit s is
+
+  g + (g + s)/9
+
+of the slot the glyph replaced: write g, then add (g + s) repeated forever, carrying when
+g + s ≥ 9.
+
+- g + s = 9 (the digit-sum test): exactly g + 1. On the hands, g fingers up on the left and
+  s on the right leave one finger folded, and its number is the answer: ♀7 → finger 3 → 3
+  dmd, ♅2 → 8 dmd.
+- Otherwise the remainder repeats: ♀8 → 2 + 10/9 = 3.111… dmd (375♀8 = 37531.1… cmd);
+  ♀3 → 2 + 5/9 = 2.555… dmd.
+- A glyph on its own is its digit repeated: 0.41♄ = 0.41666….
+
+## Why b24 is in Dec at all
+
+- b24 adds no prime that b10 + b9 lacks; it only packs 2³·3 into one glyph.
+- Its job is matching hms units: 86400 = 2⁷·3³·5². A tod with four b10 digits, one b9
+  digit, and one b24 digit has 10⁴·9·24 = 2160000 = 25 × 86400 slots per day.
+- Without b24, b10 + b9 needs seven b10 digits and two b9 digits (9 digits instead of 6):
+  10⁷·9² ÷ 86400 = 9375.
+- For whole hours, b24 needs one digit; b10 + b9 needs four (1 h = 41♄ decimillidays,
+  0.041♄ d).
+- If Dec never had to match hms or SI seconds, b24 would be unnecessary.
+
+## What b12 still has
+
+- One uniform radix for all arithmetic. b10 + b9 is mixed radix: great for representing
+  quantities, awkward for computing. Adding numerals whose b9 glyphs sit in different
+  slots needs conversion, and a product of numerals with k₁ and k₂ b9 digits needs
+  k₁ + k₂ b9 digits in new slots, with no single multiplication table. hms has the same
+  limitation.
+- Shorter thirds (0.4 vs 0.♁ is a tie; 0.1 vs 0.08♁ is not).
+- Last-digit divisibility tests for 2, 3, 4, and 6.
+- Costs: 1/5 and 1/10 repeat, and a 144-entry table in which familiar digit strings mean
+  new things.
+
+## Other bases
+
+- b60 (Babylonian): same set of ending fractions as b10 + b9 in one uniform radix, but
+  60 symbols. Each cuneiform digit was built from tens and units, a decimal/senary mix
+  inside each digit.
+- b30: smallest base with 2, 3, and 5; 900-entry table.
+- b6 (seximal): tiny table, halves and thirds, no fifths.
+- b20 (Maya): 2²·5, no 3. The Maya long count was mixed radix (20, 18, 20, 20).
+- b2, b16: for machines.
+
+## Why nobody used b9 before (as far as I know)
+
+1. b9 on its own can't write 1/2, so anyone judging it as a full base drops it. Its
+   value appears only as a complement.
+2. Mixed radix historically came from units (12 inches, 60 minutes, £sd with 12 pence
+   per shilling and 20 shillings per pound), chosen one unit at a time, not from asking
+   which digit set completes b10.
+3. The closest precedent is Roman: decimal integers and duodecimal fractions (unciae)
+   with their own symbols. That is Dec's design with 12 instead of 9.
+4. Decimal fractions are fairly recent (Stevin, 1585). Metrication pushed toward pure
+   decimal; reformers who wanted 3s (dozenal societies from the 1940s) tried to replace
+   the base rather than add to it.
+5. Calculators made repeating decimals harmless, except where exactness and readability
+   matter, like clocks.
+
+## Verdict
+
+- General arithmetic: b12 has a real but modest edge on thirds, paid for with fifths,
+  tenths, and a costly break from habit.
+- Measurement and labelling: b10 + b9 beats b12. It reaches b60 divisibility, keeps
+  every decimal digit's meaning, and shows the radix through distinct glyphs.
+- b24 is justified only by alignment with hms or SI seconds.
+- The one argument dozenalists keep: a single uniform radix makes computation simpler.

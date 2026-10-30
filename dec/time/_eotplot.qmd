@@ -3,6 +3,7 @@
 //| label: eotplot
 // https://observablehq.com/@mcmcclur/plot-for-mathematicians
 {
+  await whenVisible("eotplot");
   let w = 800;
   let h = 0.625 * w;
   let samples = build_samples(

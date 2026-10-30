@@ -16,6 +16,7 @@ viewof dayArcInput = Inputs.range([0, 1000], {label: "Light arc whole", value: 3
 //| echo: false
 //| label: dayarcdiagram
 {
+  await whenVisible("dayarcdiagram");
   const svg = d3.create("svg")
       .attr("width", width)
       .attr("height", daheight);

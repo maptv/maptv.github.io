@@ -3,6 +3,7 @@
 //| label: sdaplot
 // https://observablehq.com/@mcmcclur/plot-for-mathematicians
 {
+  await whenVisible("sdaplot");
   let w = 800;
   let h = 0.625 * w;
   let sdaMt = (day) => getSda(day) * 1000;

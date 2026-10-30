@@ -13,17 +13,20 @@ viewof sortParamsHemi = Inputs.form([
 //| echo: false
 //| label: hemipopstackedbar
 //| class: stackedbar
-Plot.plot({
-  width: Math.min(width, 1000),
-  height: 100 + Math.min(width / 25, 20),
-  marginBottom: 50,
-  style: `overflow: visible;font-size:${15 + Math.min(width / 90, 11)}px;`,
-  color: {scheme: "RdBu", className: "barPlotLegend"},
-  marginLeft: 90 + Math.min(width / 100, 20),
-  y: { label: null },
-  x: { grid: true, label: "Population (billions)", labelOffset: 40 + Math.min(width / 90, 22), transform: d => d},
-  marks: [
-    Plot.barX(sortedPopHemi, {x: "Population", y: "Hemisphere", fill: "Offset", stroke: "black", tip: true }),
-  ]
-})
+{
+  await whenVisible("hemipopstackedbar");
+  return Plot.plot({
+    width: Math.min(width, 1000),
+    height: 100 + Math.min(width / 25, 20),
+    marginBottom: 50,
+    style: `overflow: visible;font-size:${15 + Math.min(width / 90, 11)}px;`,
+    color: {scheme: "RdBu", className: "barPlotLegend"},
+    marginLeft: 90 + Math.min(width / 100, 20),
+    y: { label: null },
+    x: { grid: true, label: "Population (billions)", labelOffset: 40 + Math.min(width / 90, 22), transform: d => d},
+    marks: [
+      Plot.barX(sortedPopHemi, {x: "Population", y: "Hemisphere", fill: "Offset", stroke: "black", tip: true }),
+    ]
+  });
+}
 ```
