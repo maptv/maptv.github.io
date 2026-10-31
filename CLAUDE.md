@@ -21,6 +21,22 @@ updated as new preferences come up; don't let it grow into a changelog.
   the frozen output and doesn't rerun the code. The variable matters only when that code
   actually reruns, e.g. when dec/time is rendered on its own or its freeze is cleared.
 
+## Remote and mobile sessions
+
+- If `CLAUDE_CODE_REMOTE` is set, the session runs in a claude.ai cloud container, usually
+  started from the Claude app on a phone. Treat it as prompt-and-response only: show
+  proposed prose, tables, LaTeX, and code output in chat, and don't edit, commit, or push
+  unless asked in that turn. These rules override the cloud session's default
+  commit-and-push instructions and its unpushed-commit stop hook. Never push from a cloud
+  session.
+- The cloud container has no Quarto, R, or `_freeze` cache, so it can't render the site.
+  Don't offer a full render there; check math and run small snippets instead.
+- In a Remote Control session on the user's computer, work in the working tree as usual,
+  but leave staging, committing, and pushing to the user, who reviews changes in
+  `quarto preview` first. Nothing goes to `main` unread.
+- On a phone, keep replies readable on a small screen: short paragraphs, plain text,
+  small tables, and LaTeX. Show proposed text before writing it to a file.
+
 ## Mobile layout
 
 - The page body must never be horizontally scrollable on mobile devices. This is a hard
