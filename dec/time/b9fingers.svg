@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-120 -80 240 248">
+ <title>multiplication by 9 mnemonic in base9 and base10</title>
+ <desc>The multiplication-by-nine mnemonic calculating 9 &#215; 8 = &#9797;2: fingers counted from the left in base9 (&#9791; to &#9798;) and from the right in base10 (10 to 1). Adapted from "Multiplication by 9 mnemonic.svg" by CMG Lee (https://commons.wikimedia.org/wiki/File:Multiplication_by_9_mnemonic.svg), CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0). This adaptation is also licensed under CC BY-SA 4.0.</desc>
+ <marker id="marker_end" markerWidth="8" markerHeight="8" refX="4" refY="4" markerUnits="userSpaceOnUse" orient="auto">
+  <path d="M 0,0 Q 4,4 8,4 Q 4,4 0,8 Q 3,4 0,0" fill="#999999"/>
+ </marker>
+ <circle cx="0" cy="0" r="99999" fill="#ffffff"/>
+ <g font-family="Helvetica,Arial,'Apple Symbols','Segoe UI Symbol','DejaVu Sans',sans-serif" font-size="20" text-anchor="middle" fill="#000000" stroke="none">
+  <!-- base9: count the fingers from the left -->
+  <text transform="translate(-100, 15)" dy="0.7ex">&#9791;</text>
+  <text transform="translate( -80,  5)" dy="0.7ex">&#9792;</text>
+  <text transform="translate( -60,  2)" dy="0.7ex">&#9793;</text>
+  <text transform="translate( -40,  5)" dy="0.7ex">&#9794;</text>
+  <text transform="translate( -20, 15)" dy="0.7ex">&#9795;</text>
+  <text transform="translate(  20, 15)" dy="0.7ex">&#9796;</text>
+  <text transform="translate(  40,  5)" dy="0.7ex">&#9797;</text>
+  <text transform="translate(  60,  2)" dy="0.7ex">&#9798;</text>
+  <text transform="translate( -30,-35)" dy="0.7ex">&#9797;</text>
+  <text transform="translate(  92,-35)" dy="0.7ex">2</text>
+  <text transform="translate(  30,-70)" dy="0.7ex">9 &#215; 8 = &#9797;2</text>
+  <g font-size="11">
+   <text transform="translate(0, 146)" dy="0.7ex">&#9791; &#8230; &#9798;: base9, counted from the left</text>
+   <text transform="translate(0, 160)" dy="0.7ex">10 &#8230; 1: base10, counted from the right</text>
+  </g>
+  <g fill="none" stroke="#000000">
+   <circle cx="60" cy="2" r="10"/>
+   <path d="M -105,-10 c 0,-14 75,0 75,-14 c 0,14 75,0 75,14
+            M   77,-10 c 0,-10 15,0 15,-10 c 0,10 15,0 15,10"/>
+   <g stroke="#999999" marker-end="url(#marker_end)">
+    <path d="M   25,-60 L 53,-10"/>
+    <path d="M  -25,-35 L 53,-60"/>
+    <path d="M   85,-35 L 70,-60"/>
+   </g>
+  </g>
+  <g fill="#ffcc99" stroke="#cc6600">
+   <path d="M -110, 47 a 20,20 0 0 1   20,20
+            v 10 v -50 a 10,10 0 0 1   20, 0
+            v 40 v -45 a 10,10 0 0 1   20, 0
+            v 45 v -40 a 10,10 0 0 1   20, 0
+            v 45 v -30 a 10,10 0 0 1   20, 0
+            v 35       a 50,50 0 0 1 -100, 0 Z"/>
+   <path d="M -110, 47 a 20,20 0 0 1   20,20
+            v 10 v -50 a 10,10 0 0 1   20, 0
+            v 40 v -10 a 10,10 0 0 1   20, 0
+            v 10 v -40 a 10,10 0 0 1   20, 0
+            v 45 v -30 a 10,10 0 0 1   20, 0
+            v 35       a 50,50 0 0 1 -100, 0 Z
+            m 40,20    a 10,10 0 0 0   20, 0 a 10,10 0 0 1 -20,0
+            " transform="scale(-1,1)"/>
+  </g>
+  <!-- base10: count the fingers from the right -->
+  <g font-size="11" fill="#994d00">
+   <text transform="translate(-102, 64)" dy="0.7ex">10</text>
+   <text transform="translate( -80, 29)" dy="0.7ex">9</text>
+   <text transform="translate( -60, 24)" dy="0.7ex">8</text>
+   <text transform="translate( -40, 29)" dy="0.7ex">7</text>
+   <text transform="translate( -20, 44)" dy="0.7ex">6</text>
+   <text transform="translate(  20, 44)" dy="0.7ex">5</text>
+   <text transform="translate(  40, 29)" dy="0.7ex">4</text>
+   <text transform="translate(  60, 56)" dy="0.7ex">3</text>
+   <text transform="translate(  80, 29)" dy="0.7ex">2</text>
+   <text transform="translate( 102, 64)" dy="0.7ex">1</text>
+  </g>
+ </g>
+</svg>

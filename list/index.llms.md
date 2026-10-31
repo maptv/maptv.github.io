@@ -16,29 +16,29 @@ Introducing Dec, a measurement system, which uses turns instead of months, weeks
 
 ##### Decalendar
 
-273 min
+269 min
 
 Introducing Decalendar, a solar calendar which measures time in years and days without the need for months or weeks.
 
 |            |              |
 |------------|--------------|
-| Word Count | 54,418 words |
+| Word Count | 53,698 words |
 
-1793289935
+1793370780
 
 ![](../asset/daywide.svg)
 
 ##### Declock
 
-41 min
+45 min
 
 Introducing Declock, a timekeeping system that displays time in decimal days without the need for hours, minutes, or seconds.
 
 |            |             |
 |------------|-------------|
-| Word Count | 8,185 words |
+| Word Count | 8,813 words |
 
-1793289935
+1793417487
 
 ![](../asset/1939ww2europe.svg)
 

@@ -834,7 +834,7 @@ using Dates
 hms = now(UTC)
 ```
 
-    2026-09-24T04:34:55.992
+    2026-10-30T14:47:39.205
 
 ``` julia
 hour(hms) / 24 +
@@ -843,13 +843,13 @@ second(hms) / 86400 +
 millisecond(hms) / 864e5
 ```
 
-    0.19092583333333332
+    0.6164259837962963
 
 ``` julia
 datetime2unix(hms) / 86400 % 1
 ```
 
-    0.19092583333622315
+    0.6164259837969439
 
 ### Observable JavaScript
 
@@ -873,13 +873,13 @@ hms.second / 86400 + \
 hms.microsecond / 864e8
 ```
 
-    0.19093379358796295
+    0.6164336705439815
 
 ``` python
 hms.timestamp() / 86400 % 1
 ```
 
-    0.190933793586737
+    0.616433670544211
 
 ### R
 
@@ -890,13 +890,13 @@ hms$min / 1440 +
 hms$sec / 86400
 ```
 
-    [1] 0.190934
+    [1] 0.6164338
 
 ``` r
 (as.numeric(as.POSIXct(hms)) / 86400) %% 1
 ```
 
-    [1] 0.190934
+    [1] 0.6164338
 
 </div>
 
@@ -956,19 +956,19 @@ using Dates
 dsa = datetime2unix(now(UTC)) / 86400 % 1 * 86400
 ```
 
-    16496.744999836665
+    53259.93100006599
 
 ``` julia
 hsa = dsa % 3600
 ```
 
-    2096.7449998366646
+    2859.93100006599
 
 ``` julia
 map(x -> floor(Int, x), (dsa / 3600, hsa / 60, hsa % 60))
 ```
 
-    (4, 34, 56)
+    (14, 47, 39)
 
 ### Observable JavaScript
 
@@ -987,7 +987,7 @@ hsa = dsa % 3600
 tuple(map(int, [dsa // 3600, hsa // 60, hsa % 60 // 1]))
 ```
 
-    (4, 34, 56)
+    (14, 47, 40)
 
 ### R
 
@@ -997,7 +997,7 @@ hsa <- dsa %% 3600
 sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 ```
 
-    [1]  4 34 56
+    [1] 14 47 40
 
 </div>
 
@@ -1161,66 +1161,20 @@ $$
 
 </div>
 
-Dec is not the first system to divide the day decimally. During the
-[French Revolution](https://en.wikipedia.org/wiki/French_Revolution),
-France adopted [decimal
-time](https://en.wikipedia.org/wiki/Decimal_time#France), which split
-the day into 10 decimal hours, each decimal hour into 100 decimal
-minutes, and each decimal minute into 100 decimal seconds. A French
-decimal hour, minute, and second are equivalent to a
-<a href="#dd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciday">dd</a>,
-<a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliday">md</a>, and
-<a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beat">b</a>, respectively. Decimal time was mandatory for
-French public records for only 197
-<a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a>, from 1794+205 to 1795+037, but clocks and
-watches with decimal dials, some of which also showed the familiar 24
-hours, survive from that period.
-
-Two centuries later, [Swatch Internet
-Time](https://en.wikipedia.org/wiki/Swatch_Internet_Time) divided the
-day into 1000 “.beats”. A Swatch .beat is a
-<a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a>, which is far too long to be called a
-beat: a human heart can easily beat 100 times in a
-<a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a>, and a
-[tempo](https://en.wikipedia.org/wiki/Tempo) of one beat per
-<a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a> would be far too slow for music. In
-contrast, a Dec <a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</a> corresponds to a tempo of about 69 beats per
-minute. Swatch Internet Time also has only one time zone, UTC+01:00, and
-was shown off to the side of the much larger hour and minute displays of
-the digital watches that Swatch built for it until the end of the 20th
-century.
-
 ## Base24
 
 <div class="d-none d-lg-block">
 
 <table>
 <colgroup>
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
 </colgroup>
 <thead>
 <tr>
@@ -1228,23 +1182,14 @@ century.
 data-bs-title="base10">b10</a></th>
 <th><a href="#b24" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base24">b24</a></th>
-<th></th>
-<th></th>
-<th></th>
 <th><a href="#b10" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base10">b10</a></th>
 <th><a href="#b24" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base24">b24</a></th>
-<th></th>
-<th></th>
-<th></th>
 <th><a href="#b10" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base10">b10</a></th>
 <th><a href="#b24" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base24">b24</a></th>
-<th></th>
-<th></th>
-<th></th>
 <th><a href="#b10" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base10">b10</a></th>
 <th><a href="#b24" class="tool" data-bs-toggle="tooltip"
@@ -1255,114 +1200,60 @@ data-bs-title="base24">b24</a></th>
 <tr>
 <td><span class="color0 mono">0</span></td>
 <td><span class="color0 mono">α</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color6by24 mono">6</span></td>
 <td><span class="color6by24 mono">η</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color12by24 mono">12</span></td>
 <td><span class="color12by24 mono">ν</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color18by24 mono">18</span></td>
 <td><span class="color18by24 mono">τ</span></td>
 </tr>
 <tr>
 <td><span class="color1by24 mono">1</span></td>
 <td><span class="color1by24 mono">β</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color7by24 mono">7</span></td>
 <td><span class="color7by24 mono">θ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color13by24 mono">13</span></td>
 <td><span class="color13by24 mono">ξ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color19by24 mono">19</span></td>
 <td><span class="color19by24 mono">υ</span></td>
 </tr>
 <tr>
 <td><span class="color2by24 mono">2</span></td>
 <td><span class="color2by24 mono">γ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color8by24 mono">8</span></td>
 <td><span class="color8by24 mono">ι</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color14by24 mono">14</span></td>
 <td><span class="color14by24 mono">ο</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color20by24 mono">20</span></td>
 <td><span class="color20by24 mono">φ</span></td>
 </tr>
 <tr>
 <td><span class="color3by24 mono">3</span></td>
 <td><span class="color3by24 mono">δ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color9by24 mono">9</span></td>
 <td><span class="color9by24 mono">κ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color15by24 mono">15</span></td>
 <td><span class="color15by24 mono">π</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color21by24 mono">21</span></td>
 <td><span class="color21by24 mono">χ</span></td>
 </tr>
 <tr>
 <td><span class="color4by24 mono">4</span></td>
 <td><span class="color4by24 mono">ε</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color10by24 mono">10</span></td>
 <td><span class="color10by24 mono">λ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color16by24 mono">16</span></td>
 <td><span class="color16by24 mono">ρ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color22by24 mono">22</span></td>
 <td><span class="color22by24 mono">ψ</span></td>
 </tr>
 <tr>
 <td><span class="color5by24 mono">5</span></td>
 <td><span class="color5by24 mono">ζ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color11by24 mono">11</span></td>
 <td><span class="color11by24 mono">μ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color17by24 mono">17</span></td>
 <td><span class="color17by24 mono">σ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color23by24 mono">23</span></td>
 <td><span class="color23by24 mono">ω</span></td>
 </tr>
@@ -1375,13 +1266,10 @@ data-bs-title="base24">b24</a></th>
 
 <table>
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
 </colgroup>
 <thead>
 <tr>
@@ -1389,9 +1277,6 @@ data-bs-title="base24">b24</a></th>
 data-bs-title="base10">b10</a></th>
 <th><a href="#b24" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base24">b24</a></th>
-<th></th>
-<th></th>
-<th></th>
 <th><a href="#b10" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base10">b10</a></th>
 <th><a href="#b24" class="tool" data-bs-toggle="tooltip"
@@ -1402,108 +1287,72 @@ data-bs-title="base24">b24</a></th>
 <tr>
 <td><span class="color0 mono">0</span></td>
 <td><span class="color0 mono">α</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color12by24 mono">12</span></td>
 <td><span class="color12by24 mono">ν</span></td>
 </tr>
 <tr>
 <td><span class="color1by24 mono">1</span></td>
 <td><span class="color1by24 mono">β</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color13by24 mono">13</span></td>
 <td><span class="color13by24 mono">ξ</span></td>
 </tr>
 <tr>
 <td><span class="color2by24 mono">2</span></td>
 <td><span class="color2by24 mono">γ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color14by24 mono">14</span></td>
 <td><span class="color14by24 mono">ο</span></td>
 </tr>
 <tr>
 <td><span class="color3by24 mono">3</span></td>
 <td><span class="color3by24 mono">δ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color15by24 mono">15</span></td>
 <td><span class="color15by24 mono">π</span></td>
 </tr>
 <tr>
 <td><span class="color4by24 mono">4</span></td>
 <td><span class="color4by24 mono">ε</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color16by24 mono">16</span></td>
 <td><span class="color16by24 mono">ρ</span></td>
 </tr>
 <tr>
 <td><span class="color5by24 mono">5</span></td>
 <td><span class="color5by24 mono">ζ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color17by24 mono">17</span></td>
 <td><span class="color17by24 mono">σ</span></td>
 </tr>
 <tr>
 <td><span class="color6by24 mono">6</span></td>
 <td><span class="color6by24 mono">η</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color18by24 mono">18</span></td>
 <td><span class="color18by24 mono">τ</span></td>
 </tr>
 <tr>
 <td><span class="color7by24 mono">7</span></td>
 <td><span class="color7by24 mono">θ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color19by24 mono">19</span></td>
 <td><span class="color19by24 mono">υ</span></td>
 </tr>
 <tr>
 <td><span class="color8by24 mono">8</span></td>
 <td><span class="color8by24 mono">ι</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color20by24 mono">20</span></td>
 <td><span class="color20by24 mono">φ</span></td>
 </tr>
 <tr>
 <td><span class="color9by24 mono">9</span></td>
 <td><span class="color9by24 mono">κ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color21by24 mono">21</span></td>
 <td><span class="color21by24 mono">χ</span></td>
 </tr>
 <tr>
 <td><span class="color10by24 mono">10</span></td>
 <td><span class="color10by24 mono">λ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color22by24 mono">22</span></td>
 <td><span class="color22by24 mono">ψ</span></td>
 </tr>
 <tr>
 <td><span class="color11by24 mono">11</span></td>
 <td><span class="color11by24 mono">μ</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color23by24 mono">23</span></td>
 <td><span class="color23by24 mono">ω</span></td>
 </tr>
@@ -1673,18 +1522,12 @@ data-bs-title="centimillidays">cmd</a>).
 
 <table style="width:100%;">
 <colgroup>
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 4%" />
-<col style="width: 4%" />
-<col style="width: 4%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 4%" />
-<col style="width: 4%" />
-<col style="width: 4%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
 </colgroup>
 <thead>
 <tr>
@@ -1692,16 +1535,10 @@ data-bs-title="centimillidays">cmd</a>).
 data-bs-title="base10">b10</a></th>
 <th><a href="#b9" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base9">b9</a></th>
-<th></th>
-<th></th>
-<th></th>
 <th><a href="#b10" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base10">b10</a></th>
 <th><a href="#b9" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base9">b9</a></th>
-<th></th>
-<th></th>
-<th></th>
 <th><a href="#b10" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base10">b10</a></th>
 <th><a href="#b9" class="tool" data-bs-toggle="tooltip"
@@ -1712,42 +1549,24 @@ data-bs-title="base9">b9</a></th>
 <tr>
 <td><span class="color0">0</span></td>
 <td><span class="color0 mono">☉</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color3by9">3</span></td>
 <td><span class="color3by9 mono">♁</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color6by9">6</span></td>
 <td><span class="color6by9 mono">♄</span></td>
 </tr>
 <tr>
 <td><span class="color1by9">1</span></td>
 <td><span class="color1by9 mono">☿</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color4by9">4</span></td>
 <td><span class="color4by9 mono">♂</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color7by9">7</span></td>
 <td><span class="color7by9 mono">♅</span></td>
 </tr>
 <tr>
 <td><span class="color2by9">2</span></td>
 <td><span class="color2by9 mono">♀</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color5by9">5</span></td>
 <td><span class="color5by9 mono">♃</span></td>
-<td></td>
-<td></td>
-<td></td>
 <td><span class="color8by9">8</span></td>
 <td><span class="color8by9 mono">♆</span></td>
 </tr>
@@ -1851,118 +1670,162 @@ viewof hmsinput = Inputs.form([
 ])
 ```
 
-The table below converts between
-<a href="#hms" class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour minute second">hms</a> units and Dec units. One hour
-is about 41.67 <a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a>, one minute is about 0.694
-<a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a>, and one
-<a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a> is 90
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>, 86.4
-<a href="#sis" class="tool" data-bs-toggle="tooltip"
-data-bs-title="SI seconds">sis</a>, or 1.44 minutes. The shortest unit
-in the table, a beat (<a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beat">b</a>), is 0.9
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a> or 0.864
-<a href="#sis" class="tool" data-bs-toggle="tooltip"
-data-bs-title="SI seconds">sis</a>. Instead of a repeating decimal, the
-table ends a value with one or two
+In <a href="#tbl-time" class="quarto-xref">Table 3</a> below, each row
+is a unit that fits a whole number of times into a day. The
+<a href="#q" class="tool" data-bs-toggle="tooltip"
+data-bs-title="per day">q</a> column shows how many of the unit fit into
+a day, and the 1/<a href="#q" class="tool" data-bs-toggle="tooltip"
+data-bs-title="per day">q</a> column shows the inverse: the fraction of
+a day that the unit lasts. Instead of using fractions,
+<a href="#tbl-time" class="quarto-xref">Table 3</a> ends repeating
+decimals with one or two
 <a href="#b9" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9">b9</a> digits. For example,
-41.<span class="color6by9">♄</span> is 41 and 6/9, and
-0.0115<span class="color6by9">♄</span><span class="color6by9">♄</span>
-is 0.0115 plus 6/9 and then 6/81 of a ten-thousandth.
+data-bs-title="base9">b9</a> digits. For example, the number of
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a> in a
+<a href="#sis" class="tool" data-bs-toggle="tooltip"
+data-bs-title="SI seconds">sis</a> is 5/432,
+0.0115<span class="color6by9 mono">♄</span><span class="color6by9 mono">♄</span>,
+or 0.0115 + 6 ÷ 90000 + 6 ÷ 810000. Interestingly, we would need three
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> digits to match the two
+<a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a> digits in
+0.0115<span class="color6by9 mono">♄</span><span class="color6by9 mono">♄</span>:
+0.0115<span class="color17by24 mono">σ</span><span class="color18by24 mono">τ</span><span class="color16by24 mono">ρ</span>.
 
 <table>
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
+<col style="width: 34%" />
+<col style="width: 32%" />
+<col style="width: 33%" />
 </colgroup>
 <thead>
 <tr>
 <th>Time units</th>
-<th><a href="#md" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a></th>
-<th><a href="#s" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a></th>
-<th><a href="#sis" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="SI seconds">sis</a></th>
-<th>minutes</th>
+<th style="text-align: right;"><a href="#q" class="bold tool"
+data-bs-toggle="tooltip" data-bs-title="per day">q</a></th>
+<th style="text-align: left;">1/<a href="#q" class="bold tool"
+data-bs-toggle="tooltip" data-bs-title="per day">q</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="#dd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</a></td>
-<td>100</td>
-<td>9000</td>
-<td>8640</td>
-<td>144</td>
+<td><a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr>
-<td><a href="https://en.wikipedia.org/wiki/Hour">hours</a></td>
-<td>41.<span class="color6by9">♄</span></td>
-<td>3750</td>
-<td>3600</td>
-<td>60</td>
+<td><a href="#dd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decidays">dd</a></td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">0.1</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Hour">hour</a></td>
+<td style="text-align: right;">24</td>
+<td style="text-align: left;">0.041<span
+class="color6by9 mono">♄</span></td>
 </tr>
 <tr>
 <td><a href="#cd" class="tool" data-bs-toggle="tooltip"
 data-bs-title="centidays">cd</a></td>
-<td>10</td>
-<td>900</td>
-<td>864</td>
-<td>14.4</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: left;">0.01</td>
 </tr>
 <tr>
 <td><a href="#md" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millidays">md</a></td>
-<td>1</td>
-<td>90</td>
-<td>86.4</td>
-<td>1.44</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: left;">0.001</td>
 </tr>
 <tr>
-<td><a href="https://en.wikipedia.org/wiki/Minute">minutes</a></td>
-<td>0.69<span class="color4by9">♂</span></td>
-<td>62.5</td>
-<td>60</td>
-<td>1</td>
+<td><a href="https://en.wikipedia.org/wiki/Minute">minute</a></td>
+<td style="text-align: right;">1440</td>
+<td style="text-align: left;">0.00069<span
+class="color4by9 mono">♂</span></td>
+</tr>
+<tr>
+<td><a href="#dmd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decimillidays">dmd</a></td>
+<td style="text-align: right;">10000</td>
+<td style="text-align: left;">0.0001</td>
 </tr>
 <tr>
 <td><a href="#sis" class="tool" data-bs-toggle="tooltip"
 data-bs-title="SI seconds">sis</a></td>
-<td>0.0115<span class="color6by9">♄</span><span
-class="color6by9">♄</span></td>
-<td>1.041<span class="color6by9">♄</span></td>
-<td>1</td>
-<td>0.01<span class="color6by9">♄</span></td>
+<td style="text-align: right;">86400</td>
+<td style="text-align: left;">0.0000115<span
+class="color6by9 mono">♄</span><span
+class="color6by9 mono">♄</span></td>
 </tr>
 <tr>
 <td><a href="#s" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Dec seconds">s</a></td>
-<td>0.0<span class="color1by9">☿</span></td>
-<td>1</td>
-<td>0.96</td>
-<td>0.016</td>
+<td style="text-align: right;">90000</td>
+<td style="text-align: left;">0.0000<span
+class="color1by9 mono">☿</span></td>
 </tr>
 <tr>
 <td><a href="#b" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beats">b</a></td>
-<td>0.01</td>
-<td>0.9</td>
-<td>0.864</td>
-<td>0.0144</td>
+<td style="text-align: right;">100000</td>
+<td style="text-align: left;">0.00001</td>
 </tr>
 </tbody>
 </table>
+
+With <a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a> and
+<a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a> working together, any fraction whose
+denominator has no prime factors other than 2, 3, and 5 can be expressed
+a terminating decimal. A
+<a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a> digit is worth the matching
+<a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a> digit repeated forever, so 1/3
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day">d</a> is 0.<span class="color3by9 mono">♁</span>
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> or <span class="color3by9 mono">♁</span>
+<a href="#dd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decidays">dd</a>. Like <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="duodecimal">base12</span>,
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> adds no prime factors to
+<a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a> and
+<a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a>.
+
+Therefore, it only packs three 2s and a 3 into one digit. We would need
+three <a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> digits to match the two
+<a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a> digits in
+0.0115<span class="color6by9 mono">♄</span><span class="color6by9 mono">♄</span>:
+0.0115<span class="color17by24 mono">σ</span><span class="color18by24 mono">τ</span><span class="color16by24 mono">ρ</span>.
+The only job of <a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> in Dec is to match
+<a href="#hms" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour minute second">hms</a> time units.
+<a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a> and
+<a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a> could do this job without
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a>, but not as well: a
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> would need seven
+<a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a> digits and two
+<a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a> digits instead of six digits in total to
+match any <a href="#hms" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour minute second">hms</a> triplet, because
+10<sup>7</sup> × 9<sup>2</sup> ÷ 86400 = 9375.
 
 ## Coordinated Universal Time (UTC)
 
@@ -2026,19 +1889,22 @@ viewof sortParams = Inputs.form([
 //| label: timezonepopstackedbar
 //| class: stackedbar
 // https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
-Plot.plot({
-  width: Math.min(width, 1000),
-  height: 100 + Math.min(width / 25, 20),
-  marginBottom: 50,
-  style: `overflow: visible;font-size:${15 + Math.min(width / 90, 11)}px;`,
-  color: {scheme: "RdBu", className: "barPlotLegend"},
-  marginLeft: 80 + Math.min(width / 100, 20),
-  y: { label: null },
-  x: { grid: true, label: "Population (billions)", labelOffset: 45 + Math.min(width / 90, 22), transform: d => d / 1e9 },
-  marks: [
-    Plot.barX(sortedPop, {x: "pop", y: "Sign", fill: "Offset", stroke: "black", tip: true }),
-  ]
-})
+{
+  await whenVisible("timezonepopstackedbar");
+  return Plot.plot({
+    width: Math.min(width, 1000),
+    height: 100 + Math.min(width / 25, 20),
+    marginBottom: 50,
+    style: `overflow: visible;font-size:${15 + Math.min(width / 90, 11)}px;`,
+    color: {scheme: "RdBu", className: "barPlotLegend"},
+    marginLeft: 80 + Math.min(width / 100, 20),
+    y: { label: null },
+    x: { grid: true, label: "Population (billions)", labelOffset: 45 + Math.min(width / 90, 22), transform: d => d / 1e9 },
+    marks: [
+      Plot.barX(sortedPop, {x: "pop", y: "Sign", fill: "Offset", stroke: "black", tip: true }),
+    ]
+  });
+}
 ```
 
 Negative <a href="#utc" class="tool" data-bs-toggle="tooltip"
@@ -2745,6 +2611,7 @@ data-notebook-cellId="cell-eotcoef">
 //| label: eotplot
 // https://observablehq.com/@mcmcclur/plot-for-mathematicians
 {
+  await whenVisible("eotplot");
   let w = 800;
   let h = 0.625 * w;
   let samples = build_samples(
@@ -3034,6 +2901,7 @@ viewof dayArcInput = Inputs.range([0, 1000], {label: "Light arc whole", value: 3
 //| echo: false
 //| label: dayarcdiagram
 {
+  await whenVisible("dayarcdiagram");
   const svg = d3.create("svg")
       .attr("width", width)
       .attr("height", daheight);
@@ -3293,6 +3161,7 @@ year.
 //| label: sdaplot
 // https://observablehq.com/@mcmcclur/plot-for-mathematicians
 {
+  await whenVisible("sdaplot");
   let w = 800;
   let h = 0.625 * w;
   let sdaMt = (day) => getSda(day) * 1000;
@@ -3395,19 +3264,22 @@ viewof sortParamsHemi = Inputs.form([
 //| echo: false
 //| label: hemipopstackedbar
 //| class: stackedbar
-Plot.plot({
-  width: Math.min(width, 1000),
-  height: 100 + Math.min(width / 25, 20),
-  marginBottom: 50,
-  style: `overflow: visible;font-size:${15 + Math.min(width / 90, 11)}px;`,
-  color: {scheme: "RdBu", className: "barPlotLegend"},
-  marginLeft: 90 + Math.min(width / 100, 20),
-  y: { label: null },
-  x: { grid: true, label: "Population (billions)", labelOffset: 40 + Math.min(width / 90, 22), transform: d => d},
-  marks: [
-    Plot.barX(sortedPopHemi, {x: "Population", y: "Hemisphere", fill: "Offset", stroke: "black", tip: true }),
-  ]
-})
+{
+  await whenVisible("hemipopstackedbar");
+  return Plot.plot({
+    width: Math.min(width, 1000),
+    height: 100 + Math.min(width / 25, 20),
+    marginBottom: 50,
+    style: `overflow: visible;font-size:${15 + Math.min(width / 90, 11)}px;`,
+    color: {scheme: "RdBu", className: "barPlotLegend"},
+    marginLeft: 90 + Math.min(width / 100, 20),
+    y: { label: null },
+    x: { grid: true, label: "Population (billions)", labelOffset: 40 + Math.min(width / 90, 22), transform: d => d},
+    marks: [
+      Plot.barX(sortedPopHemi, {x: "Population", y: "Hemisphere", fill: "Offset", stroke: "black", tip: true }),
+    ]
+  });
+}
 ```
 
 The top range input below picks the
@@ -3587,6 +3459,23 @@ ada = 0 + pia = syl + nia   (36)
 </span>
 
 </div>
+
+Dec is not the first system to use [decimal
+time](https://en.wikipedia.org/wiki/Decimal_time#France). During the
+[French Revolution](https://en.wikipedia.org/wiki/French_Revolution),
+decimal time was mandatory for French public records for 197 days
+(<a href="#d" id="day" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>), from
+<span class="color94by100">1794</span>+<span class="color205by365">205</span>
+to
+<span class="color95by100">1795</span>+<span class="color037by365">037</span>.
+On
+<span class="color98by100">1998</span>+<span class="color247by365">247</span>,
+the Swatch corporation announced [Swatch Internet
+Time](https://en.wikipedia.org/wiki/Swatch_Internet_Time), which divides
+the day into 1000 “.beats”, only has one time zone, and is displayed by
+Dec as <a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a>−β.
 
 Declock measures time in fractional days. A single decimal
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
@@ -4035,7 +3924,7 @@ additional files or configuration. A Quarto output file can have both a
     0.24 hours, 14.4 minutes
   - <a href="#milliday" id="md">md</a>: milliday, a thousandth of a day,
     1.44 minutes
-  - <a href="#centimilliday" id="dmd">dmd</a>: decimilliday, a ten
+  - <a href="#decimilliday" id="dmd">dmd</a>: decimilliday, a ten
     thousandth of a day, 10 beats, 8640 milliseconds
   - <a href="#centimilliday" id="cmd">cmd</a>: centimilliday, a hundred
     thousandth of a day, 1 beat, 864 milliseconds
@@ -4480,12 +4369,24 @@ selectedSunrise = parseFloat((selectedSolarNoon - noonDiff).toFixed(5))
 selectedSunset = selectedSolarNoon + noonDiff
 selectedDifference = selectedCurrent - selectedSunset
 selectedDuration = parseFloat((selectedSunset - selectedSunrise).toFixed(5))
-dz = unix2dote(now)
+// The current time, updated at the start of every beat (864 ms) instead of
+// every animation frame: the times on the page have 5 decimal places of a day,
+// so they cannot change more often than once per beat.
+beatNow = Generators.observe(notify => {
+  let timer;
+  const step = () => {
+    notify(Date.now());
+    timer = setTimeout(step, 864 - Date.now() % 864);
+  };
+  step();
+  return () => clearTimeout(timer);
+})
+dz = unix2dote(beatNow)
 decYear = ydz[0].toString().padStart(4, "0")
 nDaysInYear = 365 + year2leap(decYear + 1)
 fullfracYear = decYear + ydz[1] / nDaysInYear
 decDoty = Math.floor(ydz[1])
-zeroDote = unix2dote(now, 0)[0]
+zeroDote = unix2dote(beatNow, 0)[0]
 zeroTime = zeroDote % 1
 zeroDate = dote2date(zeroDote)
 zeroYear = zeroDate[0]
@@ -4505,7 +4406,7 @@ zeroDotyHsl = textcolor(zeroDotyPad, zeroDotyPiece)
 zeroDotyHsl1 = textcolor(zeroDotyPad, zeroDotyPiece)
 zeroDoteHsl = textcolor(Math.floor(zeroDote), piecewiseColor(zeroDote % 146097 / 146097))
 zeroYearHsl = textcolor(zeroYear, piecewiseColor(zeroYear % 1000 / 1000))
-browserDote = unix2dote(now)
+browserDote = unix2dote(beatNow)
 browserTime = browserDote[0] % 1 * 10
 browserZone = browserDote[1]
 browserSign = browserZone > 0 ? "-" : "+"
@@ -4513,7 +4414,7 @@ zone0time = (browserTime - browserZone + 10) % 10
 hours = browserTime * 2.4
 minutes = hours % 1 * 60
 seconds = minutes % 1 * 60
-selectedDote = unix2dote(now, long2zone(location[0]))
+selectedDote = unix2dote(beatNow, long2zone(location[0]))
 selectedExact = selectedDote[0] % 1
 selectedExactN = (1 - selectedExact) % 1
 selectedZone = selectedDote[1]
@@ -5757,6 +5658,21 @@ colors = ({
   land: "#f5f1dc",
   sun: "#ffe438"
 })
+// Resolves once the cell with this label is near the viewport, so plots far
+// below the fold are drawn only when the reader gets close to them.
+function whenVisible(id, margin = "600px") {
+  const element = document.getElementById(id);
+  if (!element) return Promise.resolve();
+  return new Promise(resolve => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        observer.disconnect();
+        resolve();
+      }
+    }, {rootMargin: margin});
+    observer.observe(element);
+  });
+}
 // https://observablehq.com/@parlant/editable-table
 function createTable(data, options) {
   let table = html`<table class="editable-table"></table>`;
@@ -5765,8 +5681,8 @@ function createTable(data, options) {
   return table;
 }
 table.setAttribute("class", "table")
-tableify = import("https://cdn.skypack.dev/tableify@1.1.1?min")
-xss = import("https://cdn.skypack.dev/xss@1.0.14?min")
+tableify = import("https://cdn.jsdelivr.net/npm/tableify@1.1.1/+esm")
+xss = import("https://cdn.jsdelivr.net/npm/xss@1.0.14/+esm")
 function createCellDiv(value, max, posorneg) {
   return `<div class="${posorneg}" style="
     width: ${Math.abs(value) / max}%;
@@ -6013,6 +5929,12 @@ countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json
 // https://observablehq.com/@d3/simple-clock
 // https://observablehq.com/@drio/lets-build-an-analog-clock
 posclock = {
+  // Read the time directly instead of through the cells that update every
+  // beat, so the clock is drawn once and only its hands move.
+  const zone = long2zone(location[0]);
+  const readDote = () => unix2dote(Date.now(), zone);
+  const readExact = dote => dote[0] % 1;
+  let hands, label;
   const clockRadius = 200,
     margin = 50,
     w = (clockRadius + margin) * 2,
@@ -6118,7 +6040,7 @@ posclock = {
         d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
       )
       .text(d => d);
-    const hands = face.append("g").attr("id", "clock-hands");
+    hands = face.append("g").attr("id", "clock-hands");
     hands
       .selectAll("line")
       .data(handData)
@@ -6139,19 +6061,18 @@ posclock = {
       .attr("y", 0)
       .attr("r", clockRadius / 20);
   }
-  function moveHands() {
-    const sel = d3
-      .select("#clock-hands-final")
-      .selectAll("line")
-      .data(handData)
-      .transition();
-    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
-    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
+  function moveHands(transition) {
+    const sel = hands.selectAll("line").data(handData);
+    (transition ? sel.transition().ease(d3.easeElastic.period(0.5)) : sel)
+      .attr("transform", d => `rotate(${d.scale(d.value)})`);
   }
   function updateData() {
-    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExact * 10) : decTime[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExact * 10 % 1 * 100) : decTime.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? selectedExact * 10 % 1 * 100 % 1 * 100 : decTime.slice(4, 6);
+    const dote = readDote(), exact = readExact(dote), time = (exact * 10).toFixed(4);
+    handData[0].value = !fancySecondsOFF ? Math.floor(exact * 10) : time[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(exact * 10 % 1 * 100) : time.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? exact * 10 % 1 * 100 % 1 * 100 : time.slice(4, 6);
+    const text = `+${time}-${dote[1]}`;
+    if (label && text !== label.text()) label.text(text);
   }
   const svg = d3
     .create("svg")
@@ -6159,24 +6080,48 @@ posclock = {
     .style("max-width", `${width / 2.1}px`)
     .attr("class", "analogclock")
     .attr("id", "topclock");
-  svg
+  label = svg
     .append("text")
-    .text(`+${decTime}-${selectedZone}`)
     .attr("x", clockRadius + margin)
     .attr("y", clockRadius * 2 + margin * 2.1)
     .attr("text-anchor", "middle")
     .attr("font-size", 32)
     .attr("font-family", "monospace");
   drawClock();
-  // Animation
-  const interval = setInterval(
-    () => {
-      updateData();
-      moveHands();
-    },
-    !fancySecondsOFF ? 10 : 864
+  updateData();
+  // Animation: sweep the hands every frame, or tick them at the start of every
+  // beat when fancy seconds are off. Pause while the clock is off-screen.
+  let frame, timer;
+  function start() {
+    stop();
+    if (!fancySecondsOFF) {
+      const loop = () => {
+        updateData();
+        moveHands(false);
+        frame = requestAnimationFrame(loop);
+      };
+      loop();
+    } else {
+      const step = () => {
+        updateData();
+        moveHands(true);
+        timer = setTimeout(step, 864 - Date.now() % 864);
+      };
+      step();
+    }
+  }
+  function stop() {
+    cancelAnimationFrame(frame);
+    clearTimeout(timer);
+  }
+  const observer = new IntersectionObserver(([entry]) =>
+    entry.isIntersecting ? start() : stop()
   );
-  invalidation.then(() => clearInterval(interval));
+  observer.observe(svg.node());
+  invalidation.then(() => {
+    stop();
+    observer.disconnect();
+  });
   return svg.node();
 }
 ```
@@ -6189,6 +6134,12 @@ posclock = {
 // https://observablehq.com/@d3/simple-clock
 // https://observablehq.com/@drio/lets-build-an-analog-clock
 negclock = {
+  // Read the time directly instead of through the cells that update every
+  // beat, so the clock is drawn once and only its hands move.
+  const zone = long2zone(location[0]);
+  const readDote = () => unix2dote(Date.now(), zone);
+  const readExact = dote => (1 - dote[0] % 1) % 1;
+  let hands, label;
   const clockRadius = 200,
     margin = 50,
     w = (clockRadius + margin) * 2,
@@ -6294,7 +6245,7 @@ negclock = {
         d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
       )
       .text(d => d);
-    const hands = face.append("g").attr("id", "clock-hands");
+    hands = face.append("g").attr("id", "clock-hands");
     hands
       .selectAll("line")
       .data(handData)
@@ -6315,19 +6266,18 @@ negclock = {
       .attr("y", 0)
       .attr("r", clockRadius / 20);
   }
-  function moveHands() {
-    const sel = d3
-      .select("#clock-hands-final")
-      .selectAll("line")
-      .data(handData)
-      .transition();
-    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
-    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
+  function moveHands(transition) {
+    const sel = hands.selectAll("line").data(handData);
+    (transition ? sel.transition().ease(d3.easeElastic.period(0.5)) : sel)
+      .attr("transform", d => `rotate(${d.scale(d.value)})`);
   }
   function updateData() {
-    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10) : decTimeN[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10 % 1 * 100) : decTimeN.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? selectedExactN * 10 % 1 * 100 % 1 * 100 : decTimeN.slice(4, 6);
+    const dote = readDote(), exact = readExact(dote), time = (exact * 10).toFixed(4);
+    handData[0].value = !fancySecondsOFF ? Math.floor(exact * 10) : time[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(exact * 10 % 1 * 100) : time.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? exact * 10 % 1 * 100 % 1 * 100 : time.slice(4, 6);
+    const text = `-${time}-${dote[1]}`;
+    if (label && text !== label.text()) label.text(text);
   }
   const svg = d3
     .create("svg")
@@ -6335,24 +6285,48 @@ negclock = {
     .style("max-width", `${width / 2.1}px`)
     .attr("class", "analogclock")
     .attr("id", "midclock");
-  svg
+  label = svg
     .append("text")
-    .text(`-${decTimeN}-${selectedZone}`)
     .attr("x", clockRadius + margin)
     .attr("y", clockRadius * 2 + margin * 2.1)
     .attr("text-anchor", "middle")
     .attr("font-size", 32)
     .attr("font-family", "monospace");
   drawClock();
-  // Animation
-  const interval = setInterval(
-    () => {
-      updateData();
-      moveHands();
-    },
-    !fancySecondsOFF ? 10 : 864
+  updateData();
+  // Animation: sweep the hands every frame, or tick them at the start of every
+  // beat when fancy seconds are off. Pause while the clock is off-screen.
+  let frame, timer;
+  function start() {
+    stop();
+    if (!fancySecondsOFF) {
+      const loop = () => {
+        updateData();
+        moveHands(false);
+        frame = requestAnimationFrame(loop);
+      };
+      loop();
+    } else {
+      const step = () => {
+        updateData();
+        moveHands(true);
+        timer = setTimeout(step, 864 - Date.now() % 864);
+      };
+      step();
+    }
+  }
+  function stop() {
+    cancelAnimationFrame(frame);
+    clearTimeout(timer);
+  }
+  const observer = new IntersectionObserver(([entry]) =>
+    entry.isIntersecting ? start() : stop()
   );
-  invalidation.then(() => clearInterval(interval));
+  observer.observe(svg.node());
+  invalidation.then(() => {
+    stop();
+    observer.disconnect();
+  });
   return svg.node();
 }
 ```
@@ -6491,15 +6465,6 @@ dotclock = {
       .attr("y", 0)
       .attr("r", clockRadius / 20);
   }
-  function moveHands() {
-    const sel = d3
-      .select("#clock-hands-final")
-      .selectAll("line")
-      .data(handData)
-      .transition();
-    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
-    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
-  }
   function updateData() {
     handData[0].value = selTimeCmd[0];
     handData[1].value = selTimeCmd.slice(1, 3);
@@ -6519,16 +6484,8 @@ dotclock = {
     .attr("text-anchor", "middle")
     .attr("font-size", 32)
     .attr("font-family", "monospace");
+  // The hands only change when the selected hour does, which reruns this cell.
   drawClock();
-  // Animation
-  const interval = setInterval(
-    () => {
-      updateData();
-      moveHands();
-    },
-    !fancySecondsOFF ? 10 : 864
-  );
-  invalidation.then(() => clearInterval(interval));
   return svg.node();
 }
 ```
@@ -7387,6 +7344,14 @@ mjx-container[jax="CHTML"][display="true"] {
 }
 #tbl-time td, #tbl-time th {
   white-space: nowrap;
+}
+/* Gap between the right-aligned q column and the left-aligned 1/q column. */
+#tbl-time td:nth-child(3), #tbl-time th:nth-child(3) {
+  padding-left: 4em;
+}
+/* Gaps between the digit pairs (instead of empty spacer columns). */
+:is(#tbl-b24, #tbl-b9) :is(td, th):is(:nth-child(3), :nth-child(5), :nth-child(7)) {
+  padding-left: 3.5rem;
 }
 div.equationgroup {
   margin-top: -9px;

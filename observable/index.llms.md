@@ -53,220 +53,7 @@ The top two bars in [Figure 2](#fig-bar-doty) (旬 and 日) show the two compon
 
 The bottom three bars in [Figure 2](#fig-bar-doty) (%, ‰, and ♫) show components of the `Declock` time (): `cents`[^8] (), `mils`[^9] (), and `beats`[^10] (). A `cent` is 1% of the day, which is a little less than a quarter hour. A `mil` (`‰`) is a tenth of a `cent`, which is close to a minute and a half. A `beat` is 1% of a `mil`, which is almost as long as a second, and can be thought of as a heart❤️beat or musical🎵[beat](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=the%20beat%20is%20the%20basic%20unit%20of%20time) with a constant [rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=The%20American%20Heart%20Association%20states%20the%20normal%20resting%20adult%20human%20heart%20rate%20is%2060%2D100%20bpm.) or [tempo](https://en.wikipedia.org/wiki/Tempo#Basic_tempo_markings:~:text=Adagietto%20%E2%80%93%20slower%20than,56%E2%80%93108%C2%A0bpm) of 69.4̅ beats per minute. In addition to displaying time on clocks🕰️and⌚️watches, `beats` can be used to measure durations, such as the time since this webpage was loaded: .
 
-``` js
-// https://observablehq.com/@fheyen/barchart-clock
-{
-const W = width > 1250 ? width * 2 / 3 : width > 1150 ? width * 3 / 4 : width > 1050 ? width * 4 / 5 : width > 950 ? width * 5 / 6 : width > 850 ? width : width > 750 ? width * 1.02 : width > 650 ? width * 1.06 : width > 550 ? width * 1.1 : width > 450 ? width * 1.14 : width * 1.18;
-  const H = 156;
-  const barX = 1;
-  const firstBarY = 1;
-  const svg = d3
-    .create("svg")
-    .attr("width", W)
-    .attr("viewBox", [0, 0, W, H]);
-  const xRange = [0, W - 100];
-  const scaleM = d3.scaleLinear()
-    .domain([0, 10])
-    .range(xRange);
-  const scaleCandB = d3.scaleLinear()
-    .domain([0, 100])
-    .range(xRange);
-  const scaleDek = d3.scaleLinear()
-    .domain([0, 37])
-    .range(xRange);
-  // Background bars to show where 100% lies
-  svg.selectAll('.background')
-    .data(['dek', 'dotd', 'cents', "mils", 'beats'])
-    .enter()
-    .append('rect')
-    .attr('class', 'background timeBar')
-    .attr('width', W-100)
-    .attr('y', (d,i)=>i*30+firstBarY)
-  // Dek/Dotd
-  svg
-    .append('rect')
-    .attr('class', 'timeBar')
-    .attr('y', firstBarY)
-    .attr('width', d => scaleDek(Number(dotyDek)+Number(dotyDotd)/10+Number(barCents)/1000))
-  svg
-    .append('rect')
-    .attr('class', 'timeBarFull')
-    .attr('y', firstBarY)
-    .attr('width', d => scaleDek(dotyDek))
-  svg
-    .append('rect')
-    .attr('class', 'timeBar')
-    .attr('y', firstBarY+30)
-    .attr('width', d => scaleM(Number(dotyDotd)+Number(barCents)/100+Number(barMils)/1000))
-  svg
-    .append('rect')
-    .attr('class', 'timeBarFull')
-    .attr('y', firstBarY+30)
-    .attr('width', d => scaleM(dotyDotd))
-  svg.selectAll('.tickDek')
-    .data(d3.range(width > 500 ? 4: 6, 37))
-    .enter()
-    .append('rect')
-    .attr('class', 'tickDek')
-    .attr('x', d=>scaleDek(d)+barX)
-    .attr('y', firstBarY)
-    .attr('height', d=>d%(width > 500 ? 2 : 3)===0? 6:4)
-  // Cent ticks
-  svg.selectAll('.tickDotd')
-    .data(d3.range(width > 500 ? 1: 2, 10))
-    .enter()
-    .append('rect')
-    .attr('class', 'tickDotd')
-    .attr('x', d=>scaleM(d)+barX)
-    .attr('y', firstBarY+49)
-    .attr('height', 6)
-  svg.selectAll('.tickLabel')
-    .data(d3.range(width > 500 ? 4: 6, width > 500 ? 37: 35, width > 500 ? 2: 3))
-    .enter()
-    .append('text')
-    .attr('class', 'tickLabel')
-    .attr('x', d=>scaleDek(d)+barX+.5)
-    .attr('y', firstBarY+22)
-    .text(d=>d)
-  // Cents/Mils
-  svg
-    .append('rect')
-    .attr('class', 'timeBar')
-    .attr('y', firstBarY+60)
-    .attr('width', d => scaleCandB(Number(barCents)+Number(barMils)/10+Number(barBeats)/1000))
-  svg
-    .append('rect')
-    .attr('class', 'timeBarFull')
-    .attr('y', firstBarY+60)
-    .attr('width', d => scaleCandB(barCents))
-  svg
-    .append('rect')
-    .attr('class', 'timeBar')
-    .attr('y', firstBarY+90)
-    .attr('width', d => scaleM(Number(barMils)+Number(barBeats)/100+Number(barMb)/100000))
-  svg
-    .append('rect')
-    .attr('class', 'timeBarFull')
-    .attr('y', firstBarY+90)
-    .attr('width', d => scaleM(barMils))
-  // Cent ticks
-  svg.selectAll('.tickC')
-    .data(d3.range(width > 500 ? 10 : 20, 100))
-    .enter()
-    .append('rect')
-    .attr('class', 'tickC')
-    .attr('x', d=>scaleM(d/10)+barX)
-    .attr('y', firstBarY+60)
-    .attr('height', d=>d%2===0? 8:5)
-  svg.selectAll('.tickC1')
-    .data(d3.range(width > 500 ? 10 : 20, 100))
-    .enter()
-    .append('rect')
-    .attr('class', 'tickC1')
-    .attr('x', d=>scaleM(d/10)+barX)
-    .attr('y', d=>d%2===0? firstBarY+77:firstBarY+80)
-    .attr('height', d=>d%2===0? 8:5)
-  // Mil ticks
-  svg.selectAll('.tickM')
-    .data(d3.range(width > 500 ? 1 : 2, 10))
-    .enter()
-    .append('rect')
-    .attr('class', 'tickM')
-    .attr('x', d=>scaleM(d)+barX)
-    .attr('y', firstBarY+90)
-    .attr('height', 6)
-  svg.selectAll('.tickM1')
-    .data(d3.range(width > 500 ? 1 : 2, 10))
-    .enter()
-    .append('rect')
-    .attr('class', 'tickM1')
-    .attr('x', d=>scaleM(d)+barX)
-    .attr('y', firstBarY+92.5)
-    .attr('height', 2.5)
-  svg.selectAll('.tickLabel1')
-    .data(d3.range(width > 500 ? 1 : 2, 10))
-    .enter()
-    .append('text')
-    .attr('class', 'tickLabel1')
-    .attr('x', d=>scaleM(d)+barX+.5)
-    .attr('y', firstBarY+47)
-    .text(d=>d)
-  svg.selectAll('.tickLabel2')
-    .data(d3.range(width > 500 ? 1 : 2, 10))
-    .enter()
-    .append('text')
-    .attr('class', 'tickLabel2')
-    .attr('x', d=>scaleM(d)+barX+.5)
-    .attr('y', firstBarY+112)
-    .text(d=>d)
-  // Beats
-  svg
-    .append('rect')
-    .attr('class', 'timeBar')
-    .attr('y', firstBarY+120)
-    .attr('width', d => scaleCandB(Number(barBeats)+Number(barMb)/1000))
-  svg
-    .append('rect')
-    .attr('class', 'timeBarFull')
-    .attr('y', firstBarY+120)
-    .attr('width', d => scaleCandB(barBeats))
-  // Beat ticks
-  svg.selectAll('.tickB')
-    .data(d3.range(width > 500 ? 10 : 20, 100))
-    .enter()
-    .append('rect')
-    .attr('class', 'tickB')
-    .attr('x', d=>scaleM(d/10)+barX)
-    .attr('y', firstBarY+120)
-    .attr('height', d=>d%2===0? 9:6)
-  // Labels
-  svg.selectAll('.timeLabel')
-    .data([`${dotyDek}旬`, `${dotyDotd}日`, `${barCents}%`, `${barMils}‰`, `${barBeats}♫`])
-    .enter()
-    .append('text')
-    .attr('class', 'timeLabel')
-    .attr('x', barX+2)
-    .attr('y', (d,i)=>i*30+firstBarY+20)
-    .text(d=>d)
-  return svg.node();
-}
-```
-
 Figure 2: Doty bar chart
-
-``` js
-html`<style>
-  .tickLabel, .tickLabel1, .tickLabel2, .timeLabel {
-    fill: #000;
-    font-family: sans-serif;
-    font-size: 20px;
-    text-anchor: middle;
-  }
-  .timeLabel {
-    text-anchor: start;
-  }
-  .timeBar, .timeBarFull {
-    x: 1px;
-    height: 25px;
-    rx: 5px;
-    stroke: #aaa;
-  }
-  .timeBar {
-    fill: #e8e8e8;
-  }
-  .timeBarFull {
-    fill: #ccffff;
-  }
-  .background {
-    fill: white;
-  }
-  .tickDek, .tickDotd, .tickDotd1, .tickC, .tickC1, .tickM, .tickM1, .tickB {
-    stroke: none;
-    fill: #666;
-    width: 1px;
-  }
-</style>`
-```
 
 As an alternative to `doty` dates, `Decalendar` can express dates in fractional years, which are similar to the [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days) used in `doty` times. Fractional year dates[^11] can be combined with years into one number and are useful for marking periods of 73 days in the `Decalendar` year. Every 73 days, the `Decalendar` fractional year date increases by .2 (⅕). The current `Decalendar` fractional year date is .
 
@@ -274,36 +61,9 @@ Now it’s your turn! Move the sliders🎚️in [Example 1](#exm-intro-doty) to
 
 **Example 1**  
 
-``` js
-viewof inputDoty = Inputs.range([0, 365], {value: 306, step: 1, label: "doty"});
-
-viewof year = transformInput(
-    Inputs.range([0, .999], {step: .001, label: "year"}),
-    {bind: viewof inputDoty, transform: (x => x / 365), invert: (x => x * 365)}
-);
-
-viewof monthInput = transformInput(
-    Inputs.range([1, 12], {step: 1, label: "month"}),
-    {bind: viewof inputDoty, transform: doty2month, invert: month2doty}
-);
-
-viewof dotmInput = transformInput(
-    Inputs.range([1, 31], {step: 1, label: "dotm"}),
-    {bind: viewof inputDoty, transform: doty2dotm, invert: (x => Math.floor(( 153 * (
-        viewof monthInput.value > 2
-        ? viewof monthInput.value - 3
-        : viewof monthInput.value + 9) + 2
-    ) / 5 + x - 1
-))});
-```
-
 1.  
 2.  
 3.  
-
-``` js
-viewof scrubberDoty = Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864})
-```
 
 ../List 1: Date to season conversion
 
@@ -312,10 +72,6 @@ viewof scrubberDoty = Scrubber(numbers, {autoplay: false, alternate: true, delay
 `Doty` dates (`day`) and [timestamps](https://en.wikipedia.org/wiki/Timestamp#:~:text=A%20timestamp%20is%20a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred%2C%20usually%20giving%20date%20and%20time%20of%20day%2C%20sometimes%20accurate%20to%20a%20small%20fraction%20of%20a%20second.) (`day.stamp`) do not include years and thus can be reused from year to year. When a `doty` is combined with a year, it forms a `Decalendar` `ordinal`[^12] (`deco`) and represents a specific date (`year+day`) or time (`year+day.stamp`) in a specific year, instead of a date (`day`) or time (`day.stamp`) that occurs every year or every leap year. Using the [Observable](https://observablehq.com/about) [datetime input](https://observablehq.com/@observablehq/input-date#cell-111) in [Example 2](#exm-intro-date), you can select a year, month, `dotm`, hour, and minute to see the equivalent 1) `deco` timestamp (`year+day.clock`) and 2) year date (`year.yyy`) in [../List 2](#lst-intro-date). For comparison, the current `deco` timestamp is .
 
 **Example 2**  
-
-``` js
-viewof inputDatetime = Inputs.datetime({label: "date", value: "1970-01-01T00:00"})
-```
 
 1.  
 2.  
@@ -331,25 +87,8 @@ Interacting with the [number](https://observablehq.com/@observablehq/input-range
 
 **Example 3**  
 
-``` js
-viewof yd = Inputs.form([
-  Inputs.number({label: "year", value: "1969"}),
-  Inputs.number({label: "doty", value: "306"})
-])
-```
-
-``` js
-viewof decoOutput = transformInput(
-  Inputs.text({label: "deco", placeholder: "year+day.ddd", value: "1969+306"}),
-  {bind: viewof yd, transform: doty2deco, invert: deco2doty});
-```
-
 1.  
 2.  
-
-``` js
-viewof scrubberDeco = Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864})
-```
 
 ```
 ```
@@ -368,53 +107,6 @@ You can also use the [interval sliders](https://observablehq.com/@mootari/range-
 
 **Example 4**  
 
-``` js
-viewof intervals = Inputs.form([
-  interval([0, 1], {step: .01, value: [.3, .7], label: '0 or 5', width: 250, format: ([start, end]) => start === end ? "" : `${formatDecimal(start)}:${formatDecimal(end)}`}),
-  interval([0, 1], {step: .01, value: [.3, .7], label: '1 or 6', width: 250, format: ([start, end]) => start === end ? "" : `${formatDecimal(start)}:${formatDecimal(end)}`}),
-  interval([0, 1], {step: .01, value: [.3, .7], label: '2 or 7', width: 250, format: ([start, end]) => start === end ? "" : `${formatDecimal(start)}:${formatDecimal(end)}`}),
-  interval([0, 1], {step: .01, value: [0, 0], label: '3 or 8', width: 250, format: ([start, end]) => start === end ? "" : `${formatDecimal(start)}:${formatDecimal(end)}`}),
-  interval([0, 1], {step: .01, value: [0, 0], label: '4 or 9', width: 250, format: ([start, end]) => start === end ? "" : `${formatDecimal(start)}:${formatDecimal(end)}`}),
-])
-```
-
-``` js
-viewof schedule = Inputs.radio([2, 3, 4, 5], {label: "sched.", value: 3})
-
-viewof filename = Inputs.text({label: "name", placeholder: "Enter the filename", value: `schedule${schedule}.csv`})
-
-button(durations, filename)
-```
-
-``` js
-// https://observablehq.com/@dec/pent
-Plot.plot({
-  className: "schedule-explorer",
-  x: {label: null},
-  color: {scheme: "Set1", legend: "swatches", reverse: true},
-  y: {label: null, domain: [1, 0]},
-  marks: [
-  Plot.barY(durations, {x: "label", y: "duration", fill: "group"}),
-  Plot.textY(
-      durations,
-      Plot.stackY(
-        Plot.groupX(
-          { y: "first", text: "first" },
-          {
-            x: "label",
-            z: "group",
-            y: "duration",
-            text: (d) => (d.duration < .0001 ? null : formatDecimal(d.duration)),
-            fill: "white",
-            stroke: "black",
-            fontSize: 36,
-          }
-        )
-      )
-    ),
-  ]})
-```
-
 Figure 3: Pently schedule explorer
 
 `Slices` can be used to select `Declock` time intervals, as in [Example 4](#exm-intro-pent) above, or `Decalendar` date intervals, as in [Example 5](#exm-intro-dotd) below. `Decalendar` date intervals can represent events take place over multiple days. In addition to `slices`, `Decalendar` and `Declock` intervals can also be chosen using `spreads`. Use the [Observable](https://observablehq.com/about) [button](https://observablehq.com/@observablehq/input-button) and [checkbox](https://observablehq.com/@observablehq/input-checkbox) inputs in [Example 5](#exm-intro-dotd) to display different `dotd` combinations in [Figure 4](#fig-intro-dotd). [Figure 4](#fig-intro-dotd) shows dates selected by a `slice` in blue, dates selected by a `spread` in orange, dates selected by both in green, and dates selected by neither in gray.
@@ -424,77 +116,6 @@ The [Example 5](#exm-intro-dotd) button and checkbox inputs will modify the ass
 The numeric inputs in [Example 5](#exm-intro-dotd) cannot capture the full power of `spreads` and `slices`, because `slices` can have any number of `steps` and, likewise, `spreads` can have any number of alternating `split` and `space` sizes. We can select all even or odd days-of-the-`dek` using a `slice` with a single `step` (`::2` or `1::2`) or a `spread` with one `split`-`space` pair (`>>>1` or `1>>>1`). More complex patterns, such as prime or composite days-of-the-`dek`, require multiple `step` sizes for `slices` (`2:::2:2:5` or `4::2:2::5`) or multiple `split`-`space` pairs (`2>>2>1>>1>>4` or `4>>>1>>1>2>4`).
 
 **Example 5**  
-
-``` js
-viewof sliceDotd = Inputs.checkbox([...Array(10).keys()], {label: "slice", value: [1, 6]})
-```
-
-``` js
-viewof spreadDotd = Inputs.checkbox([...Array(10).keys()], {label: "spread", value: [1, 6]})
-```
-
-``` js
-viewof togglePlot = Inputs.button([
-  [invertDotd ? "None" : "All", value => [...Array(10).keys()]],
-  [invertDotd ? "Even" : "Odd", value => [1, 3, 5, 7, 9]],
-  [invertDotd ? html`<s>Prime</s>` : "Prime", value => [2, 3, 5, 7]],
-  [invertDotd ? html`<s>Composite</s>` : "Composite", value => [4, 6, 8, 9]],
-  [invertDotd ? html`<s>Schedule2</s>` : "Schedule2", value => [0, 1, 5, 6]],
-  [invertDotd ? html`<s>Schedule3</s>` : "Schedule3", value => [0, 1, 2, 5, 6, 7]],
-  [invertDotd ? html`<s>Schedule4</s>` : "Schedule4", value => [0, 1, 2, 3, 5, 6, 7, 8]],
-], {value: [], label: "select"})
-```
-
-``` js
-viewof invertDotd = Inputs.toggle({label: "invert"})
-viewof sliceOrSpread = toggleSwitch({textOn: invertDotd ? "Spread" : 'Slice' , textOff: invertDotd ? "Slice" : 'Spread'})
-```
-
-``` js
-viewof sliceInputs = Inputs.form([
-    Inputs.number([-366, 366], {step: 1, label: "start", value: 1, placeholder: "Enter start index"}),
-    Inputs.number([-366, 366], {step: 1, label: "stop", value: 366, placeholder: "Enter stop index"}),
-    Inputs.number([-366, 366], {step: 1, label: "step", value: 5, placeholder: "Enter step size"}),
-])
-viewof sliceString = transformInput(
-  Inputs.text({label: "slice", placeholder: "Enter slice string", value: "0:366"}),
-{bind: viewof sliceInputs, transform: encodeSlice, invert: decodeSlice});
-```
-
-``` js
-viewof spreadInputs = Inputs.form([
-    Inputs.number([-366, 366], {step: 1, label: "start", value: 0, placeholder: "Enter start index"}),
-    Inputs.number([-366, 366], {step: 1, label: "span", value: 366, placeholder: "Enter span size"}),
-    Inputs.number([-366, 366], {step: 1, label: "split", value: 3, placeholder: "Enter split size"}),
-    Inputs.number([-366, 366], {step: 1, label: "space", value: 2, placeholder: "Enter space size"}),
-])
-viewof spreadString = transformInput(
-  Inputs.text({label: "spread", placeholder: "Enter spread string", value: "0>366>3>2"}),
-{bind: viewof spreadInputs, transform: encodeSpread, invert: decodeSpread});
-```
-
-``` js
-// https://observablehq.com/@dec/dotd
-Plot.plot({
-  className: "date-selector",
-  padding: 0,
-  x: {axis: "top", label: null, type: "band"},
-  y: {label: null, type: "band"},
-  marks: [
-    Plot.cell(dates, {x: d => d[2], y: d => d.slice(0, 2), fill: d =>
-      sliceArray.includes(d) && spreadArray.includes(d) ? "green" :
-      sliceArray.includes(d) && !spreadArray.includes(d) ? "blue" :
-      !sliceArray.includes(d) && spreadArray.includes(d) ? "orange" : "grey",
-      inset: 0.5}),
-    Plot.text(dates, {
-    x: d => d[2],
-    y: d => d.slice(0, 2),
-    fill: "white",
-    stroke: "black",
-    fontSize: 20})
-  ]
-})
-```
 
 Figure 4: Decalendar date selector
 
@@ -808,14 +429,6 @@ styledBeat = setStyle(dotyTime.slice(3, 5), d3.schemePaired[11])
 ## 
 
 Set values
-
-``` js
-set(viewof inputDoty, scrubberDoty)
-```
-
-``` js
-set(viewof decoOutput, `1969+${scrubberDeco.toString().padStart(3, "0")}`)
-```
 
 ## 
 
