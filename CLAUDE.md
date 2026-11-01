@@ -36,6 +36,27 @@ updated as new preferences come up; don't let it grow into a changelog.
   `quarto preview` first. Nothing goes to `main` unread.
 - On a phone, keep replies readable on a small screen: short paragraphs, plain text,
   small tables, and LaTeX. Show proposed text before writing it to a file.
+- In a terminal session on the user's computer (neither `CLAUDE_CODE_REMOTE`
+  nor `CODESPACES` set, and not Remote Control), edit the working tree only.
+  The user handles rendering, staging, committing, pushing, and publishing:
+  `quarto preview` is already running (port 4200) and re-renders on save,
+  and a zsh alias does the publish together with the git work. Don't run
+  `quarto render`, `quarto preview`, or `quarto publish`, and don't run
+  `git add`, `commit`, or `push`, unless asked in that turn. Reading the
+  running preview (e.g. with Playwright for the mobile-layout check) and
+  running small code snippets are fine.
+
+## Codespaces
+
+- If `CODESPACES=true`, the session runs in a GitHub codespace, usually opened
+  in a browser on a public computer. The Build environment paths above don't
+  apply: the shell is `/bin/bash`, and Python 3.16 is `/usr/local/bin/python3.16`
+  (set as `RETICULATE_PYTHON` by the devcontainer).
+- Work on a branch, never `main`. Commit and push to that branch only when
+  asked in that turn; the user reviews the PR from their phone before merging.
+- The user previews via the forwarded port 4200, which must stay Private.
+  Don't change port visibility.
+- Never print tokens or secrets in output; the screen may be visible to others.
 
 ## Mobile layout
 
