@@ -1,0 +1,24 @@
+{
+  "name": "maptv.github.io",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/rocker-org/devcontainer-features/r-apt:latest": {},
+    "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
+  },
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "containerEnv": {
+    "RETICULATE_PYTHON": "/usr/local/bin/python3.16"
+  },
+  "forwardPorts": [4200],
+  "portsAttributes": {
+    "4200": { "label": "quarto preview", "onAutoForward": "silent" }
+  },
+  "secrets": {
+    "ANTHROPIC_API_KEY": { "description": "Claude Code login without browser OAuth" }
+  },
+  "customizations": {
+    "vscode": { "extensions": ["quarto.quarto"] }
+  }
+}
