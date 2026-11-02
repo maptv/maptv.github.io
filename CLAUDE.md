@@ -153,20 +153,29 @@ updated as new preferences come up; don't let it grow into a changelog.
 
 ## Mixed-radix numerals (dec/time)
 
-- The tom digits after the doy are radix 10, 10, 10, 9, 10, 24: dd, cd, md, a b9 digit
-  (☉☿♀♁♂♃♄♅♆ = 0–8, tens of Dec seconds), a Dec-second digit, and a b24 sid digit
-  (α–ω = 0–23, 1/24 Dec s). Each glyph fills one decimal slot and is worth the digit to its
-  left divided by its own radix.
-- The user prefers numerals without a dot, in the unit of the last glyph's slot. Slot names
-  step by 10 (d, dd, cd, md, decimilliday, cmd = beat, µd; s, ds), so a dot can go anywhere
-  or nowhere: 375♀7 cmd = 3753 decimillidays = 375.3 md = 0.3753 d. The kind of glyph
-  shows the radix, so a doy plus a tom needs only one dot: 227.375♀7 = 227.37530. This
-  convention is intentional; don't push back on it as nonstandard.
-- In its slot's unit a letter is worth letter × 10 / radix: 19υ ds = 190 + 19 ÷ 2.4 =
-  197.92 ds = 19 SI s, and 41♄ decimillidays = 410 + 6 × 10/9 = 1 h. Check formulas with a
-  nonzero letter, since α and ☉ hide errors (a letter ÷ 24 in ds is off by a factor of 10).
-- After the first non-decimal glyph, digits don't convert one for one: 375♀7 = 37530 cmd
-  only because 27 Dec s = 30 beats (375♀8 = 37531.1 cmd). A numeral that contains a letter
-  isn't a whole number of its unit.
+- Glyphs: digits 0–9 (radix 10), ☉☿♀♁♂♃♄♅♆ = 0–8 (b9), α–ω = 0–23 (b24, so β = 1,
+  δ = 3, ζ = 5, η = 6, μ = 11, ν = 12). Every glyph fills one slot, whatever its radix.
+- Value rule (applies everywhere): reading left to right, a glyph's place value is the
+  place value of the glyph to its left divided by its own radix; the first slot after the
+  point divides 1 d. So β in the first slot = 1/24 d, and 0000☿ = 1/9 dmd = 1 Dec s.
+- Ticking tod (a live clock) uses the fixed sequence 10, 10, 10, 9, 10, 24: dd, cd, md, a
+  b9 digit (tens of Dec s), a Dec-second digit, and a sid digit (1/24 Dec s). Durations,
+  offsets, and static tod may put b9, b10, or b24 glyphs in any slot; the fixed sequence
+  is one case of the same value rule. In these, β dd (1 h), β00 md, and similar are fine.
+- Units: a numeral is in the unit of its last glyph's slot, and dots are optional (the user
+  prefers none). Slots step by 10: 1 dd, 2 cd, 3 md, 4 decimilliday (dmd), 5 cmd = beat,
+  6 µd. An offset starts in the dd slot, so its glyph count sets its unit, and leading
+  zeros matter: tod−δ = tod−125 (3 h); a 1-minute offset is tod−000♄η (5 glyphs, cmd).
+  The kind of glyph shows the radix, so a doy plus a tom needs only one dot:
+  227.375♀7 = 227.37530. This convention is intentional; don't push back on it.
+- Examples: 1 h = β dd = 41♄ dmd = 41.♄ md; 3 h = δ dd = 125 md; 1 min = ♄η cmd
+  (as a fixed tod: 000♄2ν); 1 Dec s = ☿ cmd; 1 SI s = ☿β µd.
+- Shortcut: a glyph right after a decimal digit is worth glyph × 10 / radix of its slot's
+  unit (19υ ds = 190 + 19 ÷ 2.4 = 19 SI s; 41♄ dmd = 410 + 6 × 10/9). After another
+  non-decimal glyph, use the value rule instead: ♄η cmd = 6/9 + 6/216 md, not
+  66.67 + 2.5 cmd. Check with nonzero letters, since α and ☉ hide errors.
+- After the first non-decimal glyph, digits don't convert one for one: β00 md = 41.67 md,
+  and 375♀7 = 37530 cmd only because 27 Dec s = 30 beats (375♀8 = 37531.1 cmd). A numeral
+  that contains a letter isn't a whole number of its unit.
 - sid digit = (s − sis) × 24 mod 24 = sis mod 24 (round down for a fraction of an SI
   second). s = sis / 0.96 = ds / 10, and sis = 0.96 s = 0.096 ds.

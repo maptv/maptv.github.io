@@ -156,7 +156,6 @@ zeroDoy = Math.floor(zeroAda)
 zeroIsLeap = isLeapYear(zeroYear)
 zeroAdaHsl = () => textcolor(zeroAda.toFixed(5), piecewiseColor(zeroAda / (365 + zeroIsLeap)))
 zeroTimePiece = piecewiseColor(zeroTime)
-zeroTimeHsl = () => textcolor(zeroTime.toFixed(5).slice(2), zeroTimePiece)
 zeroDotyPiece = piecewiseColor(zeroDoy / (365 + zeroIsLeap))
 zeroDotyPad = zeroDoy.toString().padStart(3, "0")
 zeroDotyHsl = () => textcolor(zeroDotyPad, zeroDotyPiece)
@@ -166,12 +165,15 @@ browserDote = unix2dote(beatNow)
 browserTime = browserDote[0] % 1 * 10
 browserZone = browserDote[1]
 browserSign = browserZone > 0 ? "-" : "+"
-zone0time = (browserTime - browserZone + 10) % 10
-utc1time = (zone0time + 1/2.4) % 10
-zone0timeStr = zone0time.toFixed(4)
-utc1timeStr = utc1time.toFixed(4)
-zone0timeHsl = () => textcolor(zone0timeStr, piecewiseColor(zone0time / 10))
-utc1timeHsl = () => textcolor(utc1timeStr, piecewiseColor(utc1time / 10))
+utc1time = (zeroTime + 1/24) % 1
+dec1time = (zeroTime + .1) % 1
+dec2time = (zeroTime + .2) % 1
+utc3time = (zeroTime + .125) % 1
+zeroTimeHsl = () => textcolor(zeroTime.toFixed(5).slice(2), zeroTimePiece)
+dec1timeHsl = () => textcolor(dec1time.toFixed(5).slice(2), piecewiseColor(dec1time))
+dec2timeHsl = () => textcolor(dec2time.toFixed(5).slice(2), piecewiseColor(dec2time))
+utc1timeHsl = () => textcolor(utc1time.toFixed(5).slice(2), piecewiseColor(utc1time))
+utc3timeHsl = () => textcolor(utc3time.toFixed(5).slice(2), piecewiseColor(utc3time))
 hours = browserTime * 2.4
 minutes = hours % 1 * 60
 seconds = minutes % 1 * 60
