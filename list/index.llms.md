@@ -1,3 +1,7 @@
+Author
+
+[Martin Laptev](https://maptv.github.io)
+
 ![](../asset/colorWheelCompass.svg)
 
 ##### Dec Measurement System
@@ -38,7 +42,7 @@ Introducing Declock, a timekeeping system that displays time in decimal days wit
 |------------|-------------|
 | Word Count | 8,203 words |
 
-1793598566
+1793654990
 
 ![](../asset/1939ww2europe.svg)
 

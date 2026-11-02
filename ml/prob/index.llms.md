@@ -18,11 +18,11 @@ Modified
 
 In this blog post I will discuss a few examples of [probability](https://en.wikipedia.org/wiki/Probability#:~:text=Probability%20is%20the%20branch%20of,event%20and%201%20indicates%20certainty.) in [machine learning](https://en.wikipedia.org/wiki/Machine_learning#:~:text=Machine%20learning%20(ML)%20is%20a%20field%20of%20study%20in%20artificial%20intelligence%20concerned%20with%20the%20development%20and%20study%20of%20statistical%20algorithms%20that%20can%20effectively%20generalize%20and%20thus%20perform%20tasks%20without%20explicit%20instructions.). If you are new to probability, I recommend one of great textbooks that cover the topic and are available for free online, such as [Think Bayes](https://allendowney.github.io/ThinkBayes2) by [Allen Downey](https://www.allendowney.com) and [Bayes Rules!](https://www.bayesrulesbook.com) by [Alicia A. Johnson](https://ajohns24.github.io), Miles Q. Ott, and [Mine Dogucu](https://www.minedogucu.com).
 
-[Classification](https://en.wikipedia.org/wiki/Statistical_classification) [algorithms](https://en.wikipedia.org/wiki/Algorithm) algorithms can estimate \\n \times k\\ class membership probabilities for each dataset, where n is the number of data points in the dataset and k is the number of classes in the [training dataset](https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets#:~:text=training%20data%20set%2C%5B3%5D%20which%20is%20a%20set%20of%20examples%20used%20to%20fit%20the%20parameters%20(e.g.%20weights%20of%20connections%20between%20neurons%20in%20artificial%20neural%20networks)%20of%20the%20model.). Similarly, the [Gaussian Mixtures](https://scikit-learn.org/stable/modules/mixture.html) [clustering](https://scikit-learn.org/stable/modules/clustering.html) algorithm can generate \\n \times k\\ cluster label probabilities.
+[Classification](https://en.wikipedia.org/wiki/Statistical_classification) [algorithms](https://en.wikipedia.org/wiki/Algorithm) algorithms can estimate $n \times k$ class membership probabilities for each dataset, where n is the number of data points in the dataset and k is the number of classes in the [training dataset](https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets#:~:text=training%20data%20set%2C%5B3%5D%20which%20is%20a%20set%20of%20examples%20used%20to%20fit%20the%20parameters%20(e.g.%20weights%20of%20connections%20between%20neurons%20in%20artificial%20neural%20networks)%20of%20the%20model.). Similarly, the [Gaussian Mixtures](https://scikit-learn.org/stable/modules/mixture.html) [clustering](https://scikit-learn.org/stable/modules/clustering.html) algorithm can generate $n \times k$ cluster label probabilities.
 
 Besides a data point and the Gaussian Mixtures models can estimate cluster membership probability. point , especially [Logistic Regression](https://en.wikipedia.org/wiki/Logistic_regression) and [Naive Bayes](https://en.wikipedia.org/wiki/Naive_Bayes_classifier). Every classification algorithm can estimate probabilities of belonging to each class.
 
-\\\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}\\
+$\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}$
 
 ``` python
 import matplotlib.pyplot as plt
@@ -235,7 +235,7 @@ plt.show()
 
 ##### Step 1. Write out the linear regression equation
 
-\\\Huge y=\beta_0+\beta_1 x_1+...+\beta_n x_n\\ \## Step 2. The logistic regression equation is the same as above except output is log odds \\\Huge log(odds)=\beta_0+\beta_1 x_1+...+\beta_n x_n\\ \## Step 3. Exponentiate both sides of the logistic regression equation to get odds \\\Huge odds=e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}\\ \## Step 4. Write out the probability equation \\\Huge p=\frac{odds}{1+odds}\\ \## Step 5. Plug odds (from step 3) into the probability equation \\\Huge p=\frac{e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}{1+e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}\\ \## Step 6. Divide the numerator and denominator by the odds (from step 3) \\\Huge p=\frac{1}{1+e^{-(\beta_0+\beta_1 x_1+...+\beta_n x_n)}}\\
+$\Huge y=\beta_0+\beta_1 x_1+...+\beta_n x_n$ \## Step 2. The logistic regression equation is the same as above except output is log odds $\Huge log(odds)=\beta_0+\beta_1 x_1+...+\beta_n x_n$ \## Step 3. Exponentiate both sides of the logistic regression equation to get odds $\Huge odds=e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}$ \## Step 4. Write out the probability equation $\Huge p=\frac{odds}{1+odds}$ \## Step 5. Plug odds (from step 3) into the probability equation $\Huge p=\frac{e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}{1+e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}$ \## Step 6. Divide the numerator and denominator by the odds (from step 3) $\Huge p=\frac{1}{1+e^{-(\beta_0+\beta_1 x_1+...+\beta_n x_n)}}$
 
 ``` python
 gnb = GaussianNB()
@@ -307,7 +307,7 @@ posterior
 
     np.float64(0.6512820512820513)
 
-\\\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}\\
+$\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}$
 
 ``` python
 result = likelihood * prior / norm

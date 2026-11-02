@@ -1078,11 +1078,11 @@ set(viewof sliceString, setSliceDotd(sliceDotd))
 
 [^7]: `dotd`: one of the 10 days in a `dek`; the last digit of the `Decalendar` date; an alternate to the day-of-the-month and day-of-the-week
 
-[^8]: `cent`: a hundredth (\\10^{-2}\\) of a day; the first 2 digits of the `doty` time; an alternate to quarter hours
+[^8]: `cent`: a hundredth ($10^{-2}$) of a day; the first 2 digits of the `doty` time; an alternate to quarter hours
 
-[^9]: `mil`: a thousandth (\\10^{-3}\\) of a day; the first 3 digits of the `doty` time; an alternate to minutes
+[^9]: `mil`: a thousandth ($10^{-3}$) of a day; the first 3 digits of the `doty` time; an alternate to minutes
 
-[^10]: `beat`: a hundred thousandth (\\10^{-5}\\) of a day; the first 5 digits of the `doty` time; an alternate to seconds
+[^10]: `beat`: a hundred thousandth ($10^{-5}$) of a day; the first 5 digits of the `doty` time; an alternate to seconds
 
 [^11]: fractional year date: a year and the proportion of that year that has passed; an alternative to `Decalendar` dates
 

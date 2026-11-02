@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="">
+<meta name="author" content="Martin Laptev">
 
 <title>Martin Laptev</title>
 <style>
@@ -44,18 +44,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-cda858a997f762f21442baaf74cb975e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-e87069830987fa4ea7a3f95f8592f767.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-cda858a997f762f21442baaf74cb975e.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-5a8ea6506bd74de719dafad1d662b7b4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-31f71cfee8fb6cb433a9ce015cec3520.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-5a8ea6506bd74de719dafad1d662b7b4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b120de1d932bea55b95afba459a1314b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-8005db495d7f17010d46887fc00caccf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-b120de1d932bea55b95afba459a1314b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ba2e050e7072598b04b20d418b518f23.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-0736272006ba8770b8d2c07b01679511.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-ba2e050e7072598b04b20d418b518f23.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": true,
@@ -101,12 +102,6 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   </script>
 <meta name="format-detection" content="telephone=no">
 <script src="../asset/svg-anchor-href.js"></script>
@@ -149,7 +144,7 @@ window.Quarto = {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -172,6 +167,7 @@ window.Quarto = {
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -201,13 +197,19 @@ window.Quarto = {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -302,6 +304,7 @@ window.Quarto = {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -311,6 +314,7 @@ window.Quarto = {
         return;
       const alternate = e.matches
       toggleColorMode(alternate);
+      refreshSafariScrollbar();
       localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
       toggleGiscusIfUsed(alternate, darkModeDefault);
     });
@@ -324,7 +328,7 @@ window.Quarto = {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
@@ -336,7 +340,7 @@ window.Quarto = {
     </a>
   </div>
         <div class="quarto-navbar-tools tools-end">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -345,13 +349,13 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../list/index.html">Article List</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../list/index.html">Article List</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -362,7 +366,7 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Section">
         <div class="sidebar-tools-main tools-wide">
     <a href="https://www.github.com/maptv" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-github"></i></a>
     <a href="https://www.linkedin.com/in/maptv" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-linkedin"></i></a>
@@ -396,22 +400,22 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../list/index.html" class="sidebar-item-text sidebar-link active"><i class="bi bi-grid-3x3-gap" role="img">
 </i> 
- <span class="menu-text">Article List</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Article List</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section: Article List">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../dec/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-arrow-repeat" role="img">
 </i> 
- <span class="menu-text">Dec</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Dec</span></a>
+            <button type="button" class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section: Dec">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../dec/date/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-calendar-date" role="img">
@@ -451,14 +455,11 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false"><i class="bi bi-hourglass-split" role="img">
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="false"><i class="bi bi-hourglass-split" role="img">
 </i> 
- <span class="menu-text">History</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-3-label">History</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../history/ww2/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-2-square" role="img">
@@ -470,14 +471,11 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false"><i class="bi bi-laptop" role="img">
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="false"><i class="bi bi-laptop" role="img">
 </i> 
- <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Software</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../git/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-git" role="img">
@@ -510,12 +508,12 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../quarto/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-markdown" role="img">
 </i> 
- <span class="menu-text">Quarto</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-5-label">Quarto</span></a>
+            <button type="button" class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section: Quarto">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../quarto/filter/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-funnel" role="img">
@@ -552,10 +550,31 @@ window.Quarto = {
         
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Z2l0">git <span class="quarto-category-count">(4)</span></div><div class="category" data-category="anVweXRlcg==">jupyter <span class="quarto-category-count">(1)</span></div><div class="category" data-category="a25pdHI=">knitr <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bGxt">llm <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWw=">ml <span class="quarto-category-count">(2)</span></div><div class="category" data-category="b2JzZXJ2YWJsZQ==">observable <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cXVhcnRv">quarto <span class="quarto-category-count">(5)</span></div><div class="category" data-category="cnN0dWRpbw==">rstudio <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c29mdHdhcmU=">software <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dG9vbA==">tool <span class="quarto-category-count">(6)</span></div><div class="category" data-category="dnNjb2Rl">vscode <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d2ViJTIwZGV2">web dev <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-body" id="quarto-document-content" tabindex="-1">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+</div>
 
 
 
+<div class="quarto-title-meta column-body">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><a href="https://maptv.github.io">Martin Laptev</a> </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 
@@ -563,7 +582,7 @@ window.Quarto = {
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
 <div class="g-col-1" data-index="0" data-listing-date-sort="1793598566000" data-listing-file-modified-sort="1793598566793" data-listing-date-modified-sort="1793598566000" data-listing-reading-time-sort="24" data-listing-word-count-sort="4796">
-<a href="../dec/index.html" class="quarto-grid-link">
+<a href="../dec/index.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="../asset/colorWheelCompass.svg" class="thumbnail-image card-img" style="height: 150px;">
@@ -573,7 +592,7 @@ window.Quarto = {
 Dec Measurement System
 </h5>
 <div class="listing-reading-time card-text text-muted">24 min</div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Introducing Dec, a measurement system, which uses turns instead of months, weeks, hours, minutes, seconds, and degrees.</p>
 </div>
 <table class="card-other-values">
@@ -595,7 +614,7 @@ Word Count
 </div></a>
 </div>
 <div class="g-col-1" data-index="1" data-listing-date-sort="1793598566000" data-listing-file-modified-sort="1793598566862" data-listing-date-modified-sort="1793598566000" data-listing-reading-time-sort="269" data-listing-word-count-sort="53698">
-<a href="../dec/date/index.html" class="quarto-grid-link">
+<a href="../dec/date/index.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="../asset/cal16.svg" class="thumbnail-image card-img" style="height: 150px;">
@@ -605,7 +624,7 @@ Word Count
 Decalendar
 </h5>
 <div class="listing-reading-time card-text text-muted">269 min</div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Introducing Decalendar, a solar calendar which measures time in years and days without the need for months or weeks.</p>
 </div>
 <table class="card-other-values">
@@ -626,8 +645,8 @@ Word Count
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1793598566000" data-listing-file-modified-sort="1793598566883" data-listing-date-modified-sort="1793598566000" data-listing-reading-time-sort="42" data-listing-word-count-sort="8203">
-<a href="../dec/time/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-listing-date-sort="1793654990000" data-listing-file-modified-sort="1793654990099" data-listing-date-modified-sort="1793654990000" data-listing-reading-time-sort="42" data-listing-word-count-sort="8203">
+<a href="../dec/time/index.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="../asset/daywide.svg" class="thumbnail-image card-img" style="height: 150px;">
@@ -637,7 +656,7 @@ Word Count
 Declock
 </h5>
 <div class="listing-reading-time card-text text-muted">42 min</div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Introducing Declock, a timekeeping system that displays time in decimal days without the need for hours, minutes, or seconds.</p>
 </div>
 <table class="card-other-values">
@@ -654,12 +673,12 @@ Word Count
 </tbody></table>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">1793598566</div>
+<div class="card-file-modified listing-file-modified">1793654990</div>
 </div>
 </div></a>
 </div>
 <div class="g-col-1" data-index="3" data-listing-date-sort="1725860445000" data-listing-file-modified-sort="1725860445106" data-listing-date-modified-sort="1725860445000" data-listing-reading-time-sort="3" data-listing-word-count-sort="409">
-<a href="../history/ww2/index.html" class="quarto-grid-link">
+<a href="../history/ww2/index.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="../asset/1939ww2europe.svg" class="thumbnail-image card-img" style="height: 150px;">
@@ -669,7 +688,7 @@ Word Count
 World War 2
 </h5>
 <div class="listing-reading-time card-text text-muted">3 min</div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <span class="blue" data-bs-toggle="tooltip" data-bs-title="September 1"><u>Day 184</u></span> in the Gregorian Decalendar is the first day of <span class="blue" data-bs-toggle="tooltip" data-bs-title="Fall in the Northern Hemisphere and Spring in the Southern Hemisphere"><u>Season 2</u></span> by meteorological reckoning and also the anniversary of the start of the World War 2. On <span class="blue" data-bs-toggle="tooltip" data-bs-title="1939-09-01"><u>1939+184</u></span>, World War…<span class="blue" data-bs-toggle="tooltip" data-bs-title="1939-09-17"><u></u></span><span class="blue" data-bs-toggle="tooltip" data-bs-title="1939-08-23"><u></u></span><span class="blue" data-bs-toggle="tooltip" data-bs-title="September 1"><u></u></span><span class="blue" data-bs-toggle="tooltip" data-bs-title="September 17"><u></u></span><span class="blue" data-bs-toggle="tooltip" data-bs-title="1941-06-22"><u></u></span>
 </div>
 <table class="card-other-values">
@@ -691,7 +710,7 @@ Word Count
 </div></a>
 </div>
 <div class="g-col-1" data-index="4" data-categories="c29mdHdhcmUlMkNnaXQlMkNyc3R1ZGlvJTJDcXVhcnRv" data-listing-date-sort="1776874460000" data-listing-file-modified-sort="1776874460579" data-listing-date-modified-sort="1776874460000" data-listing-reading-time-sort="17" data-listing-word-count-sort="3317">
-<a href="../git/index.html" class="quarto-grid-link">
+<a href="../git/index.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="../asset/horst_git-hug.png" class="thumbnail-image card-img" style="height: 150px;">
@@ -712,7 +731,7 @@ Git
 <div class="listing-category" onclick="window.quartoListingCategory('cXVhcnRv'); return false;">quarto</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Get started with Git version control, the RStudio integrated development environment, and the Quarto publishing system.</p>
 </div>
 <table class="card-other-values">
@@ -734,7 +753,7 @@ Word Count
 </div></a>
 </div>
 <div class="g-col-1" data-index="5" data-categories="dG9vbCUyQ3F1YXJ0byUyQ3dlYiUyMGRldiUyQ2dpdA==" data-listing-date-sort="1738643333000" data-listing-file-modified-sort="1738643333504" data-listing-date-modified-sort="1738643333000" data-listing-reading-time-sort="19" data-listing-word-count-sort="3763">
-<a href="../quarto/index.html" class="quarto-grid-link">
+<a href="../quarto/index.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="../quarto/horst_many-qmd-to-output.png" class="thumbnail-image card-img" style="height: 150px;">
@@ -755,7 +774,7 @@ Quarto
 <div class="listing-category" onclick="window.quartoListingCategory('Z2l0'); return false;">git</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 This blog post is the most important post in my Tools blog post series, as indicated by its centrality in Figure&nbsp;1, node of the netw focuses on the use of Quarto to author…
 </div>
 <table class="card-other-values">
@@ -777,7 +796,7 @@ Word Count
 </div></a>
 </div>
 <div class="g-col-1" data-index="6" data-categories="dG9vbCUyQ2dpdCUyQ3ZzY29kZQ==" data-listing-date-sort="1746560774000" data-listing-file-modified-sort="1746560774735" data-listing-date-modified-sort="1746560774000" data-listing-reading-time-sort="14" data-listing-word-count-sort="2627">
-<a href="../positron/index.html" class="quarto-grid-link">
+<a href="../positron/index.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="../asset/positron.svg" class="thumbnail-image card-img" style="height: 150px;">
@@ -796,7 +815,7 @@ Positron
 <div class="listing-category" onclick="window.quartoListingCategory('dnNjb2Rl'); return false;">vscode</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 The goal of this blog post, the second in the Tools blog post series summarized by Figure&nbsp;1, is to set up the Visual Studio Code (VSCode) source-code editor to run in the…<code></code>
 </div>
 <table class="card-other-values">
@@ -818,7 +837,7 @@ Word Count
 </div></a>
 </div>
 <div class="g-col-1" data-index="7" data-categories="dG9vbCUyQ29ic2VydmFibGUlMkNxdWFydG8=" data-listing-date-sort="1738642623000" data-listing-file-modified-sort="1738642623650" data-listing-date-modified-sort="1738642623000" data-listing-reading-time-sort="45" data-listing-word-count-sort="8966">
-<a href="../observable/index.html" class="quarto-grid-link">
+<a href="../observable/index.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="../observable/horst_many-lang-qmd-to-output.png" class="thumbnail-image card-img" style="height: 150px;">
@@ -837,7 +856,7 @@ Observable
 <div class="listing-category" onclick="window.quartoListingCategory('cXVhcnRv'); return false;">quarto</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 The goal of this blog post, the fourth in my Tools blog post series, is to set up the Visual Studio Code (VSCode) source-code editor to run in the remote development…<code></code>
 </div>
 <table class="card-other-values">
@@ -859,7 +878,7 @@ Word Count
 </div></a>
 </div>
 <div class="g-col-1" data-index="8" data-categories="dG9vbCUyQ2tuaXRyJTJDanVweXRlciUyQ3F1YXJ0bw==" data-listing-date-sort="1738642636000" data-listing-file-modified-sort="1738642636595" data-listing-date-modified-sort="1738642636000" data-listing-reading-time-sort="1" data-listing-word-count-sort="79">
-<a href="../jupyter/index.html" class="quarto-grid-link">
+<a href="../jupyter/index.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="../jupyter/horst_jupyter.png" class="thumbnail-image card-img" style="height: 150px;">
@@ -880,7 +899,7 @@ Jupyter
 <div class="listing-category" onclick="window.quartoListingCategory('cXVhcnRv'); return false;">quarto</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 The goal of this blog post, the second to last (index: -2) in my Tools blog post series, is to
 </div>
 <table class="card-other-values">
@@ -902,7 +921,7 @@ Word Count
 </div></a>
 </div>
 <div class="g-col-1" data-index="9" data-categories="dG9vbCUyQ2tuaXRyJTJDcXVhcnRv" data-listing-date-sort="1738642605000" data-listing-file-modified-sort="1738642605607" data-listing-date-modified-sort="1738642605000" data-listing-reading-time-sort="1" data-listing-word-count-sort="77">
-<a href="../knitr/index.html" class="quarto-grid-link">
+<a href="../knitr/index.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="../knitr/horst_knitr.png" class="thumbnail-image card-img" style="height: 150px;">
@@ -921,7 +940,7 @@ Knitr
 <div class="listing-category" onclick="window.quartoListingCategory('cXVhcnRv'); return false;">quarto</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 The goal of this blog post, the last (index: -1) in my Tools blog post series, is to
 </div>
 <table class="card-other-values">
@@ -943,7 +962,7 @@ Word Count
 </div></a>
 </div>
 <div class="g-col-1" data-index="10" data-categories="bWw=" data-listing-date-sort="1787929874000" data-listing-file-modified-sort="1787929874787" data-listing-date-modified-sort="1787929874000" data-listing-reading-time-sort="5" data-listing-word-count-sort="911">
-<a href="../ml/prob/index.html" class="quarto-grid-link">
+<a href="../ml/prob/index.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="../ml/prob/horst_hist-samples.png" class="thumbnail-image card-img" style="height: 150px;">
@@ -958,7 +977,7 @@ Probability
 <div class="listing-category" onclick="window.quartoListingCategory('bWw='); return false;">ml</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 In this blog post I will discuss a few examples of probability in machine learning. If you are new to probability, I recommend one of great textbooks that cover the topic…
 </div>
 <table class="card-other-values">
@@ -980,7 +999,7 @@ Word Count
 </div></a>
 </div>
 <div class="g-col-1" data-index="11" data-categories="dG9vbCUyQ2dpdCUyQ2xsbSUyQ21s" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207466" data-listing-date-modified-sort="1725581207000" data-listing-reading-time-sort="1" data-listing-word-count-sort="21">
-<a href="../ml/llm/index.html" class="quarto-grid-link">
+<a href="../ml/llm/index.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="../ml/llm/dalle_llm-guru.jpg" class="thumbnail-image card-img" style="height: 150px;">
@@ -1001,7 +1020,7 @@ LLM
 <div class="listing-category" onclick="window.quartoListingCategory('bWw='); return false;">ml</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 Large Language Models (LLMs) are a way to automatically generate text. more informative commit messages based on the currently staged changes.
 </div>
 <table class="card-other-values">
@@ -1099,15 +1118,50 @@ code { padding: 0px; }
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -1182,11 +1236,30 @@ code { padding: 0px; }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
         var filterRegex = new RegExp("https:\/\/maptv\.github\.io");
+      const newWindowLabel = "(opens in a new tab)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -1200,8 +1273,70 @@ code { padding: 0px; }
             if (link.getAttribute("rel") === null) {
               link.setAttribute("rel", "noopener");
             }
+            describeNewWindow(link);
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -1215,6 +1350,7 @@ code { padding: 0px; }
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1377,44 +1513,54 @@ code { padding: 0px; }
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1513,7 +1659,10 @@ code { padding: 0px; }
     }
   });
   </script>
-<nav class="page-navigation column-body">
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+<nav class="page-navigation column-body" aria-label="Page">
   <div class="nav-page nav-page-previous">
       <a href="../cv/index.html" class="pagination-link" aria-label="CV/Résumé">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">CV/Résumé</span>

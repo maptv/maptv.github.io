@@ -171,7 +171,7 @@ Creating a PAT on [GitHub](https://docs.github.com/en/authentication/keeping-you
 
 When I set up a new computer, I create a SSH key using the command in **?@exm-keygen**. I can add this key to my SSH agent simply by running `ssh-add`, but I also
 
-ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -C \\(uname -n)\_\\(sysctl hw.model \| cut -f2 -d )
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -C $(uname -n)_$(sysctl hw.model \| cut -f2 -d )
 
 I use the
 
