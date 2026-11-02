@@ -244,11 +244,10 @@ function yiq(color) {
 function textcolor(content, style = {}) {
   const {
     background,
-    color = yiq(background) > 0.5 ? "#000" : "white",
-    padding = "0 2px",
+    color = yiq(background) > 0.5 ? "black" : "white",
+    padding = "0.5px 0.75px 0.5px 0.75px",
     borderRadius = "4px",
-    fontWeight = 400,
-    fontFamily = "sans-serif",
+    fontFamily = "inherit",
     ...rest
   } = typeof style === "string" ? {background: style} : style;
   return htl.html`<span style=${{
@@ -256,7 +255,6 @@ function textcolor(content, style = {}) {
     color,
     padding,
     borderRadius,
-    fontWeight,
     fontFamily,
     ...rest
   }}>${content}</span>`;
@@ -615,13 +613,10 @@ decDateP0pad = String(decDateP0).padStart(3, "0")
 decTimeP0 = ydzP0[1] % 1
 decDekP0 = Math.floor(decDateP0 / 10)
 decDodP0 = decDateP0 % 10
-decYearP0hsl0 = textcolor(decYearP0, `hsl(${d3.hsl(piecewiseColor(decYearP0 % 1000 / 1000)).h}` + slStr)
-decYearP0hsl1 = textcolor(decYearP0, `hsl(${d3.hsl(piecewiseColor(decYearP0 % 1000 / 1000)).h}` + slStr)
-decDateP0hsl0 = textcolor(decDateP0pad, `hsl(${d3.hsl(piecewiseColor(decDateP0 / (365 + isLeapP0))).h}` + slStr)
-decDateP0hsl1 = textcolor(decDateP0pad, `hsl(${d3.hsl(piecewiseColor(decDateP0 / (365 + isLeapP0))).h}` + slStr)
+decYearP0hsl = () => textcolor(decYearP0, `hsl(${d3.hsl(piecewiseColor(decYearP0 % 1000 / 1000)).h}` + slStr)
+decDateP0hsl = () => textcolor(decDateP0pad, `hsl(${d3.hsl(piecewiseColor(decDateP0 / (365 + isLeapP0))).h}` + slStr)
 decYdaP0hsl = textcolor(decYdaP0.toFixed(5).padStart(9, "0"), `hsl(${d3.hsl(piecewiseColor(decYdaP0 / (365 + isLeapP0))).h}` + slStr)
-decTimeP0hsl0 = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
-decTimeP0hsl1 = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decTimeP0hsl = () => textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
 decDekP0hsl = textcolor(decDekP0, `hsl(${d3.hsl(piecewiseColor(decDekP0 / 37)).h}` + slStr)
 decDodP0hsl = textcolor(decDodP0, `hsl(${d3.hsl(piecewiseColor(decDodP0 / 10)).h}` + slStr)
 decLon = longitude % 10
@@ -905,13 +900,11 @@ Place_A = coordinates[0]
 Place_B = coordinates[1]
 distance_km = (d3.geoDistance(Place_A, Place_B)* 6371).toFixed(0)
 distance_mc = distance_km / 40
-distance_mcHsl0 = textcolor(parseFloat(distance_mc.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
-distance_mcHsl1 = textcolor(parseFloat(distance_mc.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
+distance_mcHsl = () => textcolor(parseFloat(distance_mc.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
 distance_c = distance_mc / 1000
 distance_cHsl = textcolor(parseFloat(distance_c.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(distance_c % 1)).h}` + slStr)
 velocity_v = travelspeed / 1000
-velocity_vHsl0 = textcolor(parseFloat(velocity_v.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
-velocity_vHsl1 = textcolor(parseFloat(velocity_v.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
+velocity_vHsl = () => textcolor(parseFloat(velocity_v.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
 velocity_mvHsl = textcolor(parseFloat(travelspeed.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(travelspeed / 1000)).h}` + slStr)
 traveltime = Math.round(distance_mc) / Math.round(travelspeed)
 traveltimeHsl0 = Number.isFinite(traveltime) ? textcolor(parseFloat(Math.round(traveltime * 1000).toFixed(3)), `hsl(${d3.hsl(piecewiseColor(traveltime % 1)).h}` + slStr) : traveltime

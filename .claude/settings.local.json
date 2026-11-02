@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sL https://howardhinnant.github.io/date_algorithms.html)"
+    ]
+  }
+}

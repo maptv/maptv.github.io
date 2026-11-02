@@ -237,47 +237,20 @@ december31doyColor = textcolor(december31doy, piecewiseColor(december31doy / nDa
 january1doy = 306 + nOffInput
 january1doyByNdaysInput = january1doy / nDaysInput
 january1doyPiece = piecewiseColor(january1doyByNdaysInput)
-january1doyColor = textcolor(january1doy, january1doyPiece)
-january1doyColor1 = textcolor(january1doy, january1doyPiece)
-january1doyColor2 = textcolor(january1doy, january1doyPiece)
-january1doyColor3 = textcolor(january1doy, january1doyPiece)
+january1doyColor = () => textcolor(january1doy, january1doyPiece)
 decYear = ydz[0]
 decYearOfCenturyBy100 = decYear % 100 / 100
 decYearPiece = piecewiseColor(decYearOfCenturyBy100)
-decYearColor = textcolor(decYear, decYearPiece)
-decYearColor1 = textcolor(decYear, decYearPiece)
-decYearColor2 = textcolor(decYear, decYearPiece)
-decYearColor3 = textcolor(decYear, decYearPiece)
-decYearColor4 = textcolor(decYear, decYearPiece)
-decYearColor5 = textcolor(decYear, decYearPiece)
-decYearColor6 = textcolor(decYear, decYearPiece)
-decYearColor7 = textcolor(decYear, decYearPiece)
-decYearColor8 = textcolor(decYear, decYearPiece)
-decYearColor9 = textcolor(decYear, decYearPiece)
-decYearColor10 = textcolor(decYear, decYearPiece)
-decYearColor11 = textcolor(decYear, decYearPiece)
-decYearColor12 = textcolor(decYear, decYearPiece)
+decYearColor = () => textcolor(decYear, decYearPiece)
 nextYear = decYear + 1
 nextYearOfCenturyBy100 = nextYear % 100 / 100
 nextYearPiece = piecewiseColor(nextYearOfCenturyBy100)
-nextYearColor = textcolor(nextYear, nextYearPiece)
-nextYearColor1 = textcolor(nextYear, nextYearPiece)
-nextYearColor2 = textcolor(nextYear, nextYearPiece)
-nextYearColor3 = textcolor(nextYear, nextYearPiece)
-nextYearColor4 = textcolor(nextYear, nextYearPiece)
-nextYearColor5 = textcolor(nextYear, nextYearPiece)
-nextYearColor6 = textcolor(nextYear, nextYearPiece)
-nextYearColor7 = textcolor(nextYear, nextYearPiece)
-nextYearColor8 = textcolor(nextYear, nextYearPiece)
-nextYearColor9 = textcolor(nextYear, nextYearPiece)
+nextYearColor = () => textcolor(nextYear, nextYearPiece)
 decYearLastDoy = nDaysInYear - 1
 decYearLastDoe = date2dote(decYear, decYearLastDoy)[0]
 decYearLastDow = (decYearLastDoe + 3) % 7
 decYearLastDowPiece = piecewiseColor(decYearLastDow / 7)
-decYearLastDowColor = textcolor(decYearLastDow, decYearLastDowPiece)
-decYearLastDowColor1 = textcolor(decYearLastDow, decYearLastDowPiece)
-decYearLastDowColor2 = textcolor(decYearLastDow, decYearLastDowPiece)
-decYearLastDowColor3 = textcolor(decYearLastDow, decYearLastDowPiece)
+decYearLastDowColor = () => textcolor(decYearLastDow, decYearLastDowPiece)
 decYearLastBow = decYearLastDoy - decYearLastDow
 decYearLastBowPiece = piecewiseColor(decYearLastBow / nDaysInYear)
 decYearLastBowNeg = decYearLastBow - nDaysInYear
@@ -294,16 +267,9 @@ decDoty = Math.floor(ydz[1])
 decDotyDays = decDoty === 1 ? "day" : "days"
 decDotyByNdaysInput = decDoty / nDaysInput
 decDotyPiece = piecewiseColor(decDotyByNdaysInput)
-decDotyColor = textcolor(decDoty, decDotyPiece)
-decDotyColor1 = textcolor(decDoty, decDotyPiece)
-decDotyColor2 = textcolor(decDoty, decDotyPiece)
-decDotyColor3 = textcolor(decDoty, decDotyPiece)
-decDotyColor4 = textcolor(decDoty, decDotyPiece)
+decDotyColor = () => textcolor(decDoty, decDotyPiece)
 decDotyPad = String(decDoty).padStart(3, "0")
-decDotyPadColor = textcolor(decDotyPad, decDotyPiece)
-decDotyPadColor1 = textcolor(decDotyPad, decDotyPiece)
-decDotyPadColor2 = textcolor(decDotyPad, decDotyPiece)
-decDotyPadColor3 = textcolor(decDotyPad, decDotyPiece)
+decDotyPadColor = () => textcolor(decDotyPad, decDotyPiece)
 decNid = decDoty - nDaysInYear
 decNidPlus1 = decNid + 1
 decNixGrave = Math.abs(Math.floor(decNidPlus1 / 10))
@@ -321,8 +287,7 @@ decDohGraveFirstDigit = Math.floor(decDohGrave / 10)
 decDohGraveFirstPiece = piecewiseColor(decDohGraveFirstDigit / 10)
 decDohGraveFirstColor = textcolor(decDohGraveFirstDigit, decDohGraveFirstPiece)
 decDoxGravePiece = piecewiseColor(decDoxGrave / 10)
-decDoxGraveColor = textcolor(decDoxGrave, decDoxGravePiece)
-decDoxGraveColor1 = textcolor(decDoxGrave, decDoxGravePiece)
+decDoxGraveColor = () => textcolor(decDoxGrave, decDoxGravePiece)
 decNidPad = decNid.toString().padStart(3, "0")
 decNidAbs = Math.abs(decNid)
 decNidAbsPad = decNidAbs.toString().padStart(3, "0")
@@ -336,8 +301,7 @@ decPihColor = textcolor(decPih, decPihPiece)
 decPihPlus1 = decPih + 1
 decPihPlus1Boh = decPihPlus1 * 100
 decPihPlus1Piece = piecewiseColor(decPihPlus1Boh / nDaysInput)
-decPihPlus1Color = textcolor(decPihPlus1, decPihPlus1Piece)
-decPihPlus1Color1 = textcolor(decPihPlus1, decPihPlus1Piece)
+decPihPlus1Color = () => textcolor(decPihPlus1, decPihPlus1Piece)
 decNix = Math.floor(decNid / 10)
 decNih = Math.floor(decNid / 100)
 decNixAbs = Math.abs(decNix)
@@ -350,41 +314,23 @@ decNixPlus1Box = decNixPlus1 * 10 % nDaysInput + nDaysInput
 decNihPlus1Boh = decNihPlus1 * 100 % nDaysInput + nDaysInput
 decNixPlus1Piece = piecewiseColor(decNixPlus1Box / nDaysInput)
 decNihPlus1Piece = piecewiseColor(decNihPlus1Boh / nDaysInput)
-decNixPlus1Color = textcolor(decNixPlus1Abs, decNixPlus1Piece)
-decNixPlus1Color1 = textcolor(decNixPlus1Abs, decNixPlus1Piece)
-decNihPlus1Color = textcolor(decNihPlus1Abs, decNihPlus1Piece)
-decNihPlus1Color1 = textcolor(decNihPlus1Abs, decNihPlus1Piece)
+decNixPlus1Color = () => textcolor(decNixPlus1Abs, decNixPlus1Piece)
+decNihPlus1Color = () => textcolor(decNihPlus1Abs, decNihPlus1Piece)
 decNihBoh = decNih * 100 % nDaysInput + nDaysInput
 decNihAbsPiece = piecewiseColor(decNihBoh / nDaysInput)
-decNihAbsColor = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor1 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor2 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor3 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor4 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor5 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor6 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor7 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor8 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor9 = textcolor(decNihAbs, decNihAbsPiece)
+decNihAbsColor = () => textcolor(decNihAbs, decNihAbsPiece)
 decNixBox = decNix * 10 % nDaysInput + nDaysInput
 decNixAbsPiece = piecewiseColor(decNixBox / nDaysInput)
-decNixAbsColor = textcolor(decNixAbs, decNixAbsPiece)
-decNixAbsColor1 = textcolor(decNixAbs, decNixAbsPiece)
-decNixAbsColor2 = textcolor(decNixAbs, decNixAbsPiece)
-decNixAbsColor3 = textcolor(decNixAbs, decNixAbsPiece)
+decNixAbsColor = () => textcolor(decNixAbs, decNixAbsPiece)
 decDohPid = decDoty % 100
 decDohPidBy100 = decDohPid / 100
 decDohPidPiece = piecewiseColor(decDohPidBy100)
-decDohPidColor = textcolor(decDohPid, decDohPidPiece)
-decDohPidColor1 = textcolor(decDohPid, decDohPidPiece)
-decDohPidColor2 = textcolor(decDohPid, decDohPidPiece)
-decDohPidColor3 = textcolor(decDohPid, decDohPidPiece)
+decDohPidColor = () => textcolor(decDohPid, decDohPidPiece)
 decDohNid = Math.abs(decNid % 100)
 decDohNidBy100 = decDohNid / 100
 decDohNidPiece = piecewiseColor(decDohNidBy100)
-decDohNidColor = textcolor(decDohNid, decDohNidPiece)
-decDohNidColor1 = textcolor(decDohNid.toString().padStart(2, "0"), decDohNidPiece)
-decDohNidColor2 = textcolor(decDohNid, decDohNidPiece)
+decDohNidColor = () => textcolor(decDohNid, decDohNidPiece)
+decDohNidPadColor = () => textcolor(decDohNid.toString().padStart(2, "0"), decDohNidPiece)
 decDoxNid = decNid % 10
 decDoxNidPiece = piecewiseColor(Math.abs(decDoxNid) / 10)
 decDoxNidColor = textcolor(Math.abs(decDoxNid), decDoxNidPiece)
@@ -393,35 +339,23 @@ decDohNidPad = decDohNid.toString().padStart(2, "0")
 decDohPidMid = (100 - decDohPid) % 100
 decDohPidMidBy100 = decDohPidMid / 100
 decDohPidMidPiece = piecewiseColor(decDohPidMidBy100)
-decDohPidMidColor = textcolor(decDohPidMid, decDohPidMidPiece)
-decDohPidMidColor1 = textcolor(decDohPidMid, decDohPidMidPiece)
+decDohPidMidColor = () => textcolor(decDohPidMid, decDohPidMidPiece)
 decDohNidMid = (100 - decDohNid) % 100
 decDohNidMidBy100 = decDohNidMid / 100
 decDohNidMidPiece = piecewiseColor(decDohNidMidBy100)
-decDohNidMidColor = textcolor(decDohNidMid, decDohNidMidPiece)
-decDohNidMidColor1 = textcolor(decDohNidMid, decDohNidMidPiece)
+decDohNidMidColor = () => textcolor(decDohNidMid, decDohNidMidPiece)
 decDoxPidMid = decDohPidMid % 10
 decDoxNidMid = decDohNidMid % 10
 decDoxPidMidColor = textcolor(decDoxPidMid, piecewiseColor(decDoxPidMid / 10))
 decDoxNidMidPiece = piecewiseColor(decDoxNidMid / 10)
-decDoxNidMidColor = textcolor(decDoxNidMid, decDoxNidMidPiece)
-decDoxNidMidColor1 = textcolor(decDoxNidMid, decDoxNidMidPiece)
-decDoxNidMidColor2 = textcolor(decDoxNidMid, decDoxNidMidPiece)
-decDoxNidMidColor3 = textcolor(decDoxNidMid, decDoxNidMidPiece)
+decDoxNidMidColor = () => textcolor(decDoxNidMid, decDoxNidMidPiece)
 decDohPidMidPad = decDohPidMid.toString().padStart(2, "0")
 decDohPidMidPadColor = textcolor(decDohPidMidPad, decDohPidMidPiece)
 decDohNidMidPad = decDohNidMid.toString().padStart(2, "0")
-decDohNidMidPadColor = textcolor(decDohNidMidPad, decDohNidMidPiece)
-decDohNidMidPadColor1 = textcolor(decDohNidMidPad, decDohNidMidPiece)
-decDohNidMidPadColor2 = textcolor(decDohNidMidPad, decDohNidMidPiece)
-decDohNidMidPadColor3 = textcolor(decDohNidMidPad, decDohNidMidPiece)
-decDohNidMidPadColor4 = textcolor(decDohNidMidPad, decDohNidMidPiece)
-decDohNidMidPadColor5 = textcolor(decDohNidMidPad, decDohNidMidPiece)
+decDohNidMidPadColor = () => textcolor(decDohNidMidPad, decDohNidMidPiece)
 decDohNidMidFirstDigit = Math.floor(decDohNidMid / 10) 
 decDohNidMidFirstPiece = piecewiseColor(decDohNidMidFirstDigit / 10)
-decDohNidMidFirstColor = textcolor(decDohNidMidFirstDigit, decDohNidMidFirstPiece)
-decDohNidMidFirstColor1 = textcolor(decDohNidMidFirstDigit, decDohNidMidFirstPiece)
-decDohNidMidFirstColor2 = textcolor(decDohNidMidFirstDigit, decDohNidMidFirstPiece)
+decDohNidMidFirstColor = () => textcolor(decDohNidMidFirstDigit, decDohNidMidFirstPiece)
 decNihMix = decNihAbs * 10 + decDohNidMidFirstDigit
 decDotd = decDoty % 10
 decDotdColor = textcolor(decDotd, piecewiseColor(decDotd / 10))
@@ -454,10 +388,8 @@ NegDob = decDob - nDaysInBim
 decBob = decDoty - decDob
 decBobPiece = piecewiseColor(decBob / nDaysInYear)
 decDobPiece = piecewiseColor(decDob / nDaysInBim)
-decBobColor = textcolor(decBob, decBobPiece)
-decBobColor1 = textcolor(decBob, decBobPiece)
-decDobColor = textcolor(decDob, decDobPiece)
-decDobColor1 = textcolor(decDob, decDobPiece)
+decBobColor = () => textcolor(decBob, decBobPiece)
+decDobColor = () => textcolor(decDob, decDobPiece)
 decDobPad = decDob.toString().padStart(2, "0")
 decBobPad = Math.abs(decBob).toString().padStart(3, "0")
 decBobSign = decBob < 0 ? "-" : "+"
@@ -469,8 +401,7 @@ xmasDiff = decDoty - 299
 xmasDiffPos = (xmasDiff + nDaysInput) % nDaysInput
 xmasDiffPiece = piecewiseColor(xmasDiffPos / nDaysInput)
 xmasDiffAbs = Math.abs(xmasDiff)
-xmasDiffColor = textcolor(xmasDiffAbs, xmasDiffPiece)
-xmasDiffColor1 = textcolor(xmasDiffAbs, xmasDiffPiece)
+xmasDiffColor = () => textcolor(xmasDiffAbs, xmasDiffPiece)
 xmasNext = xmasDiff - nDaysInput
 xmasNextColor = textcolor(Math.abs(xmasNext), xmasDiffPiece)
 xmasDiffSign = xmasDiff < 0 ? "-" : "+"
@@ -482,8 +413,7 @@ xmasDiffResult = xmasDiff < 0 ? "-" : ""
 xmasDote = date2dote(decYear, 299)[0]
 xmasDotw = dote2dotw(xmasDote)
 xmasDotwPiece = piecewiseColor(xmasDotw / 7)
-xmasDotwColor = textcolor(xmasDotw, xmasDotwPiece)
-xmasDotwColor1 = textcolor(xmasDotw, xmasDotwPiece)
+xmasDotwColor = () => textcolor(xmasDotw, xmasDotwPiece)
 gregBoyDote = date2dote(loadYdz[0] - (loadYdz[1] < 306), 306)[0]
 gregBoyDotw = (gregBoyDote + 3) % 7
 loadDateStr = loadDate.toUTCString().split(" ", 4).join(" ")
@@ -491,40 +421,26 @@ dotwArr = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 gregBoyDotwStr = dotwArr[gregBoyDotw]
 dotw = Math.floor(dote2dotw(dz[0]))
 dotwPiece = piecewiseColor(dotw / 7)
-dotwColor = textcolor(dotw, dotwPiece)
-dotwColor1 = textcolor(dotw, dotwPiece)
-dotwColor2 = textcolor(dotw, dotwPiece)
-dotwColor3 = textcolor(dotw, dotwPiece)
-dotwColor4 = textcolor(dotw, dotwPiece)
-dotwColor5 = textcolor(dotw, dotwPiece)
-dotwColor6 = textcolor(dowDice[dotw], dotwPiece)
-dotwColor7 = textcolor(dowDice[dotw], dotwPiece)
-dotwColor8 = textcolor(dotw, dotwPiece)
+dotwColor = () => textcolor(dotw, dotwPiece)
+dotwDiceColor = () => textcolor(dowDice[dotw], dotwPiece)
 day266dotw = dote2dotw(date2dote(decYear, 266)[0])
 day266dotwColor = textcolor(day266dotw, piecewiseColor(day266dotw / 7))
 day266dotwDiff = dotw2diff(4, day266dotw)
 day266dotwDiffPiece = piecewiseColor(day266dotwDiff / 7)
-day266dotwDiffColor = textcolor(day266dotwDiff, day266dotwDiffPiece)
-day266dotwDiffColor1 = textcolor(day266dotwDiff, day266dotwDiffPiece)
+day266dotwDiffColor = () => textcolor(day266dotwDiff, day266dotwDiffPiece)
 day266dotwDiffPlus267 = day266dotwDiff + 267
 day266dotwDiffPlus267Color = textcolor(day266dotwDiffPlus267, piecewiseColor(day266dotwDiffPlus267 / nDaysInput))
 motyInput = Math.floor((5 * dotyInput + 2) / 153)
 botmInput = Math.floor((153 * motyInput + 2) / 5) - 1
 dayofmonthInput = dotyInput - botmInput 
 dayofmonthPiece = piecewiseColor(dayofmonthInput / motyLens[motyInput])
-dayofmonthColor = textcolor(dayofmonthInput, dayofmonthPiece)
-dayofmonthColor1 = textcolor(dayofmonthInput, dayofmonthPiece)
+dayofmonthColor = () => textcolor(dayofmonthInput, dayofmonthPiece)
 monthNumber = dotyInput - dayofmonthInput
 monthNumberColor = textcolor(monthNumber, piecewiseColor(monthNumber / nDaysInput))
 dotw0doty = Math.floor(ydz[1]) - dotw
 dotw0dotyPiece = piecewiseColor(dotw0doty / nDaysInYear)
-dotw0dotyColor = textcolor(dotw0doty, dotw0dotyPiece)
-dotw0dotyColor1 = textcolor(dotw0dotyPad, dotw0dotyPiece)
-dotw0dotyColor2 = textcolor(dotw0doty, dotw0dotyPiece)
-dotw0dotyColor3 = textcolor(dotw0dotyPad, dotw0dotyPiece)
-dotw0dotyColor4 = textcolor(dotw0dotyPad, dotw0dotyPiece)
-dotw0dotyColor5 = textcolor(dotw0dotyPad, dotw0dotyPiece)
-dotw0dotyColor6 = textcolor(dotw0dotyPad, dotw0dotyPiece)
+dotw0dotyColor = () => textcolor(dotw0doty, dotw0dotyPiece)
+dotw0dotyPadColor = () => textcolor(dotw0dotyPad, dotw0dotyPiece)
 dotw0dotyNeg = Math.abs(dotw0doty - nDaysInput)
 dotw0dotyPad = dotw0doty.toString().padStart(3, "0")
 dotw0dotyNegPad = dotw0dotyNeg.toString().padStart(3, "0")
@@ -542,23 +458,17 @@ woySuitColor = textcolor(woySuits[woySuit], woySuitPiece)
 woySignPiece = piecewiseColor(woySign / 13)
 woySignColor = textcolor(woySigns[woySign], woySignPiece)
 woyPad = weekofyear.toString().padStart(2, "0")
-woyColor = textcolor(weekofyear, dotw0dotyPiece)
-woyColor1 = textcolor(woyPad, dotw0dotyPiece)
-woyColor2 = textcolor(woyPad, dotw0dotyPiece)
-woyColor3 = textcolor(woyCards[weekofyear], dotw0dotyPiece)
+woyColor = () => textcolor(weekofyear, dotw0dotyPiece)
+woyPadColor = () => textcolor(woyPad, dotw0dotyPiece)
+woyCardColor = () => textcolor(woyCards[weekofyear], dotw0dotyPiece)
 dotw0sign = dotw0doty < 0 ? "-" : "+"
 dotw0signIfNeg = dotw0doty < 0 ? "-" : ""
 nDaysInYear = 365 + year2leap(decYear + 1)
 Tminus = nDaysInYear - decDoty
 TminusDays = Tminus === 1 ? "day" : "days"
-TminusColor = textcolor(Tminus, decDotyPiece)
-TminusColor1 = textcolor(Tminus, decDotyPiece)
-TminusColor2 = textcolor(Tminus, decDotyPiece)
-TminusColor3 = textcolor(Tminus, decDotyPiece)
+TminusColor = () => textcolor(Tminus, decDotyPiece)
 TminusPadded = Tminus.toString().padStart(3, "0")
-TminusPaddedColor = textcolor(TminusPadded, decDotyPiece)
-TminusPaddedColor1 = textcolor(TminusPadded, decDotyPiece)
-TminusPaddedColor2 = textcolor(TminusPadded, decDotyPiece)
+TminusPaddedColor = () => textcolor(TminusPadded, decDotyPiece)
 TminusPaddedNeg = "-" + TminusPadded
 fracYear = decYear + ydz[1] / nDaysInYear
 fullfracYear = (fracYear).toFixed(4)
