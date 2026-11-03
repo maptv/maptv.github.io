@@ -179,3 +179,12 @@ updated as new preferences come up; don't let it grow into a changelog.
   that contains a letter isn't a whole number of its unit.
 - sid digit = (s − sis) × 24 mod 24 = sis mod 24 (round down for a fraction of an SI
   second). s = sis / 0.96 = ds / 10, and sis = 0.96 s = 0.096 ds.
+- Offsets are submultiples of a day: 0 ≤ offset < 1 d. An offset starts in
+  the dd slot, so by the value rule every glyph is a fraction of 1 d, and
+  even all-maximal glyphs (ω♆…, 99…) only approach 1 d. Whole-day shifts go
+  in the doy, never the offset (hence no negative offsets: UTC−5 → +19 h).
+- To convert an offset to days, divide its value in its unit by 10^L, where
+  L is its glyph count. Read δ / 10 as δ dd (= 1.25 dd) ÷ 10 = 0.125 d, not
+  as the glyph's face value 3 ÷ 10. So δ dd = 3/24 d = 125 md: δ / 10 =
+  125 / 1000. This is the only consistent reading; don't flag it as
+  ambiguous or wrong.
