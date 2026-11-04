@@ -169,10 +169,15 @@ utc1time = (zeroTime + 1/24) % 1
 dec1time = (zeroTime + .1) % 1
 dec2time = (zeroTime + .2) % 1
 utc3time = (zeroTime + .125) % 1
-zeroTimeHsl = () => textcolor(zeroTime.toFixed(5).slice(2), zeroTimePiece)
+zeroTpad = zeroTime.toFixed(5).slice(2)
+zeroTpadHsl = () => textcolor(zeroTpad, zeroTimePiece)
+zeroTintHsl = () => textcolor(parseInt(zeroTpad), zeroTimePiece)
 dec1timeHsl = () => textcolor(dec1time.toFixed(5).slice(2), piecewiseColor(dec1time))
 dec2timeHsl = () => textcolor(dec2time.toFixed(5).slice(2), piecewiseColor(dec2time))
-utc1timeHsl = () => textcolor(utc1time.toFixed(5).slice(2), piecewiseColor(utc1time))
+utc1pad = utc1time.toFixed(5).slice(2)
+utc1piece = piecewiseColor(utc1time)
+utc1tpadHsl = () => textcolor(utc1pad, utc1piece)
+utc1tintHsl = () => textcolor(parseInt(utc1pad), utc1piece)
 utc3timeHsl = () => textcolor(utc3time.toFixed(5).slice(2), piecewiseColor(utc3time))
 hours = browserTime * 2.4
 minutes = hours % 1 * 60
