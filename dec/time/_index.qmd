@@ -182,14 +182,17 @@ selectedExact = selectedDote[0] % 1
 selectedExactN = (1 - selectedExact) % 1
 selectedZone = selectedDote[1]
 ydz = dote2date(...selectedDote)
-decTime = (selectedExact * 10).toFixed(4)
-decTimeN = (selectedExactN * 10).toFixed(4)
+selectedExactPiece = piecewiseColor(selectedExact)
+decTime = selectedExact.toFixed(5).slice(2)
+decTimeN = selectedExactN.toFixed(5).slice(2)
+decPosHsl = () => textcolor(decTime, selectedExactPiece)
+decNegHsl = () => textcolor("-" + decTimeN, selectedExactPiece)
 barDD = decTime[0]
 barDDN = decTimeN[0]
-barMils = decTime.slice(2, 4)
-barMilsN = decTimeN.slice(2, 4)
-barBeats = decTime.slice(4, 6)
-barBeatsN = decTimeN.slice(4, 6)
+barMils = decTime.slice(1, 3)
+barMilsN = decTimeN.slice(1, 3)
+barBeats = decTime.slice(3, 5)
+barBeatsN = decTimeN.slice(3, 5)
 function lati2turn(degrees = -180, e = 3) {
   const base = 10 ** e, limit = base / 4;
   return Math.max(-limit, Math.min(limit, (degrees / 360) * base));
@@ -1819,10 +1822,10 @@ posclock = {
       .attr("transform", d => `rotate(${d.scale(d.value)})`);
   }
   function updateData() {
-    const dote = readDote(), exact = readExact(dote), time = (exact * 10).toFixed(4);
+    const dote = readDote(), exact = readExact(dote), time = exact.toFixed(5).slice(2);
     handData[0].value = !fancySecondsOFF ? Math.floor(exact * 10) : time[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(exact * 10 % 1 * 100) : time.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? exact * 10 % 1 * 100 % 1 * 100 : time.slice(4, 6);
+    handData[1].value = !fancySecondsOFF ? Math.floor(exact * 10 % 1 * 100) : time.slice(1, 3);
+    handData[2].value = !fancySecondsOFF ? exact * 10 % 1 * 100 % 1 * 100 : time.slice(3, 5);
     const text = `+${time}-${dote[1]}`;
     if (label && text !== label.text()) label.text(text);
   }
@@ -2024,10 +2027,10 @@ negclock = {
       .attr("transform", d => `rotate(${d.scale(d.value)})`);
   }
   function updateData() {
-    const dote = readDote(), exact = readExact(dote), time = (exact * 10).toFixed(4);
+    const dote = readDote(), exact = readExact(dote), time = exact.toFixed(5).slice(2);
     handData[0].value = !fancySecondsOFF ? Math.floor(exact * 10) : time[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(exact * 10 % 1 * 100) : time.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? exact * 10 % 1 * 100 % 1 * 100 : time.slice(4, 6);
+    handData[1].value = !fancySecondsOFF ? Math.floor(exact * 10 % 1 * 100) : time.slice(1, 3);
+    handData[2].value = !fancySecondsOFF ? exact * 10 % 1 * 100 % 1 * 100 : time.slice(3, 5);
     const text = `-${time}-${dote[1]}`;
     if (label && text !== label.text()) label.text(text);
   }
@@ -2230,7 +2233,7 @@ dotclock = {
     .attr("id", "topclock");
   svg
     .append("text")
-    .text(`+${selTimeTen.toFixed(4)}`)
+    .text(selTimeCmd)
     .attr("x", clockRadius + margin)
     .attr("y", clockRadius * 2 + margin * 2.1)
     .attr("text-anchor", "middle")
