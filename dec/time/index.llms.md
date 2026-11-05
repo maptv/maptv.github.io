@@ -354,6 +354,8 @@ The [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20
 
 For precise [geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:text=estimating%20the%20geographic%20position%20of%20an%20object%20or%20a%20person), we may want to express [geographic coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=for%20measuring%20and%20communicating%20positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude) in [ma](#ma), but we are unlikely to need [s](#s) or [cmd](#cmd) when displaying the [solar time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky) or estimates of what the [tod](#tod) will be when the Sun rises, reaches its [highest point of the day](https://en.m.wikipedia.org/wiki/Noon#:~:text=highest%20position%20above%20the%20horizon), or sets. By default, Dec uses [md](#md) precision to display a solar time and the “solar time offset” ([sto](#sto)) used to produce it.
 
+#### 9 Solar time offset (sto)
+
 In Dec, any offset can be called a [sto](#sto) or a [uto](#uto), because there will always be a longitude at which the sum of the given offset and the Zone 0 [tod](#tod) will yield solar time or [UT](#ut). In contrast, Dec has only ten [tzo](#tzo), one for each of its ten time zones. Dec translates [UTC](#utc) to Zone 0 and UTC−12 or UTC+12 to Zone 5, but does not categorize any other UTC offset as a [tzo](#tzo).
 
 Dec permits any non-negative offset that is less than one day and can be written with a finite number of [b9](#b9), [b10](#b10), and [b24](#b24) digits. When a [tod](#tod) or an offset does not have a decimal separator, its measurement unit is a submultiple of a day equal to 10^(-[til](#til)) days, where [til](#til) is its “time integer length”, its [level of precision](https://simple.wikipedia.org/wiki/Precision_(numbers)#:~:text=level%20of%20exactness%20in%20a%20number%27s%20digits), or its digit count including any [leading zeros](https://en.wikipedia.org/wiki/Leading_zero#:~:text=any%200%20digit%20that%20comes%20before%20the%20first%20nonzero%20digit).
@@ -372,62 +374,15 @@ $$\text{sto} = (\text{g}^\circ + 360) \div 360 \bmod 1 \tag{17}$$
 
 $$\text{mst} = (\text{tod} + \text{sto}) \bmod 1 \tag{18}$$
 
-we should round the longitude to the nearest [mw](#mw). To identify a city, [mw](#mw) should be sufficient.
-
-Instead of beforehand, we can round to the nearest [md](#md) after calculating a mean [sto](#sto).
-
-When rounded to the nearest [mw](#mw), the longitude of Stockholm is 0.1 [w](#w) or 18 [g°](#gdeg), but this longitude is close to the Eastern edge of This rounded we add 360 if we want mean sto or 378 to get , divide by 360, and then keep the remainder after dividing by one: [w](#w) = ([g°](#gdeg) + 378) ÷ 360 mod 1. The process for obtaining Compared to Dec we To calculate a mean [sto](#sto) based on a longitude in , we add 360 divide by the number of degrees in a circle: [sto](#sto) = g° ÷ 360. If the longitude is in [w](#w), we add 0.95 and then keep the remainder after dividing by one: [sto](#sto) = ([w](#w) + 0.95) mod 1. &0.050190♃. which is\
-[18.0686](https://en.wikipedia.org/wiki/Stockholm#:~:text=18%C2%B04%E2%80%B27%E2%80%B3E)
-
-kkjjk
-
-without rounding to the nearest [mw](#mw) [d](#d). which is a good match for [Gamla Stan](https://en.wikipedia.org/wiki/Gamla_Stan#:~:text=the%20old%20town%20of%20Stockholm), but ~4 [cmd](#cmd) too much for [Stockholm City Hall](https://en.wikipedia.org/wiki/Stockholm_City_Hall#:~:text=the%20seat%20of%20Stockholm%20Municipality) and ~6 [cmd](#cmd) too little for [Vasa Museum](https://en.wikipedia.org/wiki/Vasa_Museum#:~:text=a%20maritime%20museum%20in%20Stockholm).
-
-start with a longitude of ([18.0686](https://en.wikipedia.org/wiki/Stockholm#:~:text=18%C2%B04%E2%80%B27%E2%80%B3E) + 18) ÷ 360 = 0.100190♃ [w](#w) and then
-
-sto = gm° ÷ 360
-
-19.0♃ [cmd](#cmd) more than if we rounded to the nearest [mw](#mw) and In general, we should round to the nearest [mw](#mw) when reporting the longitude of a city as a whole.
-
-than a specific location in that city and therefore limit the precision of [sto](#sto) to longitude is limited to [mw](#mw), then the therefore or anything shorter than a [md](#md) when calculating
-
-To convert a [tod](#tod) or offset from 10^(-[til](#til)) days to 10⁰ days, we can divide it by 10^(L) or prepend a zero and a decimal separator before its first digit, which may be a leading zero. Thus, we can calculate that 05 represents
-
-is this If we agree to round to the nearest [mw](#mw) or [md](#md), the of ~0.5 [dd](#dd). If we stick with agree to disregard that the [sto](#sto) which can be written as 05. to . Starting with a [sto](#sto) of , we .
-
-For the sake of discussion. but the 19 [cmd](#cmd) will not make much of difference an [mst](#mst) and the + . 19058611905861 or the sum of one and its [order of magnitude](https://en.wikipedia.org/wiki/Order_of_magnitude#Calculating_the_order_of_magnitude_by_truncation:~:text=the%20integer%20part%20of%20the%20logarithm) ([oom](#oom)).
-
-$$\text{oom} = \lfloor\text{log}_10(\text{t})\rfloor$$ To obtain a [til](#til), we add one to the [til](#til) = ⌊log₁₀(integer)⌋ + 1.
-
-[Leading zeros](https://en.wikipedia.org/wiki/Leading_zero#:~:text=any%200%20digit%20that%20comes%20before%20the%20first%20nonzero%20digit) are included in L.
-
-I When we count the digits in an integer [tod](#tod) or offset to determine L, includes any
-
-If a [tod](#tod) or tzo consists of five digits, its length is 5, its measurement unit is the [cmd](#cmd) (10⁻⁵ [d](#d)), and we can divide it by 10⁵ to convert it to days: ÷ 10⁵ = 0..
-
-For example, we can change the measurement unit of the [UTC+3 offset](https://en.wikipedia.org/wiki/UTC%2B03:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B03%3A00) to days by dividing δ [dd](#dd) by 10 (10¹) or 125 [md](#md) by 1000 (10³).
-
-Instead of dividing by 10^(L) After converting an offset into days, we can sum the offset with the Zone 0 [tod](#tod). For example, we can get the UTC+3 [tod](#tod) by adding δ ÷ 10¹ or 125 [d](#d) to the Zone 0 [tod](#tod): ÷ 10⁵ + δ ÷ 10¹ = ÷ 10⁵ + 125 ÷ 10³ = ÷ 10⁵. Dec times represent truncated math expressions that simplify to the Zone 0 [tod](#tod): ÷ 10⁵ − 125 ÷ 10³ = ÷ 10⁵ − δ ÷ 10¹ = ÷ 10⁵.
-
-The current [UTC+3](https://en.wikipedia.org/wiki/UTC%2B03:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B03%3A00) Dec time can be displayed as either −δ or −125. The Zone 1 tzo (Tzo 1) is just as short as δ, even easier to add or subtract than 125, exactly 1 [dd](#dd) ahead of the Zone 0 tzo (Tzo 0), and 0.25 [dd](#dd) behind UTC+3. Unlike other types of offsets, a change in [tzo](#tzo) only affects the [dd](#dd) digit in the [tod](#tod): − 1 ÷ 10 = .
-
-The goal of time zones is to standardize time without ever straying too far from solar time. In the center of any Dec time zone, the [tzo](#tzo) and [sto](#sto) are equal; but as we move East or West to a time zone borders, the difference between the [tzo](#tzo) and [sto](#sto) approaches 0.5 [dd](#dd). This is roughly the same tolerance chosen for the difference between UTC and UT. the simplest solution The choice of offset is a balance The tremendous flexibility Dec provides for choosing an offset may be useful for technical and scientific purposes, but [tzo](#tzo) should be sufficient for [everyday life](https://en.wikipedia.org/wiki/Everyday_life#:~:text=the%20ways%20in%20which%20people%20typically%20act%2C%20think%2C%20and%20feel%20on%20a%20daily%20basis). solar
-
-#### 9 Solar time offset (sto)
-
-China is a good example of the difference between a [sto](#sto) and a [tzo](#tzo). The territory of China spans three Dec time zones, Zones 2, 3, and 4, but the government of China has decided that everyone in China should use UTC+08:00, which is Earth (♁) in [b9](#b9) or iota (ι) in [b24](#b24). Dec does not enforce the use of any offset, but it would suggest that users in China consider a [tzo](#tzo) of 3 [dd](#dd), which is not far off from 8/24, 1/3, ♁, or ι. Zone 3 may actually be closer to the [sto](#sto) of most people in China, because the center of Zone 3, 350 [mw](#mw), is close to the geographic center of China, ~337 [mw](#mw), whereas the central longitude of UTC+08:00, ~383 [mw](#mw), is much further East.
-
-To get a local solar time, we add a [sto](#sto) to a Zone 0 [tod](#tod). If the [sto](#sto) accounts only for longitude, the result is an [mst](#mst). If it also includes the [eot](#eot), the result is an [ast](#ast). Whereas a Dec time zone spans a [dw](#dw), a [sto](#sto) represents a single longitude. In [Equation 18](#eq-mst) below, the [sto](#sto) of a longitude in [w](#w) is (0.95 + [w](#w)) mod 1.
-
 #### 10 Equation of time (eot)
 
-The two types of [solar time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky) are [“mean solar time”](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year) ([mst](#mst)) and [“apparent solar time”](https://en.wikipedia.org/wiki/Solar_time#Apparent_solar_time:~:text=the%20apparent%20motion%20of%20the%20actual%20Sun) ([ast](#ast)). To calculate an [mst](#mst), we keep only the decimal part of the sum of 0.95, the Zone 0 [tod](#tod) measured in days, and a longitude measured in [w](#w). If we want [ast](#ast) instead of [mst](#mst), the sum needs to include the result of plugging the “time of year” ([toy](#toy)) into the [“equation of time”](https://en.wikipedia.org/wiki/Equation_of_time#:~:text=the%20discrepancy%20between%20two%20kinds%20of%20solar%20time) ([eot](#eot)).
+If we want to tailor our solar time calculations to a specific [ada](#ada) instead of an average for the entire year, we can calculate [“apparent solar time”](https://en.wikipedia.org/wiki/Solar_time#Apparent_solar_time:~:text=the%20apparent%20motion%20of%20the%20actual%20Sun) ([ast](#ast)) by summing [mst](#mst) with the [“equation of time”](https://en.wikipedia.org/wiki/Equation_of_time#:~:text=the%20discrepancy%20between%20two%20kinds%20of%20solar%20time) ([eot](#eot)), as shown in [Equation 19](#eq-ast). Obtaining the [eot](#eot) requires a “time of year” ([toy](#toy)), which is an [ada](#ada) that was converted from days to years as displayed in [Equation 20](#eq-toy).
 
-$$\text{syl} = \text{leap} + 365 \tag{19}$$
+$$\text{ast} = (0.95 + \text{tod} + \text{w} +  \text{eot}) \bmod 1 \tag{19}$$
 
 $$\text{toy} = \text{ada} \div \text{syl} \tag{20}$$
 
-$$\text{ast} = (0.95 + \text{tod} + \text{w} +  \text{eot}) \bmod 1 \tag{21}$$
+$$\text{syl} = \text{leap} + 365 \tag{21}$$
 
 To obtain a [toy](#toy), we divide an [ada](#ada) by a “solar year length” ([syl](#syl)), which is the number of days in the year. Dec passes the [toy](#toy) directly from [Equation 20](#eq-toy) to the [eot](#eot) function in [Equation 22](#eq-eot) without first multiplying it by 2𝜋 or 𝜏 to convert it from [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) ([t](#t)) to [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units) ([rad](#rad)) because the [sin](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20side%20opposite%20that%20angle%20to%20the%20length%20of%20the%20longest%20side%20of%20the%20triangle) and [cos](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse) [trigonometric functions](https://en.wikipedia.org/wiki/Trigonometric_functions#:~:text=functions%20which%20relate%20an%20angle%20of%20a%20right%2Dangled%20triangle%20to%20ratios%20of%20two%20side%20lengths) used by Dec are designed for [t](#t) instead of [rad](#rad).
 
@@ -752,7 +707,7 @@ $$\text{ast} =
 \end{cases}
 \tag{35}$$
 
-At the North Pole ([j](#j) = 0.25), the latitude is 0.25 [j](#j) and [Equation 34](#eq-astjing) simplifies to [ast](#ast) = [saa](#saa). At the South Pole ([j](#j) = -0.25), the latitude is -0.25 [j](#j) and [Equation 34](#eq-astjing) simplifies to [ast](#ast) = 0.5 − [saa](#saa) before solar noon or [ast](#ast) = 1.5 − [saa](#saa) after solar noon. In between the Equator and the South or North Pole (-0.25 \< [j](#j) \< 0 ∨ 0 \< [j](#j) \< 0.25), we should use Equation [21](#eq-ast), [34](#eq-astjing), or [36](#eq-astsha).
+At the North Pole ([j](#j) = 0.25), the latitude is 0.25 [j](#j) and [Equation 34](#eq-astjing) simplifies to [ast](#ast) = [saa](#saa). At the South Pole ([j](#j) = -0.25), the latitude is -0.25 [j](#j) and [Equation 34](#eq-astjing) simplifies to [ast](#ast) = 0.5 − [saa](#saa) before solar noon or [ast](#ast) = 1.5 − [saa](#saa) after solar noon. In between the Equator and the South or North Pole (-0.25 \< [j](#j) \< 0 ∨ 0 \< [j](#j) \< 0.25), we should use Equation [19](#eq-ast), [34](#eq-astjing), or [36](#eq-astsha).
 
 $$\text{ast} = 0.5 + \text{arccos}\!\!\left(\dfrac{\text{sin(sea)} - \text{sin(j)sin(sda)}}{\text{cos(j)cos(sda)}}\right) \ast
 \begin{cases}
