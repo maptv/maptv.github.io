@@ -148,30 +148,49 @@ nDaysInYear = 365 + year2leap(decYear + 1)
 fullfracYear = decYear + ydz[1] / nDaysInYear
 decDoty = Math.floor(ydz[1])
 zeroDote = unix2dote(beatNow, 0)[0]
+nextDote = zeroDote + 1
 zeroTime = zeroDote % 1
 zeroDate = dote2date(zeroDote)
+nextDate = dote2date(nextDote)
 zeroYear = zeroDate[0]
-zeroAda = zeroDate[1]
-zeroDoy = Math.floor(zeroAda)
+nextYear = nextDate[0]
 zeroIsLeap = isLeapYear(zeroYear)
-zeroAdaHsl = () => textcolor(zeroAda.toFixed(5), piecewiseColor(zeroAda / (365 + zeroIsLeap)))
+zeroNdaysInYear = 365 + zeroIsLeap
+zeroAda = zeroDate[1]
+nextAda = nextDate[1]
+zeroDoy = Math.floor(zeroAda)
+nextDoy = Math.floor(nextAda)
+zeroNid = zeroDoy - zeroNdaysInYear
+zeroNia = zeroAda - zeroNdaysInYear
+zeroNidHsl = () => textcolor(-Math.abs(zeroNid).toString().padStart(3, "0"), zeroDotyPiece)
+zeroAdaPiece = piecewiseColor(zeroAda / zeroNdaysInYear)
+zeroAdaHsl = () => textcolor(zeroAda.toFixed(5), zeroAdaPiece)
+zeroNiaHsl = () => textcolor("-" + Math.abs(zeroNia).toFixed(5).toString().padStart(3, "0"), zeroAdaPiece)
 zeroTimePiece = piecewiseColor(zeroTime)
-zeroDotyPiece = piecewiseColor(zeroDoy / (365 + zeroIsLeap))
+zeroDotyPiece = piecewiseColor(zeroDoy / zeroNdaysInYear)
+nextDotyPiece = piecewiseColor(nextDoy / zeroNdaysInYear)
 zeroDotyPad = zeroDoy.toString().padStart(3, "0")
+nextDotyPad = nextDoy.toString().padStart(3, "0")
 zeroDotyHsl = () => textcolor(zeroDotyPad, zeroDotyPiece)
+nextDotyHsl = () => textcolor(nextDotyPad, nextDotyPiece)
 zeroDoteHsl = textcolor(Math.floor(zeroDote), piecewiseColor(zeroDote % 146097 / 146097))
-zeroYearHsl = textcolor(zeroYear, piecewiseColor(zeroYear % 1000 / 1000))
+zeroYearHsl = textcolor(zeroYear, piecewiseColor(zeroYear % 100 / 100))
 browserDote = unix2dote(beatNow)
 browserTime = browserDote[0] % 1 * 10
 browserZone = browserDote[1]
 browserSign = browserZone > 0 ? "-" : "+"
+negaTime = zeroTime - 1
 utc1time = (zeroTime + 1/24) % 1
 dec1time = (zeroTime + .1) % 1
 dec2time = (zeroTime + .2) % 1
 utc3time = (zeroTime + .125) % 1
 zeroTpad = zeroTime.toFixed(5).slice(2)
+negaTpad = Math.abs(negaTime).toFixed(5).slice(2)
+negaTend = parseInt(negaTpad)
 zeroTpadHsl = () => textcolor(zeroTpad, zeroTimePiece)
 zeroTintHsl = () => textcolor(parseInt(zeroTpad), zeroTimePiece)
+negaTendHsl = () => textcolor(negaTend, zeroTimePiece)
+negaTintHsl = () => textcolor(-negaTend, zeroTimePiece)
 dec1timeHsl = () => textcolor(dec1time.toFixed(5).slice(2), piecewiseColor(dec1time))
 dec2timeHsl = () => textcolor(dec2time.toFixed(5).slice(2), piecewiseColor(dec2time))
 utc1pad = utc1time.toFixed(5).slice(2)

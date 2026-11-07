@@ -3289,5 +3289,8 @@ section#cct {
 #zemmodulor p a {
   font-size: 17px;
 }
+span.colorIob span.tool {
+  color: black;
+}
 </style>
 ```
