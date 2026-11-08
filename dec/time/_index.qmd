@@ -153,7 +153,7 @@ zeroTime = zeroDote % 1
 zeroDate = dote2date(zeroDote)
 nextDate = dote2date(nextDote)
 zeroYear = zeroDate[0]
-nextYear = nextDate[0]
+nextYear = zeroYear + 1
 zeroIsLeap = isLeapYear(zeroYear)
 zeroNdaysInYear = 365 + zeroIsLeap
 zeroAda = zeroDate[1]
@@ -174,7 +174,8 @@ nextDotyPad = nextDoy.toString().padStart(3, "0")
 zeroDotyHsl = () => textcolor(zeroDotyPad, zeroDotyPiece)
 nextDotyHsl = () => textcolor(nextDotyPad, nextDotyPiece)
 zeroDoteHsl = textcolor(Math.floor(zeroDote), piecewiseColor(zeroDote % 146097 / 146097))
-zeroYearHsl = textcolor(zeroYear, piecewiseColor(zeroYear % 100 / 100))
+zeroYearHsl = () => textcolor(zeroYear, piecewiseColor(zeroYear % 100 / 100))
+nextYearHsl = () => textcolor(nextYear, piecewiseColor(nextYear % 100 / 100))
 browserDote = unix2dote(beatNow)
 browserTime = browserDote[0] % 1 * 10
 browserZone = browserDote[1]
@@ -3164,6 +3165,9 @@ div.slider input[type="number"] {
 }
 div.slider input[type="range"] {
   width: 100%;
+}
+.giflabel {
+  text-align: center;
 }
 </style>
 ```

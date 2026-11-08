@@ -172,7 +172,7 @@ format:
       light: [flatly, asset/light.scss]
       dark: [darkly, asset/dark.scss]
     grid:
-      sidebar-width: 205px
+      sidebar-width: 215px
       margin-width: 270px
       body-width: 900px
     css: asset/style.css
