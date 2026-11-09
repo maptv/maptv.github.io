@@ -3166,7 +3166,7 @@ div.slider input[type="number"] {
 div.slider input[type="range"] {
   width: 100%;
 }
-.giflabel {
+#sozu {
   text-align: center;
 }
 </style>
