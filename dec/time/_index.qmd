@@ -117,9 +117,9 @@ shaDegrMapPlot = shaHalfMapPlot * 180
 eotTurnMapPlot = getEot(selAda) / 1000
 lonTurnMapPlot = long2turn(location[0], 0)
 latTurnMapPlot = lati2turn(location[1], 0)
-astDecMapPlot = (0.95 + zeroTime + lonTurnMapPlot + eotTurnMapPlot) % 1 * 10
-astDegMapPlot = astDecMapPlot * 36
-astDegMapHalf = (astDecMapPlot * 36 + 180) % 360
+astDecMapPlot = (0.95 + zeroTime + lonTurnMapPlot + eotTurnMapPlot) % 1
+astDegMapPlot = astDecMapPlot * 360
+astDegMapHalf = (astDegMapPlot + 180) % 360
 shaDoyInput = getSha(latInput / 1000, getSda(doyInput))
 daytimeDuration = shaDoyInput / Math.PI
 noonDiff = daytimeDuration / 2
@@ -188,8 +188,12 @@ utc3time = (zeroTime + .125) % 1
 zeroTpad = zeroTime.toFixed(5).slice(2)
 negaTpad = Math.abs(negaTime).toFixed(5).slice(2)
 negaTend = parseInt(negaTpad)
+zeroTmod = parseInt(zeroTpad.slice(0, 3))
+zeroTtom = parseInt(zeroTpad.slice(3))
 zeroTpadHsl = () => textcolor(zeroTpad, zeroTimePiece)
 zeroTintHsl = () => textcolor(parseInt(zeroTpad), zeroTimePiece)
+zeroTmodHsl = () => textcolor(zeroTmod, piecewiseColor(zeroTmod / 1000))
+zeroTtomHsl = () => textcolor(zeroTtom, piecewiseColor(zeroTtom / 100))
 negaTendHsl = () => textcolor(negaTend, zeroTimePiece)
 negaTintHsl = () => textcolor(-negaTend, zeroTimePiece)
 dec1timeHsl = () => textcolor(dec1time.toFixed(5).slice(2), piecewiseColor(dec1time))
@@ -2373,7 +2377,7 @@ sunclock = {
     .style("opacity", 1)
     .attr("font-weight", 600)
     .attr("font-size", "75px")
-    .text(astDecMapPlot.toFixed(2));
+    .text(astDecMapPlot.toFixed(3).slice(2));
   const ticks = face
     .selectAll(".tick")
     .data(d3.range(0, 20))
