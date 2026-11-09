@@ -740,9 +740,15 @@ When a [doy](#doy) and a [tod](#tod) are in the same equation, we multiple the [
 
 Likewise, a subtrahend that is an [eoy](#eoy) is not displayed as part of a [doy](#doy) or an [ada](#ada) because it becomes incorporated into the “year of era” ([yoe](#yoe)):  + ÷ =  + ÷ . Essentially, the [doy](#doy) takes up any amount of time that spills over from the [tod](#tod) and the [yoe](#yoe) absorbs any amount of time that does not fit into the [doy](#doy).
 
-Therefore, [doy](#doy) and [tod](#tod) are like [sōzu](https://en.wikipedia.org/wiki/Shishi-odoshi#:~:text=a%20type%20of%20water%20fountain%20used%20in%20Japanese%20gardens) that fill until they reach a tipping point, empty out, and then begin to fill up again. In this analogy, the tipping point is either the [eoy](#eoy) for the [doy](#doy) or the [eod](#eod) for the [tod](#tod) and time flows like water from a [tod](#tod) to a [doy](#doy) and finally a [yoe](#yoe).
+Therefore, [doy](#doy) and [tod](#tod) are like [sōzu](https://en.wikipedia.org/wiki/Shishi-odoshi#:~:text=a%20type%20of%20water%20fountain%20used%20in%20Japanese%20gardens) that fill until they reach a tipping point, empty out, and then begin to fill up again. In this analogy, the tipping point is either the [eoy](#eoy) for the [doy](#doy) or the [eod](#eod) for the [tod](#tod) and time flows like water from a [tod](#tod) to a [doy](#doy) or from a [doy](#doy) to a [yoe](#yoe). Just as we can divide an [ada](#ada) into a [doy](#doy) and [tod](#tod), we can split a [tod](#tod) into a “milliday of day” () and a “time of milliday” ([tom](#tom)): [tod](#tod) = {zeroTmodHsl()} + {zeroTtomHsl()} ÷ 100.
 
-![](../../asset/Higashiyama_Botanical_Garden_Shishiodoshi_20170617.gif)[Wikimedia](https://commons.wikimedia.org/wiki/File:Hand_apaumy_couped.svg)
+from the rest of We do not need to see the [yoe](#yoe) combination of a a user interface, we do not need to be reminded split the each digit in the [yoe](#yoe), [doy](#doy), and [tod](#tod) behaves like a sōzu.
+
+Dec also names groups of digits Just as we can split the three-digit [doy](#doy) into a two-digit [xún](https://en.wikipedia.org/wiki/Chinese_calendar#:~:text=into%20nine%2D%20or-,ten%2Dday%20weeks,-known%20as%20x%C3%BAn) ([x](#x)) and a one-digit “day of xún” ([dox](#dox)), we can refer to a split a five-digit [tod](#tod) into a . We can further divide up the bbrefer to the digits after the [md](#md) position in the [tod](#tod) as the
+
+![](../../asset/Higashiyama_Botanical_Garden_Shishiodoshi_20170617.gif)[Wikimedia](https://commons.wikimedia.org/wiki/File:Higashiyama_Botanical_Garden_Shishiodoshi_20170617.gif)
+
+Instead of a five-digit [tod](#tod) with [cmd](#cmd) precision, we can We could also differentiate the “time of milliday” (tom) from the [tod](#tod) to focus on the three digits.
 
 #### Next
 
