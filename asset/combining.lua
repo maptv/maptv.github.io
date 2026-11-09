@@ -11,6 +11,7 @@ local marks = {
   acutegrave = "\u{033D}",
   doublegrave = "\u{030F}",
   doubleacute = "\u{030B}",
+  hyphen = "\u{0335}",
 }
 
 local function mark_inline(mark)

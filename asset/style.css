@@ -320,7 +320,7 @@ div > form > label {
   text-decoration-line: overline;
   text-decoration-thickness: .7px;
 }
-.overline, .grave, .acute, .acutegrave, .doublegrave, .doubleacute {
+.overline, .grave, .acute, .acutegrave, .doublegrave, .doubleacute, .hyphen {
   position: relative;
   display: inline-block;
   /* The accent/vinculum ::before marks below are offset by a fixed top:5px
@@ -335,7 +335,7 @@ div > form > label {
    opportunity on either side even with no whitespace, which can split an
    overline/accent span from the digits next to it. white-space: nowrap on the
    surrounding Decolor span keeps a decorated number on one line. */
-[class*="color"]:has(.overline, .grave, .acute, .acutegrave, .doublegrave, .doubleacute) {
+[class*="color"]:has(.overline, .grave, .acute, .acutegrave, .doublegrave, .doubleacute, .hyphen) {
   white-space: nowrap;
 }
 .overline::before,
@@ -397,6 +397,30 @@ div > form > label {
 .acutegrave::after {
   transform: rotate(-0.13turn);
   left: calc(50% - 3px);
+}
+
+/* The mod operator, a minus joined to a left floor: [&LeftFloor;]{.hyphen}
+   draws x mod y as x −⌊ y, matching
+   \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} in LaTeX. The
+   floor is shrunk to 70% (like \scriptstyle) so it can't be mistaken for a
+   real left floor, and raised (like \raise) so the stroke meets the middle of
+   its stem at the height of a minus sign. Unlike the accents, the stroke
+   stays in the text flow, so it doesn't depend on the line box, and it
+   overlaps the floor's stem through its negative right margin.
+   It uses currentColor rather than the accents' black/white so it matches
+   the floor's color inside a link. */
+.hyphen {
+  font-size: .7em;
+  top: -2px;
+}
+.hyphen::before {
+  content: "";
+  display: inline-block;
+  width: .5em;
+  height: 1px;
+  margin-right: -.26em;
+  vertical-align: .3em;
+  background: currentColor;
 }
 
 /* The real combining mark that asset/combining.lua adds after each accented

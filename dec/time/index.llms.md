@@ -46,24 +46,24 @@ As their names suggest, [doy](#doy) and [ada](#ada) are measured in days. The [m
 
 #### 2 Epochal day aggregate (eda)
 
-To obtain a [tod](#tod) from an [ada](#ada), we can [keep the remainder after dividing](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) by one to isolate the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of the [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers): [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 = 0.. We can use this same approach to separate a [tod](#tod) from an “epochal day aggregate” ([eda](#eda)): mod 1 = 0.. The current [eda](#eda) tells us how many days have passed since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era): Year 0 Day 0 [Tod](#tod) 0.
+To obtain a [tod](#tod) from an [ada](#ada), we can [keep the remainder after dividing](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) by one to isolate the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of the [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers): [⌊̵](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 = 0.. We can use this same approach to separate a [tod](#tod) from an “epochal day aggregate” ([eda](#eda)): ⌊̵ 1 = 0.. The current [eda](#eda) tells us how many days have passed since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era): Year 0 Day 0 [Tod](#tod) 0.
 
 $$\begin{split}
-\text{tod} &= \text{ada} \bmod 1 \\
-&= \text{eda} \bmod 1
+\text{tod} &= \text{ada} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \\
+&= \text{eda} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1
 \end{split} \tag{2}$$
 
 ##### UNIX time equation
 
 Similarly, [UNIX time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970%2C%20the%20Unix%20epoch) tallies the seconds since the [UNIX epoch](https://en.wikipedia.org/wiki/Unix_time#:~:text=00%3A00%3A00%20UTC%20on%201%C2%A0January%201970), which is exactly 719468 days after the Dec epoch. To get the [tod](#tod) in Zone 0, the Dec time zone that is in between the two leftmost vertical lines on the map, we can divide UNIX time by the [number of seconds in a day](https://en.wikipedia.org/wiki/Day#:~:text=average%2C%20this%20is-,24%20hours%20(86%2C400%20seconds),-.%20As%20a%20day) and then keep the remainder after dividing the resulting days by 1 as in [Equation 3](#eq-unixtod).
 
-$$\text{tod} = \text{unix} \div 86400 \bmod 1 \tag{3}$$
+$$\text{tod} = \text{unix} \div 86400 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \tag{3}$$
 
 ##### Julian date equation
 
 [Julian dates](https://en.wikipedia.org/wiki/Julian_day#:~:text=the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon) track the days since the beginning of the [Julian period](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20chronological%20interval%20of%207980%C2%A0years%2C%20derived%20from%20three%20multi%2Dyear%20cycles:%20the%20Indiction%2C%20Solar%2C%20and%20Lunar%20cycles) and thus are akin to [eda](#eda). We can produce a Zone 5 [tod](#tod) from a [Julian date](https://en.wikipedia.org/wiki/Julian_day#:~:text=the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon) simply by keeping the remainder after dividing by one. If we want a Zone 0 [tod](#tod) instead, we should add 5 decidays to the Julian date, divide the sum by one, and then keep the remainder as in [Equation 4](#eq-juliantod) below.
 
-$$\text{tod} = (\text{julian} + 0.5) \bmod 1 \tag{4}$$
+$$\text{tod} = (\text{julian} + 0.5) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \tag{4}$$
 
 #### 3 Hour minute second (hms)
 
@@ -149,12 +149,12 @@ Equations [6](#eq-dsa) to [10](#eq-som) below convert UNIX time or a Zone 0 [tod
 
 $$\begin{split}
 \text{dsa} & = \text{tod} \ast 86400 \\
-& = \text{unix} \bmod  86400
+& = \text{unix} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  86400
 \end{split}
-\tag{6}$$ $$\text{hsa} = \text{dsa} \bmod  3600
+\tag{6}$$ $$\text{hsa} = \text{dsa} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  3600
 \tag{7}$$ $$\text{hod} = \lfloor \text{dsa} \div 3600 \rfloor
 \tag{8}$$ $$\text{moh} = \lfloor \text{hsa} \div 60 \rfloor
-\tag{9}$$ $$\text{som} = \lfloor \text{hsa} \bmod  60 \rfloor
+\tag{9}$$ $$\text{som} = \lfloor \text{hsa} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  60 \rfloor
 \tag{10}$$
 
 ## Julia
@@ -223,8 +223,8 @@ Known as a “second interval difference” ([sid](#sid)), the base24 ([b24](#b2
 
 $$\text{s} = \dfrac{\text{ds}}{10} = \dfrac{\text{sis}}{0.96}
 \tag{11}$$ $$\begin{split}
-\text{sid} &= \text{sis} \bmod 24\\
-&= (\text{s} - \text{sis}) \ast 24 \bmod 24
+\text{sid} &= \text{sis} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 24\\
+&= (\text{s} - \text{sis}) \ast 24 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 24
 \end{split}
 \tag{12}$$
 
@@ -336,9 +336,9 @@ If we do know whether Day 364 belongs to a common or leap year, adding one day t
 
 $$\text{leap}=\begin{cases}
   1&{\begin{aligned}
-    &\text{ if } (\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} \ \ \ \ 4=0\\
-    &\href{https://en.wikipedia.org/wiki/Logical_conjunction}{\land}(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 100\neq0\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 400=0\end{aligned}}\\\\
+    &\text{ if } (\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} \ \ \ \ 4=0\\
+    &\href{https://en.wikipedia.org/wiki/Logical_conjunction}{\land}(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 100\neq0\\
+    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 400=0\end{aligned}}\\\\
   0&{\text{ otherwise}}\end{cases}
 \tag{13}$$
 
@@ -364,21 +364,21 @@ Dec permits any non-negative offset that is less than one day and can be written
 
 Outside of Dec, longitudes are often provided in [Greenwich](https://en.wikipedia.org/wiki/Prime_meridian_&28Greenwich&29#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England) [degrees](https://en.wikipedia.org/wiki/Degree_%28angle%29#:~:text=a%20unit%20of%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20assigned%20the%20value%20of%20360%20degrees) ([g°](#gdeg)). [Equation 14](#eq-deg2wei) converts [g°](#gdeg) to [w](#w) and [Equation 15](#eq-wei2deg) does the opposite. To obtain a [sto](#sto), we can pass [w](#w) to [Equation 16](#eq-wei2sto) or [g°](#gdeg) to [Equation 17](#eq-deg2sto) below. As shown in [Equation 18](#eq-mst) below, we can sum an [sto](#sto) with the Zone 0 [tod](#tod) to get a yearly average of solar time called “[mean solar time](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year)” ([mst](#mst)).
 
-$$\text{w} = (\text{g}^\circ + 378) \div 360 \bmod 1 \tag{14}$$
+$$\text{w} = (\text{g}^\circ + 378) \div 360 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \tag{14}$$
 
-$$\text{g}^\circ = (\text{w} + 0.45) \bmod 1 \times 360 - 180 \tag{15}$$
+$$\text{g}^\circ = (\text{w} + 0.45) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 360 - 180 \tag{15}$$
 
-$$\text{sto} = (0.95 + \text{w}) \bmod 1 \tag{16}$$
+$$\text{sto} = (0.95 + \text{w}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \tag{16}$$
 
-$$\text{sto} = (\text{g}^\circ + 360) \div 360 \bmod 1 \tag{17}$$
+$$\text{sto} = (\text{g}^\circ + 360) \div 360 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \tag{17}$$
 
-$$\text{mst} = (\text{tod} + \text{sto}) \bmod 1 \tag{18}$$
+$$\text{mst} = (\text{tod} + \text{sto}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \tag{18}$$
 
 #### 10 Equation of time (eot)
 
 If we want to tailor our solar time calculations to a specific [ada](#ada) instead of an average for the entire year, we can calculate “[apparent solar time](https://en.wikipedia.org/wiki/Solar_time#Apparent_solar_time:~:text=the%20apparent%20motion%20of%20the%20actual%20Sun)” ([ast](#ast)) by summing [mst](#mst) with the “[equation of time](https://en.wikipedia.org/wiki/Equation_of_time#:~:text=the%20discrepancy%20between%20two%20kinds%20of%20solar%20time)” ([eot](#eot)), as shown in [Equation 19](#eq-ast). Obtaining the [eot](#eot) requires a “time of year” ([toy](#toy)), which is an [ada](#ada) that was converted from days to years as displayed in [Equation 20](#eq-toy).
 
-$$\text{ast} = (0.95 + \text{tod} + \text{w} +  \text{eot}) \bmod 1 \tag{19}$$
+$$\text{ast} = (0.95 + \text{tod} + \text{w} +  \text{eot}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \tag{19}$$
 
 $$\text{toy} = \text{ada} \div \text{syl} \tag{20}$$
 
@@ -627,21 +627,21 @@ In the [line📈chart](https://en.wikipedia.org/wiki/Line_chart#:~:text=a%20type
 
 Apart from transforming an [mst](#mst) into an [ast](#ast), we can also use [eot](#eot) values to more accurately estimate the [tod](#tod) of [solar noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow), sunrise, and sunset. [Equation 23](#eq-solarnoon) below creates a [solar noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow) [tod](#tod) by keeping only the decimal part of the result of subtracting a [w](#w) longitude and an [eot](#eot) value that is measured in days from the sum of 9.55 and a [tzo](#tzo) that is measured in days.
 
-$$\text{solarnoon} = \left(9.55 + \text{tzo} - \text{w} - \text{eot}\right) \bmod 1 \tag{23}$$
+$$\text{solarnoon} = \left(9.55 + \text{tzo} - \text{w} - \text{eot}\right) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \tag{23}$$
 
 #### 11 Cambridge and Cambridge
 
 To compare the solar noon [tod](#tod) in two cities, we can plug the longitude of each city into [Equation 23](#eq-solarnoon) above. If all of the variables other than longitude in [Equation 23](#eq-solarnoon) are set to zero, the resulting solar noon [tod](#tod) is almost five decidays for [Cambridge, England](https://en.wikipedia.org/wiki/Cambridge#:~:text=a%20city%20and%20non%2Dmetropolitan%20district%20in%20the%20county%20of%20Cambridgeshire%2C%20England) in the [United Kingdom](https://en.wikipedia.org/wiki/United_Kingdom#:~:text=a%20country%20in%20Northwestern%20Europe) and nearly seven decidays for [Cambridge, Massachusetts](https://en.wikipedia.org/wiki/Cambridge,_Massachusetts#:~:text=a%20city%20in%20Middlesex%20County%2C%20Massachusetts%2C%20United%20States) in the [United States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primarily%20located%20in%20North%20America).
 
-$$4.99635 = (9.55 - 0.050365) \bmod 1 \ast 10 \tag{24}$$
+$$4.99635 = (9.55 - 0.050365) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10 \tag{24}$$
 
-$$6.97517 = (9.55 - 0.852484) \bmod 1 \ast 10 \tag{25}$$
+$$6.97517 = (9.55 - 0.852484) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10 \tag{25}$$
 
 The two homonymous cities are about two [dw](#dw) apart and therefore will always differ by around two decidays in solar time, regardless of what time zone we use as our frame of reference. England is in Zone 0 and Massachusetts is in Zone 8. From the perspective of Zone 8, solar noon is roughly [Tod](#tod) 5 in Cambridge, MA and about [Tod](#tod) 3 in Cambridge, UK.
 
-$$2.99635 = (9.55 + 0.8 - 0.050365) \bmod 1 \ast 10 \tag{26}$$
+$$2.99635 = (9.55 + 0.8 - 0.050365) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10 \tag{26}$$
 
-$$4.97517 = (9.55 + 0.8 - 0.852484) \bmod 1 \ast 10 \tag{27}$$
+$$4.97517 = (9.55 + 0.8 - 0.852484) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10 \tag{27}$$
 
 #### 12 Light arc whole (law)
 
@@ -703,7 +703,7 @@ $$\text{ast} =
 \begin{cases}
 \text{saa} & \text{j} = 0.25 \\
 \text{atan2(-sin(saa)cos(sea), sin(sea))} & \text{j} = 0 \\
-(1.5 - \text{saa}) \bmod 1 & \text{j} = -0.25
+(1.5 - \text{saa}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 & \text{j} = -0.25
 \end{cases}
 \tag{35}$$
 
@@ -849,8 +849,8 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
   - [pia](#positiveintervalada): positive interval ada, the time since the start of the current year, equal to the ada
   - [nia](#negativeintervalada): negative interval ada, pia − syl, the negative of the time until the start of the next year
   - [doc](#dayofcycle): day of cycle, days since the start of the current 400-year Gregorian cycle, 0 to 146096
-  - doc_(♀): Decyther day of cycle, days since the start of the current 467-day Venusian cycle, doe mod 467, 0 to 466
-  - [doh](#dayofhectoday): day of hectoday, doy mod 100, the percent of a hectoday that has elapsed
+  - doc_(♀): Decyther day of cycle, days since the start of the current 467-day Venusian cycle, doe ⌊̵ 467, 0 to 466
+  - [doh](#dayofhectoday): day of hectoday, doy ⌊̵ 100, the percent of a hectoday that has elapsed
   - [dob](#dayofbimester): day of bimester, 0 to 58 in common bimesters or 0 to 59 in leap bimesters
   - dob_(♀): Decyther day of bimester, 0 to 57 in antes and the post of Qoc 2 or 0 to 58 in the other posts
   - [dot](#dayoftricennium): day of tricennium, days since the start of the current 30-year lunar cycle, 0 to 10630
@@ -867,7 +867,7 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
   - [eoy](#endofyear): end of year, midnight at the end of Day 364 or 365
   - [JDN](#Juliandaynumber): Julian day number, days since the start of the Julian period; increments at noon UTC
   - [lid](#lunarintercalationdifference): lunar intercalation difference, a lunar nid that only resets after lunar leap years, -1063 to -1
-  - [ved](#venusianextracalationdifference): Venusian extracalation difference, days until the end of Doc_(♀) 349, the last day of the one-day-shorter Qoc 2, Bimester 5, and Moc 11, (doc_(♀) + 117) mod 467 − 467, -467 to -1
+  - [ved](#venusianextracalationdifference): Venusian extracalation difference, days until the end of Doc_(♀) 349, the last day of the one-day-shorter Qoc 2, Bimester 5, and Moc 11, (doc_(♀) + 117) ⌊̵ 467 − 467, -467 to -1
   - [mud](#misalignedunitdifference): misaligned unit difference, pid − dom − dow
   - [dd](#deciday): deciday, a tenth of a day, 2.4 hours, 144 minutes
   - [cd](#centiday): centiday, a hundredth of a day, 0.24 hours, 14.4 minutes
@@ -948,10 +948,10 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
   - [nit](#negativeintervaltod): negative interval tod, pit − 1, the negative of the time until the start of the next day (next midnight)
   - [hms](#hourminutesecond): hour minute second, a tod written as an hod, moh, and som triplet
   - [dsa](#dailysecondaggregate): daily second aggregate, seconds since midnight, tod × 86400
-  - [hsa](#hourlysecondaggregate): hourly second aggregate, seconds since the top of the hour, dsa mod 3600
+  - [hsa](#hourlysecondaggregate): hourly second aggregate, seconds since the top of the hour, dsa ⌊̵ 3600
   - [hod](#hourofday): hour of day, ⌊dsa ÷ 3600⌋, 0 to 23
   - [moh](#minuteofhour): minute of hour, ⌊hsa ÷ 60⌋, 0 to 59
-  - [som](#secondofminute): second of minute, ⌊hsa mod 60⌋, 0 to 59
+  - [som](#secondofminute): second of minute, ⌊hsa ⌊̵ 60⌋, 0 to 59
   - [mst](#meansolartime): mean solar time, solar time based only on longitude and the Zone 0 tod
   - [ast](#apparentsolartime): apparent solar time, mst + eot(toy), solar time based on the actual position of the Sun
   - [law](#lightarcwhole): light arc whole, the time from sunrise to sunset, 1 − naw, sunset − sunrise
@@ -985,7 +985,7 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
   - [my](#milliyear): milliyear, a thousandth of a year
   - [yoe](#yearofera): year of era, integer years since the Dec epoch
   - [eya](#epochalyearaggregate): epochal year aggregate, yoe + toy, years since the Dec epoch including the fraction of the current year
-  - [toy](#timeofyear): time of year, the fraction of the year that has elapsed, eya mod 1, ada ÷ syl
+  - [toy](#timeofyear): time of year, the fraction of the year that has elapsed, eya ⌊̵ 1, ada ÷ syl
   - [ymd](#yearmonthday): year month day, a Gregorian calendar date triplet
   - [syl](#solaryearlength): solar year length, 365 or 366 days, pid − nid
   - [lyl](#lunaryearlength): lunar year length, 354 or 355 days
