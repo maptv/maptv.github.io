@@ -137,6 +137,12 @@ updated as new preferences come up; don't let it grow into a changelog.
   but avoid "lines of longitude/latitude", since Dec measures longitude with lines of
   latitude and vice versa; days in the year is `syl`, not `n` (the glossary's `n` is
   a musical note); the inverse of a beat is perbeat (`þ`), not `iob`.
+- The mod operator is written as a minus joined to a left floor (x − y⌊x/y⌋): in LaTeX
+  `\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}` (binary spacing on both
+  sides; a shorter floor than a real `\lfloor`, raised so the stroke meets the middle of
+  its stem at minus height), never `\bmod` or `\text{ mod }`; in markdown
+  `[&LeftFloor;]{.hyphen}` (drawn by `.hyphen` in `asset/style.css`), not the word "mod",
+  which is freed up for other uses. Code keeps its language's own `mod`/`%`.
 - Dec has no negative time zone offsets: the international date line and the prime meridian
   coincide, so a negative UTC offset becomes a positive Dec offset by adding 1 day. A
   holiday tied to a Gregorian dom or dow therefore lands 1 day later in the Americas.

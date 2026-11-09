@@ -10,6 +10,7 @@
     acutegrave: "\u033D",
     doublegrave: "\u030F",
     doubleacute: "\u030B",
+    hyphen: "\u0335",
   };
   const selector = Object.keys(marks).map(c => "." + c).join(",");
 

@@ -51,12 +51,12 @@ As their names suggest, [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title
 
 # Epochal day aggregate (eda) {#sec-eda .hiddenheading}
 
-To obtain a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from an [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}, we can [keep the remainder after dividing](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) by one to isolate the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of the [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers): \${zeroDotyHsl()}.\${zeroTpadHsl()} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 = 0.\${zeroTpadHsl()}. We can use this same approach to separate a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from an "epochal day aggregate" ([eda](#eda){#epochaldayaggregate .tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"}): \${zeroDoteHsl}.\${zeroTpadHsl()} mod 1 = 0.\${zeroTpadHsl()}. The current [eda](#eda){.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} tells us how many days have passed since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era): Year [0]{.color0} Day [0]{.color0} [Tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} [0]{.color0}.
+To obtain a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from an [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}, we can [keep the remainder after dividing](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) by one to isolate the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of the [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers): \${zeroDotyHsl()}.\${zeroTpadHsl()} [[&LeftFloor;]{.hyphen}](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 = 0.\${zeroTpadHsl()}. We can use this same approach to separate a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from an "epochal day aggregate" ([eda](#eda){#epochaldayaggregate .tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"}): \${zeroDoteHsl}.\${zeroTpadHsl()} [&LeftFloor;]{.hyphen} 1 = 0.\${zeroTpadHsl()}. The current [eda](#eda){.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} tells us how many days have passed since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era): Year [0]{.color0} Day [0]{.color0} [Tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} [0]{.color0}.
 
 ::: {.equationgroup #equationgroup01}
 $$\begin{split}
-\text{tod} &= \text{ada} \bmod 1 \\
-&= \text{eda} \bmod 1
+\text{tod} &= \text{ada} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \\
+&= \text{eda} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1
 \end{split}$$ {#eq-tod}
 :::
 
@@ -65,7 +65,7 @@ $$\begin{split}
 Similarly, [UNIX time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970%2C%20the%20Unix%20epoch) tallies the seconds since the [UNIX epoch](https://en.wikipedia.org/wiki/Unix_time#:~:text=00%3A00%3A00%20UTC%20on%201%C2%A0January%201970), which is exactly 719468 days after the Dec epoch. To get the [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} in Zone [0]{.color0}, the Dec time zone that is in between the two leftmost vertical lines on the map, we can divide UNIX time by the [number of seconds in a day](https://en.wikipedia.org/wiki/Day#:~:text=average%2C%20this%20is-,24%20hours%20(86%2C400%20seconds),-.%20As%20a%20day) and then keep the remainder after dividing the resulting days by 1 as in @eq-unixtod.
 
 ::: {.equationgroup #equationgroup02}
-$$\text{tod} = \text{unix} \div 86400 \bmod 1$$ {#eq-unixtod}
+$$\text{tod} = \text{unix} \div 86400 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1$$ {#eq-unixtod}
 :::
 
 ## Julian date equation {#sec-jde .unnumbered .hiddenheading}
@@ -73,7 +73,7 @@ $$\text{tod} = \text{unix} \div 86400 \bmod 1$$ {#eq-unixtod}
 [Julian dates](https://en.wikipedia.org/wiki/Julian_day#:~:text=the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon) track the days since the beginning of the [Julian period](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20chronological%20interval%20of%207980%C2%A0years%2C%20derived%20from%20three%20multi%2Dyear%20cycles:%20the%20Indiction%2C%20Solar%2C%20and%20Lunar%20cycles) and thus are akin to [eda](#eda){.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregates"}. We can produce a Zone [5]{.color5} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from a [Julian date](https://en.wikipedia.org/wiki/Julian_day#:~:text=the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon) simply by keeping the remainder after dividing by one. If we want a Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} instead, we should add [5]{.color5} [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} to the Julian date, divide the sum by one, and then keep the remainder as in @eq-juliantod below.
 
 ::: {.equationgroup #equationgroup03}
-$$\text{tod} = (\text{julian} + 0.5) \bmod 1$$ {#eq-juliantod}
+$$\text{tod} = (\text{julian} + 0.5) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1$$ {#eq-juliantod}
 :::
 
 # Hour minute second (hms) {#sec-hms .hiddenheading}
@@ -137,11 +137,11 @@ Equations -@eq-dsa to -@eq-som below convert UNIX time or a Zone [0]{.color0} [t
 ::: {.equationgroup #equationgroup05}
 $$\begin{split}
 \text{dsa} & = \text{tod} \ast 86400 \\
-& = \text{unix} \bmod  86400
+& = \text{unix} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  86400
 \end{split}
 $$ {#eq-dsa}
 $$
-\text{hsa} = \text{dsa} \bmod  3600
+\text{hsa} = \text{dsa} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  3600
 $$ {#eq-hsa}
 $$
 \text{hod} = \lfloor \text{dsa} \div 3600 \rfloor
@@ -150,7 +150,7 @@ $$
 \text{moh} = \lfloor \text{hsa} \div 60 \rfloor
 $$ {#eq-moh}
 $$
-\text{som} = \lfloor \text{hsa} \bmod  60 \rfloor
+\text{som} = \lfloor \text{hsa} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  60 \rfloor
 $$ {#eq-som}
 :::
 
@@ -220,8 +220,8 @@ $$
 $$ {#eq-sis}
 $$
 \begin{split}
-\text{sid} &= \text{sis} \bmod 24\\
-&= (\text{s} - \text{sis}) \ast 24 \bmod 24
+\text{sid} &= \text{sis} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 24\\
+&= (\text{s} - \text{sis}) \ast 24 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 24
 \end{split}
 $$ {#eq-sid}
 :::
@@ -363,9 +363,9 @@ If we do know whether Day [364]{.color364by365} belongs to a common or leap year
 $$
 \text{leap}=\begin{cases}
   1&{\begin{aligned}
-    &\text{ if } (\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} \ \ \ \ 4=0\\
-    &\href{https://en.wikipedia.org/wiki/Logical_conjunction}{\land}(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 100\neq0\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 400=0\end{aligned}}\\\\
+    &\text{ if } (\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} \ \ \ \ 4=0\\
+    &\href{https://en.wikipedia.org/wiki/Logical_conjunction}{\land}(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 100\neq0\\
+    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 400=0\end{aligned}}\\\\
   0&{\text{ otherwise}}\end{cases}
 $$ {#eq-leap}
 
@@ -401,15 +401,15 @@ Dec permits any non-negative offset that is less than one day and can be written
 Outside of Dec, longitudes are often provided in [Greenwich](https://en.wikipedia.org/wiki/Prime_meridian_&28Greenwich&29#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England) [degrees](https://en.wikipedia.org/wiki/Degree_%28angle%29#:~:text=a%20unit%20of%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20assigned%20the%20value%20of%20360%20degrees) ([g°](#gdeg){#greenwichdegrees .tool data-bs-toggle="tooltip" data-bs-title="Greenwich degrees"}). @eq-deg2wei converts [g°](#gdeg){.tool data-bs-toggle="tooltip" data-bs-title="Greenwich degrees"} to [w](#w){.tool data-bs-toggle="tooltip" data-bs-title="wěi"} and @eq-wei2deg does the opposite. To obtain a [sto](#sto){.tool data-bs-toggle="tooltip" data-bs-title="solar time offset"}, we can pass [w](#w){.tool data-bs-toggle="tooltip" data-bs-title="wěi"} to @eq-wei2sto or [g°](#gdeg){.tool data-bs-toggle="tooltip" data-bs-title="Greenwich degrees"} to @eq-deg2sto below. As shown in @eq-mst below, we can sum an [sto](#sto){.tool data-bs-toggle="tooltip" data-bs-title="solar time offset"} with the Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to get a yearly average of solar time called "[mean solar time](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year)" ([mst](#mst){#meansolartime .tool data-bs-toggle="tooltip" data-bs-title="mean solar time"}).
 
 ::: {.equationgroup #equationgroup08}
-$$\text{w} = (\text{g}^\circ + 378) \div 360 \bmod 1$$ {#eq-deg2wei}
+$$\text{w} = (\text{g}^\circ + 378) \div 360 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1$$ {#eq-deg2wei}
 
-$$\text{g}^\circ = (\text{w} + 0.45) \bmod 1 \times 360 - 180$$ {#eq-wei2deg}
+$$\text{g}^\circ = (\text{w} + 0.45) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 360 - 180$$ {#eq-wei2deg}
 
-$$\text{sto} = (0.95 + \text{w}) \bmod 1$$ {#eq-wei2sto}
+$$\text{sto} = (0.95 + \text{w}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1$$ {#eq-wei2sto}
 
-$$\text{sto} = (\text{g}^\circ + 360) \div 360 \bmod 1$$ {#eq-deg2sto}
+$$\text{sto} = (\text{g}^\circ + 360) \div 360 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1$$ {#eq-deg2sto}
 
-$$\text{mst} = (\text{tod} + \text{sto}) \bmod 1$$ {#eq-mst}
+$$\text{mst} = (\text{tod} + \text{sto}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1$$ {#eq-mst}
 :::
 
 # Equation of time (eot) {#sec-eot .hiddenheading}
@@ -418,7 +418,7 @@ If we want to tailor our solar time calculations to a specific [ada](#ada){.tool
 Obtaining the [eot](#eot){.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} requires a "time of year" ([toy](#toy){#timeofyear .tool data-bs-toggle="tooltip" data-bs-title="time of year"}), which is an [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} that was converted from days to years as displayed in @eq-toy.
 
 ::: {.equationgroup #equationgroup09}
-$$\text{ast} = (0.95 + \text{tod} + \text{w} +  \text{eot}) \bmod 1$$ {#eq-ast}
+$$\text{ast} = (0.95 + \text{tod} + \text{w} +  \text{eot}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1$$ {#eq-ast}
 
 $$\text{toy} = \text{ada} \div \text{syl}$$ {#eq-toy}
 
@@ -533,7 +533,7 @@ In the [line📈chart](https://en.wikipedia.org/wiki/Line_chart#:~:text=a%20type
 Apart from transforming an [mst](#mst){.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"} into an [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"}, we can also use [eot](#eot){.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} values to more accurately estimate the [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="times of day"} of [solar noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow), sunrise, and sunset. @eq-solarnoon below creates a [solar noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow) [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} by keeping only the decimal part of the result of subtracting a [w](#w){.tool data-bs-toggle="tooltip" data-bs-title="horizontal lines on a map"} longitude and an [eot](#eot){.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} value that is measured in days from the sum of 9.55 and a [tzo](#tzo){.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} that is measured in days.
 
 ::: {.equationgroup #equationgroup11}
-$$\text{solarnoon} = \left(9.55 + \text{tzo} - \text{w} - \text{eot}\right) \bmod 1$$ {#eq-solarnoon}
+$$\text{solarnoon} = \left(9.55 + \text{tzo} - \text{w} - \text{eot}\right) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1$$ {#eq-solarnoon}
 :::
 
 # Cambridge and Cambridge {#sec-cac .hiddenheading}
@@ -541,17 +541,17 @@ $$\text{solarnoon} = \left(9.55 + \text{tzo} - \text{w} - \text{eot}\right) \bmo
 To compare the solar noon [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} in two cities, we can plug the longitude of each city into @eq-solarnoon above. If all of the variables other than longitude in @eq-solarnoon are set to zero, the resulting solar noon [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is almost five [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} for [Cambridge, England](https://en.wikipedia.org/wiki/Cambridge#:~:text=a%20city%20and%20non%2Dmetropolitan%20district%20in%20the%20county%20of%20Cambridgeshire%2C%20England) in the [United Kingdom](https://en.wikipedia.org/wiki/United_Kingdom#:~:text=a%20country%20in%20Northwestern%20Europe) and nearly seven [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} for [Cambridge, Massachusetts](https://en.wikipedia.org/wiki/Cambridge,_Massachusetts#:~:text=a%20city%20in%20Middlesex%20County%2C%20Massachusetts%2C%20United%20States) in the [United States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primarily%20located%20in%20North%20America).
 
 ::: {.equationgroup #equationgroup12}
-$$4.99635 = (9.55 - 0.050365) \bmod 1 \ast 10$$ {#eq-cambridgeuk}
+$$4.99635 = (9.55 - 0.050365) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10$$ {#eq-cambridgeuk}
 
-$$6.97517 = (9.55 - 0.852484) \bmod 1 \ast 10$$ {#eq-cambridgema}
+$$6.97517 = (9.55 - 0.852484) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10$$ {#eq-cambridgema}
 :::
 
 The two homonymous cities are about two [dw](#dw){.tool data-bs-toggle="tooltip" data-bs-title="deciwěi"} apart and therefore will always differ by around two [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} in solar time, regardless of what time zone we use as our frame of reference. England is in Zone [0]{.color0} and Massachusetts is in Zone [8]{.color8}. From the perspective of Zone [8]{.color8}, solar noon is roughly [Tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} [5]{.color5} in Cambridge, MA and about [Tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} [3]{.color3} in Cambridge, UK.
 
 ::: {.equationgroup #equationgroup13}
-$$2.99635 = (9.55 + 0.8 - 0.050365) \bmod 1 \ast 10$$ {#eq-cambridgeuk8}
+$$2.99635 = (9.55 + 0.8 - 0.050365) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10$$ {#eq-cambridgeuk8}
 
-$$4.97517 = (9.55 + 0.8 - 0.852484) \bmod 1 \ast 10$$ {#eq-cambridgema8}
+$$4.97517 = (9.55 + 0.8 - 0.852484) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10$$ {#eq-cambridgema8}
 :::
 
 # Light arc whole (law) {#sec-law .hiddenheading}
@@ -623,7 +623,7 @@ $$
 \begin{cases}
 \text{saa} & \text{j} = 0.25 \\
 \text{atan2(-sin(saa)cos(sea), sin(sea))} & \text{j} = 0 \\
-(1.5 - \text{saa}) \bmod 1 & \text{j} = -0.25
+(1.5 - \text{saa}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 & \text{j} = -0.25
 \end{cases}
 $$ {#eq-extremes}
 :::
