@@ -34,15 +34,15 @@ Introducing Decalendar, a solar calendar which measures time in years and days w
 
 ##### Declock
 
-44 min
+40 min
 
 Introducing Declock, a timekeeping system that displays time in decimal days without the need for hours, minutes, or seconds.
 
 |            |             |
 |------------|-------------|
-| Word Count | 8,776 words |
+| Word Count | 7,824 words |
 
-1794174461
+1794195708
 
 ![](../asset/1939ww2europe.svg)
 
