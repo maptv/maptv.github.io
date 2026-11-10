@@ -5,6 +5,8 @@
 viewof zoneInput = Inputs.range([0, 9], {label: "Zone", value: 5, step: 1})
 ```
 
+::: {.radiorow}
+
 ```{ojs}
 //| echo: false
 //| class: radio
@@ -19,10 +21,13 @@ viewof shapeInput = Inputs.radio(new Map([["Circle", true], ["Rectangle", false]
 viewof unitInput = Inputs.radio(new Map([["90", true], ["100", false]]), {label: "Ticks", value: true})
 ```
 
+:::
+
 ```{ojs}
 //| echo: false
 //| class: watch
 //| label: decwatch
+// https://observablehq.com/@ldgrp/apple-watch-solar-dial-simulation
 decWatch = {
   const circle = shapeInput;                  // true: circle, false: rectangle
   const count = unitInput ? 90 : 100;         // 90 Dec s or 100 cmd per md
@@ -100,7 +105,7 @@ decWatch = {
     const tick = Math.floor((millidays % 1) * count);    // Dec s 0–89 or cmd 0–99
 
     label.text(String(Math.floor(millidays)).padStart(3, "0"));
-    ticks.attr("stroke", d => (d >= tick ? "#555" : "white"));
+    ticks.attr("stroke", d => (d > tick ? "#555" : "white"));
 
     yield svg.node();
     await Promises.delay(period - (ms % period));        // next Dec s or cmd

@@ -1223,14 +1223,15 @@ piecewiseColor = d3.piecewise(d3.interpolateRgb, [
 ])
 slStr = `, 100%, 50%)`
 elaTime = elapsed % 1e5
-elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 1000)).h}` + slStr)
+elaTimeHsl = () => textcolor(elaTime, piecewiseColor(elaTime % 1000 / 1000))
 loadDote = unix2dote(Date.now(), 0)
 loadydz = dote2date(...loadDote)
 loadYear = loadydz[0]
 loadYearHsl = textcolor(loadYear, piecewiseColor(loadYear % 1000 / 1000))
 loadAda = loadydz[1]
 loadIsLeap = isLeapYear(loadYear)
-loadAdaHsl = textcolor(loadAda.toFixed(5).padStart(9, "0"), piecewiseColor(loadAda / (365 + loadIsLeap)))
+loadNdaysInYear = 365 + loadIsLeap
+loadAdaHsl = () => textcolor(loadAda.toFixed(5).padStart(9, "0"), piecewiseColor(loadAda / loadNdaysInYear))
 decDate = Math.floor(ydz[1])
 decMoty = Math.floor((5 * decDate + 2) / 153)
 isoYear = decYear + (decMoty > 9)
@@ -3210,6 +3211,23 @@ div.slider input[type="number"] {
 }
 div.slider input[type="range"] {
   width: 100%;
+}
+/* Shape and Ticks radio inputs (class: radio) share one row, each
+   label sized to its text; the row wraps only if it can't fit. */
+div.radiorow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+div.radiorow > div.radio form {
+  width: auto;
+  max-width: none;
+  margin-bottom: 0;
+}
+div.radiorow > div.radio form > label {
+  width: auto;
+  margin-right: 0.5em;
 }
 #sozu {
   text-align: center;

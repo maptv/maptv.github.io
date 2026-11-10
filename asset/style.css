@@ -408,18 +408,19 @@ div > form > label {
    stays in the text flow, so it doesn't depend on the line box, and it
    overlaps the floor's stem through its negative right margin.
    It uses currentColor rather than the accents' black/white so it matches
-   the floor's color inside a link. */
+   the floor's color inside a link. asset/combining.lua puts a hidden real
+   minus (U+2212) in a span.cm before the floor, so it copies as "−⌊". */
 .hyphen {
-  font-size: .7em;
-  top: -2px;
+  font-size: .9em;
+  top: -1px;
 }
 .hyphen::before {
   content: "";
   display: inline-block;
-  width: .5em;
-  height: 1px;
+  width: .7em;
+  height: 1.5px;
   margin-right: -.26em;
-  vertical-align: .3em;
+  vertical-align: .28em;
   background: currentColor;
 }
 

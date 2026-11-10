@@ -10,7 +10,8 @@
     acutegrave: "\u033D",
     doublegrave: "\u030F",
     doubleacute: "\u030B",
-    hyphen: "\u0335",
+    // Not a combining mark: the mod operator copies as "−⌊" (see combining.lua).
+    hyphen: "\u2212",
   };
   const selector = Object.keys(marks).map(c => "." + c).join(",");
 
@@ -39,6 +40,12 @@
     const mark = marks[cls];
     const nodes = textNodes(el);
 
+    if (cls === "hyphen") {
+      // The minus comes before the floor, where the CSS stroke is drawn.
+      const first = nodes[0];
+      if (first && !first.previousSibling?.classList?.contains("cm")) first.before(cm(mark));
+      return;
+    }
     if (cls !== "overline") {
       // An accent sits on the last character only.
       const last = nodes.at(-1);
