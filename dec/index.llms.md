@@ -227,7 +227,9 @@ perbeat(3)
 
 Each [do](#do) has a corresponding musical note ([n](#n)) that determines its color label. The idea of linking colors and musical notes dates back to the 1704 book by [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a) entitled [Opticks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[^1]. On 2025+080, I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm) by [Clint Goss](https://www.clintgoss.com)[^2], which presents a method of associating musical notes with colors by matching sound and light frequencies.
 
-$$\text{n} = \text{o} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 1 \ast 10 \tag{6}$$
+$$\text{dividend} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} \text{modulus} = \text{dividend} - \text{modulus} \ast \left\lfloor\dfrac{\text{dividend}}{\text{modulus}}\right\rfloor \tag{6}$$
+
+$$\text{n} = \text{o} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 1 \ast 10 \tag{7}$$
 
 The lollipops🍭in the chart below represent the ten Dec notes in Octave 4. The lollipops and the [do](#do) values above them are labeled with the ten Dec colors. Beneath each lollipop is its frequency rounded to the nearest [þ](#per). Click or tap each lollipop to hear its associated sound. The chart demonstrates that data points can be labeled with both color and sound.
 
@@ -472,8 +474,8 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
   - [pia](#positiveintervalada): positive interval ada, the time since the start of the current year, equal to the ada
   - [nia](#negativeintervalada): negative interval ada, pia − syl, the negative of the time until the start of the next year
   - [doq](#dayofquadricentennial): day of quadricentennial, days since the start of the current Gregorian quadricentennial, 0 to 146096
-  - [doh_(♀)](#dayofhexadecimester): Decyther day of hexadecimester, days since the start of the current 467-day Decyther hexadecimester, doe ⌊̵ 467, 0 to 466
-  - [doh](#dayofhectoday): day of hectoday, doy ⌊̵ 100, the percent of a hectoday that has elapsed
+  - [doh_(♀)](#dayofhexadecimester): Decyther day of hexadecimester, days since the start of the current 467-day Decyther hexadecimester, doe −⌊ 467, 0 to 466
+  - [doh](#dayofhectoday): day of hectoday, doy −⌊ 100, the percent of a hectoday that has elapsed
   - [dob](#dayofbimester): day of bimester, 0 to 58 in common bimesters or 0 to 59 in leap bimesters
   - dob_(♀): Decyther day of bimester, 0 to 57 in antes and the post of Qoh 2 or 0 to 58 in the other posts
   - [dot](#dayoftricennium): day of tricennium, days since the start of the current 30-year lunar cycle, 0 to 10630
@@ -490,7 +492,7 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
   - [eoy](#endofyear): end of year, midnight at the end of Day 364 or 365
   - [JDN](#Juliandaynumber): Julian day number, days since the start of the Julian period; increments at noon UTC
   - [lid](#lunarintercalationdifference): lunar intercalation difference, a lunar nid that only resets after lunar leap years, -1063 to -1
-  - [ved](#venusianextracalationdifference): Venusian extracalation difference, days until the end of Doh_(♀) 349, the last day of the one-day-shorter Qoh 2, Bimester 5, and Moh_(♀) 11, (doh_(♀) + 117) ⌊̵ 467 − 467, -467 to -1
+  - [ved](#venusianextracalationdifference): Venusian extracalation difference, days until the end of Doh_(♀) 349, the last day of the one-day-shorter Qoh 2, Bimester 5, and Moh_(♀) 11, (doh_(♀) + 117) −⌊ 467 − 467, -467 to -1
   - [mud](#misalignedunitdifference): misaligned unit difference, pid − dom − dow
   - [dd](#deciday): deciday, a tenth of a day, 2.4 hours, 144 minutes
   - [cd](#centiday): centiday, a hundredth of a day, 0.24 hours, 14.4 minutes
@@ -571,10 +573,10 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
   - [nit](#negativeintervaltod): negative interval tod, pit − 1, the negative of the time until the start of the next day (next midnight)
   - [hms](#hourminutesecond): hour minute second, a tod written as an hod, moh, and som triplet
   - [dsa](#dailysecondaggregate): daily second aggregate, seconds since midnight, tod × 86400
-  - [hsa](#hourlysecondaggregate): hourly second aggregate, seconds since the top of the hour, dsa ⌊̵ 3600
+  - [hsa](#hourlysecondaggregate): hourly second aggregate, seconds since the top of the hour, dsa −⌊ 3600
   - [hod](#hourofday): hour of day, ⌊dsa ÷ 3600⌋, 0 to 23
   - [moh](#minuteofhour): minute of hour, ⌊hsa ÷ 60⌋, 0 to 59
-  - [som](#secondofminute): second of minute, ⌊hsa ⌊̵ 60⌋, 0 to 59
+  - [som](#secondofminute): second of minute, ⌊hsa −⌊ 60⌋, 0 to 59
   - [mst](#meansolartime): mean solar time, solar time based only on longitude and the Zone 0 tod
   - [ast](#apparentsolartime): apparent solar time, mst + eot(toy), solar time based on the actual position of the Sun
   - [law](#lightarcwhole): light arc whole, the time from sunrise to sunset, 1 − naw, sunset − sunrise
@@ -608,7 +610,7 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
   - [my](#milliyear): milliyear, a thousandth of a year
   - [yoe](#yearofera): year of era, integer years since the Dec epoch
   - [eya](#epochalyearaggregate): epochal year aggregate, yoe + toy, years since the Dec epoch including the fraction of the current year
-  - [toy](#timeofyear): time of year, the fraction of the year that has elapsed, eya ⌊̵ 1, ada ÷ syl
+  - [toy](#timeofyear): time of year, the fraction of the year that has elapsed, eya −⌊ 1, ada ÷ syl
   - [ymd](#yearmonthday): year month day, a Gregorian calendar date triplet
   - [syl](#solaryearlength): solar year length, 365 or 366 days, pid − nid
   - [lyl](#lunaryearlength): lunar year length, 354 or 355 days

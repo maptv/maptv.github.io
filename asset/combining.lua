@@ -11,7 +11,9 @@ local marks = {
   acutegrave = "\u{033D}",
   doublegrave = "\u{030F}",
   doubleacute = "\u{030B}",
-  hyphen = "\u{0335}",
+  -- Not a combining mark: the mod operator copies as two characters, a minus
+  -- sign before the floor (x −⌊ y), like its LaTeX source.
+  hyphen = "\u{2212}",
 }
 
 local function mark_inline(mark)
@@ -46,7 +48,10 @@ function Span(span)
     return nil
   end
 
-  if span.classes:includes("overline") then
+  if span.classes:includes("hyphen") then
+    -- The minus comes before the floor, where the CSS stroke is drawn.
+    span.content:insert(1, mark_inline(mark))
+  elseif span.classes:includes("overline") then
     -- A vinculum covers every digit under it.
     span.content = span.content:walk({
       Str = function(str) return mark_every_char(str, mark) end,
