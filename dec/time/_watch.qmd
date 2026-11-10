@@ -1,137 +1,88 @@
 ```{ojs}
 //| echo: false
-//| class: watch
-//| label: radialwatch90
-watchRadial90 = {
-  const radius = 100;
+//| class: slider
+//| label: zoneinput
+viewof zoneInput = Inputs.range([0, 9], {label: "Zone", value: 5, step: 1})
+```
 
-  const svg = d3.create("svg")
-    .attr("viewBox", [-radius, -radius, radius * 2, radius * 2])
-    .style("max-width", "200px");
+```{ojs}
+//| echo: false
+//| class: radio
+//| label: shapeinput
+viewof shapeInput = Inputs.radio(new Map([["Circle", true], ["Rectangle", false]]), {label: "Shape", value: true})
+```
 
-  svg.append("circle")
-    .attr("r", radius)
-    .style("fill", "rgb(10,34,58)");
-
-  const ticks = svg.selectAll(".dec-second-tick")
-    .data(d3.range(0, 90))
-    .join("line")
-      .attr("class", "dec-second-tick")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", radius - 5)
-      .attr("y2", radius - 10)
-      .attr("stroke-width", 3)
-      .attr("stroke-linecap", "round")
-      .style("opacity", 1)
-      .attr("transform", d => `rotate(${180 + d * 4})`);
-
-  const label = svg.append("text")
-    .attr("y", 32)
-    .attr("fill", "white")
-    .attr("text-anchor", "middle")
-    .attr("font-family", "Helvetica, Arial, sans-serif")
-    .attr("font-weight", 600)
-    .attr("font-size", "90px")
-    .style("font-variant-numeric", "tabular-nums");
-
-  while (true) {
-    const t = new Date();
-    const ms = ((t.getHours() * 60 + t.getMinutes()) * 60 + t.getSeconds()) * 1000
-             + t.getMilliseconds();
-    const millidays = ms / 86400;                     // 86 400 ms per milliday
-    const seconds = Math.floor((millidays % 1) * 90); // Dec second 0–89
-
-    label.text(String(Math.floor(millidays)).padStart(3, "0"));
-    ticks.attr("stroke", d => (d >= seconds ? "#555" : "white"));
-
-    yield svg.node();
-    await Promises.delay(960 - (ms % 960));           // next Dec second
-  }
-}
+```{ojs}
+//| echo: false
+//| class: radio
+//| label: unitinput
+viewof unitInput = Inputs.radio(new Map([["90", true], ["100", false]]), {label: "Ticks", value: true})
 ```
 
 ```{ojs}
 //| echo: false
 //| class: watch
-//| label: horizontalwatch90
-watchHorizontal90 = {
-  const radius = 100;
+//| label: decwatch
+decWatch = {
+  const circle = shapeInput;                  // true: circle, false: rectangle
+  const count = unitInput ? 90 : 100;         // 90 Dec s or 100 cmd per md
+  const period = 86400 / count;               // 960 ms per Dec s, 864 ms per cmd
+  // long ticks, circle: 0, 15, 30, 45, 60, 75 (90) or 0, 25, 50, 75 (100);
+  // rectangle: 15, 30, 60, 75 (90) or 25, 75 (100), skipping each row's start
+  const isMajor = d => circle
+    ? d % (unitInput ? 15 : 25) === 0
+    : d % (unitInput ? 15 : 25) === 0 && d % (count / 2) !== 0;
 
-  const svg = d3.create("svg")
-    .attr("viewBox", [-radius, -radius, radius * 2, radius * 2])
-    .style("max-width", "200px");
+  const svg = d3.create("svg").style("max-width", "200px");
 
-  svg.append("circle")
-    .attr("r", radius)
-    .style("fill", "rgb(10,34,58)");
+  let ticks;
+  if (circle) {
+    const radius = 100;
+    svg.attr("viewBox", [-radius, -radius, radius * 2, radius * 2]);
 
-  const ticks = svg.selectAll(".dec-second-tick")
-    .data(d3.range(0, 90))
-    .join("line")
-      .attr("class", "dec-second-tick")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", radius - 5)
-      .attr("y2", radius - 10)
-      .attr("stroke-width", 3)
-      .attr("stroke-linecap", "round")
-      .style("opacity", 1)
-      .attr("transform", d => `rotate(${180 + d * 4})`);
+    svg.append("circle")
+      .attr("r", radius)
+      .style("fill", "rgb(10,34,58)");
 
-  const label = svg.append("text")
-    .attr("y", 32)
-    .attr("fill", "white")
-    .attr("text-anchor", "middle")
-    .attr("font-family", "Helvetica, Arial, sans-serif")
-    .attr("font-weight", 600)
-    .attr("font-size", "90px")
-    .style("font-variant-numeric", "tabular-nums");
+    ticks = svg.selectAll(".watch-tick")
+      .data(d3.range(0, count))
+      .join("line")
+        .attr("class", "watch-tick")
+        .attr("x1", 0)
+        .attr("x2", 0)
+        .attr("y1", radius - 5)
+        .attr("y2", d => radius - (isMajor(d) ? 16 : 10))
+        .attr("stroke-width", 3)
+        .attr("stroke-linecap", "round")
+        .attr("transform", d => `rotate(${180 + d * 360 / count})`);
+  } else {
+    const width = 200, height = 125;
+    const perRow = count / 2;                 // 45 or 50 ticks per row
+    const spacing = 176 / perRow;             // rows ≈ 176 px wide
+    const rowY = 50;                          // row centres at y = ±50
+    const tickLength = d => isMajor(d) ? 16 : 10;
+    const x0 = -((perRow - 1) * spacing) / 2; // centre each row
+    svg.attr("viewBox", [-width / 2, -height / 2, width, height]);
 
-  while (true) {
-    const t = new Date();
-    const ms = ((t.getHours() * 60 + t.getMinutes()) * 60 + t.getSeconds()) * 1000
-             + t.getMilliseconds();
-    const millidays = ms / 86400;                     // 86 400 ms per milliday
-    const seconds = Math.floor((millidays % 1) * 90); // Dec second 0–89
+    svg.append("rect")
+      .attr("x", -width / 2)
+      .attr("y", -height / 2)
+      .attr("width", width)
+      .attr("height", height)
+      .style("fill", "rgb(10,34,58)");
 
-    label.text(String(Math.floor(millidays)).padStart(3, "0"));
-    ticks.attr("stroke", d => (d >= seconds ? "#555" : "white"));
-
-    yield svg.node();
-    await Promises.delay(960 - (ms % 960));           // next Dec second
+    // first half of the ticks above the number, second half below, left to right
+    ticks = svg.selectAll(".watch-tick")
+      .data(d3.range(0, count))
+      .join("line")
+        .attr("class", "watch-tick")
+        .attr("x1", d => x0 + (d % perRow) * spacing)
+        .attr("x2", d => x0 + (d % perRow) * spacing)
+        .attr("y1", d => (d < perRow ? -rowY : rowY) - tickLength(d) / 2)
+        .attr("y2", d => (d < perRow ? -rowY : rowY) + tickLength(d) / 2)
+        .attr("stroke-width", 2)
+        .attr("stroke-linecap", "round");
   }
-}
-```
-
-```{ojs}
-//| echo: false
-//| class: watch
-//| label: radialwatch100
-watchRadial100 = {
-  const radius = 100;
-
-  const svg = d3.create("svg")
-    .attr("viewBox", [-radius, -radius, radius * 2, radius * 2])
-    .style("max-width", "200px");
-
-  svg.append("circle")
-    .attr("r", radius)
-    .style("fill", "rgb(10,34,58)");
-
-  // 100 ticks = 100 cmd = 1 md
-  const ticks = svg.selectAll(".cmd-tick")
-    .data(d3.range(0, 100))
-    .join("line")
-      .attr("class", "cmd-tick")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", radius - 5)
-      .attr("y2", radius - 10)
-      .attr("stroke-width", 3)
-      .attr("stroke-linecap", "round")
-      .style("opacity", 1)
-      .attr("transform", d => `rotate(${180 + d * 3.6})`);
 
   const label = svg.append("text")
     .attr("y", 32)
@@ -143,78 +94,16 @@ watchRadial100 = {
     .style("font-variant-numeric", "tabular-nums");
 
   while (true) {
-    const t = new Date();
-    const ms = ((t.getHours() * 60 + t.getMinutes()) * 60 + t.getSeconds()) * 1000
-             + t.getMilliseconds();
-    const millidays = ms / 86400;                    // 86 400 ms per milliday
-    const cmd = Math.floor((millidays % 1) * 100);   // centimilliday 0–99
+    // ms since midnight in the selected Dec zone (1 zone = 1 dd = 8 640 000 ms)
+    const ms = (Date.now() + zoneInput * 8640000) % 86400000;
+    const millidays = ms / 86400;                        // 86 400 ms per milliday
+    const tick = Math.floor((millidays % 1) * count);    // Dec s 0–89 or cmd 0–99
 
     label.text(String(Math.floor(millidays)).padStart(3, "0"));
-    ticks.attr("stroke", d => (d >= cmd ? "#555" : "white"));
+    ticks.attr("stroke", d => (d >= tick ? "#555" : "white"));
 
     yield svg.node();
-    await Promises.delay(864 - (ms % 864));          // next cmd (864 ms)
-  }
-}
-```
-
-```{ojs}
-//| echo: false
-//| class: watch
-//| label: horizontalwatch100
-watchHorizontal100 = {
-  const width = 200, height = 125;
-  const perRow = 50;
-  const spacing = 3.6;                        // 50 ticks × 3.6 ≈ 176 px wide
-  const rowY = 50;                            // row centres at y = ±50
-  const tickLength = 10;
-  const x0 = -((perRow - 1) * spacing) / 2;   // centre each row
-
-  const svg = d3.create("svg")
-    .attr("viewBox", [-width / 2, -height / 2, width, height])
-    .style("max-width", "200px");
-
-  svg.append("rect")
-    .attr("x", -width / 2)
-    .attr("y", -height / 2)
-    .attr("width", width)
-    .attr("height", height)
-    //.attr("rx", 36)
-    .style("fill", "rgb(10,34,58)");
-
-  // ticks 0–49 above the number, 50–99 below, left to right
-  const ticks = svg.selectAll(".cmd-tick")
-    .data(d3.range(0, 100))
-    .join("line")
-      .attr("class", "cmd-tick")
-      .attr("x1", d => x0 + (d % perRow) * spacing)
-      .attr("x2", d => x0 + (d % perRow) * spacing)
-      .attr("y1", d => (d < perRow ? -rowY : rowY) - tickLength / 2)
-      .attr("y2", d => (d < perRow ? -rowY : rowY) + tickLength / 2)
-      .attr("stroke-width", 2)
-      .attr("stroke-linecap", "round");
-
-  const label = svg.append("text")
-    .attr("y", 32)
-    .attr("fill", "white")
-    .attr("text-anchor", "middle")
-    .attr("font-family", "Helvetica, Arial, sans-serif")
-    .attr("font-weight", 600)
-    .attr("font-size", "90px")
-    .style("font-variant-numeric", "tabular-nums");
-
-  while (true) {
-    const t = new Date();
-    const ms = ((t.getHours() * 60 + t.getMinutes()) * 60 + t.getSeconds()) * 1000
-             + t.getMilliseconds();
-    const millidays = ms / 86400;                    // 86 400 ms per milliday
-    const cmd = Math.floor((millidays % 1) * 100);   // centimilliday 0–99
-
-    label.text(String(Math.floor(millidays)).padStart(3, "0"));
-    ticks.attr("stroke", d => (d >= cmd ? "#555" : "white"));
-
-    yield svg.node();
-    await Promises.delay(864 - (ms % 864));          // next cmd (864 ms)
+    await Promises.delay(period - (ms % period));        // next Dec s or cmd
   }
 }
 ```

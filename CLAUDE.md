@@ -136,7 +136,12 @@ updated as new preferences come up; don't let it grow into a changelog.
   meridian" and "quarter meridian" stay; "parallel" is fine for explaining what a wěi is,
   but avoid "lines of longitude/latitude", since Dec measures longitude with lines of
   latitude and vice versa; days in the year is `syl`, not `n` (the glossary's `n` is
-  a musical note); the inverse of a beat is perbeat (`þ`), not `iob`.
+  a musical note); the inverse of a beat is perbeat (`þ`), not `iob`; the 400-year period
+  is a quadricentennial (`qoe`, `yoq`, `doq`), not a cycle (`coe`, `yoc`, `doc`), because
+  Hinnant calls it an era; the 467-day Decyther period is a hexadecimester (`doh♀`, `qoh`,
+  `moh♀`, `boh`), not a cycle. A Venusian term whose acronym clashes with an Earth one
+  (doh, doq, moh) is written with a ♀ subscript (`doh~♀~`) and links to a `…venus`
+  glossary id (`#dohvenus`).
 - The mod operator is written as a minus joined to a left floor (x − y⌊x/y⌋): in LaTeX
   `\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}` (binary spacing on both
   sides; a shorter floor than a real `\lfloor`, raised so the stroke meets the middle of

@@ -586,7 +586,7 @@ In contrast to weekly schedules, Dec schedules like [L]{.color14by32 .tool data-
 
 There are 11 United States (US) [Federal holidays](https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/). US Federal holidays that fall on a Gregorian calendar rest day, [Dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of week"} [0]{.color0 .tool data-bs-toggle="tooltip" data-bs-title="Sunday"} or [Dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of week"} [6]{.color6by7 .tool data-bs-toggle="tooltip" data-bs-title="Saturday"}, are observed on the nearest Gregorian calendar work day: [Dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of week"} [1]{.color1by7 .tool data-bs-toggle="tooltip" data-bs-title="Monday"} or [Dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of week"} [5]{.color5by7 .tool data-bs-toggle="tooltip" data-bs-title="Friday"}. Rather than apply this rule to Schedule [L]{.color14by32 .tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} and move holidays from [Dox](#dox){.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} [0]{.color0} to [1]{.color1}, [4]{.color4} to [3]{.color3}, [5]{.color5} to [6]{.color6}, or [9]{.color9} to [8]{.color8}, we can switch between Dec schedules as needed.
 
-Over the course of a Dec cycle, which consists of 400 years, 20871 weeks, or 146097 [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"}, a five-day workweek provides an average of 260.8875 work days per year. If we round 260.8875 to 261 and then subtract the 11 US Federal holidays, we get an annual total of 250 work days, which is 1 [p](#p){.tool data-bs-toggle="tooltip" data-bs-title="pentaday"} less than the total work days provided annually by Schedule [L]{.color14by32 .tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.color15by32 .tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"}.
+Over the course of a Dec quadricentennial, which consists of 400 years, 20871 weeks, or 146097 [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"}, a five-day workweek provides an average of 260.8875 work days per year. If we round 260.8875 to 261 and then subtract the 11 US Federal holidays, we get an annual total of 250 work days, which is 1 [p](#p){.tool data-bs-toggle="tooltip" data-bs-title="pentaday"} less than the total work days provided annually by Schedule [L]{.color14by32 .tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.color15by32 .tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"}.
 
 The yearly work day total of Schedule [L]{.color14by32 .tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.color15by32 .tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"} would be 249 if Days [19]{.color019}, [111]{.color111by365}, [149]{.color149by365}, [206]{.color206by365}, [296]{.color296by365}, and [316]{.color316by365} were reclassified as rest days. Approximately, [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[19]{.color019} is the [northward equinox](https://en.wikipedia.org/wiki/March_equinox#:~:text=the%20equinox%20on%20the%20Earth%20when%20the%20subsolar%20point%20appears%20to%20leave%20the%20Southern%20Hemisphere%20and%20cross%20the%20celestial%20equator%2C%20heading%20northward%20as%20seen%20from%20Earth), [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[111]{.color111by365} is the [northern solstice](https://en.wikipedia.org/wiki/June_solstice#:~:text=the%20solstice%20on%20Earth%20that%20occurs%20annually%20between%2020%20and%2022%20June%20according%20to%20the%20Gregorian%20calendar), [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[149]{.color149by365} is the hottest [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} globally on average, [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[206]{.color206by365} is the [southward equinox](https://en.wikipedia.org/wiki/September_equinox#:~:text=the%20moment%20when%20the%20Sun%20appears%20to%20cross%20the%20celestial%20equator%2C%20heading%20southward), [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[296]{.color296by365} is the [southern solstice](https://en.wikipedia.org/wiki/December_solstice#:~:text=the%20solstice%20that%20occurs%20each%20December%20%E2%80%93%20typically%20on%2021%20December), and [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[316]{.color316by365} is the coldest [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="days of year"} globally on average.
 
@@ -701,16 +701,16 @@ When the current [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="posit
 
 # Year of era (yoe) {#sec-yoe}
 
-To obtain a [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"} that we can plug into @eq-dow, we can use the two components of a Dec year+day date, namely a "year of era" ([yoe](#yoe){#yearofera .tool data-bs-toggle="tooltip" data-bs-title="year of era"}) and a [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"}, to solve Equations -@eq-yoe2coe, -@eq-yoe2yoc, -@eq-date2doc, and -@eq-doe, which are based on [Howard Hinnant](https://howardhinnant.github.io)'s [`days_from_civil`](https://howardhinnant.github.io/date_algorithms.html#days_from_civil){.mono .under} algorithm that he describes in his manuscript entitled [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms.html) -@hinnant2021date.
+To obtain a [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"} that we can plug into @eq-dow, we can use the two components of a Dec year+day date, namely a "year of era" ([yoe](#yoe){#yearofera .tool data-bs-toggle="tooltip" data-bs-title="year of era"}) and a [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"}, to solve Equations -@eq-yoe2qoe, -@eq-yoe2yoq, -@eq-date2doq, and -@eq-doe, which are based on [Howard Hinnant](https://howardhinnant.github.io)'s [`days_from_civil`](https://howardhinnant.github.io/date_algorithms.html#days_from_civil){.mono .under} algorithm that he describes in his manuscript entitled [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms.html) -@hinnant2021date.
 
 ::: {.equationgroup #equationgroup10}
-$$\text{coe} = \biggl \lfloor \frac{\text{yoe}-399\ast\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{yoe} \geq 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}}{400} \biggr \rfloor$$ {#eq-yoe2coe}
+$$\text{qoe} = \biggl \lfloor \frac{\text{yoe}-399\ast\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{yoe} \geq 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}}{400} \biggr \rfloor$$ {#eq-yoe2qoe}
 
-$$\text{yoc} = \text{yoe} - \text{coe} \ast 400$$ {#eq-yoe2yoc}
+$$\text{yoq} = \text{yoe} - \text{qoe} \ast 400$$ {#eq-yoe2yoq}
 
-$$\text{doc} = \text{yoc} \ast 365 + \left\lfloor\frac{\text{yoc}}{4}\right\rfloor - \left\lfloor\frac{\text{yoc}}{100}\right\rfloor + \text{pid}$$ {#eq-date2doc}
+$$\text{doq} = \text{yoq} \ast 365 + \left\lfloor\frac{\text{yoq}}{4}\right\rfloor - \left\lfloor\frac{\text{yoq}}{100}\right\rfloor + \text{pid}$$ {#eq-date2doq}
 
-$$\text{doe} = \text{coe} \ast 146097 + \text{doc}$$ {#eq-doe}
+$$\text{doe} = \text{qoe} \ast 146097 + \text{doq}$$ {#eq-doe}
 :::
 
 :::{.panel-tabset group="language"}
@@ -718,9 +718,9 @@ $$\text{doe} = \text{coe} \ast 146097 + \text{doc}$$ {#eq-doe}
 
 ```{julia}
 function doe(year = 1969, pid = 306)
-    coe = fld(year, 400)
-    yoe = year - coe * 400
-    return coe * 146097 +
+    qoe = fld(year, 400)
+    yoe = year - qoe * 400
+    return qoe * 146097 +
            yoe * 365 +
            fld(yoe, 4) -
            fld(yoe, 100) +
@@ -733,9 +733,9 @@ doe()
 
 ```{ojs}
 function doe(year = 1969, pid = 306) {
-  const coe = Math.floor(year / 400),
-        yoe = year - coe * 400;
-  return coe * 146097 +
+  const qoe = Math.floor(year / 400),
+        yoe = year - qoe * 400;
+  return qoe * 146097 +
     yoe * 365 +
     Math.floor(yoe / 4) -
     Math.floor(yoe / 100) +
@@ -748,10 +748,10 @@ doe()
 
 ```{python}
 def doe(year=1969, pid=306):
-    coe = year // 400
-    yoe = year - coe * 400
+    qoe = year // 400
+    yoe = year - qoe * 400
     return (
-        coe * 146097
+        qoe * 146097
         + yoe * 365
         + yoe // 4
         - yoe // 100
@@ -764,9 +764,9 @@ doe()
 
 ```{r}
 doe <- function(year = 1969, pid = 306) {
-  coe <- year %/% 400
-  yoe <- year - coe * 400
-  coe * 146097 +
+  qoe <- year %/% 400
+  yoe <- year - qoe * 400
+  qoe * 146097 +
     yoe * 365 +
     yoe %/% 4 -
     yoe %/% 100 +
@@ -777,18 +777,18 @@ doe()
 
 :::
 
-Equations -@eq-doe2coe, -@eq-doe2doc, -@eq-doe2yoc, -@eq-yoe, and -@eq-doe2pid below are based on [Howard Hinnant](https://howardhinnant.github.io)'s [`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days){.mono} algorithm and useful for obtaining Dec dates from [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="days of era"}, [UNIX timestamps](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970), and [JDN](#jdn){.tool data-bs-toggle="tooltip" data-bs-title="Julian day numbers"} -@hinnant2021date. Regardless of whether we convert a [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} to a [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"} or *vice versa*, along the way we calculate the "[cycle](https://en.wikipedia.org/wiki/Solar_cycle_(calendar)#:~:text=the%20Gregorian%20cycle%20of%20400%20years%20has%20exactly%20146%2C097%20days%2C%20i.e.%20exactly%2020%2C871%20weeks%2C%20one%20can%20say%20that%20the%20Gregorian%20so%2Dcalled%20solar%20cycle%20lasts%20400%20years) of era" ([coe](#coe){#cycleofera .tool data-bs-toggle="tooltip" data-bs-title="cycle of era"}), "year of cycle" ([yoc](#yoc){#yearofcycle .tool data-bs-toggle="tooltip" data-bs-title="year of cycle"}), and "day of cycle" ([doc](#doc){#dayofcycle .tool data-bs-toggle="tooltip" data-bs-title="day of cycle"}).
+Equations -@eq-doe2qoe, -@eq-doe2doq, -@eq-doe2yoq, -@eq-yoe, and -@eq-doe2pid below are based on [Howard Hinnant](https://howardhinnant.github.io)'s [`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days){.mono} algorithm and useful for obtaining Dec dates from [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="days of era"}, [UNIX timestamps](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970), and [JDN](#jdn){.tool data-bs-toggle="tooltip" data-bs-title="Julian day numbers"} -@hinnant2021date. Regardless of whether we convert a [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} to a [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"} or *vice versa*, along the way we calculate the "[quadricentennial](https://en.wikipedia.org/wiki/Solar_cycle_(calendar)#:~:text=the%20Gregorian%20cycle%20of%20400%20years%20has%20exactly%20146%2C097%20days%2C%20i.e.%20exactly%2020%2C871%20weeks%2C%20one%20can%20say%20that%20the%20Gregorian%20so%2Dcalled%20solar%20cycle%20lasts%20400%20years) of era" ([qoe](#qoe){#quadricentennialofera .tool data-bs-toggle="tooltip" data-bs-title="quadricentennial of era"}), "year of quadricentennial" ([yoq](#yoq){#yearofquadricentennial .tool data-bs-toggle="tooltip" data-bs-title="year of quadricentennial"}), and "day of quadricentennial" ([doq](#doq){#dayofquadricentennial .tool data-bs-toggle="tooltip" data-bs-title="day of quadricentennial"}).
 
 ::: {.equationgroup #equationgroup11}
-$$\text{coe} = \left \lfloor \frac{\text{doe}-146096\ast\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{doe} \geq 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}}{146097} \right \rfloor$$ {#eq-doe2coe}
+$$\text{qoe} = \left \lfloor \frac{\text{doe}-146096\ast\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{doe} \geq 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}}{146097} \right \rfloor$$ {#eq-doe2qoe}
 
-$$\text{doc} = \text{doe} - \text{coe} \ast 146097$$ {#eq-doe2doc}
+$$\text{doq} = \text{doe} - \text{qoe} \ast 146097$$ {#eq-doe2doq}
 
-$$\text{yoc} = \Biggl \lfloor \frac{\text{doc} - \left\lfloor \dfrac{\text{doc}}{1460} \right\rfloor + \left\lfloor \dfrac{\text{doc}}{36524} \right\rfloor - \left\lfloor \dfrac{\text{doc}}{146096} \right\rfloor}{365} \Biggr \rfloor$$ {#eq-doe2yoc}
+$$\text{yoq} = \Biggl \lfloor \frac{\text{doq} - \left\lfloor \dfrac{\text{doq}}{1460} \right\rfloor + \left\lfloor \dfrac{\text{doq}}{36524} \right\rfloor - \left\lfloor \dfrac{\text{doq}}{146096} \right\rfloor}{365} \Biggr \rfloor$$ {#eq-doe2yoq}
 
-$$\text{yoe} = \text{yoc} + \text{coe} \ast 400$$ {#eq-yoe}
+$$\text{yoe} = \text{yoq} + \text{qoe} \ast 400$$ {#eq-yoe}
 
-$$\text{pid} = \text{doc} - \text{yoc} \ast 365 - \left \lfloor \frac{\text{yoc}}{4} \right \rfloor + \left \lfloor \frac{\text{yoc}}{100} \right \rfloor$$ {#eq-doe2pid}
+$$\text{pid} = \text{doq} - \text{yoq} \ast 365 - \left \lfloor \frac{\text{yoq}}{4} \right \rfloor + \left \lfloor \frac{\text{yoq}}{100} \right \rfloor$$ {#eq-doe2pid}
 :::
 
 :::{.panel-tabset group="language"}
@@ -796,21 +796,21 @@ $$\text{pid} = \text{doc} - \text{yoc} \ast 365 - \left \lfloor \frac{\text{yoc}
 
 ```{julia}
 function date(doe = 719468)
-    coe = fld(doe, 146097)
-    doc = doe - coe * 146097
-    yoc = fld(
-        doc -
-        fld(doc, 1460) +
-        fld(doc, 36524) -
-        fld(doc, 146096),
+    qoe = fld(doe, 146097)
+    doq = doe - qoe * 146097
+    yoq = fld(
+        doq -
+        fld(doq, 1460) +
+        fld(doq, 36524) -
+        fld(doq, 146096),
         365
     )
     return (
-        yoc + coe * 400,
-        doc - (
-            yoc * 365 +
-            fld(yoc, 4) -
-            fld(yoc, 100)
+        yoq + qoe * 400,
+        doq - (
+            yoq * 365 +
+            fld(yoq, 4) -
+            fld(yoq, 100)
         )
     )
 end
@@ -821,22 +821,22 @@ date()
 
 ```{ojs}
 function date(doe = 719468) {
-  const coe = Math.floor(doe / 146097),
-    doc = doe - coe * 146097,
-    yoc = Math.floor(
+  const qoe = Math.floor(doe / 146097),
+    doq = doe - qoe * 146097,
+    yoq = Math.floor(
       (
-        doc
-        - Math.floor(doc / 1460)
-        + Math.floor(doc / 36524)
-        - Math.floor(doc / 146096)
+        doq
+        - Math.floor(doq / 1460)
+        + Math.floor(doq / 36524)
+        - Math.floor(doq / 146096)
       ) / 365
     );
   return [
-    yoc + coe * 400,
-    doc - (
-      yoc * 365 +
-      Math.floor(yoc / 4) -
-      Math.floor(yoc / 100)
+    yoq + qoe * 400,
+    doq - (
+      yoq * 365 +
+      Math.floor(yoq / 4) -
+      Math.floor(yoq / 100)
     )
   ];
 }
@@ -847,20 +847,20 @@ date()
 
 ```{python}
 def date(doe=719468):
-    coe = doe // 146097
-    doc = doe - coe * 146097
-    yoc = (
-        doc
-        - doc // 1460
-        + doc // 36524
-        - doc // 146096
+    qoe = doe // 146097
+    doq = doe - qoe * 146097
+    yoq = (
+        doq
+        - doq // 1460
+        + doq // 36524
+        - doq // 146096
     ) // 365
     return (
-        yoc + coe * 400,
-        doc - (
-            yoc * 365 +
-            yoc // 4 -
-            yoc // 100
+        yoq + qoe * 400,
+        doq - (
+            yoq * 365 +
+            yoq // 4 -
+            yoq // 100
         )
     )
 date()
@@ -870,20 +870,20 @@ date()
 
 ```{r}
 date <- function(doe = 719468) {
-  coe <- doe %/% 146097
-  doc <- doe - coe * 146097
-  yoc <- (
-    doc -
-    doc %/% 1460 +
-    doc %/% 36524 -
-    doc %/% 146096
+  qoe <- doe %/% 146097
+  doq <- doe - qoe * 146097
+  yoq <- (
+    doq -
+    doq %/% 1460 +
+    doq %/% 36524 -
+    doq %/% 146096
   ) %/% 365
   c(
-    yoc + coe * 400,
-    doc - (
-      yoc * 365 +
-      yoc %/% 4 -
-      yoc %/% 100
+    yoq + qoe * 400,
+    doq - (
+      yoq * 365 +
+      yoq %/% 4 -
+      yoq %/% 100
     )
   )
 }
@@ -892,7 +892,7 @@ date()
 
 :::
 
-Dates generated by Equations -@eq-doe2coe, -@eq-doe2doc, -@eq-doe2yoc, -@eq-yoe, and -@eq-doe2pid are guaranteed to be in the standard [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} format. Therefore, we can standardize Dec dates by converting them to [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="days of era"} and then back to dates again. A [round-trip](https://en.wikipedia.org/wiki/Round-trip_format_conversion#:~:text=converting%20from%20any%20data%20representation%20and%20back%20again) "date to [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"} to date" conversion ensures that the [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} is an integer and the [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} is a non-negative integer less than the [eoy](#eoy){.tool data-bs-toggle="tooltip" data-bs-title="end of year"}: [0]{.color0} &le; [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} &lt; [eoy](#eoy){.tool data-bs-toggle="tooltip" data-bs-title="end of year"}. 
+Dates generated by Equations -@eq-doe2qoe, -@eq-doe2doq, -@eq-doe2yoq, -@eq-yoe, and -@eq-doe2pid are guaranteed to be in the standard [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} format. Therefore, we can standardize Dec dates by converting them to [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="days of era"} and then back to dates again. A [round-trip](https://en.wikipedia.org/wiki/Round-trip_format_conversion#:~:text=converting%20from%20any%20data%20representation%20and%20back%20again) "date to [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"} to date" conversion ensures that the [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} is an integer and the [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} is a non-negative integer less than the [eoy](#eoy){.tool data-bs-toggle="tooltip" data-bs-title="end of year"}: [0]{.color0} &le; [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} &lt; [eoy](#eoy){.tool data-bs-toggle="tooltip" data-bs-title="end of year"}. 
 
 # Day of week (dow) {#sec-dow}
 
@@ -1065,7 +1065,7 @@ Dec dates can be described in the context of [object oriented programming](https
 
 Regardless of the input, only a [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} are stored as [instance variables](https://en.wikipedia.org/wiki/Instance_variable#:~:text=each%20instantiated%20object%20of%20the%20class%20has%20a%20separate%20copy). Our class must define one [instance method](https://en.wikipedia.org/wiki/Method_%28computer_programming%29#:~:text=a%20procedure%20associated%20with%20an%20object) for every potential output that is not an instance variable. Instance methods can use instance variables to produce their output. For example, a method based on Equations -@eq-pid2moy, -@eq-moy2month, -@eq-moy2bom, and -@eq-dom could turn a [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} into a month and [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}.
 
-@fig-conv below visualizes how an object that represents the UNIX epoch would convert its [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} into a [cey](#cey){.tool data-bs-toggle="tooltip" data-bs-title="common era year"}, month, [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of week"}. For simplicity, @fig-conv omits the [coe](#coe){.under .tool data-bs-toggle="tooltip" data-bs-title="cycle of era"}, [yoc](#yoc){.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"}, and [doc](#doc){.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"} needed to convert a Dec date into a [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"}, the [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"} and [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"} required to split a [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} into a month and a [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, and the negative [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} offset adjustment for [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of month"} and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}.
+@fig-conv below visualizes how an object that represents the UNIX epoch would convert its [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} into a [cey](#cey){.tool data-bs-toggle="tooltip" data-bs-title="common era year"}, month, [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of week"}. For simplicity, @fig-conv omits the [qoe](#qoe){.under .tool data-bs-toggle="tooltip" data-bs-title="quadricentennial of era"}, [yoq](#yoq){.tool data-bs-toggle="tooltip" data-bs-title="year of quadricentennial"}, and [doq](#doq){.tool data-bs-toggle="tooltip" data-bs-title="day of quadricentennial"} needed to convert a Dec date into a [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"}, the [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"} and [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"} required to split a [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} into a month and a [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, and the negative [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} offset adjustment for [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of month"} and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}.
 
 ::: {#fig-conv .doxdiagram}
 {{< include /asset/fig-conv.html >}}
@@ -1347,20 +1347,20 @@ While we study potentially habitable exoplanets, we can create a habitable plane
 
 An expanded orbit would cool Venus and a faster rotational speed might promote the development of a protective [magnetosphere](https://en.wikipedia.org/wiki/Magnetosphere#:~:text=a%20region%20of%20space%20surrounding%20an%20astronomical%20object%2C%20such%20as%20a%20planet%20or%20other%20object%2C%20in%20which%20charged%20particles%20are%20affected%20by%20that%20object%27s%20magnetic%20field). Venus has an [axial tilt](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20angle%20between%20an%20object%27s%20rotational%20axis%20and%20its%20orbital%20axis) that is just [7.3](https://en.wikipedia.org/wiki/Venus#:~:text=the%20axial%20tilt-,177.36%C2%B0,-.) [milliturns]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a turn"} short of a half turn and therefore has no seasons. Without the need to monitor seasonal changes on Venus, the [Venusian](https://en.wikipedia.org/wiki/List_of_adjectivals_and_demonyms_of_astronomical_bodies#Planets:~:text=%5B7%5D-,Venusian,-%2C%20Cytherean) Decalendar (De[cyther](https://en.wikipedia.org/wiki/List_of_adjectivals_and_demonyms_of_astronomical_bodies#Planets:~:text=Venusian%2C-,Cytherean,-cythero%2D)) can focus on tracking Venusian solar days.
 
-On Venus, a solar year is 224.7 [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"} and a solar day is 116.75 [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"}. A Decyther cycle lasts 467 [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"} and can be split into 4 quadrimesters that are 116.75 [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"} on average: 467 &div; 4 = 116.75. Each Decyther quadrimester can be divided into 2 bimesters named after the two halves of a day on Earth: [ante](https://en.wikipedia.org/wiki/12-hour_clock#:~:text=%2C%20translating%20to%20%22-,before%20midday,-%22%29%20and%20p.m) and [post](https://en.wikipedia.org/wiki/12-hour_clock#:~:text=%2C%20translating%20to%20%22-,after%20midday,-%22%29.%5B1). Antes always last 58 [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"}, but posts can be 58 or 59 [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"} long.
+On Venus, a solar year is 224.7 [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"} and a solar day is 116.75 [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"}. A Decyther hexadecimester lasts 467 [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"} and can be split into 4 quadrimesters that are 116.75 [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"} on average: 467 &div; 4 = 116.75. Each Decyther quadrimester can be divided into 2 bimesters named after the two halves of a day on Earth: [ante](https://en.wikipedia.org/wiki/12-hour_clock#:~:text=%2C%20translating%20to%20%22-,before%20midday,-%22%29%20and%20p.m) and [post](https://en.wikipedia.org/wiki/12-hour_clock#:~:text=%2C%20translating%20to%20%22-,after%20midday,-%22%29.%5B1). Antes always last 58 [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"}, but posts can be 58 or 59 [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"} long.
 
-Each Decyther cycle comprises four antes and four posts. Any ante or the third post in every Decyther cycle can be evenly split into two Venusian short months: 58 &div; 2 = 29. The other three posts consist of a Venusian short month and a Venusian long month: 59 = 29 + 30. Decalendar and Decyther have the same epoch and both derive their units from [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="days of era"}.
+Each Decyther hexadecimester comprises four antes and four posts. Any ante or the third post in every Decyther hexadecimester can be evenly split into two Venusian short months: 58 &div; 2 = 29. The other three posts consist of a Venusian short month and a Venusian long month: 59 = 29 + 30. Decalendar and Decyther have the same epoch and both derive their units from [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="days of era"}.
 
-Equations -@eq-venusdoc to -@eq-venusdom below turn [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="days of era"} into Decyther [doc](#doc){.tool data-bs-toggle="tooltip" data-bs-title="days of cycle"}, "days of quadrimester" ([doq](#doq){#dayofquadrimester .tool data-bs-toggle="tooltip" data-bs-title="days of quadrimester"}), [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="days of bimester"}, and [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="days of month"}. To track Venusian solar days, Decyther expands the Decalendar [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} into a "beginning of quadrimester" ([boq](#boq){#beginningofquadrimester .tool data-bs-toggle="tooltip" data-bs-title="beginning of quadrimester"}) and [doq](#doq){.tool data-bs-toggle="tooltip" data-bs-title="day of quadrimester"} as shown in @eq-venusboq. The [boq](#boq){.tool data-bs-toggle="tooltip" data-bs-title="beginning of quadrimester"} is the Venusian equivalent of midnight on Earth, the start of [Doq](#doq){.tool data-bs-toggle="tooltip" data-bs-title="day of quadrimester"} 0, and the boundary between quadrimesters.
+Equations -@eq-venusdoh to -@eq-venusdom below turn [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="days of era"} into Decyther [doh~♀~](#dohvenus){#dayofhexadecimester .tool data-bs-toggle="tooltip" data-bs-title="days of hexadecimester"}, "days of quadrimester" ([doq~♀~](#doqvenus){#dayofquadrimester .tool data-bs-toggle="tooltip" data-bs-title="days of quadrimester"}), [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="days of bimester"}, and [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="days of month"}. To track Venusian solar days, Decyther expands the Decalendar [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} into a "beginning of quadrimester" ([boq](#boq){#beginningofquadrimester .tool data-bs-toggle="tooltip" data-bs-title="beginning of quadrimester"}) and [doq~♀~](#doqvenus){.tool data-bs-toggle="tooltip" data-bs-title="day of quadrimester"} as shown in @eq-venusboq. The [boq](#boq){.tool data-bs-toggle="tooltip" data-bs-title="beginning of quadrimester"} is the Venusian equivalent of midnight on Earth, the start of [Doq~♀~](#doqvenus){.tool data-bs-toggle="tooltip" data-bs-title="day of quadrimester"} 0, and the boundary between quadrimesters.
 
 ::: {.equationgroup #equationgroup28}
 $$
-\text{doc}_♀ = \text{doe} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 467
-$$ {#eq-venusdoc}
+\text{doh}_♀ = \text{doe} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 467
+$$ {#eq-venusdoh}
 
 $$
-\text{doq}_♀ = (\text{doc}_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{doc}_♀ \ge 350\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 117
-$$ {#eq-doq}
+\text{doq}_♀ = (\text{doh}_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{doh}_♀ \ge 350\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 117
+$$ {#eq-venusdoq}
 
 $$
 \text{dob}_♀ = \text{doq}_♀ - 58 \ast \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{doq}_♀ \ge 58\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
@@ -1375,36 +1375,36 @@ $$
 $$ {#eq-venusboq}
 :::
 
-Similarly, the beginning of [Doq](#doq){.tool data-bs-toggle="tooltip" data-bs-title="day of quadrimester"} 58 is the Venusian equivalent of noon on Earth and separates an ante from the post that follows it. Apart from its North and South poles, the surface of Venus receives sunlight during the second half of an ante and the first half of a post ([daytime](https://en.wikipedia.org/wiki/Daytime#:~:text=the%20period%20of%20the%20day%20in%20which%20the%20Sun%20is%20above%20the%20local%20horizon%20in%20a%20given%20location)), but not during the second half of a post and the first half of an ante ([nighttime](https://en.wikipedia.org/wiki/Night#:~:text=the%20period%20of%20darkness%20when%20the%20Sun%20is%20below%20the%20horizon)).
+Similarly, the beginning of [Doq~♀~](#doqvenus){.tool data-bs-toggle="tooltip" data-bs-title="day of quadrimester"} 58 is the Venusian equivalent of noon on Earth and separates an ante from the post that follows it. Apart from its North and South poles, the surface of Venus receives sunlight during the second half of an ante and the first half of a post ([daytime](https://en.wikipedia.org/wiki/Daytime#:~:text=the%20period%20of%20the%20day%20in%20which%20the%20Sun%20is%20above%20the%20local%20horizon%20in%20a%20given%20location)), but not during the second half of a post and the first half of an ante ([nighttime](https://en.wikipedia.org/wiki/Night#:~:text=the%20period%20of%20darkness%20when%20the%20Sun%20is%20below%20the%20horizon)).
 
-Regardless of whether we start the zero-based indexing of bimesters from the [boe](#boe){.tool data-bs-toggle="tooltip" data-bs-title="beginning of era"}, the "beginning of cycle" ([boc](#boc){#beginningofcycle .tool data-bs-toggle="tooltip" data-bs-title="beginning of cycle"}), or [boq](#boq){.tool data-bs-toggle="tooltip" data-bs-title="beginning of quadrimester"}, a Decyther bimester is an ante if its index is even or a post if its index is odd. Equations -@eq-qoc to -@eq-moc below transform Decyther [doc](#doc){.tool data-bs-toggle="tooltip" data-bs-title="days of cycle"} into "quadrimesters of cycle" ([qoc](#qoc){#quadrimesterofcycle .tool data-bs-toggle="tooltip" data-bs-title="quadrimesters of cycle"}), cycle-based bimester indexes, and "months of cycle" ([moc](#moc){#monthofcycle .tool data-bs-toggle="tooltip" data-bs-title="months of cycle"}).
+Regardless of whether we start the zero-based indexing of bimesters from the [boe](#boe){.tool data-bs-toggle="tooltip" data-bs-title="beginning of era"}, the "beginning of hexadecimester" ([boh](#boh){#beginningofhexadecimester .tool data-bs-toggle="tooltip" data-bs-title="beginning of hexadecimester"}), or [boq](#boq){.tool data-bs-toggle="tooltip" data-bs-title="beginning of quadrimester"}, a Decyther bimester is an ante if its index is even or a post if its index is odd. Equations -@eq-venusqoh to -@eq-venusmoh below transform Decyther [doh~♀~](#dohvenus){.tool data-bs-toggle="tooltip" data-bs-title="days of hexadecimester"} into "quadrimesters of hexadecimester" ([qoh](#qoh){#quadrimesterofhexadecimester .tool data-bs-toggle="tooltip" data-bs-title="quadrimesters of hexadecimester"}), hexadecimester-based bimester indexes, and "months of hexadecimester" ([moh~♀~](#mohvenus){#monthofhexadecimester .tool data-bs-toggle="tooltip" data-bs-title="months of hexadecimester"}).
 
 ::: {.equationgroup #equationgroup29}
 $$
-\text{qoc}_♀ = \left\lfloor\dfrac{4\ast\text{doc}_♀ + 1}{467}\right\rfloor
-$$ {#eq-qoc}
+\text{qoh}_♀ = \left\lfloor\dfrac{4\ast\text{doh}_♀ + 1}{467}\right\rfloor
+$$ {#eq-venusqoh}
 
 $$
-\text{bimester}_♀ = 2\ast\text{qoc}_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{doq}_♀ \ge 58\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
+\text{bimester}_♀ = 2\ast\text{qoh}_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{doq}_♀ \ge 58\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
 $$ {#eq-venusbimester}
 
 $$
-\text{moc}_♀ = 2\ast\text{bimester}_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{dob}_♀ \ge 29\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
-$$ {#eq-moc}
+\text{moh}_♀ = 2\ast\text{bimester}_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{dob}_♀ \ge 29\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
+$$ {#eq-venusmoh}
 :::
 
-[Qoc](#qoc){.tool data-bs-toggle="tooltip" data-bs-title="quadrimester of cycle"} 2 is one day shorter than the other three [qoc](#qoc){.tool data-bs-toggle="tooltip" data-bs-title="quadrimesters of cycle"}, because its post, Bimester 5, is one day shorter than the other three posts in a cycle. The missing day is called an extracalation and can be attributed to [Moc](#moc){.tool data-bs-toggle="tooltip" data-bs-title="month of cycle"} 11, the second month of Bimester 5. Instead of indexes, Decyther tells us when a day will go missing using "Venusian extracalation differences" ([ved](#ved){#venusianextracalationdifference .tool data-bs-toggle="tooltip" data-bs-title="Venusian extracalation differences"}).
+[Qoh](#qoh){.tool data-bs-toggle="tooltip" data-bs-title="quadrimester of hexadecimester"} 2 is one day shorter than the other three [qoh](#qoh){.tool data-bs-toggle="tooltip" data-bs-title="quadrimesters of hexadecimester"}, because its post, Bimester 5, is one day shorter than the other three posts in a hexadecimester. The missing day is called an extracalation and can be attributed to [Moh~♀~](#mohvenus){.tool data-bs-toggle="tooltip" data-bs-title="month of hexadecimester"} 11, the second month of Bimester 5. Instead of indexes, Decyther tells us when a day will go missing using "Venusian extracalation differences" ([ved](#ved){#venusianextracalationdifference .tool data-bs-toggle="tooltip" data-bs-title="Venusian extracalation differences"}).
 
-In Decyther, [ved](#ved){.tool data-bs-toggle="tooltip" data-bs-title="Venusian extracalation differences"} count down the days until the end of [Doc](#doc){.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"} 349, the final day of [Qoc](#qoc){.tool data-bs-toggle="tooltip" data-bs-title="quadrimester of cycle"} 2, Bimester 5, and [Moc](#moc){.tool data-bs-toggle="tooltip" data-bs-title="month of cycle"} 11. Therefore, [ved](#ved){.tool data-bs-toggle="tooltip" data-bs-title="Venusian extracalation differences"} are the Decyther analog of Decalendar [lid](#lid){.tool data-bs-toggle="tooltip" data-bs-title="lunar intercalation differences"}. Equations -@eq-ved2doc and -@eq-doc2ved below convert between [ved](#ved){.tool data-bs-toggle="tooltip" data-bs-title="Venusian extracalation differences"} and Decyther [doc](#doc){.tool data-bs-toggle="tooltip" data-bs-title="days of cycle"}. To produce a [ved](#ved){.tool data-bs-toggle="tooltip" data-bs-title="Venusian extracalation difference"} date, we append a [ved](#ved){.tool data-bs-toggle="tooltip" data-bs-title="Venusian extracalation difference"} to the [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} of Decyther [Doc](#doc){.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"} 350, the first day of [Qoc](#qoc){.tool data-bs-toggle="tooltip" data-bs-title="quadrimester of cycle"} 3, Bimester 6, and [Moc](#moc){.tool data-bs-toggle="tooltip" data-bs-title="month of cycle"} 12.
+In Decyther, [ved](#ved){.tool data-bs-toggle="tooltip" data-bs-title="Venusian extracalation differences"} count down the days until the end of [Doh~♀~](#dohvenus){.tool data-bs-toggle="tooltip" data-bs-title="day of hexadecimester"} 349, the final day of [Qoh](#qoh){.tool data-bs-toggle="tooltip" data-bs-title="quadrimester of hexadecimester"} 2, Bimester 5, and [Moh~♀~](#mohvenus){.tool data-bs-toggle="tooltip" data-bs-title="month of hexadecimester"} 11. Therefore, [ved](#ved){.tool data-bs-toggle="tooltip" data-bs-title="Venusian extracalation differences"} are the Decyther analog of Decalendar [lid](#lid){.tool data-bs-toggle="tooltip" data-bs-title="lunar intercalation differences"}. Equations -@eq-ved2doh and -@eq-doh2ved below convert between [ved](#ved){.tool data-bs-toggle="tooltip" data-bs-title="Venusian extracalation differences"} and Decyther [doh~♀~](#dohvenus){.tool data-bs-toggle="tooltip" data-bs-title="days of hexadecimester"}. To produce a [ved](#ved){.tool data-bs-toggle="tooltip" data-bs-title="Venusian extracalation difference"} date, we append a [ved](#ved){.tool data-bs-toggle="tooltip" data-bs-title="Venusian extracalation difference"} to the [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} of Decyther [Doh~♀~](#dohvenus){.tool data-bs-toggle="tooltip" data-bs-title="day of hexadecimester"} 350, the first day of [Qoh](#qoh){.tool data-bs-toggle="tooltip" data-bs-title="quadrimester of hexadecimester"} 3, Bimester 6, and [Moh~♀~](#mohvenus){.tool data-bs-toggle="tooltip" data-bs-title="month of hexadecimester"} 12.
 
 ::: {.equationgroup #equationgroup30}
 $$
-\text{doc}_♀ = (\text{ved} + 817) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 467
-$$ {#eq-ved2doc}
+\text{doh}_♀ = (\text{ved} + 817) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 467
+$$ {#eq-ved2doh}
 
 $$
-\text{ved} = (\text{doc}_♀ + 117) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 467 - 467
-$$ {#eq-doc2ved}
+\text{ved} = (\text{doh}_♀ + 117) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 467 - 467
+$$ {#eq-doh2ved}
 :::
 
 Venus and Mars often appear to be dissimilar to Earth in completely opposite ways and it seems that when one is similar to Earth, the other is not. For example, the axial tilts of Earth, Mars, and Venus are 6.51, 7.00, and 49.27 [centiturns]{.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a turn"}, respectively. The unique characteristics of these three planets present an opportunity to showcase the versatility of Decalendar.
