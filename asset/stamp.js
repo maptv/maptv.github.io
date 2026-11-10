@@ -12,21 +12,21 @@ function eda2wda(eda = 719468, tzo = 0) {
   return (eda + (tzo < 0 ? 2 : 3)) % 7
 }
 function eda2yd(eda, tzo) {
-  const coe = Math.floor((
+  const qoe = Math.floor((
       eda >= 0 ? eda
       : eda - 146096
     ) / 146097),
-  doc = eda - coe * 146097,
-  yoc = Math.floor((doc
-    - Math.floor(doc / 1460)
-    + Math.floor(doc / 36524)
-    - Math.floor(doc / 146096)
+  doq = eda - qoe * 146097,
+  yoq = Math.floor((doq
+    - Math.floor(doq / 1460)
+    + Math.floor(doq / 36524)
+    - Math.floor(doq / 146096)
   ) / 365);
   return [
-    yoc + coe * 400,
-    doc - (yoc * 365
-      + Math.floor(yoc / 4)
-      - Math.floor(yoc / 100)
+    yoq + qoe * 400,
+    doq - (yoq * 365
+      + Math.floor(yoq / 4)
+      - Math.floor(yoq / 100)
 ), tzo]}
 function eda2snap(eda, tzo) {
   const [year, ada] = eda2yd(eda),

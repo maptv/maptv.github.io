@@ -34,26 +34,26 @@
     - [ada](#annualdayaggregate){#ada}: annual day aggregate, doy + tod
     - [pia](#positiveintervalada){#pia}: positive interval ada, the time since the start of the current year, equal to the ada
     - [nia](#negativeintervalada){#nia}: negative interval ada, pia &minus; syl, the negative of the time until the start of the next year
-    - [doc](#dayofcycle){#doc}: day of cycle, days since the start of the current 400-year Gregorian cycle, 0 to 146096
-    - doc~♀~: Decyther day of cycle, days since the start of the current 467-day Venusian cycle, doe [&LeftFloor;]{.hyphen} 467, 0 to 466
+    - [doq](#dayofquadricentennial){#doq}: day of quadricentennial, days since the start of the current Gregorian quadricentennial, 0 to 146096
+    - [doh~♀~](#dayofhexadecimester){#dohvenus}: Decyther day of hexadecimester, days since the start of the current 467-day Decyther hexadecimester, doe [&LeftFloor;]{.hyphen} 467, 0 to 466
     - [doh](#dayofhectoday){#doh}: day of hectoday, doy [&LeftFloor;]{.hyphen} 100, the percent of a hectoday that has elapsed
     - [dob](#dayofbimester){#dob}: day of bimester, 0 to 58 in common bimesters or 0 to 59 in leap bimesters
-    - dob~♀~: Decyther day of bimester, 0 to 57 in antes and the post of Qoc 2 or 0 to 58 in the other posts
+    - dob~♀~: Decyther day of bimester, 0 to 57 in antes and the post of Qoh 2 or 0 to 58 in the other posts
     - [dot](#dayoftricennium){#dot}: day of tricennium, days since the start of the current 30-year lunar cycle, 0 to 10630
-    - [doq](#dayofquadrimester){#doq}: day of quadrimester, days since the beginning of a Decyther quadrimester, 0 to 115 or 116
-    - [boq](#beginningofquadrimester){#boq}: beginning of quadrimester, the pid of Doq 0, pid &minus; doq
-    - [qoc](#quadrimesterofcycle){#qoc}: quadrimester of cycle, zero-based index of a Decyther quadrimester, 0 to 3
+    - [doq~♀~](#dayofquadrimester){#doqvenus}: Decyther day of quadrimester, days since the beginning of a Decyther quadrimester, 0 to 115 or 116
+    - [boq](#beginningofquadrimester){#boq}: beginning of quadrimester, the pid of Doq~♀~ 0, pid &minus; doq~♀~
+    - [qoh](#quadrimesterofhexadecimester){#qoh}: quadrimester of hexadecimester, zero-based index of a Decyther quadrimester, 0 to 3
     - [bob](#beginningofbimester){#bob}: beginning of bimester, the pid of Dob 0, pid &minus; dob
     - [bom](#beginningofmonth){#bom}: beginning of month, the pid of the day before the first day of the month, pid &minus; dom
-    - [moc](#monthofcycle){#moc}: month of cycle, zero-based index of a Venusian month, 0 to 15
+    - [moh~♀~](#monthofhexadecimester){#mohvenus}: Decyther month of hexadecimester, zero-based index of a Venusian month, 0 to 15
     - [bow](#beginningofweek){#bow}: beginning of week, the pid of Dow 0, pid &minus; dow
     - [boy](#beginningofyear){#boy}: beginning of year, midnight at the start of Day 0
     - [boe](#beginningofera){#boe}: beginning of era, midnight at the start of Day 0 of Year 0
-    - [boc](#beginningofcycle){#boc}: beginning of cycle, the start of Doc~♀~ 0 and of the first ante in a Decyther cycle
+    - [boh](#beginningofhexadecimester){#boh}: beginning of hexadecimester, the start of Doh~♀~ 0 and of the first ante in a Decyther hexadecimester
     - [eoy](#endofyear){#eoy}: end of year, midnight at the end of Day 364 or 365
     - [JDN](#Juliandaynumber){#jdn}: Julian day number, days since the start of the Julian period; increments at noon UTC
     - [lid](#lunarintercalationdifference){#lid}: lunar intercalation difference, a lunar nid that only resets after lunar leap years, -1063 to -1
-    - [ved](#venusianextracalationdifference){#ved}: Venusian extracalation difference, days until the end of Doc~♀~ 349, the last day of the one-day-shorter Qoc 2, Bimester 5, and Moc 11, (doc~♀~ + 117) [&LeftFloor;]{.hyphen} 467 &minus; 467, -467 to -1
+    - [ved](#venusianextracalationdifference){#ved}: Venusian extracalation difference, days until the end of Doh~♀~ 349, the last day of the one-day-shorter Qoh 2, Bimester 5, and Moh~♀~ 11, (doh~♀~ + 117) [&LeftFloor;]{.hyphen} 467 &minus; 467, -467 to -1
     - [mud](#misalignedunitdifference){#mud}: misaligned unit difference, pid &minus; dom &minus; dow
     - [dd](#deciday){#dd}: deciday, a tenth of a day, 2.4 hours, 144 minutes
     - [cd](#centiday){#cd}: centiday, a hundredth of a day, 0.24 hours, 14.4 minutes
@@ -176,8 +176,8 @@
     - [syl](#solaryearlength){#syl}: solar year length, 365 or 366 days, pid &minus; nid
     - [lyl](#lunaryearlength){#lyl}: lunar year length, 354 or 355 days
     - [cey](#commonerayear){#cey}: common era year, an ISO 8601 (Gregorian calendar) year number
-    - [coe](#cycleofera){#coe}: cycle of era, 400-year cycles since the Dec epoch
-    - [yoc](#yearofcycle){#yoc}: year of cycle, years since the start of the current 400-year cycle, 0 to 399
+    - [qoe](#quadricentennialofera){#qoe}: quadricentennial of era, quadricentennials since the Dec epoch
+    - [yoq](#yearofquadricentennial){#yoq}: year of quadricentennial, years since the start of the current quadricentennial, 0 to 399
     - [yot](#yearoftricennium){#yot}: year of tricennium, lunar years since the start of the current 30-year lunar cycle, 0 to 29
     - [moy](#monthofyear){#moy}: month of year, zero-based, Moy 0 is March
     - [woy](#weekofyear){#woy}: week of year, (boydow + bow) &div; 7, 0 to 53

@@ -1,18 +1,18 @@
 // https://howardhinnant.github.io/date_algorithms.html#days_from_civil
 function unix2date(unix) {
   const doe = unix / 86400 + 719468;
-  const coe = Math.floor(doe >= 0 ? doe : doe - 146096) / 146097 | 0;
-  const doc = doe - coe * 146097;
-  const yoc = Math.floor(
-    (doc
-      - Math.floor(doc / 1460)
-      + Math.floor(doc / 36524)
-      - Math.floor(doc / 146096)
+  const qoe = Math.floor(doe >= 0 ? doe : doe - 146096) / 146097 | 0;
+  const doq = doe - qoe * 146097;
+  const yoq = Math.floor(
+    (doq
+      - Math.floor(doq / 1460)
+      + Math.floor(doq / 36524)
+      - Math.floor(doq / 146096)
     ) / 365
   );
-  const year = Math.floor(yoc + coe * 400);
+  const year = Math.floor(yoq + qoe * 400);
   const doy = Math.floor(
-    doc - (yoc * 365 + Math.floor(yoc / 4) - Math.floor(yoc / 100))
+    doq - (yoq * 365 + Math.floor(yoq / 4) - Math.floor(yoq / 100))
   );
   return [year, doy];
 }
