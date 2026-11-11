@@ -126,18 +126,16 @@
 - [𝜏](#tau){#2pi}: 2𝜋 or approximately 6.2831853
     - [𝜋](#taudividedby2){#pi}: pi, 𝜏/2 or approximately 3.1415927
     - [ϡ](#taudividedby900){#sampi}: sampi, the Greek numeral for 900, 𝜏/900 or approximately 0.0069813 radians, 0.4 degrees
-- [Tenet](#tenequaltemperament){#tenet}: ten equal temperament
-    - [Xet](#10et){#xet}: Tenet
-    - [12et](#twelveequaltemperament){#12et}: twelve equal temperament
 - [tod](#timeofday){#tod}: time of day
     - [pit](#positiveintervaltod){#pit}: positive interval tod, the time since the start of the current day (previous midnight), equal to the tod
     - [nit](#negativeintervaltod){#nit}: negative interval tod, pit &minus; 1, the negative of the time until the start of the next day (next midnight)
-    - [hms](#hourminutesecond){#hms}: hour minute second, a tod written as an hod, moh, and som triplet
+    - [hms](#hourminutesecond){#hms}: hour minute second, a tod written as an hod, moh, and sisom triplet
     - [dsa](#dailysecondaggregate){#dsa}: daily second aggregate, seconds since midnight, tod &times; 86400
     - [hsa](#hourlysecondaggregate){#hsa}: hourly second aggregate, seconds since the top of the hour, dsa [&LeftFloor;]{.hyphen} 3600
     - [hod](#hourofday){#hod}: hour of day, &LeftFloor;dsa &div; 3600&RightFloor;, 0 to 23
     - [moh](#minuteofhour){#moh}: minute of hour, &LeftFloor;hsa &div; 60&RightFloor;, 0 to 59
-    - [som](#secondofminute){#som}: second of minute, &LeftFloor;hsa [&LeftFloor;]{.hyphen} 60&RightFloor;, 0 to 59
+    - [sisom](#sisecondofminute){#sisom}: SI second of minute, &LeftFloor;hsa [&LeftFloor;]{.hyphen} 60&RightFloor;, 0 to 59
+    - [som](#secondofmilliday){#som}: second of milliday, 0 to 89
     - [mst](#meansolartime){#mst}: mean solar time, solar time based only on longitude and the Zone 0 tod
     - [ast](#apparentsolartime){#ast}: apparent solar time, mst + eot(toy), solar time based on the actual position of the Sun
     - [law](#lightarcwhole){#law}: light arc whole, the time from sunrise to sunset, 1 &minus; naw, sunset &minus; sunrise

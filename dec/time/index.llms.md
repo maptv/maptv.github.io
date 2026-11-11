@@ -22,7 +22,9 @@ Modified
 
 My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](../../dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the [bar📊charts](https://en.wikipedia.org/wiki/Bar_chart) clocks🕓, [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺, [Earth🌍orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit) diagram, and [daylight](https://en.wikipedia.org/wiki/Daylight#:~:text=the%20combination%20of%20all%20direct%20and%20indirect%20sunlight%20during%20the%20daytime) [area chart](https://en.wikipedia.org/wiki/Area_chart#:~:text=The%20area%20between%20axis%20and%20line%20are%20commonly%20emphasized%20with%20colors) below.
 
-Dec times are measured in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day), often using [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) like [deci](https://en.wikipedia.org/wiki/Deci-#:~:text=a%20decimal%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20tenth), [centi](https://en.wikipedia.org/wiki/Centi-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20hundredth), or [milli](https://en.wikipedia.org/wiki/Milli-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20thousandth). The top, middle, and bottom bars indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays), [millidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=1.44%20minutes%2C%20or%2086.4%20seconds), and [centimillidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=which%20would%20be-,1/100%2C000%20day,-%2C%20or%20864%20milliseconds), respectively, of the time since the start, , or until the end, , of the day in the Zone , the Dec [time zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time) selected by the red⭕️circle on the map beneath the bars.
+This article focuses on the Dec clock (Declock) [metric](https://en.wikipedia.org/wiki/Metric_time#:~:text=the%20measure%20of%20time%20intervals%20using%20the%20metric%20system) [decimal](https://en.wikipedia.org/wiki/Decimal_time#:~:text=the%20representation%20of%20the%20time%20of%20day%20using%20units%20which%20are%20decimally%20related) [time standard](https://en.wikipedia.org/wiki/Time_standard#:~:text=a%20specification%20for%20measuring%20time), but also builds on the Dec [calendar](https://en.wikipedia.org/wiki/Calendar#:~:text=a%20system%20of%20organizing%20days) (Decalendar) described in [the previous article](dec/date) in my series on the Dec measurement system. Together, Decalendar and Declock render months, fortnights, weeks, hours, minutes, and [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI](#si)) seconds ([sis](#sis)) obsolete.
+
+Declock measures time in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day), often using [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) like [deci](https://en.wikipedia.org/wiki/Deci-#:~:text=a%20decimal%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20tenth), [centi](https://en.wikipedia.org/wiki/Centi-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20hundredth), or [milli](https://en.wikipedia.org/wiki/Milli-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20thousandth). The top, middle, and bottom bars indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays), [millidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=1.44%20minutes%2C%20or%2086.4%20seconds), and [centimillidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=which%20would%20be-,1/100%2C000%20day,-%2C%20or%20864%20milliseconds), respectively, of the time since the start, , or until the end, , of the day in the Zone , the Dec [time zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time) selected by the red⭕️circle on the map beneath the bars.
 
 To rotate the globe🌐in the Earth🌏orbit diagram, drag the red circle horizontally↔︎️or slide the red🔴dot on the daylight area chart vertically↕. The red circle’s vertical position determines the yearly daylight pattern visualized by the area chart. Shift the vertical red—line on the area chart horizontally to move the globe along the ellipse of the Earth🌎orbit.
 
@@ -48,7 +50,7 @@ As their names suggest, [doy](#doy) and [ada](#ada) are measured in days. The [m
 
 To obtain a [tod](#tod) from an [ada](#ada), we can [keep the remainder after dividing](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) by one to isolate the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of the [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers): [−⌊](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 = 0.. We can use this same approach to separate a [tod](#tod) from an “epochal day aggregate” ([eda](#eda)): −⌊ 1 = 0.. The current [eda](#eda) tells us how many days have passed since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era): Year 0 Day 0 [Tod](#tod) 0.
 
-$$\text{dividend} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} \text{modulus} = \text{dividend} - \text{modulus} \ast \left\lfloor\dfrac{\text{dividend}}{\text{modulus}}\right\rfloor \tag{2}$$
+$$\text{dividend} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} \text{modulus} = \text{dividend} - \text{modulus} \times \left\lfloor\dfrac{\text{dividend}}{\text{modulus}}\right\rfloor \tag{2}$$
 
 $$\begin{split}
 \text{tod} &= \text{ada} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \\
@@ -147,16 +149,16 @@ hms$sec / 86400
 
     [1] 0.616282
 
-Equations [7](#eq-dsa) to [11](#eq-som) below convert UNIX time or a Zone 0 [tod](#tod) into the three components of an [hms](#hms) triplet: the “hour of day” ([hod](#hod)), “minute of hour” ([moh](#moh)), and “second of minute” ([som](#som)), using a “daily second aggregate” ([dsa](#dsa)) and “hourly second aggregate” ([hsa](#hsa)). While both count seconds, [dsa](#dsa) start at midnight ([Tod](#tod) 0) and [hsa](#hsa) begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
+Equations [7](#eq-dsa) to [11](#eq-sisom) below convert UNIX time or a Zone 0 [tod](#tod) into the three components of an [hms](#hms) triplet: the “hour of day” ([hod](#hod)), “minute of hour” ([moh](#moh)), and “SI second of minute” ([sisom](#sisom)), using a “daily second aggregate” ([dsisa](#dsa)) and “hourly second aggregate” ([hsisa](#hsa)). While both count seconds, [dsisa](#dsa) start at midnight ([Tod](#tod) 0) and [hsa](#hsa) begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
 
 $$\begin{split}
-\text{dsa} & = \text{tod} \ast 86400 \\
+\text{dsa} & = \text{tod} \times 86400 \\
 & = \text{unix} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  86400
 \end{split}
 \tag{7}$$ $$\text{hsa} = \text{dsa} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  3600
 \tag{8}$$ $$\text{hod} = \lfloor \text{dsa} \div 3600 \rfloor
 \tag{9}$$ $$\text{moh} = \lfloor \text{hsa} \div 60 \rfloor
-\tag{10}$$ $$\text{som} = \lfloor \text{hsa} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  60 \rfloor
+\tag{10}$$ $$\text{sisom} = \lfloor \text{hsa} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  60 \rfloor
 \tag{11}$$
 
 ## Julia
@@ -213,20 +215,20 @@ sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 
 The [Global Positioning System](https://en.wikipedia.org/wiki/Global_Positioning_System#:~:text=a%20satellite%2Dbased%20hyperbolic%20navigation%20system), [BeiDou](https://en.wikipedia.org/wiki/BeiDou#:~:text=a%20satellite%2Dbased%20radio%20navigation%20system), and [Galileo](https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)#:~:text=a%20global%20navigation%20satellite%20system%20(GNSS)%20created%20by%20the%20European%20Union) [global navigation satellite systems](https://en.wikipedia.org/wiki/Satellite_navigation#:~:text=a%20satellite%20navigation%20system%20with%20global%20coverage) along with most — if not all — [programming languages](https://en.wikipedia.org/wiki/Programming_language#:~:text=a%20system%20of%20notation%20for%20writing%20source%20code%20such%20as%20used%20to%20produce%20a%20computer%20program) do not account for [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment), which appears to be for the best given that leap seconds [can cause problems](https://www.nist.gov/pml/time-and-frequency-division/leap-seconds-faqs#:~:text=detriments%20to%20adding%20leap%20seconds) and will be abolished no later than 2027+081 according to the [International Bureau of Weights and Measures](https://en.wikipedia.org/wiki/International_Bureau_of_Weights_and_Measures#:~:text=an%20intergovernmental%20organisation%20(IGO)%2C%20through%20which%20its%2067%20member%2Dstates%20act%20on%20measurement%20standards).
 
-On or before the deadline to abolish leap seconds, the tolerance for disagreement between [UTC](#utc) and [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#Versions:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) ([UT](#ut)) will increase from [1 Dec second](https://en.wikipedia.org/wiki/Leap_second#:~:text=to%20ensure%20that%20the%20difference%20between%20the%20UTC%20and%20UT1%20readings%20will%20never%20exceed%200.9%20seconds) ([s](#s)) to 3750 [s](#s). Since 1972+122, only [27](https://en.wikipedia.org/wiki/Leap_second#:~:text=27%20leap%20seconds%20have%20been%20added%20to%20UTC) leap seconds have been inserted, which is 0.75% of 3750 [s](#s), and at this rate it will take over five millennia for the disparity between [UT](#ut) and [UTC](#utc) to reach 3750 [s](#s).
+On or before the deadline to abolish leap seconds, the tolerance for disagreement between [UTC](#utc) and [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#Versions:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) ([UT](#ut)) will increase from [0.9375 Dec seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=a%20maximum%20permitted%20variance%20of%20%C2%B10.9%20seconds) ([s](#s)) to 3750 [s](#s). Since 1972+122, only [27](https://en.wikipedia.org/wiki/Leap_second#:~:text=27%20leap%20seconds%20have%20been%20added%20to%20UTC) leap seconds have been inserted, which is 0.75% of 3750 [s](#s), and at this rate it will take over five millennia for the disparity between [UT](#ut) and [UTC](#utc) to reach 3750 [s](#s).
 
 Instead of leap seconds, Dec matches [UT](#ut) using a “[universal time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)” ([uto](#uto)). With the [leap second insertion dates](https://en.wikipedia.org/wiki/Leap_second#:~:text=Announced%20leap%20seconds%20to%20date) provided by the [International Earth Rotation and Reference Systems Service](https://en.wikipedia.org/wiki/International_Earth_Rotation_and_Reference_Systems_Service#:~:text=the%20body%20responsible%20for%20maintaining%20global%20time%20and%20reference%20frame%20standards), we can approximate the [uto](#uto) that yields [UT](#ut) when added to the Zone 0 [tod](#tod) on the [Dec date](../../dec/date) chosen by the [range](https://observablehq.com/framework/inputs/range)🎚️inputs below: ÷ 8640 = ÷ 90000 = .
 
 #### 5 Second interval difference (sid)
 
-The equation above divides leap seconds by the number of [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI](#si)) seconds ([sis](#sis)) or Dec deciseconds ([ds](#ds)) in a deciday ([dd](#dd)): 8640 [sis](#sis) = 90000 [ds](#ds) = 1 [dd](#dd). To avoid [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever) when turning [sis](#sis) into [ds](#ds), we can put a Dec [quadravigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D) (base24) digit in place of the ones digit and decimal part of the [ds](#ds): = × 10 + ÷ 2.4.
+The equation above divides leap seconds by the number of sis or Dec deciseconds ([ds](#ds)) in a deciday ([dd](#dd)): 8640 [sis](#sis) = 90000 [ds](#ds) = 1 [dd](#dd). To avoid [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever) when turning [sis](#sis) into [ds](#ds), we can put a Dec [quadravigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D) (base24) digit in place of the ones digit and decimal part of the [ds](#ds): = × 10 + ÷ 2.4.
 
 Known as a “second interval difference” ([sid](#sid)), the base24 ([b24](#b24)) character at the end of is a letter of the [Greek alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language). To display [sis](#sis) in [ds](#ds), we can concatenate the integer part of the [s](#s) we obtain from [Equation 12](#eq-sis) with the [b24](#b24) representation of the [sid](#sid) we get from [Equation 13](#eq-sid). The table beneath these equations lists [base10](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29) ([b10](#b10)) and [b24](#b24) equivalents.
 
 $$\text{s} = \dfrac{\text{ds}}{10} = \dfrac{\text{sis}}{0.96}
 \tag{12}$$ $$\begin{split}
 \text{sid} &= \text{sis} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 24\\
-&= (\text{s} - \text{sis}) \ast 24 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 24
+&= (\text{s} - \text{sis}) \times 24 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 24
 \end{split}
 \tag{13}$$
 
@@ -398,10 +400,10 @@ To obtain a [toy](#toy), we divide an [ada](#ada) by a “solar year length” (
 
 $$\begin{split}
 \text{eot} & = \beta_0 \\
-& + \beta_1 \ast \text{cos(toy)} \\
-& + \beta_2 \ast \text{sin(toy)} \\
-& + \beta_3 \ast \text{cos(2} \ast \text{toy)} \\
-& + \beta_4 \ast \text{sin(2} \ast \text{toy)}
+& + \beta_1 \times \text{cos(toy)} \\
+& + \beta_2 \times \text{sin(toy)} \\
+& + \beta_3 \times \text{cos(2} \times \text{toy)} \\
+& + \beta_4 \times \text{sin(2} \times \text{toy)}
 \end{split} \tag{23}$$
 
 By comparing the `sincost` and `sincos` functions, the code below demonstrates that using [t](#t) rather than [rad](#rad) can [yield more accurate results](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=Representing%20angles%20in%20turns%20or%20half%2Dturns%20has%20accuracy%20advantages). Whereas `sincost` expects to receive [t](#t) and is always correct, `sincos` assumes that it will get [rad](#rad) and generates the slightly incorrect [E notation](https://en.wikipedia.org/wiki/Scientific_notation#E_notation) values below because it cannot produce zero unless its input is zero.
@@ -643,21 +645,21 @@ $$\text{solarnoon} = \left(9.55 + \text{tzo} - \text{w} - \text{eot}\right) \mat
 
 To compare the solar noon [tod](#tod) in two cities, we can plug the longitude of each city into [Equation 24](#eq-solarnoon) above. If all of the variables other than longitude in [Equation 24](#eq-solarnoon) are set to zero, the resulting solar noon [tod](#tod) is almost five decidays for [Cambridge, England](https://en.wikipedia.org/wiki/Cambridge#:~:text=a%20city%20and%20non%2Dmetropolitan%20district%20in%20the%20county%20of%20Cambridgeshire%2C%20England) in the [United Kingdom](https://en.wikipedia.org/wiki/United_Kingdom#:~:text=a%20country%20in%20Northwestern%20Europe) and nearly seven decidays for [Cambridge, Massachusetts](https://en.wikipedia.org/wiki/Cambridge,_Massachusetts#:~:text=a%20city%20in%20Middlesex%20County%2C%20Massachusetts%2C%20United%20States) in the [United States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primarily%20located%20in%20North%20America).
 
-$$4.99635 = (9.55 - 0.050365) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10 \tag{25}$$
+$$4.99635 = (9.55 - 0.050365) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 10 \tag{25}$$
 
-$$6.97517 = (9.55 - 0.852484) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10 \tag{26}$$
+$$6.97517 = (9.55 - 0.852484) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 10 \tag{26}$$
 
 The two homonymous cities are about two [dw](#dw) apart and therefore will always differ by around two decidays in solar time, regardless of what time zone we use as our frame of reference. England is in Zone 0 and Massachusetts is in Zone 8. From the perspective of Zone 8, solar noon is roughly [Tod](#tod) 5 in Cambridge, MA and about [Tod](#tod) 3 in Cambridge, UK.
 
-$$2.99635 = (9.55 + 0.8 - 0.050365) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10 \tag{27}$$
+$$2.99635 = (9.55 + 0.8 - 0.050365) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 10 \tag{27}$$
 
-$$4.97517 = (9.55 + 0.8 - 0.852484) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10 \tag{28}$$
+$$4.97517 = (9.55 + 0.8 - 0.852484) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 10 \tag{28}$$
 
 #### 13 Light arc whole (law)
 
 The path in the sky that the Sun appears to follow from a sunrise to a sunset is a “light [arc](https://en.wikipedia.org/wiki/Sun_path#:~:text=arc%2Dlike%20path%20that%20the%20Sun%20appears%20to%20follow%20across%20the%20sky) whole” ([law](#law)). Solar noon, the midpoint of a [law](#law), is halfway between sunrise and sunset. A [law](#law) can be evenly split into two “light arc halves” ([lah](#lah)). Whereas [tod](#tod) are time points, [law](#law) and [lah](#lah) are durations. The difference between a solar noon [tod](#tod) and a [lah](#lah) is a sunrise [tod](#tod).
 
-$$\text{law} = \text{lah} \ast 2 \tag{29}$$
+$$\text{law} = \text{lah} \times 2 \tag{29}$$
 
 $$\begin{split}
 \text{sunrise}
@@ -677,12 +679,12 @@ $$\begin{split}
 
 The Sun continues its path after it disappears below the horizon, moving from sunset to sunrise along a “night arc whole” ([naw](#naw)). Like [conjugate angles](https://en.wikipedia.org/wiki/Angle#:~:text=conjugate%20angles%20sum%20to%20a%20full%20angle), a [law](#law) and a [naw](#naw) form a full circle that represents one day. Likewise, a [lah](#lah) and a “night arc half” ([nah](#nah)) are like two [supplementary angles](https://en.wikipedia.org/wiki/Angle#:~:text=sum%20to%20a%20straight%20angle) that form a semicircle from solar noon to the [naw](#naw) midpoint: [solar midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%20to%20solar%20noon%2C%20when%20the%20Sun%20is%20closest%20to%20the%20nadir%2C%20and%20the%20night%20is%20equidistant%20from%20dusk%20and%20dawn).
 
-$$\text{naw} = \text{nah} \ast 2 \tag{32}$$
+$$\text{naw} = \text{nah} \times 2 \tag{32}$$
 
 $$\begin{split}
 \text{day}
 & = \text{law} + \text{naw} \\
-& = (\text{lah} + \text{nah}) \ast 2
+& = (\text{lah} + \text{nah}) \times 2
 \end{split} \tag{33}$$
 
 $$\begin{split}
@@ -700,7 +702,7 @@ The numbers in the diagram above are “[solar azimuth angle](https://en.wikiped
 
 #### 15 Solar elevation angle (sea)
 
-The numbers in the diagram above are “\[solar azimuth During an [equinox](https://en.wikipedia.org/wiki/Equinox#:~:text=a%20moment%20in%20time%20when%20the%20Sun%20appears%20directly%20above%20the%20equator) at the Equator, the Sun goes from East to West directly overhead, the [saa](#saa) flips like a switch from 0.25 [t](#t) to 0.75 [t](#t) at solar noon, the”[solar elevation angle](https://en.wikipedia.org/wiki/Solar_zenith_angle#Summary_of_special_angles:~:text=For%20example%2C%20the-,solar,-elevation%20angle%20is)” ([sea](#sea)) peaks at 0.25 [t](#t), and [ast](#ast) is 0.5 − sin([saa](#saa)) × (0.25 − [sea](#sea)). To obtain the [sea](#sea), we can use the height (h) of a vertical rod on a level surface and the length (L) of its shadow: [sea](#sea) = atan2(h, L).
+During an [equinox](https://en.wikipedia.org/wiki/Equinox#:~:text=a%20moment%20in%20time%20when%20the%20Sun%20appears%20directly%20above%20the%20equator) at the Equator, the Sun goes from East to West directly overhead, the [saa](#saa) flips like a switch from 0.25 [t](#t) to 0.75 [t](#t) at solar noon, the “[solar elevation angle](https://en.wikipedia.org/wiki/Solar_zenith_angle#Summary_of_special_angles:~:text=For%20example%2C%20the-,solar,-elevation%20angle%20is)” ([sea](#sea)) peaks at 0.25 [t](#t), and [ast](#ast) is 0.5 − sin([saa](#saa)) × (0.25 − [sea](#sea)). To obtain the [sea](#sea), we can use the height (h) of a vertical rod on a level surface and the length (L) of its shadow: [sea](#sea) = atan2(h, L).
 
 #### 16 Inverse trigonometric functions
 
@@ -725,7 +727,7 @@ $$\text{ast} =
 
 At the North Pole ([j](#j) = 0.25), the latitude is 0.25 [j](#j) and [Equation 35](#eq-astjing) simplifies to [ast](#ast) = [saa](#saa). At the South Pole ([j](#j) = -0.25), the latitude is -0.25 [j](#j) and [Equation 35](#eq-astjing) simplifies to [ast](#ast) = 0.5 − [saa](#saa) before solar noon or [ast](#ast) = 1.5 − [saa](#saa) after solar noon. In between the Equator and the South or North Pole (-0.25 \< [j](#j) \< 0 ∨ 0 \< [j](#j) \< 0.25), we should use Equation [20](#eq-ast), [35](#eq-astjing), or [37](#eq-astsha).
 
-$$\text{ast} = 0.5 + \text{arccos}\!\!\left(\dfrac{\text{sin(sea)} - \text{sin(j)sin(sda)}}{\text{cos(j)cos(sda)}}\right) \ast
+$$\text{ast} = 0.5 + \text{arccos}\!\!\left(\dfrac{\text{sin(sea)} - \text{sin(j)sin(sda)}}{\text{cos(j)cos(sda)}}\right) \times
 \begin{cases}
 \text{-}1 & 0 \le \text{saa} < 0.5 \\
 1 & 0.5 \le \text{saa} < 1
@@ -744,9 +746,9 @@ The top range input below picks the [doy](#doy) that we will turn into a [toy](#
 
 $$\text{sunset} - \text{sunrise} = \text{law} \tag{38}$$
 
-#### 18 Solar declination angle
-
 In the equation above, the sunset [tod](#tod) is the [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted), the sunrise [tod](#tod) is the [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted), and the [law](#law) is the [difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference): sunset − sunrise = [law](#law). If we replace the sunset [tod](#tod) with the current [tod](#tod) and the sunrise [tod](#tod) with the sunset [tod](#tod), the difference will no longer be the [law](#law) but rather the time until sunset if it is negative or since sunset if it is positive: = .
+
+#### 18 Current elapsed remaining
 
 In general, the subtrahend is the time of an event such as a rocket🚀launch and the difference is the negative [remaining time](https://en.wikipedia.org/wiki/Countdown#:~:text=the%20time%20remaining%20before%20an%20event) if the minuend is less than the subtrahend or the positive [elapsed time](https://en.wikipedia.org/wiki/Mission_Elapsed_Time) if the minuend is greater than the subtrahend. When the minuend is the current time, the difference acts as a “[T minus (T−) countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining)” or “[T plus (T+) countup](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time)”.
 
@@ -976,18 +978,16 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
 - [𝜏](#tau): 2𝜋 or approximately 6.2831853
   - [𝜋](#taudividedby2): pi, 𝜏/2 or approximately 3.1415927
   - [ϡ](#taudividedby900): sampi, the Greek numeral for 900, 𝜏/900 or approximately 0.0069813 radians, 0.4 degrees
-- [Tenet](#tenequaltemperament): ten equal temperament
-  - [Xet](#10et): Tenet
-  - [12et](#twelveequaltemperament): twelve equal temperament
 - [tod](#timeofday): time of day
   - [pit](#positiveintervaltod): positive interval tod, the time since the start of the current day (previous midnight), equal to the tod
   - [nit](#negativeintervaltod): negative interval tod, pit − 1, the negative of the time until the start of the next day (next midnight)
-  - [hms](#hourminutesecond): hour minute second, a tod written as an hod, moh, and som triplet
+  - [hms](#hourminutesecond): hour minute second, a tod written as an hod, moh, and sisom triplet
   - [dsa](#dailysecondaggregate): daily second aggregate, seconds since midnight, tod × 86400
   - [hsa](#hourlysecondaggregate): hourly second aggregate, seconds since the top of the hour, dsa −⌊ 3600
   - [hod](#hourofday): hour of day, ⌊dsa ÷ 3600⌋, 0 to 23
   - [moh](#minuteofhour): minute of hour, ⌊hsa ÷ 60⌋, 0 to 59
-  - [som](#secondofminute): second of minute, ⌊hsa −⌊ 60⌋, 0 to 59
+  - [sisom](#sisecondofminute): SI second of minute, ⌊hsa −⌊ 60⌋, 0 to 59
+  - [som](#secondofmilliday): second of milliday, 0 to 89
   - [mst](#meansolartime): mean solar time, solar time based only on longitude and the Zone 0 tod
   - [ast](#apparentsolartime): apparent solar time, mst + eot(toy), solar time based on the actual position of the Sun
   - [law](#lightarcwhole): light arc whole, the time from sunrise to sunset, 1 − naw, sunset − sunrise
