@@ -1232,6 +1232,9 @@ loadAda = loadydz[1]
 loadIsLeap = isLeapYear(loadYear)
 loadNdaysInYear = 365 + loadIsLeap
 loadAdaHsl = () => textcolor(loadAda.toFixed(5).padStart(9, "0"), piecewiseColor(loadAda / loadNdaysInYear))
+loadDate = Math.floor(loadAda)
+loadTime = loadAda % 1
+loadTimeHsl = () => textcolor(parseInt(loadTime.toFixed(5).slice(2)), piecewiseColor(loadTime))
 decDate = Math.floor(ydz[1])
 decMoty = Math.floor((5 * decDate + 2) / 153)
 isoYear = decYear + (decMoty > 9)
