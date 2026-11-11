@@ -9,7 +9,7 @@ viewof dayArcSouth = Inputs.radio(new Map([["Northern", false], ["Southern", tru
 //| echo: false
 //| label: dayarcinput
 //| class: slider
-viewof dayArcInput = Inputs.range([0, 1000], {label: "Light arc whole", value: 375, step: 1})
+viewof dayArcInput = Inputs.range([0, 1000], {label: "Light arc", value: 375, step: 1})
 ```
 
 ```{ojs}
