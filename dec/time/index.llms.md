@@ -324,7 +324,7 @@ Table 3
 
 #### 6 Coordinated Universal Time
 
-Rather than use a terminator as in [Table 3](#tbl-time), Dec expresses one hour in [dd](#dd) as a single [b24](#b24) digit: 0.41♄ = β. If we add β [dd](#dd) to the Zone 0 [tod](#tod), we get the [tod](#tod) associated with the [UTC+1 offset](https://en.wikipedia.org/wiki/UTC%2B01:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B01%3A00): 0. + β ÷ 10 = . Currently, the Zone 0 Dec time is −0 and the UTC+1 Dec time is −β. Dec times consist of a [tod](#tod), a minus sign (−), and an offset.
+Rather than use a terminator as in [Table 3](#tbl-time), Dec expresses one hour in [dd](#dd) as a single [b24](#b24) digit: 0.41♄ = β. If we add β [dd](#dd) to the Zone 0 [tod](#tod), we get the [tod](#tod) associated with the [UTC+1 offset](https://en.wikipedia.org/wiki/UTC%2B01:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B01%3A00): 0. + β ÷ 10 = 0.. Currently, the Zone 0 Dec time is −0 and the UTC+1 Dec time is −β. Dec times consist of a [tod](#tod), a minus sign (−), and an offset.
 
 There are 12 [UTC](#utc) offsets that become a terminating decimals after being converted from hours to days and therefore could be displayed in either [b10](#b10) or [b24](#b24). Although it has only ten time zones, Dec can express any [UTC](#utc) offset using one or two non-negative [b24](#b24) digits. There are 27 [UTC](#utc) offsets that require only one [b24](#b24) digit and 11 that need two [b24](#b24) digits.
 
@@ -368,7 +368,7 @@ Dec uses [currency](https://en.wikipedia.org/wiki/Currency#:~:text=a%20standardi
 
 > **WARNING:**
 >
-> It took me forever and a **deciday** to come up with a pun for Declock⏰. I kept **second**-guessing myself and got really **wound** up, so I decided to take a **beat**. Then, I **zoned** out until it finally **struck** me: it’s about **time**! **Clockwork** orange you glad this pun is **winding** down? It’s The Final🎸**Countdown**!
+> It took me forever and a **deciday** to come up with a pun for Declock⏰. I kept **second**-guessing myself and got really **wound** up, so I decided to take a **beat**. Then, I **zoned** out until it finally **struck** me: it’s about **time**!
 
 #### 10 Mean solar time
 
@@ -673,7 +673,7 @@ $$\begin{split}
 & = \text{solarnoon} + \text{lah} \\
 \end{split} \tag{31}$$
 
-#### Night arc whole (naw)
+##### Night arc whole (naw)
 
 The Sun continues its path after it disappears below the horizon, moving from sunset to sunrise along a “night arc whole” ([naw](#naw)). Like [conjugate angles](https://en.wikipedia.org/wiki/Angle#:~:text=conjugate%20angles%20sum%20to%20a%20full%20angle), a [law](#law) and a [naw](#naw) form a full circle that represents one day. Likewise, a [lah](#lah) and a “night arc half” ([nah](#nah)) are like two [supplementary angles](https://en.wikipedia.org/wiki/Angle#:~:text=sum%20to%20a%20straight%20angle) that form a semicircle from solar noon to the [naw](#naw) midpoint: [solar midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%20to%20solar%20noon%2C%20when%20the%20Sun%20is%20closest%20to%20the%20nadir%2C%20and%20the%20night%20is%20equidistant%20from%20dusk%20and%20dawn).
 
@@ -756,7 +756,7 @@ $$\begin{cases}\text{difference}<0&{\text{if } \text{minuend} < \text{subtrahend
 
 A [tod](#tod) can be either a “positive interval [tod](#tod)” ([pit](#pit)) that counts up the time since the “beginning of day” ([bod](#bod)) or a “negative interval [tod](#tod)” ([nit](#nit)) that counts down the time until the “end of day” ([eod](#eod)). The difference between a [pit](#pit) and an [eod](#eod) is a [nit](#nit): [pit](#pit) − [eod](#eod) = [nit](#nit). The [eod](#eod) is equal to one day or 10⁵ [cmd](#cmd). In [cmd](#cmd), the current Zone 0 [nit](#nit) is − 10⁵ = .
 
-#### 20 Positive interval doy (pid)
+#### 20 Positive integer doy (pid)
 
 Similarly, a [doy](#doy) can be either a “positive integer [doy](#doy)” ([pid](#pid)) that counts up the days since the “beginning of year” ([boy](#boy)) or a “negative integer [doy](#doy)” ([nid](#nid)) that counts down the days until the “end of year” ([eoy](#eoy)) and an [ada](#ada) can be either a “positive interval [ada](#ada)” ([pia](#pia)) that joins a [pid](#pid) and [pit](#pit) or a “negative interval [ada](#ada)” ([nia](#nia)) that links a [nid](#nid) and [nit](#nit): [nia](#nia) = [nid](#nid) + [nit](#nit) = [pia](#pia) − [eoy](#eoy).
 
@@ -766,7 +766,7 @@ When a [doy](#doy) and a [tod](#tod) are in the same equation, we multiple the [
 
 Likewise, a subtrahend that is an [eoy](#eoy) is not displayed as part of a [doy](#doy) or an [ada](#ada) because it becomes incorporated into the “year of era” ([yoe](#yoe)):  + ÷ =  + ÷ . Essentially, the [doy](#doy) takes up any amount of time that spills over from the [tod](#tod) and the [yoe](#yoe) absorbs any amount of time that does not fit into the [doy](#doy).
 
-The [ada](#ada) is like a [sōzu](https://en.wikipedia.org/wiki/Shishi-odoshi#:~:text=a%20type%20of%20water%20fountain%20used%20in%20Japanese%20gardens) that fills until it reaches a tipping point, empties out, and then begins to fill up again. In this analogy, time flows like water from the [ada](#ada) to the [yoe](#yoe), the [eoy](#eoy) is the maximum volume of the sōzu, the [pia](#pia) is the volume of water in the sōzu, and the [nia](#nia) is the volume of the empty space inside the sōzu.
+The [ada](#ada) is like a [sōzu](https://en.wikipedia.org/wiki/Shishi-odoshi#:~:text=a%20type%20of%20water%20fountain%20used%20in%20Japanese%20gardens), a Japanese garden fountain that fills until it reaches a tipping point, empties out, and then begins to fill up again. In this analogy, time flows like water from the [ada](#ada) to the [yoe](#yoe), the [eoy](#eoy) is the total volume of the sōzu, the [pia](#pia) is the volume that is filled with water, and the absolute value of the [nia](#nia) is the volume that is empty: [eoy](#eoy) = [pia](#pia) − [nia](#nia).
 
 ![](../../asset/Higashiyama_Botanical_Garden_Shishiodoshi_20170617.gif)[Wikimedia](https://commons.wikimedia.org/wiki/File:Higashiyama_Botanical_Garden_Shishiodoshi_20170617.gif)
 
@@ -778,9 +778,13 @@ Just as we can divide an [ada](#ada) into a [doy](#doy) and [tod](#tod), we can 
 
 The range input below sets the [tzo](#tzo) for the watch [face](https://en.wikipedia.org/wiki/Clock_face#:~:text=displays%20time%20through%20the%20use%20of%20a%20flat%20dial%20with%20reference%20marks) simulation beneath it. The radio inputs in between the range input and simulation determine whether the simulated watch face is circular or rectangular and whether it has 90 [s](#s) or 100 [cmd](#cmd) [marks](https://en.wikipedia.org/wiki/Hatch_mark#Unit_and_value_marks:~:text=The%20distance%20between%20adjacent%20marks%20is%20one%20unit). An [md](#md) divides evenly into thirds, sixths, or ninths with [s](#s), quarters with [cmd](#cmd), and halves, fifths, or tenths with either unit.
 
-The “Ticks” radio input above refers to the tick marks on the simulated watch face above and how many times the simulated watch ticks per [md](#md) ([‰](#permil)). I used the [`librosa` Python library](https://librosa.org) to determine that the [tempo](https://en.wikipedia.org/wiki/Tempo#:~:text=pace%20of%20a%20given%20composition) of the 1988 song “[Don’t Worry, Be Happy](https://en.wikipedia.org/wiki/Don%27t_Worry,_Be_Happy#:~:text=a%201988%20song%20by%20Bobby%20McFerrin)” is ~100.566 [‰](#permil) or ~1.00566 per [cmd](#md) ([þ](#per)). Whereas [‰](#permil) and [þ](#per) measure [rates](https://en.wikipedia.org/wiki/Rate_%28mathematics%29#:~:text=the%20denominator%20is%20a%20time%20duration), [md](#md) and [cmd](#md) measure [durations](https://en.wikipedia.org/wiki/Duration#:~:text=amount%20of%20time%20elapsed%20between%20two%20events).
+The “Ticks” radio input above refers to the tick marks on the simulated watch face above and how many times the simulated watch ticks per [md](#md) ([‰](#permil)). I used the [`librosa`](https://librosa.org) [Python]() [library](https://en.wikipedia.org/wiki/Library_%28computing%29#:~:text=a%20collection%20of%20resources%20that%20can%20be%20used%20during%20software%20development) to determine that the [tempo](https://en.wikipedia.org/wiki/Tempo#:~:text=pace%20of%20a%20given%20composition) of the 1988 song “[Don’t Worry, Be Happy](https://en.wikipedia.org/wiki/Don%27t_Worry,_Be_Happy#:~:text=a%201988%20song%20by%20Bobby%20McFerrin)” is ~100.566 [‰](#permil) or ~1.00566 per [cmd](#md) ([þ](#per)). Whereas [‰](#permil) and [þ](#per) measure [rates](https://en.wikipedia.org/wiki/Rate_%28mathematics%29#:~:text=the%20denominator%20is%20a%20time%20duration), [md](#md) and [cmd](#md) measure [durations](https://en.wikipedia.org/wiki/Duration#:~:text=amount%20of%20time%20elapsed%20between%20two%20events).
+
+#### 24 Webpage load time
 
 The difference in between a minuend and subtrahend is intended to be a duration, whereas the minuend and subtrahend themselves are supposed to be [tod](#tod) that represent [time points](https://en.wikipedia.org/wiki/Time_point#:~:text=an%20instant%2C%20analogous%20to%20a%20geometrical%20point%20in%20space). If the minuend is the current [tod](#tod) and the subtrahend is the [tod](#tod) when this webpage loaded, the difference will be the duration since this webpage loaded: =  + .
+
+Dec is not the first system to use [decimal time](https://en.wikipedia.org/wiki/Decimal_time#France). During the [French Revolution](https://en.wikipedia.org/wiki/French_Revolution), decimal time was mandatory for French public records for 197 days ([d](#d)), from 1794+205 to 1795+037. On 1998+247, the Swatch corporation announced [Swatch Internet Time](https://en.wikipedia.org/wiki/Swatch_Internet_Time), which divides the day into 1000 “.beats”, only has one time zone, and is displayed by Dec as [mod](#mod)−β.
 
 #### Next
 
