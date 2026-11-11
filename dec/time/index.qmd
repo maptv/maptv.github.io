@@ -28,7 +28,9 @@ My website provides many examples of the [Quarto](https://quarto.org) publishing
 \${posclock}\${negclock}
 :::
 
-Dec times are measured in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day), often using [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) like [deci](https://en.wikipedia.org/wiki/Deci-#:~:text=a%20decimal%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20tenth), [centi](https://en.wikipedia.org/wiki/Centi-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20hundredth), or [milli](https://en.wikipedia.org/wiki/Milli-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20thousandth). The top, middle, and bottom bars indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, [millidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=1.44%20minutes%2C%20or%2086.4%20seconds){.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}, and [centimillidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=which%20would%20be-,1/100%2C000%20day,-%2C%20or%20864%20milliseconds){.tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"}, respectively, of the time since the start, \${decPosHsl()}, or until the end, \${decNegHsl()}, of the day in the Zone \${decZoneHsl}, the Dec [time zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time) selected by the red⭕️circle on the map beneath the bars.
+This article focuses on the Dec clock (Declock) [metric](https://en.wikipedia.org/wiki/Metric_time#:~:text=the%20measure%20of%20time%20intervals%20using%20the%20metric%20system) [decimal](https://en.wikipedia.org/wiki/Decimal_time#:~:text=the%20representation%20of%20the%20time%20of%20day%20using%20units%20which%20are%20decimally%20related) [time standard](https://en.wikipedia.org/wiki/Time_standard#:~:text=a%20specification%20for%20measuring%20time), but also builds on the Dec [calendar](https://en.wikipedia.org/wiki/Calendar#:~:text=a%20system%20of%20organizing%20days) (Decalendar) described in [the previous article](dec/date) in my series on the Dec measurement system. Together, Decalendar and Declock render months, fortnights, weeks, hours, minutes, and [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI](#si){#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"}) seconds ([sis](#sis){#sisecond .tool data-bs-toggle="tooltip" data-bs-title="SI seconds"}) obsolete.
+
+Declock measures time in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day), often using [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) like [deci](https://en.wikipedia.org/wiki/Deci-#:~:text=a%20decimal%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20tenth), [centi](https://en.wikipedia.org/wiki/Centi-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20hundredth), or [milli](https://en.wikipedia.org/wiki/Milli-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20thousandth). The top, middle, and bottom bars indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, [millidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=1.44%20minutes%2C%20or%2086.4%20seconds){.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}, and [centimillidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=which%20would%20be-,1/100%2C000%20day,-%2C%20or%20864%20milliseconds){.tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"}, respectively, of the time since the start, \${decPosHsl()}, or until the end, \${decNegHsl()}, of the day in the Zone \${decZoneHsl}, the Dec [time zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time) selected by the red⭕️circle on the map beneath the bars.
 
 To rotate the globe🌐in the Earth🌏orbit diagram, drag the red circle horizontally↔️or slide the red🔴dot on the daylight area chart vertically↕. The red circle's vertical position determines the yearly daylight pattern visualized by the area chart. Shift the vertical red<font color=red>—</font>line on the area chart horizontally to move the globe along the ellipse of the Earth🌎orbit.
 
@@ -55,7 +57,7 @@ To obtain a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of da
 
 ::: {.equationgroup #equationgroup01}
 
-$$\text{dividend} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} \text{modulus} = \text{dividend} - \text{modulus} \ast \left\lfloor\dfrac{\text{dividend}}{\text{modulus}}\right\rfloor$$ {#eq-modulus}
+$$\text{dividend} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} \text{modulus} = \text{dividend} - \text{modulus} \times \left\lfloor\dfrac{\text{dividend}}{\text{modulus}}\right\rfloor$$ {#eq-modulus}
 
 $$\begin{split}
 \text{tod} &= \text{ada} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \\
@@ -135,11 +137,11 @@ hms$sec / 86400
 
 :::
 
-Equations -@eq-dsa to -@eq-som below convert UNIX time or a Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} into the three components of an [hms](#hms){.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet: the "hour of day" ([hod](#hod){#hourofday .tool data-bs-toggle="tooltip" data-bs-title="hour of day"}), "minute of hour" ([moh](#moh){#minuteofhour .tool data-bs-toggle="tooltip" data-bs-title="minute of hour"}), and "second of minute" ([som](#som){#secondofminute .tool data-bs-toggle="tooltip" data-bs-title="second of minute"}), using a "daily second aggregate" ([dsa](#dsa){#dailysecondaggregate .tool data-bs-toggle="tooltip" data-bs-title="daily second aggregate"}) and "hourly second aggregate" ([hsa](#hsa){#hourlysecondaggregate .tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregate"}). While both count seconds, [dsa](#dsa){.tool data-bs-toggle="tooltip" data-bs-title="daily second aggregates"} start at midnight ([Tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} [0]{.color0}) and [hsa](#hsa){.tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregates"} begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
+Equations -@eq-dsa to -@eq-sisom below convert UNIX time or a Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} into the three components of an [hms](#hms){.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet: the "hour of day" ([hod](#hod){#hourofday .tool data-bs-toggle="tooltip" data-bs-title="hour of day"}), "minute of hour" ([moh](#moh){#minuteofhour .tool data-bs-toggle="tooltip" data-bs-title="minute of hour"}), and "SI second of minute" ([sisom](#sisom){#sisecondofminute .tool data-bs-toggle="tooltip" data-bs-title="SI second of minute"}), using a "daily second aggregate" ([dsisa](#dsa){#dailysecondaggregate .tool data-bs-toggle="tooltip" data-bs-title="daily second aggregate"}) and "hourly second aggregate" ([hsisa](#hsa){#hourlysecondaggregate .tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregate"}). While both count seconds, [dsisa](#dsa){.tool data-bs-toggle="tooltip" data-bs-title="daily second aggregates"} start at midnight ([Tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} [0]{.color0}) and [hsa](#hsa){.tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregates"} begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
 
 ::: {.equationgroup #equationgroup05}
 $$\begin{split}
-\text{dsa} & = \text{tod} \ast 86400 \\
+\text{dsa} & = \text{tod} \times 86400 \\
 & = \text{unix} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  86400
 \end{split}
 $$ {#eq-dsa}
@@ -153,8 +155,8 @@ $$
 \text{moh} = \lfloor \text{hsa} \div 60 \rfloor
 $$ {#eq-moh}
 $$
-\text{som} = \lfloor \text{hsa} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  60 \rfloor
-$$ {#eq-som}
+\text{sisom} = \lfloor \text{hsa} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  60 \rfloor
+$$ {#eq-sisom}
 :::
 
 
@@ -199,7 +201,7 @@ sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 
 The [Global Positioning System](https://en.wikipedia.org/wiki/Global_Positioning_System#:~:text=a%20satellite%2Dbased%20hyperbolic%20navigation%20system), [BeiDou](https://en.wikipedia.org/wiki/BeiDou#:~:text=a%20satellite%2Dbased%20radio%20navigation%20system), and [Galileo](https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)#:~:text=a%20global%20navigation%20satellite%20system%20(GNSS)%20created%20by%20the%20European%20Union) [global navigation satellite systems](https://en.wikipedia.org/wiki/Satellite_navigation#:~:text=a%20satellite%20navigation%20system%20with%20global%20coverage) along with most --- if not all --- [programming languages](https://en.wikipedia.org/wiki/Programming_language#:~:text=a%20system%20of%20notation%20for%20writing%20source%20code%20such%20as%20used%20to%20produce%20a%20computer%20program) do not account for [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment), which appears to be for the best given that leap seconds [can cause problems](https://www.nist.gov/pml/time-and-frequency-division/leap-seconds-faqs#:~:text=detriments%20to%20adding%20leap%20seconds) and will be abolished no later than [2027]{.color27by100}+[081]{.color081by366} according to the [International Bureau of Weights and Measures](https://en.wikipedia.org/wiki/International_Bureau_of_Weights_and_Measures#:~:text=an%20intergovernmental%20organisation%20(IGO)%2C%20through%20which%20its%2067%20member%2Dstates%20act%20on%20measurement%20standards).
 
-On or before the deadline to abolish leap seconds, the tolerance for disagreement between [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} and [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#Versions:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) ([UT](#ut){#universaltime .tool data-bs-toggle="tooltip" data-bs-title="Universal Time"}) will increase from [1 Dec second](https://en.wikipedia.org/wiki/Leap_second#:~:text=to%20ensure%20that%20the%20difference%20between%20the%20UTC%20and%20UT1%20readings%20will%20never%20exceed%200.9%20seconds) ([s](#s){#second .tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}) to 3750 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}. Since [1972]{.color72by100}+[122]{.color122by365}, only [27](https://en.wikipedia.org/wiki/Leap_second#:~:text=27%20leap%20seconds%20have%20been%20added%20to%20UTC) leap seconds have been inserted, which is 0.75% of 3750 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, and at this rate it will take over five millennia for the disparity between [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} and [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} to reach 3750 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}.
+On or before the deadline to abolish leap seconds, the tolerance for disagreement between [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} and [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#Versions:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) ([UT](#ut){#universaltime .tool data-bs-toggle="tooltip" data-bs-title="Universal Time"}) will increase from [0.9375 Dec seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=a%20maximum%20permitted%20variance%20of%20%C2%B10.9%20seconds) ([s](#s){#second .tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}) to 3750 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}. Since [1972]{.color72by100}+[122]{.color122by365}, only [27](https://en.wikipedia.org/wiki/Leap_second#:~:text=27%20leap%20seconds%20have%20been%20added%20to%20UTC) leap seconds have been inserted, which is 0.75% of 3750 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, and at this rate it will take over five millennia for the disparity between [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} and [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} to reach 3750 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}.
 
 Instead of leap seconds, Dec matches [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} using a "[universal time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)" ([uto](#uto){#universaltimeoffset .tool data-bs-toggle="tooltip" data-bs-title="universal time offset"}). With the [leap second insertion dates](https://en.wikipedia.org/wiki/Leap_second#:~:text=Announced%20leap%20seconds%20to%20date) provided by the [International Earth Rotation and Reference Systems Service](https://en.wikipedia.org/wiki/International_Earth_Rotation_and_Reference_Systems_Service#:~:text=the%20body%20responsible%20for%20maintaining%20global%20time%20and%20reference%20frame%20standards), we can approximate the [uto](#uto){.tool data-bs-toggle="tooltip" data-bs-title="universal time offset"} that yields [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} when added to the Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} on the [Dec date](/dec/date) chosen by the [range](https://observablehq.com/framework/inputs/range)🎚️inputs below: \${leapCountHsl} &div; 8640 = \${leapSdecHsl()}\${leapSb24hsl()} &div; 90000 = \${leapTzoHsl()}.
 
@@ -213,7 +215,7 @@ viewof leapSecondDate = Inputs.range([0, 365], {label: "Day", value: 182, step: 
 
 # Second interval difference (sid) {#sec-sid .hiddenheading}
 
-The equation above divides leap seconds by the number of [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI](#si){#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"}) seconds ([sis](#sis){#sisecond .tool data-bs-toggle="tooltip" data-bs-title="SI seconds"}) or Dec [deciseconds]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a second"} ([ds](#ds){#decisecond .tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"}) in a [deciday]{.tool data-bs-toggle="tooltip" data-bs-title="tenth of a day"} ([dd](#dd){#deciday .tool data-bs-toggle="tooltip" data-bs-title="deciday"}): 8640 [sis](#sis){.tool data-bs-toggle="tooltip" data-bs-title="SI seconds"} = 90000 [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"} = 1 [dd](#dd){.tool data-bs-toggle="tooltip" data-bs-title="deciday"}. To avoid [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever) when turning [sis](#sis){.tool data-bs-toggle="tooltip" data-bs-title="SI seconds"} into [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"}, we can put a Dec [quadravigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D) ([base24]{.tool data-bs-toggle="tooltip" data-bs-title="quadravigesimal"}) digit in place of the ones digit and decimal part of the [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"}: \${leapSdecHsl()}\${leapSb24hsl()} = \${leapSdecHsl()} &times; 10 + \${leapSsidHsl} &div; 2.4.
+The equation above divides leap seconds by the number of sis or Dec [deciseconds]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a second"} ([ds](#ds){#decisecond .tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"}) in a [deciday]{.tool data-bs-toggle="tooltip" data-bs-title="tenth of a day"} ([dd](#dd){#deciday .tool data-bs-toggle="tooltip" data-bs-title="deciday"}): 8640 [sis](#sis){.tool data-bs-toggle="tooltip" data-bs-title="SI seconds"} = 90000 [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"} = 1 [dd](#dd){.tool data-bs-toggle="tooltip" data-bs-title="deciday"}. To avoid [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever) when turning [sis](#sis){.tool data-bs-toggle="tooltip" data-bs-title="SI seconds"} into [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"}, we can put a Dec [quadravigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D) ([base24]{.tool data-bs-toggle="tooltip" data-bs-title="quadravigesimal"}) digit in place of the ones digit and decimal part of the [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"}: \${leapSdecHsl()}\${leapSb24hsl()} = \${leapSdecHsl()} &times; 10 + \${leapSsidHsl} &div; 2.4.
 
 Known as a "second interval difference" ([sid](#sid){#secondintervaldifference .tool data-bs-toggle="tooltip" data-bs-title="second interval difference"}), the [base24]{.tool data-bs-toggle="tooltip" data-bs-title="quadravigesimal"} ([b24](#b24){#base24 .tool data-bs-toggle="tooltip" data-bs-title="base24"}) character at the end of \${leapSdecHsl()}\${leapSb24hsl()} is a letter of the [Greek alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language). To display [sis](#sis){.tool data-bs-toggle="tooltip" data-bs-title="SI seconds"} in [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"}, we can concatenate the integer part of the [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} we obtain from @eq-sis with the [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} representation of the [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval difference"} we get from @eq-sid. The table beneath these equations lists [base10](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29) ([b10](#b10){#base10 .tool data-bs-toggle="tooltip" data-bs-title="base10"}) and [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} equivalents.
 
@@ -224,7 +226,7 @@ $$ {#eq-sis}
 $$
 \begin{split}
 \text{sid} &= \text{sis} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 24\\
-&= (\text{s} - \text{sis}) \ast 24 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 24
+&= (\text{s} - \text{sis}) \times 24 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 24
 \end{split}
 $$ {#eq-sid}
 :::
@@ -442,10 +444,10 @@ To obtain a [toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="time of ye
 ::: {.equationgroup #equationgroup10}
 $$\begin{split}
 \text{eot} & = \beta_0 \\
-& + \beta_1 \ast \text{cos(toy)} \\
-& + \beta_2 \ast \text{sin(toy)} \\
-& + \beta_3 \ast \text{cos(2} \ast \text{toy)} \\
-& + \beta_4 \ast \text{sin(2} \ast \text{toy)}
+& + \beta_1 \times \text{cos(toy)} \\
+& + \beta_2 \times \text{sin(toy)} \\
+& + \beta_3 \times \text{cos(2} \times \text{toy)} \\
+& + \beta_4 \times \text{sin(2} \times \text{toy)}
 \end{split}$$ {#eq-eot}
 :::
 
@@ -553,17 +555,17 @@ $$\text{solarnoon} = \left(9.55 + \text{tzo} - \text{w} - \text{eot}\right) \mat
 To compare the solar noon [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} in two cities, we can plug the longitude of each city into @eq-solarnoon above. If all of the variables other than longitude in @eq-solarnoon are set to zero, the resulting solar noon [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is almost five [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} for [Cambridge, England](https://en.wikipedia.org/wiki/Cambridge#:~:text=a%20city%20and%20non%2Dmetropolitan%20district%20in%20the%20county%20of%20Cambridgeshire%2C%20England) in the [United Kingdom](https://en.wikipedia.org/wiki/United_Kingdom#:~:text=a%20country%20in%20Northwestern%20Europe) and nearly seven [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} for [Cambridge, Massachusetts](https://en.wikipedia.org/wiki/Cambridge,_Massachusetts#:~:text=a%20city%20in%20Middlesex%20County%2C%20Massachusetts%2C%20United%20States) in the [United States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primarily%20located%20in%20North%20America).
 
 ::: {.equationgroup #equationgroup12}
-$$4.99635 = (9.55 - 0.050365) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10$$ {#eq-cambridgeuk}
+$$4.99635 = (9.55 - 0.050365) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 10$$ {#eq-cambridgeuk}
 
-$$6.97517 = (9.55 - 0.852484) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10$$ {#eq-cambridgema}
+$$6.97517 = (9.55 - 0.852484) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 10$$ {#eq-cambridgema}
 :::
 
 The two homonymous cities are about two [dw](#dw){.tool data-bs-toggle="tooltip" data-bs-title="deciwěi"} apart and therefore will always differ by around two [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} in solar time, regardless of what time zone we use as our frame of reference. England is in Zone [0]{.color0} and Massachusetts is in Zone [8]{.color8}. From the perspective of Zone [8]{.color8}, solar noon is roughly [Tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} [5]{.color5} in Cambridge, MA and about [Tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} [3]{.color3} in Cambridge, UK.
 
 ::: {.equationgroup #equationgroup13}
-$$2.99635 = (9.55 + 0.8 - 0.050365) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10$$ {#eq-cambridgeuk8}
+$$2.99635 = (9.55 + 0.8 - 0.050365) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 10$$ {#eq-cambridgeuk8}
 
-$$4.97517 = (9.55 + 0.8 - 0.852484) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \ast 10$$ {#eq-cambridgema8}
+$$4.97517 = (9.55 + 0.8 - 0.852484) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 10$$ {#eq-cambridgema8}
 :::
 
 # Light arc whole (law) {#sec-law .hiddenheading}
@@ -571,7 +573,7 @@ $$4.97517 = (9.55 + 0.8 - 0.852484) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scrip
 The path in the sky that the Sun appears to follow from a sunrise to a sunset is a "light [arc](https://en.wikipedia.org/wiki/Sun_path#:~:text=arc%2Dlike%20path%20that%20the%20Sun%20appears%20to%20follow%20across%20the%20sky) whole" ([law](#law){#lightarcwhole .tool data-bs-toggle="tooltip" data-bs-title="light arc whole"}). Solar noon, the midpoint of a [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc whole"}, is halfway between sunrise and sunset. A [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc whole"} can be evenly split into two "light arc halves" ([lah](#lah){#lightarchalf .tool data-bs-toggle="tooltip" data-bs-title="light arc half"}). Whereas [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="times of day"} are time points, [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc wholes"} and [lah](#lah){.tool data-bs-toggle="tooltip" data-bs-title="light arc halves"} are durations. The difference between a solar noon [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [lah](#lah){.tool data-bs-toggle="tooltip" data-bs-title="light arc half"} is a sunrise [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
 
 ::: {.equationgroup #equationgroup14}
-$$\text{law} = \text{lah} \ast 2$$ {#eq-law}
+$$\text{law} = \text{lah} \times 2$$ {#eq-law}
 
 $$\begin{split}
 \text{sunrise}
@@ -593,12 +595,12 @@ $$\begin{split}
 The Sun continues its path after it disappears below the horizon, moving from sunset to sunrise along a "night arc whole" ([naw](#naw){#nightarcwhole .tool data-bs-toggle="tooltip" data-bs-title="night arc whole"}). Like [conjugate angles](https://en.wikipedia.org/wiki/Angle#:~:text=conjugate%20angles%20sum%20to%20a%20full%20angle), a [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc whole"} and a [naw](#naw){.tool data-bs-toggle="tooltip" data-bs-title="night arc whole"} form a full circle that represents one day. Likewise, a [lah](#lah){.tool data-bs-toggle="tooltip" data-bs-title="light arc half"} and a "night arc half" ([nah](#nah){#nightarchalf .tool data-bs-toggle="tooltip" data-bs-title="night arc half"}) are like two [supplementary angles](https://en.wikipedia.org/wiki/Angle#:~:text=sum%20to%20a%20straight%20angle) that form a semicircle from solar noon to the [naw](#naw){.tool data-bs-toggle="tooltip" data-bs-title="night arc whole"} midpoint: [solar midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%20to%20solar%20noon%2C%20when%20the%20Sun%20is%20closest%20to%20the%20nadir%2C%20and%20the%20night%20is%20equidistant%20from%20dusk%20and%20dawn).
 
 ::: {.equationgroup #equationgroup15}
-$$\text{naw} = \text{nah} \ast 2$$ {#eq-naw}
+$$\text{naw} = \text{nah} \times 2$$ {#eq-naw}
 
 $$\begin{split}
 \text{day}
 & = \text{law} + \text{naw} \\
-& = (\text{lah} + \text{nah}) \ast 2
+& = (\text{lah} + \text{nah}) \times 2
 \end{split}$$ {#eq-day}
 
 $$\begin{split}
@@ -619,7 +621,6 @@ The numbers in the diagram above are "[solar azimuth angle](https://en.wikipedia
 
 # Solar elevation angle (sea) {#sec-sea .hiddenheading}
 
-The numbers in the diagram above are "[solar azimuth 
 During an [equinox](https://en.wikipedia.org/wiki/Equinox#:~:text=a%20moment%20in%20time%20when%20the%20Sun%20appears%20directly%20above%20the%20equator) at the Equator, the Sun goes from East to West directly overhead, the [saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} flips like a switch from 0.25 [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"} to 0.75 [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"} at solar noon, the "[solar elevation angle](https://en.wikipedia.org/wiki/Solar_zenith_angle#Summary_of_special_angles:~:text=For%20example%2C%20the-,solar,-elevation%20angle%20is)" ([sea](#sea){#solarelevationangle .tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"}) peaks at 0.25 [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"}, and [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} is 0.5 &minus; sin([saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"}) &times; (0.25 &minus; [sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"}). To obtain the [sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"}, we can use the height (h) of a vertical rod on a level surface and the length (L) of its shadow: [sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"} = atan2(h, L).
 
 # Inverse trigonometric functions {#sec-itf .hiddenheading}
@@ -651,7 +652,7 @@ At the North Pole ([j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"}
 
 ::: {.equationgroup #equationgroup17}
 $$
-\text{ast} = 0.5 + \text{arccos}\!\!\left(\dfrac{\text{sin(sea)} - \text{sin(j)sin(sda)}}{\text{cos(j)cos(sda)}}\right) \ast
+\text{ast} = 0.5 + \text{arccos}\!\!\left(\dfrac{\text{sin(sea)} - \text{sin(j)sin(sda)}}{\text{cos(j)cos(sda)}}\right) \times
 \begin{cases}
 \text{-}1 & 0 \le \text{saa} < 0.5 \\
 1 & 0.5 \le \text{saa} < 1
@@ -698,9 +699,9 @@ viewof latInput = Inputs.range([-250, 250], {label: "Latitude", value: 0, step: 
 Inputs.bind(Inputs.range([0, 1000], {label: "Longitude", value: 500, step: 1}), viewof lonInput)
 ```
 
-# Solar declination angle {#sec-sda .hiddenheading}
-
 In the equation above, the sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is the [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted), the sunrise [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is the [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted), and the [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc whole"} is the [difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference): sunset &minus; sunrise = [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc whole"}. If we replace the sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} with the current [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and the sunrise [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} with the sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, the difference will no longer be the [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc whole"} but rather the time until sunset if it is negative or since sunset if it is positive: \${selectedCurrent.toFixed(3)} = \${selectedSunset.toFixed(3)} [${selectedDifference < 0 ? "-" : "+"}]{.mono} \${parseFloat(Math.abs(selectedDifference).toFixed(3))}.
+
+# Current elapsed remaining {#sec-cer .hiddenheading}
 
 In general, the subtrahend is the time of an event such as a rocket🚀launch and the difference is the negative [remaining time](https://en.wikipedia.org/wiki/Countdown#:~:text=the%20time%20remaining%20before%20an%20event) if the minuend is less than the subtrahend or the positive [elapsed time](https://en.wikipedia.org/wiki/Mission_Elapsed_Time) if the minuend is greater than the subtrahend. When the minuend is the current time, the difference acts as a "[T minus (T&minus;) countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining)" or "[T plus (T+) countup](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time)".
 

@@ -51,7 +51,7 @@ The "Plot layout" radio input pivots the calendar plots by a quarter [turn](http
 There are two range inputs labeled "Day of year" because every [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} can be expressed as either a positive or a negative integer. The [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} is the number of days that have passed in the year, the [absolute value](https://en.wikipedia.org/wiki/Absolute_value#:~:text=non%2Dnegative%29-,magnitude%20of,measured%20without%20regard%20to%20its%20sign,-.%20Namely%2C) of the "negative integer [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"}" ([nid](#nid){#negativeintegerdoy .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}) is the number of days left in the year, and their [difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference) is the "end of year" ([eoy](#eoy){#endofyear .tool data-bs-toggle="tooltip" data-bs-title="end of year"}), which can be either [365]{.color364by365} or [366]{.color365by366}.
 
 ::: {.equationgroup #equationgroup00}
-$$\text{pid} = \text{x} \ast 10 + \text{dox}$$ {#eq-pid}
+$$\text{pid} = \text{x} \times 10 + \text{dox}$$ {#eq-pid}
 
 $$\text{nid} = \text{pid} - \text{eoy}$$ {#eq-nid}
 :::
@@ -63,7 +63,7 @@ The year+day Dec date format is short for [year+day/[eoy](#eoy){.tool data-bs-to
 ::: {.equationgroup #equationgroup01}
 
 $$
-\text{dividend} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} \text{modulus} = \text{dividend} - \text{modulus} \ast \left\lfloor\dfrac{\text{dividend}}{\text{modulus}}\right\rfloor
+\text{dividend} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} \text{modulus} = \text{dividend} - \text{modulus} \times \left\lfloor\dfrac{\text{dividend}}{\text{modulus}}\right\rfloor
 $$ {#eq-modulus}
 
 $$
@@ -710,13 +710,13 @@ When the current [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="posit
 To obtain a [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"} that we can plug into @eq-dow, we can use the two components of a Dec year+day date, namely a "year of era" ([yoe](#yoe){#yearofera .tool data-bs-toggle="tooltip" data-bs-title="year of era"}) and a [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"}, to solve Equations -@eq-yoe2qoe, -@eq-yoe2yoq, -@eq-date2doq, and -@eq-doe, which are based on [Howard Hinnant](https://howardhinnant.github.io)'s [`days_from_civil`](https://howardhinnant.github.io/date_algorithms.html#days_from_civil){.mono .under} algorithm that he describes in his manuscript entitled [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms.html) -@hinnant2021date.
 
 ::: {.equationgroup #equationgroup10}
-$$\text{qoe} = \biggl \lfloor \frac{\text{yoe}-399\ast\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{yoe} \geq 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}}{400} \biggr \rfloor$$ {#eq-yoe2qoe}
+$$\text{qoe} = \biggl \lfloor \frac{\text{yoe}-399\times\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{yoe} \geq 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}}{400} \biggr \rfloor$$ {#eq-yoe2qoe}
 
-$$\text{yoq} = \text{yoe} - \text{qoe} \ast 400$$ {#eq-yoe2yoq}
+$$\text{yoq} = \text{yoe} - \text{qoe} \times 400$$ {#eq-yoe2yoq}
 
-$$\text{doq} = \text{yoq} \ast 365 + \left\lfloor\frac{\text{yoq}}{4}\right\rfloor - \left\lfloor\frac{\text{yoq}}{100}\right\rfloor + \text{pid}$$ {#eq-date2doq}
+$$\text{doq} = \text{yoq} \times 365 + \left\lfloor\frac{\text{yoq}}{4}\right\rfloor - \left\lfloor\frac{\text{yoq}}{100}\right\rfloor + \text{pid}$$ {#eq-date2doq}
 
-$$\text{doe} = \text{qoe} \ast 146097 + \text{doq}$$ {#eq-doe}
+$$\text{doe} = \text{qoe} \times 146097 + \text{doq}$$ {#eq-doe}
 :::
 
 :::{.panel-tabset group="language"}
@@ -786,15 +786,15 @@ doe()
 Equations -@eq-doe2qoe, -@eq-doe2doq, -@eq-doe2yoq, -@eq-yoe, and -@eq-doe2pid below are based on [Howard Hinnant](https://howardhinnant.github.io)'s [`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days){.mono} algorithm and useful for obtaining Dec dates from [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="days of era"}, [UNIX timestamps](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970), and [JDN](#jdn){.tool data-bs-toggle="tooltip" data-bs-title="Julian day numbers"} -@hinnant2021date. Regardless of whether we convert a [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} to a [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"} or *vice versa*, along the way we calculate the "[quadricentennial](https://en.wikipedia.org/wiki/Solar_cycle_(calendar)#:~:text=the%20Gregorian%20cycle%20of%20400%20years%20has%20exactly%20146%2C097%20days%2C%20i.e.%20exactly%2020%2C871%20weeks%2C%20one%20can%20say%20that%20the%20Gregorian%20so%2Dcalled%20solar%20cycle%20lasts%20400%20years) of era" ([qoe](#qoe){#quadricentennialofera .tool data-bs-toggle="tooltip" data-bs-title="quadricentennial of era"}), "year of quadricentennial" ([yoq](#yoq){#yearofquadricentennial .tool data-bs-toggle="tooltip" data-bs-title="year of quadricentennial"}), and "day of quadricentennial" ([doq](#doq){#dayofquadricentennial .tool data-bs-toggle="tooltip" data-bs-title="day of quadricentennial"}).
 
 ::: {.equationgroup #equationgroup11}
-$$\text{qoe} = \left \lfloor \frac{\text{doe}-146096\ast\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{doe} \geq 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}}{146097} \right \rfloor$$ {#eq-doe2qoe}
+$$\text{qoe} = \left \lfloor \frac{\text{doe}-146096\times\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{doe} \geq 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}}{146097} \right \rfloor$$ {#eq-doe2qoe}
 
-$$\text{doq} = \text{doe} - \text{qoe} \ast 146097$$ {#eq-doe2doq}
+$$\text{doq} = \text{doe} - \text{qoe} \times 146097$$ {#eq-doe2doq}
 
 $$\text{yoq} = \Biggl \lfloor \frac{\text{doq} - \left\lfloor \dfrac{\text{doq}}{1460} \right\rfloor + \left\lfloor \dfrac{\text{doq}}{36524} \right\rfloor - \left\lfloor \dfrac{\text{doq}}{146096} \right\rfloor}{365} \Biggr \rfloor$$ {#eq-doe2yoq}
 
-$$\text{yoe} = \text{yoq} + \text{qoe} \ast 400$$ {#eq-yoe}
+$$\text{yoe} = \text{yoq} + \text{qoe} \times 400$$ {#eq-yoe}
 
-$$\text{pid} = \text{doq} - \text{yoq} \ast 365 - \left \lfloor \frac{\text{yoq}}{4} \right \rfloor + \left \lfloor \frac{\text{yoq}}{100} \right \rfloor$$ {#eq-doe2pid}
+$$\text{pid} = \text{doq} - \text{yoq} \times 365 - \left \lfloor \frac{\text{yoq}}{4} \right \rfloor + \left \lfloor \frac{\text{yoq}}{100} \right \rfloor$$ {#eq-doe2pid}
 :::
 
 :::{.panel-tabset group="language"}
@@ -1029,13 +1029,13 @@ Like the [knuckle](https://en.wikipedia.org/wiki/Knuckle_mnemonic#:~:text=a%20mn
 To convert a [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} to or from an [ISO](#iso){.tool data-bs-toggle="tooltip" data-bs-title="International Organization for Standardization"} month and [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, we can use parts of the [`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days){.mono .under} and [`days_from_civil`](https://howardhinnant.github.io/date_algorithms.html#days_from_civil){.mono .under} algorithms [@hinnant2021date]. [ISO](#iso){.tool data-bs-toggle="tooltip" data-bs-title="International Organization for Standardization"} months are one-based and [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"} are zero-based. [ISO](#iso){.tool data-bs-toggle="tooltip" data-bs-title="International Organization for Standardization"} Month 1 is [Moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="month of year"} [10]{.color306by365} and [Moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="month of year"} [0]{.color0} is [ISO](#iso){.tool data-bs-toggle="tooltip" data-bs-title="International Organization for Standardization"} Month 3. We can obtain a [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="month of year"} by plugging a [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} into @eq-pid2moy or an [ISO](#iso){.tool data-bs-toggle="tooltip" data-bs-title="International Organization for Standardization"} month into @eq-month2moy.
 
 ::: {.equationgroup #equationgroup16}
-$$\text{moy} = \left\lfloor\dfrac{\text{pid} \ast 5 + 2}{153}\right\rfloor$$ {#eq-pid2moy}
+$$\text{moy} = \left\lfloor\dfrac{\text{pid} \times 5 + 2}{153}\right\rfloor$$ {#eq-pid2moy}
 
 $$\text{moy} = (\text{isomonth} + 9) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 12$$ {#eq-month2moy}
 
 $$\text{isomonth} = (\text{moy} + 2) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 12 + 1$$ {#eq-moy2month}
 
-$$\text{bom} = \left\lfloor\dfrac{\text{moy} \ast 153 + 2}{5}\right\rfloor - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{UTC offset} \ge 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}$$ {#eq-moy2bom}
+$$\text{bom} = \left\lfloor\dfrac{\text{moy} \times 153 + 2}{5}\right\rfloor - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{UTC offset} \ge 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}$$ {#eq-moy2bom}
 
 $$\text{dom} = \text{pid} - \text{bom}$$ {#eq-dom}
 :::
@@ -1142,19 +1142,19 @@ $$
 $$ {#eq-dot}
 
 $$
-\text{yot} = \left\lfloor\dfrac{30\ast\text{dot}+15}{10631}\right\rfloor
+\text{yot} = \left\lfloor\dfrac{30\times\text{dot}+15}{10631}\right\rfloor
 $$ {#eq-yot}
 
 $$
-\text{leapcount} = \left\lfloor\dfrac{11\ast\text{yot} + 14}{30}\right\rfloor
+\text{leapcount} = \left\lfloor\dfrac{11\times\text{yot} + 14}{30}\right\rfloor
 $$ {#eq-leapcount}
 
 $$
-\text{lunarpid} = \text{dot} - 354 \ast \text{yot} - \text{leapcount}
+\text{lunarpid} = \text{dot} - 354 \times \text{yot} - \text{leapcount}
 $$ {#eq-lunarpid}
 
 $$
-\text{dob} = \text{lunarpid} - 59 \ast \left\lfloor\dfrac{5\ast\text{lunarpid} + 5}{296}\right\rfloor
+\text{dob} = \text{lunarpid} - 59 \times \left\lfloor\dfrac{5\times\text{lunarpid} + 5}{296}\right\rfloor
 $$ {#eq-dob}
 :::
 
@@ -1240,7 +1240,7 @@ Dec lunar years and months are based on the [Lunar Hijri](https://en.wikipedia.o
 
 ::: {.equationgroup #equationgroup22}
 $$
-\text{lunarleap} = \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}(11 \ast \text{yot} + 14) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 30 \ge 19\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
+\text{lunarleap} = \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}(11 \times \text{yot} + 14) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 30 \ge 19\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
 $$ {#eq-lunarleap}
 
 $$\text{lyl} = 354 + \text{lunarleap}$$ {#eq-leap2lyl}
@@ -1255,11 +1255,11 @@ Instead of Equations -@eq-lunarleap and -@eq-leap2lyl, we can obtain the [lyl](#
 ::: {.equationgroup #equationgroup23}
 
 $$
-\text{bimester} = \left\lfloor\dfrac{5\ast\text{lunarpid} + 5}{296}\right\rfloor
+\text{bimester} = \left\lfloor\dfrac{5\times\text{lunarpid} + 5}{296}\right\rfloor
 $$ {#eq-bimester}
 
 $$
-\text{lunarmonth} = \left\lfloor\dfrac{11\ast\text{lunarpid} + 5}{325}\right\rfloor
+\text{lunarmonth} = \left\lfloor\dfrac{11\times\text{lunarpid} + 5}{325}\right\rfloor
 $$ {#eq-lunarmonth}
 
 $$
@@ -1267,7 +1267,7 @@ $$
 $$ {#eq-month2bimester}
 
 $$
-\text{lunarmonth} = 2\ast\text{bimester} + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{dob} \ge 30\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
+\text{lunarmonth} = 2\times\text{bimester} + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{dob} \ge 30\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
 $$ {#eq-bimester2month}
 
 :::
@@ -1280,7 +1280,7 @@ In between lunar leap years, [lid](#lid){.tool data-bs-toggle="tooltip" data-bs-
 
 ::: {.equationgroup #equationgroup24}
 $$
-\text{lid} = \text{dot} - \text{leapcount} - 354\ast\left\lfloor\dfrac{30\ast\text{leapcount} + 15}{11}\right\rfloor - 355
+\text{lid} = \text{dot} - \text{leapcount} - 354\times\left\lfloor\dfrac{30\times\text{leapcount} + 15}{11}\right\rfloor - 355
 $$ {#eq-lid}
 
 $$
@@ -1369,11 +1369,11 @@ $$
 $$ {#eq-venusdoq}
 
 $$
-\text{dob}_♀ = \text{doq}_♀ - 58 \ast \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{doq}_♀ \ge 58\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
+\text{dob}_♀ = \text{doq}_♀ - 58 \times \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{doq}_♀ \ge 58\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
 $$ {#eq-venusdob}
 
 $$
-\text{dom}_♀ = \text{dob}_♀ - 29 \ast \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{dob}_♀ \ge 29\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
+\text{dom}_♀ = \text{dob}_♀ - 29 \times \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{dob}_♀ \ge 29\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
 $$ {#eq-venusdom}
 
 $$
@@ -1387,15 +1387,15 @@ Regardless of whether we start the zero-based indexing of bimesters from the [bo
 
 ::: {.equationgroup #equationgroup29}
 $$
-\text{qoh}_♀ = \left\lfloor\dfrac{4\ast\text{doh}_♀ + 1}{467}\right\rfloor
+\text{qoh}_♀ = \left\lfloor\dfrac{4\times\text{doh}_♀ + 1}{467}\right\rfloor
 $$ {#eq-venusqoh}
 
 $$
-\text{bimester}_♀ = 2\ast\text{qoh}_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{doq}_♀ \ge 58\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
+\text{bimester}_♀ = 2\times\text{qoh}_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{doq}_♀ \ge 58\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
 $$ {#eq-venusbimester}
 
 $$
-\text{moh}_♀ = 2\ast\text{bimester}_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{dob}_♀ \ge 29\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
+\text{moh}_♀ = 2\times\text{bimester}_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{dob}_♀ \ge 29\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
 $$ {#eq-venusmoh}
 :::
 
