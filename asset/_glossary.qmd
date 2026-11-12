@@ -64,6 +64,7 @@
     - [nd](#nanoday){#nd}: nanoday, a billionth of a day, 86.4 microseconds
 - [°](#degree){#deg}: degree, 1/360 turns, 180/𝜋 or 360/𝜏 radians
     - [c°](#compassdegree){#cdeg}: compass degree
+    - [g°](#greenwichdegrees){#gdeg}: Greenwich degree, a longitude in degrees East (positive) or West (negative) of the Greenwich meridian, -180 to 180
     - [h°](#huedegree){#hdeg}: hue degree
 - [e](#egg){#e}: egg, 1000 grains, 2 ounces, 64 grams
 - [eot](#equationoftime){#eot}: equation of time, ast &minus; mst as a function of toy, about -9.8 to 11.4 millidays
@@ -86,6 +87,7 @@
 - [k](#keg){#k}: keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel
 - [km](#kilometer){#km}: kilometer, 1000 meters, 2500 zem, 2.5 kilozem
 - [kmph](#kilometersperhour){#kmph}: kilometers per hour, thousands of meters per hour, 1 kmph = 0.6 mv
+- [l](#line){#l}: line, decimilliday, a ten thousandth of a day, 10 beats, 8640 milliseconds
 - [L](#liter){#L}: liter, 15625 drops, a cubic decimeter
     - [mL](#milliliter){#mL}: milliliter, a cubic centimeter, a thousandth of a liter, 15.625 drops
     - [µL](#microliter){#uL}: microliter, a cubic millimeter, a millionth of a liter, 0.015625 drops
@@ -104,6 +106,7 @@
 - [o](#octave){#o}: octave, a two fold change in frequency
   - [do](#decioctave){#do}: decioctave, a tenth of a two fold change in frequency
 - [þ](#perbeat){#per}: perbeat, the inverse of a beat, 1/beat, once per beat, every beat, 100000 q; symbolized by thorn (þ), which looks like a combination of the letters "p" and "b"; not to be confused with a picobeat (pb)
+    - [‰](#permilliday){#permil}: per milliday, the inverse of a milliday, once per milliday, 1000 q, a hundredth of a perbeat
     - [Tþ](#teraperbeat){#Tpb}: teraperbeat, 10^12^ perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat, every picobeat
 - [q](#quotidie){#q}: quotidie, the inverse of a day, a hundred thousandth of a perbeat; the letter "q" in quotidie can be flipped vertically to produce the letter "d" in day
 - [r](#rose){#r}: compass rose, a full *r*otation along the horizon, 360 compass degrees
@@ -112,6 +115,7 @@
 - [rad](#radian){#rad}: radian, 1/𝜏 turns, 360/𝜏 degrees, 1/𝜋 turns, 180/𝜋 degrees
 - [RGB](#redgreenblue){#rgb}: red green blue
 - [s](#second){#s}: second, 1/90 millidays, 10/9 beats, 1 Dec second = 0.96 SI seconds
+    - [Ds](#decasecond){#decasec}: decasecond, ten Dec seconds, 1/9 millidays, 9.6 SI seconds
     - [ds](#decisecond){#ds}: decisecond, a tenth of a Dec second, 1/900 millidays, 1/9 beats, 96 milliseconds
     - [sid](#secondintervaldifference){#sid}: second interval difference, 1 SI second &minus; 1 Dec second, 1/24 Dec second, 1/25 SI second, 40 milliseconds
     - [sis](#sisecond){#sis}: SI second, 25/24 Dec seconds, 1/86.4 millidays, 1/86400 days
@@ -127,14 +131,19 @@
     - [𝜋](#taudividedby2){#pi}: pi, 𝜏/2 or approximately 3.1415927
     - [ϡ](#taudividedby900){#sampi}: sampi, the Greek numeral for 900, 𝜏/900 or approximately 0.0069813 radians, 0.4 degrees
 - [tod](#timeofday){#tod}: time of day
+    - [bod](#beginningofday){#bod}: beginning of day, midnight at the start of the day, Tod 0
+    - [eod](#endofday){#eod}: end of day, midnight at the end of the day, 1 day or 10^5^ beats after the bod
     - [pit](#positiveintervaltod){#pit}: positive interval tod, the time since the start of the current day (previous midnight), equal to the tod
     - [nit](#negativeintervaltod){#nit}: negative interval tod, pit &minus; 1, the negative of the time until the start of the next day (next midnight)
     - [hms](#hourminutesecond){#hms}: hour minute second, a tod written as an hod, moh, and sisom triplet
-    - [dsa](#dailysecondaggregate){#dsa}: daily second aggregate, seconds since midnight, tod &times; 86400
-    - [hsa](#hourlysecondaggregate){#hsa}: hourly second aggregate, seconds since the top of the hour, dsa [&LeftFloor;]{.hyphen} 3600
-    - [hod](#hourofday){#hod}: hour of day, &LeftFloor;dsa &div; 3600&RightFloor;, 0 to 23
-    - [moh](#minuteofhour){#moh}: minute of hour, &LeftFloor;hsa &div; 60&RightFloor;, 0 to 59
-    - [sisom](#sisecondofminute){#sisom}: SI second of minute, &LeftFloor;hsa [&LeftFloor;]{.hyphen} 60&RightFloor;, 0 to 59
+    - [dsisa](#dailysisecondaggregate){#dsisa}: daily SI second aggregate, SI seconds since midnight, tod &times; 86400
+    - [hsisa](#hourlysisecondaggregate){#hsisa}: hourly SI second aggregate, SI seconds since the top of the hour, dsisa [&LeftFloor;]{.hyphen} 3600
+    - [hod](#hourofday){#hod}: hour of day, &LeftFloor;dsisa &div; 3600&RightFloor;, 0 to 23
+    - [moh](#minuteofhour){#moh}: minute of hour, &LeftFloor;hsisa &div; 60&RightFloor;, 0 to 59
+    - [sisom](#sisecondofminute){#sisom}: SI second of minute, &LeftFloor;hsisa [&LeftFloor;]{.hyphen} 60&RightFloor;, 0 to 59
+    - [mod](#millidayofday){#mod}: milliday of day, &LeftFloor;tod &times; 1000&RightFloor;, 0 to 999
+    - [tom](#timeofmilliday){#tom}: time of milliday, the part of a tod left after its mod, tod &times; 1000 [&LeftFloor;]{.hyphen} 1 millidays, 0 to 100 beats
+    - [til](#timeintegerlength){#til}: time integer length, the digit count of a tod or offset written without a decimal separator, including leading zeros; its unit is 10^-til^ days
     - [som](#secondofmilliday){#som}: second of milliday, 0 to 89
     - [mst](#meansolartime){#mst}: mean solar time, solar time based only on longitude and the Zone 0 tod
     - [ast](#apparentsolartime){#ast}: apparent solar time, mst + eot(toy), solar time based on the actual position of the Sun
