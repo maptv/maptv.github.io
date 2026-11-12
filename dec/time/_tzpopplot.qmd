@@ -17,6 +17,7 @@ viewof sortParams = Inputs.form([
 {
   await whenVisible("timezonepopstackedbar");
   return Plot.plot({
+    ariaDescription: "Stacked bar chart of world population by UTC offset, with one bar for negative offsets and one for non-negative offsets",
     width: Math.min(width, 1000),
     height: 100 + Math.min(width / 25, 20),
     marginBottom: 50,

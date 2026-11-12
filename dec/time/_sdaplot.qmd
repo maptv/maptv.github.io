@@ -25,6 +25,7 @@
     {doy: south, name: "Southern solstice", dx: -36, dy: 0, anchor: "end"}
   ].map((e) => ({...e, sda: sdaMt(e.doy)}));
   let plot = Plot.plot({
+    ariaDescription: "Line chart of the solar declination angle in milliturns over a year, with dots marking the northward equinox, northern solstice, southward equinox, and southern solstice",
     marginLeft: 60,
     marginTop: 30,
     marginBottom: 30,

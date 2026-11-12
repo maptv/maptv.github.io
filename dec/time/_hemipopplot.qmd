@@ -16,6 +16,7 @@ viewof sortParamsHemi = Inputs.form([
 {
   await whenVisible("hemipopstackedbar");
   return Plot.plot({
+    ariaDescription: "Stacked bar chart of the populations of the Northern and Southern Hemispheres, each divided by UTC offset",
     width: Math.min(width, 1000),
     height: 100 + Math.min(width / 25, 20),
     marginBottom: 50,

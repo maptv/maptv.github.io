@@ -10,6 +10,7 @@
     getEot, -365, 365, { N: 150 }
   );
   let plot = Plot.plot({
+    ariaDescription: "Line chart of the equation of time in millidays over a common year followed by a leap year, ranging from about -9.8 to 11.4 millidays",
     marginLeft: 60,
     width: w,
     height: h,

@@ -203,7 +203,7 @@ sapply(c(dsisa %/% 3600, hsisa %/% 60, hsisa %% 60), as.integer)
 
 The [Global Positioning System](https://en.wikipedia.org/wiki/Global_Positioning_System#:~:text=a%20satellite%2Dbased%20hyperbolic%20navigation%20system), [BeiDou](https://en.wikipedia.org/wiki/BeiDou#:~:text=a%20satellite%2Dbased%20radio%20navigation%20system), and [Galileo](https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)#:~:text=a%20global%20navigation%20satellite%20system%20(GNSS)%20created%20by%20the%20European%20Union) [global navigation satellite systems](https://en.wikipedia.org/wiki/Satellite_navigation#:~:text=a%20satellite%20navigation%20system%20with%20global%20coverage) along with most --- if not all --- [programming languages](https://en.wikipedia.org/wiki/Programming_language#:~:text=a%20system%20of%20notation%20for%20writing%20source%20code%20such%20as%20used%20to%20produce%20a%20computer%20program) do not account for [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment), which appears to be for the best given that leap seconds [can cause problems](https://www.nist.gov/pml/time-and-frequency-division/leap-seconds-faqs#:~:text=detriments%20to%20adding%20leap%20seconds) and will be abolished no later than [[2027]{.color27by100}+[080]{.color080by366}](https://www.bipm.org/en/cgpm-2026/resolution-5#:~:text=become%20effective%20on-,20%C2%A0May%C2%A02027,-%2C) according to the [International Bureau of Weights and Measures](https://en.wikipedia.org/wiki/International_Bureau_of_Weights_and_Measures#:~:text=an%20intergovernmental%20organisation%20(IGO)%2C%20through%20which%20its%2067%20member%2Dstates%20act%20on%20measurement%20standards).
 
-On or before the deadline to abolish leap seconds, the tolerance for disagreement between [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} and [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#Versions:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) ([UT](#ut){#universaltime .tool data-bs-toggle="tooltip" data-bs-title="Universal Time"}) will increase from [0.9375 Dec seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=a%20maximum%20permitted%20variance%20of%20%C2%B10.9%20seconds) ([s](#s){#second .tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}) to [3750 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}](https://www.bipm.org/en/cgpm-2026/resolution-5#:~:text=UTC%7C%20will%20be-,3%C2%A0600%C2%A0seconds,-(1%C2%A0hour)%2C%20ensuring). Since [1972]{.color72by100}+[122]{.color122by365}, only [27](https://en.wikipedia.org/wiki/Leap_second#:~:text=27%20leap%20seconds%20have%20been%20added%20to%20UTC) leap seconds have been inserted, which is 0.75% of 3750 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, and at this rate it will take over five millennia for the disparity between [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} and [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} to reach 3750 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}.
+On or before the deadline to abolish leap seconds, the tolerance for disagreement between [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} and [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#Versions:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) ([UT](#ut){#universaltime .tool data-bs-toggle="tooltip" data-bs-title="Universal Time"}) will increase from [0.9375 Dec seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=a%20maximum%20permitted%20variance%20of%20%C2%B10.9%20seconds) ([s](#s){#second .tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}) to [3750](https://www.bipm.org/en/cgpm-2026/resolution-5#:~:text=UTC%7C%20will%20be-,3%C2%A0600%C2%A0seconds,-(1%C2%A0hour)%2C%20ensuring) [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}. Since [1972]{.color72by100}+[122]{.color122by365}, only [27](https://en.wikipedia.org/wiki/Leap_second#:~:text=27%20leap%20seconds%20have%20been%20added%20to%20UTC) leap seconds have been inserted, which is 0.75% of 3750 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, and at this rate it will take over five millennia for the disparity between [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} and [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} to reach 3750 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}.
 
 Instead of leap seconds, Dec matches [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} using a "[universal time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)" ([uto](#uto){#universaltimeoffset .tool data-bs-toggle="tooltip" data-bs-title="universal time offset"}). With the [leap second insertion dates](https://en.wikipedia.org/wiki/Leap_second#:~:text=Announced%20leap%20seconds%20to%20date) provided by the [International Earth Rotation and Reference Systems Service](https://en.wikipedia.org/wiki/International_Earth_Rotation_and_Reference_Systems_Service#:~:text=the%20body%20responsible%20for%20maintaining%20global%20time%20and%20reference%20frame%20standards), we can approximate the [uto](#uto){.tool data-bs-toggle="tooltip" data-bs-title="universal time offset"} that yields [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} when added to the Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} on the [Dec date](/dec/date) chosen by the [range](https://observablehq.com/framework/inputs/range)🎚️inputs below: \${leapCountHsl} &div; 8640 = \${leapSdecHsl()}\${leapSb24hsl()} &div; 90000 = \${leapTzoHsl()}.
 
@@ -217,7 +217,7 @@ viewof leapSecondDate = Inputs.range([0, 365], {label: "Day", value: 182, step: 
 
 # Second interval difference (sid) {#sec-sid .hiddenheading}
 
-The equation above divides leap seconds by the number of sis or Dec [deciseconds]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a second"} ([ds](#ds){#decisecond .tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"}) in a [deciday]{.tool data-bs-toggle="tooltip" data-bs-title="tenth of a day"} ([dd](#dd){#deciday .tool data-bs-toggle="tooltip" data-bs-title="deciday"}): 8640 [sis](#sis){.tool data-bs-toggle="tooltip" data-bs-title="SI seconds"} = 90000 [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"} = 1 [dd](#dd){.tool data-bs-toggle="tooltip" data-bs-title="deciday"}. To avoid [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever) when turning [sis](#sis){.tool data-bs-toggle="tooltip" data-bs-title="SI seconds"} into [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"}, we can put a Dec [quadravigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D) ([base24]{.tool data-bs-toggle="tooltip" data-bs-title="quadravigesimal"}) digit in place of the ones digit and decimal part of the [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"}: \${leapSdecHsl()}\${leapSb24hsl()} = \${leapSdecHsl()} &times; 10 + \${leapSsidHsl} &div; 2.4.
+The equation above divides leap seconds by the number of [sis](#sis){.tool data-bs-toggle="tooltip" data-bs-title="SI seconds"} or Dec [deciseconds]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a second"} ([ds](#ds){#decisecond .tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"}) in a [deciday]{.tool data-bs-toggle="tooltip" data-bs-title="tenth of a day"} ([dd](#dd){#deciday .tool data-bs-toggle="tooltip" data-bs-title="deciday"}): 8640 [sis](#sis){.tool data-bs-toggle="tooltip" data-bs-title="SI seconds"} = 90000 [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"} = 1 [dd](#dd){.tool data-bs-toggle="tooltip" data-bs-title="deciday"}. To avoid [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever) when turning [sis](#sis){.tool data-bs-toggle="tooltip" data-bs-title="SI seconds"} into [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"}, we can display the result as a fraction such as \${leapTzoHsl()} or put a Dec [quadravigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D) ([base24]{.tool data-bs-toggle="tooltip" data-bs-title="quadravigesimal"}) digit in place of the ones digit and decimal part of the [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"}: \${leapSdecHsl()}\${leapSb24hsl()} = \${leapSdecHsl()} &times; 10 + \${leapSsidHsl} &div; 2.4.
 
 Known as a "second interval difference" ([sid](#sid){#secondintervaldifference .tool data-bs-toggle="tooltip" data-bs-title="second interval difference"}), the [base24]{.tool data-bs-toggle="tooltip" data-bs-title="quadravigesimal"} ([b24](#b24){#base24 .tool data-bs-toggle="tooltip" data-bs-title="base24"}) character at the end of \${leapSdecHsl()}\${leapSb24hsl()} is a letter of the [Greek alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language). To display [sis](#sis){.tool data-bs-toggle="tooltip" data-bs-title="SI seconds"} in [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"}, we can concatenate the integer part of the [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} we obtain from @eq-sis with the [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} representation of the [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval difference"} we get from @eq-sid. The table beneath these equations lists [base10](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29) ([b10](#b10){#base10 .tool data-bs-toggle="tooltip" data-bs-title="base10"}) and [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} equivalents.
 
@@ -412,11 +412,15 @@ Dec uses [currency](https://en.wikipedia.org/wiki/Currency#:~:text=a%20standardi
 It took me forever and a **deciday** to come up with a pun for Declock⏰. I kept **second**-guessing myself and got really **wound** up, so I decided to take a **beat**. Then, I **zoned** out until it finally **struck** me: it's about **time**!
 :::
 
+# Daylight saving time {#sec-dst .hiddenheading}
+
+Dec zones do not observe [daylight saving time](https://en.wikipedia.org/wiki/Daylight_saving_time#:~:text=the%20practice%20of%20advancing%20clocks). A [tzo](#tzo){.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} depends only on longitude, so it stays the same all year, whereas the [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} offsets in many countries jump forward by 1 hour ([β]{.color1by24 .mono} [dd](#dd){.tool data-bs-toggle="tooltip" data-bs-title="decidays"}) in spring and back in autumn. The offset that @eq-utcoffset gets from a computer already includes any daylight saving shift, so the code above yields a different offset in summer than in winter, even though the [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} advances at the same rate all year. [Lord Howe Island](https://en.wikipedia.org/wiki/Lord_Howe_Island#:~:text=daylight%20saving%20time) in Australia shifts by only half an hour, from UTC+10:30 ([λ]{.color10by24 .mono}[ν]{.color12by24 .mono}) to UTC+11 ([μ]{.color11by24 .mono}). Rather than change the time on everyone's clocks, people who want more daylight in summer evenings can move their schedules to an earlier [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
+
 # Mean solar time {#sec-mst .hiddenheading}
 
 Outside of Dec, longitudes are often provided in [Greenwich](https://en.wikipedia.org/wiki/Prime_meridian_&28Greenwich&29#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England) [degrees](https://en.wikipedia.org/wiki/Degree_%28angle%29#:~:text=a%20unit%20of%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20assigned%20the%20value%20of%20360%20degrees) ([g°](#gdeg){#greenwichdegrees .tool data-bs-toggle="tooltip" data-bs-title="Greenwich degrees"}). @eq-deg2wei converts [g°](#gdeg){.tool data-bs-toggle="tooltip" data-bs-title="Greenwich degrees"} to [w](#w){.tool data-bs-toggle="tooltip" data-bs-title="wěi"} and @eq-wei2deg does the opposite. To obtain a [sto](#sto){.tool data-bs-toggle="tooltip" data-bs-title="solar time offset"}, we can pass [w](#w){.tool data-bs-toggle="tooltip" data-bs-title="wěi"} to @eq-wei2sto or [g°](#gdeg){.tool data-bs-toggle="tooltip" data-bs-title="Greenwich degrees"} to @eq-deg2sto below. As shown in @eq-mst below, we can sum an [sto](#sto){.tool data-bs-toggle="tooltip" data-bs-title="solar time offset"} with the Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to get a yearly average of solar time called "[mean solar time](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year)" ([mst](#mst){#meansolartime .tool data-bs-toggle="tooltip" data-bs-title="mean solar time"}).
 
-::: {.equationgroup #equationgroup08}
+::: {.equationgroup #equationgroup09}
 $$\text{w} = (\text{g}^\circ + 378) \div 360 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1$$ {#eq-deg2wei}
 
 $$\text{g}^\circ = (\text{w} + 0.45) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 360 - 180$$ {#eq-wei2deg}
@@ -435,15 +439,13 @@ Obtaining the [eot](#eot){.tool data-bs-toggle="tooltip" data-bs-title="equation
 
 To obtain a [toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="time of year"}, we divide an [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} by a "solar year length" ([syl](#syl){#solaryearlength .tool data-bs-toggle="tooltip" data-bs-title="solar year length"}), which is the number of days in the year. Dec passes the [toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="time of year"} directly from @eq-toy to the [eot](#eot){.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} function in @eq-eot without first multiplying it by 2𝜋 or 𝜏 to convert it from [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) ([t](#t){#turn .tool data-bs-toggle="tooltip" data-bs-title="turns"}) to [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units) ([rad](#rad){#radian .tool data-bs-toggle="tooltip" data-bs-title="radians"}) because the [sin](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20side%20opposite%20that%20angle%20to%20the%20length%20of%20the%20longest%20side%20of%20the%20triangle) and [cos](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse) [trigonometric functions](https://en.wikipedia.org/wiki/Trigonometric_functions#:~:text=functions%20which%20relate%20an%20angle%20of%20a%20right%2Dangled%20triangle%20to%20ratios%20of%20two%20side%20lengths) used by Dec are designed for [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"} instead of [rad](#rad){.tool data-bs-toggle="tooltip" data-bs-title="radians"}.
 
-::: {.equationgroup #equationgroup09}
+::: {.equationgroup #equationgroup10}
 $$\text{ast} = (0.95 + \text{tod} + \text{w} +  \text{eot}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1$$ {#eq-ast}
 
 $$\text{toy} = \text{ada} \div \text{syl}$$ {#eq-toy}
 
 $$\text{syl} = \text{leap} + 365$$ {#eq-syl}
-:::
 
-::: {.equationgroup #equationgroup10}
 $$\begin{split}
 \text{eot} & = \beta_0 \\
 & + \beta_1 \times \text{cos(toy)} \\
@@ -594,9 +596,7 @@ $$\begin{split}
 & = \text{sunrise} + \text{law} \\
 & = \text{solarnoon} + \text{lah} \\
 \end{split}$$ {#eq-sunset}
-:::
 
-::: {.equationgroup #equationgroup15}
 $$\text{naw} = \text{nah} \times 2$$ {#eq-naw}
 
 $$\begin{split}
@@ -604,6 +604,8 @@ $$\begin{split}
 & = \text{law} + \text{naw} \\
 & = (\text{lah} + \text{nah}) \times 2
 \end{split}$$ {#eq-day}
+
+$$\text{nah} = 0.5 - \text{lah}$$ {#eq-nah}
 
 $$\begin{split}
 \text{solarmidnight}
@@ -629,7 +631,7 @@ During an [equinox](https://en.wikipedia.org/wiki/Equinox#:~:text=a%20moment%20i
 
 In addition to determining the [sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"}, the  [atan2](https://en.wikipedia.org/wiki/Atan2#:~:text=function%20atan2%20is-,the%202%2Dargument%20arctangent,-.%20By%20definition%2C) function can also be used to calculate [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"}, as shown in @eq-astjing, where [j](#j){#jing .tool data-bs-toggle="tooltip" data-bs-title="jīng"} is a latitude measured in turns called [jīng](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian) ([j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"}). In Dec, [inverse trigonometric](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#:~:text=obtain%20an%20angle%20from%20any%20of%20the%20angle%27s%20trigonometric%20ratios) functions like [atan2](https://en.wikipedia.org/wiki/Atan2#:~:text=function%20atan2%20is-,the%202%2Dargument%20arctangent,-.%20By%20definition%2C) yield [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"} as opposed to [rad](#rad){.tool data-bs-toggle="tooltip" data-bs-title="radians"}. At the Equator ([j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"} = 0), the latitude is zero and @eq-astjing simplifies to [ast](#ast){.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} = 0.5 + atan2(-sin([saa](#saa){.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"})cos([sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"}), sin([sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"})).
 
-::: {.equationgroup #equationgroup16}
+::: {.equationgroup #equationgroup15}
 $$
 \text{ast} = 0.5 + \text{atan2}\!\!\left(
 \begin{aligned}
@@ -654,7 +656,7 @@ At the North Pole ([j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"}
 
 Unlike @eq-astjing, @eq-astsha requires a [sda](#sda){.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}. Whereas latitude is the angle from the Equator in the [geographic coordinate system](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=a%20spherical%20or%20geodetic%20coordinate%20system%20for%20measuring%20and%20communicating%20positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude), declination is the angle from the [celestial equator](https://en.wikipedia.org/wiki/Celestial_equator) in the [equatorial coordinate system](https://en.wikipedia.org/wiki/Equatorial_coordinate_system#:~:text=a%20celestial%20coordinate%20system%20widely%20used%20to%20specify%20the%20positions%20of%20celestial%20objects). For simplicity, we can use the harmonic model in @eq-eot, with a separate set of fitted coefficients, for both the [eot](#eot){.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} and [sda](#sda){.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}. The line plot below shows [sda](#sda){.tool data-bs-toggle="tooltip" data-bs-title="solar declination angles"} over the course of a year.
 
-::: {.equationgroup #equationgroup17}
+::: {.equationgroup #equationgroup16}
 $$
 \text{ast} = 0.5 + \text{arccos}\!\!\left(\dfrac{\text{sin(sea)} - \text{sin(j)sin(sda)}}{\text{cos(j)cos(sda)}}\right) \times
 \begin{cases}
@@ -662,6 +664,14 @@ $$
 1 & 0.5 \le \text{saa} < 1
 \end{cases}
 $$ {#eq-astsha}
+
+$$\begin{split}
+\text{sda} & = \gamma_0 \\
+& + \gamma_1 \times \text{cos(toy)} \\
+& + \gamma_2 \times \text{sin(toy)} \\
+& + \gamma_3 \times \text{cos(2} \times \text{toy)} \\
+& + \gamma_4 \times \text{sin(2} \times \text{toy)}
+\end{split}$$ {#eq-sda}
 :::
 
 {{< include /dec/time/_sdaplot.qmd >}}
@@ -674,9 +684,13 @@ The chart below splits the [Socioeconomic Data and Applications Center](https://
 
 The top range input below picks the [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} that we will turn into a [toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="time of year"} and then pass to our [sda](#sda){.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"} model. The two range inputs beneath the [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} input choose the geographic coordinates needed to find the sunrise and sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="times of day"}. While the sunrise and sunset [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="times of day"} rely on all three range inputs, the [law](#law){.tool data-bs-toggle="tooltip" data-bs-title="light arc whole"} depends on the [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and latitude but not on longitude: \${selectedSunset.toFixed(3)} &minus; \${selectedSunrise.toFixed(3)} = \${parseFloat(daytimeDuration.toFixed(3))}.
 
-::: {.equationgroup #equationgroup18}
+::: {.equationgroup #equationgroup17}
 $$\text{sunset} - \text{sunrise} = \text{law}$$ {#eq-lawdiff}
+
+$$\text{lah} = \text{arccos}\!\left(\max\!\left(\text{-}1, \min\!\left(1, \dfrac{\text{sin(-0.002314)} - \text{sin(j)sin(sda)}}{\text{cos(j)cos(sda)}}\right)\right)\right)$$ {#eq-lah}
 :::
+
+@eq-lah computes the [lah](#lah){.tool data-bs-toggle="tooltip" data-bs-title="light arc half"} from the latitude ([j](#j){.tool data-bs-toggle="tooltip" data-bs-title="jīng"}) and the [sda](#sda){.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}. At sunrise and sunset, the center of the Sun is about 0.002314 [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"} (0.833 degrees) below the horizon, because the atmosphere bends sunlight and the top edge of the Sun appears before its center, so @eq-lah puts a [sea](#sea){.tool data-bs-toggle="tooltip" data-bs-title="solar elevation angle"} of -0.002314 [t](#t){.tool data-bs-toggle="tooltip" data-bs-title="turns"} into the arccos part of @eq-astsha. Limiting the fraction to the range from -1 to 1 makes the [lah](#lah){.tool data-bs-toggle="tooltip" data-bs-title="light arc half"} 0 during a polar night and 0.5 during a polar day.
 
 ```{ojs}
 //| echo: false
@@ -705,7 +719,7 @@ In the equation above, the sunset [tod](#tod){.tool data-bs-toggle="tooltip" dat
 
 In general, the subtrahend is the time of an event such as a rocket🚀launch and the difference is the negative [remaining time](https://en.wikipedia.org/wiki/Countdown#:~:text=the%20time%20remaining%20before%20an%20event) if the minuend is less than the subtrahend or the positive [elapsed time](https://en.wikipedia.org/wiki/Mission_Elapsed_Time) if the minuend is greater than the subtrahend. When the minuend is the current time, the difference acts as a "[T minus (T&minus;) countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining)" or "[T plus (T+) countup](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time)".
 
-::: {.equationgroup #equationgroup19}
+::: {.equationgroup #equationgroup18}
 $$\begin{cases}\text{difference}<0&{\text{if } \text{minuend} < \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}>0&{\text{if minuend}>\text{subtrahend.}}\end{cases}$$ {#eq-difference}
 :::
 
@@ -730,7 +744,7 @@ Likewise, a subtrahend that is an [eoy](#eoy){.tool data-bs-toggle="tooltip" dat
 The [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} is like a [sōzu](https://en.wikipedia.org/wiki/Shishi-odoshi#:~:text=a%20type%20of%20water%20fountain%20used%20in%20Japanese%20gardens), a Japanese garden fountain that fills until it reaches a tipping point, empties out, and then begins to fill up again. In this analogy,  time flows like water from the [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} to the [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"}, the [eoy](#eoy){.tool data-bs-toggle="tooltip" data-bs-title="end of year"} is the total volume of the sōzu, the [pia](#pia){.tool data-bs-toggle="tooltip" data-bs-title="positive interval ada"} is the volume that is filled with water, and the absolute value of the [nia](#nia){.tool data-bs-toggle="tooltip" data-bs-title="negative interval ada"} is the volume that is empty: [eoy](#eoy){.tool data-bs-toggle="tooltip" data-bs-title="end of year"} = [pia](#pia){.tool data-bs-toggle="tooltip" data-bs-title="positive interval ada"} &minus; [nia](#nia){.tool data-bs-toggle="tooltip" data-bs-title="negative interval ada"}. 
 
 ::: {.column-margin fig-align="center" .gif #sozu}
-![](/asset/Higashiyama_Botanical_Garden_Shishiodoshi_20170617.gif)
+![](/asset/Higashiyama_Botanical_Garden_Shishiodoshi_20170617.gif){fig-alt="A bamboo sōzu at Higashiyama Botanical Garden slowly fills with water, tips forward to empty it, and swings back up to fill again"}
 [[Wikimedia](https://commons.wikimedia.org/wiki/File:Higashiyama_Botanical_Garden_Shishiodoshi_20170617.gif)]{.giflabel #sozulabel}
 :::
 
