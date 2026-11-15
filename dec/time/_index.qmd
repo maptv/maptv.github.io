@@ -1386,6 +1386,26 @@ hmsB9b24 = tick2b9b24(hmsTick)
 hmsTodHsl = textcolor(hmsB9b24[0], piecewiseColor(hmsTick / 2160000))
 hmsSecHsl = hmsB9b24[1] && textcolor(hmsB9b24[1], ({background: piecewiseColor(hmsTick % 2160 / 2160), fontFamily: monofonts}))
 hmsSidHsl = hmsB9b24[2] && textcolor(hmsB9b24[2], ({background: piecewiseColor(hmsTick % 24 / 24), fontFamily: monofonts}))
+// Dec hour minute second: one b25 Ogham digit (hours), then a b6 counting
+// rod and a b10 digit for minutes and again for seconds, then a b24 sid
+// digit if the time doesn't land on a whole Dec second. hmsTick counts
+// 1/24 Dec seconds: 86400 per Dec hour, 1440 per Dec minute, 24 per Dec second.
+oghamDigits = [" ", ..."ᚁᚂᚃᚄᚅᚆᚇᚈᚉᚊᚋᚌᚍᚎᚏᚐᚑᚒᚓᚔᚕᚖᚗᚘ"]
+rodDigits = ["𝍠", "𝍮", "𝍯", "𝍰", "𝍱", "𝍭"]
+oghamFonts = "'Noto Sans Ogham', 'Segoe UI Historic', 'Apple Symbols', Geneva, sans-serif"
+decHmsHsl = () => {
+  const hour = Math.floor(hmsTick / 86400)
+  const minute = Math.floor(hmsTick % 86400 / 1440)
+  const second = Math.floor(hmsTick % 1440 / 24)
+  const sid = hmsTick % 24
+  const span = (text, frac, fontFamily = monofonts) => textcolor(text, ({background: piecewiseColor(frac), fontFamily}))
+  return htl.html`<span class="nowrap">${[
+    span(oghamDigits[hour], hour / 25, oghamFonts),
+    span(rodDigits[Math.floor(minute / 10)] + minute % 10, minute / 60),
+    span(rodDigits[Math.floor(second / 10)] + second % 10, second / 60),
+    sid ? span(sid2b24(sid), sid / 24) : ""
+  ]}</span>`
+}
 leapTod = (zeroTime + leapCount / 86400) % 1
 leapDecidayTod = (leapTod * 10).toFixed(4)
 leapTodHsl = () => textcolor(leapDecidayTod, piecewiseColor(leapTod))
@@ -3151,7 +3171,7 @@ html`
   padding: 0px .5px;
   border-radius: 4px;
 }
-${d3.range(1, 24).map(i => `.color${i}by24`).concat(d3.range(1, 9).map(i => `.color${i}by9`)).map(c => {
+${[[24, 24], [9, 9], [25, 25], [6, 6]].flatMap(([n, base]) => d3.range(1, n).map(i => `.color${i}by${base}`)).map(c => {
   const [i, base] = c.slice(6).split("by").map(Number), hex = d3.color(piecewiseColor(i / base)).formatHex();
   return `${c} {
   background: ${hex};

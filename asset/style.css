@@ -1,4 +1,8 @@
 /* css styles */
+/* Ogham letters are the b25 digits of Dec hours. Not every OS ships an
+   Ogham font (iOS may not), so load Noto Sans Ogham; its unicode-range
+   keeps browsers from downloading it on pages without Ogham text. */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Ogham&display=swap");
 html {
   max-width: 100%;
   overflow-x: hidden;
@@ -520,4 +524,10 @@ a.uri {
   nav.quarto-page-breadcrumbs ol.breadcrumb {
     font-size: 0.85em;
   }
+}
+
+/* b25 digits (Dec hours) are Ogham letters; 0 is the Ogham space mark,
+   which Ogham fonts draw as a bare stem line. */
+.ogham {
+  font-family: "Noto Sans Ogham", "Segoe UI Historic", "Apple Symbols", Geneva, sans-serif;
 }

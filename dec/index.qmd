@@ -256,12 +256,12 @@ Just as a [&thorn;](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeat"
 | [Dec time unit]{.nowrap} | [quotidie]{.tool data-bs-toggle="tooltip" data-bs-title="per day"} |
 | -------- | -------- | -------: |
 | deciday  | dd | 10       |
-| hour     | h        | 25       |
+| hour     | [h](#h){#dechour .tool data-bs-toggle="tooltip" data-bs-title="Dec hour"} | 25       |
 | centiday | cd   | 100      |
 | milliday | md   | 1000     |
-| minute   | m   | 1500     |
+| minute   | [m](#m){#decminute .tool data-bs-toggle="tooltip" data-bs-title="Dec minute"} | 1500     |
 | line     | l     | 10000    |
-| second   | s   | 90000    |
+| second   | [s](#s){#second .tool data-bs-toggle="tooltip" data-bs-title="Dec second"} | 90000    |
 | beat     | b     | 100000   |
 | microday | [µd](#ud){#microday .tool data-bs-toggle="tooltip" data-bs-title="microday"} | 1000000  |
 :::

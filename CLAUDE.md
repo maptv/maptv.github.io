@@ -142,6 +142,12 @@ updated as new preferences come up; don't let it grow into a changelog.
   `moh♀`, `boh`), not a cycle. A Venusian term whose acronym clashes with an Earth one
   (doh, doq, moh) is written with a ♀ subscript (`doh~♀~`) and links to a `…venus`
   glossary id (`#dohvenus`).
+- The hectoday (100 days) is `ﾲ` (U+FFB2, halfwidth Hangul pieup, from 백일 and 百日宴),
+  with `piﾲ`, `niﾲ`, `doﾲ` (ids `#baekil`, `#pibaekil`, `#nibaekil`, `#dobaekil`), not
+  `h`, `pih`, `nih`, `doh`. `h` is the Dec hour (1/25 d) and `m` the Dec minute (1/1500 d);
+  the 24-per-day hour, minute, and second are `heh` (Hipparchian equinoctial hour), `bem`,
+  and `bes` (Birunian equinoctial minute/second). `hms`, `hod`, `moh` still mean the
+  conventional triplet. `sis` (SI second) stays where the atomic second is meant.
 - The mod operator is written as a minus joined to a left floor (x − y⌊x/y⌋): in LaTeX
   `\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}` (binary spacing on both
   sides; a shorter floor than a real `\lfloor`, raised so the stroke meets the middle of
@@ -166,20 +172,28 @@ updated as new preferences come up; don't let it grow into a changelog.
 
 - Glyphs: digits 0–9 (radix 10), ☉☿♀♁♂♃♄♅♆ = 0–8 (b9), α–ω = 0–23 (b24, so β = 1,
   δ = 3, ζ = 5, η = 6, μ = 11, ν = 12). Every glyph fills one slot, whatever its radix.
+- More glyph sets: Ogham letters = 0–24 (b25, Dec hours): zero-based from the Ogham space
+  mark U+1680 (written `&#x1680;` in qmd) through ᚁ = 1 to ᚘ = 24, or one-based with
+  ᚙ = 25 in place of 0. Counting rods 𝍠𝍮𝍯𝍰𝍱𝍭 = 0–5 (b6, tens of Dec minutes/seconds;
+  the number of horizontal strokes is the value). Zodiac signs ♈︎…♓︎⛎︎ = 0–12 (b13, woy
+  ranks in dec/date), each followed by VS15 (U+FE0E) for text presentation.
+- Dec hour minute second follows the same value rule: one b25, one b6, one b10, one b6,
+  one b10 glyph (+ a b24 sid glyph): 1 h = 1/25 d = 40 md, 1 m = 60 s = 1/1500 d,
+  1 md = 90 s.
 - Value rule (applies everywhere): reading left to right, a glyph's place value is the
   place value of the glyph to its left divided by its own radix; the first slot after the
   point divides 1 d. So β in the first slot = 1/24 d, and 0000☿ = 1/9 dmd = 1 Dec s.
 - Ticking tod (a live clock) uses the fixed sequence 10, 10, 10, 9, 10, 24: dd, cd, md, a
   b9 digit (tens of Dec s), a Dec-second digit, and a sid digit (1/24 Dec s). Durations,
   offsets, and static tod may put b9, b10, or b24 glyphs in any slot; the fixed sequence
-  is one case of the same value rule. In these, β dd (1 h), β00 md, and similar are fine.
+  is one case of the same value rule. In these, β dd (1 heh), β00 md, and similar are fine.
 - Units: a numeral is in the unit of its last glyph's slot, and dots are optional (the user
   prefers none). Slots step by 10: 1 dd, 2 cd, 3 md, 4 decimilliday (dmd), 5 cmd = beat,
   6 µd. An offset starts in the dd slot, so its glyph count sets its unit, and leading
-  zeros matter: tod−δ = tod−125 (3 h); a 1-minute offset is tod−000♄η (5 glyphs, cmd).
+  zeros matter: tod−δ = tod−125 (3 heh); a 1-bem offset is tod−000♄η (5 glyphs, cmd).
   The kind of glyph shows the radix, so a doy plus a tom needs only one dot:
   227.375♀7 = 227.37530. This convention is intentional; don't push back on it.
-- Examples: 1 h = β dd = 41♄ dmd = 41.♄ md; 3 h = δ dd = 125 md; 1 min = ♄η cmd
+- Examples: 1 heh = β dd = 41♄ dmd = 41.♄ md; 3 heh = δ dd = 125 md; 1 bem = ♄η cmd
   (as a fixed tod: 000♄2ν); 1 Dec s = ☿ cmd; 1 SI s = ☿β µd.
 - Shortcut: a glyph right after a decimal digit is worth glyph × 10 / radix of its slot's
   unit (19υ ds = 190 + 19 ÷ 2.4 = 19 SI s; 41♄ dmd = 410 + 6 × 10/9). After another

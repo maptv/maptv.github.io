@@ -344,15 +344,83 @@ In @tbl-time below, the [quotidie]{.tool data-bs-toggle="tooltip" data-bs-title=
 ::: {#tbl-time .unittable .overflowtable}
 | Time units                                                                | [q](#q){.bold .tool data-bs-toggle="tooltip" data-bs-title="per day"} | [md](#md){.tool data-bs-toggle="tooltip" data-bs-title="millidays"} |
 | ------------------------------------------------------------------------- | --------------------------------------------------------------------: | :------------------------------------------------------------------ |
-| [hour](https://en.wikipedia.org/wiki/Hour)                                | [24]{.mono}                                                             | [41.[♄]{.color6by9}]{.mono}                                       |
-| [minute](https://en.wikipedia.org/wiki/Minute)                            | [1440]{.mono}                                                           | [&nbsp;0.[♄]{.color6by9}[η]{.color6by24}]{.mono}                  |
-| [sis](#sis){.tool data-bs-toggle="tooltip" data-bs-title="SI seconds"}    | [86400]{.mono}                                                          | [&nbsp;0.0[☿]{.color1by9}[β]{.color1by24}]{.mono}                 |
-| [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}       | [90000]{.mono}                                                          | [&nbsp;0.0[☿]{.color1by9}]{.mono}                                 |
+| [heh](#heh){.tool data-bs-toggle="tooltip" data-bs-title="Hipparchian equinoctial hours"}                         | [24]{.mono}                                                             | [41.[♄]{.color6by9}]{.mono}                                       |
+| [h](#h){.tool data-bs-toggle="tooltip" data-bs-title="Dec hours"}                                               | [25]{.mono}                                                             | [40]{.mono}                                                       |
+| [bem](#bem){.tool data-bs-toggle="tooltip" data-bs-title="Birunian equinoctial minutes"} | [1440]{.mono}                                                           | [&nbsp;0.[♄]{.color6by9}[η]{.color6by24}]{.mono}                  |
+| [m](#m){.tool data-bs-toggle="tooltip" data-bs-title="Dec minutes"}                                             | [1500]{.mono}                                                           | [&nbsp;0.[♄]{.color6by9}]{.mono}                                 |
+| [bes](#bes){.tool data-bs-toggle="tooltip" data-bs-title="Birunian equinoctial seconds"} | [86400]{.mono}                                                          | [&nbsp;0.0[☿]{.color1by9}[β]{.color1by24}]{.mono}                 |
+| [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}                                             | [90000]{.mono}                                                          | [&nbsp;0.0[☿]{.color1by9}]{.mono}                                 |
 :::
+
+## Base25 and base6 {#sec-b25 .unnumbered .hiddenheading}
+
+Whereas [heh](#heh){.tool data-bs-toggle="tooltip" data-bs-title="Hipparchian equinoctial hours"}, "Birunian equinoctial minutes" ([bem](#bem){#birunianequinoctialminute .tool data-bs-toggle="tooltip" data-bs-title="Birunian equinoctial minutes"}), and "Birunian equinoctial seconds" ([bes](#bes){#birunianequinoctialsecond .tool data-bs-toggle="tooltip" data-bs-title="Birunian equinoctial seconds"}) divide a day into 24, 1440, and 86400 parts, Dec hours ([h](#h){#dechour .tool data-bs-toggle="tooltip" data-bs-title="Dec hours"}), Dec minutes ([m](#m){#decminute .tool data-bs-toggle="tooltip" data-bs-title="Dec minutes"}), and [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} divide a day into 25, 1500, and 90000 parts. One [h](#h){.tool data-bs-toggle="tooltip" data-bs-title="Dec hour"} is 40 [md](#md){.tool data-bs-toggle="tooltip" data-bs-title="millidays"}, 60 [m](#m){.tool data-bs-toggle="tooltip" data-bs-title="Dec minutes"}, or 3600 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, one [m](#m){.tool data-bs-toggle="tooltip" data-bs-title="Dec minute"} is 60 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, and one [md](#md){.tool data-bs-toggle="tooltip" data-bs-title="milliday"} is 90 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}. Dec writes the hour as one [pentavigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#Standard_positional_numeral_systems) ([base25]{.tool data-bs-toggle="tooltip" data-bs-title="pentavigesimal"}) digit, which is a letter of the [Ogham](https://en.wikipedia.org/wiki/Ogham) alphabet, as shown in @tbl-b25 below. Zero-based [base25]{.tool data-bs-toggle="tooltip" data-bs-title="pentavigesimal"} ([b25](#b25){#base25 .tool data-bs-toggle="tooltip" data-bs-title="base25"}) digits use the Ogham space mark ([&#x1680;]{.ogham}) for 0, whereas one-based [b25](#b25){.tool data-bs-toggle="tooltip" data-bs-title="base25"} digits use ᚙ for 25 instead, like a 12-hour clock that shows 12 instead of 0.
+
+::::: {#tbl-b25 .overflowtable}
+
+::: {.d-none .d-md-block}
+| [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b25](#b25){.tool data-bs-toggle="tooltip" data-bs-title="base25"} | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b25](#b25){.tool data-bs-toggle="tooltip" data-bs-title="base25"} | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b25](#b25){.tool data-bs-toggle="tooltip" data-bs-title="base25"} |
+| --- | --- | --- | --- | --- | --- |
+| [0]{.color0 .mono} | [&#x1680;]{.color0 .ogham} | [9]{.color9by25 .mono} | [ᚉ]{.color9by25 .ogham} | [18]{.color18by25 .mono} | [ᚒ]{.color18by25 .ogham} |
+| [1]{.color1by25 .mono} | [ᚁ]{.color1by25 .ogham} | [10]{.color10by25 .mono} | [ᚊ]{.color10by25 .ogham} | [19]{.color19by25 .mono} | [ᚓ]{.color19by25 .ogham} |
+| [2]{.color2by25 .mono} | [ᚂ]{.color2by25 .ogham} | [11]{.color11by25 .mono} | [ᚋ]{.color11by25 .ogham} | [20]{.color20by25 .mono} | [ᚔ]{.color20by25 .ogham} |
+| [3]{.color3by25 .mono} | [ᚃ]{.color3by25 .ogham} | [12]{.color12by25 .mono} | [ᚌ]{.color12by25 .ogham} | [21]{.color21by25 .mono} | [ᚕ]{.color21by25 .ogham} |
+| [4]{.color4by25 .mono} | [ᚄ]{.color4by25 .ogham} | [13]{.color13by25 .mono} | [ᚍ]{.color13by25 .ogham} | [22]{.color22by25 .mono} | [ᚖ]{.color22by25 .ogham} |
+| [5]{.color5by25 .mono} | [ᚅ]{.color5by25 .ogham} | [14]{.color14by25 .mono} | [ᚎ]{.color14by25 .ogham} | [23]{.color23by25 .mono} | [ᚗ]{.color23by25 .ogham} |
+| [6]{.color6by25 .mono} | [ᚆ]{.color6by25 .ogham} | [15]{.color15by25 .mono} | [ᚏ]{.color15by25 .ogham} | [24]{.color24by25 .mono} | [ᚘ]{.color24by25 .ogham} |
+| [7]{.color7by25 .mono} | [ᚇ]{.color7by25 .ogham} | [16]{.color16by25 .mono} | [ᚐ]{.color16by25 .ogham} | [25]{.color0 .mono} | [ᚙ]{.color0 .ogham} |
+| [8]{.color8by25 .mono} | [ᚈ]{.color8by25 .ogham} | [17]{.color17by25 .mono} | [ᚑ]{.color17by25 .ogham} |  |  |
+:::
+
+::: {.d-md-none}
+| [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b25](#b25){.tool data-bs-toggle="tooltip" data-bs-title="base25"} | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b25](#b25){.tool data-bs-toggle="tooltip" data-bs-title="base25"} |
+| --- | --- | --- | --- |
+| [0]{.color0 .mono} | [&#x1680;]{.color0 .ogham} | [13]{.color13by25 .mono} | [ᚍ]{.color13by25 .ogham} |
+| [1]{.color1by25 .mono} | [ᚁ]{.color1by25 .ogham} | [14]{.color14by25 .mono} | [ᚎ]{.color14by25 .ogham} |
+| [2]{.color2by25 .mono} | [ᚂ]{.color2by25 .ogham} | [15]{.color15by25 .mono} | [ᚏ]{.color15by25 .ogham} |
+| [3]{.color3by25 .mono} | [ᚃ]{.color3by25 .ogham} | [16]{.color16by25 .mono} | [ᚐ]{.color16by25 .ogham} |
+| [4]{.color4by25 .mono} | [ᚄ]{.color4by25 .ogham} | [17]{.color17by25 .mono} | [ᚑ]{.color17by25 .ogham} |
+| [5]{.color5by25 .mono} | [ᚅ]{.color5by25 .ogham} | [18]{.color18by25 .mono} | [ᚒ]{.color18by25 .ogham} |
+| [6]{.color6by25 .mono} | [ᚆ]{.color6by25 .ogham} | [19]{.color19by25 .mono} | [ᚓ]{.color19by25 .ogham} |
+| [7]{.color7by25 .mono} | [ᚇ]{.color7by25 .ogham} | [20]{.color20by25 .mono} | [ᚔ]{.color20by25 .ogham} |
+| [8]{.color8by25 .mono} | [ᚈ]{.color8by25 .ogham} | [21]{.color21by25 .mono} | [ᚕ]{.color21by25 .ogham} |
+| [9]{.color9by25 .mono} | [ᚉ]{.color9by25 .ogham} | [22]{.color22by25 .mono} | [ᚖ]{.color22by25 .ogham} |
+| [10]{.color10by25 .mono} | [ᚊ]{.color10by25 .ogham} | [23]{.color23by25 .mono} | [ᚗ]{.color23by25 .ogham} |
+| [11]{.color11by25 .mono} | [ᚋ]{.color11by25 .ogham} | [24]{.color24by25 .mono} | [ᚘ]{.color24by25 .ogham} |
+| [12]{.color12by25 .mono} | [ᚌ]{.color12by25 .ogham} | [25]{.color0 .mono} | [ᚙ]{.color0 .ogham} |
+:::
+
+:::::
+
+Dec writes the minute and second as one [senary](https://en.wikipedia.org/wiki/Senary) ([base6]{.tool data-bs-toggle="tooltip" data-bs-title="senary"}) digit followed by one [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} digit. The [base6]{.tool data-bs-toggle="tooltip" data-bs-title="senary"} ([b6](#b6){#base6 .tool data-bs-toggle="tooltip" data-bs-title="base6"}) digits are [counting rods](https://en.wikipedia.org/wiki/Counting_rods), and the number of horizontal strokes in each rod is its value, as shown in @tbl-b6 below.
+
+::::: {#tbl-b6 .overflowtable}
+
+::: {.d-none .d-md-block}
+| [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b6](#b6){.tool data-bs-toggle="tooltip" data-bs-title="base6"} | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b6](#b6){.tool data-bs-toggle="tooltip" data-bs-title="base6"} | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b6](#b6){.tool data-bs-toggle="tooltip" data-bs-title="base6"} |
+| --- | --- | --- | --- | --- | --- |
+| [0]{.color0 .mono} | [𝍠]{.color0 .countingrod} | [2]{.color2by6 .mono} | [𝍯]{.color2by6 .countingrod} | [4]{.color4by6 .mono} | [𝍱]{.color4by6 .countingrod} |
+| [1]{.color1by6 .mono} | [𝍮]{.color1by6 .countingrod} | [3]{.color3by6 .mono} | [𝍰]{.color3by6 .countingrod} | [5]{.color5by6 .mono} | [𝍭]{.color5by6 .countingrod} |
+:::
+
+::: {.d-md-none}
+| [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b6](#b6){.tool data-bs-toggle="tooltip" data-bs-title="base6"} |
+| --- | --- |
+| [0]{.color0 .mono} | [𝍠]{.color0 .countingrod} |
+| [1]{.color1by6 .mono} | [𝍮]{.color1by6 .countingrod} |
+| [2]{.color2by6 .mono} | [𝍯]{.color2by6 .countingrod} |
+| [3]{.color3by6 .mono} | [𝍰]{.color3by6 .countingrod} |
+| [4]{.color4by6 .mono} | [𝍱]{.color4by6 .countingrod} |
+| [5]{.color5by6 .mono} | [𝍭]{.color5by6 .countingrod} |
+:::
+
+:::::
+
+Since the place value of each digit is the place value of the digit to its left divided by its own base, a Dec hour minute second is a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} written with one [b25](#b25){.tool data-bs-toggle="tooltip" data-bs-title="base25"}, two [b6](#b6){.tool data-bs-toggle="tooltip" data-bs-title="base6"}, and two [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} digits, plus one [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval difference"} digit when it does not land on a whole [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec second"}. The [hms](#hms){.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet selected by the range inputs above is \${decHmsHsl()} in Dec hours, minutes, and seconds.
 
 # Coordinated Universal Time {#sec-utc .hiddenheading}
 
-Rather than use a terminator as in @tbl-time, Dec expresses one hour in [dd](#dd){.tool data-bs-toggle="tooltip" data-bs-title="decidays"} as a single [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digit: 0.41[♄]{.color6by9 .mono} = [β]{.color1by24 .mono}. If we add [β]{.color1by24 .mono} [dd](#dd){.tool data-bs-toggle="tooltip" data-bs-title="deciday"} to the Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, we get the [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} associated with the [UTC+1 offset](https://en.wikipedia.org/wiki/UTC%2B01:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B01%3A00): 0.\${zeroTpadHsl()} + [β]{.color1by24 .mono} &div; 10 = 0.\${utc1tintHsl()}. Currently, the Zone [0]{.color0} Dec time is \${zeroTpadHsl()}&minus;[0]{.color0} and the UTC+1 Dec time is \${utc1tpadHsl()}&minus;[β]{.color1by24 .mono}. Dec times consist of a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, a minus sign (&minus;), and an offset.
+Rather than use a terminator as in @tbl-time, Dec expresses one [heh](#heh){.tool data-bs-toggle="tooltip" data-bs-title="Hipparchian equinoctial hour"} in [dd](#dd){.tool data-bs-toggle="tooltip" data-bs-title="decidays"} as a single [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digit: 0.41[♄]{.color6by9 .mono} = [β]{.color1by24 .mono}. If we add [β]{.color1by24 .mono} [dd](#dd){.tool data-bs-toggle="tooltip" data-bs-title="deciday"} to the Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, we get the [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} associated with the [UTC+1 offset](https://en.wikipedia.org/wiki/UTC%2B01:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B01%3A00): 0.\${zeroTpadHsl()} + [β]{.color1by24 .mono} &div; 10 = 0.\${utc1tintHsl()}. Currently, the Zone [0]{.color0} Dec time is \${zeroTpadHsl()}&minus;[0]{.color0} and the UTC+1 Dec time is \${utc1tpadHsl()}&minus;[β]{.color1by24 .mono}. Dec times consist of a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, a minus sign (&minus;), and an offset.
 
 There are 12 [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} offsets that become terminating decimals after being converted from hours to days and therefore could be displayed in either [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} or [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"}. Although it has only ten time zones, Dec can express any [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} offset using one or two non-negative [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digits. There are 27 [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} offsets that require only one [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digit and 11 that need two [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digits.
 
@@ -575,7 +643,7 @@ sincos(1 * 2 * pi)
 
 :::
 
-The values below are the coefficients of a [harmonic](https://en.wikipedia.org/wiki/Harmonic#:~:text=positive%20integer%20multiple%20of%20the%20fundamental%20frequency) [model](https://en.wikipedia.org/wiki/Statistical_model#:~:text=embodies%20a%20set%20of%20statistical%20assumptions%20concerning%20the%20generation%20of%20sample%20data), adapted from the [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA](#noaa){#nationaloceanicandatmosphericadministration .tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF). Before [fitting](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) the model to [NOAA](#noaa){.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html), Dec divides [eot](#eot){.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} values by 1.44 to convert minutes to [md](#md){.tool data-bs-toggle="tooltip" data-bs-title="millidays"}, converts [ymd](#ymd){.tool data-bs-toggle="tooltip" data-bs-title="year month day"} triplet dates and [hms](#hms){.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet times into [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregates"}, and sorts by [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}.
+The values below are the coefficients of a [harmonic](https://en.wikipedia.org/wiki/Harmonic#:~:text=positive%20integer%20multiple%20of%20the%20fundamental%20frequency) [model](https://en.wikipedia.org/wiki/Statistical_model#:~:text=embodies%20a%20set%20of%20statistical%20assumptions%20concerning%20the%20generation%20of%20sample%20data), adapted from the [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA](#noaa){#nationaloceanicandatmosphericadministration .tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF). Before [fitting](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) the model to [NOAA](#noaa){.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html), Dec divides [eot](#eot){.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} values by 1.44 to convert [bem](#bem){.tool data-bs-toggle="tooltip" data-bs-title="Birunian equinoctial minutes"} to [md](#md){.tool data-bs-toggle="tooltip" data-bs-title="millidays"}, converts [ymd](#ymd){.tool data-bs-toggle="tooltip" data-bs-title="year month day"} triplet dates and [hms](#hms){.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet times into [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregates"}, and sorts by [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}.
 
 {{< embed eot.ipynb#eotcoef >}}
 

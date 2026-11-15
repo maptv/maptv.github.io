@@ -8,9 +8,14 @@
 - [bpc](#beatpercentiday){#bpc}: a musical or heart beat per centiday, a tenth of a beat per milliday, 0.069[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} beats per minute, 100 beats per day
 - [bpm](#beatpermilliday){#bpm}: a musical or heart beat per milliday, ten beats per centiday, 0.69[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} beats per minute, 1000 beats per day
 - [BMI](#bodymassindex){#bmi}: body mass index, kilograins of body mass divided by height in zem squared (kg/z&sup2;)
+- [b6](#base6){#b6}: base6, senary, 6 digits written as counting rods, 𝍠 𝍮 𝍯 𝍰 𝍱 𝍭, whose number of horizontal strokes is the value of the digit; the first digit of a Dec minute or second counts tens of Dec minutes or seconds
 - [b9](#base9){#b9}: base9, nonary, 9 digits written as the astronomical symbols of the Sun and the eight planets, ☉ ☿ ♀ ♁ ♂ ♃ ♄ ♅ ♆; the first digit after a tod with Dec seconds appended counts tens of Dec seconds
 - [b10](#base10){#b10}: base10, decimal, the digits 0 to 9
-- [b24](#base24){#b24}: base24, 24 digits written as the lowercase Greek letters α to ω; counts sid after a number of Dec seconds or hours after a UTC offset
+- [b24](#base24){#b24}: base24, 24 digits written as the lowercase Greek letters α to ω; counts sid after a number of Dec seconds or heh after a UTC offset
+- [b25](#base25){#b25}: base25, pentavigesimal, 25 digits written as Ogham letters; zero-based digits run from the Ogham space mark ([&#x1680;]{.ogham}) for 0 through ᚁ (Beith) for 1 to ᚘ (Ifin) for 24, and one-based digits put ᚙ (Eamhancholl) for 25 in place of the space mark; counts Dec hours
+- [ﾲ](#hectoday){#baekil}: a Dec season, 1 hectoday, 10 decadays, or one hundred days; ﾲ, the halfwidth Hangul letter pieup (U+FFB2), looks like a capital H with a line at the bottom; the inspiration for ﾲ is Baek-il (백일), the Korean celebration of the first 100 days of a baby's life, whose first letter is pieup (ㅂ), and 百日宴 (bǎi rì yàn), the Chinese banquet for the same occasion
+    - [piﾲ](#positiveintegerhectoday){#pibaekil}: positive integer hectoday, &LeftFloor;pid &div; 100&RightFloor;, 0 to 3
+    - [niﾲ](#negativeintegerhectoday){#nibaekil}: negative integer hectoday, &LeftFloor;nid &div; 100&RightFloor;, -4 to -1
 - [c](#taur){#c}: taur, 𝜏*r*, 100000 kilozem, 40000 kilometers, nearly the circumference of the Earth, roughly the product of 𝜏 and the radius of the Earth, approximately the dividend of the surface area and the diameter of the Earth
     - [gc](#gigataur){#gc}: gigataur, a billion taur
     - [kc](#kilotaur){#kc}: kilotaur, a thousand taur, 10^8^ kilozem
@@ -18,7 +23,7 @@
     - [&micro;c](#microtaur){#uc}: microtaur, *&micro;*𝜏*r*, a millionth of a taur, 100 zem, 40 meters
     - [nc](#nanotaur){#nc}: nanotaur, *n*𝜏*r*, a billionth of a taur, 100 millizem, 1 decizem, 4 centimeters
     - [nc&sup3;](#cubicnanotaur){#nc3}: cubic nanotaur, *n*𝜏*r*&sup3;, 1 cubic decizem
-- [d](#day){#d}: day, a tenth of a decaday, a seventh of a week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays, 1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse of a quotidie
+- [d](#day){#d}: day, a tenth of a decaday, a seventh of a week, a fifth of a pentaday, 10 decidays, 24 heh, 25 Dec hours, 100 centidays, 1000 millidays, 1440 bem, 1500 Dec minutes, 86400 bes, 90000 Dec seconds, 100000 beats, the inverse of a quotidie
     - [dox](#dayofxun){#dox}: day of xún
     - [dop](#dayofpentaday){#dop}: day of pentaday
     - [dom](#dayofmonth){#dom}: day of month
@@ -36,7 +41,7 @@
     - [nia](#negativeintervalada){#nia}: negative interval ada, pia &minus; syl, the negative of the time until the start of the next year
     - [doq](#dayofquadricentennial){#doq}: day of quadricentennial, days since the start of the current Gregorian quadricentennial, 0 to 146096
     - [doh~♀~](#dayofhexadecimester){#dohvenus}: Decyther day of hexadecimester, days since the start of the current 467-day Decyther hexadecimester, doe [&LeftFloor;]{.hyphen} 467, 0 to 466
-    - [doh](#dayofhectoday){#doh}: day of hectoday, doy [&LeftFloor;]{.hyphen} 100, the percent of a hectoday that has elapsed
+    - [doﾲ](#dayofhectoday){#dobaekil}: day of hectoday, doy [&LeftFloor;]{.hyphen} 100, the percent of a hectoday that has elapsed
     - [dob](#dayofbimester){#dob}: day of bimester, 0 to 58 in common bimesters or 0 to 59 in leap bimesters
     - dob~♀~: Decyther day of bimester, 0 to 57 in antes and the post of Qoh 2 or 0 to 58 in the other posts
     - [dot](#dayoftricennium){#dot}: day of tricennium, days since the start of the current 30-year lunar cycle, 0 to 10630
@@ -55,9 +60,9 @@
     - [lid](#lunarintercalationdifference){#lid}: lunar intercalation difference, a lunar nid that only resets after lunar leap years, -1063 to -1
     - [ved](#venusianextracalationdifference){#ved}: Venusian extracalation difference, days until the end of Doh~♀~ 349, the last day of the one-day-shorter Qoh 2, Bimester 5, and Moh~♀~ 11, (doh~♀~ + 117) [&LeftFloor;]{.hyphen} 467 &minus; 467, -467 to -1
     - [mud](#misalignedunitdifference){#mud}: misaligned unit difference, pid &minus; dom &minus; dow
-    - [dd](#deciday){#dd}: deciday, a tenth of a day, 2.4 hours, 144 minutes
-    - [cd](#centiday){#cd}: centiday, a hundredth of a day, 0.24 hours, 14.4 minutes
-    - [md](#milliday){#md}: milliday, a thousandth of a day, 1.44 minutes
+    - [dd](#deciday){#dd}: deciday, a tenth of a day, 2.4 heh, 2.5 Dec hours, 144 bem, 150 Dec minutes
+    - [cd](#centiday){#cd}: centiday, a hundredth of a day, 0.24 heh, 0.25 Dec hours, 14.4 bem, 15 Dec minutes
+    - [md](#milliday){#md}: milliday, a thousandth of a day, 1.44 bem, 1.5 Dec minutes, 90 Dec seconds
     - [dmd](#decimilliday){#dmd}: decimilliday, a ten thousandth of a day, 10 beats, 8640 milliseconds
     - [cmd](#centimilliday){#cmd}: centimilliday, a hundred thousandth of a day, 1 beat, 864 milliseconds
     - [µd](#microday){#ud}: microday, a millionth of a day, 86.4 milliseconds
@@ -73,9 +78,8 @@
 - [g](#gutta){#g}: drop (gutta in Latin) or grain (granum in Latin), 64 microliters or 64 milligrams
     - [kg](#kilograin){#kg}: kilograin or kilodrop, 64 grams or 64 milliliters
     - [Mg](#megagrain){#Mg}: megagrain or megadrop, 64 kilograms or 64 liters
-- [h](#hectoday){#h}: a Dec season, 1 ***h***ectoday, 10 decadays, or one ***h***undred days
-    - [pih](#positiveintegerhectoday){#pih}: positive integer hectoday, &LeftFloor;pid &div; 100&RightFloor;, 0 to 3
-    - [nih](#negativeintegerhectoday){#nih}: negative integer hectoday, &LeftFloor;nid &div; 100&RightFloor;, -4 to -1
+- [h](#dechour){#h}: Dec hour, a twenty-fifth of a day, 40 millidays, 60 Dec minutes, 3600 Dec seconds, 0.96 heh, 57.6 bem; written as one b25 digit
+    - [heh](#hehour){#heh}: Hipparchian equinoctial hour, a twenty-fourth of a day, 41.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} millidays, 25/24 Dec hours, 60 bem, 3600 bes
 - [hex](#hexadecimal){#hex}: hexadecimal, base 16
 - [HSL](#huesaturationlightness){#hsl}: hue saturation lightness
 - [HSV](#huesaturationvalue){#hsv}: hue saturation value
@@ -91,6 +95,8 @@
 - [L](#liter){#L}: liter, 15625 drops, a cubic decimeter
     - [mL](#milliliter){#mL}: milliliter, a cubic centimeter, a thousandth of a liter, 15.625 drops
     - [µL](#microliter){#uL}: microliter, a cubic millimeter, a millionth of a liter, 0.015625 drops
+- [m](#decminute){#m}: Dec minute, a fifteen-hundredth of a day, a sixtieth of a Dec hour, 60 Dec seconds, 0.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} millidays, 0.96 bem, 57.6 bes; written as one b6 digit followed by one b10 digit
+    - [bem](#birunianequinoctialminute){#bem}: Birunian equinoctial minute, a sixtieth of a heh, a fourteen-hundred-fortieth of a day, 0.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"}[η]{.tool data-bs-toggle="tooltip" data-bs-title="base24 digit 6"} millidays, 25/24 Dec minutes, 60 bes
 - [m&sup2;](#squaremeter){#m2}: square meter, 6.25 square zem
     - [cm&sup2;](#squarecentimeter){#cm2}: square centimeter, 6.25 square centizem
     - [dm&sup2;](#squaredecimeter){#dm2}: square decimeter, 6.25 square decizem
@@ -114,7 +120,8 @@
     - [mr](#millirose){#mr}: compass millirose, a thousandth of a *r*otation along the horizon, .36 compass degrees
 - [rad](#radian){#rad}: radian, 1/𝜏 turns, 360/𝜏 degrees, 1/𝜋 turns, 180/𝜋 degrees
 - [RGB](#redgreenblue){#rgb}: red green blue
-- [s](#second){#s}: second, 1/90 millidays, 10/9 beats, 1 Dec second = 0.96 SI seconds
+- [s](#second){#s}: second, Dec second, a sixtieth of a Dec minute, 1/90 millidays, 10/9 beats, 1 Dec second = 0.96 SI seconds
+    - [bes](#birunianequinoctialsecond){#bes}: Birunian equinoctial second, a sixtieth of a bem, 1/86400 days, 1/86.4 millidays, 25/24 Dec seconds; the solar day counterpart of the SI second
     - [Ds](#decasecond){#decasec}: decasecond, ten Dec seconds, 1/9 millidays, 9.6 SI seconds
     - [ds](#decisecond){#ds}: decisecond, a tenth of a Dec second, 1/900 millidays, 1/9 beats, 96 milliseconds
     - [sid](#secondintervaldifference){#sid}: second interval difference, 1 SI second &minus; 1 Dec second, 1/24 Dec second, 1/25 SI second, 40 milliseconds
@@ -138,8 +145,8 @@
     - [hms](#hourminutesecond){#hms}: hour minute second, a tod written as an hod, moh, and sisom triplet
     - [dsisa](#dailysisecondaggregate){#dsisa}: daily SI second aggregate, SI seconds since midnight, tod &times; 86400
     - [hsisa](#hourlysisecondaggregate){#hsisa}: hourly SI second aggregate, SI seconds since the top of the hour, dsisa [&LeftFloor;]{.hyphen} 3600
-    - [hod](#hourofday){#hod}: hour of day, &LeftFloor;dsisa &div; 3600&RightFloor;, 0 to 23
-    - [moh](#minuteofhour){#moh}: minute of hour, &LeftFloor;hsisa &div; 60&RightFloor;, 0 to 59
+    - [hod](#hourofday){#hod}: hour of day in heh, &LeftFloor;dsisa &div; 3600&RightFloor;, 0 to 23
+    - [moh](#minuteofhour){#moh}: minute of hour in bem, &LeftFloor;hsisa &div; 60&RightFloor;, 0 to 59
     - [sisom](#sisecondofminute){#sisom}: SI second of minute, &LeftFloor;hsisa [&LeftFloor;]{.hyphen} 60&RightFloor;, 0 to 59
     - [mod](#millidayofday){#mod}: milliday of day, &LeftFloor;tod &times; 1000&RightFloor;, 0 to 999
     - [tom](#timeofmilliday){#tom}: time of milliday, the part of a tod left after its mod, tod &times; 1000 [&LeftFloor;]{.hyphen} 1 millidays, 0 to 100 beats
@@ -172,7 +179,7 @@
 - [x](#xun){#x}: xún (旬), decaday, a group of ten days, 2 pentadays, represented by x like the Roman numeral X
     - [pix](#positiveintegerxun){#pix}: positive integer xún, &LeftFloor;pid &div; 10&RightFloor;, 0 to 36
     - [nix](#negativeintegerxun){#nix}: negative integer xún, &LeftFloor;nid &div; 10&RightFloor;, -37 to -1
-    - [mix](#mixedintegerxun){#mix}: mixed integer xún, the first two digits of an nih mid
+    - [mix](#mixedintegerxun){#mix}: mixed integer xún, the first two digits of an niﾲ mid
     - [xir](#xuninterdecilerange){#xir}: xún interdecile range, Dox 1 to 8, the days between Dox 0 and 9
 - [y](#year){#y}: year
     - [my](#milliyear){#my}: milliyear, a thousandth of a year

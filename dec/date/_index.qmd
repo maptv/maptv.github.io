@@ -475,7 +475,7 @@ fullfracYear = (fracYear).toFixed(4)
 mod1FracYear = (fracYear % 1).toFixed(4)
 woyCards = ["🂡", "🂢", "🂣", "🂤", "🂥", "🂦", "🂧", "🂨", "🂩", "🂪", "🂫", "🂭", "🂮", "🂱", "🂲", "🂳", "🂴", "🂵", "🂶", "🂷", "🂸", "🂹", "🂺", "🂻", "🂽", "🂾", "🃁", "🃂", "🃃", "🃄", "🃅", "🃆", "🃇", "🃈", "🃉", "🃊", "🃋", "🃍", "🃎", "🃑", "🃒", "🃓", "🃔", "🃕", "🃖", "🃗", "🃘", "🃙", "🃚", "🃛", "🃝", "🃞", "🃟", "🂠"]
 woySuits = ["♤", "♡", "♢", "♧", "☆"]
-woySigns = ["𝍠", "𝍡", "𝍢", "𝍣", "𝍤", "𝍮", "𝍯", "𝍰", "𝍱", "𝍥", "𝍦", "𝍧", "𝍨"]
+woySigns = ["♈︎", "♉︎", "♊︎", "♋︎", "♌︎", "♍︎", "♎︎", "♏︎", "♐︎", "♑︎", "♒︎", "♓︎", "⛎︎"]
 dowDice = ["☐", "⚀", "⚁", "⚂", "⚃", "⚄", "⚅"]
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 motyLens = [31, 30, 31, 30, 31, 31, 30, 31, 30, 31, 31, 28 + leapInput];
@@ -1746,7 +1746,7 @@ code {
 #moonplot {
   overflow: visible;
 }
-/* Die faces, playing cards, half-dominoes, counting rods, and suit
+/* Die faces, playing cards, half-dominoes, zodiac signs, and suit
    symbols are all rare Unicode symbol-block characters. Some mobile
    browsers (notably iOS Safari) render them with emoji presentation —
    larger and with different metrics than the plain text glyph desktop
@@ -1757,7 +1757,7 @@ code {
 .playingcard span:not(:has(*)),
 .halfdomino span:not(:has(*)),
 .playingcardsuit span:not(:has(*)),
-.countingrod span:not(:has(*)) {
+.zodiacsign span:not(:has(*)) {
   font-variant-emoji: text;
   /* The padding below is tuned for Tahoma metrics. iOS has no Tahoma, so
      when the Google Fonts Tahoma import fails or is slow, the page falls
@@ -1815,7 +1815,7 @@ code {
   justify-content: center;
   align-items: center;
 }
-.countingrod span:not(:has(*)) {
+.zodiacsign span:not(:has(*)) {
   padding-bottom: 6px !important;
   padding-left: 0.5px !important;
   position: relative;
