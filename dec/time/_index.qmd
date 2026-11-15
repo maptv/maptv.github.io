@@ -1397,12 +1397,19 @@ longFloorHsl = () => textcolor(longFloor, piecewiseColor(longFloor / 10))
 saveFloorHsl = () => textcolor(saveFloor, piecewiseColor(saveFloor / 10))
 currFloor = longTest ? saveFloor : longFloor
 currFloorHsl = () => textcolor(currFloor, piecewiseColor(currFloor / 10))
-longAda = (zeroAda + longFloor / 10) % 1
-saveAda = (zeroAda + saveFloor / 10) % 1
+longAda = (zeroAda + longFloor / 10) % zeroNdaysInYear
+saveAda = (zeroAda + saveFloor / 10) % zeroNdaysInYear
 longDate = Math.floor(longAda)
+longDateHsl = () => textcolor(longDate, piecewiseColor(longDate / zeroNdaysInYear))
+minuDateHsl = () => textcolor(dstspan[0], piecewiseColor(dstspan[0] / zeroNdaysInYear))
+subsDateHsl = () => textcolor(dstspan[1], piecewiseColor(dstspan[1] / zeroNdaysInYear))
+// A literal "<" next to an inline ${…} in markdown is read by htl as the start of an HTML tag
+// ("invalid binding"), so the bracket is built here and "<" is interpolated as text.
+lt = "<"
+dstBracketHsl = () => htl.html`<span>[${minuDateHsl()}${lt}${longDateHsl()}${lt}${subsDateHsl()}]</span>`
 longTime = longAda % 1
 saveTime = saveAda % 1
-longTest = 7 < longDate && longDate < 245 
+longTest = dstspan[0] < longDate && longDate < dstspan[1]
 longTimeHsl = () => textcolor(longTime.toFixed(5).slice(2), piecewiseColor(longTime))
 saveTimeHsl = () => textcolor(saveTime.toFixed(5).slice(2), piecewiseColor(saveTime))
 currTime = longTest ? saveTime : longTime
@@ -1762,6 +1769,7 @@ hsla10 = [
 ]
 borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== b)
 countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
+// https://observablehq.com/@mootari/range-slider
 function interval(range = [], options = {}) {
   const [min = 0, max = 1] = range;
   const {
@@ -1769,7 +1777,7 @@ function interval(range = [], options = {}) {
     label = null,
     value = [min, max],
     collide = true,
-    format = ([start, end]) => `${start} … ${end}`,
+    format = ([start, end]) => `${start}=${end}\u2212${Math.abs(start-end)}`,
     color,
     width = 360,
     theme,
@@ -1855,19 +1863,19 @@ function rangeInput(options = {}) {
   const controls = {};
   const scope = randomScope();
   const clamp = (a, v, b) => v < a ? a : v > b ? b : v;
-  const dom = html`<div class=${`${scope} range-slider`} style=${{
+  const dom = htl.html`<div class=${`${scope} range-slider`} style=${{
     color,
     width: cssLength(width),
   }}>
-    ${controls.track = html`<div class="range-track">
-      ${controls.zone = html`<div class="range-track-zone">
-        ${controls.range = html`<div class="range-select" tabindex=0>
-          ${controls.min = html`<div class="thumb thumb-min" tabindex=0>`}
-          ${controls.max = html`<div class="thumb thumb-max" tabindex=0>`}
+    ${controls.track = htl.html`<div class="range-track">
+      ${controls.zone = htl.html`<div class="range-track-zone">
+        ${controls.range = htl.html`<div class="range-select" tabindex=0>
+          ${controls.min = htl.html`<div class="thumb thumb-min" tabindex=0>`}
+          ${controls.max = htl.html`<div class="thumb thumb-max" tabindex=0>`}
         `}
       `}
     `}
-    ${html`<style>${theme.replace(/:scope\b/g, '.'+scope)}`}
+    ${htl.html`<style>${theme.replace(/:scope\b/g, '.'+scope)}`}
   </div>`;
   let value = [], changed = false;
   Object.defineProperty(dom, 'value', {
@@ -1878,7 +1886,7 @@ function rangeInput(options = {}) {
     },
   });
   // Stays detached, only used to sanitize values while avoiding floating point issues.
-  const input = html`<input type=range ${{min, max, step}}>`;
+  const input = htl.html`<input type=range ${{min, max, step}}>`;
   const sanitize = (a, b) => {
     a = isNaN(a) ? min : ((input.value = a), input.valueAsNumber);
     b = isNaN(b) ? max : ((input.value = b), input.valueAsNumber);
@@ -1966,6 +1974,81 @@ function rangeInput(options = {}) {
   };
   return dom;
 }
+theme_Flat = `
+/* Options */
+:scope {
+  color: #3b99fc;
+  width: 240px;
+}
+
+:scope {
+  position: relative;
+  display: inline-block;
+  --thumb-size: 15px;
+  --thumb-radius: calc(var(--thumb-size) / 2);
+  padding: var(--thumb-radius) 0;
+  margin: 2px;
+  vertical-align: middle;
+}
+:scope .range-track {
+  box-sizing: border-box;
+  position: relative;
+  height: 7px;
+  background-color: hsl(0, 0%, 80%);
+  overflow: visible;
+  border-radius: 4px;
+  padding: 0 var(--thumb-radius);
+}
+:scope .range-track-zone {
+  box-sizing: border-box;
+  position: relative;
+}
+:scope .range-select {
+  box-sizing: border-box;
+  position: relative;
+  left: var(--range-min);
+  width: calc(var(--range-max) - var(--range-min));
+  cursor: ew-resize;
+  background: currentColor;
+  height: 7px;
+  border: inherit;
+}
+/* Expands the hotspot area. */
+:scope .range-select:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: var(--thumb-size);
+  left: 0;
+  top: calc(2px - var(--thumb-radius));
+}
+:scope .range-select:focus,
+:scope .thumb:focus {
+  outline: none;
+}
+:scope .thumb {
+  box-sizing: border-box;
+  position: absolute;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+
+  background: #fcfcfc;
+  top: -4px;
+  border-radius: 100%;
+  border: 1px solid hsl(0,0%,55%);
+  cursor: default;
+  margin: 0;
+}
+:scope .thumb:active {
+  box-shadow: inset 0 var(--thumb-size) #0002;
+}
+:scope .thumb-min {
+  left: calc(-1px - var(--thumb-radius));
+}
+:scope .thumb-max {
+  right: calc(-1px - var(--thumb-radius));
+}
+`
 ```
 
 ```{ojs}
