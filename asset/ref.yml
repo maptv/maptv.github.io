@@ -1,4 +1,18 @@
 references:
+- id: cgpm2026resolution5
+  author:
+    - literal: General Conference on Weights and Measures (CGPM)
+  citation-key: cgpm2026resolution5
+  DOI: 10.59161/CGPM2026RES5E
+  issued:
+    literal: 2026+228
+  accessed:
+    literal: 2026+228
+  publisher: International Bureau of Weights and Measures (BIPM)
+  title: >
+    Resolution 5 of the 28th CGPM (2026):
+    On the technical actions needed to ensure the continuity of UTC
+  URL: https://www.bipm.org/en/cgpm-2026/resolution-5
 - id: hinnant2021date
   author:
     - family: Hinnant

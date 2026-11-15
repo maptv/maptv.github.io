@@ -7389,6 +7389,15 @@ div.slider input[type="range"] {
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 
+<div id="ref-cgpm2026resolution5" class="csl-entry">
+
+General Conference on Weights and Measures (CGPM). 2026+228. *Resolution
+5 of the 28th CGPM (2026): On the Technical Actions Needed to Ensure the
+Continuity of UTC*. International Bureau of Weights and Measures (BIPM).
+<https://doi.org/10.59161/CGPM2026RES5E>.
+
+</div>
+
 <div id="ref-hinnant2021date" class="csl-entry">
 
 Hinnant, Howard. 2021+185.
