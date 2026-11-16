@@ -1,5 +1,5 @@
 ::: {#tbl-mass .unittable}
-| [US](#us){.bold .tool data-bs-toggle="tooltip" data-bs-title="United States"} mass units | grain             | gram            |
+| [US](#us){.bold .tool data-bs-toggle="tooltip" data-bs-title="United States"} mass unit  | grain             | gram            |
 | ---------------------------------------------------------------------------------------- | ----------------- | --------------- |
 | [0.9877]{.colorMass} [grains](https://en.wikipedia.org/wiki/Grain_(unit))                |  1                |  0.064          |
 | [0.96]{.colorCara}   [carats](https://en.wikipedia.org/wiki/Carat_(mass))                |  3                |  0.192          |

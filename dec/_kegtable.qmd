@@ -5,4 +5,3 @@
 | [1.1288]{.colorAvOz} [ounces](https://en.wikipedia.org/wiki/Ounce)          | 500 grains                                                                         | 32 [g]{.tool data-bs-toggle="tooltip" data-bs-title="grams"}                           |
 | [0.9877]{.colorMass} [pounds](https://en.wikipedia.org/wiki/Pound_(mass))   | 7 [kilograins]{.tool data-bs-toggle="tooltip" data-bs-title="thousands of grains"} | 448 [g]{.tool data-bs-toggle="tooltip" data-bs-title="grams"}                          |
 | [0.9877]{.colorMass} [tons](https://en.wikipedia.org/wiki/Short_ton)        | 14 [megagrains]{.tool data-bs-toggle="tooltip" data-bs-title="millions of grains"} | 896 [kg]{.tool data-bs-toggle="tooltip" data-bs-title="grams"}                         |
-                                                                             
