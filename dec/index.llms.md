@@ -148,11 +148,11 @@ The frequency range of the [visible](https://en.wikipedia.org/wiki/Visible_spect
 
 #### 13 Decioctave octave note
 
-In addition to [þ](#per), the limits of human hearing can also be expressed in decioctaves ([do](#do)), which are tenths of an [octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other) ([o](#o)), which is is a two-fold change in frequency. The audible range for humans is ~3 to ~103 [do](#do). The [range](https://en.wikipedia.org/wiki/Range_(music)#:~:text=the%20distance%20from%20the%20lowest%20to%20the%20highest%20pitch%20it%20can%20play) of an 88-key piano🎹is ~23.76 to ~3616.64 [þ](#per) or ~8 to ~80 [do](#do). The equations and code below convert between [o](#o) and [þ](#per).
+In addition to [þ](#per), the limits of human hearing can also be expressed in [octaves](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other) ([o](#o)), which are two-fold changes in frequency. The audible range for humans is ~3 to ~103 decioctaves ([do](#do)), which are tenths of an [o](#o). The approximate [range](https://en.wikipedia.org/wiki/Range_(music)#:~:text=the%20distance%20from%20the%20lowest%20to%20the%20highest%20pitch%20it%20can%20play) of an 88-key piano🎹is 23.76 to 3616.64 [þ](#per) or 8 to 80 [do](#do). Equations [4](#eq-octa) and [5](#eq-perb) and the [source code](https://en.wikipedia.org/wiki/Source_code#:~:text=human%20readable%20plain%20text%20that%20eventually%20results%20in%20controlling%20the%20behavior%20of%20a%20computer) below convert between [o](#o) and [þ](#per).
 
-$$\text{o} = \log_2\!\left(\frac{\text{p}}{14.1275}\right) \tag{4}$$
+$$\text{o} = \log_2\!\left(\frac{\text{þ}}{14.1275}\right) \tag{4}$$
 
-$$\text{p} = 14.1275 \times 2^{\text{o}} \tag{5}$$
+$$\text{þ} = 14.1275 \times 2^{\text{o}} \tag{5}$$
 
 ## Julia
 
@@ -227,17 +227,42 @@ perbeat(3)
 
 #### 14 Color and sound
 
-Each [do](#do) has a corresponding musical note ([n](#n)) that determines its color label. The idea of linking colors and musical notes dates back to the 1704 book by [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a) entitled [Opticks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[^1]. On 2025+080, I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm) by [Clint Goss](https://www.clintgoss.com)[^2], which presents a method of associating musical notes with colors by matching sound and light frequencies.
+Each [do](#do) has a corresponding musical note ([n](#n)) that determines its Decolor label. The idea of linking colors and musical notes dates back to the 1704 book by [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a) entitled [Opticks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[^1]. On 2025+080, I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm) by [Clint Goss](https://www.clintgoss.com)[^2], which presents a mathematical method of associating musical notes with colors by matching sound and light frequencies.
 
 $$\text{dividend} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} \text{modulus} = \text{dividend} - \text{modulus} \times \left\lfloor\dfrac{\text{dividend}}{\text{modulus}}\right\rfloor \tag{6}$$
 
 $$\text{n} = \text{o} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 1 \times 10 \tag{7}$$
 
-The lollipops🍭in the chart below represent the ten Dec notes in Octave 4. The lollipops and the [do](#do) values above them are labeled with the ten Dec colors. Beneath each lollipop is its frequency rounded to the nearest [þ](#per). Click or tap each lollipop to hear its associated sound. The chart demonstrates that data points can be labeled with both color and sound.
+The lollipops🍭in the chart below represent the ten Dec notes in Octave 4. The lollipops and the [do](#do) values above them are labeled with the ten main Decolors. Beneath each lollipop is its frequency rounded to the nearest [þ](#per). Click or tap a lollipop to hear its associated Dec sound label. The chart demonstrates that data points can be labeled with both color and sound.
 
 #### 15 Hour minute second
 
-Just as a [þ](#per) is the inverse of a [b](#b), a quotidie ([q](#q)) is the inverse of a [d](#d). **?@tbl-time** lists Dec [units of time](https://en.wikipedia.org/wiki/Unit_of_time) alongside their respective symbols and frequencies in [q](#q). These units and symbols can be used for
+Just as a [þ](#per) is the inverse of a [b](#b) and pace is the inverse of speed, a quotidie ([q](#q)) is the inverse of a [d](#d). [Table 3](#tbl-mul) below shows the names, symbols, and [t](#t) values of Dec turn [multiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#:~:text=the%20product%20of%20any%20quantity%20and%20an%20integer). Further below, [Table 4](#tbl-sub) lists the names and symbols of inverse turn (ʇ) values of Dec turn [submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20%28a).
+
+| name | symbol | t |
+|----|----|---:|
+| [gig](https://en.wikipedia.org/wiki/Giga-#:~:text=a%20factor%20of%20a%20short%2Dscale%20billion%20or%20long%2Dscale%20milliard) | [g](#g) | 1000000000 |
+| [meg](https://en.wikipedia.org/wiki/Mega-#:~:text=a%20factor%20of%20one%20million) | [m](#m) | 1000000 |
+| [kilo](https://en.wikipedia.org/wiki/Kilo-#:~:text=multiplication%20by%20one%20thousand) | [k](#k) | 1000 |
+| [baek](https://en.wikipedia.org/wiki/Korean_birthday_celebrations#Baek_Il_%28%EB%B0%B1%EC%9D%BC%29:~:text=day%20celebration%29.%20The-,100th%20day%20celebration,-originates%20from%20a) | [ﾲ](#bae) | 100 |
+| [xún](https://en.wikipedia.org/wiki/Chinese_calendar#:~:text=into%20nine%2D%20or-,ten%2Dday%20weeks,-known%20as%20x%C3%BAn) | [x](#x) | 10 |
+| [pent](https://en.wikipedia.org/wiki/Numeral_prefix#Table_of_number_prefixes_in_English:~:text=%5B18%5D-,penta,-%2D) | [p](#p) | 5 |
+
+Table 3
+
+| name | symbol | ʇ |
+|----|----|---:|
+| [dec](https://en.wikipedia.org/wiki/Deci-#:~:text=a%20factor%20of%20one%20tenth) | [⅒](#dd) | 10 |
+| [hour](https://en.wikipedia.org/wiki/Hour#:~:text=defined%20contemporarily%20as%20exactly%203%2C600%20seconds) | [h](#h) | 25 |
+| [cent](https://en.wikipedia.org/wiki/Centi-#:~:text=a%20factor%20of%20one%20hundredth) | [¢](#cd) | 100 |
+| [mill](https://en.wikipedia.org/wiki/Milli-#:~:text=a%20factor%20of%20one%20thousandth) | [₥](#md) | 1000 |
+| [minute](https://en.wikipedia.org/wiki/Second#Etymology:~:text=prima%2C%20meaning%20%27-,first%20small%20part,-%27%2C%20i.e.%20first) | [m](#m) | 1500 |
+| [line](https://en.wikipedia.org/wiki/Line#Music:~:text=a%20linear%20succession%20of%20musical%20tones) | [l](#l) | 10000 |
+| [second](https://en.wikipedia.org/wiki/Second#Etymology:~:text=minuta%20secunda%2C%20%27-,second%20small%20part,-%27%2C%20dividing%20again%20into) | [s](#s) | 90000 |
+| [beat](https://en.wikipedia.org/wiki/Beat#Other_uses_in_music:~:text=the%20basic%20time%20in%20music) | [b](#b) | 100000 |
+| [micro](https://en.wikipedia.org/wiki/Micro-#:~:text=a%20factor%20of%20one%20millionth) | [µ](#ud) | 1000000 |
+
+Table 4
 
 #### 16 Système international d’unités
 
@@ -253,7 +278,7 @@ Unlike Dec and [SI](#si), the [US](#us) customary measurement system does not us
 
 #### 18 Length and distance
 
-The [unidimensional](https://en.wiktionary.org/wiki/unidimensional#:~:text=not%20comparable%29-,one%2Ddimensional,-quotations%C2%A0%E2%96%BC) (1D) units in [Table 3](#tbl-1d) below can be divided into two groups: [human-](https://en.wikipedia.org/wiki/List_of_human-based_units_of_measurement#:~:text=units%20of%20measurement%20based%20on%20human%20body%20parts) or horse-based length units and [surveying](https://en.wikipedia.org/wiki/Surveying#:~:text=determining%20the%20terrestrial%20positions%20of%20points%20based%20on%20the%20distances%20and%20angles%20between%20them) distance units. A horse🐴length is about as long as a [cruiser](https://en.wikipedia.org/wiki/Cruiser_(motorcycle)#:~:text=a%20motorcycle%20in%20the%20style%20of%20those%20made%20by%20American%20manufacturers) or [touring motorcycle](https://en.wikipedia.org/wiki/Touring_motorcycle#:~:text=a%20type%20of%20motorcycle%20designed%20for%20touring)🏍️, approximately equivalent to the height of the tallest basketball🏀players, and roughly half of the length of a [compact](https://en.wikipedia.org/wiki/Compact_car#:~:text=sits%20between%20subcompact%20cars%20and%20mid%2Dsize%20cars) to [mid-size](https://en.wikipedia.org/wiki/Mid-size_car#:~:text=larger%20than%20compact%20cars%20and%20smaller%20than%20full%2Dsize%20cars) car.
+The [unidimensional](https://en.wiktionary.org/wiki/unidimensional#:~:text=not%20comparable%29-,one%2Ddimensional,-quotations%C2%A0%E2%96%BC) (1D) units in [Table 5](#tbl-1d) below can be divided into two groups: [human-](https://en.wikipedia.org/wiki/List_of_human-based_units_of_measurement#:~:text=units%20of%20measurement%20based%20on%20human%20body%20parts) or horse-based length units and [surveying](https://en.wikipedia.org/wiki/Surveying#:~:text=determining%20the%20terrestrial%20positions%20of%20points%20based%20on%20the%20distances%20and%20angles%20between%20them) distance units. A horse🐴length is about as long as a [cruiser](https://en.wikipedia.org/wiki/Cruiser_(motorcycle)#:~:text=a%20motorcycle%20in%20the%20style%20of%20those%20made%20by%20American%20manufacturers) or [touring motorcycle](https://en.wikipedia.org/wiki/Touring_motorcycle#:~:text=a%20type%20of%20motorcycle%20designed%20for%20touring)🏍️, approximately equivalent to the height of the tallest basketball🏀players, and roughly half of the length of a [compact](https://en.wikipedia.org/wiki/Compact_car#:~:text=sits%20between%20subcompact%20cars%20and%20mid%2Dsize%20cars) to [mid-size](https://en.wikipedia.org/wiki/Mid-size_car#:~:text=larger%20than%20compact%20cars%20and%20smaller%20than%20full%2Dsize%20cars) car.
 
 | [US](#us) 1D unit | [zem](#z) | meter |
 |----|----|----|
@@ -274,7 +299,7 @@ The [unidimensional](https://en.wiktionary.org/wiki/unidimensional#:~:text=not%2
 | 0.9942 [miles](https://en.wikipedia.org/wiki/Mile) | 4000 | 1600 |
 | 0.9942 [leagues](https://en.wikipedia.org/wiki/League_(unit)) | 12000 | 4800 |
 
-Table 3
+Table 5
 
 #### 19 Ucm per heh
 
@@ -287,7 +312,7 @@ When we divide a 1D unit by a time unit, we get a speed unit. A “[US](#us) cus
 | 0.9942 [miles/hour](https://en.wikipedia.org/wiki/Miles_per_hour) | 0.96 | 1.6 |
 | 0.9448 yards/second | 2.025 | 3.375 |
 
-Table 4
+Table 6
 
 #### 20 Are hectare acre
 
@@ -301,7 +326,7 @@ If we raise a 1D unit to the second power, we get a [bidimensional](https://en.w
 | 0.9884 [acres](https://en.wikipedia.org/wiki/Acre) | 25 × 10⁷ | 4 × 10⁷ |
 | 0.9884 [sq. miles](https://en.wikipedia.org/wiki/Square_mile) | 16 × 10¹⁰ | 256 × 10⁸ |
 
-Table 5
+Table 7
 
 #### 21 Drop wineglass keg
 
@@ -324,7 +349,7 @@ Table 5
 | 1.0735 [hogsheads](https://en.wikipedia.org/wiki/Hogshead) | 4000000 | 256000 |
 | 0.9535 [cu. yards](https://en.wikipedia.org/wiki/Cubic_yard) | 11390625 | 729000 |
 
-Table 6
+Table 8
 
 #### 22 Grain pound ton
 
@@ -338,7 +363,7 @@ Dec and [SI](#si) measurements of mass are based on volumes of water🌊. A [dz�
 | 0.9877 [pounds](https://en.wikipedia.org/wiki/Pound_(mass)) | 7000 | 448 |
 | 0.9877 [tons](https://en.wikipedia.org/wiki/Short_ton) | 14000000 | 896000 |
 
-Table 7
+Table 9
 
 #### 23 Body mass index (bmi)
 
