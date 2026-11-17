@@ -630,6 +630,7 @@ conversionFactor = costype === "turns" ? "" : costype === "radians" ?  tex`\,\ta
 zemsLeft = 1000 - 50 * Math.floor(now / 86400000 % 1 * 1000 % 1 * 100 % 21)
 zLeft = textcolor(zemsLeft, `hsl(${d3.hsl(piecewiseColor(zemsLeft / 1000)).h}` + slStr)
 point0long = long2turn(Place_A[0], 1)
+point1long = long2turn(Place_B[0], 1)
 point0zone = Math.floor(point0long)
 point1zone = Math.floor(point1long)
 point0lHsl = textcolor(parseFloat(point0long.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(point0long / 10)).h}` + slStr)
@@ -902,9 +903,9 @@ Place_A = coordinates[0]
 Place_B = coordinates[1]
 distance_km = (d3.geoDistance(Place_A, Place_B)* 6371).toFixed(0)
 distance_mc = distance_km / 40
-distance_mcHsl = () => textcolor(parseFloat(distance_mc.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
+distance_mcHsl = () => textcolor(parseFloat(distance_mc.toFixed(0)), piecewiseColor(distance_mc % 1000 / 1000))
 distance_c = distance_mc / 1000
-distance_cHsl = () => textcolor(parseFloat(distance_c.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(distance_c % 1)).h}` + slStr)
+distance_cHsl = () => textcolor(parseFloat(distance_c.toFixed(3)), piecewiseColor(distance_c % 1))
 velocity_v = travelspeed / 1000
 velocity_vHsl = () => textcolor(parseFloat(velocity_v.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
 velocity_mvHsl = textcolor(parseFloat(travelspeed.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(travelspeed / 1000)).h}` + slStr)
