@@ -98,7 +98,9 @@ You can approximate a [z](#z) using your hands🤲. With your palms flat on a ta
 
 ![](../asset/squareZem.svg)[Wikimedia](https://commons.wikimedia.org/wiki/File:Extended_arm.jpg)
 
-To visualize a square zem ([z²](#z2)), imagine two or four people making a square with their arms💪by each placing their right hand on the right biceps of the another person and their left hand on the their own right biceps.
+To visualize a square zem ([z²](#z2)), imagine two people making a square with their forearms💪. Each of the two people creates a corner and two sides of the square by holding their right elbow with their left hand, like [John Wayne](https://en.wikipedia.org/wiki/John_Wayne#:~:text=Wayne%2C%20was-,an%20American%20actor,-.%20Nicknamed%20%22Duke) at the end of the 1956 film [The Searchers](https://en.wikipedia.org/wiki/The_Searchers#:~:text=a%201956%20American%20epic%20Western%20film), and then completes the square by placing their right hand on the right elbow of other person.
+
+![](../asset/Big-John-holding-his-arm_scaled.png)[True West](https://www.truewestmagazine.com/article/the-searchers-2/#:~:text=he%20grabbed%20his%20right%20arm%20with%20his%20left%20hand%20at%20the%20elbow)
 
 ![](../asset/Man_Lifting_Barbell_Cartoon.svg)[Wikimedia](https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg)
 
