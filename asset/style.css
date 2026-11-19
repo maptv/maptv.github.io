@@ -3,6 +3,7 @@
    Ogham font (iOS may not), so load Noto Sans Ogham; its unicode-range
    keeps browsers from downloading it on pages without Ogham text. */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Ogham&display=swap");
+
 html {
   max-width: 100%;
   overflow-x: hidden;
@@ -40,6 +41,7 @@ div[data-code-copy="false"] button.code-copy-button {
 .iosevka {
   font-family: "Iosevka", sans-serif !important;
 }
+
 #citelist ol li {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -530,4 +532,18 @@ a.uri {
    which Ogham fonts draw as a bare stem line. */
 .ogham {
   font-family: "Noto Sans Ogham", "Segoe UI Historic", "Apple Symbols", Geneva, sans-serif;
+}
+
+.raise {
+  position: relative;
+  top: -0.15em; /* Adjust this value to raise it higher or lower */
+}
+
+.lower {
+  position: relative;
+  top: 0.15em; /* Adjust this value to raise it higher or lower */
+}
+
+.big {
+  font-size: 1.1em;
 }
