@@ -617,6 +617,17 @@ decYearP0hsl = () => textcolor(decYearP0, `hsl(${d3.hsl(piecewiseColor(decYearP0
 decDateP0hsl = () => textcolor(decDateP0pad, `hsl(${d3.hsl(piecewiseColor(decDateP0 / (365 + isLeapP0))).h}` + slStr)
 decYdaP0hsl = textcolor(decYdaP0.toFixed(5).padStart(9, "0"), `hsl(${d3.hsl(piecewiseColor(decYdaP0 / (365 + isLeapP0))).h}` + slStr)
 decTimeP0hsl = () => textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decTimeP0cmd = Math.floor(decTimeP0 * 1e5)
+decTimeP0mil = Math.floor(decTimeP0 * 1e3)
+decTimeP0h25 = Math.floor(decTimeP0 * 25)
+decTimeP0m60 = Math.floor(decTimeP0 * 1500) % 60
+decTimeP0s60 = Math.floor(decTimeP0 * 9e4) % 60
+decTimeP0cmdHsl = textcolor(String(decTimeP0cmd).padStart(5, "0"), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decTimeP0milHsl = textcolor(String(decTimeP0mil).padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decTimeP0s90Hsl = textcolor(String(Math.floor(decTimeP0 * 9e4) % 90).padStart(2, "0"), `hsl(${d3.hsl(piecewiseColor(decTimeP0 * 1e3 % 1)).h}` + slStr)
+decTimeP0h25Hsl = textcolor(String(decTimeP0h25).padStart(2, "0"), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decTimeP0m60Hsl = textcolor(String(decTimeP0m60).padStart(2, "0"), `hsl(${d3.hsl(piecewiseColor(decTimeP0 * 25 % 1)).h}` + slStr)
+decTimeP0s60Hsl = textcolor(String(decTimeP0s60).padStart(2, "0"), `hsl(${d3.hsl(piecewiseColor(decTimeP0 * 1500 % 1)).h}` + slStr)
 decDekP0hsl = textcolor(decDekP0, `hsl(${d3.hsl(piecewiseColor(decDekP0 / 37)).h}` + slStr)
 decDodP0hsl = textcolor(decDodP0, `hsl(${d3.hsl(piecewiseColor(decDodP0 / 10)).h}` + slStr)
 decLon = longitude % 10
