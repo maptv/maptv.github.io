@@ -1818,7 +1818,8 @@ hCara = d3.hsl(piecewiseColor(192 / 200)).h
 hAvOz = d3.hsl(piecewiseColor(32 / 28.349523125  % 1)).h
 hFlOz = d3.hsl(piecewiseColor(32 / 29.5735295625 % 1)).h
 hInch = d3.hsl(piecewiseColor(fInch)).h
-hPerS = d3.hsl(piecewiseColor(fInch * .96)).h
+hPerS = d3.hsl(piecewiseColor(fInch / .96 % 1)).h
+hMph = d3.hsl(piecewiseColor(fMile / .96 % 1)).h
 hSqIn = d3.hsl(piecewiseColor(fInch**2)).h
 hCuIn = d3.hsl(piecewiseColor(fInch**3)).h
 hMile = d3.hsl(piecewiseColor(fMile)).h
@@ -3074,6 +3075,13 @@ html`
 .colorMile {
   background: hsl(${hMile} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hMile}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px .5px;
+  border-radius: 4px;
+  font-weight: 400;
+}
+.colorMph {
+  background: hsl(${hMph} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hMph}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;

@@ -2,9 +2,9 @@
 
 | [US](#us){.bold .tool data-bs-toggle="tooltip" data-bs-title="United States"} speed unit  | [mv](#mv){.bold .tool data-bs-toggle="tooltip" data-bs-title="milliomegar"} | [kmph](#kmph){#kilometersperhour .bold .tool data-bs-toggle="tooltip" data-bs-title="kilometers per hour"} |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| [0.9448]{.colorPerS} [inches/second](https://en.wikipedia.org/wiki/Inch_per_second)       |  0.05625                                                                     |  0.09375                                                                         |
-| [0.9448]{.colorPerS} [feet/second](https://en.wikipedia.org/wiki/Foot_per_second)         |  0.675                                                                       |  0.675                                                                           |
-| [0.9942]{.colorMile} [miles/hour](https://en.wikipedia.org/wiki/Miles_per_hour)           |  0.96                                                                        |  1.6                                                                             |
-| [0.9448]{.colorPerS} yards/second                                                         |  2.025                                                                       |  3.375                                                                           |
+| [1.0253]{.colorPerS} [inches/second](https://en.wikipedia.org/wiki/Inch_per_second)       |  0.05625                                                                     |  0.09                                                                            |
+| [1.0253]{.colorPerS} [feet/second](https://en.wikipedia.org/wiki/Foot_per_second)         |  0.675                                                                       |  1.08                                                                            |
+| [1.0356]{.colorMph} [miles/hour](https://en.wikipedia.org/wiki/Miles_per_hour)           |  1                                                                           |  1.6                                                                             |
+| [1.0253]{.colorPerS} yards/second                                                         |  2.025                                                                       |  3.24                                                                            |
 
 ::: 
