@@ -131,7 +131,7 @@
     - [sob](#soiofbimester){#sob}: soi of bimester
 - [SI](#internationalsystemofunits){#si}: [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
 - [sol](#speedoflight){#sol}: speed of light, 647.55170928 kiloomegar, 299792458 meters per second
-- [sos](#speedofsound){#sos}: speed of sound, 735.048 milliomegar, 340.3 meters per second
+- [sos](#speedofsound){#sos}: speed of sound at 15 degrees Celsius, 735.048 milliomegar, 326.688 meters per Dec second, 340.3 meters per SI second
 - [sda](#solardeclinationangle){#sda}: solar declination angle, the latitude at which the Sun is directly overhead
 - [sea](#solarelevationangle){#sea}: solar elevation angle, the angle of the Sun above the horizon, negative when the Sun is below the horizon
 - [𝜏](#tau){#2pi}: 2𝜋 or approximately 6.2831853
