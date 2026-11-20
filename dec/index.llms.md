@@ -128,7 +128,9 @@ The highway🛣️speed of a car🚗is approximately tenfold slower than the cru
 
 Dec refers to [cmd](#cmd) as beats ([b](#b)) because they are similar in duration to heart❤️beats or [musical beats](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=I-,n%20music%20and%20music%20theory%2C%20the%20beat%20is%20the%20basic%20unit%20of%20time,-%2C%20the). In Dec, 1 [d](#d) can be split into 100 centiday ([cd](#cd)) or 100000 (10⁵) [b](#b) and 1 [mc](#mc) can be divided into 100 kilozem ([kz](#kz)) or 10⁵ [z](#z). The kilo prefix means a thousand (10³). By changing prefixes and units, we can adapt [mv](#mv) for different [magnitudes](https://en.wikipedia.org/wiki/Magnitude_%28mathematics%29#:~:text=a%20property%20which%20determines%20whether%20the%20object%20is%20larger%20or%20smaller%20than%20other%20objects%20of%20the%20same%20kind): [mv](#mv) = [mc](#mc)/[d](#d) = [kz](#kz)/[cd](#cd) = [z](#z)/[b](#b).
 
-Since 1924, the distance of an Olympic marathon has been 1.054875 [mc](#mc). Dec defines a marathon to be 1 [mc](#mc), which is the [original definition](https://en.wikipedia.org/wiki/Marathon#Distance:~:text=Games%20were%20about-,40%20kilometres,-%2824.9%C2%A0mi) of a marathon from the [first modern Olympic games](https://en.wikipedia.org/wiki/1896_Summer_Olympics#:~:text=the%20first%20international%20Olympic%20Games%20held%20in%20modern%20history) in 1896. The 2026 [world record marathon time](https://en.wikipedia.org/wiki/Marathon#Area_records:~:text=World-,1%3A59%3A30,2026,-Sabastian%20Sawe%C2%A0) is about 83 [md](#md). If we ran 1 [mc](#mc) in 83 [md](#md), our mean [pace](https://en.wikipedia.org/wiki/Running#Stride_rate_and_types:~:text=a%20measure%20of%20slowness) would be 83 [b](#b) per [kz](#kz) and our mean speed would be roughly 12.0482 [mv](#mv).
+Since 1924, the distance of an Olympic marathon has been 1.054875 [mc](#mc). Dec defines a marathon to be 1 [mc](#mc), which is the [original definition](https://en.wikipedia.org/wiki/Marathon#Distance:~:text=Games%20were%20about-,40%20kilometres,-%2824.9%C2%A0mi) of a marathon from the [first modern Olympic games](https://en.wikipedia.org/wiki/1896_Summer_Olympics#:~:text=the%20first%20international%20Olympic%20Games%20held%20in%20modern%20history) in 1896. The 2026 [world record marathon time](https://en.wikipedia.org/wiki/Marathon#Area_records:~:text=World-,1%3A59%3A30,2026,-Sabastian%20Sawe%C2%A0) is about 83 [md](#md). If we ran 1 [mc](#mc) in 83 [md](#md), our mean [slowness](https://en.wiktionary.org/wiki/slowness#Noun:~:text=the%20reciprocal%20of%20velocity%2C%20that%20delineates%20the%20amount%20of%20time%20required%20for%20an%20object%20to%20travel%20a%20given%20distance) would be 83 [b](#b) per [kz](#kz) and our mean speed would be roughly 12.0482 [mv](#mv).
+
+A brisk walk🚶is about four times slower than a world record marathon. If we walk at 3 [mv](#mv), or 4.8 kilometers per Dec hour, and each of our Dec steps is 2 [z](#z) long, we take 1.5 steps per [b](#b) or 100 steps per Dec minute, a typical walking [cadence](https://en.wikipedia.org/wiki/Cadence_(gait)). Our mean slowness would be about 333 [b](#b) per [kz](#kz), each Dec mile would take 2000 steps and 20 Dec minutes, and the popular daily goal of 10000 steps would cover 5 Dec miles in 100 Dec minutes or about 67 [md](#md).
 
 #### 11 Heart rate tempo
 
@@ -136,7 +138,7 @@ A [normal resting heart rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=h
 
 #### 12 Frequency period wavelength
 
-Dec uses [þ](#per), [b](#b), and [z](#z), often with metric prefixes, to measure the [frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time), [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency), and [wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats), respectively, of a sound or light wave. Equations [1](#eq-freq), [2](#eq-peri), and [3](#eq-wave) below show how frequency, period, and wavelength are related to each other and to speed. The speed of light ([sol](#sol)) is around 647551.657 [v](#v), which is about 880965 times faster than the [sos](#sos).
+Dec uses [þ](#per), [b](#b), and [z](#z), often with metric prefixes, to measure the [frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time), [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency), and [wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats), respectively, of a sound or light wave. Equations [1](#eq-freq), [2](#eq-peri), and [3](#eq-wave) below show how frequency, period, and wavelength are related to each other and to speed. The speed of light ([sol](#sol)) is around 647551.709 [v](#v), which is about 880965 times faster than the [sos](#sos).
 
 $$\text{frequency} = \dfrac{\text{speed}}{\text{wavelength}} = \dfrac{1}{\text{period}} \tag{1}$$
 
@@ -237,7 +239,7 @@ The lollipops🍭in the chart below represent the ten Dec notes in Octave 4. The
 
 #### 15 Multiplicative inverse pair (mip)
 
-Dec classifies [b](#b) and [þ](#per) as a “[multiplicative inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=denoted%20by,x%E2%88%921) pair” ([mip](#mip)). We can measure period in [b](#b) or [d](#d), frequency in [þ](#per) or inverse days called quotidie ([q](#q)), speed in [v](#v), and pace in inverse [v](#v) called upsilonr ([ʌ](#ur)). Whereas [d](#d) and [v](#v) are turns ([T](#T)), [q](#q) and [ʌ](#ur) are inverse turns ([ꓕ](#inverset)). The frequency of a [cd](#cd) is 100 [q](#q) or 0.01 [þ](#per). A speed of 10 [mv](#mv) or 0.01 [v](#v) corresponds with a pace of 100 [ʌ](#ur).
+Dec classifies [b](#b) and [þ](#per) as a “[multiplicative inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=denoted%20by,x%E2%88%921) pair” ([mip](#mip)). We can measure period in [b](#b) or [d](#d), frequency in [þ](#per) or inverse days called quotidie ([q](#q)), speed in [v](#v), and slowness in inverse [v](#v) called upsilonr ([ʌ](#ur)). Whereas [d](#d) and [v](#v) are turns ([T](#T)), [q](#q) and [ʌ](#ur) are inverse turns ([ꓕ](#inverset)). The frequency of a [cd](#cd) is 100 [q](#q) or 0.01 [þ](#per). A speed of 10 [mv](#mv) or 0.01 [v](#v) corresponds with a slowness of 100 [ʌ](#ur).
 
 $$\textsf{þ} = \textsf{b}^{\text{-1}} = \dfrac{1}{\textsf{b}} \tag{8}$$
 
@@ -308,7 +310,7 @@ Unlike Dec and [SI](#si), the [US](#us) customary measurement system does not us
 
 #### 19 Length and distance
 
-The [unidimensional](https://en.wiktionary.org/wiki/unidimensional#:~:text=not%20comparable%29-,one%2Ddimensional,-quotations%C2%A0%E2%96%BC) (1D) units in [Table 5](#tbl-1d) below can be divided into two groups: [human-](https://en.wikipedia.org/wiki/List_of_human-based_units_of_measurement#:~:text=units%20of%20measurement%20based%20on%20human%20body%20parts) or horse-based length units and [surveying](https://en.wikipedia.org/wiki/Surveying#:~:text=determining%20the%20terrestrial%20positions%20of%20points%20based%20on%20the%20distances%20and%20angles%20between%20them) distance units. A horse🐴length is about as long as a [cruiser](https://en.wikipedia.org/wiki/Cruiser_(motorcycle)#:~:text=a%20motorcycle%20in%20the%20style%20of%20those%20made%20by%20American%20manufacturers) or [touring motorcycle](https://en.wikipedia.org/wiki/Touring_motorcycle#:~:text=a%20type%20of%20motorcycle%20designed%20for%20touring)🏍️, approximately equivalent to the height of the tallest basketball🏀players, and roughly half of the length of a [compact](https://en.wikipedia.org/wiki/Compact_car#:~:text=sits%20between%20subcompact%20cars%20and%20mid%2Dsize%20cars) to [mid-size](https://en.wikipedia.org/wiki/Mid-size_car#:~:text=larger%20than%20compact%20cars%20and%20smaller%20than%20full%2Dsize%20cars) car.
+The [unidimensional](https://en.wiktionary.org/wiki/unidimensional#:~:text=not%20comparable%29-,one%2Ddimensional,-quotations%C2%A0%E2%96%BC) (1D) [US](#us) customary units in [Table 5](#tbl-1d) below can be split into two groups: [human-](https://en.wikipedia.org/wiki/List_of_human-based_units_of_measurement#:~:text=units%20of%20measurement%20based%20on%20human%20body%20parts) or horse-based length units and [surveying](https://en.wikipedia.org/wiki/Surveying#:~:text=determining%20the%20terrestrial%20positions%20of%20points%20based%20on%20the%20distances%20and%20angles%20between%20them) distance units. A horse🐴length is about as long as a [cruiser](https://en.wikipedia.org/wiki/Cruiser_%28motorcycle%29#:~:text=a%20motorcycle%20in%20the%20style%20of%20those%20made%20by%20American%20manufacturers) or [touring motorcycle](https://en.wikipedia.org/wiki/Touring_motorcycle#:~:text=a%20type%20of%20motorcycle%20designed%20for%20touring)🏍️, as long as the [tallest National Basketball🏀Association players](https://en.wikipedia.org/wiki/List_of_tallest_players_in_NBA_history#List) are tall, and roughly half of the length of a [compact](https://en.wikipedia.org/wiki/Compact_car#:~:text=sits%20between%20subcompact%20cars%20and%20mid%2Dsize%20cars) to [mid-size](https://en.wikipedia.org/wiki/Mid-size_car#:~:text=larger%20than%20compact%20cars%20and%20smaller%20than%20full%2Dsize%20cars) car.
 
 | [US](#us) 1D unit | [zem](#z) | meter |
 |----|----|----|
@@ -319,8 +321,9 @@ The [unidimensional](https://en.wiktionary.org/wiki/unidimensional#:~:text=not%2
 | 0.9942 [links](https://en.wikipedia.org/wiki/Link_(unit)) | 0.5 | 0.2 |
 | 0.9843 [spans](https://en.wikipedia.org/wiki/Span_(unit)) | 0.5625 | 0.225 |
 | 0.9843 [feet](https://en.wikipedia.org/wiki/Foot_(unit)) | 0.75 | 0.3 |
-| 0.9843 [steps](https://en.wikipedia.org/wiki/Pace_(unit)) | 1.875 | 0.75 |
+| 1.0499 [steps](https://en.wikipedia.org/wiki/Pace_(unit)) | 2 | 0.8 |
 | 0.9843 [yards](https://en.wikipedia.org/wiki/Yard) | 2.25 | 0.9 |
+| 1.0499 [paces](https://en.wikipedia.org/wiki/Pace_(unit)#Roman_pace) | 4 | 1.6 |
 | 0.9843 [fathoms](https://en.wikipedia.org/wiki/Fathom) | 4.5 | 1.8 |
 | 1 [horse length](https://en.wikipedia.org/wiki/Horse_length) | 6 | 2.4 |
 | 0.9942 [rods](https://en.wikipedia.org/wiki/Rod_(unit)) | 12.5 | 5 |
@@ -333,7 +336,7 @@ Table 5
 
 #### 20 Miles per hour
 
-When we divide a 1D unit by a time unit, we get a speed unit. A Dec mile per Dec hour ([h](#h)) is exactly 1 [z](#z) per [b](#b) and a Dec [knot](https://en.wikipedia.org/wiki/Knot_(unit)#:~:text=a%20unit%20of%20speed%20equal%20to%20one%20nautical%20mile%20per%20hour), which is used to measure the speed of aircraft and watercraft, is $10\over9$ [z](#z) per [b](#b). Dec refers to $10\over9$ [z](#z) as a [cubit](https://en.wikipedia.org/wiki/Cubit#:~:text=an%20ancient%20unit%20of%20length%20based%20on%20the%20distance%20from%20the%20elbow%20to%20the%20tip%20of%20the%20middle%20finger) or [ell](https://en.wikipedia.org/wiki/Ell#:~:text=a%20northwestern%20European%20unit%20of%20measurement) ([ℓ](#ell)). An [mv](#mv) can also be expressed as one [ℓ](#ell) per [s](#s): [mv](#mv) = $\ell\over\text{s}$.
+When we divide a 1D unit by a time unit, we get a speed unit. A Dec mile per [h](#h) is exactly one [mv](#mv) or one [z](#z) per [b](#b). A Dec [knot](https://en.wikipedia.org/wiki/Knot_(unit)#:~:text=a%20unit%20of%20speed%20equal%20to%20one%20nautical%20mile%20per%20hour), which is used to measure the speed of aircraft and watercraft, is 10/9 [z](#z) per [b](#b). Dec refers to 10/9 [z](#z) as a [cubit](https://en.wikipedia.org/wiki/Cubit#:~:text=an%20ancient%20unit%20of%20length%20based%20on%20the%20distance%20from%20the%20elbow%20to%20the%20tip%20of%20the%20middle%20finger) or [ell](https://en.wikipedia.org/wiki/Ell#:~:text=a%20northwestern%20European%20unit%20of%20measurement) ([ℓ](#ell)). An [mv](#mv) can also be expressed as one [ℓ](#ell) per [s](#s): [mv](#mv) = [ℓ](#ell) ÷ [s](#s) = mile ÷ [h](#h). A Dec pace is 2 Dec steps, 4 [z](#z), 16 decimeters, or 64 Dec inches, so a thousand paces make a Dec mile, just as a thousand Roman paces ([*mille passus*](https://en.wikipedia.org/wiki/Mile#Roman)) made a Roman mile.
 
 | [US](#us) speed unit | [mv](#mv) | [kmph](#kmph) |
 |----|----|----|
@@ -417,7 +420,7 @@ In 1788, [Claude Boniface Collignon](https://en.wikipedia.org/wiki/Claude_Bonifa
 
 This article introduces the Dec measurement system and describes how Dec uses the properties of the planet Earth to define units based on turns for geographic coordinates, compass directions, distances, speeds, areas, volumes, weights, frequencies, wavelengths, and periods. Dec units can be combined with metric prefixes to form multiples or submultiples.
 
-Dec attempts to bridge the gap, improve interoperability, and facilitate conversion between the [US](#us) customary and [SI](#si) measurement systems by redefining certain units. Redefinition of [US](#us) customary units makes human-based length units ~1.58% shorter and surveying distance units ~0.58% shorter. Dec also redefines [SI](#si) seconds ([sis](#sis)) to be 4% shorter.
+Dec attempts to bridge the gap, improve interoperability, and facilitate conversion between the [US](#us) customary and [SI](#si) measurement systems by redefining certain units. Redefinition of [US](#us) customary units makes most human-based length units ~1.58% shorter, steps and paces ~4.99% longer, and surveying distance units ~0.58% shorter. Dec also redefines [SI](#si) seconds ([sis](#sis)) to be 4% shorter.
 
 Dec color labels can convey an impression of a value at a glance👀. Dec sound labels allow us to quickly estimate a value without even having to look at it🙈. Both types of labels can help avoid confusion when [decimal separators](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=In%20English%2Dspeaking%20countries%2C%20the%20decimal%20point%20is%20usually%20a%20small%20dot%20%28.%29%20placed%20either%20on%20the%20baseline) appear, disappear, or move due to a measurement unit change such as the addition, removal, or replacement of a metric prefix.
 
@@ -631,7 +634,7 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
   - [sob](#soiofbimester): soi of bimester
 - [SI](#internationalsystemofunits): [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
 - [sol](#speedoflight): speed of light, 647.55170928 kiloomegar, 299792458 meters per second
-- [sos](#speedofsound): speed of sound, 735.048 milliomegar, 340.3 meters per second
+- [sos](#speedofsound): speed of sound at 15 degrees Celsius, 735.048 milliomegar, 326.688 meters per Dec second, 340.3 meters per SI second
 - [sda](#solardeclinationangle): solar declination angle, the latitude at which the Sun is directly overhead
 - [sea](#solarelevationangle): solar elevation angle, the angle of the Sun above the horizon, negative when the Sun is below the horizon
 - [𝜏](#tau): 2𝜋 or approximately 6.2831853
