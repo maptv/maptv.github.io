@@ -269,7 +269,7 @@ Apart from [h](#h), [m](#m), and [s](#s), [Table 3](#tbl-sub) also contains thr
 
 ##### Hour minute second
 
-In Dec, it is easy to convert [hours](#h) to [cents](#%C2%A2): 1 [h](#h) = 4 [¢](#%C2%A2), [cents](#%C2%A2) to [min](#m) or [mil](#%E2%82%A5): 1 [¢](#cd) = 15 [m](#m) = 10 [₥](#%E2%82%A5), minutes to seconds: [m](#m) = 60 [s](#s), and [mil](#%E2%82%A5) to seconds: [₥](#%E2%82%A5) = 90 [s](#s). Comparing [¢](#%C2%A2) with [h](#h) or [₥](#%E2%82%A5) with [m](#m) is intuitive because 1 [¢](#%C2%A2) is a [quarter-hour](https://en.wiktionary.org/wiki/quarter-hour#:~:text=quarter%20of%20an%20hour%3B%20period%20of%20time%20equal%20to%2015%20minutes) and 1 [₥](#%E2%82%A5) is a 1.5 [m](#m). We can express the current Zone 0 in [b](#b): , as [₥](#%E2%82%A5)+[s](#s): , or as [h](#h)+[m](#m)+[s](#s): .
+In Dec, it is easy to convert [hours](#h) to [cents](#%C2%A2): 1 [h](#h) = 4 [¢](#%C2%A2), [cents](#%C2%A2) to [min](#m) or [mil](#%E2%82%A5): 1 [¢](#cd) = 15 [m](#m) = 10 [₥](#%E2%82%A5), minutes to seconds: [m](#m) = 60 [s](#s), and [mil](#%E2%82%A5) to seconds: [₥](#%E2%82%A5) = 90 [s](#s). Comparing [¢](#%C2%A2) with [h](#h) or [₥](#%E2%82%A5) with [m](#m) is intuitive because 1 [¢](#%C2%A2) is a [quarter-hour](https://en.wiktionary.org/wiki/quarter-hour#:~:text=quarter%20of%20an%20hour%3B%20period%20of%20time%20equal%20to%2015%20minutes) and 1 [₥](#%E2%82%A5) is a 1.5 [m](#m). We can express the current Zone 0 “time of day” (tod) in [b](#b): , as [₥](#%E2%82%A5)+[s](#s): , or as [h](#h)+[m](#m)+[s](#s): .
 
 [Table 4](#tbl-mul) below shows the names, symbols, and [T](#T) values of Dec turn [multiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#:~:text=the%20product%20of%20any%20quantity%20and%20an%20integer). Tables [3](#tbl-sub) and [4](#tbl-mul) are like [mirror images](https://en.wikipedia.org/wiki/Mirror_image#:~:text=a%20reflected%20duplication%20of%20an%20object%20that%20appears%20almost%20identical). The names in [Table 4](#tbl-mul) are all derived from Greek except for [bǎi](https://en.wiktionary.org/wiki/b%C7%8Ei#:~:text=Hanyu%20Pinyin%20reading%20of%20%E7%99%BE) and [xún](https://en.wiktionary.org/wiki/x%C3%BAn#:~:text=Hanyu%20Pinyin%20reading%20of%20%E6%97%AC), which are the [Pinyin](https://en.wikipedia.org/wiki/Pinyin#:~:text=the%20most%20common%20romanization%20system%20for%20Standard%20Chinese) forms of the Chinese characters 百 and 旬, respectively. In Chinese, [百 means 100](https://en.wiktionary.org/wiki/%E7%99%BE) and the historical meaning of [旬 is a period of ten days](https://en.wiktionary.org/wiki/%E6%97%AC).
 
@@ -331,16 +331,16 @@ The [unidimensional](https://en.wiktionary.org/wiki/unidimensional#:~:text=not%2
 
 Table 5
 
-#### 20 Ucm per heh
+#### 20 Miles per hour
 
-When we divide a 1D unit by a time unit, we get a speed unit. A “[US](#us) customary mile” ([ucm](#ucm)) per “Hipparchian equinoctial hour” ([heh](#heh)) is very close to a [z](#z) per [b](#b) and a Dec [knot](https://en.wikipedia.org/wiki/Knot_(unit)#:~:text=a%20unit%20of%20speed%20equal%20to%20one%20nautical%20mile%20per%20hour), which is used to measure the speed of aircraft and watercraft, is $10\over9$ [z](#z) per [b](#b). Dec refers to $10\over9$ [z](#z) as a [cubit](https://en.wikipedia.org/wiki/Cubit#:~:text=an%20ancient%20unit%20of%20length%20based%20on%20the%20distance%20from%20the%20elbow%20to%20the%20tip%20of%20the%20middle%20finger) or [ell](https://en.wikipedia.org/wiki/Ell#:~:text=a%20northwestern%20European%20unit%20of%20measurement) ([ℓ](#ell)). An [mv](#mv) can also be expressed as one [ℓ](#ell) per [s](#s): [mv](#mv) = $\ell\over\text{s}$.
+When we divide a 1D unit by a time unit, we get a speed unit. A Dec mile per Dec hour ([h](#h)) is exactly 1 [z](#z) per [b](#b) and a Dec [knot](https://en.wikipedia.org/wiki/Knot_(unit)#:~:text=a%20unit%20of%20speed%20equal%20to%20one%20nautical%20mile%20per%20hour), which is used to measure the speed of aircraft and watercraft, is $10\over9$ [z](#z) per [b](#b). Dec refers to $10\over9$ [z](#z) as a [cubit](https://en.wikipedia.org/wiki/Cubit#:~:text=an%20ancient%20unit%20of%20length%20based%20on%20the%20distance%20from%20the%20elbow%20to%20the%20tip%20of%20the%20middle%20finger) or [ell](https://en.wikipedia.org/wiki/Ell#:~:text=a%20northwestern%20European%20unit%20of%20measurement) ([ℓ](#ell)). An [mv](#mv) can also be expressed as one [ℓ](#ell) per [s](#s): [mv](#mv) = $\ell\over\text{s}$.
 
 | [US](#us) speed unit | [mv](#mv) | [kmph](#kmph) |
 |----|----|----|
-| 0.9448 [inches/second](https://en.wikipedia.org/wiki/Inch_per_second) | 0.05625 | 0.09375 |
-| 0.9448 [feet/second](https://en.wikipedia.org/wiki/Foot_per_second) | 0.675 | 0.675 |
-| 0.9942 [miles/hour](https://en.wikipedia.org/wiki/Miles_per_hour) | 0.96 | 1.6 |
-| 0.9448 yards/second | 2.025 | 3.375 |
+| 1.0253 [inches/second](https://en.wikipedia.org/wiki/Inch_per_second) | 0.05625 | 0.09 |
+| 1.0253 [feet/second](https://en.wikipedia.org/wiki/Foot_per_second) | 0.675 | 1.08 |
+| 1.0356 [miles/hour](https://en.wikipedia.org/wiki/Miles_per_hour) | 1 | 1.6 |
+| 1.0253 yards/second | 2.025 | 3.24 |
 
 Table 6
 
@@ -590,7 +590,7 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
   - [mj](#millijing): millijīng, a thousandth of a jīng (经)
 - [k](#keg): keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel
 - [km](#kilometer): kilometer, 1000 meters, 2500 zem, 2.5 kilozem
-- [kmph](#kilometersperhour): kilometers per hour, thousands of meters per hour, 1 kmph = 0.6 mv
+- [kmph](#kilometersperhour): kilometers per hour, thousands of meters per Dec hour, 1 kmph = 0.625 mv
 - [l](#line): line, decimilliday, a ten thousandth of a day, 10 beats, 8640 milliseconds
 - [L](#liter): liter, 15625 drops, a cubic decimeter
   - [mL](#milliliter): milliliter, a cubic centimeter, a thousandth of a liter, 15.625 drops
@@ -669,9 +669,9 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
 - [UTC](#coordinateduniversaltime): [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - [US](#unitedstates): [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 - [UT](#universaltime): [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation), a time standard based on the rotation of the Earth
-- [v](#omegar): omegar, ωr, 1041.♄ miles per hour, 1.♄ megameters per hour, 0.4♃♄ kilometers per second, roughly 1.36 times the speed of sound
+- [v](#omegar): omegar, ωr, 1000 Dec miles per Dec hour, 1.6 megameters per Dec hour, 0.♂ kilometers per Dec second, roughly 1.36 times the speed of sound
   - [kv](#kiloomegar): kiloomegar, kωr, 1.♄ gigameters per hour, 0.4♃♄ megameters per second, approximately 0.1544% of the speed of light
-  - [mv](#milliomegar): milliomegar, mωr, 1.041♄ miles per hour, 1.♄ kilometers per hour, 0.4♃♄ meters per second, approximately 0.136% of the speed of sound
+  - [mv](#milliomegar): milliomegar, mωr, 1 Dec mile per Dec hour, 1.6 kilometers per Dec hour, 0.♂ meters per Dec second, 1 zem per beat, approximately 0.136% of the speed of sound
 - [w](#wei): wěi (纬), parallel, a full circle around the Earth moving East or West at the same latitude, a measure of longitude; short for 纬圈 (wěiquān), “latitude circle”; can be thought of as a measure of the **w**idth of a jīng on **E**arth; “w” is written from left to right, like a wěi running from **W**est to **E**ast across a map, starts the word “width,” as in the width of a map, and is one of the widest letters in proportional fonts; on a loom, 纬 is the weft, the threads that run crosswise
   - [dw](#deciwei): deciwěi, a tenth of a wěi (纬), a tenth of a parallel
   - [mw](#milliwei): milliwěi, a thousandth of a wěi (纬), a thousandth of a parallel

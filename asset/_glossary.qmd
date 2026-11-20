@@ -90,7 +90,7 @@
     - [mj](#millijing){#mj}: millijīng, a thousandth of a jīng (经)
 - [k](#keg){#k}: keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel
 - [km](#kilometer){#km}: kilometer, 1000 meters, 2500 zem, 2.5 kilozem
-- [kmph](#kilometersperhour){#kmph}: kilometers per hour, thousands of meters per hour, 1 kmph = 0.6 mv
+- [kmph](#kilometersperhour){#kmph}: kilometers per hour, thousands of meters per Dec hour, 1 kmph = 0.625 mv
 - [l](#line){#l}: line, decimilliday, a ten thousandth of a day, 10 beats, 8640 milliseconds
 - [L](#liter){#L}: liter, 15625 drops, a cubic decimeter
     - [mL](#milliliter){#mL}: milliliter, a cubic centimeter, a thousandth of a liter, 15.625 drops
@@ -169,9 +169,9 @@
 - [UTC](#coordinateduniversaltime){#utc}: [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - [US](#unitedstates){#us}: [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 - [UT](#universaltime){#ut}: [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation), a time standard based on the rotation of the Earth
-- [v](#omegar){#v}: omegar, ωr, 1041.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} miles per hour, 1.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} megameters per hour, 0.4[♃♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digits 5 and 6"} kilometers per second, roughly 1.36 times the speed of sound
+- [v](#omegar){#v}: omegar, ωr, 1000 Dec miles per Dec hour, 1.6 megameters per Dec hour, 0.[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} kilometers per Dec second, roughly 1.36 times the speed of sound
     - [kv](#kiloomegar){#kv}: kiloomegar, kωr, 1.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} gigameters per hour, 0.4[♃♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digits 5 and 6"} megameters per second, approximately 0.1544% of the speed of light
-    - [mv](#milliomegar){#mv}: milliomegar, mωr, 1.041[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} miles per hour, 1.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} kilometers per hour, 0.4[♃♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digits 5 and 6"} meters per second, approximately 0.136% of the speed of sound
+    - [mv](#milliomegar){#mv}: milliomegar, mωr, 1 Dec mile per Dec hour, 1.6 kilometers per Dec hour, 0.[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} meters per Dec second, 1 zem per beat, approximately 0.136% of the speed of sound
 - [w](#wei){#w}: wěi (纬), parallel, a full circle around the Earth moving East or West at the same latitude, a measure of longitude; short for 纬圈 (wěiquān), "latitude circle"; can be thought of as a measure of the **w**idth of a jīng on **E**arth; "w" is written from left to right, like a wěi running from **W**est to **E**ast across a map, starts the word "width," as in the width of a map, and is one of the widest letters in proportional fonts; on a loom, 纬 is the weft, the threads that run crosswise
     - [dw](#deciwei){#dw}: deciwěi, a tenth of a wěi (纬), a tenth of a parallel
     - [mw](#milliwei){#mw}: milliwěi, a thousandth of a wěi (纬), a thousandth of a parallel
