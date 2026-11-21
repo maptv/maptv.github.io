@@ -12,9 +12,9 @@ Introducing Dec, a measurement system, which uses turns instead of months, weeks
 
 |            |             |
 |------------|-------------|
-| Word Count | 8,311 words |
+| Word Count | 8,319 words |
 
-1795214274
+1795275826
 
 ![](../asset/cal16.svg)
 
