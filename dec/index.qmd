@@ -4,7 +4,6 @@ description: >
   Introducing Dec, a measurement system,
   which uses turns instead of months, weeks,
   hours, minutes, seconds, and degrees.
-draft: true
 image: /asset/colorWheelCompass.svg
 url: https://maptv.github.io/dec
 decdate: 2026+242
@@ -14,6 +13,8 @@ aliases:
   - /d
 engine: knitr
 fig-cap-location: bottom
+filters:
+  - mobile-toc
 ---
 
 :::{#firstnav}
@@ -98,7 +99,7 @@ viewof costype = Inputs.radio(["turns", "radians", "degrees"], {label: "Cosine i
 [Wikimedia](https://commons.m.wikimedia.org/wiki/File:Modulor_measurements.svg#mw-jump-to-license)
 :::
 
-Apart from [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taur"}, Dec also measures distance using a unit called the **z**one **e**quatorial **m**eter (zem). The width of a Dec time zone at the Equator is approximately ten million ([~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"}) zem ([z](#z){#zoneequatorialmeter .tool data-bs-toggle="tooltip" data-bs-title="zem"}). Similarly, the distance from the Equator to one of the Poles is [~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"} [meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units). In other words, a [decijīng]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a jīng"} ([dj](#dj){#decijing .tool data-bs-toggle="tooltip" data-bs-title="decijīng"}) is [~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"} [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} long and a [quarter meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole) is [~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"} meters long: 4 [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} = 1 meter.
+Apart from [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taur"}, Dec also measures distance using a unit called the **z**one **e**quatorial **m**eter (zem). The width of a Dec time zone at the Equator is approximately ten million ([~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"}) zem ([z](#z){#zoneequatorialmeter .tool data-bs-toggle="tooltip" data-bs-title="zem"}). Similarly, the distance from the Equator to one of the Poles is [~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"} [SI meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units) ([sim](#sim){#simeter .tool data-bs-toggle="tooltip" data-bs-title="SI meters"}). In other words, a [decijīng]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a jīng"} ([dj](#dj){#decijing .tool data-bs-toggle="tooltip" data-bs-title="decijīng"}) is [~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"} [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} long and a [quarter meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole) is [~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"} [sim](#sim){.tool data-bs-toggle="tooltip" data-bs-title="SI meters"} long: 1 [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} = 0.4 [sim](#sim){.tool data-bs-toggle="tooltip" data-bs-title="SI meters"}.
 
 :::{.column-margin fig-align="center" style="text-align:center;" id="zemhands" .hand}
 ![](../asset/hands.svg)
@@ -116,7 +117,7 @@ You can approximate a [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"
 
 To visualize a square [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"} ([z&sup2;](#z2){#squarezem .tool data-bs-toggle="tooltip" data-bs-title="square zem"}), imagine two people making a square with their forearms💪. Each of the two people creates a corner and two sides of the square by holding their right elbow with their left hand, like [John Wayne](https://en.wikipedia.org/wiki/John_Wayne#:~:text=Wayne%2C%20was-,an%20American%20actor,-.%20Nicknamed%20%22Duke) at the end of the [1956]{.color56by100} film [The Searchers](https://en.wikipedia.org/wiki/The_Searchers#:~:text=a%201956%20American%20epic%20Western%20film), and then completes the square by placing their right hand on the right elbow of other person.
 
-:::{.column-margin fig-align="center" style="max-width:200px;text-align:center;" #zemjohn}
+:::{.column-margin fig-align="center" style="max-width:200px;margin-inline:auto;text-align:center;" #zemjohn}
 ![](../asset/Big-John-holding-his-arm_scaled.png){#zJohn}
 [True West](https://www.truewestmagazine.com/article/the-searchers-2/#:~:text=he%20grabbed%20his%20right%20arm%20with%20his%20left%20hand%20at%20the%20elbow){#johnlabel}
 :::

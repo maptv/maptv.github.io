@@ -105,8 +105,19 @@ code span.er {
   text-align: center;
 }
 
+/* The bǎi symbol ﾲ (U+FFB2, halfwidth Hangul pieup) is missing from iOS
+   fonts. NotoSansKR-FFB2.woff2 is a one-glyph subset of Noto Sans KR
+   (SIL Open Font License 1.1, from Google Fonts); unicode-range limits it
+   to that character, so listing it first in a font stack changes nothing
+   else. mainfont and monofont in _quarto.yml list it too. */
+@font-face {
+  font-family: "Baekil";
+  src: url("NotoSansKR-FFB2.woff2") format("woff2");
+  unicode-range: U+FFB2;
+}
+
 .mono {
-  font-family: Menlo, Monaco, Consolas, monospace;
+  font-family: Baekil, Menlo, Monaco, Consolas, monospace;
 }
 
 .floatright {
