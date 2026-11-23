@@ -1076,6 +1076,7 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
   - [soy](#soiofyear): soi of year
   - [sob](#soiofbimester): soi of bimester
 - [SI](#internationalsystemofunits): [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
+- [sim](#simeter): SI meter, the base unit of length in the International System of Units, 2.5 zem, 10 decimeters
 - [sol](#speedoflight): speed of light, 647.55170928 kiloomegar, 299792458 meters per second
 - [sos](#speedofsound): speed of sound, 735.048 milliomegar, 340.3 meters per second
 - [sda](#solardeclinationangle): solar declination angle, the latitude at which the Sun is directly overhead

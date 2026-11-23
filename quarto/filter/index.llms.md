@@ -359,36 +359,6 @@ curl -O https://raw.githubusercontent.com/maptv/maptv.github.io/main/.github/wor
 ## `quarto-pub.yml`
 
 ``` yaml
-on:
-  workflow_run:
-    workflows: [pages-build-deployment]
-    types: [completed]
-
-name: Update Quarto Pub
-
-jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out main repository
-        uses: actions/checkout@v4
-
-      - name: Check out _site
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          path: _site
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Publish
-        uses: quarto-dev/quarto-actions/publish@v2
-        with:
-          target: quarto-pub
-          render: false
-          QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}
-          GITHUB_USERNAME: maptv
 ```
 
 My `quarto-pub.yml` file is based on [Q2](https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.), but it runs upon completion of the `pages-build-deployment` workflow instead of a push to `main`. I changed the workflow trigger so that it runs after my GitHub Pages site is built, regardless of whether I triggered the build by running `quarto` `publish` `gh-pages` or pushing to `main`.
