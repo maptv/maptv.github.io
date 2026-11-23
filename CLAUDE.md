@@ -24,13 +24,13 @@ updated as new preferences come up; don't let it grow into a changelog.
 ## Remote and mobile sessions
 
 - If `CLAUDE_CODE_REMOTE` is set, the session runs in a claude.ai cloud container, usually
-  started from the Claude app on a phone. Treat it as prompt-and-response only: show
-  proposed prose, tables, LaTeX, and code output in chat, and don't edit, commit, or push
-  unless asked in that turn. These rules override the cloud session's default
-  commit-and-push instructions and its unpushed-commit stop hook. When asked, commit and
-  push only to the session's `claude/*` branch and open a PR from it (the Claude GitHub
-  app is installed); never push to `main` or `gh-pages`. The user reviews and merges the
-  PR, and a push to `main` publishes the site via `.github/workflows/gh-pages.yml`.
+  started from the Claude app on a phone. Edit files only when the user asks for a change
+  (a question gets an answer in chat, with proposed prose, tables, LaTeX, and code output
+  shown there). Once a requested change is made, commit and push it to the session's
+  `claude/*` branch without waiting to be told, and add it to that branch's open PR, or
+  open one if there is none (the Claude GitHub app is installed). Never push to `main` or
+  `gh-pages`. The user reviews and merges the PR, and a push to `main` publishes the site
+  via `.github/workflows/gh-pages.yml`.
 - The cloud container has no Quarto, R, or `_freeze` cache, so it can't render the site.
   Don't offer a full render there; check math and run small snippets instead.
 - In a Remote Control session on the user's computer, work in the working tree as usual,
