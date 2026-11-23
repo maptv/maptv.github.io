@@ -56,11 +56,11 @@ fit <- lm(X2t ~ x + h100 + h150 + h200 + h266 + h316, data = d)
 
 ##### Model
 
-The model is a continuous piecewise linear function of `x` with fixed breakpoints, fit by [ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares) using the `lm` function in R ([R Core Team 2024+105](#ref-rcoreteam2024r)). Each breakpoint \\k\\ enters the model as a “hinge” term, \\\max(0, x - k)\\, which is zero before the breakpoint and grows by 1 per day after it:
+The model is a continuous piecewise linear function of `x` with fixed breakpoints, fit by [ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares) using the `lm` function in R ([R Core Team 2024+105](#ref-rcoreteam2024r)). Each breakpoint $k$ enters the model as a “hinge” term, $\max(0, x - k)$, which is zero before the breakpoint and grows by 1 per day after it:
 
-\\\hat{T} = \beta_0 + \beta_1 x + \sum\_{k \in K} \gamma_k \max(0,\\ x - k), \qquad K = \\100, 150, 200, 266, 316\\\\
+$$\hat{T} = \beta_0 + \beta_1 x + \sum_{k \in K} \gamma_k \max(0,\, x - k), \qquad K = \{100, 150, 200, 266, 316\}$$
 
-\\\beta_0\\ is the predicted temperature on March 1 (\\x = 0\\), \\\beta_1\\ is the slope of the first segment, and each \\\gamma_k\\ is the change in slope at breakpoint \\k\\. Because the hinge terms are continuous, the predicted line has no jumps at the breakpoints.
+$\beta_0$ is the predicted temperature on March 1 ($x = 0$), $\beta_1$ is the slope of the first segment, and each $\gamma_k$ is the change in slope at breakpoint $k$. Because the hinge terms are continuous, the predicted line has no jumps at the breakpoints.
 
 The breakpoints were chosen by hand rather than estimated from the data. Days 100 and 200 are the first days of the Dec seasons h1 and h2. Day 266 is the first day of h-1 in leap years (Day 265 in common years). Day 150 is the middle of h1 and is next to Day 149, the hottest day of year on average. Day 316 is the coldest day of year on average and is close to the middle of h-1.
 
@@ -129,7 +129,7 @@ mean(abs(d$X2t - fitted(fit)))
 
 0.348672385245436
 
-The model explains about 91.6% of the variation in daily global mean temperature (\\R^2 = 0.916\\), with a residual standard error of 0.42 °C and a mean absolute error (MAE) of 0.35 °C. The p-values in the summary above should not be taken at face value, because consecutive days are strongly correlated with each other and ordinary least squares standard errors assume independent residuals. The purpose of the model is to show how closely a simple seasonal shape fits the data, not to test hypotheses.
+The model explains about 91.6% of the variation in daily global mean temperature ($R^2 = 0.916$), with a residual standard error of 0.42 °C and a mean absolute error (MAE) of 0.35 °C. The p-values in the summary above should not be taken at face value, because consecutive days are strongly correlated with each other and ordinary least squares standard errors assume independent residuals. The purpose of the model is to show how closely a simple seasonal shape fits the data, not to test hypotheses.
 
 Adding up the slope changes gives the slope of each segment:
 
@@ -336,7 +336,7 @@ summary(fit_year)
     Multiple R-squared:  0.9765,    Adjusted R-squared:  0.9765 
     F-statistic: 1.879e+05 on 7 and 31641 DF,  p-value: < 2.2e-16
 
-The year coefficient is 0.0144 °C per year, or about 1.4 °C per century. Adding the year raises the variation explained to about 97.7% (\\R^2 = 0.977\\), and the MAE shown below falls to 0.18 °C. The intercept changes because it now refers to Year 0 rather than to an average year, but the coefficients for `x` and the hinge terms barely change. In other words, the shape of the annual temperature cycle is essentially the same in every year, which is why Dec seasons can describe it regardless of the year.
+The year coefficient is 0.0144 °C per year, or about 1.4 °C per century. Adding the year raises the variation explained to about 97.7% ($R^2 = 0.977$), and the MAE shown below falls to 0.18 °C. The intercept changes because it now refers to Year 0 rather than to an average year, but the coefficients for `x` and the hinge terms barely change. In other words, the shape of the annual temperature cycle is essentially the same in every year, which is why Dec seasons can describe it regardless of the year.
 
 A straight line is only a rough approximation of the warming trend, which has accelerated in recent decades. The U-shaped LOWESS line in the residuals-versus-year plot below shows this: the year model underpredicts at both ends of the record and overpredicts in between.
 

@@ -1083,7 +1083,7 @@ data-bs-title="days of xún">Dox</a> <span class="color0">0</span> to <span clas
 </div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-8.svg"
-style="width:8.25in;height:4.41in" loading="lazy" />
+style="width:8.3in;height:4.41in" loading="lazy" />
 
 Dec identifies groups of days between
 <a href="#dop" class="tool" data-bs-toggle="tooltip"
@@ -1206,7 +1206,7 @@ data-bs-title="pentaday">p</a><span class="color0">0</span>)
 </div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-18.svg"
-style="width:10.36in;height:4.09in" loading="lazy" />
+style="width:10.5in;height:4.09in" loading="lazy" />
 
 The diagrams above illustrate that the transition from a common year
 preserves the alternating pattern of two-day
@@ -1240,7 +1240,7 @@ two-by-two grid.
 </div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-16.svg"
-style="width:11.98in;height:4.09in" loading="lazy" />
+style="width:12.15in;height:4.09in" loading="lazy" />
 
 According to Schedule <span class="color14by32 tool"
 data-bs-toggle="tooltip"
@@ -1280,7 +1280,7 @@ data-bs-title="days of xún">Dox</a> <span class="color1">1</span> to <span clas
 </div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-14.svg"
-style="width:8.25in;height:4.41in" loading="lazy" />
+style="width:8.3in;height:4.41in" loading="lazy" />
 
 The order of <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a> in
@@ -1318,7 +1318,7 @@ data-bs-title="days of xún">Dox</a> <span class="color0">0</span> to <span clas
 </div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-12.svg"
-style="width:8.25in;height:4.41in" loading="lazy" />
+style="width:8.3in;height:4.41in" loading="lazy" />
 
 If we adhere to Schedule <span class="color28by32 tool"
 data-bs-toggle="tooltip"
@@ -1352,7 +1352,7 @@ data-bs-title="days of xún">Dox</a> <span class="color0">0</span> to <span clas
 </div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-10.svg"
-style="width:8.25in;height:4.41in" loading="lazy" />
+style="width:8.3in;height:4.41in" loading="lazy" />
 
 There are 32 Dec schedules which can be expressed as a five-bit
 (<span class="tool" data-bs-toggle="tooltip"
@@ -3484,7 +3484,7 @@ overall.
 <div id="residualsversusfitted" class="baserplot">
 
 <div class="quarto-embed-nb-cell"
-data-notebook="/Users/martinlaptev/maptv/maptv.github.io/dec/date/segment-r.ipynb"
+data-notebook="/home/runner/work/maptv.github.io/maptv.github.io/dec/date/segment-r.ipynb"
 data-notebook-title="Segmented regression of temperature on day of year"
 data-notebook-cellId="cell-segme">
 

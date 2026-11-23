@@ -1,6 +1,6 @@
 # Git
 Martin Laptev
-1776874460
+1776874079
 
 - [<span class="toc-section-number">0.1</span> <span class="tool"
   data-bs-toggle="tooltip"
@@ -238,7 +238,7 @@ of account creation steps.
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
-style="width:6.21in;height:2.41in" loading="lazy" />
+style="width:6.26in;height:2.41in" loading="lazy" />
 
 </div>
 
@@ -270,7 +270,7 @@ smartphone screen to a horizontal (landscape) position.
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-3.png"
-style="width:4.84in;height:3.98in" loading="lazy" />
+style="width:4.83in;height:3.98in" loading="lazy" />
 
 </div>
 
@@ -656,7 +656,7 @@ website.
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-2.png"
-style="width:9in;height:1.29in" loading="lazy" />
+style="width:9in;height:1.31in" loading="lazy" />
 
 </div>
 

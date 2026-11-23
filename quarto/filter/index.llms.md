@@ -16,11 +16,11 @@ Author
 
 Published
 
-1738643333000
+1738653544000
 
 Modified
 
-57065+091
+57065+209
 
 ##### *TL;DR*
 
@@ -271,6 +271,11 @@ on:
 
 name: Quarto Publish
 
+# Never run two publishes at once; a newer push supersedes a queued one.
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -279,30 +284,29 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          # Full history so file mtimes can be restored below.
+          fetch-depth: 0
+
+      # Pages use `date: last-modified`, which reads file mtimes. A fresh
+      # checkout stamps every file with the checkout time, so set each file's
+      # mtime to its last commit instead.
+      - name: Restore file modification times
+        uses: chetan/git-restore-mtime-action@v2
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          version: '1.4.489'
-          tinytex: true
 
-      - name: Install R
-        uses: r-lib/actions/setup-r@v2
+      # Code runs locally and its output is committed in _freeze
+      # (`freeze: true` in _quarto.yml), so CI needs no R or Python 3.16.
+      # Jupyter is only for reading the embedded .ipynb notebooks, and
+      # WeasyPrint renders cv/index.qmd to PDF.
+      - name: Install Python
+        uses: actions/setup-python@v5
         with:
-          r-version: '4.2.0'
-
-      - name: Install R Dependencies
-        uses: r-lib/actions/setup-renv@v2
-        with:
-          cache-version: 1
-
-      - name: Install Python and Dependencies
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-          cache: 'pip'
+          python-version: '3.13'
       - run: pip install jupyter
-      - run: pip install -r requirements.txt
+      - run: sudo apt-get update && sudo apt-get install -y weasyprint
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
@@ -314,12 +318,14 @@ jobs:
       - name: Push To GitLab
         env:
           token: ${{ secrets.GITLAB_AUTH_TOKEN }}
+        if: ${{ env.token != '' }}
         run: |
           echo Starting to push gh-pages branch to GitLab
+          git fetch origin gh-pages
           git config user.name "maptv"
           git config user.email "129316885+maptv@users.noreply.github.com"
           git remote set-url origin "https://oauth2:${token}@gitlab.com/maptv/maptv.gitlab.io"
-          git push origin gh-pages
+          git push origin FETCH_HEAD:refs/heads/gh-pages
 ```
 
 The `gh-pages.yml` file in [Example 7](#exm-curl) installs Quarto, the R and Python programming languages, and the packages in the `renv.lock` and `requirements.txt` files. If you do not need R and/or Python, you can remove any unnecessary portions of the file.

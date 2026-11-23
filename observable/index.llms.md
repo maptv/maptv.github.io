@@ -14,11 +14,11 @@ Author
 
 Published
 
-1738642623000
+1738643148000
 
 Modified
 
-57065+083
+57065+089
 
 ##### *TL;DR*
 
@@ -57,7 +57,7 @@ Figure 2: Doty bar chart
 
 As an alternative to `doty` dates, `Decalendar` can express dates in fractional years, which are similar to the [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days) used in `doty` times. Fractional year dates[^11] can be combined with years into one number and are useful for marking periods of 73 days in the `Decalendar` year. Every 73 days, the `Decalendar` fractional year date increases by .2 (⅕). The current `Decalendar` fractional year date is .
 
-Now it’s your turn! Move the sliders🎚️in [Example 1](#exm-intro-doty) to adjust the `doty`, fractional year, month, and `dotm` values and see the corresponding 1) Northern Hemisphere season, 2) Southern Hemisphere season, and 3) Zodiac sign in [../List 1](#lst-intro-doty). Try selecting a special date, like your birthday🎂! You can also press the Play▶️button and then sit back and watch the sliders cycle🔄back and forth from the start to the end of the `Decalendar` year. The sliders cycle through an entire year in 36.5 `beats`, a million times faster🏎️than the actual speed of time!
+Now it’s your turn! Move the sliders🎚️in [Example 1](#exm-intro-doty) to adjust the `doty`, fractional year, month, and `dotm` values and see the corresponding 1) Northern Hemisphere season, 2) Southern Hemisphere season, and 3) Zodiac sign in [List 1](#lst-intro-doty). Try selecting a special date, like your birthday🎂! You can also press the Play▶️button and then sit back and watch the sliders cycle🔄back and forth from the start to the end of the `Decalendar` year. The sliders cycle through an entire year in 36.5 `beats`, a million times faster🏎️than the actual speed of time!
 
 **Example 1**  
 
@@ -65,11 +65,11 @@ Now it’s your turn! Move the sliders🎚️in [Example 1](#exm-intro-doty) to
 2.  
 3.  
 
-../List 1: Date to season conversion
+List 1: Date to season conversion
 
 ##### Year
 
-`Doty` dates (`day`) and [timestamps](https://en.wikipedia.org/wiki/Timestamp#:~:text=A%20timestamp%20is%20a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred%2C%20usually%20giving%20date%20and%20time%20of%20day%2C%20sometimes%20accurate%20to%20a%20small%20fraction%20of%20a%20second.) (`day.stamp`) do not include years and thus can be reused from year to year. When a `doty` is combined with a year, it forms a `Decalendar` `ordinal`[^12] (`deco`) and represents a specific date (`year+day`) or time (`year+day.stamp`) in a specific year, instead of a date (`day`) or time (`day.stamp`) that occurs every year or every leap year. Using the [Observable](https://observablehq.com/about) [datetime input](https://observablehq.com/@observablehq/input-date#cell-111) in [Example 2](#exm-intro-date), you can select a year, month, `dotm`, hour, and minute to see the equivalent 1) `deco` timestamp (`year+day.clock`) and 2) year date (`year.yyy`) in [../List 2](#lst-intro-date). For comparison, the current `deco` timestamp is .
+`Doty` dates (`day`) and [timestamps](https://en.wikipedia.org/wiki/Timestamp#:~:text=A%20timestamp%20is%20a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred%2C%20usually%20giving%20date%20and%20time%20of%20day%2C%20sometimes%20accurate%20to%20a%20small%20fraction%20of%20a%20second.) (`day.stamp`) do not include years and thus can be reused from year to year. When a `doty` is combined with a year, it forms a `Decalendar` `ordinal`[^12] (`deco`) and represents a specific date (`year+day`) or time (`year+day.stamp`) in a specific year, instead of a date (`day`) or time (`day.stamp`) that occurs every year or every leap year. Using the [Observable](https://observablehq.com/about) [datetime input](https://observablehq.com/@observablehq/input-date#cell-111) in [Example 2](#exm-intro-date), you can select a year, month, `dotm`, hour, and minute to see the equivalent 1) `deco` timestamp (`year+day.clock`) and 2) year date (`year.yyy`) in [List 2](#lst-intro-date). For comparison, the current `deco` timestamp is .
 
 **Example 2**  
 
@@ -79,9 +79,9 @@ Now it’s your turn! Move the sliders🎚️in [Example 1](#exm-intro-doty) to
 ```
 ```
 
-../List 2: Date and time conversion
+List 2: Date and time conversion
 
-In [Example 3](#exm-intro-deco), you can enter numeric year and `doty` values or type in a free-form `deco` to see the resulting 1) [ISO 8601 timestamp](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) (`year-mm-ddThh:mm:ss`) and 2) year date in [../List 3](#lst-intro-deco). [Example 3](#exm-intro-deco) also has a Play▶️button in that cycles from `Day` `0` to `Day` `365` of `Year` `1969`. The cycle goes up to `Day` `0` of `Year` `1970`, because `Year` `1969` is a common year and does not have a `Day` `365`.
+In [Example 3](#exm-intro-deco), you can enter numeric year and `doty` values or type in a free-form `deco` to see the resulting 1) [ISO 8601 timestamp](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) (`year-mm-ddThh:mm:ss`) and 2) year date in [List 3](#lst-intro-deco). [Example 3](#exm-intro-deco) also has a Play▶️button in that cycles from `Day` `0` to `Day` `365` of `Year` `1969`. The cycle goes up to `Day` `0` of `Year` `1970`, because `Year` `1969` is a common year and does not have a `Day` `365`.
 
 Interacting with the [number](https://observablehq.com/@observablehq/input-range#m) inputs in [Example 3](#exm-intro-deco), standardizes the `deco` in the [text](https://observablehq.com/@observablehq/input-text) input to ensure years are integers and `doty` values are positive numbers below 366. Nevertheless, all of the inputs in [Example 3](#exm-intro-deco) support negative and fractional year and `doty` values. Negative `doty` values [shift](https://en.wikipedia.org/wiki/Shift_operator) dates backward in time from the start of a given year into a previous year. Similarly, negative years shift dates backward starting from `Year` `0`, which is 1 BCE (Before the [Common Era](https://en.wikipedia.org/wiki/Common_Era)).
 
@@ -93,7 +93,7 @@ Interacting with the [number](https://observablehq.com/@observablehq/input-range
 ```
 ```
 
-../List 3: Deco timestamp conversion
+List 3: Deco timestamp conversion
 
 ##### Dek
 
