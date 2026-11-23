@@ -1809,8 +1809,6 @@ hD080 = d3.hsl(piecewiseColor(80 / 365)).h
 hD285 = d3.hsl(piecewiseColor(285 / 365)).h
 fMile = 1.6 / 1.609344
 fInch = 25 / 25.4
-fStep = 0.8 / 0.762
-hStep = d3.hsl(piecewiseColor(fStep % 1)).h
 hIob = d3.hsl(piecewiseColor(1 / .864 % 1)).h
 hDrop = d3.hsl(piecewiseColor(64 / 51 % 1)).h
 hMass = d3.hsl(piecewiseColor(448 / 453.59237)).h
@@ -3077,13 +3075,6 @@ html`
 .colorMile {
   background: hsl(${hMile} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hMile}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px .5px;
-  border-radius: 4px;
-  font-weight: 400;
-}
-.colorStep {
-  background: hsl(${hStep} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hStep}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;

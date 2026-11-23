@@ -2830,7 +2830,7 @@ img#zModu {
 }
 @font-face {
   font-family: "Iosevka";
-  src: url(../asset/IosevkaNerdFont-Regular.ttf);
+  src: url(../asset/Iosevka-music.woff2) format("woff2");
 }
 .iosevka {
   font-family: "Iosevka", sans-serif !important;
