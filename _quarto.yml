@@ -160,8 +160,8 @@ format:
   html:
     pagetitle: Martin Laptev
     page-layout: full
-    mainfont: Tahoma, Verdana, Palatino, Times New Roman
-    monofont: Menlo, Monaco, PT Mono, Andale Mono, Consolas, Courier New
+    mainfont: Baekil, Tahoma, Verdana, Palatino, Times New Roman
+    monofont: Baekil, Menlo, Monaco, PT Mono, Andale Mono, Consolas, Courier New
     toc: true
     toc-depth: 5
     number-sections: true
