@@ -107,13 +107,33 @@ code span.er {
 
 /* The bǎi symbol ﾲ (U+FFB2, halfwidth Hangul pieup) is missing from iOS
    fonts. NotoSansKR-FFB2.woff2 is a one-glyph subset of Noto Sans KR
-   (SIL Open Font License 1.1, from Google Fonts); unicode-range limits it
-   to that character, so listing it first in a font stack changes nothing
-   else. mainfont and monofont in _quarto.yml list it too. */
+   (SIL Open Font License 1.1, from Google Fonts), narrowed to 90% and set
+   in a 0.6 em monospace cell, so ﾲ is monospaced wherever it appears.
+   unicode-range limits it to that character, so listing it first in a
+   font stack changes nothing else. mainfont and monofont in _quarto.yml
+   list it too. */
 @font-face {
   font-family: "Baekil";
   src: url("NotoSansKR-FFB2.woff2") format("woff2");
   unicode-range: U+FFB2;
+}
+
+/* Pinyin vowels with a caron or with ü tone marks (ǎ ǐ ǒ ǔ ǖ ǘ ǚ ǜ and
+   capitals, U+01CD-01DC) are missing from Verdana, the first font in
+   mainfont that iOS has, so iPhones drew them from a fallback font with a
+   smaller x-height. These DejaVu Sans subsets (Bitstream Vera license)
+   have Verdana's x-height (0.547 em vs 0.545 em). */
+@font-face {
+  font-family: "Pinyin";
+  src: url("DejaVuSans-pinyin.woff2") format("woff2");
+  font-weight: 400;
+  unicode-range: U+01CD-01DC;
+}
+@font-face {
+  font-family: "Pinyin";
+  src: url("DejaVuSans-Bold-pinyin.woff2") format("woff2");
+  font-weight: 700;
+  unicode-range: U+01CD-01DC;
 }
 
 .mono {
