@@ -163,6 +163,8 @@
     - [ct](#centiturn){#ct}: centiturn, a hundredth of a turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
     - [dt](#deciturn){#dt}: deciturn, a tenth of a turn, 36 degrees, 𝜏/10 or 𝜋/5 radians
     - [mt](#milliturn){#mt}: milliturn, a thousandth of a turn, .36 degrees, 𝜏/1000 or 𝜋/500 radians
+- [T](#turndimension){#T}: turn as a dimension, shared by quantities measured in turns, such as days (d) and omegar (v)
+- [ꓕ](#inverseturn){#inverset}: inverse turn, the dimension of the inverse of a turn, shared by quotidie (q), perbeat (þ), and upsilonr (ʌ); drawn as an upside-down T (ꓕ)
 - [tzo](#timezoneoffset){#tzo}: time zone offset
 - [u](#ounce){#u}: ounce (uncia in Latin), 500 grains, 32 grams, 500 drops, 32 milliliters
 - [uto](#universaltimeoffset){#uto}: universal time offset, the offset in decidays that turns a Zone 0 tod into Universal Time; a tzo is an integer uto
