@@ -136,6 +136,32 @@ code span.er {
   unicode-range: U+01CD-01DC;
 }
 
+/* Upsilonr (ʌ, U+028C, the inverse of an omegar v) must look exactly like
+   an upside-down sans-serif v. Many fonts, and the fallbacks phones use for
+   IPA letters, draw ʌ with serifs or a curved stroke. In these DejaVu Sans
+   subsets (Bitstream Vera license), ʌ is the v glyph turned 180 degrees,
+   with Verdana's x-height, like the Pinyin subsets above. mainfont in
+   _quarto.yml lists the family; the mjx-utext rule covers \textsf{ʌ} in
+   equations, which MathJax draws from an inline sans-serif font stack. */
+@font-face {
+  font-family: "Upsilonr";
+  src: url("DejaVuSans-upsilonr.woff2") format("woff2");
+  font-weight: 400;
+  unicode-range: U+028C;
+}
+@font-face {
+  font-family: "Upsilonr";
+  src: url("DejaVuSans-Bold-upsilonr.woff2") format("woff2");
+  font-weight: 700;
+  unicode-range: U+028C;
+}
+mjx-utext[variant*="sans-serif"] {
+  font-family: MJXZERO, Upsilonr, sans-serif !important;
+}
+mjx-utext[variant="normal"], mjx-utext[variant="bold"] {
+  font-family: MJXZERO, Upsilonr, serif !important;
+}
+
 .mono {
   font-family: Baekil, Menlo, Monaco, Consolas, monospace;
 }
