@@ -164,8 +164,8 @@
     - [lah](#lightarchalf){#lah}: light arc half, law/2, the time from sunrise to solar noon or from solar noon to sunset
     - [naw](#nightarcwhole){#naw}: night arc whole, the time from sunset to sunrise, 1 &minus; law
     - [nah](#nightarchalf){#nah}: night arc half, naw/2, the time from sunset to solar midnight or from solar midnight to sunrise
-- [T](#turn){#T}: turn, 360 degrees, 𝜏 or 2𝜋 radians
-    - [ꓕ](#inverseturn){#inverset .big}: inverse turn, 1/T, a T turned upside down, the unit type of quotidie, perbeat, and upsilonr
+- [T](#turn){#T}: turn, 360 degrees, 𝜏 or 2𝜋 radians; as a dimension, shared by quantities measured in turns, such as days (d) and omegar (v)
+    - [ꓕ](#inverseturn){#inverset .big}: inverse turn, 1/T, a T turned upside down, the dimension shared by quotidie, perbeat, and upsilonr
     - [&cent;](#centiturn){#ct .mono}: cent, centiturn, a hundredth of a turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
     - [⅒](#deciturn){#dt .iosevka}: dime, deciturn, a tenth of a turn, 36 degrees, 𝜏/10 or 𝜋/5 radians
     - [₥](#milliturn){#mt .mono}: mil, milliturn, a thousandth of a turn, 0.36 degrees, 𝜏/1000 or 𝜋/500 radians
@@ -179,7 +179,7 @@
 - [v](#omegar){#v}: omegar, ωr, 1000 Dec miles per Dec hour, 1.6 megameters per Dec hour, 0.[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} kilometers per Dec second, roughly 1.36 times the speed of sound
     - [kv](#kiloomegar){#kv}: kiloomegar, kωr, 1.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} gigameters per hour, 0.4[♃♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digits 5 and 6"} megameters per second, approximately 0.1544% of the speed of light
     - [mv](#milliomegar){#mv}: milliomegar, mωr, 1 Dec mile per Dec hour, 1.6 kilometers per Dec hour, 0.[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} meters per Dec second, 1 zem per beat, approximately 0.136% of the speed of sound
-- [ʌ](#upsilonr){#ur}: upsilonr, the inverse of an omegar, 1/v, d/c, b/kz, a unit of slowness
+- [ʌ](#upsilonr){#ur}: upsilonr, the inverse of an omegar, 1/v, d/c, b/kz, a unit of slowness; symbolized by a turned v (ʌ)
 - [w](#wei){#w}: wěi (纬), parallel, a full circle around the Earth moving East or West at the same latitude, a measure of longitude; short for 纬圈 (wěiquān), "latitude circle"; can be thought of as a measure of the **w**idth of a jīng on **E**arth; "w" is written from left to right, like a wěi running from **W**est to **E**ast across a map, starts the word "width," as in the width of a map, and is one of the widest letters in proportional fonts; on a loom, 纬 is the weft, the threads that run crosswise
     - [dw](#deciwei){#dw}: deciwěi, a tenth of a wěi (纬), a tenth of a parallel
     - [mw](#milliwei){#mw}: milliwěi, a thousandth of a wěi (纬), a thousandth of a parallel
