@@ -170,8 +170,10 @@ updated as new preferences come up; don't let it grow into a changelog.
 - Audience: Dec articles are written for Dec users. Dec replaces much of the metric
   system and openly redefines units, so don't cater to readers of other systems or teach
   them the system they already use (no conversion cheat sheets). Redefined units take
-  their plain names: "mile", not "Dec mile", and 1 mph (a mile per Dec hour) = 1 mv. Only
-  when a non-Dec unit must be named, call it US customary, e.g. US customary mile (ucm).
+  their plain names without "Dec": mile, inch, foot, pound, ounce, grain, hour, minute,
+  second, and so on (1 mph, a mile per hour, = 1 mv). The conventional time units are
+  heh, bem, and sis. Only when a non-Dec unit must be named, call it US customary, e.g.
+  US customary mile (ucm).
 - Clashes with other systems are intentional, not problems to flag: `kg` is the kilograin
   (64 g), which Dec uses instead of the kilogram (a kilogram-sized unit is the kebigram,
   16 kilograins); `c` is the taur, and the `c` in E = mc² is a constant, not a unit (the
