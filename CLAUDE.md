@@ -161,6 +161,12 @@ updated as new preferences come up; don't let it grow into a changelog.
   `sim`, with prefixes and powers built on it (`ksim`, `dsim²`, `csim³`, `ksim/h` for
   kilometers per Dec hour). The micro prefix is the micro sign `µ` (U+00B5, `&micro;`);
   the Greek letter `μ` (U+03BC) is reserved for the base24 digit 11.
+- Prefixes: Dec doesn't use every metric prefix or use them exactly as SI does. `k` is
+  kilo (a thousand turns), never keg (the keg is z³). Tera is not used; a teraturn would
+  be a "ter" with a lowercase `t`. Letters that SI uses for small prefixes keep their Dec
+  meanings: `p` pent, `f` foot, `a` arcbeat, `z` zem, `y` year, `r` rose, `q` quotidie,
+  not pico, femto, atto, zepto, yocto, ronto, quecto. `n` is the note for now and may
+  become the nanoturn.
 - The mod operator is written as a minus joined to a left floor (x − y⌊x/y⌋): in LaTeX
   `\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}` (binary spacing on both
   sides; a shorter floor than a real `\lfloor`, raised so the stroke meets the middle of
@@ -169,7 +175,8 @@ updated as new preferences come up; don't let it grow into a changelog.
   which is freed up for other uses. Code keeps its language's own `mod`/`%`.
 - Parentheses: use them in equations and prose only where they are required. Extra
   parentheses imply that they are needed, which misleads when they aren't, so don't add
-  or suggest them just for clarity.
+  or suggest them just for clarity. Operators apply left to right as written, so
+  `o ⌊- 1 × 10` (eq-note) takes the mod first.
 - Dec has no negative time zone offsets: the international date line and the prime meridian
   coincide, so a negative UTC offset becomes a positive Dec offset by adding 1 day. A
   holiday tied to a Gregorian dom or dow therefore lands 1 day later in the Americas.

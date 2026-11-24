@@ -92,7 +92,7 @@
 - [j](#jing){#j}: jīng (经), a full circle around the Earth moving North or South through both Poles, a measure of latitude; short for 经圈 (jīngquān), "meridian circle," to emphasize a full circle rather than a meridian, which can be a half circle; an uppercase "J" without a serif is a vertical line drawn from top to bottom, like a jīng running from the North Pole to the South Pole, with a curve at the bottom where the jīng turns to come back up the other side of the Earth; although not the same as the jīng in Běijīng (北京) and Nánjīng (南京), jīng (经) is related to North (Běi) and South (Nán); on a loom, 经 is the warp, the threads that run lengthwise
     - [dj](#decijing){#dj}: decijīng, a tenth of a jīng (经)
     - [mj](#millijing){#mj}: millijīng, a thousandth of a jīng (经)
-- [k](#keg){#k}: keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel; as a turn multiple, kilo, a thousand turns
+- [k](#kilo){#k}: kilo, a thousand turns
 - [ksim](#kilometer){#km}: kilometer, kilo SI meter, 1000 meters, 2500 zem, 2.5 kilozem
 - [ksim/h](#kilometersperhour){#kmph}: kilometers per Dec hour, 1 ksim/h = 0.625 mv
 - [l](#line){#l}: line, a ten-thousandth of a turn, a tenth of a mil; as a duration, 1 decimilliday
@@ -117,9 +117,8 @@
 - [NOAA](#nationaloceanicandatmosphericadministration){#noaa}: [National Oceanic and Atmospheric Administration](https://www.noaa.gov), source of the General Solar Position Calculations document
 - [o](#octave){#o}: octave, a two fold change in frequency
   - [do](#decioctave){#do}: decioctave, a tenth of a two fold change in frequency
-- [þ](#perbeat){#per}: perbeat, the inverse of a beat, 1/beat, once per beat, every beat, 100000 q; symbolized by thorn (þ), which looks like a combination of the letters "p" and "b"; not to be confused with a picobeat (pb)
+- [þ](#perbeat){#per}: perbeat, the inverse of a beat, 1/beat, once per beat, every beat, 100000 q; symbolized by thorn (þ), which looks like a combination of the letters "p" and "b"
     - [‰](#permilliday){#permil}: per milliday, the inverse of a milliday, once per milliday, 1000 q, a hundredth of a perbeat
-    - [Tþ](#teraperbeat){#Tpb}: teraperbeat, 10^12^ perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat, every picobeat
 - [parmic](#parallaxmicroturn){#parmic}: parallax microturn, the distance at which 1 astronomical unit spans a microturn, 3.74 gigataur &div; 𝜏, about 595.239 megataur or 2.51667 light years
 - [q](#quotidie){#q}: quotidie, the inverse of a day, a hundred thousandth of a perbeat; the letter "q" in quotidie can be flipped vertically to produce the letter "d" in day
 - [r](#rose){#r}: compass rose, a full *r*otation along the horizon, 360 compass degrees
