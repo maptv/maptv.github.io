@@ -2385,13 +2385,13 @@ decWatchRadial = {
     const ms = ((t.getHours() * 60 + t.getMinutes()) * 60 + t.getSeconds()) * 1000
              + t.getMilliseconds();
     const millidays = ms / 86400;                     // 86 400 ms per milliday
-    const seconds = Math.floor((millidays % 1) * 90); // Dec second 0–89
+    const seconds = Math.floor((millidays % 1) * 90); // second 0–89
 
     label.text(String(Math.floor(millidays)).padStart(3, "0"));
     ticks.attr("stroke", d => (d >= seconds ? "#555" : "white"));
 
     yield svg.node();
-    await Promises.delay(960 - (ms % 960));           // next Dec second
+    await Promises.delay(960 - (ms % 960));           // next second
   }
 }
 decWatchHorizontal = {
@@ -2440,13 +2440,13 @@ decWatchHorizontal = {
     const ms = ((t.getHours() * 60 + t.getMinutes()) * 60 + t.getSeconds()) * 1000
              + t.getMilliseconds();
     const millidays = ms / 86400;                     // 86 400 ms per milliday
-    const seconds = Math.floor((millidays % 1) * 90); // Dec second 0–89
+    const seconds = Math.floor((millidays % 1) * 90); // second 0–89
 
     label.text(String(Math.floor(millidays)).padStart(3, "0"));
     ticks.attr("stroke", d => (d >= seconds ? "#555" : "white"));
 
     yield svg.node();
-    await Promises.delay(960 - (ms % 960));           // next Dec second
+    await Promises.delay(960 - (ms % 960));           // next second
   }
 }
 ```

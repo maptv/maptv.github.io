@@ -102,13 +102,13 @@ its left are the tens digit and the 10 − n fingers to its right are the ones d
 fingers on the left are counted in b9 and those on the right in b10, the result is a b9
 glyph followed by a b10 digit.
 
-**b10 to b9.** A decimilliday (dmd) is 9 Dec seconds, and in a tod the b9 glyph that
-replaces the dmd digit counts tens of Dec seconds, followed by a Dec-second digit. So
+**b10 to b9.** A decimilliday (dmd) is 9 seconds, and in a tod the b9 glyph that
+replaces the dmd digit counts tens of seconds, followed by a second digit. So
 converting a dmd digit n is 9 × n: fold finger n and read the glyph on the left and the
 seconds digit on the right.
 
 - 3753 decimillidays: fold finger 3 → ♀7, so 375♀7.
-- 8 dmd: fold finger 8 → ♅2 (72 Dec seconds).
+- 8 dmd: fold finger 8 → ♅2 (72 seconds).
 - 0 dmd → ☉0.
 
 Later decimal digits add 0.9 s each and can carry; the finger step stays the same.

@@ -167,6 +167,17 @@ updated as new preferences come up; don't let it grow into a changelog.
   meanings: `p` pent, `f` foot, `a` arcbeat, `z` zem, `y` year, `r` rose, `q` quotidie,
   not pico, femto, atto, zepto, yocto, ronto, quecto. `n` is the note for now and may
   become the nanoturn.
+- Audience: Dec articles are written for Dec users. Dec replaces much of the metric
+  system and openly redefines units, so don't cater to readers of other systems or teach
+  them the system they already use (no conversion cheat sheets). Redefined units take
+  their plain names without "Dec": mile, inch, foot, pound, ounce, grain, hour, minute,
+  second, and so on (1 mph, a mile per hour, = 1 mv). The conventional time units are
+  heh, bem, and sis. Only when a non-Dec unit must be named, call it US customary, e.g.
+  US customary mile (ucm).
+- Clashes with other systems are intentional, not problems to flag: `kg` is the kilograin
+  (64 g), which Dec uses instead of the kilogram (a kilogram-sized unit is the kebigram,
+  16 kilograins); `c` is the taur, and the `c` in E = mc² is a constant, not a unit (the
+  speed of light is `sol`). If `c` alone is ever unclear, spell out taur or write 𝜏r.
 - The mod operator is written as a minus joined to a left floor (x − y⌊x/y⌋): in LaTeX
   `\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}` (binary spacing on both
   sides; a shorter floor than a real `\lfloor`, raised so the stroke meets the middle of

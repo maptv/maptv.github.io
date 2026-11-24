@@ -117,7 +117,7 @@ of the month.
 
 
 The animation above goes through an entire year in 36.5 beats, a million
-times faster🏎️than the actual speed of time! A Dec beat is a
+times faster🏎️than the actual speed of time! A beat is a
 centimilliday (1% of a milliday, $10^{-5}$ of a day, or 86.4% of a
 second), which can be thought of as a heart❤️beat or
 musical🎵[beat](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=the%20beat%20is%20the%20basic%20unit%20of%20time)
