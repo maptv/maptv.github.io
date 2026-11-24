@@ -84,8 +84,7 @@ updated as new preferences come up; don't let it grow into a changelog.
   article's `_index.qmd`, included at the end of `index.qmd`.
 - An OJS name may be defined only once across `index.qmd` and everything it includes;
   a second definition is a runtime error.
-- Every display equation gets an `{#eq-…}` label, and consecutive equations are wrapped
-  in `::: {.equationgroup #equationgroupNN}`, as in dec/date.
+- Every display equation gets an `{#eq-…}` label.
 - Single range inputs use `//| class: slider` so they share the /dec slider layout.
 
 ## Content edits
@@ -112,12 +111,15 @@ updated as new preferences come up; don't let it grow into a changelog.
   the text links an abbreviation to its glossary entry (`#mj`), the entry links back to
   the term's first use on the page, which carries the long id (`{#millijing .tool …}`),
   and `asset/glossary.js` sends a backlink to another article when the page lacks it.
+  A term that is useful in the text but isn't part of Dec (e.g. "days in month", dim)
+  gets a tooltip, not a glossary entry.
 - Day/year units in Dec articles: write "d" (linked like `[d](#d){.tool …}`) for a measured
   amount or duration after a numeral ("59 d long", "shifts by 1 to 6 d"); spell out "days"
   in relative-time phrases ("N days ago", "in N days", "days since/until", "N days before")
   and when counting specific days as items ("the first 4 days of the year"); always "1 day"
-  and spelled-out numbers ("a day or two"). Never use "y" as a unit symbol, since `y` is the
-  Year variable ("Year y", "y+1"); always spell out "years" (and "weeks", "sols").
+  and spelled-out numbers ("a day or two"). Years follow the same rule: "y" (linked like
+  `[y](#y){.tool …}`) after a numeral ("25 to 45 y"), "years" in relative-time phrases.
+  Always spell out "weeks" and "sols".
 - Plurals in Dec articles: acronyms are never pluralized in the text, but their tooltip
   shows the plural expansion when the context is plural ("3 [tzo](#tzo)" with tooltip
   "time zone offsets", never "tzos"). Zem is itself an acronym (zone equatorial meter), so
@@ -147,15 +149,36 @@ updated as new preferences come up; don't let it grow into a changelog.
 - The hectoday (100 days) is `ﾲ` (U+FFB2, halfwidth Hangul pieup, from 백일 and 百日宴),
   with `piﾲ`, `niﾲ`, `doﾲ` (ids `#baekil`, `#pibaekil`, `#nibaekil`, `#dobaekil`), not
   `h`, `pih`, `nih`, `doh`. `h` is the Dec hour (1/25 d) and `m` the Dec minute (1/1500 d);
-  the 24-per-day hour, minute, and second are `heh` (Hipparchian equinoctial hour), `bem`,
-  and `bes` (Birunian equinoctial minute/second). `hms`, `hod`, `moh` still mean the
-  conventional triplet. `sis` (SI second) stays where the atomic second is meant.
+  the 24-per-day hour, minute, and second are `heh` (Hipparchian equinoctial hour), `bem`
+  (Birunian equinoctial minute), and `sis` (SI second, 1/86400 d); `s` (or sec) is the Dec
+  second (1/90000 d). Don't use `bes`, and don't distinguish seconds with and without leap
+  seconds: Dec handles leap seconds with offsets. `hms`, `hod`, `moh` still mean the
+  conventional triplet.
+- Symbols: the turn is `T` (its inverse is `ꓕ`, an upside-down T). The turn submultiples
+  are dime `⅒`, cent `¢`, and mil `₥` (never "mill"); `₥` always gets `.mono`, and `⅒`
+  gets `.iosevka` (also monospaced, and it has the glyph); `₥` is the milliturn
+  everywhere, never `mt`. `m` is the Dec minute, so it is never the meter: the SI meter is
+  `sim`, with prefixes and powers built on it (`ksim`, `dsim²`, `csim³`, `ksim/h` for
+  kilometers per Dec hour). The micro prefix is the micro sign `µ` (U+00B5, `&micro;`);
+  the Greek letter `μ` (U+03BC) is reserved for the base24 digit 11.
+- Prefixes: Dec doesn't use every metric prefix or use them exactly as SI does. `k` is
+  kilo (a thousand turns), never keg (the keg is z³). Tera is not used; a teraturn would
+  be a "ter" with a lowercase `t`. Letters that SI uses for small prefixes keep their Dec
+  meanings: `p` pent, `f` foot, `a` arcbeat, `z` zem, `y` year, `r` rose, `q` quotidie,
+  not pico, femto, atto, zepto, yocto, ronto, quecto. `n` is the note for now and may
+  become the nanoturn.
 - The mod operator is written as a minus joined to a left floor (x − y⌊x/y⌋): in LaTeX
   `\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}` (binary spacing on both
   sides; a shorter floor than a real `\lfloor`, raised so the stroke meets the middle of
   its stem at minus height), never `\bmod` or `\text{ mod }`; in markdown
   `[&LeftFloor;]{.hyphen}` (drawn by `.hyphen` in `asset/style.css`), not the word "mod",
   which is freed up for other uses. Code keeps its language's own `mod`/`%`.
+- Parentheses: use them in equations and prose only where they are required. Extra
+  parentheses imply that they are needed, which misleads when they aren't, so don't add
+  or suggest them just for clarity. The usual precedence applies (3 + 5/4 = 4.25),
+  and operators of the same priority apply left to right. The mod operator ranks with ×
+  and ÷, so `o ⌊- 1 × 10` (eq-note)
+  takes the mod first.
 - Dec has no negative time zone offsets: the international date line and the prime meridian
   coincide, so a negative UTC offset becomes a positive Dec offset by adding 1 day. A
   holiday tied to a Gregorian dom or dow therefore lands 1 day later in the Americas.

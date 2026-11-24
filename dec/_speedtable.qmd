@@ -1,6 +1,6 @@
 ::: {#tbl-speed .unittable}
 
-| [US](#us){.bold .tool data-bs-toggle="tooltip" data-bs-title="United States"} speed unit  | [mv](#mv){.bold .tool data-bs-toggle="tooltip" data-bs-title="milliomegar"} | [kmph](#kmph){#kilometersperhour .bold .tool data-bs-toggle="tooltip" data-bs-title="kilometers per hour"} |
+| [US](#us){.bold .tool data-bs-toggle="tooltip" data-bs-title="United States"} speed unit  | [mv](#mv){.bold .tool data-bs-toggle="tooltip" data-bs-title="milliomegar"} | [ksim/h](#kmph){#kilometersperhour .bold .tool data-bs-toggle="tooltip" data-bs-title="kilometers per Dec hour"} |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
 | [1.0253]{.colorPerS} [inches/second](https://en.wikipedia.org/wiki/Inch_per_second)       |  0.05625                                                                     |  0.09                                                                            |
 | [1.0253]{.colorPerS} [feet/second](https://en.wikipedia.org/wiki/Foot_per_second)         |  0.675                                                                       |  1.08                                                                            |
