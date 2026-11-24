@@ -8,11 +8,11 @@
 - [bpc](#beatpercentiday){#bpc}: a musical or heart beat per centiday, a tenth of a beat per milliday, 0.069[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} beats per minute, 100 beats per day
 - [bpm](#beatpermilliday){#bpm}: a musical or heart beat per milliday, ten beats per centiday, 0.69[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} beats per minute, 1000 beats per day
 - [BMI](#bodymassindex){#bmi}: body mass index, kilograins of body mass divided by height in zem squared (kg/z&sup2;)
-- [b6](#base6){#b6}: base6, senary, 6 digits written as counting rods, 𝍠 𝍮 𝍯 𝍰 𝍱 𝍭, whose number of horizontal strokes is the value of the digit; the first digit of a Dec minute or second counts tens of Dec minutes or seconds
-- [b9](#base9){#b9}: base9, nonary, 9 digits written as the astronomical symbols of the Sun and the eight planets, ☉ ☿ ♀ ♁ ♂ ♃ ♄ ♅ ♆; the first digit after a tod with Dec seconds appended counts tens of Dec seconds
+- [b6](#base6){#b6}: base6, senary, 6 digits written as counting rods, 𝍠 𝍮 𝍯 𝍰 𝍱 𝍭, whose number of horizontal strokes is the value of the digit; the first digit of a minute or second counts tens of minutes or seconds
+- [b9](#base9){#b9}: base9, nonary, 9 digits written as the astronomical symbols of the Sun and the eight planets, ☉ ☿ ♀ ♁ ♂ ♃ ♄ ♅ ♆; the first digit after a tod with seconds appended counts tens of seconds
 - [b10](#base10){#b10}: base10, decimal, the digits 0 to 9
-- [b24](#base24){#b24}: base24, 24 digits written as the lowercase Greek letters α to ω; counts sid after a number of Dec seconds or heh after a UTC offset
-- [b25](#base25){#b25}: base25, pentavigesimal, 25 digits written as Ogham letters; zero-based digits run from the Ogham space mark ([&#x1680;]{.ogham}) for 0 through ᚁ (Beith) for 1 to ᚘ (Ifin) for 24, and one-based digits put ᚙ (Eamhancholl) for 25 in place of the space mark; counts Dec hours
+- [b24](#base24){#b24}: base24, 24 digits written as the lowercase Greek letters α to ω; counts sid after a number of seconds or heh after a UTC offset
+- [b25](#base25){#b25}: base25, pentavigesimal, 25 digits written as Ogham letters; zero-based digits run from the Ogham space mark ([&#x1680;]{.ogham}) for 0 through ᚁ (Beith) for 1 to ᚘ (Ifin) for 24, and one-based digits put ᚙ (Eamhancholl) for 25 in place of the space mark; counts hours
 - [ﾲ](#hectoday){#baekil}: bǎi, a hundred turns; as a duration, a Dec season, 1 hectoday, 10 decadays, or one hundred days; ﾲ, the halfwidth Hangul letter pieup (U+FFB2), looks like a capital H with a line at the bottom; the inspiration for ﾲ is Baek-il (백일), the Korean celebration of the first 100 days of a baby's life, whose first letter is pieup (ㅂ), and 百日宴 (bǎi rì yàn), the Chinese banquet for the same occasion
     - [piﾲ](#positiveintegerhectoday){#pibaekil}: positive integer hectoday, &LeftFloor;pid &div; 100&RightFloor;, 0 to 3
     - [niﾲ](#negativeintegerhectoday){#nibaekil}: negative integer hectoday, &LeftFloor;nid &div; 100&RightFloor;, -4 to -1
@@ -23,7 +23,7 @@
     - [&micro;c](#microtaur){#uc}: microtaur, *&micro;*𝜏*r*, a millionth of a taur, 100 zem, 40 meters
     - [nc](#nanotaur){#nc}: nanotaur, *n*𝜏*r*, a billionth of a taur, 100 millizem, 1 decizem, 4 centimeters
     - [nc&sup3;](#cubicnanotaur){#nc3}: cubic nanotaur, *n*𝜏*r*&sup3;, 1 cubic decizem
-- [d](#day){#d}: day, a tenth of a decaday, a seventh of a week, a fifth of a pentaday, 10 decidays, 24 heh, 25 Dec hours, 100 centidays, 1000 millidays, 1440 bem, 1500 Dec minutes, 86400 SI seconds, 90000 Dec seconds, 100000 beats, the inverse of a quotidie
+- [d](#day){#d}: day, a tenth of a decaday, a seventh of a week, a fifth of a pentaday, 10 decidays, 24 heh, 25 hours, 100 centidays, 1000 millidays, 1440 bem, 1500 minutes, 86400 SI seconds, 90000 seconds, 100000 beats, the inverse of a quotidie
     - [dox](#dayofxun){#dox}: day of xún
     - [dop](#dayofpentaday){#dop}: day of pentaday
     - [dom](#dayofmonth){#dom}: day of month
@@ -63,9 +63,9 @@
     - [lid](#lunarintercalationdifference){#lid}: lunar intercalation difference, a lunar nid that only resets after lunar leap years, -1063 to -1
     - [ved](#venusianextracalationdifference){#ved}: Venusian extracalation difference, days until the end of Doh~♀~ 349, the last day of the one-day-shorter Qoh 2, Bimester 5, and Moh~♀~ 11, (doh~♀~ + 117) [&LeftFloor;]{.hyphen} 467 &minus; 467, -467 to -1
     - [mud](#misalignedunitdifference){#mud}: misaligned unit difference, pid &minus; dom &minus; dow
-    - [dd](#deciday){#dd}: deciday, a tenth of a day, 2.4 heh, 2.5 Dec hours, 144 bem, 150 Dec minutes
-    - [cd](#centiday){#cd}: centiday, a hundredth of a day, 0.24 heh, 0.25 Dec hours, 14.4 bem, 15 Dec minutes
-    - [md](#milliday){#md}: milliday, a thousandth of a day, 1.44 bem, 1.5 Dec minutes, 90 Dec seconds
+    - [dd](#deciday){#dd}: deciday, a tenth of a day, 2.4 heh, 2.5 hours, 144 bem, 150 minutes
+    - [cd](#centiday){#cd}: centiday, a hundredth of a day, 0.24 heh, 0.25 hours, 14.4 bem, 15 minutes
+    - [md](#milliday){#md}: milliday, a thousandth of a day, 1.44 bem, 1.5 minutes, 90 seconds
     - [dmd](#decimilliday){#dmd}: decimilliday, a ten thousandth of a day, a line of time, 10 beats, 8640 milliseconds
     - [cmd](#centimilliday){#cmd}: centimilliday, a hundred thousandth of a day, 1 beat, 864 milliseconds
     - [µd](#microday){#ud}: microday, a millionth of a day, 86.4 milliseconds
@@ -77,31 +77,31 @@
 - [e](#egg){#e}: egg, 1000 grains, 2 ounces, 64 grams
 - [eot](#equationoftime){#eot}: equation of time, ast &minus; mst as a function of toy, about -9.8 to 11.4 millidays
 - [ℓ](#cubit){#ell}: ell, cubit, 10/9 zem
-- [f](#foot){#f}: Dec foot, 75 centizem, 0.75 zem, 300 millimeters
+- [f](#foot){#f}: foot, 75 centizem, 0.75 zem, 300 millimeters
 - [G](#gig){#G}: gig, gigaturn, a billion turns
 - [g](#gutta){#g}: drop (gutta in Latin) or grain (granum in Latin), 64 microliters or 64 milligrams
     - [kg](#kilograin){#kg}: kilograin or kilodrop, 64 grams or 64 milliliters
     - [Mg](#megagrain){#Mg}: megagrain or megadrop, 64 kilograms or 64 liters
-- [h](#dechour){#h}: Dec hour, a twenty-fifth of a day, 40 millidays, 60 Dec minutes, 3600 Dec seconds, 0.96 heh, 57.6 bem; written as one b25 digit
-    - [heh](#hehour){#heh}: Hipparchian equinoctial hour, a twenty-fourth of a day, 41.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} millidays, 25/24 Dec hours, 60 bem, 3600 SI seconds
+- [h](#dechour){#h}: hour, a twenty-fifth of a day, 40 millidays, 60 minutes, 3600 seconds, 0.96 heh, 57.6 bem; written as one b25 digit
+    - [heh](#hehour){#heh}: Hipparchian equinoctial hour, a twenty-fourth of a day, 41.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} millidays, 25/24 hours, 60 bem, 3600 SI seconds
 - [hex](#hexadecimal){#hex}: hexadecimal, base 16
 - [HSL](#huesaturationlightness){#hsl}: hue saturation lightness
 - [HSV](#huesaturationvalue){#hsv}: hue saturation value
-- [i](#inch){#i}: Dec inch, a sixteenth of a zem, 25 millimeters
+- [i](#inch){#i}: inch, a sixteenth of a zem, 25 millimeters
 - [ISO](#internationalorganizationforstandardization){#iso}: [International Organization for Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization), the body behind ISO 8601 dates such as 1970-01-01 (ISO month date) and 1970-W01-4 (ISO week date)
 - [j](#jing){#j}: jīng (经), a full circle around the Earth moving North or South through both Poles, a measure of latitude; short for 经圈 (jīngquān), "meridian circle," to emphasize a full circle rather than a meridian, which can be a half circle; an uppercase "J" without a serif is a vertical line drawn from top to bottom, like a jīng running from the North Pole to the South Pole, with a curve at the bottom where the jīng turns to come back up the other side of the Earth; although not the same as the jīng in Běijīng (北京) and Nánjīng (南京), jīng (经) is related to North (Běi) and South (Nán); on a loom, 经 is the warp, the threads that run lengthwise
     - [dj](#decijing){#dj}: decijīng, a tenth of a jīng (经)
     - [mj](#millijing){#mj}: millijīng, a thousandth of a jīng (经)
 - [k](#kilo){#k}: kilo, a thousand turns
 - [ksim](#kilometer){#km}: kilometer, kilo SI meter, 1000 meters, 2500 zem, 2.5 kilozem
-- [ksim/h](#kilometersperhour){#kmph}: kilometers per Dec hour, 1 ksim/h = 0.625 mv
+- [ksim/h](#kilometersperhour){#kmph}: kilometers per hour, 1 ksim/h = 0.625 mv
 - [l](#line){#l}: line, a ten-thousandth of a turn, a tenth of a mil; as a duration, 1 decimilliday
 - [L](#liter){#L}: liter, 15625 drops, a cubic decimeter
     - [mL](#milliliter){#mL}: milliliter, a cubic centimeter, a thousandth of a liter, 15.625 drops
     - [µL](#microliter){#uL}: microliter, a cubic millimeter, a millionth of a liter, 0.015625 drops
 - [M](#meg){#M}: meg, megaturn, a million turns
-- [m](#decminute){#m}: Dec minute, a fifteen-hundredth of a day, a sixtieth of a Dec hour, 60 Dec seconds, 0.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} millidays, 0.96 bem, 57.6 SI seconds; written as one b6 digit followed by one b10 digit
-    - [bem](#birunianequinoctialminute){#bem}: Birunian equinoctial minute, a sixtieth of a heh, a fourteen-hundred-fortieth of a day, 0.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"}[η]{.tool data-bs-toggle="tooltip" data-bs-title="base24 digit 6"} millidays, 25/24 Dec minutes, 60 SI seconds
+- [m](#decminute){#m}: minute, a fifteen-hundredth of a day, a sixtieth of a hour, 60 seconds, 0.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} millidays, 0.96 bem, 57.6 SI seconds; written as one b6 digit followed by one b10 digit
+    - [bem](#birunianequinoctialminute){#bem}: Birunian equinoctial minute, a sixtieth of a heh, a fourteen-hundred-fortieth of a day, 0.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"}[η]{.tool data-bs-toggle="tooltip" data-bs-title="base24 digit 6"} millidays, 25/24 minutes, 60 SI seconds
 - [sim&sup2;](#squaremeter){#m2}: square meter, 6.25 square zem
     - [csim&sup2;](#squarecentimeter){#cm2}: square centimeter, 6.25 square centizem
     - [dsim&sup2;](#squaredecimeter){#dm2}: square decimeter, 6.25 square decizem
@@ -126,18 +126,18 @@
     - [mr](#millirose){#mr}: compass millirose, a thousandth of a *r*otation along the horizon, 0.36 compass degrees
 - [rad](#radian){#rad}: radian, 1/𝜏 turns, 360/𝜏 degrees, 1/𝜋 turns, 180/𝜋 degrees
 - [RGB](#redgreenblue){#rgb}: red green blue
-- [s](#second){#s}: second, Dec second, a sixtieth of a Dec minute, 1/90 millidays, 10/9 beats, 1 Dec second = 0.96 SI seconds
-    - [Ds](#decasecond){#decasec}: decasecond, ten Dec seconds, 1/9 millidays, 9.6 SI seconds
-    - [ds](#decisecond){#ds}: decisecond, a tenth of a Dec second, 1/900 millidays, 1/9 beats, 96 milliseconds
-    - [sid](#secondintervaldifference){#sid}: second interval difference, 1 SI second &minus; 1 Dec second, 1/24 Dec second, 1/25 SI second, 40 milliseconds
-    - [sis](#sisecond){#sis}: SI second, a sixtieth of a bem, 25/24 Dec seconds, 1/86.4 millidays, 1/86400 days
+- [s](#second){#s}: second, a sixtieth of a minute, 1/90 millidays, 10/9 beats, 1 second = 0.96 SI seconds
+    - [Ds](#decasecond){#decasec}: decasecond, ten seconds, 1/9 millidays, 9.6 SI seconds
+    - [ds](#decisecond){#ds}: decisecond, a tenth of a second, 1/900 millidays, 1/9 beats, 96 milliseconds
+    - [sid](#secondintervaldifference){#sid}: second interval difference, 1 SI second &minus; 1 second, 1/24 second, 1/25 SI second, 40 milliseconds
+    - [sis](#sisecond){#sis}: SI second, a sixtieth of a bem, 25/24 seconds, 1/86.4 millidays, 1/86400 days
 - [soi](#spinorbitinterval){#soi}: spin orbit interval, a lunar day, 1.03505 days
     - [soy](#soiofyear){#soy}: soi of year
     - [sob](#soiofbimester){#sob}: soi of bimester
 - [SI](#internationalsystemofunits){#si}: [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
 - [sim](#simeter){#sim}: SI meter, the base unit of length in the International System of Units, 2.5 zem, 10 decimeters
 - [sol](#speedoflight){#sol}: speed of light, 647.55170928 kiloomegar, 299792458 meters per second
-- [sos](#speedofsound){#sos}: speed of sound at 15 degrees Celsius, 735.048 milliomegar, 326.688 meters per Dec second, 340.3 meters per SI second
+- [sos](#speedofsound){#sos}: speed of sound at 15 degrees Celsius, 735.048 milliomegar, 326.688 meters per second, 340.3 meters per SI second
 - [sda](#solardeclinationangle){#sda}: solar declination angle, the latitude at which the Sun is directly overhead
 - [sea](#solarelevationangle){#sea}: solar elevation angle, the angle of the Sun above the horizon, negative when the Sun is below the horizon
 - [𝜏](#tau){#2pi}: 2𝜋 or approximately 6.2831853
@@ -176,9 +176,9 @@
 - [UTC](#coordinateduniversaltime){#utc}: [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - [US](#unitedstates){#us}: [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 - [UT](#universaltime){#ut}: [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation), a time standard based on the rotation of the Earth
-- [v](#omegar){#v}: omegar, ωr, 1000 Dec miles per Dec hour, 1.6 megameters per Dec hour, 0.[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} kilometers per Dec second, roughly 1.36 times the speed of sound
+- [v](#omegar){#v}: omegar, ωr, 1000 mph, 1000 miles per hour, 1.6 megameters per hour, 0.[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} kilometers per second, roughly 1.36 times the speed of sound
     - [kv](#kiloomegar){#kv}: kiloomegar, kωr, 1.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} gigameters per hour, 0.4[♃♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digits 5 and 6"} megameters per second, approximately 0.1544% of the speed of light
-    - [mv](#milliomegar){#mv}: milliomegar, mωr, 1 Dec mile per Dec hour, 1.6 kilometers per Dec hour, 0.[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} meters per Dec second, 1 zem per beat, approximately 0.136% of the speed of sound
+    - [mv](#milliomegar){#mv}: milliomegar, mωr, 1 mph, 1 mile per hour, 1.6 kilometers per hour, 0.[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} meters per second, 1 zem per beat, approximately 0.136% of the speed of sound
 - [ʌ](#upsilonr){#ur}: upsilonr, the inverse of an omegar, 1/v, d/c, b/kz, a unit of slowness; symbolized by a turned v (ʌ)
 - [w](#wei){#w}: wěi (纬), parallel, a full circle around the Earth moving East or West at the same latitude, a measure of longitude; short for 纬圈 (wěiquān), "latitude circle"; can be thought of as a measure of the **w**idth of a jīng on **E**arth; "w" is written from left to right, like a wěi running from **W**est to **E**ast across a map, starts the word "width," as in the width of a map, and is one of the widest letters in proportional fonts; on a loom, 纬 is the weft, the threads that run crosswise
     - [dw](#deciwei){#dw}: deciwěi, a tenth of a wěi (纬), a tenth of a parallel
@@ -205,12 +205,12 @@
     - [woy](#weekofyear){#woy}: week of year, (boydow + bow) &div; 7, 0 to 53, where boydow (beginning of year day of week) is the dow of Day 0
     - [wom](#weekofmonth){#wom}: week of month
 - [z](#zoneequatorialmeter){#z}: zem, zone equatorial meter, 4 decimeters, 16 inches
-    - [kz&sup2;](#squarekilozem){#kz2}: square kilozem, a million square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600 ares, 40 Dec acres, 0.16 square kilometers, 0.0625 Dec square miles
+    - [kz&sup2;](#squarekilozem){#kz2}: square kilozem, a million square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600 ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
     - [ﾲz](#baizem){#bzem .mono}: bǎizem, a hundred zem, 1 microtaur, 40 meters
-    - [kz](#kilozem){#kz}: kilozem, 1000 zem, 400 meters, a quarter Dec mile
-    - [z&sup2;](#squarezem){#z2}: square zem, hexamilliare, 16 square decimeters, 1.[♅]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 7"} Dec square feet, 256 Dec square inches
+    - [kz](#kilozem){#kz}: kilozem, 1000 zem, 400 meters, a quarter mile
+    - [z&sup2;](#squarezem){#z2}: square zem, hexamilliare, 16 square decimeters, 1.[♅]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 7"} square feet, 256 square inches
     - [cz&sup2;](#squarecentizem){#cz2}: square centizem, a ten-thousandth of a square zem, 16 square millimeters
-    - [Dz&sup2;](#squaredecazem){#Dz2}: square decazem, 1 hexadeciare, 16 square meters, 19.75 Dec square yards, 100 square zem
+    - [Dz&sup2;](#squaredecazem){#Dz2}: square decazem, 1 hexadeciare, 16 square meters, 19.75 square yards, 100 square zem
     - [z&sup3;](#cubiczem){#z3}: cubic zem, 1 keg, 64 liters, 1000 wine glasses, a million drops, half a barrel
     - [dz&sup3;](#cubicdecizem){#dz3}: cubic decizem, 1000 drops, 64 milliliters, 2 ounces, 1 wine glass
     - [cz&sup3;](#cubiccentizem){#cz3}: cubic centizem, 1 drop, 64 microliters
