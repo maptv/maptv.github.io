@@ -175,8 +175,9 @@ updated as new preferences come up; don't let it grow into a changelog.
   which is freed up for other uses. Code keeps its language's own `mod`/`%`.
 - Parentheses: use them in equations and prose only where they are required. Extra
   parentheses imply that they are needed, which misleads when they aren't, so don't add
-  or suggest them just for clarity. Operators apply left to right as written, so
-  `o ⌊- 1 × 10` (eq-note) takes the mod first.
+  or suggest them just for clarity. The usual precedence applies (3 + 5/4 = 4.25),
+  and operators of the same priority apply left to right, so `o ⌊- 1 × 10` (eq-note)
+  takes the mod first.
 - Dec has no negative time zone offsets: the international date line and the prime meridian
   coincide, so a negative UTC offset becomes a positive Dec offset by adding 1 day. A
   holiday tied to a Gregorian dom or dow therefore lands 1 day later in the Americas.
