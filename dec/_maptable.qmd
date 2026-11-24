@@ -1,3 +1,29 @@
+```{ojs}
+//| echo: false
+//| label: toggles
+viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
+viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
+viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
+viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
+rstbtn.node();
+```
+
+::: {#tbl-map}
+
+```{ojs}
+//| echo: false
+//| label: maptable
+table = createTable([
+  { Point: 0, Milliwěi: 800, Millijīng: 0, Millirose: 0 },
+  { Point: 1, Milliwěi: 800, Millijīng: 100, Millirose: 500 },
+], { headerEditable: false, appendRows: false })
+//   {Point: 0, Milliwěi: `${Math.floor(long2turn(Place_A[0], 3))}`, Millijīng: `${Math.floor(lati2turn(Place_A[1], 3))}`, Millirose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
+//   {Point: 1, Milliwěi: `${Math.floor(long2turn(Place_B[0], 3))}`, Millijīng: `${Math.floor(lati2turn(Place_B[1], 3))}`, Millirose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
+// ], {headerEditable: false, appendRows: false})
+```
+
+:::
+
 :::{.marginInputs}
 ```{ojs}
 //| echo: false
@@ -41,32 +67,6 @@ viewof mapsize = Inputs.range([0, 100], {label: "Size", value: 100, step: 1})
 viewof select = Inputs.select(
   projections, {format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
 ```
-:::
-
-```{ojs}
-//| echo: false
-//| label: toggles
-viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
-viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
-viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
-viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
-rstbtn.node();
-```
-
-::: {#tbl-map}
-
-```{ojs}
-//| echo: false
-//| label: maptable
-table = createTable([
-  { Point: 0, Milliwěi: 800, Millijīng: 0, Millirose: 0 },
-  { Point: 1, Milliwěi: 800, Millijīng: 100, Millirose: 500 },
-], { headerEditable: false, appendRows: false })
-//   {Point: 0, Milliwěi: `${Math.floor(long2turn(Place_A[0], 3))}`, Millijīng: `${Math.floor(lati2turn(Place_A[1], 3))}`, Millirose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
-//   {Point: 1, Milliwěi: `${Math.floor(long2turn(Place_B[0], 3))}`, Millijīng: `${Math.floor(lati2turn(Place_B[1], 3))}`, Millirose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
-// ], {headerEditable: false, appendRows: false})
-```
-
 :::
 
 ```{ojs}

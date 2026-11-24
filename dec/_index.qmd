@@ -3211,7 +3211,7 @@ div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput >
   overflow-x: clip;
 }
 div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
-  width: 35px;
+  width: 45px;
 }
 button#rstbtn:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
@@ -3359,10 +3359,6 @@ h4.anchored {
 }
 svg#lefthand {
   height: 50%;
-}
-.marginInputs {
-  position: relative;
-  top: -109px;
 }
 #cct table, #zct table {
   line-height: 1.5;

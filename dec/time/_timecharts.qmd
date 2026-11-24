@@ -283,6 +283,8 @@ barChart1 = {
 }
 ```
 
+# Longitude latitude map {#llm .unnumbered .unlisted .hiddenheading}
+
 :::{.marginInputs}
 ```{ojs}
 //| echo: false
@@ -332,8 +334,6 @@ table = createTable([
 // ], {headerEditable: false, appendRows: false})
 ```
 :::
-
-# Longitude latitude map {#llm .unnumbered .unlisted .hiddenheading}
 
 ::: {.column-screen}
 ```{ojs}
