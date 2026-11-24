@@ -13,7 +13,7 @@
 - [b10](#base10){#b10}: base10, decimal, the digits 0 to 9
 - [b24](#base24){#b24}: base24, 24 digits written as the lowercase Greek letters α to ω; counts sid after a number of Dec seconds or heh after a UTC offset
 - [b25](#base25){#b25}: base25, pentavigesimal, 25 digits written as Ogham letters; zero-based digits run from the Ogham space mark ([&#x1680;]{.ogham}) for 0 through ᚁ (Beith) for 1 to ᚘ (Ifin) for 24, and one-based digits put ᚙ (Eamhancholl) for 25 in place of the space mark; counts Dec hours
-- [ﾲ](#hectoday){#baekil}: a Dec season, 1 hectoday, 10 decadays, or one hundred days; ﾲ, the halfwidth Hangul letter pieup (U+FFB2), looks like a capital H with a line at the bottom; the inspiration for ﾲ is Baek-il (백일), the Korean celebration of the first 100 days of a baby's life, whose first letter is pieup (ㅂ), and 百日宴 (bǎi rì yàn), the Chinese banquet for the same occasion
+- [ﾲ](#hectoday){#baekil}: bǎi, a hundred turns; as a duration, a Dec season, 1 hectoday, 10 decadays, or one hundred days; ﾲ, the halfwidth Hangul letter pieup (U+FFB2), looks like a capital H with a line at the bottom; the inspiration for ﾲ is Baek-il (백일), the Korean celebration of the first 100 days of a baby's life, whose first letter is pieup (ㅂ), and 百日宴 (bǎi rì yàn), the Chinese banquet for the same occasion
     - [piﾲ](#positiveintegerhectoday){#pibaekil}: positive integer hectoday, &LeftFloor;pid &div; 100&RightFloor;, 0 to 3
     - [niﾲ](#negativeintegerhectoday){#nibaekil}: negative integer hectoday, &LeftFloor;nid &div; 100&RightFloor;, -4 to -1
 - [c](#taur){#c}: taur, 𝜏*r*, 100000 kilozem, 40000 kilometers, nearly the circumference of the Earth, roughly the product of 𝜏 and the radius of the Earth, approximately the dividend of the surface area and the diameter of the Earth
@@ -23,13 +23,16 @@
     - [&micro;c](#microtaur){#uc}: microtaur, *&micro;*𝜏*r*, a millionth of a taur, 100 zem, 40 meters
     - [nc](#nanotaur){#nc}: nanotaur, *n*𝜏*r*, a billionth of a taur, 100 millizem, 1 decizem, 4 centimeters
     - [nc&sup3;](#cubicnanotaur){#nc3}: cubic nanotaur, *n*𝜏*r*&sup3;, 1 cubic decizem
-- [d](#day){#d}: day, a tenth of a decaday, a seventh of a week, a fifth of a pentaday, 10 decidays, 24 heh, 25 Dec hours, 100 centidays, 1000 millidays, 1440 bem, 1500 Dec minutes, 86400 bes, 90000 Dec seconds, 100000 beats, the inverse of a quotidie
+- [d](#day){#d}: day, a tenth of a decaday, a seventh of a week, a fifth of a pentaday, 10 decidays, 24 heh, 25 Dec hours, 100 centidays, 1000 millidays, 1440 bem, 1500 Dec minutes, 86400 SI seconds, 90000 Dec seconds, 100000 beats, the inverse of a quotidie
     - [dox](#dayofxun){#dox}: day of xún
     - [dop](#dayofpentaday){#dop}: day of pentaday
     - [dom](#dayofmonth){#dom}: day of month
     - dom~♀~: Decyther day of month, 0 to 28 in Venusian short months or 0 to 29 in Venusian long months
     - [dow](#dayofweek){#dow}: day of week
     - [doy](#dayofyear){#doy}: day of year, xún * 10 + dox
+        - [dst](#daylightsavingtime){#dst}: daylight saving time
+        - [did](#dstinitdoy){#did}: dst initiation doy, the last doy before dst
+        - [ded](#dstexpdoy){#ded}: dst expiration doy, the first doy after dst
     - [pid](#positiveintegerdoy){#pid}: positive integer day of year, days elapsed since the beginning of the year, 0 to 364 or 365
     - [nid](#negativeintegerdoy){#nid}: negative integer day of year, pid &minus; syl, -365 or -366 to -1, the negative of the days left in the year
     - [mid](#mixedintegerdoy){#mid}: mixed integer day of year, an nid rewritten with negative leading digits (marked by a vinculum) and a positive last digit or two
@@ -63,7 +66,7 @@
     - [dd](#deciday){#dd}: deciday, a tenth of a day, 2.4 heh, 2.5 Dec hours, 144 bem, 150 Dec minutes
     - [cd](#centiday){#cd}: centiday, a hundredth of a day, 0.24 heh, 0.25 Dec hours, 14.4 bem, 15 Dec minutes
     - [md](#milliday){#md}: milliday, a thousandth of a day, 1.44 bem, 1.5 Dec minutes, 90 Dec seconds
-    - [dmd](#decimilliday){#dmd}: decimilliday, a ten thousandth of a day, 10 beats, 8640 milliseconds
+    - [dmd](#decimilliday){#dmd}: decimilliday, a ten thousandth of a day, a line of time, 10 beats, 8640 milliseconds
     - [cmd](#centimilliday){#cmd}: centimilliday, a hundred thousandth of a day, 1 beat, 864 milliseconds
     - [µd](#microday){#ud}: microday, a millionth of a day, 86.4 milliseconds
     - [nd](#nanoday){#nd}: nanoday, a billionth of a day, 86.4 microseconds
@@ -74,58 +77,60 @@
 - [e](#egg){#e}: egg, 1000 grains, 2 ounces, 64 grams
 - [eot](#equationoftime){#eot}: equation of time, ast &minus; mst as a function of toy, about -9.8 to 11.4 millidays
 - [ℓ](#cubit){#ell}: ell, cubit, 10/9 zem
-- [f](#foot){#f}: foot, 0.75 zem, 75 millimeters 
+- [f](#foot){#f}: Dec foot, 75 centizem, 0.75 zem, 300 millimeters
+- [G](#gig){#G}: gig, gigaturn, a billion turns
 - [g](#gutta){#g}: drop (gutta in Latin) or grain (granum in Latin), 64 microliters or 64 milligrams
     - [kg](#kilograin){#kg}: kilograin or kilodrop, 64 grams or 64 milliliters
     - [Mg](#megagrain){#Mg}: megagrain or megadrop, 64 kilograms or 64 liters
 - [h](#dechour){#h}: Dec hour, a twenty-fifth of a day, 40 millidays, 60 Dec minutes, 3600 Dec seconds, 0.96 heh, 57.6 bem; written as one b25 digit
-    - [heh](#hehour){#heh}: Hipparchian equinoctial hour, a twenty-fourth of a day, 41.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} millidays, 25/24 Dec hours, 60 bem, 3600 bes
+    - [heh](#hehour){#heh}: Hipparchian equinoctial hour, a twenty-fourth of a day, 41.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} millidays, 25/24 Dec hours, 60 bem, 3600 SI seconds
 - [hex](#hexadecimal){#hex}: hexadecimal, base 16
 - [HSL](#huesaturationlightness){#hsl}: hue saturation lightness
 - [HSV](#huesaturationvalue){#hsv}: hue saturation value
-- [i](#inch){#i}: inch, a sixteenth of a zem, 25 millimeters
+- [i](#inch){#i}: Dec inch, a sixteenth of a zem, 25 millimeters
 - [ISO](#internationalorganizationforstandardization){#iso}: [International Organization for Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization), the body behind ISO 8601 dates such as 1970-01-01 (ISO month date) and 1970-W01-4 (ISO week date)
 - [j](#jing){#j}: jīng (经), a full circle around the Earth moving North or South through both Poles, a measure of latitude; short for 经圈 (jīngquān), "meridian circle," to emphasize a full circle rather than a meridian, which can be a half circle; an uppercase "J" without a serif is a vertical line drawn from top to bottom, like a jīng running from the North Pole to the South Pole, with a curve at the bottom where the jīng turns to come back up the other side of the Earth; although not the same as the jīng in Běijīng (北京) and Nánjīng (南京), jīng (经) is related to North (Běi) and South (Nán); on a loom, 经 is the warp, the threads that run lengthwise
     - [dj](#decijing){#dj}: decijīng, a tenth of a jīng (经)
     - [mj](#millijing){#mj}: millijīng, a thousandth of a jīng (经)
-- [k](#keg){#k}: keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel
-- [km](#kilometer){#km}: kilometer, 1000 meters, 2500 zem, 2.5 kilozem
-- [kmph](#kilometersperhour){#kmph}: kilometers per hour, thousands of meters per Dec hour, 1 kmph = 0.625 mv
-- [l](#line){#l}: line, decimilliday, a ten thousandth of a day, 10 beats, 8640 milliseconds
+- [k](#kilo){#k}: kilo, a thousand turns
+- [ksim](#kilometer){#km}: kilometer, kilo SI meter, 1000 meters, 2500 zem, 2.5 kilozem
+- [ksim/h](#kilometersperhour){#kmph}: kilometers per Dec hour, 1 ksim/h = 0.625 mv
+- [l](#line){#l}: line, a ten-thousandth of a turn, a tenth of a mil; as a duration, 1 decimilliday
 - [L](#liter){#L}: liter, 15625 drops, a cubic decimeter
     - [mL](#milliliter){#mL}: milliliter, a cubic centimeter, a thousandth of a liter, 15.625 drops
     - [µL](#microliter){#uL}: microliter, a cubic millimeter, a millionth of a liter, 0.015625 drops
-- [m](#decminute){#m}: Dec minute, a fifteen-hundredth of a day, a sixtieth of a Dec hour, 60 Dec seconds, 0.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} millidays, 0.96 bem, 57.6 bes; written as one b6 digit followed by one b10 digit
-    - [bem](#birunianequinoctialminute){#bem}: Birunian equinoctial minute, a sixtieth of a heh, a fourteen-hundred-fortieth of a day, 0.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"}[η]{.tool data-bs-toggle="tooltip" data-bs-title="base24 digit 6"} millidays, 25/24 Dec minutes, 60 bes
-- [m&sup2;](#squaremeter){#m2}: square meter, 6.25 square zem
-    - [cm&sup2;](#squarecentimeter){#cm2}: square centimeter, 6.25 square centizem
-    - [dm&sup2;](#squaredecimeter){#dm2}: square decimeter, 6.25 square decizem
-    - [km&sup2;](#squarekilometer){#km2}: square kilometer, 6.25 square kilozem
-    - [cm&sup3;](#cubiccentimeter){#cm3}: cubic centimeter, 1 milliliter, a thousandth of a liter, 15.625 drops
+- [M](#meg){#M}: meg, megaturn, a million turns
+- [m](#decminute){#m}: Dec minute, a fifteen-hundredth of a day, a sixtieth of a Dec hour, 60 Dec seconds, 0.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} millidays, 0.96 bem, 57.6 SI seconds; written as one b6 digit followed by one b10 digit
+    - [bem](#birunianequinoctialminute){#bem}: Birunian equinoctial minute, a sixtieth of a heh, a fourteen-hundred-fortieth of a day, 0.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"}[η]{.tool data-bs-toggle="tooltip" data-bs-title="base24 digit 6"} millidays, 25/24 Dec minutes, 60 SI seconds
+- [sim&sup2;](#squaremeter){#m2}: square meter, 6.25 square zem
+    - [csim&sup2;](#squarecentimeter){#cm2}: square centimeter, 6.25 square centizem
+    - [dsim&sup2;](#squaredecimeter){#dm2}: square decimeter, 6.25 square decizem
+    - [ksim&sup2;](#squarekilometer){#km2}: square kilometer, 6.25 square kilozem
+    - [csim&sup3;](#cubiccentimeter){#cm3}: cubic centimeter, 1 milliliter, a thousandth of a liter, 15.625 drops
 - [p](#pentaday){#p}: pentaday, a group of five days, half a decaday
     - [pox](#pentadayofxun){#pox}: pentaday of xún, 0 for Dox 0 to 4 and 1 for Dox 5 to 9
     - [pob](#pentadayofbimester){#pob}: pentaday of bimester, &LeftFloor;dob &div; 5&RightFloor;, 0 to 11
     - [pir](#pentadayinterquintilerange){#pir}: pentaday interquintile range, Dop 1 to 3, the three days between two lim
     - [lim](#liminalinterconnectingmargin){#lim}: liminal interconnecting margin, the pair of days between two pir, Dop 4 and the following Dop 0
+- [mip](#multiplicativeinversepair){#mip}: multiplicative inverse pair, two units whose product is 1, such as b and þ, d and q, or v and ʌ
 - [n](#note){#n}: note, a specific frequency within an octave
 - [NOAA](#nationaloceanicandatmosphericadministration){#noaa}: [National Oceanic and Atmospheric Administration](https://www.noaa.gov), source of the General Solar Position Calculations document
 - [o](#octave){#o}: octave, a two fold change in frequency
   - [do](#decioctave){#do}: decioctave, a tenth of a two fold change in frequency
-- [þ](#perbeat){#per}: perbeat, the inverse of a beat, 1/beat, once per beat, every beat, 100000 q; symbolized by thorn (þ), which looks like a combination of the letters "p" and "b"; not to be confused with a picobeat (pb)
+- [þ](#perbeat){#per}: perbeat, the inverse of a beat, 1/beat, once per beat, every beat, 100000 q; symbolized by thorn (þ), which looks like a combination of the letters "p" and "b"
     - [‰](#permilliday){#permil}: per milliday, the inverse of a milliday, once per milliday, 1000 q, a hundredth of a perbeat
-    - [Tþ](#teraperbeat){#Tpb}: teraperbeat, 10^12^ perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat, every picobeat
+- [parmic](#parallaxmicroturn){#parmic}: parallax microturn, the distance at which 1 astronomical unit spans a microturn, 3.74 gigataur &div; 𝜏, about 595.239 megataur or 2.51667 light years
 - [q](#quotidie){#q}: quotidie, the inverse of a day, a hundred thousandth of a perbeat; the letter "q" in quotidie can be flipped vertically to produce the letter "d" in day
 - [r](#rose){#r}: compass rose, a full *r*otation along the horizon, 360 compass degrees
     - [saa](#solarazimuthangle){#saa}: solar azimuth angle, the direction of the Sun along the horizon measured clockwise from North
-    - [mr](#millirose){#mr}: compass millirose, a thousandth of a *r*otation along the horizon, .36 compass degrees
+    - [mr](#millirose){#mr}: compass millirose, a thousandth of a *r*otation along the horizon, 0.36 compass degrees
 - [rad](#radian){#rad}: radian, 1/𝜏 turns, 360/𝜏 degrees, 1/𝜋 turns, 180/𝜋 degrees
 - [RGB](#redgreenblue){#rgb}: red green blue
 - [s](#second){#s}: second, Dec second, a sixtieth of a Dec minute, 1/90 millidays, 10/9 beats, 1 Dec second = 0.96 SI seconds
-    - [bes](#birunianequinoctialsecond){#bes}: Birunian equinoctial second, a sixtieth of a bem, 1/86400 days, 1/86.4 millidays, 25/24 Dec seconds; the solar day counterpart of the SI second
     - [Ds](#decasecond){#decasec}: decasecond, ten Dec seconds, 1/9 millidays, 9.6 SI seconds
     - [ds](#decisecond){#ds}: decisecond, a tenth of a Dec second, 1/900 millidays, 1/9 beats, 96 milliseconds
     - [sid](#secondintervaldifference){#sid}: second interval difference, 1 SI second &minus; 1 Dec second, 1/24 Dec second, 1/25 SI second, 40 milliseconds
-    - [sis](#sisecond){#sis}: SI second, 25/24 Dec seconds, 1/86.4 millidays, 1/86400 days
+    - [sis](#sisecond){#sis}: SI second, a sixtieth of a bem, 25/24 Dec seconds, 1/86.4 millidays, 1/86400 days
 - [soi](#spinorbitinterval){#soi}: spin orbit interval, a lunar day, 1.03505 days
     - [soy](#soiofyear){#soy}: soi of year
     - [sob](#soiofbimester){#sob}: soi of bimester
@@ -150,7 +155,7 @@
     - [moh](#minuteofhour){#moh}: minute of hour in bem, &LeftFloor;hsisa &div; 60&RightFloor;, 0 to 59
     - [sisom](#sisecondofminute){#sisom}: SI second of minute, &LeftFloor;hsisa [&LeftFloor;]{.hyphen} 60&RightFloor;, 0 to 59
     - [mod](#millidayofday){#mod}: milliday of day, &LeftFloor;tod &times; 1000&RightFloor;, 0 to 999
-    - [tom](#timeofmilliday){#tom}: time of milliday, the part of a tod left after its mod, tod &times; 1000 [&LeftFloor;]{.hyphen} 1 millidays, 0 to 100 beats
+    - [tom](#timeofmilliday){#tom}: time of milliday, the part of a tod left after its mod, tod &times; 1000 [&LeftFloor;]{.hyphen} 1 millidays, 0 to under 100 beats
     - [til](#timeintegerlength){#til}: time integer length, the digit count of a tod or offset written without a decimal separator, including leading zeros; its unit is 10^-til^ days
     - [som](#secondofmilliday){#som}: second of milliday, 0 to 89
     - [mst](#meansolartime){#mst}: mean solar time, solar time based only on longitude and the Zone 0 tod
@@ -159,12 +164,11 @@
     - [lah](#lightarchalf){#lah}: light arc half, law/2, the time from sunrise to solar noon or from solar noon to sunset
     - [naw](#nightarcwhole){#naw}: night arc whole, the time from sunset to sunrise, 1 &minus; law
     - [nah](#nightarchalf){#nah}: night arc half, naw/2, the time from sunset to solar midnight or from solar midnight to sunrise
-- [t](#turn){#t}: turn, 360 degrees, 𝜏 or 2𝜋 radians
-    - [ct](#centiturn){#ct}: centiturn, a hundredth of a turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
-    - [dt](#deciturn){#dt}: deciturn, a tenth of a turn, 36 degrees, 𝜏/10 or 𝜋/5 radians
-    - [mt](#milliturn){#mt}: milliturn, a thousandth of a turn, .36 degrees, 𝜏/1000 or 𝜋/500 radians
-- [T](#turndimension){#T}: turn as a dimension, shared by quantities measured in turns, such as days (d) and omegar (v)
-- [ꓕ](#inverseturn){#inverset}: inverse turn, the dimension of the inverse of a turn, shared by quotidie (q), perbeat (þ), and upsilonr (ʌ); drawn as an upside-down T (ꓕ)
+- [T](#turn){#T}: turn, 360 degrees, 𝜏 or 2𝜋 radians; as a dimension, shared by quantities measured in turns, such as days (d) and omegar (v)
+    - [ꓕ](#inverseturn){#inverset .big}: inverse turn, 1/T, a T turned upside down, the dimension shared by quotidie, perbeat, and upsilonr
+    - [&cent;](#centiturn){#ct .mono}: cent, centiturn, a hundredth of a turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
+    - [⅒](#deciturn){#dt .iosevka}: dime, deciturn, a tenth of a turn, 36 degrees, 𝜏/10 or 𝜋/5 radians
+    - [₥](#milliturn){#mt .mono}: mil, milliturn, a thousandth of a turn, 0.36 degrees, 𝜏/1000 or 𝜋/500 radians
 - [tzo](#timezoneoffset){#tzo}: time zone offset
 - [u](#ounce){#u}: ounce (uncia in Latin), 500 grains, 32 grams, 500 drops, 32 milliliters
 - [uto](#universaltimeoffset){#uto}: universal time offset, the offset in decidays that turns a Zone 0 tod into Universal Time; a tzo is an integer uto
@@ -175,7 +179,7 @@
 - [v](#omegar){#v}: omegar, ωr, 1000 Dec miles per Dec hour, 1.6 megameters per Dec hour, 0.[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} kilometers per Dec second, roughly 1.36 times the speed of sound
     - [kv](#kiloomegar){#kv}: kiloomegar, kωr, 1.[♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 6"} gigameters per hour, 0.4[♃♄]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digits 5 and 6"} megameters per second, approximately 0.1544% of the speed of light
     - [mv](#milliomegar){#mv}: milliomegar, mωr, 1 Dec mile per Dec hour, 1.6 kilometers per Dec hour, 0.[♂]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 4"} meters per Dec second, 1 zem per beat, approximately 0.136% of the speed of sound
-- [ʌ](#upsilonr){#ur}: upsilonr, the inverse of an omegar, 1/v, a measure of slowness, 1 day per taur, 1 beat per kilozem; symbolized by a turned v (ʌ)
+- [ʌ](#upsilonr){#ur}: upsilonr, the inverse of an omegar, 1/v, d/c, b/kz, a unit of slowness; symbolized by a turned v (ʌ)
 - [w](#wei){#w}: wěi (纬), parallel, a full circle around the Earth moving East or West at the same latitude, a measure of longitude; short for 纬圈 (wěiquān), "latitude circle"; can be thought of as a measure of the **w**idth of a jīng on **E**arth; "w" is written from left to right, like a wěi running from **W**est to **E**ast across a map, starts the word "width," as in the width of a map, and is one of the widest letters in proportional fonts; on a loom, 纬 is the weft, the threads that run crosswise
     - [dw](#deciwei){#dw}: deciwěi, a tenth of a wěi (纬), a tenth of a parallel
     - [mw](#milliwei){#mw}: milliwěi, a thousandth of a wěi (纬), a thousandth of a parallel
@@ -183,7 +187,7 @@
 - [x](#xun){#x}: xún (旬), decaday, a group of ten days, 2 pentadays, represented by x like the Roman numeral X
     - [pix](#positiveintegerxun){#pix}: positive integer xún, &LeftFloor;pid &div; 10&RightFloor;, 0 to 36
     - [nix](#negativeintegerxun){#nix}: negative integer xún, &LeftFloor;nid &div; 10&RightFloor;, -37 to -1
-    - [mix](#mixedintegerxun){#mix}: mixed integer xún, the first two digits of an niﾲ mid
+    - [mix](#mixedintegerxun){#mix}: mixed integer xún, the first two digits of an niﾲ mid: a negative niﾲ digit under a vinculum followed by the xún elapsed in that hectoday, which together equal an nix, e.g. 2̄3 = -20 + 3 = -17
     - [xir](#xuninterdecilerange){#xir}: xún interdecile range, Dox 1 to 8, the days between Dox 0 and 9
 - [y](#year){#y}: year
     - [my](#milliyear){#my}: milliyear, a thousandth of a year
@@ -198,14 +202,15 @@
     - [yoq](#yearofquadricentennial){#yoq}: year of quadricentennial, years since the start of the current quadricentennial, 0 to 399
     - [yot](#yearoftricennium){#yot}: year of tricennium, lunar years since the start of the current 30-year lunar cycle, 0 to 29
     - [moy](#monthofyear){#moy}: month of year, zero-based, Moy 0 is March
-    - [woy](#weekofyear){#woy}: week of year, (boydow + bow) &div; 7, 0 to 53
+    - [woy](#weekofyear){#woy}: week of year, (boydow + bow) &div; 7, 0 to 53, where boydow (beginning of year day of week) is the dow of Day 0
     - [wom](#weekofmonth){#wom}: week of month
 - [z](#zoneequatorialmeter){#z}: zem, zone equatorial meter, 4 decimeters, 16 inches
-    - [kz&sup2;](#squarekilozem){#kz2}: square kilozem, a million square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600 ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
-    - [kz](#kilozem){#kz}: kilozem, 1000 zem, 400 meters, a quarter mile
-    - [z&sup2;](#squarezem){#z2}: square zem, hexamilliare, 16 square decimeters, 1.[♅]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 7"} square feet, 256 square inches
+    - [kz&sup2;](#squarekilozem){#kz2}: square kilozem, a million square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600 ares, 40 Dec acres, 0.16 square kilometers, 0.0625 Dec square miles
+    - [ﾲz](#baizem){#bzem .mono}: bǎizem, a hundred zem, 1 microtaur, 40 meters
+    - [kz](#kilozem){#kz}: kilozem, 1000 zem, 400 meters, a quarter Dec mile
+    - [z&sup2;](#squarezem){#z2}: square zem, hexamilliare, 16 square decimeters, 1.[♅]{.tool data-bs-toggle="tooltip" data-bs-title="base9 digit 7"} Dec square feet, 256 Dec square inches
     - [cz&sup2;](#squarecentizem){#cz2}: square centizem, a ten-thousandth of a square zem, 16 square millimeters
-    - [Dz&sup2;](#squaredecazem){#Dz2}: square decazem, 1 hexadeciare, 16 square meters, 19.75 square yards, 100 square zem
+    - [Dz&sup2;](#squaredecazem){#Dz2}: square decazem, 1 hexadeciare, 16 square meters, 19.75 Dec square yards, 100 square zem
     - [z&sup3;](#cubiczem){#z3}: cubic zem, 1 keg, 64 liters, 1000 wine glasses, a million drops, half a barrel
     - [dz&sup3;](#cubicdecizem){#dz3}: cubic decizem, 1000 drops, 64 milliliters, 2 ounces, 1 wine glass
     - [cz&sup3;](#cubiccentizem){#cz3}: cubic centizem, 1 drop, 64 microliters
