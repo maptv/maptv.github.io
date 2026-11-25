@@ -186,8 +186,11 @@ function parseTableData(table) {
 function focusCell(td) {
   const s = window.getSelection();
   const r = document.createRange();
-  let textNode = td.childNodes[0];
-  const i = td.innerText.length;
+  // The cell may hold a value bar <div>, so put the caret after its last text node
+  let textNode = td;
+  while (textNode.lastChild) textNode = textNode.lastChild;
+  if (textNode === td || textNode.nodeType !== Node.TEXT_NODE) textNode = null;
+  const i = textNode ? textNode.length : 0;
   td.focus();
   if (textNode) {
     r.setStart(textNode, i);
@@ -851,9 +854,9 @@ function worldMapCoordinates(config = {}, dimensions) {
     // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
       9, 13, 27
     ].includes(ev.which)) {
-      lonA = turn2long(liveTable[0].Milliparallel);
+      lonA = turn2long(liveTable[0].Milliwěi);
       latA = turn2degr(liveTable[0].Millijīng);
-      lonB = turn2long(liveTable[1].Milliparallel);
+      lonB = turn2long(liveTable[1].Milliwěi);
       latB = turn2degr(liveTable[1].Millijīng);
       const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
       set(viewof colorD, point0bear)
@@ -869,9 +872,9 @@ function worldMapCoordinates(config = {}, dimensions) {
     // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
       8, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 109, 189
     ].includes(ev.which)) {
-      lonA = turn2long(liveTable[0].Milliparallel);
+      lonA = turn2long(liveTable[0].Milliwěi);
       latA = turn2degr(liveTable[0].Millijīng);
-      lonB = turn2long(liveTable[1].Milliparallel);
+      lonB = turn2long(liveTable[1].Milliwěi);
       latB = turn2degr(liveTable[1].Millijīng);
       const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
       set(viewof colorD, point0bear)
