@@ -3361,23 +3361,31 @@ div#distmap {
   justify-content: center;
   overflow-x: visible;
 }
-#lonlatable {
-  overflow: visible;
+div#maptable {
   display: flex;
   justify-content: center;
+  overflow-x: visible;
   line-height: 1.5;
+  padding-bottom: 9px;
 }
 #projselect > div {
   margin-top: -4px;
 }
-#lonlatable > div {
-  margin-top: -14px;
-}
-#lonlatable table * {
-  font-size: 21px;
+#maptable table * {
+  font-size: 18px;
   padding: 0px 5px 0px 5px;
 }
-div#lonlatable form {
+@media (max-width: 425px) {
+  #maptable table th {
+    font-size: 17px;
+  }
+}
+@media (max-width: 405px) {
+  #maptable table th {
+    font-size: 16px;
+  }
+}
+div#maptable form {
   padding: 0px;
 }
 #projselect {
@@ -3411,7 +3419,7 @@ div#toggles {
   justify-content: center;
   flex-wrap: nowrap;
   margin-top: 4px;
-  margin-bottom: 9px;
+  margin-bottom: -9px;
 }
 div#toggles * {
   overflow: visible;
@@ -3449,13 +3457,6 @@ div#toggles input.oi-3a86ea-input[type="checkbox"] {
 div#toggles button#rstbtn {
   overflow: visible;
   margin-top: -6px;
-}
-div#lonlatable form {
-  padding: 0px;
-}
-#lonlatable table * {
-  font-size: 15px;
-  padding: 0px 4px 0px 4px;
 }
 div.cell:has(.barclock) * {
   pointer-events: none;
