@@ -288,6 +288,7 @@ ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
 }
 .marginInputs form {
   margin: 0 !important;
+  flex-wrap: nowrap;
 }
 @media (min-width: 992px) {
   .marginInputs {
@@ -309,7 +310,7 @@ ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
     justify-content: center;
     gap: 4px 1.5em !important;
     grid-column: body-content-start / body-content-end !important;
-    margin-bottom: 0.5em;
+    margin: 0.5em 0;
   }
   .marginInputs > div.cell.page-columns.page-full {
     display: block !important;
