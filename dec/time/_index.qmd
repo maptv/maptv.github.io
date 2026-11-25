@@ -3352,7 +3352,7 @@ div.cell-output:has(#formEl) {
   z-index: 99;
 }
 @media (max-width: 767.98px) {
-  #onlymargin, #lonlatable {
+  #onlymargin {
     display: none;
   }
 }
@@ -3360,12 +3360,6 @@ div#distmap {
   display: flex;
   justify-content: center;
   overflow-x: visible;
-}
-.marginInputs {
-  position: relative;
-  top: -220px;
-  z-index: 99;
-  line-height: 1;
 }
 #lonlatable {
   overflow: visible;
