@@ -3240,6 +3240,20 @@ div#fig-distmap {
 div#colorpreview, div.colorcomparer, div#coloropposites8, div#coloropposites10, div#colorcomparer8, div#colorcomparer10 {
   overflow: visible;
 }
+/* Keep the color widgets inside the margin when it is narrow (768-1050px) */
+section#cwc .column-margin canvas {
+  max-width: 100%;
+  height: auto !important;
+}
+#colorpreview div:has(> .swatch) {
+  flex: 0 1 108px;
+  min-width: 0;
+}
+#colorpreview .swatch {
+  width: calc(100% - 8px) !important;
+  height: auto !important;
+  aspect-ratio: 1;
+}
 div.colorcomparer g[aria-label="y-axis label"] > text {
  transform: translate(40px,100px);
 }
