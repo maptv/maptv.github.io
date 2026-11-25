@@ -196,7 +196,7 @@ g.node rect:hover, g.node:has(g:hover) rect {
   background: #BFF !important;
 }
 
-#maptable {
+#maptable, svg.barclock {
     --cell-s: 100%;
     --cell-l: 87%;
 }

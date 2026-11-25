@@ -38,6 +38,7 @@ barChart = {
     .append('rect')
     .attr('class', 'timeBarFull')
     .attr('y', firstBarY+60)
+    .style('fill', barFill(Number(barBeats), 100))
     .attr('width', d => scaleMandB(barBeats))
   // Cents/Mils
   svg
@@ -49,6 +50,7 @@ barChart = {
     .append('rect')
     .attr('class', 'timeBarFull')
     .attr('y', firstBarY)
+    .style('fill', barFill(Number(barDD), 10))
     .attr('width', d => scaleDD(barDD))
   svg
     .append('rect')
@@ -59,6 +61,7 @@ barChart = {
     .append('rect')
     .attr('class', 'timeBarFull')
     .attr('y', firstBarY+30)
+    .style('fill', barFill(Number(barMils), 100))
     .attr('width', d => scaleMandB(barMils))
   // Cent ticks
   svg.selectAll('.tickC')
@@ -174,6 +177,7 @@ barChart1 = {
     .append('rect')
     .attr('class', 'timeBarFullN')
     .attr('y', firstBarY+60)
+    .style('fill', barFill(-Number(barBeatsN), 100))
     .attr('width', d => scaleMandB(barBeatsN))
   // Cents/Mils
   svg
@@ -185,6 +189,7 @@ barChart1 = {
     .append('rect')
     .attr('class', 'timeBarFullN')
     .attr('y', firstBarY)
+    .style('fill', barFill(-Number(barDDN), 10))
     .attr('width', d => scaleDD(barDDN))
   svg
     .append('rect')
@@ -195,6 +200,7 @@ barChart1 = {
     .append('rect')
     .attr('class', 'timeBarFullN')
     .attr('y', firstBarY+30)
+    .style('fill', barFill(-Number(barMilsN), 100))
     .attr('width', d => scaleMandB(barMilsN))
   // Cent ticks
   svg.selectAll('.tickC')

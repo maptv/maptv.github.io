@@ -1226,6 +1226,9 @@ piecewiseColor = d3.piecewise(d3.interpolateRgb, [
   "#f00",    //  0        0 red
 ])
 slStr = `, 100%, 50%)`
+// Fill for a bar clock bar: the Dec color of its value, tinted by the theme's
+// --cell-s and --cell-l. Negative values wrap around, so -7 dd is colored as 3/10.
+barFill = (value, radix) => `hsl(${d3.hsl(piecewiseColor((value % radix + radix) % radix / radix)).h}, var(--cell-s, 100%), var(--cell-l, 87%))`
 elaTime = elapsed % 1e5
 elaTimeHsl = () => textcolor(elaTime, piecewiseColor(elaTime % 1000 / 1000))
 loadDote = unix2dote(Date.now(), 0)
