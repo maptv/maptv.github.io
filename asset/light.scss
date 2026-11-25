@@ -189,18 +189,16 @@ g.node rect:hover, g.node:has(g:hover) rect {
   color: #06f;
 }
 
-#maptable tbody tr:nth-child(1) td div {
+#tbl-map #maptable tbody tr:nth-child(1) td div {
   background: #FDF !important;
 }
-#maptable tbody tr:nth-child(2) td div {
+#tbl-map #maptable tbody tr:nth-child(2) td div {
   background: #BFF !important;
 }
 
-#maptable tbody tr td div.negative {
-    background: #FDF !important;
-}
-#maptable tbody tr td div.positive {
-    background: #BFF !important;
+#maptable {
+    --cell-s: 100%;
+    --cell-l: 87%;
 }
 
 .point0 { border-radius: 4px; background-color: #FDF; color: black; padding: 0px 2px 0px 2px; }

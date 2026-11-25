@@ -1029,8 +1029,8 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.stroke();
       context.lineWidth = width < 1000 ? 1 : width < 2000 ? 2 : width < 3000 ? 3 : width < 4000 ? 4 : width < 5000 ? 5 : 6;
     }
-    table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10, "positive")
-    table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5, lat < 0 ? "negative" : "positive")
+    table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10, long2turn(lon) % 1000 / 1000)
+    table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5, (lati2turn(lat) + 1000) % 1000 / 1000)
     context.lineWidth = 1;
   }
   let drag = d3.drag()
@@ -1074,8 +1074,8 @@ function worldMapCoordinates(config = {}, dimensions) {
       const newLat = parseInt(liveTable[0].Millijīng)
       lon = newLon != null || !isNaN(newLon) ? turn2long(newLon) : lon;
       lat = newLat != null || !isNaN(newLat) ? turn2lati(newLat) : lat;
-      table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10, "positive")
-      table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5, lat < 0 ? "negative" : "positive")
+      table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10, long2turn(lon) % 1000 / 1000)
+      table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5, (lati2turn(lat) + 1000) % 1000 / 1000)
       draw();
       canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
     }
@@ -1553,8 +1553,10 @@ function createTable(data, options) {
 table.setAttribute("class", "table")
 tableify = import("https://cdn.jsdelivr.net/npm/tableify@1.1.1/+esm")
 xss = import("https://cdn.jsdelivr.net/npm/xss@1.0.14/+esm")
-function createCellDiv(value, max, posorneg) {
-  return `<div class="${posorneg}" style="
+// The bar's hue is the Dec color of the value; theme files set --cell-s and --cell-l
+function createCellDiv(value, max, color) {
+  return `<div style="
+    background: hsl(${d3.hsl(piecewiseColor(color)).h}, var(--cell-s, 100%), var(--cell-l, 87%));
     width: ${Math.abs(value) / max}%;
     float: left;
     padding: 0px 0px 0px 2px;

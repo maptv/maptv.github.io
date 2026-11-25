@@ -328,18 +328,16 @@ div#fig-colorwheelcompass path#piepath {
   stroke: black;
 }
 
-#maptable tbody tr:nth-child(1) td div {
+#tbl-map #maptable tbody tr:nth-child(1) td div {
     background: #A24 !important;
 }
-#maptable tbody tr:nth-child(2) td div {
+#tbl-map #maptable tbody tr:nth-child(2) td div {
     background: #24A !important;
 }
 
-#maptable tbody tr td div.negative {
-    background: #A24 !important;
-}
-#maptable tbody tr td div.positive {
-    background: #24A !important;
+#maptable {
+    --cell-s: 67%;
+    --cell-l: 40%;
 }
 
 .point0 { border-radius: 4px; background-color: #A24; color: white; padding: 0px 2px 0px 2px; }
