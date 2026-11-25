@@ -3223,7 +3223,7 @@ html, body {
     max-width: 100%;
 }
 div.cell:has(svg.barclock) {
-  margin-top: -28px;
+  margin-top: -12px;
 }
 div.cell:has(form#formEl) {
   max-width: 100%;
@@ -3387,7 +3387,7 @@ div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput >
   overflow-x: clip;
 }
 div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
-  width: 35px;
+  width: 45px;
 }
 button#rstbtn:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
@@ -3410,7 +3410,7 @@ div#toggles {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  margin-top: -20px;
+  margin-top: 4px;
   margin-bottom: 9px;
 }
 div#toggles * {
