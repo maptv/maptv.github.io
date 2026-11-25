@@ -3386,10 +3386,10 @@ img#ruler, svg#zhands {
 img#zModu {
   width: 100%;
 }
-#iobplayer {
+#perbeatplayer {
   overflow: clip;
 }
-#iobplayer canvas {
+#perbeatplayer canvas {
   height: 100%;
 }
 .unittable table {
