@@ -3341,6 +3341,26 @@ div#toggles button#rstbtn {
   overflow: visible;
   margin-top: -6px;
 }
+/* Narrow screens: size the toggles to their labels so the row fits */
+@media (max-width: 575.98px) {
+  div#toggles {
+    flex-wrap: wrap;
+    gap: 4px 8px;
+  }
+  div#toggles form.oi-3a86ea-toggle#bordertoggle,
+  div#toggles form.oi-3a86ea-toggle#gridtoggle,
+  div#toggles form.oi-3a86ea-toggle#utctoggle,
+  div#toggles form.oi-3a86ea-toggle#suntoggle,
+  div#toggles form.oi-3a86ea-toggle#bordertoggle > label,
+  div#toggles form.oi-3a86ea-toggle#gridtoggle > label,
+  div#toggles form.oi-3a86ea-toggle#utctoggle > label,
+  div#toggles form.oi-3a86ea-toggle#suntoggle > label {
+    width: max-content;
+  }
+  div#toggles input.oi-3a86ea-input[type="checkbox"] {
+    margin-right: 0;
+  }
+}
 div:has(div.description) {
   display: none;
 }
