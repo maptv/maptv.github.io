@@ -6,15 +6,15 @@ Author
 
 ##### Dec Measurement System
 
-47 min
+48 min
 
 Introducing Dec, a measurement system, which uses turns instead of months, weeks, hours, minutes, seconds, and degrees.
 
 |            |             |
 |------------|-------------|
-| Word Count | 9,332 words |
+| Word Count | 9,441 words |
 
-1795585978
+1795678859
 
 ![](../asset/cal16.svg)
 
