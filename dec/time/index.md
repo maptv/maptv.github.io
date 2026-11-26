@@ -2594,7 +2594,7 @@ data-bs-title="annual day aggregates">ada</a>, and sorts by
 data-bs-title="annual day aggregate">ada</a>.
 
 <div class="quarto-embed-nb-cell"
-data-notebook="/home/runner/work/maptv.github.io/maptv.github.io/dec/time/eot.ipynb"
+data-notebook="/Users/irinalapteva/maptv/maptv.github.io/dec/time/eot.ipynb"
 data-notebook-title="Bonus examples"
 data-notebook-cellId="cell-eotcoef">
 

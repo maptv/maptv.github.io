@@ -10,7 +10,7 @@ Published
 
 Modified
 
-2026+214
+2026+268
 
 This notebook fits the [segmented linear regression](https://en.wikipedia.org/wiki/Segmented_regression) model described in the Dec seasons section of the [Decalendar](../../dec/date/index.llms.md) article. The model predicts daily global mean temperature from the day of year alone, so that we can check how well the 4 Dec seasons capture the annual temperature cycle.
 
