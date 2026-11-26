@@ -1029,8 +1029,8 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.stroke();
       context.lineWidth = width < 1000 ? 1 : width < 2000 ? 2 : width < 3000 ? 3 : width < 4000 ? 4 : width < 5000 ? 5 : 6;
     }
-    table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10, "positive")
-    table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5, lat < 0 ? "negative" : "positive")
+    table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10, long2turn(lon) % 1000 / 1000)
+    table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5, (lati2turn(lat) + 1000) % 1000 / 1000)
     context.lineWidth = 1;
   }
   let drag = d3.drag()
@@ -1065,22 +1065,32 @@ function worldMapCoordinates(config = {}, dimensions) {
     draw();
     canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
   }
-  table.onkeyup = function(ev) {
-   if ([
-    // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
-      8, 9, 13, 27, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 109, 189
-    ].includes(ev.which)) {
-      const newLon = parseInt(liveTable[0].Milliwěi)
-      const newLat = parseInt(liveTable[0].Millijīng)
-      lon = newLon != null || !isNaN(newLon) ? turn2long(newLon) : lon;
-      lat = newLat != null || !isNaN(newLat) ? turn2lati(newLat) : lat;
-      table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10, "positive")
-      table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5, lat < 0 ? "negative" : "positive")
-      draw();
-      canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
-    }
+  // Apply typed coordinates on Tab, Enter, or Esc, or when focus leaves the
+  // table, not on every key: redrawing a cell while typing moves the caret.
+  function applyTable() {
+    const newLon = parseInt(table.rows[1].cells[0].innerText)
+    const newLat = parseInt(table.rows[1].cells[1].innerText)
+    lon = isNaN(newLon) ? lon : turn2long(newLon);
+    lat = isNaN(newLat) ? lat : turn2lati(newLat);
+    table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10, long2turn(lon) % 1000 / 1000)
+    table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5, (lati2turn(lat) + 1000) % 1000 / 1000)
+    draw();
+    canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
   }
+  table.onkeyup = function(ev) {
+    // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
+    if ([9, 13, 27].includes(ev.which)) applyTable();
+  }
+  table.addEventListener("focusout", (ev) => {
+    if (!table.contains(ev.relatedTarget)) applyTable();
+  });
   rstbtn.on('click', resetlatlon);
+  document.getElementsByClassName("quarto-color-scheme-toggle")[0].onclick = function (e) {
+    window.quartoToggleColorScheme();
+    window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
+    draw();
+    return false;
+  };
   const form = input({
     type: "worldMapCoordinates",
     title,
@@ -1099,13 +1109,19 @@ function worldMapCoordinates(config = {}, dimensions) {
   return form;
 }
 window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
-document.getElementsByClassName("quarto-color-scheme-toggle")[0].onclick = function (e) {
-  window.quartoToggleColorScheme();
-  window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
-  worldMapCoordinates.draw();
-  app.drawEarth();
-  return false;
-};
+// true while the page uses the dark theme; cells that read it (the Earth orbit
+// diagram) redraw when the theme changes
+darkmode = Generators.observe(notify => {
+  let last;
+  const check = () => {
+    const dark = document.body.classList.contains("quarto-dark");
+    if (dark !== last) notify(last = dark);
+  };
+  const observer = new MutationObserver(check);
+  observer.observe(document.body, {attributes: true, attributeFilter: ["class"]});
+  check();
+  return () => observer.disconnect();
+})
 sun = {
   const now = new Date;
   const day = new Date(+now).setUTCHours(0, 0, 0, 0);
@@ -1222,6 +1238,9 @@ piecewiseColor = d3.piecewise(d3.interpolateRgb, [
   "#f00",    //  0        0 red
 ])
 slStr = `, 100%, 50%)`
+// Fill for a bar clock bar: the Dec color of its value, tinted by the theme's
+// --cell-s and --cell-l. Negative values wrap around, so -7 dd is colored as 3/10.
+barFill = (value, radix) => `hsl(${d3.hsl(piecewiseColor((value % radix + radix) % radix / radix)).h}, var(--cell-s, 100%), var(--cell-l, 87%))`
 elaTime = elapsed % 1e5
 elaTimeHsl = () => textcolor(elaTime, piecewiseColor(elaTime % 1000 / 1000))
 loadDote = unix2dote(Date.now(), 0)
@@ -1553,8 +1572,10 @@ function createTable(data, options) {
 table.setAttribute("class", "table")
 tableify = import("https://cdn.jsdelivr.net/npm/tableify@1.1.1/+esm")
 xss = import("https://cdn.jsdelivr.net/npm/xss@1.0.14/+esm")
-function createCellDiv(value, max, posorneg) {
-  return `<div class="${posorneg}" style="
+// The bar's hue is the Dec color of the value; theme files set --cell-s and --cell-l
+function createCellDiv(value, max, color) {
+  return `<div style="
+    background: hsl(${d3.hsl(piecewiseColor(color)).h}, var(--cell-s, 100%), var(--cell-l, 87%));
     width: ${Math.abs(value) / max}%;
     float: left;
     padding: 0px 0px 0px 2px;
@@ -1727,8 +1748,11 @@ function parseTableData(table) {
 function focusCell(td) {
   const s = window.getSelection();
   const r = document.createRange();
-  let textNode = td.childNodes[0];
-  const i = td.innerText.length;
+  // The cell may hold a value bar <div>, so put the caret after its last text node
+  let textNode = td;
+  while (textNode.lastChild) textNode = textNode.lastChild;
+  if (textNode === td || textNode.nodeType !== Node.TEXT_NODE) textNode = null;
+  const i = textNode ? textNode.length : 0;
   td.focus();
   if (textNode) {
     r.setStart(textNode, i);
@@ -3223,7 +3247,7 @@ html, body {
     max-width: 100%;
 }
 div.cell:has(svg.barclock) {
-  margin-top: -28px;
+  margin-top: -12px;
 }
 div.cell:has(form#formEl) {
   max-width: 100%;
@@ -3361,23 +3385,31 @@ div#distmap {
   justify-content: center;
   overflow-x: visible;
 }
-#lonlatable {
-  overflow: visible;
+div#maptable {
   display: flex;
   justify-content: center;
+  overflow-x: visible;
   line-height: 1.5;
+  padding-bottom: 9px;
 }
 #projselect > div {
   margin-top: -4px;
 }
-#lonlatable > div {
-  margin-top: -14px;
-}
-#lonlatable table * {
-  font-size: 21px;
+#maptable table * {
+  font-size: 18px;
   padding: 0px 5px 0px 5px;
 }
-div#lonlatable form {
+@media (max-width: 425px) {
+  #maptable table th {
+    font-size: 17px;
+  }
+}
+@media (max-width: 405px) {
+  #maptable table th {
+    font-size: 16px;
+  }
+}
+div#maptable form {
   padding: 0px;
 }
 #projselect {
@@ -3387,7 +3419,7 @@ div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput >
   overflow-x: clip;
 }
 div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
-  width: 35px;
+  width: 45px;
 }
 button#rstbtn:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
@@ -3410,8 +3442,8 @@ div#toggles {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  margin-top: -20px;
-  margin-bottom: 9px;
+  margin-top: 4px;
+  margin-bottom: -9px;
 }
 div#toggles * {
   overflow: visible;
@@ -3449,13 +3481,6 @@ div#toggles input.oi-3a86ea-input[type="checkbox"] {
 div#toggles button#rstbtn {
   overflow: visible;
   margin-top: -6px;
-}
-div#lonlatable form {
-  padding: 0px;
-}
-#lonlatable table * {
-  font-size: 15px;
-  padding: 0px 4px 0px 4px;
 }
 div.cell:has(.barclock) * {
   pointer-events: none;
