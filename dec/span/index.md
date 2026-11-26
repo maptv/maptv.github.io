@@ -1,13 +1,13 @@
 # Dec span
 Martin Laptev
-1795490976
+1776874079
 
 <div id="spannav">
 
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
-style="width:8.64in;height:0.98in" loading="lazy" />
+style="width:8.69in;height:0.98in" loading="lazy" />
 
 </div>
 
@@ -25,7 +25,7 @@ line chart below.
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-2.png"
-style="width:8.64in;height:0.98in" loading="lazy" />
+style="width:8.69in;height:0.98in" loading="lazy" />
 
 </div>
 
