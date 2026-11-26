@@ -1085,6 +1085,12 @@ function worldMapCoordinates(config = {}, dimensions) {
     if (!table.contains(ev.relatedTarget)) applyTable();
   });
   rstbtn.on('click', resetlatlon);
+  document.getElementsByClassName("quarto-color-scheme-toggle")[0].onclick = function (e) {
+    window.quartoToggleColorScheme();
+    window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
+    draw();
+    return false;
+  };
   const form = input({
     type: "worldMapCoordinates",
     title,
@@ -1103,13 +1109,19 @@ function worldMapCoordinates(config = {}, dimensions) {
   return form;
 }
 window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
-document.getElementsByClassName("quarto-color-scheme-toggle")[0].onclick = function (e) {
-  window.quartoToggleColorScheme();
-  window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
-  worldMapCoordinates.draw();
-  app.drawEarth();
-  return false;
-};
+// true while the page uses the dark theme; cells that read it (the Earth orbit
+// diagram) redraw when the theme changes
+darkmode = Generators.observe(notify => {
+  let last;
+  const check = () => {
+    const dark = document.body.classList.contains("quarto-dark");
+    if (dark !== last) notify(last = dark);
+  };
+  const observer = new MutationObserver(check);
+  observer.observe(document.body, {attributes: true, attributeFilter: ["class"]});
+  check();
+  return () => observer.disconnect();
+})
 sun = {
   const now = new Date;
   const day = new Date(+now).setUTCHours(0, 0, 0, 0);

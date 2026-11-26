@@ -386,7 +386,7 @@ app = {
                                         location,
                                         selection.date,
                                         selection.hour,
-                                        window.darkmode);
+                                        darkmode);
   }
   // const renderGlobe = () => {
   //   svg.selectAll("#globe *").remove();
