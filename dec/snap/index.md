@@ -1,13 +1,13 @@
 # Dec snap
 Martin Laptev
-1795490976
+1776874079
 
 <div id="snapnav">
 
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
-style="width:8.64in;height:0.98in" loading="lazy" />
+style="width:8.69in;height:0.98in" loading="lazy" />
 
 </div>
 
@@ -129,7 +129,7 @@ pentBar = Plot.plot({
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-2.png"
-style="width:8.64in;height:0.98in" loading="lazy" />
+style="width:8.69in;height:0.98in" loading="lazy" />
 
 </div>
 
