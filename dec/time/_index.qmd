@@ -3418,8 +3418,24 @@ div#maptable form {
 div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput > div, div#pitchinput > div, div#rollinput > div {
   overflow-x: clip;
 }
-div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
-  width: 45px;
+/* Map controls: compact in the margin, slider layout in the flow */
+@media (min-width: 992px) {
+  div#sizeinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
+    width: 45px;
+  }
+  #sizeinput input[type="number"], #yawinput input[type="number"], #pitchinput input[type="number"], #rollinput input[type="number"] {
+    width: 58px;
+  }
+  #sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"]  {
+    width: 72%;
+  }
+}
+@media (max-width: 991.98px) {
+  .marginInputs form > label {
+    width: 110px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
 }
 button#rstbtn:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
@@ -3430,12 +3446,6 @@ button#rstbtn:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-#sizeinput input[type="number"], #yawinput input[type="number"], #pitchinput input[type="number"], #rollinput input[type="number"] {
-  width: 58px;
-}
-#sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"]  {
-  width: 72%;
 }
 div#toggles {
   display: flex;
@@ -3576,4 +3586,8 @@ div.radiorow > div.radio form > label {
   text-align: center;
 }
 </style>
+```
+
+```{=html}
+<script src="/asset/mapcontrols.js"></script>
 ```

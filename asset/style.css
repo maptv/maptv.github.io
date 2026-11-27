@@ -268,11 +268,14 @@ ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
 @media only screen and (max-width: 991px) { #quarto-search { display: none !important; } #quarto-sidebar { padding: 0px 9px 0px 9px !important; } }
 @media only screen and (max-width: 767px) { div.cell.page-columns.page-full { display: none !important; } }
 
-/* Map controls (.marginInputs, placed above the map in the source).
-   Wide screens: in the right margin, stacked upward from where the block
-   sits, so they never run down onto the map. Narrow screens: in the flow,
-   centered where the block sits. Margin cells
-   are otherwise 0 high (style.html) and hidden on phones (rule above). */
+/* Map controls (.marginInputs, placed above the toggles and the map table
+   in the source). Wide screens: in the right margin, stacked upward from
+   the block's top edge, which asset/mapcontrols.js moves down to the bottom
+   of the map table, so the projection menu ends flush with the table.
+   Narrow screens: in the flow, one control per row, laid out like the
+   range inputs with class: slider (each article sets the label width).
+   Margin cells are otherwise 0 high (style.html) and hidden on phones
+   (rule above). */
 .marginInputs {
   position: relative;
   z-index: 99;
@@ -306,16 +309,38 @@ ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
 @media (max-width: 991.98px) {
   .marginInputs {
     display: flex !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 4px 1.5em !important;
+    flex-direction: column;
+    gap: 4px !important;
     grid-column: body-content-start / body-content-end !important;
     margin: 0.5em 0;
   }
   .marginInputs > div.cell.page-columns.page-full {
     display: block !important;
-    flex: 0 1 270px;
     min-width: 0;
+  }
+  .marginInputs .column-margin {
+    display: block !important;
+    width: 100%;
+  }
+  .marginInputs .cell-output,
+  .marginInputs .cell-output > div {
+    max-width: 100%;
+    overflow-x: visible !important;
+  }
+  .marginInputs form, .marginInputs form.oi-3a86ea {
+    width: 100% !important;
+    max-width: 500px !important;
+    flex-wrap: nowrap;
+  }
+  .marginInputs input[type="number"] {
+    width: 110px;
+    margin-left: 2px;
+  }
+  .marginInputs input[type="range"] {
+    width: 100%;
+  }
+  .marginInputs select {
+    width: 100%;
   }
 }
 

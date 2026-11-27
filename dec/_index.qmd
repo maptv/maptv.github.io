@@ -3207,14 +3207,28 @@ html`
     font-size: 16px;
   }
 }
-div#projselect {
-  max-width: 250px;
-}
 div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput > div, div#pitchinput > div, div#rollinput > div {
   overflow-x: clip;
 }
-div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
-  width: 45px;
+/* Map controls: compact in the margin, slider layout in the flow */
+@media (min-width: 992px) {
+  div#projselect {
+    max-width: 250px;
+  }
+  div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
+    width: 45px;
+  }
+  #speedinput input[type="number"], #sizeinput input[type="number"], #yawinput input[type="number"], #pitchinput input[type="number"], #rollinput input[type="number"] {
+    width: 58px;
+  }
+  #speedinput input[type="range"], #sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"]  {
+    width: 72%;
+  }
+}
+@media (max-width: 991.98px) {
+  .marginInputs form > label {
+    width: 100px;
+  }
 }
 button#rstbtn:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
@@ -3228,12 +3242,6 @@ div#fig-distmap {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-#speedinput input[type="number"], #sizeinput input[type="number"], #yawinput input[type="number"], #pitchinput input[type="number"], #rollinput input[type="number"] {
-  width: 58px;
-}
-#speedinput input[type="range"], #sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"]  {
-  width: 72%;
 }
 .colorcomponent {
   display: flex;
@@ -3450,4 +3458,8 @@ span.colorIob span.tool {
   color: black;
 }
 </style>
+```
+
+```{=html}
+<script src="/asset/mapcontrols.js"></script>
 ```
