@@ -1,6 +1,6 @@
 # Dec Measurement System
 Martin Laptev
-2026+225
+2026+242
 
 - [Dec measurement system](#sec-dec)
 - [Longitude latitude course](#sec-llc)
@@ -20,6 +20,10 @@ Martin Laptev
 - [Frequency period wavelength](#sec-fpw)
 - [Decioctave octave note](#sec-don)
 - [Color and sound](#sec-cas)
+- [Multiplicative inverse pair (mip)](#sec-mip)
+- [Multiples and submultiples](#sec-mas)
+  - [Hour minute second](#sec-hms)
+  - [Bǎi and xún](#sec-bax)
 - [Système international d’unités](#sec-sid)
 - [US customary units](#sec-ucu)
 - [Length and distance](#sec-lad)
@@ -165,105 +169,83 @@ system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%2
 that [I](https://maptv.github.io) created. All Dec measurements are
 based on
 [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees).
-When measuring
-[angles](https://en.wikipedia.org/wiki/Angle#:~:text=the%20figure%20formed%20by%20two%20rays)📐,
-a
-[turn](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)
-(<a href="#t" id="turn" class="tool" data-bs-toggle="tooltip"
-data-bs-title="turn">t</a>) represents a full⭕️circle and equals 360
-[degrees](https://en.wikipedia.org/wiki/Degree_(angle)#:~:text=a%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20360%20degrees)
-(<a href="#deg" id="degree" class="tool" data-bs-toggle="tooltip"
-data-bs-title="degrees">°</a>) or
-<a href="#2pi" id="tau" class="tool" data-bs-toggle="tooltip"
-data-bs-title="tau"><span
-class="math inline">$\underline\tau$</span></a>,
-2<a href="#pi" id="taudividedby2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="tau">𝜋</a>, or
-900<a href="#sampi" id="taudividedby900" class="tool"
-data-bs-toggle="tooltip" data-bs-title="sampi">ϡ</a>
-[radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units)
-(<a href="#rad" id="radian" class="tool" data-bs-toggle="tooltip"
-data-bs-title="radians">rad</a>). [Geographic
-coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude)
-and
-[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭directions
-are angles and thus can — and should — be measured in turns instead of
-<a href="#rad" class="tool" data-bs-toggle="tooltip"
-data-bs-title="radians">rad</a> or
-<a href="#deg" class="tool" data-bs-toggle="tooltip"
-data-bs-title="degrees">°</a>.
-
-# Longitude latitude course
-
-Dec measures
-[longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda)
-in
-[wěi](https://en.wiktionary.org/wiki/%E7%B7%AF#:~:text=(geography)-,latitude,-coordinate%20terms%C2%A0%E2%96%B2)
-(<a href="#w" id="wei" class="tool" data-bs-toggle="tooltip"
-data-bs-title="horizontal lines on a map">w</a>),
-[latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi)
-in
-[jīng](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)
-(<a href="#j" id="jing" class="tool" data-bs-toggle="tooltip"
-data-bs-title="jīng">j</a>), and compass directions in
-[roses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)🌹(<a href="#r" id="rose" class="tool" data-bs-toggle="tooltip"
-data-bs-title="roses">r</a>). To measure certain kinds of angles, Dec
-uses specific types of turns with distinct names like
-<a href="#w" class="tool" data-bs-toggle="tooltip"
-data-bs-title="horizontal line on a map">w</a>,
-<a href="#j" class="tool" data-bs-toggle="tooltip"
-data-bs-title="jīng">j</a>, or
-<a href="#r" class="tool" data-bs-toggle="tooltip"
-data-bs-title="rose">r</a>. All turn types can be combined with [metric
+In Dec, turns can be combined with [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit),
-like
+such as
 [deci](https://en.wikipedia.org/wiki/Deci-#:~:text=a%20decimal%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20tenth),
 [centi](https://en.wikipedia.org/wiki/Centi-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20hundredth),
 or
 [milli](https://en.wikipedia.org/wiki/Milli-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20thousandth),
-to create turn
-[submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20%28a),
-such as <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a turn">deciturns</span>
-(<a href="#dt" id="deciturn" class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciturns">dt</a>), <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="hundredths of a turn">centiturns</span>
-(<a href="#ct" id="centiturn" class="tool" data-bs-toggle="tooltip"
-data-bs-title="centiturns">ct</a>), or <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of a turn">milliturns</span>
-(<a href="#mt" id="milliturn" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliturns">mt</a>).
+and can have different names depending on what they measure. For
+example, Dec measures
+[longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda)
+in
+[wěi](https://en.wiktionary.org/wiki/%E7%B7%AF#:~:text=(geography)-,latitude,-coordinate%20terms%C2%A0%E2%96%B2)
+(<a href="#w" id="wei" class="tool" data-bs-toggle="tooltip"
+data-bs-title="wěi">w</a>),
+[latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi)
+in
+[jīng](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)
+(<a href="#j" id="jing" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a>), and
+[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭directions
+in
+[roses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)🌹(<a href="#r" id="rose" class="tool" data-bs-toggle="tooltip"
+data-bs-title="roses">r</a>).
+
+# Longitude latitude course
 
 <a href="#tbl-map" class="quarto-xref">Table 1</a> below⬇️provides the
-current longitude in <span class="tool" data-bs-toggle="tooltip"
+longitude in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a wěi">milliwěi</span>
 (<a href="#mw" id="milliwei" class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a horizontal line on a map">mw</a>) and
-latitude in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a wěi">mw</a>) and latitude in
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a jīng">millijīng</span>
 (<a href="#mj" id="millijing" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millijīng">mj</a>) of Points
 <span class="point0">0</span> and <span class="point1">1</span> on the
 [map](#fig-distmap)🗺️beneath
-<a href="#tbl-map" class="quarto-xref">Table 1</a>. By default, Point
+<a href="#tbl-map" class="quarto-xref">Table 1</a>. The milli prefix
+means a thousandth (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a thousandth">10<sup>-3</sup></span>). By default, Point
 <span class="point0">0</span> is at <span class="color8">800</span>
 <a href="#mw" class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a horizontal line on a map">mw</a> and
+data-bs-title="thousandths of a wěi">mw</a> and
 <span class="color0">0</span>
 <a href="#mj" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millijīng">mj</a>, near the
 [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific)
-of Ecuador🇪🇨, and Point <span class="point1">1</span> is at
+of
+[Ecuador](https://en.wikipedia.org/wiki/Ecuador#:~:text=a%20country%20in%20northwestern%20South%20America)🇪🇨,
+and Point <span class="point1">1</span> is at
 <span class="color8">800</span>
 <a href="#mw" class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a horizontal line on a map">mw</a> and
+data-bs-title="thousandths of a wěi">mw</a> and
 <span class="color1">100</span>
 <a href="#mj" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millijīng">mj</a>, near the bottom of the [Missouri
 bootheel](https://en.wikipedia.org/wiki/Missouri_Bootheel#:~:text=a%20salient%20(protrusion)%20located%20in%20the%20southeasternmost%20part%20of%20the%20U.S.%20state%20of%20Missouri)
-in the United States🇺🇸.
+in the [United
+States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primarily%20located%20in%20North%20America)🇺🇸.
+
+Alongside the [geographic
+coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude)
+of one of the two points, each row of
+<a href="#tbl-map" class="quarto-xref">Table 1</a> contains the
+[course](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha)
+in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a compass rose">milliroses</span>
+(<a href="#mr" id="millirose" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliroses">mr</a>) we would need to maintain to
+travel🧳the shortest path to the other point. The shortest path between
+the two points is shown as orange🟠dots on the [map](#fig-distmap). The
+default courses in <a href="#mr" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliroses">mr</a> are <span class="color0">0</span>
+(North) from Point <span class="point0">0</span> to
+<span class="point1">1</span> and <span class="color5">500</span>
+(South) from Point <span class="point1">1</span> to
+<span class="point0">0</span>.
 
 To move the points, click the [map](#fig-distmap) or edit their
 coordinates in <a href="#tbl-map" class="quarto-xref">Table 1</a>. The
@@ -277,37 +259,21 @@ of [Coordinated Universal
 Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 (<a href="#utc" id="coordinateduniversaltime" class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</a>) time zones, and
+data-bs-title="Coordinated Universal Time">UTC</a>) time zones, and a
 [solar
 terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
-shading with a yellow🟡dot denoting the
+with a yellow🟡dot denoting the
 [point](https://en.wikipedia.org/wiki/Subsolar_point#:~:text=the%20point%20at%20which%20its%20Sun%20is%20perceived%20to%20be%20directly%20overhead)
 where the Sun☀️is [directly
 overhead](https://en.wikipedia.org/wiki/Zenith#:~:text=the%20imaginary%20point%20on%20the%20celestial%20sphere%20directly%20%22above%22%20a%20particular%20location):
 ${sunLonHsl} <a href="#mw" class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a horizontal line on a map">mw</a> and
-${sunLatHsl} <a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a wěi">mw</a> and ${sunLatHsl}
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millijīng">mj</a>.
-
-Alongside the geographic coordinates of a point, each row of
-<a href="#tbl-map" class="quarto-xref">Table 1</a> contains the
-[course](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha)
-in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a compass rose">milliroses</span>
-(<a href="#mr" id="millirose" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliroses">mr</a>) we would need to maintain to
-travel🧳the shortest distance to the other point. The shortest distance
-is shown as orange🟠dots on the [map](#fig-distmap). The default courses
-in <a href="#mr" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliroses">mr</a> are <span class="color0">0</span>
-(North) from Point <span class="point0">0</span> to
-<span class="point1">1</span> and <span class="color5">500</span>
-(South) from Point <span class="point1">1</span> to
-<span class="point0">0</span>.
 
 # Distance speed duration
 
-Dec measures distance in
+Dec measures distance or length in
 [taur](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6)
 (<a href="#c" id="taur" class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</a>), speed in
@@ -317,29 +283,25 @@ data-bs-title="omegar">v</a>), and time in years
 (<a href="#y" id="year" class="tool" data-bs-toggle="tooltip"
 data-bs-title="years">y</a>) and days
 (<a href="#d" id="day" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a>). Each of these four turn types approximates
-(≈) a physical property of the Earth🌍:
+data-bs-title="days">d</a>). Each of these four measurement units is
+based on a physical property of the planet Earth🌍:
 <a href="#c" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taur">c</a> =
-<a href="#c" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taur"><span class="math inline">$\underline{\tau
-r}$</span></a> ≈ its
+data-bs-title="taur">c</a> on its
 [circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=the%20distance%20around%20Earth),
+<a href="#v" class="tool" data-bs-toggle="tooltip"
+data-bs-title="omegar">v</a> on the speed of its rotation at the
+[Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres)
+(<span class="color0">0</span>
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>),
 <a href="#y" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year">y</a> ≈ the duration of its
+data-bs-title="year">y</a> on the duration of its
 [orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun)
-around the Sun️, <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a> ≈ the duration of its
+around the Sun️, and <a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day">d</a> on the duration of its
 [rotation](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis)
 on its
-[axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole),
-and $\text c\over\text d$ =
-<a href="#v" class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegar">v</a> =
-<a href="#v" class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegar"><span class="math inline">$\underline{\omega
-r}$</span></a> ≈ the speed of its rotation at the
-[Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
+[axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
 
 At a speed of <span class="color5">0.5</span>
 <a href="#v" class="tool" data-bs-toggle="tooltip"
@@ -362,18 +324,23 @@ data-bs-title="days">d</a> or <span class="color2">200</span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">millidays</span>
 (<a href="#md" id="milliday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a>). The time required to travel between
-two points is the distance divided by the speed: ${distance_mcHsl0}
+data-bs-title="millidays">md</a>). The current distance between Points
+<span class="point0">0</span> and <span class="point1">1</span> is
+${distance_mcHsl()} <a href="#mc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millitaur">mc</a> or ${distance_cHsl()}
+<a href="#c" class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">c</a> and the current travel time between the two
+points is ${distance_mcHsl()}
 <a href="#mc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millitaur">mc</a> ÷ ${velocity_vHsl0}
+data-bs-title="millitaur">mc</a> ÷ ${velocity_vHsl()}
 <a href="#v" class="tool" data-bs-toggle="tooltip"
 data-bs-title="omegar">v</a> = ${traveltimeHsl0}
 <a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a> = ${distance_cHsl}
+data-bs-title="millidays">md</a> = ${distance_cHsl()}
 <a href="#c" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taur">c</a> ÷ ${velocity_vHsl1}
+data-bs-title="taur">c</a> ÷ ${velocity_vHsl()}
 <a href="#v" class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegar">v</a> = ${distance_mcHsl1}
+data-bs-title="omegar">v</a> = ${distance_mcHsl()}
 <a href="#mc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millitaur">mc</a> ÷ ${velocity_mvHsl}
 <a href="#mv" class="tool" data-bs-toggle="tooltip"
@@ -744,8 +711,8 @@ decBar = colorbar({
 <thead>
 <tr>
 <th></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliroses">mr</span></strong>🧭</th>
+<th><strong><a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a></strong></th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
 data-bs-title="compass degrees">c°</span></strong>🧭</th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
@@ -825,40 +792,36 @@ The
 [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle)
 compass above indicates both a
 [hue](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram)
-in <a href="#mt" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliturns">mt</a> and a course in
-<a href="#mr" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliroses">mr</a>. We can convert the hue to [HSL and
-HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
-degrees
-(<a href="#hdeg" id="huedegree" class="tool" data-bs-toggle="tooltip"
-data-bs-title="HSL or HSV degrees">h°</a>) and the course to compass
-degrees
+and a course in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a turn">milliturns</span>
+(<a href="#mt" id="milliturn" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a>). We can convert
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a> to [compass
+degrees](https://en.wikipedia.org/wiki/Compass#:~:text=north%20corresponds%20to%200%C2%B0%2C%20and%20the%20angles%20increase%20clockwise%2C%20so%20east%20is%2090%C2%B0%2C%20south%20is%20180%C2%B0%2C%20and%20west%20is%20270%C2%B0)
 (<a href="#cdeg" id="compassdegree" class="tool" data-bs-toggle="tooltip"
 data-bs-title="compass degrees">c°</a>): 25
-<a href="#mr" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliroses">mr</a> = 9
-<a href="#cdeg" class="tool" data-bs-toggle="tooltip"
-data-bs-title="compass degrees">c°</a>. To rotate🔄the color wheel
-compass, use the “Hue”
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a> =
+9<a href="#deg" class="tool" data-bs-toggle="tooltip"
+data-bs-title="degrees">°</a>, but the conversion of
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a> to [hue
+degrees](https://en.wikipedia.org/wiki/HSL_and_HSV#Hue_and_chroma:~:text=measured%20in%20degrees%20%5B0%C2%B0%2C%20360%C2%B0%29)
+(<a href="#hdeg" id="huedegree" class="tool" data-bs-toggle="tooltip"
+data-bs-title="HSL or HSV degrees">h°</a>) requires a [piecewise
+function](https://en.wikipedia.org/wiki/Piecewise_function#:~:text=a%20function%20whose%20domain%20is%20partitioned%20into%20several%20intervals).
+To rotate🔄the color wheel compass, use the “Hue”
 [range](https://observablehq.com/framework/inputs/range)🎚️and [hue
 bar](https://observablehq.com/@paavanb/progressive-color-picker) inputs
 beneath it or change the course from Point <span class="point0">0</span>
-to <span class="point1">1</span> by interacting with
-<a href="#tbl-map" class="quarto-xref">Table 1</a> or the
-[map](#fig-distmap) above.
+to <span class="point1">1</span> on the [map](#fig-distmap) above.
 
 # Red green blue (rgb)
 
-Beneath the hue bar,
-<a href="#tbl-color" class="quarto-xref">Table 2</a> compares the
-current Point <span class="point0">0</span> to
-<span class="point1">1</span> course in its top row with the
-[cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
-and
-[intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
-directions. Together, the range inputs underneath the hue bar form a
-“hue saturation lightness”
+Together, the range inputs underneath the hue bar form a “[hue
+saturation
+lightness](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=HSL%20stands%20for-,hue%2C%20saturation%2C%20and%20lightness,-%2C%20and%20is%20often)”
 (<a href="#hsl" id="huesaturationlightness" class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="hue saturation lightness">HSL</a>) triplet. Like
@@ -871,29 +834,31 @@ data-bs-title="red green blue">RGB</a>) or
 data-bs-title="hexadecimal">hex</a>) triplets,
 <a href="#hsl" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hue saturation lightness">HSL</a> triplets specify a
-full-fledged color instead of just a hue.
+full-fledged color instead of just a hue. Beneath the hue bar and range
+inputs, <a href="#tbl-color" class="quarto-xref">Table 2</a> compares
+the course from Point <span class="point0">0</span> to Point
+<span class="point1">1</span> in its top row with the
+[cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
+and
+[intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
+directions.
 
-Color labels🏷️provide a general idea of angular
+Dec color (Decolor) labels🏷️provide a general idea of angular
 [measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle),
-regardless of the metric prefixes or
+regardless of the metric prefixes or measurement
 [units](https://en.wikipedia.org/wiki/Angle#Units) we use. Therefore, we
-can reuse♻️colors across many different contexts. Most often,
-<span class="color0">red</span> designates starting points, like North
-(<span class="color0">0</span>
-<a href="#mr" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliroses">mr</a>) and [Longitude
-0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
-(<span class="color0">0</span>
-<a href="#mw" class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a horizontal line on a map">mw</a>), and
-<span class="color5">cyan</span> denotes midpoints, such as South
-(<span class="color5">500</span>
-<a href="#mr" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliroses">mr</a>) and [Longitude
-5](https://en.wikipedia.org/wiki/162nd_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Asia%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
-(<span class="color5">500</span>
-<a href="#mw" class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a horizontal line on a map">mw</a>).
+can reuse♻️Decolors across many different contexts. With the exception
+of latitude, <span class="color0">red</span> designates starting points,
+like North (<span class="color0">0</span>
+<a href="#r" class="tool" data-bs-toggle="tooltip"
+data-bs-title="roses">r</a>) and midnight (<span class="color0">0</span>
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>), and <span class="color5">cyan</span>
+denotes midpoints, such as South (<span class="color5">0.5</span>
+<a href="#r" class="tool" data-bs-toggle="tooltip"
+data-bs-title="roses">r</a>) and noon (<span class="color5">0.5</span>
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>).
 
 <div>
 
@@ -912,17 +877,11 @@ data-bs-title="thousandths of a horizontal line on a map">mw</a>).
 
 </div>
 
-The Equator (<span class="color0">0</span>
-<a href="#mj" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millijīng">mj</a>) is the [major
-latitude](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=mark%20the%20divisions%20between%20the%20five%20principal%20geographical%20zones)
-midway between the South (<span class="color750">-250</span>
-<a href="#mj" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millijīng">mj</a>) and North
-(<span class="color250">250</span>
-<a href="#mj" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millijīng">mj</a>) Poles. Unlike the Equator, the Tropics
-of
+The Equator is the midpoint of the
+[tropics](https://en.wikipedia.org/wiki/Tropics#:~:text=the%20region%20of%20Earth%20surrounding%20the%20equator%2C%20where%20the%20Sun%20may%20shine%20directly%20overhead)
+and is the only [major line of
+latitude](https://en.wikipedia.org/wiki/Circle_of_latitude#Major_circles_of_latitude:~:text=the%20divisions%20between%20the%20five%20principal%20geographical%20zones)
+that is fixed. The other four major lines of latitude, the Tropics of
 [Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(<span class="color065">65</span>
 <a href="#mj" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millijīng">mj</a>) and
@@ -932,7 +891,7 @@ data-bs-title="millijīng">mj</a>) and the
 [Arctic](https://en.wikipedia.org/wiki/Arctic_Circle#:~:text=the%20southernmost%20latitude%20at%20which%2C%20on%20the%20winter%20solstice%20in%20the%20Northern%20Hemisphere%2C%20the%20Sun%20does%20not%20rise%20all%20day%2C%20and%20on%20the%20Northern%20Hemisphere%27s%20summer%20solstice%2C%20the%20Sun%20does%20not%20set)
 (<span class="color250">250</span>
 <a href="#mj" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millijīng">mj</a> – <span class="color065">65</span>
+data-bs-title="millijīng">mj</a> − <span class="color065">65</span>
 <a href="#mj" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millijīng">mj</a> = <span class="color185">185</span>
 <a href="#mj" class="tool" data-bs-toggle="tooltip"
@@ -940,19 +899,30 @@ data-bs-title="millijīng">mj</a>) and
 [Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
 (<span class="color065">65</span>
 <a href="#mj" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millijīng">mj</a> – <span class="color250">250</span>
+data-bs-title="millijīng">mj</a> − <span class="color250">250</span>
 <a href="#mj" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millijīng">mj</a> = <span class="color815">-185</span>
 <a href="#mj" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millijīng">mj</a>) Circles are defined by the [axial
+data-bs-title="millijīng">mj</a>) Circles, separate the five
+[geographical
+zones](https://en.wikipedia.org/wiki/Geographical_zone#:~:text=five%20main%20latitude%20regions)
+and depend on the [axial
 tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
-of the Earth🌏: <span class="color065">65</span>
-<a href="#mt" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliturns">mt</a>.
+of the Earth🌏:
+<span class="color065">65</span><a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a>. In the Northern Hemisphere, the height
+of
+[Polaris](https://en.wikipedia.org/wiki/Polaris#:~:text=the%20North%20Star)
+above the horizon is close to our latitude: if the North Star⭐is 111
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a> up, we are near 111
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>.
 
 # Dec time zones
 
-Enable the [“Grid” toggle input](#toggles) to see Latitudes
+Enable the [“Grid” toggle input](#toggles) above
+<a href="#tbl-map" class="quarto-xref">Table 1</a> to see Latitudes
 [-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
 (<span class="color8">-200</span>
 <a href="#mj" class="tool" data-bs-toggle="tooltip"
@@ -973,33 +943,39 @@ data-bs-title="millijīng">mj</a>), and
 (<span class="color2">200</span>
 <a href="#mj" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millijīng">mj</a>) on the [map](#fig-distmap) above along
-with the ten major longitudes that divide the Earth🌎into the ten Dec
-time zones. In Dec, Longitude <span class="color0">0</span> serves as
-the [Prime
+with the ten major lines of longitude that divide the Earth🌎into the
+ten Dec time zones. In Dec, [Longitude
+0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
+(<span class="color0">0</span>
+<a href="#mw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a wěi">mw</a>) serves as the [Prime
 Meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0),
 [International Date
 Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next),
 the start of Zone <span class="color0">0</span>, and the end of Zone
 <span class="color9">9</span>.
 
-Like the ten major longitudes that separate them, Dec time zones are
-numbered <span class="color0">0</span> to <span class="color9">9</span>.
-Based on its current <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenth of a wěi">deciwěi</span>
-(<a href="#dw" id="deciwei" class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a horizontal line on a map">dw</a>) longitude,
-${point0lHsl}, Point <span class="point0">0</span> on the
-[map](#fig-distmap) above is in Zone ${point0zHsl}. The number assigned
-to each time zone is its offset from Zone <span class="color0">0</span>
-in <span class="tool" data-bs-toggle="tooltip"
+Like the ten major lines of longitude that separate them, the ten Dec
+time zones are numbered <span class="color0">0</span> to
+<span class="color9">9</span>. The integer assigned to each time zone is
+its “time zone offset”
+(<a href="#tzo" id="timezoneoffset" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a>). Dec measures
+<a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offsets">tzo</a> in single-digit, non-negative
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</span>
 (<a href="#dd" id="deciday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</a>). To obtain the
-<a href="#dd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciday">dd</a> offset at a location, we
+data-bs-title="decidays">dd</a>). The deci prefix means a tenth
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth">10<sup>-1</sup></span>). To find its
+corresponding <a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a>, we
 [floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
-its <a href="#dw" class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a horizontal line on a map">dw</a> longitude:
+the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenth of a wěi">deciwěi</span>
+(<a href="#dw" id="deciwei" class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a wěi">dw</a>) longitude of a location:
 ⌊${decLonHsl}⌋ = ${decZonHsl}.
 
 ``` {ojs}
@@ -1009,41 +985,47 @@ data-bs-title="tenths of a horizontal line on a map">dw</a> longitude:
 viewof longitude = Inputs.range([0, 10], {label: "Longitude", value: .5, step: .01})
 ```
 
-Each Dec time zone is 0.1
+Each Dec time zone is <span class="color1">0.1</span>
 <a href="#w" class="tool" data-bs-toggle="tooltip"
-data-bs-title="of a horizontal line on a map">w</a> wide and 0.5
+data-bs-title="wěi">w</a> wide and <span class="color5">0.5</span>
 <a href="#j" class="tool" data-bs-toggle="tooltip"
-data-bs-title="jīng">j</a> long. While 1
+data-bs-title="jīng">j</a> long. While <span class="color0">1</span>
 <a href="#j" class="tool" data-bs-toggle="tooltip"
-data-bs-title="jīng">j</a> is always <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1
+data-bs-title="jīng">j</a> is always about one (<span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span><span class="color0">1</span>)
 <a href="#c" class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</a> long, the length of a
 <a href="#w" class="tool" data-bs-toggle="tooltip"
-data-bs-title="horizontal line on a map">w</a> [varies by
+data-bs-title="wěi">w</a> [varies by
 latitude](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude:~:text=depends%20only%20on%20the%20radius%20of%20a%20circle%20of%20latitude).
-At the Equator, 1 <a href="#w" class="tool" data-bs-toggle="tooltip"
-data-bs-title="horizontal line on a map">w</a> is <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1
+At the Equator, a <a href="#w" class="tool" data-bs-toggle="tooltip"
+data-bs-title="wěi">w</a> is <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span><span class="color0">1</span>
 <a href="#c" class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</a> long. At the
 [North](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
-or
+(<span class="color250">250</span>
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>) or
 [South](https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
-Pole, the length of a <a href="#w" class="tool" data-bs-toggle="tooltip"
-data-bs-title="horizontal line on a map">w</a> is zero. The approximate
-<a href="#c" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taur">c</a> length of a
+(<span class="color750">-250</span>
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>) Pole, the length of a
 <a href="#w" class="tool" data-bs-toggle="tooltip"
-data-bs-title="horizontal line on a map">w</a> is the
+data-bs-title="wěi">w</a> is zero. The approximate length in
+<a href="#c" class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">c</a> of a
+<a href="#w" class="tool" data-bs-toggle="tooltip"
+data-bs-title="wěi">w</a> is the
 [cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)
-of its latitude in <a href="#j" class="tool" data-bs-toggle="tooltip"
-data-bs-title="jīng">j</a>,
-<a href="#rad" class="tool" data-bs-toggle="tooltip"
-data-bs-title="radians">rad</a>, or
-<a href="#deg" class="tool" data-bs-toggle="tooltip"
-data-bs-title="degrees">°</a>, depending on the input requirement of our
-cosine function: cos(${parLat}${conversionFactor}) = ${parLen}.
+of its latitude, which Dec can calculate using turns,
+[radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20dimensionless%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units),
+or
+[degrees](https://en.wikipedia.org/wiki/Degree_(angle)#:~:text=a%20unit%20of%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20assigned%20the%20value%20of%20360%20degrees):
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cosine">cos</span>(${parLat}${conversionFactor}) =
+${parLen}.
 
 ``` {ojs}
 //| echo: false
@@ -1080,9 +1062,11 @@ data-bs-title="approximately ten million">~10<sup>7</sup></span>) zem
 data-bs-toggle="tooltip" data-bs-title="zem">z</a>). Similarly, the
 distance from the Equator to one of the Poles is <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="approximately ten million">~10<sup>7</sup></span>
-[meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units).
-In other words, a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately ten million">~10<sup>7</sup></span> [SI
+meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units)
+(<a href="#sim" id="simeter" class="tool" data-bs-toggle="tooltip"
+data-bs-title="SI meters">sim</a>). In other words, a <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="a tenth of a jīng">decijīng</span>
 (<a href="#dj" id="decijing" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decijīng">dj</a>) is <span class="tool"
@@ -1092,8 +1076,22 @@ data-bs-title="approximately ten million">~10<sup>7</sup></span>
 data-bs-title="zem">z</a> long and a [quarter
 meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole)
 is <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately ten million">~10<sup>7</sup></span> meters
-long.
+data-bs-title="approximately ten million">~10<sup>7</sup></span>
+<a href="#sim" class="tool" data-bs-toggle="tooltip"
+data-bs-title="SI meters">sim</a> long: 1
+<a href="#z" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a> = 0.4
+<a href="#sim" class="tool" data-bs-toggle="tooltip"
+data-bs-title="SI meters">sim</a>. The [nautical
+mile](https://en.wikipedia.org/wiki/Nautical_mile#:~:text=one%20minute%20of%20latitude)
+was also derived from the size of the Earth: it was defined as a
+sixtieth of a degree of latitude, about 46.3
+<a href="#uc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millionths of a taur">µc</a>. Dec uses decimal fractions
+instead, so 1 <a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a> of latitude is about 1
+<a href="#mc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millitaur">mc</a>.
 
 <div id="zemhands" class="column-margin hand" data-fig-align="center"
 style="text-align:center;">
@@ -1112,13 +1110,14 @@ distance between the tips of your pinkies is <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a>. When you spread out the fingers on one
-hand✋or do the “[call
+hand✋, make the
+[ILY](https://en.wikipedia.org/wiki/ILY_sign#:~:text=a%20sign%20from%20a%20combination%20of%20the%20signs%20for%20the%20letters%20I%2C%20L%2C%20and%20Y%20%28for%20%22I%20love%20you%22%29)🤟sign,
+or the “[call
 me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20commonly%20understood%20to%20mimic%20the%20handset%20of%20a%20traditional%20landline%20telephone)”,
 “[drink](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=placing%20the%20thumb%20to%20the%20mouth%20and%20motioning%20the%20little%20finger%20upward%20as%20if%20tipping%20up%20a%20bottle%27s%20bottom%20end)”,
 or
-“[shaka](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=a%20gesture%20with%20friendly%20intent%20often%20associated%20with%20Hawaii%20and%20surf%20culture)”🤙gesture,
-your thumb and pinky tips are <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="approximately">~</span>0.5
+“[shaka](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=a%20gesture%20with%20friendly%20intent%20often%20associated%20with%20Hawaii%20and%20surf%20culture)”🤙sign,
+your thumb and pinky tips are roughly 0.5
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> apart.
 
@@ -1134,11 +1133,25 @@ id="armlabel">Wikimedia</a>
 To visualize a square <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>
 (<a href="#z2" id="squarezem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z²</a>), imagine four people standing in a
-circle, facing inward, each with their right hand placed on top of the
-elbow of the person to their right. Alternatively, two people can stand
-in front of each other and raise their arms💪, placing one hand on the
-elbow of the other person and the other hand on their own elbow.
+data-bs-title="square zem">z²</a>), imagine two people making a square
+with their forearms💪. Each of the two people creates a corner and two
+sides of the square by holding their right elbow with their left hand,
+like [John
+Wayne](https://en.wikipedia.org/wiki/John_Wayne#:~:text=Wayne%2C%20was-,an%20American%20actor,-.%20Nicknamed%20%22Duke)
+at the end of the <span class="color56by100">1956</span> film [The
+Searchers](https://en.wikipedia.org/wiki/The_Searchers#:~:text=a%201956%20American%20epic%20Western%20film),
+and then completes the square by placing their right hand on the right
+elbow of the other person.
+
+<div id="zemjohn" class="column-margin" data-fig-align="center"
+style="max-width:200px;margin-inline:auto;text-align:center;">
+
+<img src="../asset/Big-John-holding-his-arm_scaled.png" id="zJohn"
+loading="lazy" /> <a
+href="https://www.truewestmagazine.com/article/the-searchers-2/#:~:text=he%20grabbed%20his%20right%20arm%20with%20his%20left%20hand%20at%20the%20elbow"
+id="johnlabel">True West</a>
+
+</div>
 
 <div id="zemlift" class="column-margin" data-fig-align="center"
 style="text-align:center;">
@@ -1150,18 +1163,18 @@ id="liftlabel">Wikimedia</a>
 
 </div>
 
-You can approximate a
+You can also imagine a
 <a href="#z2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z²</a> yourself by sitting in a chair🪑or
-standing🧍with your knees and feet🦶1
+data-bs-title="square zem">z²</a> to be a square pillow that fits in
+between your knees and feet🦶when you are sitting or lying on a
+couch🛋️or a bed🛏️. Each side of the pillow is 1
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a>, 4 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a meter">decimeters</span>, or 16 inches apart,
-which is probably about the width of your hips or shoulders. The
-<a href="#z2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z²</a> will be between your shins, its top
-will be below your knees, and its bottom will be either above your
-ankles or feet, depending on your height.
+data-bs-title="tenths of a meter">decimeters</span>, or 16 inches
+(<a href="#i" id="inch" class="tool" data-bs-toggle="tooltip"
+data-bs-title="inches">i</a>) apart, which is probably about the width
+of your hips or shoulders, and will likely extend from your knees to
+either your ankles or the soles of your feet.
 
 <div id="zemcubic" class="column-margin" data-fig-align="center"
 style="text-align:center;">
@@ -1484,60 +1497,66 @@ data-bs-title="centizem">cz</a>) is the [typical seat
 height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual)
 for both men and women in the age range of 25 to 45
 <a href="#y" class="tool" data-bs-toggle="tooltip"
-data-bs-title="years">y</a>. A box📦that is the size of a cubic
-<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="years">y</a>. The centi prefix means a hundredth
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a hundredth">10<sup>-2</sup></span>). A box📦or [cube
+pouf](https://www.dimensions.com/element/cube-poufs#:~:text=simple%20forms%20great%20for%20sitting%2C%20foot%20rests%20or%20temporary%20side%20tables)
+that is the size of a cubic <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>
 (<a href="#z3" id="cubiczem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic zem">z³</a>) would likely fit under a typical chair
 or in between the shins of two people sitting in front of each other
 with their knees and feet 1
 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</a> apart and their legs🦵bent at right angles (25
-<a href="#ct" class="tool" data-bs-toggle="tooltip"
-data-bs-title="centiturns">ct</a>).
+data-bs-title="zem">z</a> apart.
 
 # Perpetually setting sun
 
 In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰,
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</a> means Earth. This is
-fitting because all Dec units are based on physical attributes of the
-Earth. At the Equator, the Earth rotates on its axis at a speed of
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>1.00224
+fitting because all Dec units introduced above are derived from physical
+attributes of the Earth. At the Equator, the Earth rotates on its axis
+at a speed of about 1.00188
 <a href="#v" class="tool" data-bs-toggle="tooltip"
 data-bs-title="omegar">v</a>. If we could indefinitely maintain this
 speed while flying West in an airplane✈️towards the setting sun️, we
 would be able to perpetually fly [into the
 sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
+In other words, the yellow🟡dot on the [map](#fig-distmap), where the
+Sun is directly overhead, moves West along the Equator at about 1
+<a href="#v" class="tool" data-bs-toggle="tooltip"
+data-bs-title="omegar">v</a>.
 
 # Airplane cruising speed
 
-To travel fast enough for a perpetual sunset, the airplane would need to
-surpass the [speed of
+To travel fast enough for a perpetual sunset, we would need to be able
+to
+[sustain](https://en.wikipedia.org/wiki/Supercruise#:~:text=sustained%20supersonic%20flight)
+[supersonic](https://en.wikipedia.org/wiki/Supersonic_speed#:~:text=the%20speed%20of%20an%20object%20that%20exceeds%20the%20speed%20of%20sound)
+flight. The [speed of
 sound](https://en.wikipedia.org/wiki/Speed_of_sound#:~:text=the%20distance%20travelled%20per%20unit%20of%20time%20by%20a%20sound%20wave)🔊(<a href="#sos" id="speedofsound" class="tool" data-bs-toggle="tooltip"
-data-bs-title="speed of sound">sos</a>), which at 15
-<a href="#deg" class="tool" data-bs-toggle="tooltip"
+data-bs-title="speed of sound">sos</a>) at
+15<a href="#deg" class="tool" data-bs-toggle="tooltip"
 data-bs-title="degrees">°</a>
 [Celsius](https://en.wikipedia.org/wiki/Celsius#:~:text=the%20unit%20of%20temperature%20on%20the%20Celsius%20temperature%20scale)
 and 1 [standard
 atmosphere](https://en.wikipedia.org/wiki/Standard_atmosphere_(unit)#:~:text=a%20unit%20of%20pressure%20defined%20as%20101325%20Pa)
-is 0.735048 <a href="#v" class="tool" data-bs-toggle="tooltip"
+is roughly 0.735048 <a href="#v" class="tool" data-bs-toggle="tooltip"
 data-bs-title="omegar">v</a> or Mach 1. [Mach
 numbers](https://en.wikipedia.org/wiki/Mach_number) are relative to the
 <a href="#sos" class="tool" data-bs-toggle="tooltip"
 data-bs-title="speed of sound">sos</a>, which varies greatly by air
-temperature and pressure. The cruising speed of a [Boeing
+temperature and pressure. The
+[cruising](https://en.wikipedia.org/wiki/Cruise_%28aeronautics%29#:~:text=phase%20of%20aircraft%20flight%20from%20when%20the%20aircraft%20levels%20off%20after%20a%20climb)
+speed of a [Boeing
 747](https://en.wikipedia.org/wiki/Boeing_747#:~:text=sweep%2C%20allowing%20a-,Mach%C2%A00.85,-%28490%C2%A0kn;%20900)
-is <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>0.54
-<a href="#v" class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegar">v</a> or Mach <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="approximately">~</span>0.85.
+is about 0.54 <a href="#v" class="tool" data-bs-toggle="tooltip"
+data-bs-title="omegar">v</a> or roughly Mach 0.85.
 
-The highway🛣️speed of a car🚗is roughly tenfold slower than the cruising
-speed of an airplane️. If we are driving on a highway at a speed of 50
-<a href="#mv" class="tool" data-bs-toggle="tooltip"
+The highway🛣️speed of a car🚗is approximately tenfold slower than the
+cruising speed of an airplane️. If we are driving on a highway at a speed
+of 50 <a href="#mv" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliomegar">mv</a> and our exit is 1000
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> away, we will have 20 <span class="tool"
@@ -1561,80 +1580,133 @@ data-bs-title="beats">b</a>) because they are similar in duration to
 heart❤️beats or [musical
 beats](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=I-,n%20music%20and%20music%20theory%2C%20the%20beat%20is%20the%20basic%20unit%20of%20time,-%2C%20the).
 In Dec, 1 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a> = 100 <span class="tool"
+data-bs-title="day">d</a> can be split into 100 <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="hundredths of a day">centiday</span>
+data-bs-title="hundredths of a day">centidays</span>
 (<a href="#cd" id="centiday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="centidays">cd</a>) = <span class="tool"
+data-bs-title="centidays">cd</a>) or 100000 (<span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="a hundred thousand">10<sup>5</sup></span>
+data-bs-title="a hundred thousand">10<sup>5</sup></span>)
 <a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</a> = <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="a million">10<sup>6</sup></span>
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millionths of a day">microdays</span>
-(<a href="#ud" id="microday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="microdays">µd</a>), 1
+data-bs-title="beats">b</a> and 1
 <a href="#mc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millitaur">mc</a> = 100 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="thousands of zem">kilozem</span>
+data-bs-title="millitaur">mc</a> can be divided into 100
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a thousand zem">kilozem</span>
 (<a href="#kz" id="kilozem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of zem">kz</a>) = <span class="tool"
+data-bs-title="a thousand zem">kz</a>) or <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="a hundred thousand">10<sup>5</sup></span>
 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</a> = <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a million">10<sup>6</sup></span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="tenths of a zem">decizem</span>
-(<a href="#dz" id="decizem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decizem">dz</a>) = <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="a million">10<sup>6</sup></span>
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="billionths of a taur">nanotaur</span>
-(<a href="#nc" id="nanotaur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="nanotaur">nc</a>), and therefore, 1
+data-bs-title="zem">z</a>. The kilo prefix means a thousand
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a thousand">10<sup>3</sup></span>). By changing prefixes
+and units, we can adapt
 <a href="#mv" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegar">mv</a> = $\text{mc}\over\text d$ =
-$\text {kz}\over\text {cd}$ = $\text z\over\text b$ =
-$\text {dz}\over\text{µd}$ = $\text {nc}\over\text{µd}$. A
-<a href="#cd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="centiday">cd</a> is <span class="color960">96</span>% of
-a quarter hour and a <a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beat">b</a> is <span class="color864">86.4</span>% of a
-second.
+data-bs-title="milliomegars">mv</a> for different
+[magnitudes](https://en.wikipedia.org/wiki/Magnitude_%28mathematics%29#:~:text=a%20property%20which%20determines%20whether%20the%20object%20is%20larger%20or%20smaller%20than%20other%20objects%20of%20the%20same%20kind):
+<a href="#mv" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegar">mv</a> =
+<a href="#mc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millitaur">mc</a>/<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day">d</a> =
+<a href="#kz" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a thousand zem">kz</a>/<a href="#cd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centidays">cd</a> =
+<a href="#z" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a>/<a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</a>.
+
+Since <span class="color24by100">1924</span>, the distance of an Olympic
+marathon has been 1.054875
+<a href="#mc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millitaur">mc</a>. Dec defines a marathon to be 1
+<a href="#mc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millitaur">mc</a>, which is the [original
+definition](https://en.wikipedia.org/wiki/Marathon#Distance:~:text=Games%20were%20about-,40%20kilometres,-%2824.9%C2%A0mi)
+of a marathon from the [first modern Olympic
+games](https://en.wikipedia.org/wiki/1896_Summer_Olympics#:~:text=the%20first%20international%20Olympic%20Games%20held%20in%20modern%20history)
+in <span class="color96by100">1896</span>. The
+<span class="color26by100">2026</span> [world record marathon
+time](https://en.wikipedia.org/wiki/Marathon#Area_records:~:text=World-,1%3A59%3A30,2026,-Sabastian%20Sawe%C2%A0)
+is about <span class="color083">83</span>
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a>. If we ran 1
+<a href="#mc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millitaur">mc</a> in <span class="color083">83</span>
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a>, our mean
+[slowness](https://en.wiktionary.org/wiki/slowness#Noun:~:text=the%20reciprocal%20of%20velocity%2C%20that%20delineates%20the%20amount%20of%20time%20required%20for%20an%20object%20to%20travel%20a%20given%20distance)
+would be 83 <a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</a> per
+<a href="#kz" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a thousand zem">kz</a> and our mean speed would be
+roughly 12.0482 <a href="#mv" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegars">mv</a>.
+
+A standard [running
+track](https://en.wikipedia.org/wiki/Running_track#:~:text=400%C2%A0metres)
+is 1 <a href="#kz" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a thousand zem">kz</a> long, so a mile is 4 laps, and the
+[1600 meters](https://en.wikipedia.org/wiki/1600_meters) race run in US
+high schools is exactly 1 mile. The [400 meters world
+record](https://en.wikipedia.org/wiki/400_metres) of 43.03 SI seconds
+corresponds to a mean slowness of about 49.8
+<a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</a> per
+<a href="#kz" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a thousand zem">kz</a>.
+
+A brisk walk🚶is about four times slower than a world record marathon.
+If we walk at 3 <a href="#mv" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegars">mv</a>, or 4.8 kilometers per hour, and
+each of our steps is 2
+<a href="#z" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a> long, we take 1.5 steps per
+<a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beat">b</a> or 100 steps per minute, a typical walking
+[cadence](https://en.wikipedia.org/wiki/Cadence_(gait)). Our mean
+slowness would be about 333
+<a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</a> per
+<a href="#kz" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a thousand zem">kz</a>, each <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="4 kilozem">mile</span> would
+take 2000 steps and 20 minutes, and the popular daily goal of 10000
+steps would cover 5 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="4 kilozem each">miles</span> in 100 minutes or about 67
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a>.
 
 # Heart rate tempo
 
 A [normal resting heart
 rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=heart%20rate%20is-,60–100%20bpm,-.%20An%20ultra%2Dtrained)
-is between 100 and 166.<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9 digit 6">♄</span>
-<a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</a> per
+is between 86.4 and 144 per
 <a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a>
-(<a href="#bpm" id="beatpermilliday" class="tool"
-data-bs-toggle="tooltip" data-bs-title="beats per milliday">bpm</a>).
-The unofficial anthem of the Dec measurement system, “[Turn the beat
+data-bs-title="milliday">md</a>
+(<a href="#permil" id="permilliday" class="mono tool"
+data-bs-toggle="tooltip" data-bs-title="per milliday">‰</a>). The
+unofficial anthem of the Dec measurement system, “[Turn the beat
 around](https://en.wikipedia.org/wiki/Turn_the_Beat_Around#:~:text=a%20disco%20song%20written%20by%20Gerald%20Jackson%20and%20Peter%20Jackson%2C%20and%20performed%20by%20American%20actress%20and%20singer%20Vicki%20Sue%20Robinson%20in%201976)”,
 has a
 [tempo](https://en.wikipedia.org/wiki/Tempo#:~:text=the%20speed%20or%20pace%20of%20a%20given%20composition)
-of 188.64 <a href="#bpm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats per milliday">bpm</a>, which corresponds to the
-*allegro* [tempo
-marking](https://en.wikipedia.org/wiki/Tempo#Approximately_from_the_slowest_to_the_fastest).
+of 188.64 <a href="#permil" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="per milliday">‰</a>, which corresponds to the *allegro*
+[marking](https://en.wikipedia.org/wiki/Tempo#Approximately_from_the_slowest_to_the_fastest:~:text=120%C2%A0bpm%29-,Allegro,-%E2%80%93%20fast%20and%20bright).
 A Dec clock⏰ticks at a rate of 100
-<a href="#bpm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats per milliday">bpm</a>, b<sup>−1</sup>,
-$1\over\text b$, 1
+<a href="#permil" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="per milliday">‰</a>,
+<a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</a><sup>-1</sup>,
+1/<a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</a>, 1
 [inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=x%2C%20denoted%20by-,1/x%20or%20x%E2%88%921,-%2C%20is%20a%20number)
 beat, or 1 perbeat
 (<a href="#per" id="perbeat" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeat">þ</a>), which is
-<span class="colorIob">1.15<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9 digits 6 and 6">♄♄</span></span> times more
-frequent than a
-[Hertz](https://en.wikipedia.org/wiki/Hertz#:~:text=one%20event%20(or%20cycle)).
+data-bs-title="perbeat">þ</a>), which is 10/9 times more frequent than
+once per second (<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="second">s</a>).
 
 # Frequency period wavelength
 
@@ -1655,16 +1727,10 @@ respectively, of a sound or light wave. Equations
 period, and wavelength are related to each other and to speed. The speed
 of light
 (<a href="#sol" id="speedoflight" class="tool" data-bs-toggle="tooltip"
-data-bs-title="speed of light">sol</a>) is <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>647.551657 <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousand omegar">kiloomegar</span>
-(<a href="#kv" id="kiloomegar" class="tool" data-bs-toggle="tooltip"
-data-bs-title="kiloomegar">kv</a>), which is <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="approximately">~</span>881
-thousand times faster than the
-<a href="#sos" class="tool" data-bs-toggle="tooltip"
+data-bs-title="speed of light">sol</a>) is around 647551.709
+<a href="#v" class="tool" data-bs-toggle="tooltip"
+data-bs-title="omegar">v</a>, which is about 880965 times faster than
+the <a href="#sos" class="tool" data-bs-toggle="tooltip"
 data-bs-title="speed of sound">sos</a>.
 
 <div style="overflow-x:auto;overflow-y:hidden;">
@@ -1678,48 +1744,46 @@ $$\text{period} = \dfrac{\text{wavelength}}{\text{speed}} = \dfrac{1}{\text{freq
 </span>
 
 <span id="eq-wave">
-$$\text{wavelength} = \text{speed} \ast \text{period} = \dfrac{\text{speed}}{\text{frequency}} \qquad(3)$$
+$$\text{wavelength} = \text{speed} \times \text{period} = \dfrac{\text{speed}}{\text{frequency}} \qquad(3)$$
 </span>
 
 </div>
 
-The frequency range of the
+The approximate frequency limits of human senses are 328.32 to 682.56
+trillion <a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeats">þ</a> for
 [visible](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
-spectrum of light is <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>328.32 to <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="approximately">~</span>682.56
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="trillions of perbeats">teraperbeats</span>
-(<a href="#Tpb" id="teraperbeat" class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraperbeats">Tþ</a>). The range of sound frequencies
-which can be
-[audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)👂for
-humans is <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>[10.368](https://en.wikipedia.org/wiki/Hearing_range#:~:text=humans%20can%20hear%20sound%20as%20low%20as%2012%C2%A0Hz)
-to <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>[24192](https://en.wikipedia.org/wiki/Hearing_range#:~:text=8%5D%20and-,as%20high%20as%2028%C2%A0kHz,-%2C%20though%20the%20threshold)
+light and
+[17.28](https://en.wikipedia.org/wiki/Hearing_range#:~:text=commonly%20given%20as%2020%20to%2020%2C000)
+to
+[17280](https://en.wikipedia.org/wiki/Hearing_range#:~:text=commonly%20given%20as%2020%20to%2020%2C000)
 <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">þ</a>. The period and wavelength that
-correspond to the frequency chosen by the range input below are 1000 ÷
-${iobs} <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">þ</a> = ${parseFloat((1000 / iobs).toFixed(3))}
-<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeats">þ</a> for
+[audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
+sound. The range inputs below control the sound player beneath them. The
+first range input below represents a frequency: ${perbeats}
+<a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeats">þ</a>, a period: 1 ÷ ${perbeats}
+<a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeats">þ</a> = ${parseFloat((1000 /
+perbeats).toFixed(3))} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a beat">millibeats</span>
 (<a href="#mb" id="millibeat" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millibeats">mb</a>) and 735.048
+data-bs-title="millibeats">mb</a>), and a wavelength: 735.048
 <a href="#mv" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegar">mv</a> ÷ ${iobs}
+data-bs-title="milliomegar">mv</a> ÷ ${perbeats}
 <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeats">þ</a> = ${parseFloat((735.048 /
-iobs).toFixed(3))} <a href="#z" class="tool" data-bs-toggle="tooltip"
+perbeats).toFixed(3))}
+<a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a>.
 
 ``` {ojs}
 //| echo: false
-//| label: iobinput
+//| label: perbeatinput
 //| class: slider
 // https://observablehq.com/@freedmand/sounds
-viewof iobs = Inputs.range([1, 9999], { step: 1,  value: 380, label: "Frequency" })
+viewof perbeats = Inputs.range([1, 9999], { step: 1,  value: 380, label: "Frequency" })
 ```
 
 ``` {ojs}
@@ -1732,56 +1796,47 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Duration" })
 
 ``` {ojs}
 //| echo: false
-//| label: iobplayer
+//| label: perbeatplayer
 //| class: player
 // https://observablehq.com/@freedmand/sounds
-Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864, iobs)
+Play((t) => Math.sin(perbeats / .864 * t * 2 * Math.PI), beats * .864, perbeats)
 ```
 
 # Decioctave octave note
 
 In addition to <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">þ</a>, the limits of human hearing can also be
-expressed in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeats">þ</a>, we can also express frequencies in
+[octaves](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other)
+(<a href="#o" id="octave" class="tool" data-bs-toggle="tooltip"
+data-bs-title="octave">o</a>), which are twofold changes (doublings) in
+frequency, or <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of an octave">decioctaves</span>
 (<a href="#do" id="decioctave" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decioctaves">do</a>). A
-<a href="#do" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decioctave">do</a> is a tenth of an
-[octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other)
-(<a href="#o" id="octave" class="tool" data-bs-toggle="tooltip"
-data-bs-title="octave">o</a>). An
+data-bs-title="decioctaves">do</a>), which are tenths of an
 <a href="#o" class="tool" data-bs-toggle="tooltip"
-data-bs-title="octave">o</a> is a two-fold change in frequency. The
-audible range for humans is <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span><span class="color3">3</span> to
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span><span class="color3">103</span>
+data-bs-title="octave">o</a>. The approximate frequency limits are
+<span class="color3">3</span> to <span class="color3">103</span>
 <a href="#do" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decioctaves">do</a>. The
-[range](https://en.wikipedia.org/wiki/Range_(music)#:~:text=the%20distance%20from%20the%20lowest%20to%20the%20highest%20pitch%20it%20can%20play)
-of an 88-key piano🎹is <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>23.76 to <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="approximately">~</span>3616.64
-<a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">þ</a> or <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span><span class="color8">8</span> to
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span><span class="color0">80</span>
+data-bs-title="decioctaves">do</a> for human hearing and 23.76 to
+3616.64 <a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeats">þ</a> or <span class="color8">8</span> to
+<span class="color0">80</span>
 <a href="#do" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decioctaves">do</a>. The equations and code below convert
-between <a href="#o" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decioctaves">do</a> for an 88-key piano🎹. Equations
+<a href="#eq-octa" class="quarto-xref">4</a> and
+<a href="#eq-perb" class="quarto-xref">5</a> and the [source
+code](https://en.wikipedia.org/wiki/Source_code#:~:text=human%20readable%20plain%20text%20that%20eventually%20results%20in%20controlling%20the%20behavior%20of%20a%20computer)
+below convert between <a href="#o" class="tool" data-bs-toggle="tooltip"
 data-bs-title="octaves">o</a> and
 <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeats">þ</a>.
 
 <span id="eq-octa">
-$$\text{o} = \log_2\\\left(\frac{\text{p}}{14.1275}\right) \qquad(4)$$
+$$\text{o} = \log_2\\\left(\frac{\text{þ}}{14.1275}\right) \qquad(4)$$
 </span>
 
 <span id="eq-perb">
-p = 14.1275 \* 2<sup>o</sup>   (5)
+þ = 14.1275 × 2<sup>o</sup>   (5)
 </span>
 
 <div class="panel-tabset" data-group="language">
@@ -1861,8 +1916,8 @@ perbeat(3)
 Each <a href="#do" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decioctave">do</a> has a corresponding musical note
 (<a href="#n" id="note" class="tool" data-bs-toggle="tooltip"
-data-bs-title="musical note">n</a>) that determines its color label. The
-idea of linking colors and musical notes dates back to the
+data-bs-title="musical note">n</a>) that determines its Decolor label.
+The idea of linking colors and musical notes dates back to the
 <span class="color704">1704</span> book by [Isaac
 Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a)
 entitled
@@ -1870,23 +1925,27 @@ entitled
 On <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="May 20, 2025"><span class="color025">2025</span><span class="mono">+</span><span class="colorD080">080</span></span>,
 I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm)
-by [Clint Goss](https://www.clintgoss.com)[2], which presents a method
-of associating musical notes with colors by matching sound and light
-frequencies.
+by [Clint Goss](https://www.clintgoss.com)[2], which presents a
+mathematical method of associating musical notes with colors by matching
+sound and light frequencies.
+
+<span id="eq-modulus">
+$$\text{dividend} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} \text{modulus} = \text{dividend} - \text{modulus} \times \left\lfloor\dfrac{\text{dividend}}{\text{modulus}}\right\rfloor \qquad(6)$$
+</span>
 
 <span id="eq-note">
-$$\text{n} = \text{o} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 1 \ast 10 \qquad(6)$$
+$$\text{n} = \text{o} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 1 \times 10 \qquad(7)$$
 </span>
 
 The lollipops🍭in the chart below represent the ten Dec notes in Octave
-4. The lollipops and the
+<span class="color4">4</span>. The lollipops and the
 <a href="#do" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decioctaves">do</a> values above them are labeled with
-the ten Dec colors. Beneath each lollipop is its frequency rounded to
+the ten main Decolors. Beneath each lollipop is its frequency rounded to
 the nearest <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeat">þ</a>. Click or tap each lollipop to hear its
-associated sound. The chart demonstrates that data points can be labeled
-with both color and sound.
+data-bs-title="perbeat">þ</a>. Click or tap a lollipop to hear its
+associated Dec sound label. The chart demonstrates that data points can
+be labeled with both color and sound.
 
 ``` {ojs}
 //| echo: false
@@ -1912,6 +1971,551 @@ with both color and sound.
 }
 ```
 
+# Multiplicative inverse pair (mip)
+
+Dec classifies <a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a hundred-thousandth of a turn">b</a> and
+<a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeat">þ</a> as a “[multiplicative
+inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=denoted%20by,x%E2%88%921)
+pair” (<a href="#mip" id="multiplicativeinversepair" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="multiplicative inverse pair">mip</a>). We can measure
+period in <a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</a> or
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>, frequency in
+<a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeats">þ</a> or inverse days called <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="per days">quotidie</span>
+(<a href="#q" id="quotidie" class="tool" data-bs-toggle="tooltip"
+data-bs-title="quotidie">q</a>), speed in
+<a href="#v" class="tool" data-bs-toggle="tooltip"
+data-bs-title="omegar">v</a>, and slowness in inverse
+<a href="#v" class="tool" data-bs-toggle="tooltip"
+data-bs-title="omegar">v</a> called upsilonr
+(<a href="#ur" id="upsilonr" class="tool" data-bs-toggle="tooltip"
+data-bs-title="upsilonr">ʌ</a>). Whereas
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> and
+<a href="#v" class="tool" data-bs-toggle="tooltip"
+data-bs-title="omegar">v</a> are turns
+(<a href="#T" id="turn" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">T</a>),
+<a href="#q" class="tool" data-bs-toggle="tooltip"
+data-bs-title="quotidie">q</a> and
+<a href="#ur" class="tool" data-bs-toggle="tooltip"
+data-bs-title="upsilonr">ʌ</a> are inverse turns
+(<a href="#inverset" id="inverseturn" class="big tool"
+data-bs-toggle="tooltip" data-bs-title="inverse turn">ꓕ</a>). The
+frequency of a <a href="#cd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centidays">cd</a> is 100
+<a href="#q" class="tool" data-bs-toggle="tooltip"
+data-bs-title="quotidie">q</a> or 0.001
+<a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeats">þ</a>. A speed of 10
+<a href="#mv" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegar">mv</a> or 0.01
+<a href="#v" class="tool" data-bs-toggle="tooltip"
+data-bs-title="omegar">v</a> corresponds with a slowness of 100
+<a href="#ur" class="tool" data-bs-toggle="tooltip"
+data-bs-title="upsilonr">ʌ</a>.
+
+<span id="eq-b">
+$$\textsf{þ} = \textsf{b}^{\text{-1}} = \dfrac{1}{\textsf{b}} \qquad(8)$$
+</span>
+
+<span id="eq-d">
+$$\textsf{q} = \textsf{d}^{\text{-1}} = \dfrac{1}{\textsf{d}} \qquad(9)$$
+</span>
+
+<span id="eq-v">
+$$\textsf{ʌ} = \textsf{v}^{\text{-1}} = \dfrac{1}{\textsf{v}} = \dfrac{\textsf{d}}{\textsf{c}} = \dfrac{\textsf{b}}{\textsf{kz}} \qquad(10)$$
+</span>
+
+<span id="eq-t">
+$$\style{display:inline-block;transform:rotate(180deg)}{\text{T}} = \text{T}^{\text{-1}} = \dfrac{1}{\text{T}} \qquad(11)$$
+</span>
+
+# Multiples and submultiples
+
+<a href="#tbl-sub" class="quarto-xref">Table 3</a> below lists the
+names, symbols, and
+<a href="#inverset" class="big tool" data-bs-toggle="tooltip"
+data-bs-title="inverse turn">ꓕ</a> values of Dec turn
+[submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20%28a).
+Outside of Dec,
+[minutes](https://en.wikipedia.org/wiki/Minute#:~:text=a%20unit%20of%20time%20defined%20as%20equal%20to%2060%20seconds)
+(<a href="#m" id="decminute" class="tool" data-bs-toggle="tooltip"
+data-bs-title="two-thirds of a thousandth of a turn">m</a>) and
+[seconds](https://en.wikipedia.org/wiki/Second#:~:text=a%20unit%20of%20time%20derived%20from%20the%20division%20of%20the%20day)
+(<a href="#s" id="second" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a ninth of a ten-thousandth of a turn">s</a>) are parts
+of a day or a degree and are used for both angular and time measurement.
+Dec extends this flexibility to
+[hours](https://en.wikipedia.org/wiki/Hour#:~:text=contemporarily%20as%20exactly-,3%2C600%20seconds,-.%20There%20are%2060)
+(<a href="#h" id="dechour" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a twenty-fifth of a turn">h</a>) by redefining
+<a href="#h" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a twenty-fifth of a turn">h</a>,
+<a href="#m" class="tool" data-bs-toggle="tooltip"
+data-bs-title="two-thirds of a thousandth of a turn">m</a>, and
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a ninth of a ten-thousandth of a turn">s</a> as turn
+submultiples. In Dec, 1
+<a href="#h" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a twenty-fifth of a turn">h</a> is 4 <span id="centiturn"
+class="tool" data-bs-toggle="tooltip"
+data-bs-title="hundredths of a turn">centiturns</span>
+(<a href="#ct" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a hundredth of a turn">¢</a>), 1
+<a href="#m" class="tool" data-bs-toggle="tooltip"
+data-bs-title="minute">m</a> is 2/3
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a>, and 1
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="second">s</a> is 10/9
+<a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</a>.
+
+<table>
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 32%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>name</th>
+<th>symbol</th>
+<th style="text-align: right;"><a href="#inverset" class="big tool"
+data-bs-toggle="tooltip" data-bs-title="inverse turn">ꓕ</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Deci-#:~:text=a%20factor%20of%20one%20tenth">dime</a></td>
+<td><a href="#dt" id="deciturn" class="iosevka tool"
+data-bs-toggle="tooltip" data-bs-title="a tenth of a turn">⅒</a></td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Hour#:~:text=defined%20contemporarily%20as%20exactly%203%2C600%20seconds">hour</a></td>
+<td><a href="#h" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="a twenty-fifth of a turn">h</a></td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Centi-#:~:text=a%20factor%20of%20one%20hundredth">cent</a></td>
+<td><a href="#ct" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="a hundredth of a turn">¢</a></td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Milli-#:~:text=a%20factor%20of%20one%20thousandth">mil</a></td>
+<td><a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="a thousandth of a turn">₥</a></td>
+<td style="text-align: right;">1000</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Second#Etymology:~:text=prima%2C%20meaning%20%27-,first%20small%20part,-%27%2C%20i.e.%20first">min</a></td>
+<td><a href="#m" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="two-thirds of a thousandth of a turn">m</a></td>
+<td style="text-align: right;">1500</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Line#Music:~:text=a%20linear%20succession%20of%20musical%20tones">line</a></td>
+<td><a href="#l" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="a ten-thousandth of a turn">l</a></td>
+<td style="text-align: right;">10000</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Second#Etymology:~:text=minuta%20secunda%2C%20%27-,second%20small%20part,-%27%2C%20dividing%20again%20into">sec</a></td>
+<td><a href="#s" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="a ninth of a ten-thousandth of a turn">s</a></td>
+<td style="text-align: right;">90000</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Beat#Other_uses_in_music:~:text=the%20basic%20time%20in%20music">beat</a></td>
+<td><a href="#b" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="a hundred-thousandth of a turn">b</a></td>
+<td style="text-align: right;">100000</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Micro-#:~:text=a%20factor%20of%20one%20millionth">mike</a></td>
+<td><a href="#ud" id="microday" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a millionth of a turn">µ</a></td>
+<td style="text-align: right;">1000000</td>
+</tr>
+</tbody>
+</table>
+
+Apart from <a href="#h" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hours">h</a>,
+<a href="#m" class="tool" data-bs-toggle="tooltip"
+data-bs-title="minutes">m</a>, and
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="seconds">s</a>,
+<a href="#tbl-sub" class="quarto-xref">Table 3</a> also contains three
+units named after
+[currency](https://en.wikipedia.org/wiki/Currency#:~:text=a%20standardized%20form%20of%20money%20used%20as%20a%20medium%20of%20exchange),
+namely
+“[dime](https://en.wikipedia.org/wiki/Dime#:~:text=coin%29%2C%20a-,ten%2Dcent%20coin,-and%20subunit%20of)”,
+“[cent](https://en.wikipedia.org/wiki/Cent#:~:text=a%20one%2Dhundredth%20subdivision%20of%20several%20units%20of%20currency)”,
+and
+“[mil](https://en.wikipedia.org/wiki/Mill_%28currency%29#:~:text=1%E2%81%841000%20of%20the%20base%20unit)”,
+and three more units with names that are inspired by music, poetry, and
+the performing arts:
+“[line](https://en.wikipedia.org/wiki/Line#Music:~:text=a%20linear%20succession%20of%20musical%20tones)”,
+“[beat](https://en.wikipedia.org/wiki/Beat#Other_uses_in_music:~:text=the%20basic%20time%20in%20music)”,
+and
+“[mike](https://en.wikipedia.org/wiki/Microphone#:~:text=1%5D%20or-,mike,-%2C%5Ba)”.
+The names in <a href="#tbl-sub" class="quarto-xref">Table 3</a> can take
+the place of more specific names. For example, “mil” can stand in for
+<a href="#mw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliwěi">mw</a>,
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>, or
+<a href="#mr" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliroses">mr</a>. A mil is a thousandth of a turn, not
+a [milliradian](https://en.wikipedia.org/wiki/Milliradian) or a
+thousandth of an inch: 1
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturn">₥</a> is exactly 6.4 [NATO
+mils](https://en.wikipedia.org/wiki/Milliradian#:~:text=6400%20mils),
+which divide a turn into 6400 parts, and a
+[gradian](https://en.wikipedia.org/wiki/Gradian#:~:text=one%20four%2Dhundredth%20of%20a%20turn),
+a 400th of a turn used in surveying, is 2.5
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a> or a quarter
+<a href="#ct" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="cent">¢</a>.
+
+## Hour minute second
+
+In Dec, it is easy to convert
+<a href="#h" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a twenty-fifth of a turn">hours</a> to
+<a href="#ct" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hundredths of a turn">cents</a>: 1
+<a href="#h" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour">h</a> = 4
+<a href="#ct" class="tool" data-bs-toggle="tooltip"
+data-bs-title="cents">¢</a>,
+<a href="#ct" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hundredths of a turn">cents</a> to
+<a href="#m" class="tool" data-bs-toggle="tooltip"
+data-bs-title="fifteen-hundredths of a turn">min</a> or
+<a href="#mt" class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a turn">mil</a>: 1
+<a href="#ct" class="tool" data-bs-toggle="tooltip"
+data-bs-title="cent">¢</a> = 15
+<a href="#m" class="tool" data-bs-toggle="tooltip"
+data-bs-title="minutes">m</a> = 10
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a>, <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="a fifteen-hundredth of a turn">minutes</span> to
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="ninety-thousandths of a turn">seconds</span>:
+<a href="#m" class="tool" data-bs-toggle="tooltip"
+data-bs-title="minute">m</a> = 60
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="seconds">s</a>, and
+<a href="#mt" class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a turn">mil</a> to <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="ninety-thousandths of a turn">seconds</span>:
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturn">₥</a> = 90
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="seconds">s</a>. Comparing
+<a href="#ct" class="tool" data-bs-toggle="tooltip"
+data-bs-title="cents">¢</a> with
+<a href="#h" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour">h</a> or
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturn">₥</a> with
+<a href="#m" class="tool" data-bs-toggle="tooltip"
+data-bs-title="minute">m</a> is intuitive because 1
+<a href="#ct" class="tool" data-bs-toggle="tooltip"
+data-bs-title="cent">¢</a> is a
+[quarter-hour](https://en.wiktionary.org/wiki/quarter-hour#:~:text=quarter%20of%20an%20hour%3B%20period%20of%20time%20equal%20to%2015%20minutes)
+and 1 <a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturn">₥</a> is 1.5
+<a href="#m" class="tool" data-bs-toggle="tooltip"
+data-bs-title="minutes">m</a>. We can express the current Zone
+<span class="color0">0</span> “time of day”
+(<a href="#tod" id="timeofday" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a>) in
+<a href="#b" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="a hundred-thousandth of a turn">b</a>:
+${decTimeP0cmdHsl}, as
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a>+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="seconds">s</a>: ${decTimeP0milHsl}+${decTimeP0s90Hsl}, or
+as <a href="#h" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour">h</a>+<a href="#m" class="tool" data-bs-toggle="tooltip"
+data-bs-title="minutes">m</a>+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="seconds">s</a>:
+${decTimeP0h25Hsl}+${decTimeP0m60Hsl}+${decTimeP0s60Hsl}. The [Declock
+article](../dec/time#sec-b25) shows how to write
+<a href="#h" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hours">h</a>,
+<a href="#m" class="tool" data-bs-toggle="tooltip"
+data-bs-title="minutes">m</a>, and
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="seconds">s</a> with Ogham letters and counting rods.
+
+<a href="#tbl-mul" class="quarto-xref">Table 4</a> below shows the
+names, symbols, and <a href="#T" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">T</a> values of Dec turn
+[multiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#:~:text=the%20product%20of%20any%20quantity%20and%20an%20integer).
+Tables <a href="#tbl-sub" class="quarto-xref">3</a> and
+<a href="#tbl-mul" class="quarto-xref">4</a> are like [mirror
+images](https://en.wikipedia.org/wiki/Mirror_image#:~:text=a%20reflected%20duplication%20of%20an%20object%20that%20appears%20almost%20identical).
+The names in <a href="#tbl-mul" class="quarto-xref">Table 4</a> are all
+derived from Greek except for
+[bǎi](https://en.wiktionary.org/wiki/b%C7%8Ei#:~:text=Hanyu%20Pinyin%20reading%20of%20%E7%99%BE)
+and
+[xún](https://en.wiktionary.org/wiki/x%C3%BAn#:~:text=Hanyu%20Pinyin%20reading%20of%20%E6%97%AC),
+which are the
+[Pinyin](https://en.wikipedia.org/wiki/Pinyin#:~:text=the%20most%20common%20romanization%20system%20for%20Standard%20Chinese)
+forms of the Chinese characters 百 and 旬, respectively. In Chinese, [百
+means 100](https://en.wiktionary.org/wiki/百) and the historical meaning
+of [旬 is a period of ten days](https://en.wiktionary.org/wiki/旬).
+
+## Bǎi and xún
+
+In Dec, bǎi means
+[hecto](https://en.wikipedia.org/wiki/Hecto-#:~:text=a%20factor%20of%20one%20hundred)turn
+and xún means
+[deca](https://en.wikipedia.org/wiki/Deca-#:~:text=%28SI%29%20denoting-,a%20factor%20of%20ten,-%2C%20with%20symbol%20da)turn.
+In Korean,
+[100](https://en.wikipedia.org/wiki/Korean_numerals#Substitution_for_disambiguation:~:text=hundred,%E7%99%BE)
+can be written as [백](https://en.wiktionary.org/wiki/백) using
+[Hangul](https://en.wikipedia.org/wiki/Hangul#:~:text=the%20modern%20writing%20system%20for%20the%20Korean%20language)
+or as 百 using
+[Hanja](https://en.wikipedia.org/wiki/Hanja#:~:text=Chinese%20characters%20used%20to%20write%20the%20Korean%20language).
+Whereas the symbol for xún
+(<a href="#x" id="xun" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of ten days">x</a>) is derived from Pinyin, the
+symbol for bǎi
+(<a href="#baekil" id="baek" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="one hundred turns">ﾲ</a>) is from Hangul. Dec uses
+<a href="#baekil" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="one hundred turns">ﾲ</a>, the first
+[letter](https://en.wikipedia.org/wiki/Hangul#Letters:~:text=Letters%20in%20the%20Korean%20alphabet%20are%20called%20jamo)
+in 백, as the symbol for bǎi, because it can, unlike 백 or 百, match the
+width of all of the other symbols in
+<a href="#tbl-mul" class="quarto-xref">Table 4</a>.
+
+<table>
+<colgroup>
+<col style="width: 56%" />
+<col style="width: 25%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr>
+<th>name</th>
+<th>symbol</th>
+<th style="text-align: right;"><a href="#T" class="tool"
+data-bs-toggle="tooltip" data-bs-title="turns">T</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Giga-#:~:text=a%20factor%20of%20a%20short%2Dscale%20billion%20or%20long%2Dscale%20milliard">gig</a></td>
+<td><a href="#G" id="gig" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="one billion turns">G</a></td>
+<td style="text-align: right;">1000000000</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Mega-#:~:text=a%20factor%20of%20one%20million">meg</a></td>
+<td><a href="#M" id="meg" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="one million turns">M</a></td>
+<td style="text-align: right;">1000000</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Kilo-#:~:text=multiplication%20by%20one%20thousand">kilo</a></td>
+<td><a href="#k" id="kilo" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="one thousand turns">k</a></td>
+<td style="text-align: right;">1000</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Korean_birthday_celebrations#Baek_Il_%28%EB%B0%B1%EC%9D%BC%29:~:text=day%20celebration%29.%20The-,100th%20day%20celebration,-originates%20from%20a">bǎi</a></td>
+<td><a href="#baekil" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="one hundred turns">ﾲ</a></td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Chinese_calendar#:~:text=into%20nine%2D%20or-,ten%2Dday%20weeks,-known%20as%20x%C3%BAn">xún</a></td>
+<td><a href="#x" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="ten turns">x</a></td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Numeral_prefix#Table_of_number_prefixes_in_English:~:text=%5B18%5D-,penta,-%2D">pent</a></td>
+<td><a href="#p" id="pent" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="five turns">p</a></td>
+<td style="text-align: right;">5</td>
+</tr>
+</tbody>
+</table>
+
+The names in Tables <a href="#tbl-sub" class="quarto-xref">3</a> and
+<a href="#tbl-mul" class="quarto-xref">4</a> can be used on their own,
+just as kilo could refer to a
+[kilogram](https://en.wikipedia.org/wiki/Kilogram#:~:text=the%20base%20unit%20of%20mass%20in%20the%20International%20System%20of%20Units)
+outside of Dec. A kilogram is 1000 grams and a kebigram is 1024 grams,
+but Dec splits a kilogram into 15625 cubic
+<a href="#cz" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centizem">cz</a>
+(<a href="#cz3" id="cubiccentizem" class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></a>) and a kebigram into
+16000 <a href="#cz3" class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></a>. In
+<a href="#cz3" class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></a>, a kilogram cannot be
+evenly halved and a kebigram can be evenly halved seven times: 16000 =
+125 × 2<sup>7</sup>.
+
+In Dec, 1 [astronomical
+unit](https://en.wikipedia.org/wiki/Astronomical_unit#:~:text=length%20defined%20as-,149597870700%C2%A0m,-.%5B1)
+(AU) is 3.74 kilotaur
+(<a href="#kc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="kilotaur">kc</a>). For astronomy, Dec defines a new unit
+called a “parallax microturn”
+(<a href="#parmic" id="parallaxmicroturn" class="tool"
+data-bs-toggle="tooltip" data-bs-title="parallax microturn">parmic</a>)
+as 3.74 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a billion taur">gigataur</span> / 𝜏. A parmic is roughly
+equal to 2.51667 light years, 919.22 light days, or 595.239
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a million taur">megataur</span>. A light beat is about
+6.4755 <a href="#c" class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">c</a>, which means that light can go around the
+Earth roughly 6.5 times per
+<a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beat">b</a>.
+
+The average distance from the Earth to the Moon is about 9.6
+<a href="#c" class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">c</a>. Light can travel twice that distance in
+roughly 3 <a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beat">b</a>, but would need about 3
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliday">md</a> for the shortest possible round trip
+between Earth and Venus. The approximate distance from Earth to [Proxima
+Centauri
+b](https://en.wikipedia.org/wiki/Proxima_Centauri_b#:~:text=an%20exoplanet%20orbiting%20within%20the%20habitable%20zone%20of%20the%20red%20dwarf%20star%20Proxima%20Centauri%20in%20the%20constellation%20Centaurus),
+the nearest potentially [habitable
+planet](https://en.wikipedia.org/wiki/Planetary_habitability#:~:text=potential%20to%20develop%20and%20sustain%20an%20environment%20hospitable%20to%20life),
+is 1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a billion taur">gigataur</span>, 1.68
+<a href="#parmic" class="tool" data-bs-toggle="tooltip"
+data-bs-title="parallax microturn">parmic</a>, or 4.228 light years.
+
+The [angular
+diameter](https://en.wikipedia.org/wiki/Angular_diameter#:~:text=how%20large%20a%20sphere%20or%20a%20circle%20appears)
+of an object is how wide it appears from a distance. In turns, it is
+about the diameter of the object divided by 𝜏 times its distance, as
+shown in <a href="#eq-angdiam" class="quarto-xref">Equation 12</a>. The
+Sun is roughly 400 times wider than the Moon, 34.8
+<a href="#c" class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">c</a> versus 86.9
+<a href="#mc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millitaur">mc</a>, but also roughly 400 times farther
+away, 3.74 <a href="#kc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="kilotaur">kc</a> versus 9.6
+<a href="#c" class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">c</a>. As a result, the Sun☀️and the Moon🌕appear
+almost the same size in the sky: on average, about 1.48
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a> for the Sun and 1.44
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a> for the Moon, about 50 times the
+angular resolution of the human eye👁️, which is roughly 30
+<a href="#ud" class="tool" data-bs-toggle="tooltip"
+data-bs-title="mikes">µ</a>. Over a year, the Sun ranges from 1.46 to
+1.51 <a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a>, whereas the Moon ranges from 1.36 to
+1.55 <a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a> as its distance from the Earth changes.
+A [solar
+eclipse](https://en.wikipedia.org/wiki/Solar_eclipse#:~:text=Types) is
+total when the Moon appears larger than the Sun and annular when it
+appears smaller.
+
+<span id="eq-angdiam">
+$$\text{angular diameter} \approx \dfrac{\text{diameter}}{\tau \times \text{distance}} \qquad(12)$$
+</span>
+
+Because the sky appears to make one full turn per day, it moves 1
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturn">₥</a> per
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliday">md</a>, so an angle in the sky measured in
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a> is also a time measured in
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a>. At the Equator, where the Sun sets
+straight down, a sunset🌅lasts about 1.5
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a> from the moment the Sun touches the
+horizon until it disappears. Against the background stars, the Moon
+makes one full turn about every 27.3
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>, or about 36.6
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a> per day, so it moves its own width in
+about 39 <a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a>, almost exactly 1
+<a href="#h" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour">h</a>. To estimate angles in the sky, we can hold
+out a hand✋at arm’s length: a pinky is about 2.8
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a> wide, roughly the width of two Suns,
+and a fist✊is about 28
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a>, almost 3
+<a href="#ct" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="cents">¢</a>. A circle with a radius of 10/𝜏 ≈ 1.6
+<a href="#z" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a>, about the distance from your eye to your
+fingertips with your arm outstretched, has a circumference of 10
+<a href="#z" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a>. At arm’s length, the
+<a href="#z" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a> hand measures above therefore double as angle
+measures: two spread hands🤲 (1
+<a href="#z" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a>) span about 1
+<a href="#dt" class="iosevka tool" data-bs-toggle="tooltip"
+data-bs-title="dime">⅒</a>, one spread hand✋ (0.5
+<a href="#z" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a>) about 5
+<a href="#ct" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="cents">¢</a>, and each of its five fingers accounts for
+about 1 <a href="#ct" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="cent">¢</a> of that span.
+
 # Système international d’unités
 
 As a scientist of European origin, I have a strong preference for the
@@ -1935,10 +2539,10 @@ Simpsons](https://en.wikipedia.org/wiki/The_Simpsons#:~:text=an%20American%20ani
 # US customary units
 
 Dec redefines <a href="#us" class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> customary units to facilitate
+data-bs-title="United States">US</a> customary units to facilitate their
 [conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)
-with <a href="#si" class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a> and Dec units. The
+to and from <a href="#si" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a> or Dec units. The
 values in the first column of the tables below are approximate [fold
 changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)
 from original to redefined
@@ -1972,18 +2576,21 @@ data-bs-title="zem">z</a>.
 The
 [unidimensional](https://en.wiktionary.org/wiki/unidimensional#:~:text=not%20comparable%29-,one%2Ddimensional,-quotations%C2%A0%E2%96%BC)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="unidimensional">1D</span>) units in
-<a href="#tbl-1d" class="quarto-xref">Table 3</a> below can be divided
+data-bs-title="unidimensional">1D</span>)
+<a href="#us" class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a> customary units in
+<a href="#tbl-1d" class="quarto-xref">Table 5</a> below can be split
 into two groups:
 [human-](https://en.wikipedia.org/wiki/List_of_human-based_units_of_measurement#:~:text=units%20of%20measurement%20based%20on%20human%20body%20parts)
 or horse-based length units and
 [surveying](https://en.wikipedia.org/wiki/Surveying#:~:text=determining%20the%20terrestrial%20positions%20of%20points%20based%20on%20the%20distances%20and%20angles%20between%20them)
 distance units. A horse🐴length is about as long as a
-[cruiser](https://en.wikipedia.org/wiki/Cruiser_(motorcycle)#:~:text=a%20motorcycle%20in%20the%20style%20of%20those%20made%20by%20American%20manufacturers)
+[cruiser](https://en.wikipedia.org/wiki/Cruiser_%28motorcycle%29#:~:text=a%20motorcycle%20in%20the%20style%20of%20those%20made%20by%20American%20manufacturers)
 or [touring
 motorcycle](https://en.wikipedia.org/wiki/Touring_motorcycle#:~:text=a%20type%20of%20motorcycle%20designed%20for%20touring)🏍️,
-approximately equivalent to the height of the tallest
-basketball🏀players, and roughly half of the length of a
+as long as the [tallest National Basketball🏀Association
+players](https://en.wikipedia.org/wiki/List_of_tallest_players_in_NBA_history#List)
+are tall, and roughly half of the length of a
 [compact](https://en.wikipedia.org/wiki/Compact_car#:~:text=sits%20between%20subcompact%20cars%20and%20mid%2Dsize%20cars)
 to
 [mid-size](https://en.wikipedia.org/wiki/Mid-size_car#:~:text=larger%20than%20compact%20cars%20and%20smaller%20than%20full%2Dsize%20cars)
@@ -2000,10 +2607,11 @@ car.
 <th><a href="#us" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> <span class="bold tool"
 data-bs-toggle="tooltip" data-bs-title="unidimensional">1D</span>
-units</th>
+unit</th>
 <th><a href="#z" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</a></th>
-<th>meter</th>
+<th><a href="#sim" class="bold tool" data-bs-toggle="tooltip"
+data-bs-title="SI meters">sim</a></th>
 </tr>
 </thead>
 <tbody>
@@ -2048,12 +2656,6 @@ href="https://en.wikipedia.org/wiki/Span_(unit)">spans</a></td>
 href="https://en.wikipedia.org/wiki/Foot_(unit)">feet</a></td>
 <td>0.75</td>
 <td>0.3</td>
-</tr>
-<tr>
-<td><span class="colorInch">0.9843</span> <a
-href="https://en.wikipedia.org/wiki/Pace_(unit)">steps</a></td>
-<td>1.875</td>
-<td>0.75</td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
@@ -2109,36 +2711,57 @@ href="https://en.wikipedia.org/wiki/League_(unit)">leagues</a></td>
 # Miles per hour
 
 When we divide a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="unidimensional">1D</span> unit by a time unit, we get a
-speed unit. A mile per hour is very close to a
-<a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</a> per
-<a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</a> and a
-[knot](https://en.wikipedia.org/wiki/Knot_(unit)#:~:text=a%20unit%20of%20speed%20equal%20to%20one%20nautical%20mile%20per%20hour),
-which is used to measure the speed of aircraft and watercraft, is almost
-exactly the same as 10/9
-<a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</a> per
-<a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</a>. Dec refers to 10/9
-<a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</a> as a
-[cubit](https://en.wikipedia.org/wiki/Cubit#:~:text=an%20ancient%20unit%20of%20length%20based%20on%20the%20distance%20from%20the%20elbow%20to%20the%20tip%20of%20the%20middle%20finger)
-or
+data-bs-title="unidimensional">1D</span> unit by a time unit, we obtain
+a speed unit. A <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="4 kilozem">mile</span> per
+<a href="#h" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour">h</a> (mph) is exactly one
+<a href="#mv" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegar">mv</a>. We can also equate an
+<a href="#mv" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegar">mv</a> with microtaur
+(<a href="#uc" id="microtaur" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millionths of a taur">µc</a>) per
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a>, or nanotaur
+(<a href="#nc" id="nanotaur" class="tool" data-bs-toggle="tooltip"
+data-bs-title="billionths of a taur">nc</a>) per microday
+(<a href="#ud" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millionths of a day">µd</a>), or
 [ell](https://en.wikipedia.org/wiki/Ell#:~:text=a%20northwestern%20European%20unit%20of%20measurement)
 (<a href="#ell" id="cubit" class="tool" data-bs-toggle="tooltip"
-data-bs-title="ell">ℓ</a>). An
-<a href="#mv" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegar">mv</a> can also be expressed as one
-<a href="#ell" class="tool" data-bs-toggle="tooltip"
-data-bs-title="ell">ℓ</a> per Dec second
-(<a href="#s" id="second" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec second">s</a>). There are 86400
-<a href="#si" class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a> seconds or 90000
+data-bs-title="ell">ℓ</a>) per
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a> in one day.
+data-bs-title="second">s</a>:
+<a href="#mv" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegar">mv</a> =
+<a href="#uc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millionths of a taur">µc</a>/<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a> =
+<a href="#nc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="billionths of a taur">nc</a>/<a href="#ud" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millionths of a day">µd</a> =
+<a href="#ell" class="tool" data-bs-toggle="tooltip"
+data-bs-title="ell">ℓ</a>/<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="second">s</a>, where
+[micro](https://en.wikipedia.org/wiki/Micro-#:~:text=a%20factor%20of-,one%20millionth,-%2810%E2%88%926%29.)
+is a millionth,
+[nano](https://en.wikipedia.org/wiki/Nano-#:~:text=unit%20prefix%20meaning-,one%20billionth,-.%20Used%20primarily%20with)
+is a billionth, a <a href="#uc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millionths of a taur">µc</a> is a bǎizem
+(<a href="#bzem" id="baizem" class="lower tool" data-bs-toggle="tooltip"
+data-bs-title="a hundred zem">ﾲz</a>), an
+<a href="#nc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="billionths of a taur">nc</a> is a <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="a tenth of a zone equatorial meter">decizem</span>
+(<a href="#dz" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decizem">dz</a>), and an
+<a href="#ell" class="tool" data-bs-toggle="tooltip"
+data-bs-title="ell">ℓ</a> is a
+[cubit](https://en.wikipedia.org/wiki/Cubit#:~:text=an%20ancient%20unit%20of%20length%20based%20on%20the%20distance%20from%20the%20elbow%20to%20the%20tip%20of%20the%20middle%20finger)
+or 10/9 <a href="#z" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a>.
 
 <table>
 <colgroup>
@@ -2149,37 +2772,37 @@ data-bs-title="Dec seconds">s</a> in one day.
 <thead>
 <tr>
 <th><a href="#us" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> speed units</th>
+data-bs-title="United States">US</a> speed unit</th>
 <th><a href="#mv" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="milliomegar">mv</a></th>
 <th><a href="#kmph" id="kilometersperhour" class="bold tool"
 data-bs-toggle="tooltip"
-data-bs-title="kilometers per hour">kmph</a></th>
+data-bs-title="kilometers per hour">ksim/h</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="colorPerS">0.9448</span> <a
+<td><span class="colorPerS">1.0253</span> <a
 href="https://en.wikipedia.org/wiki/Inch_per_second">inches/second</a></td>
 <td>0.05625</td>
-<td>0.09375</td>
+<td>0.09</td>
 </tr>
 <tr>
-<td><span class="colorPerS">0.9448</span> <a
+<td><span class="colorPerS">1.0253</span> <a
 href="https://en.wikipedia.org/wiki/Foot_per_second">feet/second</a></td>
 <td>0.675</td>
-<td>0.675</td>
+<td>1.08</td>
 </tr>
 <tr>
-<td><span class="colorMile">0.9942</span> <a
+<td><span class="colorMph">1.0356</span> <a
 href="https://en.wikipedia.org/wiki/Miles_per_hour">miles/hour</a></td>
-<td>0.96</td>
+<td>1</td>
 <td>1.6</td>
 </tr>
 <tr>
-<td><span class="colorPerS">0.9448</span> yards/second</td>
+<td><span class="colorPerS">1.0253</span> yards/second</td>
 <td>2.025</td>
-<td>3.375</td>
+<td>3.24</td>
 </tr>
 </tbody>
 </table>
@@ -2199,14 +2822,13 @@ data-bs-title="1.6 thousandths of an are">hexamilliare</span>, 16 square
 (sq.) <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a meter">decimeters</span>
 (<a href="#dm2" id="squaredecimeter" class="tool"
-data-bs-toggle="tooltip" data-bs-title="square decimeters">dm²</a>),
+data-bs-toggle="tooltip" data-bs-title="square decimeters">dsim²</a>),
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>0.1975 Dec [sq.
+data-bs-title="approximately">~</span>0.1975 [sq.
 yards](https://en.wikipedia.org/wiki/Square_yard#:~:text=U.S.%20customary%20unit%20of%20area),
-1.<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9 digit 7">♅</span> Dec [sq.
+1 + $7\over9$ [sq.
 feet](https://en.wikipedia.org/wiki/Square_foot#:~:text=the%20area%20of%20a%20square%20with%20sides%20of%201%20foot),
-or 256 Dec sq. inches. A sq. <span class="tool" data-bs-toggle="tooltip"
+or 256 sq. inches. A sq. <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a thousand zem">kilozem</span>
 (<a href="#kz2" id="squarekilozem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square kilozem">kz²</a>) is 1 <span class="tool"
@@ -2215,15 +2837,15 @@ data-bs-title="sixteen hundred ares">hexakilare</span>, 16 <a
 href="https://en.wikipedia.org/wiki/Hectare#:~:text=a%20square%20with%20100%2Dmetre%20sides"
 class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundreds of ares">hectares</a>, 1600
-[ares](https://en.wikipedia.org/wiki/Hectare#Are), 40 Dec
+[ares](https://en.wikipedia.org/wiki/Hectare#Are), 40
 [acres](https://en.wikipedia.org/wiki/Acre#:~:text=%20is-,a%20unit%20of%20land%20area,-used%20in%20the),
 0.16 sq. <a
 href="https://en.wikipedia.org/wiki/Kilometre#:~:text=a%20unit%20of%20length%20in%20the%20International%20System%20of%20Units"
 class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of meters">kilometers</a>
 (<a href="#km2" id="squarekilometer" class="tool"
-data-bs-toggle="tooltip" data-bs-title="square kilometers">km²</a>),
-0.0625 Dec [sq.
+data-bs-toggle="tooltip" data-bs-title="square kilometers">ksim²</a>),
+0.0625 [sq.
 miles](https://en.wikipedia.org/wiki/Square_mile#:~:text=US%20unit%20of%20measure%20for%20area),
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a million">10<sup>6</sup></span>
@@ -2241,11 +2863,12 @@ data-bs-title="square zem">z²</a>, or 1 megahexamilliare.
 <th><a href="#us" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="bidimensional">2D</span>
-units</th>
+unit</th>
 <th><a href="#cz2" id="squarecentizem" class="bold tool"
 data-bs-toggle="tooltip" data-bs-title="square centizem">cz²</a></th>
 <th><a href="#cm2" id="squarecentimeter" class="bold tool"
-data-bs-toggle="tooltip" data-bs-title="square centimeter">cm²</a></th>
+data-bs-toggle="tooltip"
+data-bs-title="square centimeter">csim²</a></th>
 </tr>
 </thead>
 <tbody>
@@ -2297,23 +2920,22 @@ espresso☕️or of liquor🥃, and is equal to 1 cu. <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="a billionth of a taur">nanotaur</span>
 (<a href="#nc3" id="cubicnanotaur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic nanotaur">nc³</a>), 1 Dec wineglass (🍷glass), 2
-Dec ounces
+data-bs-title="cubic nanotaur">nc³</a>), 1 wineglass (🍷glass), 2 ounces
 (<a href="#u" id="ounce" class="tool" data-bs-toggle="tooltip"
-data-bs-title="ounce">u</a>), 4 Dec tablespoons (table🥄), 64 cu.
+data-bs-title="ounce">u</a>), 4 tablespoons (table🥄), 64 cu.
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a hundredth of a meter">centimeters</span>
-(<span id="cubiccentimeter" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centimeters">cm³</span>), 64 <span class="tool"
-data-bs-toggle="tooltip"
+(<a href="#cm3" id="cubiccentimeter" class="tool"
+data-bs-toggle="tooltip" data-bs-title="cubic centimeters">csim³</a>),
+64 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a liter">milliliters</span>
 (<a href="#mL" id="milliliter" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</a>), 1000 Dec drops
+data-bs-title="milliliters">mL</a>), 1000 drops
 (<a href="#g" id="gutta" class="tool" data-bs-toggle="tooltip"
 data-bs-title="drops">g</a>), or 1000 cu. <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="a hundredth of a zone equatorial meter">centizem</span>
-(<a href="#cz3" id="cubiccentizem" class="tool" data-bs-toggle="tooltip"
+(<a href="#cz3" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic centizem">cz³</a>).
 
 <table>
@@ -2327,11 +2949,11 @@ data-bs-title="cubic centizem">cz³</a>).
 <th><span class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="tridimensional">3D</span>
-units</th>
+unit</th>
 <th><a href="#cz3" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="cubic centizem">cz³</a></th>
 <th><a href="#cm3" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centimeter">cm³</a></th>
+data-bs-title="cubic centimeter">csim³</a></th>
 </tr>
 </thead>
 <tbody>
@@ -2428,13 +3050,13 @@ Dec and <a href="#si" class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</a> measurements of
 mass are based on volumes of water🌊. A
 <a href="#dz3" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic decizem">dz³</a> of water weighs $1\over7$ Dec
-pounds, 64 grams, or 1000 Dec grains
+data-bs-title="cubic decizem">dz³</a> of water weighs $1\over7$ pounds,
+64 grams, or 1000 grains
 (<a href="#g" id="grain" class="tool" data-bs-toggle="tooltip"
 data-bs-title="grain">g</a>). One
 <a href="#u" class="tool" data-bs-toggle="tooltip"
-data-bs-title="ounce">u</a> of water weighs $1\over14$ Dec pounds, 500
-Dec <a href="#g" class="tool" data-bs-toggle="tooltip"
+data-bs-title="ounce">u</a> of water weighs $1\over14$ pounds, 500 Dec
+<a href="#g" class="tool" data-bs-toggle="tooltip"
 data-bs-title="grains">g</a>, or 32 grams. In Dec,
 <a href="#g" class="tool" data-bs-toggle="tooltip"
 data-bs-title="grains">g</a> is short for
@@ -2444,7 +3066,12 @@ grain and drop, respectively. Similarly,
 <a href="#u" class="tool" data-bs-toggle="tooltip"
 data-bs-title="ounce">u</a> originates from
 [*uncia*](https://en.wiktionary.org/wiki/uncia), the Latin word for “a
-twelfth”.
+twelfth”. A pound and a US customary [avoirdupois
+pound](https://en.wikipedia.org/wiki/Avoirdupois#:~:text=7%2C000%20grains)
+are both 7000 grains. Dec keeps the count but shrinks the grain from
+64.79891 to 64 milligrams, so its pound is about 1.23% lighter, just as
+Dec keeps 60 minutes in an hour but makes the hour a twenty-fifth of a
+day.
 
 <table>
 <colgroup>
@@ -2455,7 +3082,7 @@ twelfth”.
 <thead>
 <tr>
 <th><a href="#us" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> mass units</th>
+data-bs-title="United States">US</a> mass unit</th>
 <th>grain</th>
 <th>gram</th>
 </tr>
@@ -2499,8 +3126,8 @@ href="https://en.wikipedia.org/wiki/Short_ton">tons</a></td>
 A <a href="#z3" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic zem">z³</a> is 1 keg. A keg of water weighs 64
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of grams">kilograms</span>, 128 Dec pounds, or
-1000 Dec <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of grams">kilograms</span> or 1000
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of grains">kilograins</span>
 (<a href="#kg" id="kilograin" class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilograins">kg</a>). If [Leonardo da
@@ -2511,7 +3138,7 @@ were 4 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> tall, we could measure 1
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> from his knees to his feet or from his elbows
-to his fingertips. If he also weighed 1000 Dec
+to his fingertips. If he also weighed 1000
 <a href="#kg" class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilograins">kg</a>, his [body mass
 index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
@@ -2523,7 +3150,8 @@ data-bs-title="kilograins">kg</a> per
 data-bs-title="square zem">z²</a> ($\text {kg}\over\text z^2$) or 25
 kilograms per
 <a href="#m2" id="squaremeter" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square meters">m²</a> ($\text {kilogram}\over\text m^2$).
+data-bs-title="square meters">sim²</a>
+($\text {kilogram}\over\text{sim}^2$).
 
 <div class="column-margin" data-fig-align="center"
 style="text-align:center;">
@@ -2535,14 +3163,15 @@ style="text-align:center;">
 
 A normal <a href="#bmi" class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">BMI</a> ranges from 46.25 to 62.5
-$\text {kg}\over\text z^2$ or 18.5 to 25 $\text {kg}\over\text m^2$. An
-obese person has a <a href="#bmi" class="tool" data-bs-toggle="tooltip"
+$\text {kg}\over\text z^2$ or 18.5 to 25 $\text {kg}\over\text{sim}^2$.
+An obese person has a
+<a href="#bmi" class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">BMI</a> above 75
-$\text {kg}\over\text z^2$ or 30 $\text {kg}\over\text m^2$. Severe or
-morbid obesity is defined as a
+$\text {kg}\over\text z^2$ or 30 $\text {kg}\over\text{sim}^2$. Severe
+or morbid obesity is defined as a
 <a href="#bmi" class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">BMI</a> above 100
-$\text {kg}\over\text z^2$ or 40 $\text {kg}\over\text m^2$. A person
+$\text {kg}\over\text z^2$ or 40 $\text {kg}\over\text{sim}^2$. A person
 with the weight and height selected by the range inputs below would be
 considered ${bmiStr}: ${kgrains}
 <a href="#kg" class="tool" data-bs-toggle="tooltip"
@@ -2551,8 +3180,8 @@ data-bs-title="kilograins">kg</a> ÷ ${zem2}
 data-bs-title="square zem">z²</a> = ${bmi} $\text {kg}\over\text z^2$ =
 ${kgrams} kilograms ÷ ${meter2}
 <a href="#m2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square meters">m²</a> = ${bmim2}
-$\text {kilograms}\over\text m^2$.
+data-bs-title="square meters">sim²</a> = ${bmim2}
+$\text {kilograms}\over\text{sim}^2$.
 
 ``` {ojs}
 //| echo: false
@@ -2577,24 +3206,23 @@ data-bs-title="decizem">dz</a>, 1
 data-bs-title="nanotaur">nc</a>, 4 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="hundredths of a meter">centimeters</span>, or $8\over5$
-Dec inches, and the shortest length is $1\over2$
+inches, and the shortest length is $1\over2$
 <a href="#mz" id="millizem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millizem">mz</a>, $1\over5$ <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a meter">millimeters</span>, $1\over125$
-Dec inches, or $1\over127$
+inches, or $1\over127$
 <a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary inches. A
 <a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary inch is $127\over2$
 <a href="#mz" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millizem">mz</a>, $127\over5$ millimeters, or
-$127\over125$ Dec inches. A Dec inch is $5\over2$ centimeters. A
-centimeter is $5\over2$
-<a href="#cz" class="tool" data-bs-toggle="tooltip"
+$127\over125$ inches. A inch is $5\over2$ centimeters. A centimeter is
+$5\over2$ <a href="#cz" class="tool" data-bs-toggle="tooltip"
 data-bs-title="centizem">cz</a>. A
 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</a> is 4 decimeters or 16 Dec inches.
+data-bs-title="zem">z</a> is 4 decimeters or 16 inches.
 
 <div class="column-page-right" data-fig-align="left"
 style="text-align:center;font-size:.825rem;">
@@ -2614,7 +3242,7 @@ data-bs-title="decizem">dz</a> or
 <a href="#nc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="nanotaur">nc</a> and tracking time in
 [xún](https://en.wikipedia.org/wiki/Chinese_calendar#:~:text=into%20nine%2D%20or-,ten%2Dday%20weeks,-known%20as%20x%C3%BAn)
-(<a href="#x" id="xun" class="tool" data-bs-toggle="tooltip"
+(<a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="groups of ten days">x</a>),
 <a href="#dd" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decidays">dd</a>,
@@ -2654,6 +3282,81 @@ areas, volumes, weights, frequencies, wavelengths, and periods. Dec
 units can be combined with metric prefixes to form multiples or
 submultiples.
 
+The main benefit of Dec is consistency. Every Dec unit is based on
+turns, so one number can describe a course, a hue, a time of day, or a
+longitude, and one Decolor or sound label works for all of them. Taur,
+omegar, and days all come from the Earth’s size and rotation, so
+distance, speed, and duration fit together without conversion factors. 1
+<a href="#mv" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegar">mv</a> is 1
+<a href="#mc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millitaur">mc</a> per
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day">d</a>, 1
+<a href="#kz" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a thousand zem">kz</a> per
+<a href="#cd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centiday">cd</a>, or 1
+<a href="#z" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a> per
+<a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beat">b</a>, so changing prefixes rescales a trip from a
+flight down to a footstep.
+
+Dec combines months,
+<a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</a>, hours, minutes, and seconds into
+days, so it can show a datetime as a year followed by a single base-10
+number. For example, the
+<a href="#iso" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</a>
+8601 datetime 2026-12-25T18:00:00 (19 characters) becomes 2026+299.75000
+(14 characters): Year 2026,
+<a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a> 299 plus 75000
+<a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</a>. Dec uses fewer characters and only one
+radix, yet it is more precise, because a beat is shorter than a second.
+
+A Dec <a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a> such as 299 can also stand on its
+own as a single number without a year. In contrast,
+<a href="#iso" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</a>
+8601 does not allow a month and
+<a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</a> without a year. The
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Hypertext Markup Language">HTML</span> [yearless
+date](https://html.spec.whatwg.org/dev/common-microsyntaxes.html#yearless-dates:~:text=A%20yearless%20date%20consists%20of%20a%20Gregorian%20month%20and%20a%20day%20within%20that%20month%2C%20but%20with%20no%20associated%20year)
+03-04 can be confusing, because many parts of the world put the
+<a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</a> before the month and would read it
+as April 3 instead of March 4. Counting the days between two dates in
+the same year takes a single subtraction: Christmas, 2026+299, is 299 −
+268 = 31 days after 2026+268.
+
+A location’s <a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a> is just the whole number of
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a wěi">deciwěi</span>
+(<a href="#dw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciwěi">dw</a>) in its longitude, a single digit that is
+never negative. Because longitude and time of day are both measured in
+turns, they share the same numbers: moving 1
+<a href="#dw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciwěi">dw</a> East makes solar time 1
+<a href="#dd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciday">dd</a> later, and moving 1
+<a href="#mw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliwěi">mw</a> East makes it 1
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliday">md</a> later. Many Dec units also match human
+scales: a <a href="#z" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a> is about the width of two hands laid side by
+side, and a <a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beat">b</a> is about as long as a heartbeat❤️.
+
 Dec attempts to bridge the gap, improve interoperability, and facilitate
 conversion between the
 <a href="#us" class="tool" data-bs-toggle="tooltip"
@@ -2662,16 +3365,19 @@ data-bs-title="United States">US</a> customary and
 data-bs-title="International System of Units">SI</a> measurement systems
 by redefining certain units. Redefinition of
 <a href="#us" class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> customary units makes human-based
-length units <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a> customary units makes most
+human-based length units <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span><span class="color0158">1.58</span>%
 shorter and surveying distance units <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span><span class="color0058">0.58</span>%
 shorter. Dec also redefines
 <a href="#si" class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a> seconds to be
-<span class="color040">4</span>% shorter.
+data-bs-title="International System of Units">SI</a> seconds
+(<a href="#sis" class="tool" data-bs-toggle="tooltip"
+data-bs-title="SI seconds">sis</a>) to be
+<span class="color040">4</span>% shorter. Dec does not redefine
+temperature, which it measures in degrees Celsius.
 
 Dec color labels can convey an impression of a value at a glance👀. Dec
 sound labels allow us to quickly estimate a value without even having to
@@ -2684,7 +3390,7 @@ addition, removal, or replacement of a metric prefix.
 # Next
 
 Now that you have had a taste👅of Dec, I hope that you are hungry🤤for
-more! If so, dive🤿deeper by reading my article on Dec
+more! If so, dive🤿deeper by reading my articles on Dec
 [dates](../dec/date), [times](../dec/time), and [snaps](../dec/snap). My
 [filter](../quarto/filter) and [include](../quarto/include) articles
 discuss the [Quarto](../quarto) publishing system and how I customize my
@@ -2933,7 +3639,7 @@ references:
   title: Dec Measurement System
   url: https://maptv.github.io/dec
   issued:
-    literal: 2026+225
+    literal: 2026+242
 ```
 
 </div>
@@ -2974,7 +3680,7 @@ yaml format.
   author = "Martin Laptev",
   title = "Dec Measurement System",
   url = "https://maptv.github.io/dec",
-  year = 2026+225
+  year = 2026+242
 }
 ```
 
@@ -3010,8 +3716,8 @@ additional files or configuration. A Quarto output file can have both a
 In alphabetical order below, you will find a list of the
 [Observable](http://observablehq.com) [computational
 notebooks](https://en.wikipedia.org/wiki/Notebook_interface#:~:text=a%20virtual%20notebook%20environment%20used%20for%20literate%20programming)
-that inspired many of the visualizations above and thus deserve their
-own section before the [references](#references) and
+that inspired many of the visualizations above and therefore deserve
+their own section before the [references](#references) and
 [footnotes](#footnotes) further below. On the [Observable
 website](https://observablehq.com), you can
 [search](https://observablehq.com/search) for other awesome Observable
@@ -3073,10 +3779,10 @@ videos](https://observablehq.com/resource-center#videos).
 11. [Patel, Amit](https://observablehq.com/@redblobgames).
     <span class="tool" data-bs-toggle="tooltip"
     data-bs-title="December 16, 2021">2021+290</span>. *Compass Rose*.
-    <https://observablehq.com/@paavanb/progressive-color-picker>.
+    <https://observablehq.com/@redblobgames/compass-rose>.
 12. [Pettiross, Jeff](https://observablehq.com/@pettiross).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="July 19, 2024">2024+150</span>. *Categorical color
+    data-bs-title="July 19, 2024">2024+140</span>. *Categorical color
     scheme test tool*.
     <https://observablehq.com/@observablehq/categorical-palette-tool>
 13. [Rieder, Lukas](https://observablehq.com/@lukasrieder).
@@ -3100,7 +3806,7 @@ videos](https://observablehq.com/resource-center#videos).
 17. [Yamahata,
     Christophe](https://observablehq.com/@christophe-yamahata).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="June 28, 2022">2021+119</span>. *Great circle:
+    data-bs-title="June 28, 2022">2022+119</span>. *Great circle:
     shortest distance between two locations on Earth 🌏*.
     <https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea>.
 
@@ -3129,14 +3835,34 @@ videos](https://observablehq.com/resource-center#videos).
   per minute, 1000 beats per day
 - <a href="#bodymassindex" id="bmi">BMI</a>: body mass index, kilograins
   of body mass divided by height in zem squared (kg/z²)
+- <a href="#base6" id="b6">b6</a>: base6, senary, 6 digits written as
+  counting rods, 𝍠 𝍮 𝍯 𝍰 𝍱 𝍭, whose number of horizontal strokes is the
+  value of the digit; the first digit of a minute or second counts tens
+  of minutes or seconds
 - <a href="#base9" id="b9">b9</a>: base9, nonary, 9 digits written as
   the astronomical symbols of the Sun and the eight planets, ☉ ☿ ♀ ♁ ♂ ♃
-  ♄ ♅ ♆; the first digit after a tod with Dec seconds appended counts
-  tens of Dec seconds
+  ♄ ♅ ♆; the first digit after a tod with seconds appended counts tens
+  of seconds
 - <a href="#base10" id="b10">b10</a>: base10, decimal, the digits 0 to 9
 - <a href="#base24" id="b24">b24</a>: base24, 24 digits written as the
-  lowercase Greek letters α to ω; counts sid after a number of Dec
-  seconds or hours after a UTC offset
+  lowercase Greek letters α to ω; counts sid after a number of seconds
+  or heh after a UTC offset
+- <a href="#base25" id="b25">b25</a>: base25, pentavigesimal, 25 digits
+  written as Ogham letters; zero-based digits run from the Ogham space
+  mark (<span class="ogham"> </span>) for 0 through ᚁ (Beith) for 1 to ᚘ
+  (Ifin) for 24, and one-based digits put ᚙ (Eamhancholl) for 25 in
+  place of the space mark; counts hours
+- <a href="#hectoday" id="baekil">ﾲ</a>: bǎi, a hundred turns; as a
+  duration, a Dec season, 1 hectoday, 10 decadays, or one hundred days;
+  ﾲ, the halfwidth Hangul letter pieup (U+FFB2), looks like a capital H
+  with a line at the bottom; the inspiration for ﾲ is Baek-il (백일),
+  the Korean celebration of the first 100 days of a baby’s life, whose
+  first letter is pieup (ㅂ), and 百日宴 (bǎi rì yàn), the Chinese
+  banquet for the same occasion
+  - <a href="#positiveintegerhectoday" id="pibaekil">piﾲ</a>: positive
+    integer hectoday, ⌊pid ÷ 100⌋, 0 to 3
+  - <a href="#negativeintegerhectoday" id="nibaekil">niﾲ</a>: negative
+    integer hectoday, ⌊nid ÷ 100⌋, -4 to -1
 - <a href="#taur" id="c">c</a>: taur, 𝜏*r*, 100000 kilozem, 40000
   kilometers, nearly the circumference of the Earth, roughly the product
   of 𝜏 and the radius of the Earth, approximately the dividend of the
@@ -3153,9 +3879,9 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#cubicnanotaur" id="nc3">nc³</a>: cubic nanotaur, *n*𝜏*r*³,
     1 cubic decizem
 - <a href="#day" id="d">d</a>: day, a tenth of a decaday, a seventh of a
-  week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays,
-  1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse
-  of a quotidie
+  week, a fifth of a pentaday, 10 decidays, 24 heh, 25 hours, 100
+  centidays, 1000 millidays, 1440 bem, 1500 minutes, 86400 SI seconds,
+  90000 seconds, 100000 beats, the inverse of a quotidie
   - <a href="#dayofxun" id="dox">dox</a>: day of xún
   - <a href="#dayofpentaday" id="dop">dop</a>: day of pentaday
   - <a href="#dayofmonth" id="dom">dom</a>: day of month
@@ -3163,6 +3889,12 @@ videos](https://observablehq.com/resource-center#videos).
     months or 0 to 29 in Venusian long months
   - <a href="#dayofweek" id="dow">dow</a>: day of week
   - <a href="#dayofyear" id="doy">doy</a>: day of year, xún \* 10 + dox
+    - <a href="#daylightsavingtime" id="dst">dst</a>: daylight saving
+      time
+    - <a href="#dstinitdoy" id="did">did</a>: dst initiation doy, the
+      last doy before dst
+    - <a href="#dstexpdoy" id="ded">ded</a>: dst expiration doy, the
+      first doy after dst
   - <a href="#positiveintegerdoy" id="pid">pid</a>: positive integer day
     of year, days elapsed since the beginning of the year, 0 to 364 or
     365
@@ -3187,39 +3919,46 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#negativeintervalada" id="nia">nia</a>: negative interval
     ada, pia − syl, the negative of the time until the start of the next
     year
-  - <a href="#dayofcycle" id="doc">doc</a>: day of cycle, days since the
-    start of the current 400-year Gregorian cycle, 0 to 146096
-  - doc<sub>♀</sub>: Decyther day of cycle, days since the start of the
-    current 467-day Venusian cycle, doe mod 467, 0 to 466
-  - <a href="#dayofhectoday" id="doh">doh</a>: day of hectoday, doy mod
-    100, the percent of a hectoday that has elapsed
+  - <a href="#dayofquadricentennial" id="doq">doq</a>: day of
+    quadricentennial, days since the start of the current Gregorian
+    quadricentennial, 0 to 146096
+  - <a href="#dayofhexadecimester" id="dohvenus">doh<sub>♀</sub></a>:
+    Decyther day of hexadecimester, days since the start of the current
+    467-day Decyther hexadecimester, doe <span class="hyphen">−⌊</span>
+    467, 0 to 466
+  - <a href="#dayofhectoday" id="dobaekil">doﾲ</a>: day of hectoday, doy
+    <span class="hyphen">−⌊</span> 100, the percent of a hectoday that
+    has elapsed
   - <a href="#dayofbimester" id="dob">dob</a>: day of bimester, 0 to 58
     in common bimesters or 0 to 59 in leap bimesters
   - dob<sub>♀</sub>: Decyther day of bimester, 0 to 57 in antes and the
-    post of Qoc 2 or 0 to 58 in the other posts
+    post of Qoh 2 or 0 to 58 in the other posts
   - <a href="#dayoftricennium" id="dot">dot</a>: day of tricennium, days
     since the start of the current 30-year lunar cycle, 0 to 10630
-  - <a href="#dayofquadrimester" id="doq">doq</a>: day of quadrimester,
-    days since the beginning of a Decyther quadrimester, 0 to 115 or 116
+  - <a href="#dayofquadrimester" id="doqvenus">doq<sub>♀</sub></a>:
+    Decyther day of quadrimester, days since the beginning of a Decyther
+    quadrimester, 0 to 115 or 116
   - <a href="#beginningofquadrimester" id="boq">boq</a>: beginning of
-    quadrimester, the pid of Doq 0, pid − doq
-  - <a href="#quadrimesterofcycle" id="qoc">qoc</a>: quadrimester of
-    cycle, zero-based index of a Decyther quadrimester, 0 to 3
+    quadrimester, the pid of Doq<sub>♀</sub> 0, pid − doq<sub>♀</sub>
+  - <a href="#quadrimesterofhexadecimester" id="qoh">qoh</a>:
+    quadrimester of hexadecimester, zero-based index of a Decyther
+    quadrimester, 0 to 3
   - <a href="#beginningofbimester" id="bob">bob</a>: beginning of
     bimester, the pid of Dob 0, pid − dob
   - <a href="#beginningofmonth" id="bom">bom</a>: beginning of month,
     the pid of the day before the first day of the month, pid − dom
-  - <a href="#monthofcycle" id="moc">moc</a>: month of cycle, zero-based
-    index of a Venusian month, 0 to 15
+  - <a href="#monthofhexadecimester" id="mohvenus">moh<sub>♀</sub></a>:
+    Decyther month of hexadecimester, zero-based index of a Venusian
+    month, 0 to 15
   - <a href="#beginningofweek" id="bow">bow</a>: beginning of week, the
     pid of Dow 0, pid − dow
   - <a href="#beginningofyear" id="boy">boy</a>: beginning of year,
     midnight at the start of Day 0
   - <a href="#beginningofera" id="boe">boe</a>: beginning of era,
     midnight at the start of Day 0 of Year 0
-  - <a href="#beginningofcycle" id="boc">boc</a>: beginning of cycle,
-    the start of Doc<sub>♀</sub> 0 and of the first ante in a Decyther
-    cycle
+  - <a href="#beginningofhexadecimester" id="boh">boh</a>: beginning of
+    hexadecimester, the start of Doh<sub>♀</sub> 0 and of the first ante
+    in a Decyther hexadecimester
   - <a href="#endofyear" id="eoy">eoy</a>: end of year, midnight at the
     end of Day 364 or 365
   - <a href="#Juliandaynumber" id="jdn">JDN</a>: Julian day number, days
@@ -3229,19 +3968,19 @@ videos](https://observablehq.com/resource-center#videos).
     leap years, -1063 to -1
   - <a href="#venusianextracalationdifference" id="ved">ved</a>:
     Venusian extracalation difference, days until the end of
-    Doc<sub>♀</sub> 349, the last day of the one-day-shorter Qoc 2,
-    Bimester 5, and Moc 11, (doc<sub>♀</sub> + 117) mod 467 − 467, -467
-    to -1
+    Doh<sub>♀</sub> 349, the last day of the one-day-shorter Qoh 2,
+    Bimester 5, and Moh<sub>♀</sub> 11, (doh<sub>♀</sub> + 117)
+    <span class="hyphen">−⌊</span> 467 − 467, -467 to -1
   - <a href="#misalignedunitdifference" id="mud">mud</a>: misaligned
     unit difference, pid − dom − dow
   - <a href="#deciday" id="dd">dd</a>: deciday, a tenth of a day, 2.4
-    hours, 144 minutes
+    heh, 2.5 hours, 144 bem, 150 minutes
   - <a href="#centiday" id="cd">cd</a>: centiday, a hundredth of a day,
-    0.24 hours, 14.4 minutes
+    0.24 heh, 0.25 hours, 14.4 bem, 15 minutes
   - <a href="#milliday" id="md">md</a>: milliday, a thousandth of a day,
-    1.44 minutes
-  - <a href="#centimilliday" id="dmd">dmd</a>: decimilliday, a ten
-    thousandth of a day, 10 beats, 8640 milliseconds
+    1.44 bem, 1.5 minutes, 90 seconds
+  - <a href="#decimilliday" id="dmd">dmd</a>: decimilliday, a ten
+    thousandth of a day, a line of time, 10 beats, 8640 milliseconds
   - <a href="#centimilliday" id="cmd">cmd</a>: centimilliday, a hundred
     thousandth of a day, 1 beat, 864 milliseconds
   - <a href="#microday" id="ud">µd</a>: microday, a millionth of a day,
@@ -3251,24 +3990,30 @@ videos](https://observablehq.com/resource-center#videos).
 - <a href="#degree" id="deg">°</a>: degree, 1/360 turns, 180/𝜋 or 360/𝜏
   radians
   - <a href="#compassdegree" id="cdeg">c°</a>: compass degree
+  - <a href="#greenwichdegrees" id="gdeg">g°</a>: Greenwich degree, a
+    longitude in degrees East (positive) or West (negative) of the
+    Greenwich meridian, -180 to 180
   - <a href="#huedegree" id="hdeg">h°</a>: hue degree
 - <a href="#egg" id="e">e</a>: egg, 1000 grains, 2 ounces, 64 grams
 - <a href="#equationoftime" id="eot">eot</a>: equation of time, ast −
   mst as a function of toy, about -9.8 to 11.4 millidays
 - <a href="#cubit" id="ell">ℓ</a>: ell, cubit, 10/9 zem
-- <a href="#foot" id="f">f</a>: foot, 0.75 zem, 75 millimeters
+- <a href="#foot" id="f">f</a>: foot, 75 centizem, 0.75 zem, 300
+  millimeters
+- <a href="#gig" id="G">G</a>: gig, gigaturn, a billion turns
 - <a href="#gutta" id="g">g</a>: drop (gutta in Latin) or grain (granum
   in Latin), 64 microliters or 64 milligrams
   - <a href="#kilograin" id="kg">kg</a>: kilograin or kilodrop, 64 grams
     or 64 milliliters
   - <a href="#megagrain" id="Mg">Mg</a>: megagrain or megadrop, 64
     kilograms or 64 liters
-- <a href="#hectoday" id="h">h</a>: a Dec season, 1 ***h***ectoday, 10
-  decadays, or one ***h***undred days
-  - <a href="#positiveintegerhectoday" id="pih">pih</a>: positive
-    integer hectoday, ⌊pid ÷ 100⌋, 0 to 3
-  - <a href="#negativeintegerhectoday" id="nih">nih</a>: negative
-    integer hectoday, ⌊nid ÷ 100⌋, -4 to -1
+- <a href="#dechour" id="h">h</a>: hour, a twenty-fifth of a day, 40
+  millidays, 60 minutes, 3600 seconds, 0.96 heh, 57.6 bem; written as
+  one b25 digit
+  - <a href="#hehour" id="heh">heh</a>: Hipparchian equinoctial hour, a
+    twenty-fourth of a day, 41.<span class="tool"
+    data-bs-toggle="tooltip" data-bs-title="base9 digit 6">♄</span>
+    millidays, 25/24 hours, 60 bem, 3600 SI seconds
 - <a href="#hexadecimal" id="hex">hex</a>: hexadecimal, base 16
 - <a href="#huesaturationlightness" id="hsl">HSL</a>: hue saturation
   lightness
@@ -3294,25 +4039,38 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#decijing" id="dj">dj</a>: decijīng, a tenth of a jīng (经)
   - <a href="#millijing" id="mj">mj</a>: millijīng, a thousandth of a
     jīng (经)
-- <a href="#keg" id="k">k</a>: keg, cubic zem, 64 liters, 1000 wine
-  glasses, a million drops, half a barrel
-- <a href="#kilometer" id="km">km</a>: kilometer, 1000 meters, 2500 zem,
-  2.5 kilozem
-- <a href="#kilometersperhour" id="kmph">kmph</a>: kilometers per hour,
-  thousands of meters per hour, 1 kmph = 0.6 mv
+- <a href="#kilo" id="k">k</a>: kilo, a thousand turns
+- <a href="#kilometer" id="km">ksim</a>: kilometer, kilo SI meter, 1000
+  meters, 2500 zem, 2.5 kilozem
+- <a href="#kilometersperhour" id="kmph">ksim/h</a>: kilometers per
+  hour, 1 ksim/h = 0.625 mv
+- <a href="#line" id="l">l</a>: line, a ten-thousandth of a turn, a
+  tenth of a mil; as a duration, 1 decimilliday
 - <a href="#liter" id="L">L</a>: liter, 15625 drops, a cubic decimeter
   - <a href="#milliliter" id="mL">mL</a>: milliliter, a cubic
     centimeter, a thousandth of a liter, 15.625 drops
   - <a href="#microliter" id="uL">µL</a>: microliter, a cubic
     millimeter, a millionth of a liter, 0.015625 drops
-- <a href="#squaremeter" id="m2">m²</a>: square meter, 6.25 square zem
-  - <a href="#squarecentimeter" id="cm2">cm²</a>: square centimeter,
+- <a href="#meg" id="M">M</a>: meg, megaturn, a million turns
+- <a href="#decminute" id="m">m</a>: minute, a fifteen-hundredth of a
+  day, a sixtieth of a hour, 60 seconds, 0.<span class="tool"
+  data-bs-toggle="tooltip" data-bs-title="base9 digit 6">♄</span>
+  millidays, 0.96 bem, 57.6 SI seconds; written as one b6 digit followed
+  by one b10 digit
+  - <a href="#birunianequinoctialminute" id="bem">bem</a>: Birunian
+    equinoctial minute, a sixtieth of a heh, a fourteen-hundred-fortieth
+    of a day, 0.<span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="base9 digit 6">♄</span><span class="tool"
+    data-bs-toggle="tooltip" data-bs-title="base24 digit 6">η</span>
+    millidays, 25/24 minutes, 60 SI seconds
+- <a href="#squaremeter" id="m2">sim²</a>: square meter, 6.25 square zem
+  - <a href="#squarecentimeter" id="cm2">csim²</a>: square centimeter,
     6.25 square centizem
-  - <a href="#squaredecimeter" id="dm2">dm²</a>: square decimeter, 6.25
-    square decizem
-  - <a href="#squarekilometer" id="km2">km²</a>: square kilometer, 6.25
-    square kilozem
-  - <a href="#cubiccentimeter" id="cm3">cm³</a>: cubic centimeter, 1
+  - <a href="#squaredecimeter" id="dm2">dsim²</a>: square decimeter,
+    6.25 square decizem
+  - <a href="#squarekilometer" id="km2">ksim²</a>: square kilometer,
+    6.25 square kilozem
+  - <a href="#cubiccentimeter" id="cm3">csim³</a>: cubic centimeter, 1
     milliliter, a thousandth of a liter, 15.625 drops
 - <a href="#pentaday" id="p">p</a>: pentaday, a group of five days, half
   a decaday
@@ -3325,6 +4083,9 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#liminalinterconnectingmargin" id="lim">lim</a>: liminal
     interconnecting margin, the pair of days between two pir, Dop 4 and
     the following Dop 0
+- <a href="#multiplicativeinversepair" id="mip">mip</a>: multiplicative
+  inverse pair, two units whose product is 1, such as b and þ, d and q,
+  or v and ʌ
 - <a href="#note" id="n">n</a>: note, a specific frequency within an
   octave
 - <a href="#nationaloceanicandatmosphericadministration"
@@ -3336,11 +4097,13 @@ videos](https://observablehq.com/resource-center#videos).
     fold change in frequency
 - <a href="#perbeat" id="per">þ</a>: perbeat, the inverse of a beat,
   1/beat, once per beat, every beat, 100000 q; symbolized by thorn (þ),
-  which looks like a combination of the letters “p” and “b”; not to be
-  confused with a picobeat (pb)
-  - <a href="#teraperbeat" id="Tpb">Tþ</a>: teraperbeat, 10<sup>12</sup>
-    perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat,
-    every picobeat
+  which looks like a combination of the letters “p” and “b”
+  - <a href="#permilliday" id="permil">‰</a>: per milliday, the inverse
+    of a milliday, once per milliday, 1000 q, a hundredth of a perbeat
+- <a href="#parallaxmicroturn" id="parmic">parmic</a>: parallax
+  microturn, the distance at which 1 astronomical unit spans a
+  microturn, 3.74 gigataur ÷ 𝜏, about 595.239 megataur or 2.51667 light
+  years
 - <a href="#quotidie" id="q">q</a>: quotidie, the inverse of a day, a
   hundred thousandth of a perbeat; the letter “q” in quotidie can be
   flipped vertically to produce the letter “d” in day
@@ -3350,19 +4113,21 @@ videos](https://observablehq.com/resource-center#videos).
     the direction of the Sun along the horizon measured clockwise from
     North
   - <a href="#millirose" id="mr">mr</a>: compass millirose, a thousandth
-    of a *r*otation along the horizon, .36 compass degrees
+    of a *r*otation along the horizon, 0.36 compass degrees
 - <a href="#radian" id="rad">rad</a>: radian, 1/𝜏 turns, 360/𝜏 degrees,
   1/𝜋 turns, 180/𝜋 degrees
 - <a href="#redgreenblue" id="rgb">RGB</a>: red green blue
-- <a href="#second" id="s">s</a>: second, 1/90 millidays, 10/9 beats, 1
-  Dec second = 0.96 SI seconds
-  - <a href="#decisecond" id="ds">ds</a>: decisecond, a tenth of a Dec
+- <a href="#second" id="s">s</a>: second, a sixtieth of a minute, 1/90
+  millidays, 10/9 beats, 1 second = 0.96 SI seconds
+  - <a href="#decasecond" id="decasec">Ds</a>: decasecond, ten seconds,
+    1/9 millidays, 9.6 SI seconds
+  - <a href="#decisecond" id="ds">ds</a>: decisecond, a tenth of a
     second, 1/900 millidays, 1/9 beats, 96 milliseconds
   - <a href="#secondintervaldifference" id="sid">sid</a>: second
-    interval difference, 1 SI second − 1 Dec second, 1/24 Dec second,
-    1/25 SI second, 40 milliseconds
-  - <a href="#sisecond" id="sis">sis</a>: SI second, 25/24 Dec seconds,
-    1/86.4 millidays, 1/86400 days
+    interval difference, 1 SI second − 1 second, 1/24 second, 1/25 SI
+    second, 40 milliseconds
+  - <a href="#sisecond" id="sis">sis</a>: SI second, a sixtieth of a
+    bem, 25/24 seconds, 1/86.4 millidays, 1/86400 days
 - <a href="#spinorbitinterval" id="soi">soi</a>: spin orbit interval, a
   lunar day, 1.03505 days
   - <a href="#soiofyear" id="soy">soy</a>: soi of year
@@ -3370,10 +4135,13 @@ videos](https://observablehq.com/resource-center#videos).
 - <a href="#internationalsystemofunits" id="si">SI</a>: [International
   System of
   Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
+- <a href="#simeter" id="sim">sim</a>: SI meter, the base unit of length
+  in the International System of Units, 2.5 zem, 10 decimeters
 - <a href="#speedoflight" id="sol">sol</a>: speed of light, 647.55170928
   kiloomegar, 299792458 meters per second
-- <a href="#speedofsound" id="sos">sos</a>: speed of sound, 735.048
-  milliomegar, 340.3 meters per second
+- <a href="#speedofsound" id="sos">sos</a>: speed of sound at 15 degrees
+  Celsius, 735.048 milliomegar, 326.688 meters per second, 340.3 meters
+  per SI second
 - <a href="#solardeclinationangle" id="sda">sda</a>: solar declination
   angle, the latitude at which the Sun is directly overhead
 - <a href="#solarelevationangle" id="sea">sea</a>: solar elevation
@@ -3385,12 +4153,11 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#taudividedby900" id="sampi">ϡ</a>: sampi, the Greek
     numeral for 900, 𝜏/900 or approximately 0.0069813 radians, 0.4
     degrees
-- <a href="#tenequaltemperament" id="tenet">Tenet</a>: ten equal
-  temperament
-  - <a href="#10et" id="xet">Xet</a>: Tenet
-  - <a href="#twelveequaltemperament" id="12et">12et</a>: twelve equal
-    temperament
 - <a href="#timeofday" id="tod">tod</a>: time of day
+  - <a href="#beginningofday" id="bod">bod</a>: beginning of day,
+    midnight at the start of the day, Tod 0
+  - <a href="#endofday" id="eod">eod</a>: end of day, midnight at the
+    end of the day, 1 day or 10<sup>5</sup> beats after the bod
   - <a href="#positiveintervaltod" id="pit">pit</a>: positive interval
     tod, the time since the start of the current day (previous
     midnight), equal to the tod
@@ -3398,17 +4165,29 @@ videos](https://observablehq.com/resource-center#videos).
     tod, pit − 1, the negative of the time until the start of the next
     day (next midnight)
   - <a href="#hourminutesecond" id="hms">hms</a>: hour minute second, a
-    tod written as an hod, moh, and som triplet
-  - <a href="#dailysecondaggregate" id="dsa">dsa</a>: daily second
-    aggregate, seconds since midnight, tod × 86400
-  - <a href="#hourlysecondaggregate" id="hsa">hsa</a>: hourly second
-    aggregate, seconds since the top of the hour, dsa mod 3600
-  - <a href="#hourofday" id="hod">hod</a>: hour of day, ⌊dsa ÷ 3600⌋, 0
-    to 23
-  - <a href="#minuteofhour" id="moh">moh</a>: minute of hour, ⌊hsa ÷
-    60⌋, 0 to 59
-  - <a href="#secondofminute" id="som">som</a>: second of minute, ⌊hsa
-    mod 60⌋, 0 to 59
+    tod written as an hod, moh, and sisom triplet
+  - <a href="#dailysisecondaggregate" id="dsisa">dsisa</a>: daily SI
+    second aggregate, SI seconds since midnight, tod × 86400
+  - <a href="#hourlysisecondaggregate" id="hsisa">hsisa</a>: hourly SI
+    second aggregate, SI seconds since the top of the hour, dsisa
+    <span class="hyphen">−⌊</span> 3600
+  - <a href="#hourofday" id="hod">hod</a>: hour of day in heh, ⌊dsisa ÷
+    3600⌋, 0 to 23
+  - <a href="#minuteofhour" id="moh">moh</a>: minute of hour in bem,
+    ⌊hsisa ÷ 60⌋, 0 to 59
+  - <a href="#sisecondofminute" id="sisom">sisom</a>: SI second of
+    minute, ⌊hsisa <span class="hyphen">−⌊</span> 60⌋, 0 to 59
+  - <a href="#millidayofday" id="mod">mod</a>: milliday of day, ⌊tod ×
+    1000⌋, 0 to 999
+  - <a href="#timeofmilliday" id="tom">tom</a>: time of milliday, the
+    part of a tod left after its mod, tod × 1000
+    <span class="hyphen">−⌊</span> 1 millidays, 0 to under 100 beats
+  - <a href="#timeintegerlength" id="til">til</a>: time integer length,
+    the digit count of a tod or offset written without a decimal
+    separator, including leading zeros; its unit is 10<sup>-til</sup>
+    days
+  - <a href="#secondofmilliday" id="som">som</a>: second of milliday, 0
+    to 89
   - <a href="#meansolartime" id="mst">mst</a>: mean solar time, solar
     time based only on longitude and the Zone 0 tod
   - <a href="#apparentsolartime" id="ast">ast</a>: apparent solar time,
@@ -3421,13 +4200,18 @@ videos](https://observablehq.com/resource-center#videos).
     from sunset to sunrise, 1 − law
   - <a href="#nightarchalf" id="nah">nah</a>: night arc half, naw/2, the
     time from sunset to solar midnight or from solar midnight to sunrise
-- <a href="#turn" id="t">t</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians
-  - <a href="#centiturn" id="ct">ct</a>: centiturn, a hundredth of a
-    turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
-  - <a href="#deciturn" id="dt">dt</a>: deciturn, a tenth of a turn, 36
-    degrees, 𝜏/10 or 𝜋/5 radians
-  - <a href="#milliturn" id="mt">mt</a>: milliturn, a thousandth of a
-    turn, .36 degrees, 𝜏/1000 or 𝜋/500 radians
+- <a href="#turn" id="T">T</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians; as a
+  dimension, shared by quantities measured in turns, such as days (d)
+  and omegar (v)
+  - <a href="#inverseturn" id="inverset" class="big">ꓕ</a>: inverse
+    turn, 1/T, a T turned upside down, the dimension shared by quotidie,
+    perbeat, and upsilonr
+  - <a href="#centiturn" id="ct" class="mono">¢</a>: cent, centiturn, a
+    hundredth of a turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
+  - <a href="#deciturn" id="dt" class="iosevka">⅒</a>: dime, deciturn, a
+    tenth of a turn, 36 degrees, 𝜏/10 or 𝜋/5 radians
+  - <a href="#milliturn" id="mt" class="mono">₥</a>: mil, milliturn, a
+    thousandth of a turn, 0.36 degrees, 𝜏/1000 or 𝜋/500 radians
 - <a href="#timezoneoffset" id="tzo">tzo</a>: time zone offset
 - <a href="#ounce" id="u">u</a>: ounce (uncia in Latin), 500 grains, 32
   grams, 500 drops, 32 milliliters
@@ -3446,27 +4230,23 @@ videos](https://observablehq.com/resource-center#videos).
 - <a href="#universaltime" id="ut">UT</a>: [Universal
   Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation),
   a time standard based on the rotation of the Earth
-- <a href="#omegar" id="v">v</a>: omegar, ωr, 1041.<span class="tool"
-  data-bs-toggle="tooltip" data-bs-title="base9 digit 6">♄</span> miles
-  per hour, 1.<span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="base9 digit 6">♄</span> megameters per hour,
-  0.4<span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="base9 digits 5 and 6">♃♄</span> kilometers per second,
-  roughly 1.36 times the speed of sound
+- <a href="#omegar" id="v">v</a>: omegar, ωr, 1000 mph, 1000 miles per
+  hour, 1.6 megameters per hour, 0.<span class="tool"
+  data-bs-toggle="tooltip" data-bs-title="base9 digit 4">♂</span>
+  kilometers per second, roughly 1.36 times the speed of sound
   - <a href="#kiloomegar" id="kv">kv</a>: kiloomegar, kωr,
     1.<span class="tool" data-bs-toggle="tooltip"
     data-bs-title="base9 digit 6">♄</span> gigameters per hour,
     0.4<span class="tool" data-bs-toggle="tooltip"
     data-bs-title="base9 digits 5 and 6">♃♄</span> megameters per
     second, approximately 0.1544% of the speed of light
-  - <a href="#milliomegar" id="mv">mv</a>: milliomegar, mωr,
-    1.041<span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="base9 digit 6">♄</span> miles per hour,
-    1.<span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="base9 digit 6">♄</span> kilometers per hour,
-    0.4<span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="base9 digits 5 and 6">♃♄</span> meters per second,
-    approximately 0.136% of the speed of sound
+  - <a href="#milliomegar" id="mv">mv</a>: milliomegar, mωr, 1 mph, 1
+    mile per hour, 1.6 kilometers per hour, 0.<span class="tool"
+    data-bs-toggle="tooltip" data-bs-title="base9 digit 4">♂</span>
+    meters per second, 1 zem per beat, approximately 0.136% of the speed
+    of sound
+- <a href="#upsilonr" id="ur">ʌ</a>: upsilonr, the inverse of an omegar,
+  1/v, d/c, b/kz, a unit of slowness; symbolized by a turned v (ʌ)
 - <a href="#wei" id="w">w</a>: wěi (纬), parallel, a full circle around
   the Earth moving East or West at the same latitude, a measure of
   longitude; short for 纬圈 (wěiquān), “latitude circle”; can be thought
@@ -3488,7 +4268,9 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#negativeintegerxun" id="nix">nix</a>: negative integer
     xún, ⌊nid ÷ 10⌋, -37 to -1
   - <a href="#mixedintegerxun" id="mix">mix</a>: mixed integer xún, the
-    first two digits of an nih mid
+    first two digits of an niﾲ mid: a negative niﾲ digit under a
+    vinculum followed by the xún elapsed in that hectoday, which
+    together equal an nix, e.g. 2̄3 = -20 + 3 = -17
   - <a href="#xuninterdecilerange" id="xir">xir</a>: xún interdecile
     range, Dox 1 to 8, the days between Dox 0 and 9
 - <a href="#year" id="y">y</a>: year
@@ -3500,7 +4282,8 @@ videos](https://observablehq.com/resource-center#videos).
     aggregate, yoe + toy, years since the Dec epoch including the
     fraction of the current year
   - <a href="#timeofyear" id="toy">toy</a>: time of year, the fraction
-    of the year that has elapsed, eya mod 1, ada ÷ syl
+    of the year that has elapsed, eya <span class="hyphen">−⌊</span> 1,
+    ada ÷ syl
   - <a href="#yearmonthday" id="ymd">ymd</a>: year month day, a
     Gregorian calendar date triplet
   - <a href="#solaryearlength" id="syl">syl</a>: solar year length, 365
@@ -3509,23 +4292,27 @@ videos](https://observablehq.com/resource-center#videos).
     or 355 days
   - <a href="#commonerayear" id="cey">cey</a>: common era year, an ISO
     8601 (Gregorian calendar) year number
-  - <a href="#cycleofera" id="coe">coe</a>: cycle of era, 400-year
-    cycles since the Dec epoch
-  - <a href="#yearofcycle" id="yoc">yoc</a>: year of cycle, years since
-    the start of the current 400-year cycle, 0 to 399
+  - <a href="#quadricentennialofera" id="qoe">qoe</a>: quadricentennial
+    of era, quadricentennials since the Dec epoch
+  - <a href="#yearofquadricentennial" id="yoq">yoq</a>: year of
+    quadricentennial, years since the start of the current
+    quadricentennial, 0 to 399
   - <a href="#yearoftricennium" id="yot">yot</a>: year of tricennium,
     lunar years since the start of the current 30-year lunar cycle, 0 to
     29
   - <a href="#monthofyear" id="moy">moy</a>: month of year, zero-based,
     Moy 0 is March
   - <a href="#weekofyear" id="woy">woy</a>: week of year, (boydow + bow)
-    ÷ 7, 0 to 53
+    ÷ 7, 0 to 53, where boydow (beginning of year day of week) is the
+    dow of Day 0
   - <a href="#weekofmonth" id="wom">wom</a>: week of month
 - <a href="#zoneequatorialmeter" id="z">z</a>: zem, zone equatorial
   meter, 4 decimeters, 16 inches
   - <a href="#squarekilozem" id="kz2">kz²</a>: square kilozem, a million
     square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600
     ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
+  - <a href="#baizem" id="bzem" class="mono">ﾲz</a>: bǎizem, a hundred
+    zem, 1 microtaur, 40 meters
   - <a href="#kilozem" id="kz">kz</a>: kilozem, 1000 zem, 400 meters, a
     quarter mile
   - <a href="#squarezem" id="z2">z²</a>: square zem, hexamilliare, 16
@@ -3741,8 +4528,11 @@ function parseTableData(table) {
 function focusCell(td) {
   const s = window.getSelection();
   const r = document.createRange();
-  let textNode = td.childNodes[0];
-  const i = td.innerText.length;
+  // The cell may hold a value bar <div>, so put the caret after its last text node
+  let textNode = td;
+  while (textNode.lastChild) textNode = textNode.lastChild;
+  if (textNode === td || textNode.nodeType !== Node.TEXT_NODE) textNode = null;
+  const i = textNode ? textNode.length : 0;
   td.focus();
   if (textNode) {
     r.setStart(textNode, i);
@@ -3799,11 +4589,10 @@ function yiq(color) {
 function textcolor(content, style = {}) {
   const {
     background,
-    color = yiq(background) > 0.5 ? "#000" : "white",
-    padding = "0 2px",
+    color = yiq(background) > 0.5 ? "black" : "white",
+    padding = "0.5px 0.75px 0.5px 0.75px",
     borderRadius = "4px",
-    fontWeight = 400,
-    fontFamily = "sans-serif",
+    fontFamily = "inherit",
     ...rest
   } = typeof style === "string" ? {background: style} : style;
   return htl.html`<span style=${{
@@ -3811,7 +4600,6 @@ function textcolor(content, style = {}) {
     color,
     padding,
     borderRadius,
-    fontWeight,
     fontFamily,
     ...rest
   }}>${content}</span>`;
@@ -4170,13 +4958,21 @@ decDateP0pad = String(decDateP0).padStart(3, "0")
 decTimeP0 = ydzP0[1] % 1
 decDekP0 = Math.floor(decDateP0 / 10)
 decDodP0 = decDateP0 % 10
-decYearP0hsl0 = textcolor(decYearP0, `hsl(${d3.hsl(piecewiseColor(decYearP0 % 1000 / 1000)).h}` + slStr)
-decYearP0hsl1 = textcolor(decYearP0, `hsl(${d3.hsl(piecewiseColor(decYearP0 % 1000 / 1000)).h}` + slStr)
-decDateP0hsl0 = textcolor(decDateP0pad, `hsl(${d3.hsl(piecewiseColor(decDateP0 / (365 + isLeapP0))).h}` + slStr)
-decDateP0hsl1 = textcolor(decDateP0pad, `hsl(${d3.hsl(piecewiseColor(decDateP0 / (365 + isLeapP0))).h}` + slStr)
+decYearP0hsl = () => textcolor(decYearP0, `hsl(${d3.hsl(piecewiseColor(decYearP0 % 1000 / 1000)).h}` + slStr)
+decDateP0hsl = () => textcolor(decDateP0pad, `hsl(${d3.hsl(piecewiseColor(decDateP0 / (365 + isLeapP0))).h}` + slStr)
 decYdaP0hsl = textcolor(decYdaP0.toFixed(5).padStart(9, "0"), `hsl(${d3.hsl(piecewiseColor(decYdaP0 / (365 + isLeapP0))).h}` + slStr)
-decTimeP0hsl0 = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
-decTimeP0hsl1 = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decTimeP0hsl = () => textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decTimeP0cmd = Math.floor(decTimeP0 * 1e5)
+decTimeP0mil = Math.floor(decTimeP0 * 1e3)
+decTimeP0h25 = Math.floor(decTimeP0 * 25)
+decTimeP0m60 = Math.floor(decTimeP0 * 1500) % 60
+decTimeP0s60 = Math.floor(decTimeP0 * 9e4) % 60
+decTimeP0cmdHsl = textcolor(String(decTimeP0cmd).padStart(5, "0"), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decTimeP0milHsl = textcolor(String(decTimeP0mil).padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decTimeP0s90Hsl = textcolor(String(Math.floor(decTimeP0 * 9e4) % 90).padStart(2, "0"), `hsl(${d3.hsl(piecewiseColor(decTimeP0 * 1e3 % 1)).h}` + slStr)
+decTimeP0h25Hsl = textcolor(String(decTimeP0h25).padStart(2, "0"), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decTimeP0m60Hsl = textcolor(String(decTimeP0m60).padStart(2, "0"), `hsl(${d3.hsl(piecewiseColor(decTimeP0 * 25 % 1)).h}` + slStr)
+decTimeP0s60Hsl = textcolor(String(decTimeP0s60).padStart(2, "0"), `hsl(${d3.hsl(piecewiseColor(decTimeP0 * 1500 % 1)).h}` + slStr)
 decDekP0hsl = textcolor(decDekP0, `hsl(${d3.hsl(piecewiseColor(decDekP0 / 37)).h}` + slStr)
 decDodP0hsl = textcolor(decDodP0, `hsl(${d3.hsl(piecewiseColor(decDodP0 / 10)).h}` + slStr)
 decLon = longitude % 10
@@ -4190,9 +4986,12 @@ conversionFactor = costype === "turns" ? "" : costype === "radians" ?  tex`\,\ta
 zemsLeft = 1000 - 50 * Math.floor(now / 86400000 % 1 * 1000 % 1 * 100 % 21)
 zLeft = textcolor(zemsLeft, `hsl(${d3.hsl(piecewiseColor(zemsLeft / 1000)).h}` + slStr)
 point0long = long2turn(Place_A[0], 1)
+point1long = long2turn(Place_B[0], 1)
 point0zone = Math.floor(point0long)
+point1zone = Math.floor(point1long)
 point0lHsl = textcolor(parseFloat(point0long.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(point0long / 10)).h}` + slStr)
 point0zHsl = textcolor(point0zone, `hsl(${d3.hsl(piecewiseColor(point0zone / 10)).h}` + slStr)
+point1zHsl = textcolor(point1zone, `hsl(${d3.hsl(piecewiseColor(point1zone / 10)).h}` + slStr)
 isLeapP0 = decYearP0 % 4 == 0 && decYearP0 % 100 != 0 || decYearP0 % 400 == 0;
 timezones = FileAttachment("../asset/timezones.json").json()
 zones = topojson.feature(timezones, timezones.objects.timezones).features
@@ -4397,9 +5196,9 @@ function worldMapCoordinates(config = {}, dimensions) {
     // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
       9, 13, 27
     ].includes(ev.which)) {
-      lonA = turn2long(liveTable[0].Milliparallel);
+      lonA = turn2long(liveTable[0].Milliwěi);
       latA = turn2degr(liveTable[0].Millijīng);
-      lonB = turn2long(liveTable[1].Milliparallel);
+      lonB = turn2long(liveTable[1].Milliwěi);
       latB = turn2degr(liveTable[1].Millijīng);
       const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
       set(viewof colorD, point0bear)
@@ -4415,9 +5214,9 @@ function worldMapCoordinates(config = {}, dimensions) {
     // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
       8, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 109, 189
     ].includes(ev.which)) {
-      lonA = turn2long(liveTable[0].Milliparallel);
+      lonA = turn2long(liveTable[0].Milliwěi);
       latA = turn2degr(liveTable[0].Millijīng);
-      lonB = turn2long(liveTable[1].Milliparallel);
+      lonB = turn2long(liveTable[1].Milliwěi);
       latB = turn2degr(liveTable[1].Millijīng);
       const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
       set(viewof colorD, point0bear)
@@ -4460,13 +5259,11 @@ Place_A = coordinates[0]
 Place_B = coordinates[1]
 distance_km = (d3.geoDistance(Place_A, Place_B)* 6371).toFixed(0)
 distance_mc = distance_km / 40
-distance_mcHsl0 = textcolor(parseFloat(distance_mc.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
-distance_mcHsl1 = textcolor(parseFloat(distance_mc.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
+distance_mcHsl = () => textcolor(parseFloat(distance_mc.toFixed(0)), piecewiseColor(distance_mc % 1000 / 1000))
 distance_c = distance_mc / 1000
-distance_cHsl = textcolor(parseFloat(distance_c.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(distance_c % 1)).h}` + slStr)
+distance_cHsl = () => textcolor(parseFloat(distance_c.toFixed(3)), piecewiseColor(distance_c % 1))
 velocity_v = travelspeed / 1000
-velocity_vHsl0 = textcolor(parseFloat(velocity_v.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
-velocity_vHsl1 = textcolor(parseFloat(velocity_v.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
+velocity_vHsl = () => textcolor(parseFloat(velocity_v.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
 velocity_mvHsl = textcolor(parseFloat(travelspeed.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(travelspeed / 1000)).h}` + slStr)
 traveltime = Math.round(distance_mc) / Math.round(travelspeed)
 traveltimeHsl0 = Number.isFinite(traveltime) ? textcolor(parseFloat(Math.round(traveltime * 1000).toFixed(3)), `hsl(${d3.hsl(piecewiseColor(traveltime % 1)).h}` + slStr) : traveltime
@@ -5366,7 +6163,8 @@ hCara = d3.hsl(piecewiseColor(192 / 200)).h
 hAvOz = d3.hsl(piecewiseColor(32 / 28.349523125  % 1)).h
 hFlOz = d3.hsl(piecewiseColor(32 / 29.5735295625 % 1)).h
 hInch = d3.hsl(piecewiseColor(fInch)).h
-hPerS = d3.hsl(piecewiseColor(fInch * .96)).h
+hPerS = d3.hsl(piecewiseColor(fInch / .96 % 1)).h
+hMph = d3.hsl(piecewiseColor(fMile / .96 % 1)).h
 hSqIn = d3.hsl(piecewiseColor(fInch**2)).h
 hCuIn = d3.hsl(piecewiseColor(fInch**3)).h
 hMile = d3.hsl(piecewiseColor(fMile)).h
@@ -5894,6 +6692,108 @@ colors = [...Array(10).keys()].map(x => x / 10).map(piecewiseColor).map(d3.color
 hertz = origs.map(x => x / .864)
 labels = [...Array(10).keys()].map(x => x + 40)
 origs = labels.map(x => 14.1275 * 2 **(x / 10))
+decWatchRadial = {
+  const radius = 100;
+
+  const svg = d3.create("svg")
+    .attr("viewBox", [-radius, -radius, radius * 2, radius * 2])
+    .style("max-width", "200px");
+
+  svg.append("circle")
+    .attr("r", radius)
+    .style("fill", "rgb(10,34,58)");
+
+  const ticks = svg.selectAll(".dec-second-tick")
+    .data(d3.range(0, 90))
+    .join("line")
+      .attr("class", "dec-second-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", radius - 5)
+      .attr("y2", radius - 10)
+      .attr("stroke-width", 3)
+      .attr("stroke-linecap", "round")
+      .style("opacity", 1)
+      .attr("transform", d => `rotate(${180 + d * 4})`);
+
+  const label = svg.append("text")
+    .attr("y", 32)
+    .attr("fill", "white")
+    .attr("text-anchor", "middle")
+    .attr("font-family", "Helvetica, Arial, sans-serif")
+    .attr("font-weight", 600)
+    .attr("font-size", "90px")
+    .style("font-variant-numeric", "tabular-nums");
+
+  while (true) {
+    const t = new Date();
+    const ms = ((t.getHours() * 60 + t.getMinutes()) * 60 + t.getSeconds()) * 1000
+             + t.getMilliseconds();
+    const millidays = ms / 86400;                     // 86 400 ms per milliday
+    const seconds = Math.floor((millidays % 1) * 90); // second 0–89
+
+    label.text(String(Math.floor(millidays)).padStart(3, "0"));
+    ticks.attr("stroke", d => (d >= seconds ? "#555" : "white"));
+
+    yield svg.node();
+    await Promises.delay(960 - (ms % 960));           // next second
+  }
+}
+decWatchHorizontal = {
+  const width = 200, height = 125;
+  const perRow = 45;
+  const spacing = 4;                          // 45 ticks × 4 = 176 px wide
+  const rowY = 50;                            // row centres at y = ±50
+  const tickLength = 10;
+  const x0 = -((perRow - 1) * spacing) / 2;   // centre each row
+
+  const svg = d3.create("svg")
+    .attr("viewBox", [-width / 2, -height / 2, width, height])
+    .style("max-width", "200px");
+
+  svg.append("rect")
+    .attr("x", -width / 2)
+    .attr("y", -height / 2)
+    .attr("width", width)
+    .attr("height", height)
+    //.attr("rx", 36)
+    .style("fill", "rgb(10,34,58)");
+
+  // ticks 0–44 above the number, 45–89 below, left to right
+  const ticks = svg.selectAll(".dec-second-tick")
+    .data(d3.range(0, 90))
+    .join("line")
+      .attr("class", "dec-second-tick")
+      .attr("x1", d => x0 + (d % perRow) * spacing)
+      .attr("x2", d => x0 + (d % perRow) * spacing)
+      .attr("y1", d => (d < perRow ? -rowY : rowY) - tickLength / 2)
+      .attr("y2", d => (d < perRow ? -rowY : rowY) + tickLength / 2)
+      .attr("stroke-width", 2)
+      .attr("stroke-linecap", "round");
+
+  const label = svg.append("text")
+    .attr("y", 32)
+    .attr("fill", "white")
+    .attr("text-anchor", "middle")
+    .attr("font-family", "Helvetica, Arial, sans-serif")
+    .attr("font-weight", 600)
+    .attr("font-size", "90px")
+    .style("font-variant-numeric", "tabular-nums");
+
+  while (true) {
+    const t = new Date();
+    const ms = ((t.getHours() * 60 + t.getMinutes()) * 60 + t.getSeconds()) * 1000
+             + t.getMilliseconds();
+    const millidays = ms / 86400;                     // 86 400 ms per milliday
+    const seconds = Math.floor((millidays % 1) * 90); // second 0–89
+
+    label.text(String(Math.floor(millidays)).padStart(3, "0"));
+    ticks.attr("stroke", d => (d >= seconds ? "#555" : "white"));
+
+    yield svg.node();
+    await Promises.delay(960 - (ms % 960));           // next second
+  }
+}
 ```
 
 ``` {ojs}
@@ -6524,6 +7424,13 @@ html`
   border-radius: 4px;
   font-weight: 400;
 }
+.colorMph {
+  background: hsl(${hMph} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hMph}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px .5px;
+  border-radius: 4px;
+  font-weight: 400;
+}
 .colorPerS {
   background: hsl(${hPerS} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hPerS}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -6648,7 +7555,7 @@ div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput >
   overflow-x: clip;
 }
 div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
-  width: 35px;
+  width: 45px;
 }
 button#rstbtn:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
@@ -6676,6 +7583,20 @@ div#fig-distmap {
 }
 div#colorpreview, div.colorcomparer, div#coloropposites8, div#coloropposites10, div#colorcomparer8, div#colorcomparer10 {
   overflow: visible;
+}
+/* Keep the color widgets inside the margin when it is narrow (768-1050px) */
+section#cwc .column-margin canvas {
+  max-width: 100%;
+  height: auto !important;
+}
+#colorpreview div:has(> .swatch) {
+  flex: 0 1 108px;
+  min-width: 0;
+}
+#colorpreview .swatch {
+  width: calc(100% - 8px) !important;
+  height: auto !important;
+  aspect-ratio: 1;
 }
 div.colorcomparer g[aria-label="y-axis label"] > text {
  transform: translate(40px,100px);
@@ -6778,6 +7699,26 @@ div#toggles button#rstbtn {
   overflow: visible;
   margin-top: -6px;
 }
+/* Narrow screens: size the toggles to their labels so the row fits */
+@media (max-width: 575.98px) {
+  div#toggles {
+    flex-wrap: wrap;
+    gap: 4px 8px;
+  }
+  div#toggles form.oi-3a86ea-toggle#bordertoggle,
+  div#toggles form.oi-3a86ea-toggle#gridtoggle,
+  div#toggles form.oi-3a86ea-toggle#utctoggle,
+  div#toggles form.oi-3a86ea-toggle#suntoggle,
+  div#toggles form.oi-3a86ea-toggle#bordertoggle > label,
+  div#toggles form.oi-3a86ea-toggle#gridtoggle > label,
+  div#toggles form.oi-3a86ea-toggle#utctoggle > label,
+  div#toggles form.oi-3a86ea-toggle#suntoggle > label {
+    width: max-content;
+  }
+  div#toggles input.oi-3a86ea-input[type="checkbox"] {
+    margin-right: 0;
+  }
+}
 div:has(div.description) {
   display: none;
 }
@@ -6796,10 +7737,6 @@ h4.anchored {
 }
 svg#lefthand {
   height: 50%;
-}
-.marginInputs {
-  position: relative;
-  top: -109px;
 }
 #cct table, #zct table {
   line-height: 1.5;
@@ -6823,10 +7760,10 @@ img#ruler, svg#zhands {
 img#zModu {
   width: 100%;
 }
-#iobplayer {
+#perbeatplayer {
   overflow: clip;
 }
-#iobplayer canvas {
+#perbeatplayer canvas {
   height: 100%;
 }
 .unittable table {
@@ -6850,6 +7787,9 @@ section#cct {
 #zemmodulor p a {
   font-size: 17px;
 }
+span.colorIob span.tool {
+  color: black;
+}
 </style>
 
 <div id="refs" class="references csl-bib-body hanging-indent">
@@ -6865,7 +7805,7 @@ Date Algorithms*. <https://howardhinnant.github.io/date_algorithms>.
 </div>
 
 [1] [Newton,
-Issac](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a).
+Isaac](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a).
 <span class="color704">1704</span>. *Opticks*.
 <https://doi.org/10.5479/sil.302475.39088000644674>.
 

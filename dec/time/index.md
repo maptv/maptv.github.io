@@ -7,19 +7,32 @@ Martin Laptev
 - [Epochal day aggregate (eda)](#sec-eda)
   - [UNIX time equation](#sec-ute)
   - [Julian date equation](#sec-jde)
-- [Hour minute second](#sec-hms)
-- [Universal time offset](#sec-uto)
-- [Second interval difference](#sec-sid)
+- [Hour minute second (hms)](#sec-hms)
+- [Universal time offset (uto)](#sec-uto)
+- [Second interval difference (sid)](#sec-sid)
   - [Base24](#sec-b24)
   - [Base9](#sec-b9)
-  - [Coordinated Universal Time (UTC)](#sec-utc)
-- [Day of week](#sec-dow)
-- [Time zone offset](#sec-tzo)
-- [Solar time offset](#sec-sto)
-- [Equation of time](#sec-eot)
+  - [Base25 and base6](#sec-b25)
+- [Coordinated Universal Time](#sec-utc)
+- [Day of week (dow)](#sec-dow)
+- [Time zone offset (tzo)](#sec-tzo)
+- [Daylight saving time](#sec-dst)
+- [Solar time offset (sto)](#sec-sto)
+- [Mean solar time](#sec-mst)
+- [Equation of time (eot)](#sec-eot)
 - [Cambridge and Cambridge](#sec-cac)
-- [Light arc whole](#sec-law)
-  - [Night arc whole](#sec-naw)
+- [Light arc whole (law)](#sec-law)
+  - [Night arc whole (naw)](#sec-naw)
+- [Solar azimuth angle (saa)](#sec-saa)
+- [Solar elevation angle (sea)](#sec-sea)
+- [Inverse trigonometric functions](#sec-itf)
+- [Current elapsed remaining](#sec-cer)
+- [Webpage load time](#sec-wlt)
+- [Positive interval tod (pit)](#sec-pit)
+- [Positive integer doy (pid)](#sec-pid)
+- [Year of era (yoe)](#sec-yoe)
+- [Time of milliday (tom)](#sec-tom)
+- [Simulated watch face](#sec-swf)
 - [Next](#next)
 - [Cite](#cite)
 - [Glossary](#glos)
@@ -168,7 +181,26 @@ ${posclock}${negclock}
 
 </div>
 
-Dec times are measured in [fractional
+This article focuses on the Dec clock (Declock)
+[metric](https://en.wikipedia.org/wiki/Metric_time#:~:text=the%20measure%20of%20time%20intervals%20using%20the%20metric%20system)
+[decimal](https://en.wikipedia.org/wiki/Decimal_time#:~:text=the%20representation%20of%20the%20time%20of%20day%20using%20units%20which%20are%20decimally%20related)
+[time
+standard](https://en.wikipedia.org/wiki/Time_standard#:~:text=a%20specification%20for%20measuring%20time),
+but also builds on the Dec
+[calendar](https://en.wikipedia.org/wiki/Calendar#:~:text=a%20system%20of%20organizing%20days)
+(Decalendar) described in [the previous article](../../dec/date) in my
+series on the Dec measurement system. Together, Decalendar and Declock
+render months, fortnights, and weeks obsolete and [redefine hours,
+minutes, and seconds](../../dec#sec-hms) as fractions of a day, so that
+a second is 4% shorter than an [International System of
+Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
+(<a href="#si" id="internationalsystemofunits" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a>) second
+(<a href="#sis" id="sisecond" class="tool" data-bs-toggle="tooltip"
+data-bs-title="SI seconds">sis</a>).
+
+Declock measures time in [fractional
 days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day),
 often using [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
@@ -187,12 +219,10 @@ data-bs-title="thousandths of a day">millidays</a>, and <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=which%20would%20be-,1/100%2C000%20day,-%2C%20or%20864%20milliseconds"
 class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundred thousandths of a day">centimillidays</a>,
-respectively, of the time since the start,
-<span class="point1">+${decTime}</span>, or until the end,
-<span class="point0">-${decTimeN}</span>, of the day in the Dec [time
-zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time),
-${decZoneHsl}, at the location of the red⭕️circle on the map beneath the
-bars.
+respectively, of the time since the start, ${decPosHsl()}, or until the
+end, ${decNegHsl()}, of the day in the Zone ${decZoneHsl}, the Dec [time
+zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time)
+selected by the red⭕️circle on the map beneath the bars.
 
 To rotate the globe🌐in the Earth🌏orbit diagram, drag the red circle
 horizontally↔️or slide the red🔴dot on the daylight area chart
@@ -200,16 +230,6 @@ vertically↕. The red circle’s vertical position determines the yearly
 daylight pattern visualized by the area chart. Shift the vertical
 red<font color=red>—</font>line on the area chart horizontally to move
 the globe along the ellipse of the Earth🌎orbit.
-
-``` {ojs}
-//| echo: false
-//| label: toggles
-viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
-viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
-viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
-viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
-rstbtn.node();
-```
 
 # Bar chart clocks
 
@@ -251,6 +271,7 @@ barChart = {
     .append('rect')
     .attr('class', 'timeBarFull')
     .attr('y', firstBarY+60)
+    .style('fill', barFill(Number(barBeats), 100))
     .attr('width', d => scaleMandB(barBeats))
   // Cents/Mils
   svg
@@ -262,6 +283,7 @@ barChart = {
     .append('rect')
     .attr('class', 'timeBarFull')
     .attr('y', firstBarY)
+    .style('fill', barFill(Number(barDD), 10))
     .attr('width', d => scaleDD(barDD))
   svg
     .append('rect')
@@ -272,6 +294,7 @@ barChart = {
     .append('rect')
     .attr('class', 'timeBarFull')
     .attr('y', firstBarY+30)
+    .style('fill', barFill(Number(barMils), 100))
     .attr('width', d => scaleMandB(barMils))
   // Cent ticks
   svg.selectAll('.tickC')
@@ -387,6 +410,7 @@ barChart1 = {
     .append('rect')
     .attr('class', 'timeBarFullN')
     .attr('y', firstBarY+60)
+    .style('fill', barFill(-Number(barBeatsN), 100))
     .attr('width', d => scaleMandB(barBeatsN))
   // Cents/Mils
   svg
@@ -398,6 +422,7 @@ barChart1 = {
     .append('rect')
     .attr('class', 'timeBarFullN')
     .attr('y', firstBarY)
+    .style('fill', barFill(-Number(barDDN), 10))
     .attr('width', d => scaleDD(barDDN))
   svg
     .append('rect')
@@ -408,6 +433,7 @@ barChart1 = {
     .append('rect')
     .attr('class', 'timeBarFullN')
     .attr('y', firstBarY+30)
+    .style('fill', barFill(-Number(barMilsN), 100))
     .attr('width', d => scaleMandB(barMilsN))
   // Cent ticks
   svg.selectAll('.tickC')
@@ -486,6 +512,8 @@ barChart1 = {
 }
 ```
 
+# Longitude latitude map
+
 <div class="marginInputs">
 
 ``` {ojs}
@@ -524,10 +552,21 @@ viewof select = Inputs.select(
   projections, {format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
 ```
 
+</div>
+
 ``` {ojs}
 //| echo: false
-//| label: lonlatable
-//| column: margin
+//| label: toggles
+viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
+viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
+viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
+viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
+rstbtn.node();
+```
+
+``` {ojs}
+//| echo: false
+//| label: maptable
 table = createTable([
   { Milliwěi: 500, Millijīng: 0 },
 ], { headerEditable: false, appendRows: false })
@@ -535,10 +574,6 @@ table = createTable([
 //   {Point: 1, Milliwěi: `${Math.floor(long2turn(Place_B[0], 3))}`, Millijīng: `${Math.floor(lati2turn(Place_B[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
 // ], {headerEditable: false, appendRows: false})
 ```
-
-</div>
-
-# Longitude latitude map
 
 <div class="column-screen">
 
@@ -591,7 +626,7 @@ app = {
                                         location,
                                         selection.date,
                                         selection.hour,
-                                        window.darkmode);
+                                        darkmode);
   }
   // const renderGlobe = () => {
   //   svg.selectAll("#globe *").remove();
@@ -641,15 +676,15 @@ app = {
 
 The red line indicates a “day of year”
 (<a href="#doy" id="dayofyear" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</a>): ${selDateHsl}, which identifies a
-day in a year like a [Gregorian
+data-bs-title="day of year">doy</a>): ${selDateHsl()}, which identifies
+a day in a year like a [Gregorian
 calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
 month and “day of month”
 (<a href="#dom" id="dayofmonth" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</a>). The red dot denotes a “time of
 day”
 (<a href="#tod" id="timeofday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>): ${selTimeDay}, which specifies a
+data-bs-title="time of day">tod</a>): ${selTimeDay()}, which specifies a
 point in a day like an “hour minute second”
 (<a href="#hms" id="hourminutesecond" class="tool"
 data-bs-toggle="tooltip" data-bs-title="hour minute second">hms</a>)
@@ -660,7 +695,8 @@ data-bs-title="day of year">doy</a> and
 data-bs-title="time of day">tod</a> can form an “annual day aggregate”
 (<a href="#ada" id="annualdayaggregate" class="tool"
 data-bs-toggle="tooltip" data-bs-title="annual day aggregate">ada</a>):
-${selDateHsl1} + ${selTimeDay1} ÷ 1000 = ${selDateHsl2}.${selTimeDay2}.
+${selDateHsl()} + ${selTimeDay()} ÷ 1000 =
+${selDatePadHsl()}.${selTimeMilDay()}.
 
 <div id="equationgroup00" class="equationgroup">
 
@@ -695,12 +731,14 @@ or turn it into an integer. The
 data-bs-title="times of day">tod</a> along the y-axis of the area chart
 are integers because they have three digits and are measured in
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a day">millidays</span>.
+data-bs-title="thousandths of a day">millidays</span>
+(<a href="#md" id="milliday" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a>).
 
 # Epochal day aggregate (eda)
 
 To obtain a <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> from a
+data-bs-title="time of day">tod</a> from an
 <a href="#ada" class="tool" data-bs-toggle="tooltip"
 data-bs-title="annual day aggregate">ada</a>, we can [keep the remainder
 after
@@ -709,16 +747,15 @@ by one to isolate the [decimal
 part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
 of the
 [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers):
-${zeroDotyHsl}.${zeroTimeHsl0}
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-1 = <span class="color0">0</span>.${zeroTimeHsl1}. We can use this same
-approach to separate a
+${zeroDotyHsl()}.${zeroTpadHsl()}
+[<span class="hyphen">−⌊</span>](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+1 = 0.${zeroTpadHsl()}. We can use this same approach to separate a
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> from an “epochal day aggregate”
 (<a href="#eda" id="epochaldayaggregate" class="tool"
 data-bs-toggle="tooltip" data-bs-title="epochal day aggregate">eda</a>):
-${zeroDoteHsl}.${zeroTimeHsl2} mod 1 =
-<span class="color0">0</span>.${zeroTimeHsl3}. The current
+${zeroDoteHsl}.${zeroTpadHsl()} <span class="hyphen">−⌊</span> 1 =
+0.${zeroTpadHsl()}. The current
 <a href="#eda" class="tool" data-bs-toggle="tooltip"
 data-bs-title="epochal day aggregate">eda</a> tells us how many days
 have passed since the Dec
@@ -729,11 +766,15 @@ data-bs-title="time of day">Tod</a> <span class="color0">0</span>.
 
 <div id="equationgroup01" class="equationgroup">
 
+<span id="eq-modulus">
+$$\text{dividend} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} \text{modulus} = \text{dividend} - \text{modulus} \times \left\lfloor\dfrac{\text{dividend}}{\text{modulus}}\right\rfloor \qquad(2)$$
+</span>
+
 <span id="eq-tod">
 $$\begin{split}
-\text{tod} &= \text{ada} \bmod 1 \\
-&= \text{eda} \bmod 1
-\end{split} \qquad(2)$$
+\text{tod} &= \text{ada} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \\
+&= \text{eda} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1
+\end{split} \qquad(3)$$
 </span>
 
 </div>
@@ -752,12 +793,12 @@ two leftmost vertical lines on the map, we can divide UNIX time by the
 [number of seconds in a
 day](https://en.wikipedia.org/wiki/Day#:~:text=average%2C%20this%20is-,24%20hours%20(86%2C400%20seconds),-.%20As%20a%20day)
 and then keep the remainder after dividing the resulting days by 1 as in
-<a href="#eq-unixtod" class="quarto-xref">Equation 3</a>.
+<a href="#eq-unixtod" class="quarto-xref">Equation 4</a>.
 
 <div id="equationgroup02" class="equationgroup">
 
 <span id="eq-unixtod">
-tod = unix ÷ 86400 mod  1   (3)
+$$\text{tod} = \text{unix} \div 86400 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \qquad(4)$$
 </span>
 
 </div>
@@ -782,17 +823,17 @@ data-bs-title="time of day">tod</a> instead, we should add
 <span class="color5">5</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
 to the Julian date, divide the sum by one, and then keep the remainder
-as in <a href="#eq-juliantod" class="quarto-xref">Equation 4</a> below.
+as in <a href="#eq-juliantod" class="quarto-xref">Equation 5</a> below.
 
 <div id="equationgroup03" class="equationgroup">
 
 <span id="eq-juliantod">
-tod = (julian + 0.5) mod  1   (4)
+$$\text{tod} = (\text{julian} + 0.5) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \qquad(5)$$
 </span>
 
 </div>
 
-# Hour minute second
+# Hour minute second (hms)
 
 We can also obtain a Zone <span class="color0">0</span>
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
@@ -808,19 +849,18 @@ equation below. The [computer
 programming](https://en.wikipedia.org/wiki/Computer_programming#:~:text=the%20composition%20of%20sequences%20of%20instructions%2C%20called%20programs%2C%20that%20computers%20can%20follow%20to%20perform%20tasks)
 code in the [tabset
 panel](https://quarto.org/docs/interactive/layout.html#tabset-panel)
-beneath the equation compares
+beneath the equation compares the
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="times of day">tod</a> derived from
 <a href="#utc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</a> and UNIX time as
-Quarto was
-[rendering](https://quarto.org/docs/get-started/hello/rstudio.html#rendering:~:text=When%20rendering%2C%20Quarto%20generates%20a%20new%20file%20that%20contains%20selected%20text%2C%20code%2C%20and%20results)
-this webpage.
+data-bs-title="Coordinated Universal Time">UTC</a> and UNIX time from
+when Quarto [stored the
+results](https://quarto.org/docs/projects/code-execution.html#using-freeze:~:text=results%20of%20documents%20executed%20with%20freeze%20are%20stored%20in%20the%20_freeze%20directory).
 
 <div id="equationgroup04" class="equationgroup">
 
 <span id="eq-hmstod">
-$$\text{tod} = \dfrac{\text{hour}}{24} + \dfrac{\text{minute}}{1440} + \dfrac{\text{second}}{86400} \qquad(5)$$
+$$\text{tod} = \dfrac{\text{heh}}{24} + \dfrac{\text{bem}}{1440} + \dfrac{\text{sis}}{86400} \qquad(6)$$
 </span>
 
 </div>
@@ -834,7 +874,7 @@ using Dates
 hms = now(UTC)
 ```
 
-    2026-10-30T14:47:39.205
+    2026-11-27T06:04:23.876
 
 ``` julia
 hour(hms) / 24 +
@@ -843,13 +883,13 @@ second(hms) / 86400 +
 millisecond(hms) / 864e5
 ```
 
-    0.6164259837962963
+    0.2530541203703704
 
 ``` julia
 datetime2unix(hms) / 86400 % 1
 ```
 
-    0.6164259837969439
+    0.253054120370507
 
 ### Observable JavaScript
 
@@ -873,13 +913,13 @@ hms.second / 86400 + \
 hms.microsecond / 864e8
 ```
 
-    0.6164336705439815
+    0.25306386063657405
 
 ``` python
 hms.timestamp() / 86400 % 1
 ```
 
-    0.616433670544211
+    0.25306386063675745
 
 ### R
 
@@ -890,19 +930,19 @@ hms$min / 1440 +
 hms$sec / 86400
 ```
 
-    [1] 0.6164338
+    [1] 0.2530641
 
 ``` r
 (as.numeric(as.POSIXct(hms)) / 86400) %% 1
 ```
 
-    [1] 0.6164338
+    [1] 0.2530641
 
 </div>
 
-Equations <a href="#eq-dsa" class="quarto-xref">6</a> to
-<a href="#eq-som" class="quarto-xref">10</a> below convert UNIX time or
-a Zone <span class="color0">0</span>
+Equations <a href="#eq-dsisa" class="quarto-xref">7</a> to
+<a href="#eq-sisom" class="quarto-xref">11</a> below convert UNIX time
+or a Zone <span class="color0">0</span>
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> into the three components of an
 <a href="#hms" class="tool" data-bs-toggle="tooltip"
@@ -910,39 +950,45 @@ data-bs-title="hour minute second">hms</a> triplet: the “hour of day”
 (<a href="#hod" id="hourofday" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hour of day">hod</a>), “minute of hour”
 (<a href="#moh" id="minuteofhour" class="tool" data-bs-toggle="tooltip"
-data-bs-title="minute of hour">moh</a>), and “second of minute”
-(<a href="#som" id="secondofminute" class="tool" data-bs-toggle="tooltip"
-data-bs-title="second of minute">som</a>), using a “daily second
-aggregate” (<a href="#dsa" id="dailysecondaggregate" class="tool"
-data-bs-toggle="tooltip" data-bs-title="daily second aggregate">dsa</a>)
-and “hourly second aggregate”
-(<a href="#hsa" id="hourlysecondaggregate" class="tool"
-data-bs-toggle="tooltip" data-bs-title="hourly second aggregate">hsa</a>).
-While both count seconds,
-<a href="#dsa" class="tool" data-bs-toggle="tooltip"
-data-bs-title="daily second aggregates">dsa</a> start at midnight
+data-bs-title="minute of hour">moh</a>), and “SI second of minute”
+(<a href="#sisom" id="sisecondofminute" class="tool"
+data-bs-toggle="tooltip" data-bs-title="SI second of minute">sisom</a>),
+using a “daily SI second aggregate”
+(<a href="#dsisa" id="dailysisecondaggregate" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="daily SI second aggregate">dsisa</a>) and “hourly SI
+second aggregate”
+(<a href="#hsisa" id="hourlysisecondaggregate" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="hourly SI second aggregate">hsisa</a>). While both count
+seconds, <a href="#dsisa" class="tool" data-bs-toggle="tooltip"
+data-bs-title="daily SI second aggregates">dsisa</a> start at midnight
 (<a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">Tod</a> <span class="color0">0</span>) and
-<a href="#hsa" class="tool" data-bs-toggle="tooltip"
-data-bs-title="hourly second aggregates">hsa</a> begin at the [top of
-the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
+<a href="#hsisa" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hourly SI second aggregates">hsisa</a> begin at the [top
+of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
 
 <div id="equationgroup05" class="equationgroup">
 
-<span id="eq-dsa">
+<span id="eq-dsisa">
 $$\begin{split}
-\text{dsa} & = \text{tod} \ast 86400 \\
-& = \text{unix} \bmod  86400
+\text{dsisa} & = \text{tod} \times 86400 \\
+& = \text{unix} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  86400
 \end{split}
- \qquad(6)$$
-</span> <span id="eq-hsa">
-hsa = dsa mod  3600   (7)
+ \qquad(7)$$
+</span> <span id="eq-hsisa">
+$$
+\text{hsisa} = \text{dsisa} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  3600
+ \qquad(8)$$
 </span> <span id="eq-hod">
-hod = ⌊dsa ÷ 3600⌋   (8)
+hod = ⌊dsisa ÷ 3600⌋   (9)
 </span> <span id="eq-moh">
-moh = ⌊hsa ÷ 60⌋   (9)
-</span> <span id="eq-som">
-som = ⌊hsa mod  60⌋   (10)
+moh = ⌊hsisa ÷ 60⌋   (10)
+</span> <span id="eq-sisom">
+$$
+\text{sisom} = \lfloor \text{hsisa} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}  60 \rfloor
+ \qquad(11)$$
 </span>
 
 </div>
@@ -953,55 +999,55 @@ som = ⌊hsa mod  60⌋   (10)
 
 ``` julia
 using Dates
-dsa = datetime2unix(now(UTC)) / 86400 % 1 * 86400
+dsisa = datetime2unix(now(UTC)) / 86400 % 1 * 86400
 ```
 
-    53259.93100006599
+    21864.812000014354
 
 ``` julia
-hsa = dsa % 3600
+hsisa = dsisa % 3600
 ```
 
-    2859.93100006599
+    264.81200001435354
 
 ``` julia
-map(x -> floor(Int, x), (dsa / 3600, hsa / 60, hsa % 60))
+map(x -> floor(Int, x), (dsisa / 3600, hsisa / 60, hsisa % 60))
 ```
 
-    (14, 47, 39)
+    (6, 4, 24)
 
 ### Observable JavaScript
 
 ``` {ojs}
-dsa = Date.now() / 864e5 % 1 * 86400;
-hsa = dsa % 3600;
-[dsa / 3600, hsa / 60, hsa % 60].map(Math.floor)
+dsisa = Date.now() / 864e5 % 1 * 86400;
+hsisa = dsisa % 3600;
+[dsisa / 3600, hsisa / 60, hsisa % 60].map(Math.floor)
 ```
 
 ### Python
 
 ``` python
 from datetime import datetime, timezone
-dsa = datetime.now(timezone.utc).timestamp() / 86400 % 1 * 86400
-hsa = dsa % 3600
-tuple(map(int, [dsa // 3600, hsa // 60, hsa % 60 // 1]))
+dsisa = datetime.now(timezone.utc).timestamp() / 86400 % 1 * 86400
+hsisa = dsisa % 3600
+tuple(map(int, [dsisa // 3600, hsisa // 60, hsisa % 60 // 1]))
 ```
 
-    (14, 47, 40)
+    (6, 4, 25)
 
 ### R
 
 ``` r
-dsa <- (as.numeric(as.POSIXct(Sys.time())) / 86400) %% 1 * 86400
-hsa <- dsa %% 3600
-sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
+dsisa <- (as.numeric(as.POSIXct(Sys.time())) / 86400) %% 1 * 86400
+hsisa <- dsisa %% 3600
+sapply(c(dsisa %/% 3600, hsisa %/% 60, hsisa %% 60), as.integer)
 ```
 
-    [1] 14 47 40
+    [1]  6  4 25
 
 </div>
 
-# Universal time offset
+# Universal time offset (uto)
 
 The [Global Positioning
 System](https://en.wikipedia.org/wiki/Global_Positioning_System#:~:text=a%20satellite%2Dbased%20hyperbolic%20navigation%20system),
@@ -1017,7 +1063,7 @@ seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjust
 which appears to be for the best given that leap seconds [can cause
 problems](https://www.nist.gov/pml/time-and-frequency-division/leap-seconds-faqs#:~:text=detriments%20to%20adding%20leap%20seconds)
 and will be abolished no later than
-<span class="color27by100">2027</span>+<span class="color081by366">081</span>
+[<span class="color27by100">2027</span>+<span class="color080by366">080</span>](https://www.bipm.org/en/cgpm-2026/resolution-5#:~:text=become%20effective%20on-,20%C2%A0May%C2%A02027,-%2C)
 according to the [International Bureau of Weights and
 Measures](https://en.wikipedia.org/wiki/International_Bureau_of_Weights_and_Measures#:~:text=an%20intergovernmental%20organisation%20(IGO)%2C%20through%20which%20its%2067%20member%2Dstates%20act%20on%20measurement%20standards).
 
@@ -1027,25 +1073,26 @@ disagreement between
 data-bs-title="Coordinated Universal Time">UTC</a> and [Universal
 Time](https://en.wikipedia.org/wiki/Universal_Time#Versions:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation)
 (<a href="#ut" id="universaltime" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Universal Time">UT</a>) will increase from [1 Dec
-second](https://en.wikipedia.org/wiki/Leap_second#:~:text=to%20ensure%20that%20the%20difference%20between%20the%20UTC%20and%20UT1%20readings%20will%20never%20exceed%200.9%20seconds)
+data-bs-title="Universal Time">UT</a>) will increase from [0.9375
+seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=a%20maximum%20permitted%20variance%20of%20%C2%B10.9%20seconds)
 (<a href="#s" id="second" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>) to 3750
+data-bs-title="seconds">s</a>) to
+[3750](https://www.bipm.org/en/cgpm-2026/resolution-5#:~:text=UTC%7C%20will%20be-,3%C2%A0600%C2%A0seconds,-(1%C2%A0hour)%2C%20ensuring)
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>. Since
+data-bs-title="seconds">s</a>. Since
 <span class="color72by100">1972</span>+<span class="color122by365">122</span>,
 only
 [27](https://en.wikipedia.org/wiki/Leap_second#:~:text=27%20leap%20seconds%20have%20been%20added%20to%20UTC)
 leap seconds have been inserted, which is 0.75% of 3750
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>, and at this rate it will take over
-five millennia for the disparity between
+data-bs-title="seconds">s</a>, and at this rate it will take over five
+millennia for the disparity between
 <a href="#ut" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Universal Time">UT</a> and
 <a href="#utc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</a> to reach 3750
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>.
+data-bs-title="seconds">s</a>.
 
 Instead of leap seconds, Dec matches
 <a href="#ut" class="tool" data-bs-toggle="tooltip"
@@ -1068,8 +1115,8 @@ data-bs-title="Universal Time">UT</a> when added to the Zone
 data-bs-title="time of day">tod</a> on the [Dec date](../../dec/date)
 chosen by the
 [range](https://observablehq.com/framework/inputs/range)🎚️inputs below:
-${leapCountHsl} ÷ 8640 = ${leapSdecHsl}${leapSb24hsl} ÷ 90000 =
-${leapTzoHsl0}.
+${leapCountHsl} ÷ 8640 = ${leapSdecHsl()}${leapSb24hsl()} ÷ 90000 =
+${leapTzoHsl()}.
 
 ``` {ojs}
 //| echo: false
@@ -1079,41 +1126,37 @@ viewof leapSecondYear = Inputs.range([1970, 2020], {label: "Year", value: 1995, 
 viewof leapSecondDate = Inputs.range([0, 365], {label: "Day", value: 182, step: 1})
 ```
 
-# Second interval difference
+# Second interval difference (sid)
 
-The equation above divides leap seconds by the number of [International
-System of
-Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
-(<a href="#si" id="internationalsystemofunits" class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a>) seconds
-(<a href="#sis" id="sisecond" class="tool" data-bs-toggle="tooltip"
-data-bs-title="SI seconds">sis</a>) or Dec <span class="tool"
+The equation above divides leap seconds by the number of
+<a href="#sis" class="tool" data-bs-toggle="tooltip"
+data-bs-title="SI seconds">sis</a> or <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="tenths of a second">deciseconds</span>
 (<a href="#ds" id="decisecond" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec deciseconds">ds</a>) in a <span class="tool"
+data-bs-title="deciseconds">ds</a>) in a <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="tenth of a day">deciday</span>
 (<a href="#dd" id="deciday" class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</a>): 8640
 <a href="#sis" class="tool" data-bs-toggle="tooltip"
 data-bs-title="SI seconds">sis</a> = 90000
 <a href="#ds" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec deciseconds">ds</a> = 1
+data-bs-title="deciseconds">ds</a> = 1
 <a href="#dd" class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</a>. To avoid [repeating
 decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever)
 when turning <a href="#sis" class="tool" data-bs-toggle="tooltip"
 data-bs-title="SI seconds">sis</a> into
 <a href="#ds" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec deciseconds">ds</a>, we can put a Dec
+data-bs-title="deciseconds">ds</a>, we can display the result as a
+fraction such as ${leapTzoHsl()} or put a Dec
 [quadravigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="quadravigesimal">base24</span>) digit in place of the
 ones digit and decimal part of the
 <a href="#ds" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec deciseconds">ds</a>: ${leapSdecHsl1}${leapSb24hsl1} =
-${leapSdecHsl2} × 10 + ${leapSsidHsl} ÷ 2.4.
+data-bs-title="deciseconds">ds</a>: ${leapSdecHsl()}${leapSb24hsl()} =
+${leapSdecHsl()} × 10 + ${leapSsidHsl} ÷ 2.4.
 
 Known as a “second interval difference”
 (<a href="#sid" id="secondintervaldifference" class="tool"
@@ -1123,20 +1166,20 @@ data-bs-title="second interval difference">sid</a>), the
 data-bs-title="quadravigesimal">base24</span>
 (<a href="#b24" id="base24" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base24">b24</a>) character at the end of
-${leapSdecHsl3}${leapSb24hsl2} is a letter of the [Greek
+${leapSdecHsl()}${leapSb24hsl()} is a letter of the [Greek
 alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language).
 To display <a href="#sis" class="tool" data-bs-toggle="tooltip"
 data-bs-title="SI seconds">sis</a> in
 <a href="#ds" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec deciseconds">ds</a>, we can concatenate the integer
-part of the <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a> we obtain from
-<a href="#eq-sis" class="quarto-xref">Equation 11</a> with the
+data-bs-title="deciseconds">ds</a>, we can concatenate the integer part
+of the <a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="seconds">s</a> we obtain from
+<a href="#eq-sis" class="quarto-xref">Equation 12</a> with the
 <a href="#b24" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base24">b24</a> representation of the
 <a href="#sid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="second interval difference">sid</a> we get from
-<a href="#eq-sid" class="quarto-xref">Equation 12</a>. The table beneath
+<a href="#eq-sid" class="quarto-xref">Equation 13</a>. The table beneath
 these equations lists
 [base10](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29)
 (<a href="#b10" id="base10" class="tool" data-bs-toggle="tooltip"
@@ -1149,14 +1192,14 @@ data-bs-title="base24">b24</a> equivalents.
 <span id="eq-sis">
 $$
 \text{s} = \dfrac{\text{ds}}{10} = \dfrac{\text{sis}}{0.96}
- \qquad(11)$$
+ \qquad(12)$$
 </span> <span id="eq-sid">
 $$
 \begin{split}
-\text{sid} &= \text{sis} \bmod 24\\
-&= (\text{s} - \text{sis}) \ast 24 \bmod 24
+\text{sid} &= \text{sis} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 24\\
+&= (\text{s} - \text{sis}) \times 24 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 24
 \end{split}
- \qquad(12)$$
+ \qquad(13)$$
 </span>
 
 </div>
@@ -1483,14 +1526,14 @@ data-bs-title="base24">b24</a></th>
 Whereas <a href="#b24" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base24">b24</a> is like glue that allows us to combine
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a> and
+data-bs-title="seconds">s</a> and
 <a href="#sid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="second interval differences">sid</a>, Dec
 [nonary](https://en.wikipedia.org/wiki/Ternary_numeral_system#Compact_ternary_representation:_base_9_and_27:~:text=base%209%2C%20each%20digit%20is%20two%20ternary%20digits)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="nonary">base9</span>) enables us to append
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a> to a
+data-bs-title="seconds">s</a> to a
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a>. The table below shows the
 [astronomical
@@ -1510,11 +1553,11 @@ data-bs-title="base9">b9</a> digit, the
 <a href="#b9" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base9">b9</a> digit counts tens of
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a> instead of
+data-bs-title="seconds">s</a> instead of
 <a href="#dmd" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decimilliday">dmd</a> and the next digit tracks
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a> instead of “centimillidays”
+data-bs-title="seconds">s</a> instead of “centimillidays”
 (<a href="#cmd" id="centimilliday" class="tool" data-bs-toggle="tooltip"
 data-bs-title="centimillidays">cmd</a>).
 
@@ -1645,7 +1688,7 @@ data-bs-title="hour minute second">hms</a> triplet, because the product
 of the bases of its digits is evenly divisible by the number of
 <a href="#sis" class="tool" data-bs-toggle="tooltip"
 data-bs-title="SI seconds">sis</a> in a day: 10000 × 9 × 24 ÷ 86400 =
-216000 ÷ 86400 = 25. For
+2160000 ÷ 86400 = 25. For
 <a href="#hod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hour of day">hod</a>, one
 <a href="#b24" class="tool" data-bs-toggle="tooltip"
@@ -1664,188 +1707,518 @@ ${hmsTodHsl}${hmsSecHsl}${hmsSidHsl}.
 //| label: hmsinput
 //| class: slider
 viewof hmsinput = Inputs.form([
-  Inputs.range([0, 23], {label: "Hour", value: 11, step: 1}),
-  Inputs.range([0, 59], {label: "Minute", value: 0, step: 1}),
-  Inputs.range([0, 59], {label: "Second", value: 0, step: 1}),
+  Inputs.range([0, 23], {label: "Hour (heh)", value: 11, step: 1}),
+  Inputs.range([0, 59], {label: "Minute (bem)", value: 0, step: 1}),
+  Inputs.range([0, 59], {label: "Second (sis)", value: 0, step: 1}),
 ])
 ```
 
-In <a href="#tbl-time" class="quarto-xref">Table 3</a> below, each row
-is a unit that fits a whole number of times into a day. The
-<a href="#q" class="tool" data-bs-toggle="tooltip"
-data-bs-title="per day">q</a> column shows how many of the unit fit into
-a day, and the 1/<a href="#q" class="tool" data-bs-toggle="tooltip"
-data-bs-title="per day">q</a> column shows the inverse: the fraction of
-a day that the unit lasts. Instead of using fractions,
-<a href="#tbl-time" class="quarto-xref">Table 3</a> ends repeating
-decimals with one or two
-<a href="#b9" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9">b9</a> digits. For example, the number of
+In <a href="#tbl-time" class="quarto-xref">Table 3</a> below, the
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="per day">quotidie</span>
+(<a href="#q" id="quotidie" class="tool" data-bs-toggle="tooltip"
+data-bs-title="quotidie">q</a>) column shows how many multiples of the
+unit in each row can fit into one day and the
 <a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a> in a
-<a href="#sis" class="tool" data-bs-toggle="tooltip"
-data-bs-title="SI seconds">sis</a> is 5/432,
-0.0115<span class="color6by9 mono">♄</span><span class="color6by9 mono">♄</span>,
-or 0.0115 + 6 ÷ 90000 + 6 ÷ 810000. Interestingly, we would need three
-<a href="#b24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a> digits to match the two
-<a href="#b9" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9">b9</a> digits in
-0.0115<span class="color6by9 mono">♄</span><span class="color6by9 mono">♄</span>:
-0.0115<span class="color17by24 mono">σ</span><span class="color18by24 mono">τ</span><span class="color16by24 mono">ρ</span>.
+data-bs-title="millidays">md</a> column uses endings called Dec
+terminators to transform the fraction of a day that each unit represents
+from a repeating decimal into a [terminating
+decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits).
+The <a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a> digit in the terminators in
+<a href="#tbl-time" class="quarto-xref">Table 3</a> represents 6
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tens of seconds">decaseconds</span>
+(<a href="#decasec" id="decasecond" class="tool" data-bs-toggle="tooltip"
+data-bs-title="tens of seconds">Ds</a>): 6 ÷ 9 =
+0.<span class="color6by9 mono">♄</span>.
 
 <table>
 <colgroup>
 <col style="width: 34%" />
-<col style="width: 32%" />
 <col style="width: 33%" />
+<col style="width: 32%" />
 </colgroup>
 <thead>
 <tr>
 <th>Time units</th>
 <th style="text-align: right;"><a href="#q" class="bold tool"
 data-bs-toggle="tooltip" data-bs-title="per day">q</a></th>
-<th style="text-align: left;">1/<a href="#q" class="bold tool"
-data-bs-toggle="tooltip" data-bs-title="per day">q</a></th>
+<th style="text-align: left;"><a href="#md" class="tool"
+data-bs-toggle="tooltip" data-bs-title="millidays">md</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">1</td>
+<td><a href="#heh" id="hehour" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Hipparchian equinoctial hours">heh</a></td>
+<td style="text-align: right;"><span class="mono">24</span></td>
+<td style="text-align: left;"><span class="mono">41.<span
+class="color6by9">♄</span></span></td>
 </tr>
 <tr>
-<td><a href="#dd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</a></td>
-<td style="text-align: right;">10</td>
-<td style="text-align: left;">0.1</td>
+<td><a href="#h" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hours">h</a></td>
+<td style="text-align: right;"><span class="mono">25</span></td>
+<td style="text-align: left;"><span class="mono">40</span></td>
 </tr>
 <tr>
-<td><a href="https://en.wikipedia.org/wiki/Hour">hour</a></td>
-<td style="text-align: right;">24</td>
-<td style="text-align: left;">0.041<span
-class="color6by9 mono">♄</span></td>
+<td><a href="#bem" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Birunian equinoctial minutes">bem</a></td>
+<td style="text-align: right;"><span class="mono">1440</span></td>
+<td style="text-align: left;"><span class="mono"> 0.<span
+class="color6by9">♄</span><span class="color6by24">η</span></span></td>
 </tr>
 <tr>
-<td><a href="#cd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="centidays">cd</a></td>
-<td style="text-align: right;">100</td>
-<td style="text-align: left;">0.01</td>
-</tr>
-<tr>
-<td><a href="#md" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a></td>
-<td style="text-align: right;">1000</td>
-<td style="text-align: left;">0.001</td>
-</tr>
-<tr>
-<td><a href="https://en.wikipedia.org/wiki/Minute">minute</a></td>
-<td style="text-align: right;">1440</td>
-<td style="text-align: left;">0.00069<span
-class="color4by9 mono">♂</span></td>
-</tr>
-<tr>
-<td><a href="#dmd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decimillidays">dmd</a></td>
-<td style="text-align: right;">10000</td>
-<td style="text-align: left;">0.0001</td>
+<td><a href="#m" class="tool" data-bs-toggle="tooltip"
+data-bs-title="minutes">m</a></td>
+<td style="text-align: right;"><span class="mono">1500</span></td>
+<td style="text-align: left;"><span class="mono"> 0.<span
+class="color6by9">♄</span></span></td>
 </tr>
 <tr>
 <td><a href="#sis" class="tool" data-bs-toggle="tooltip"
 data-bs-title="SI seconds">sis</a></td>
-<td style="text-align: right;">86400</td>
-<td style="text-align: left;">0.0000115<span
-class="color6by9 mono">♄</span><span
-class="color6by9 mono">♄</span></td>
+<td style="text-align: right;"><span class="mono">86400</span></td>
+<td style="text-align: left;"><span class="mono"> 0.0<span
+class="color1by9">☿</span><span class="color1by24">β</span></span></td>
 </tr>
 <tr>
 <td><a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a></td>
-<td style="text-align: right;">90000</td>
-<td style="text-align: left;">0.0000<span
-class="color1by9 mono">☿</span></td>
-</tr>
-<tr>
-<td><a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</a></td>
-<td style="text-align: right;">100000</td>
-<td style="text-align: left;">0.00001</td>
+data-bs-title="seconds">s</a></td>
+<td style="text-align: right;"><span class="mono">90000</span></td>
+<td style="text-align: left;"><span class="mono"> 0.0<span
+class="color1by9">☿</span></span></td>
 </tr>
 </tbody>
 </table>
 
-With <a href="#b10" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base10">b10</a> and
-<a href="#b9" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9">b9</a> working together, any fraction whose
-denominator has no prime factors other than 2, 3, and 5 can be expressed
-a terminating decimal. A
-<a href="#b9" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9">b9</a> digit is worth the matching
-<a href="#b10" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base10">b10</a> digit repeated forever, so 1/3
-<a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a> is 0.<span class="color3by9 mono">♁</span>
-<a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a> or <span class="color3by9 mono">♁</span>
-<a href="#dd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</a>. Like <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="duodecimal">base12</span>,
-<a href="#b24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a> adds no prime factors to
-<a href="#b10" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base10">b10</a> and
-<a href="#b9" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9">b9</a>.
+## Base25 and base6
 
-Therefore, it only packs three 2s and a 3 into one digit. We would need
-three <a href="#b24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a> digits to match the two
-<a href="#b9" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9">b9</a> digits in
-0.0115<span class="color6by9 mono">♄</span><span class="color6by9 mono">♄</span>:
-0.0115<span class="color17by24 mono">σ</span><span class="color18by24 mono">τ</span><span class="color16by24 mono">ρ</span>.
-The only job of <a href="#b24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a> in Dec is to match
-<a href="#hms" class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour minute second">hms</a> time units.
-<a href="#b10" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base10">b10</a> and
-<a href="#b9" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9">b9</a> could do this job without
-<a href="#b24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a>, but not as well: a
+Whereas <a href="#heh" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Hipparchian equinoctial hours">heh</a>, “Birunian
+equinoctial minutes”
+(<a href="#bem" id="birunianequinoctialminute" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="Birunian equinoctial minutes">bem</a>), and
+<a href="#sis" class="tool" data-bs-toggle="tooltip"
+data-bs-title="SI seconds">sis</a> divide a day into 24, 1440, and 86400
+parts, hours
+(<a href="#h" id="dechour" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hours">h</a>), minutes
+(<a href="#m" id="decminute" class="tool" data-bs-toggle="tooltip"
+data-bs-title="minutes">m</a>), and
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="seconds">s</a> divide a day into 25, 1500, and 90000
+parts, as described in the [Dec article](../../dec#sec-hms). One
+<a href="#h" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour">h</a> is 40
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</a>, 60
+<a href="#m" class="tool" data-bs-toggle="tooltip"
+data-bs-title="minutes">m</a>, or 3600
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="seconds">s</a>, one
+<a href="#m" class="tool" data-bs-toggle="tooltip"
+data-bs-title="minute">m</a> is 60
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="seconds">s</a>, and one
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliday">md</a> is 90
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="seconds">s</a>. Dec writes the hour as one
+[pentavigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#Standard_positional_numeral_systems)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="pentavigesimal">base25</span>) digit, which is a letter
+of the [Ogham](https://en.wikipedia.org/wiki/Ogham) alphabet, as shown
+in <a href="#tbl-b25" class="quarto-xref">Table 4</a> below. Zero-based
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="pentavigesimal">base25</span>
+(<a href="#b25" id="base25" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base25">b25</a>) digits use the Ogham space mark
+(<span class="ogham"> </span>) for 0, whereas one-based
+<a href="#b25" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base25">b25</a> digits use ᚙ for 25 instead, like a
+12-hour clock that shows 12 instead of 0.
+
+<div class="d-none d-md-block">
+
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b25" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base25">b25</a></th>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b25" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base25">b25</a></th>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b25" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base25">b25</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="color0 mono">0</span></td>
+<td><span class="color0 ogham"> </span></td>
+<td><span class="color9by25 mono">9</span></td>
+<td><span class="color9by25 ogham">ᚉ</span></td>
+<td><span class="color18by25 mono">18</span></td>
+<td><span class="color18by25 ogham">ᚒ</span></td>
+</tr>
+<tr>
+<td><span class="color1by25 mono">1</span></td>
+<td><span class="color1by25 ogham">ᚁ</span></td>
+<td><span class="color10by25 mono">10</span></td>
+<td><span class="color10by25 ogham">ᚊ</span></td>
+<td><span class="color19by25 mono">19</span></td>
+<td><span class="color19by25 ogham">ᚓ</span></td>
+</tr>
+<tr>
+<td><span class="color2by25 mono">2</span></td>
+<td><span class="color2by25 ogham">ᚂ</span></td>
+<td><span class="color11by25 mono">11</span></td>
+<td><span class="color11by25 ogham">ᚋ</span></td>
+<td><span class="color20by25 mono">20</span></td>
+<td><span class="color20by25 ogham">ᚔ</span></td>
+</tr>
+<tr>
+<td><span class="color3by25 mono">3</span></td>
+<td><span class="color3by25 ogham">ᚃ</span></td>
+<td><span class="color12by25 mono">12</span></td>
+<td><span class="color12by25 ogham">ᚌ</span></td>
+<td><span class="color21by25 mono">21</span></td>
+<td><span class="color21by25 ogham">ᚕ</span></td>
+</tr>
+<tr>
+<td><span class="color4by25 mono">4</span></td>
+<td><span class="color4by25 ogham">ᚄ</span></td>
+<td><span class="color13by25 mono">13</span></td>
+<td><span class="color13by25 ogham">ᚍ</span></td>
+<td><span class="color22by25 mono">22</span></td>
+<td><span class="color22by25 ogham">ᚖ</span></td>
+</tr>
+<tr>
+<td><span class="color5by25 mono">5</span></td>
+<td><span class="color5by25 ogham">ᚅ</span></td>
+<td><span class="color14by25 mono">14</span></td>
+<td><span class="color14by25 ogham">ᚎ</span></td>
+<td><span class="color23by25 mono">23</span></td>
+<td><span class="color23by25 ogham">ᚗ</span></td>
+</tr>
+<tr>
+<td><span class="color6by25 mono">6</span></td>
+<td><span class="color6by25 ogham">ᚆ</span></td>
+<td><span class="color15by25 mono">15</span></td>
+<td><span class="color15by25 ogham">ᚏ</span></td>
+<td><span class="color24by25 mono">24</span></td>
+<td><span class="color24by25 ogham">ᚘ</span></td>
+</tr>
+<tr>
+<td><span class="color7by25 mono">7</span></td>
+<td><span class="color7by25 ogham">ᚇ</span></td>
+<td><span class="color16by25 mono">16</span></td>
+<td><span class="color16by25 ogham">ᚐ</span></td>
+<td><span class="color0 mono">25</span></td>
+<td><span class="color0 ogham">ᚙ</span></td>
+</tr>
+<tr>
+<td><span class="color8by25 mono">8</span></td>
+<td><span class="color8by25 ogham">ᚈ</span></td>
+<td><span class="color17by25 mono">17</span></td>
+<td><span class="color17by25 ogham">ᚑ</span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<div class="d-md-none">
+
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b25" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base25">b25</a></th>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b25" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base25">b25</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="color0 mono">0</span></td>
+<td><span class="color0 ogham"> </span></td>
+<td><span class="color13by25 mono">13</span></td>
+<td><span class="color13by25 ogham">ᚍ</span></td>
+</tr>
+<tr>
+<td><span class="color1by25 mono">1</span></td>
+<td><span class="color1by25 ogham">ᚁ</span></td>
+<td><span class="color14by25 mono">14</span></td>
+<td><span class="color14by25 ogham">ᚎ</span></td>
+</tr>
+<tr>
+<td><span class="color2by25 mono">2</span></td>
+<td><span class="color2by25 ogham">ᚂ</span></td>
+<td><span class="color15by25 mono">15</span></td>
+<td><span class="color15by25 ogham">ᚏ</span></td>
+</tr>
+<tr>
+<td><span class="color3by25 mono">3</span></td>
+<td><span class="color3by25 ogham">ᚃ</span></td>
+<td><span class="color16by25 mono">16</span></td>
+<td><span class="color16by25 ogham">ᚐ</span></td>
+</tr>
+<tr>
+<td><span class="color4by25 mono">4</span></td>
+<td><span class="color4by25 ogham">ᚄ</span></td>
+<td><span class="color17by25 mono">17</span></td>
+<td><span class="color17by25 ogham">ᚑ</span></td>
+</tr>
+<tr>
+<td><span class="color5by25 mono">5</span></td>
+<td><span class="color5by25 ogham">ᚅ</span></td>
+<td><span class="color18by25 mono">18</span></td>
+<td><span class="color18by25 ogham">ᚒ</span></td>
+</tr>
+<tr>
+<td><span class="color6by25 mono">6</span></td>
+<td><span class="color6by25 ogham">ᚆ</span></td>
+<td><span class="color19by25 mono">19</span></td>
+<td><span class="color19by25 ogham">ᚓ</span></td>
+</tr>
+<tr>
+<td><span class="color7by25 mono">7</span></td>
+<td><span class="color7by25 ogham">ᚇ</span></td>
+<td><span class="color20by25 mono">20</span></td>
+<td><span class="color20by25 ogham">ᚔ</span></td>
+</tr>
+<tr>
+<td><span class="color8by25 mono">8</span></td>
+<td><span class="color8by25 ogham">ᚈ</span></td>
+<td><span class="color21by25 mono">21</span></td>
+<td><span class="color21by25 ogham">ᚕ</span></td>
+</tr>
+<tr>
+<td><span class="color9by25 mono">9</span></td>
+<td><span class="color9by25 ogham">ᚉ</span></td>
+<td><span class="color22by25 mono">22</span></td>
+<td><span class="color22by25 ogham">ᚖ</span></td>
+</tr>
+<tr>
+<td><span class="color10by25 mono">10</span></td>
+<td><span class="color10by25 ogham">ᚊ</span></td>
+<td><span class="color23by25 mono">23</span></td>
+<td><span class="color23by25 ogham">ᚗ</span></td>
+</tr>
+<tr>
+<td><span class="color11by25 mono">11</span></td>
+<td><span class="color11by25 ogham">ᚋ</span></td>
+<td><span class="color24by25 mono">24</span></td>
+<td><span class="color24by25 ogham">ᚘ</span></td>
+</tr>
+<tr>
+<td><span class="color12by25 mono">12</span></td>
+<td><span class="color12by25 ogham">ᚌ</span></td>
+<td><span class="color0 mono">25</span></td>
+<td><span class="color0 ogham">ᚙ</span></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+Dec writes the minute and second as one
+[senary](https://en.wikipedia.org/wiki/Senary) (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="senary">base6</span>) digit
+followed by one <a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a> digit. The <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="senary">base6</span>
+(<a href="#b6" id="base6" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base6">b6</a>) digits are [counting
+rods](https://en.wikipedia.org/wiki/Counting_rods), and the number of
+horizontal strokes in each rod is its value, as shown in
+<a href="#tbl-b6" class="quarto-xref">Table 5</a> below.
+
+<div class="d-none d-md-block">
+
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b6" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base6">b6</a></th>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b6" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base6">b6</a></th>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b6" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base6">b6</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="color0 mono">0</span></td>
+<td><span class="color0 countingrod">𝍠</span></td>
+<td><span class="color2by6 mono">2</span></td>
+<td><span class="color2by6 countingrod">𝍯</span></td>
+<td><span class="color4by6 mono">4</span></td>
+<td><span class="color4by6 countingrod">𝍱</span></td>
+</tr>
+<tr>
+<td><span class="color1by6 mono">1</span></td>
+<td><span class="color1by6 countingrod">𝍮</span></td>
+<td><span class="color3by6 mono">3</span></td>
+<td><span class="color3by6 countingrod">𝍰</span></td>
+<td><span class="color5by6 mono">5</span></td>
+<td><span class="color5by6 countingrod">𝍭</span></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<div class="d-md-none">
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b6" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base6">b6</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="color0 mono">0</span></td>
+<td><span class="color0 countingrod">𝍠</span></td>
+</tr>
+<tr>
+<td><span class="color1by6 mono">1</span></td>
+<td><span class="color1by6 countingrod">𝍮</span></td>
+</tr>
+<tr>
+<td><span class="color2by6 mono">2</span></td>
+<td><span class="color2by6 countingrod">𝍯</span></td>
+</tr>
+<tr>
+<td><span class="color3by6 mono">3</span></td>
+<td><span class="color3by6 countingrod">𝍰</span></td>
+</tr>
+<tr>
+<td><span class="color4by6 mono">4</span></td>
+<td><span class="color4by6 countingrod">𝍱</span></td>
+</tr>
+<tr>
+<td><span class="color5by6 mono">5</span></td>
+<td><span class="color5by6 countingrod">𝍭</span></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+Since the place value of each digit is the place value of the digit to
+its left divided by its own base, a hour minute second is a
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> would need seven
+data-bs-title="time of day">tod</a> written with one
+<a href="#b25" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base25">b25</a>, two
+<a href="#b6" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base6">b6</a>, and two
 <a href="#b10" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base10">b10</a> digits and two
-<a href="#b9" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9">b9</a> digits instead of six digits in total to
-match any <a href="#hms" class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour minute second">hms</a> triplet, because
-10<sup>7</sup> × 9<sup>2</sup> ÷ 86400 = 9375.
+data-bs-title="base10">b10</a> digits, plus one
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a>
+<a href="#sid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="second interval difference">sid</a> digit when it does
+not land on a whole <a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="second">s</a>. The
+<a href="#hms" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour minute second">hms</a> triplet selected by the range
+inputs above is ${decHmsHsl()} in hours, minutes, and seconds.
 
-## Coordinated Universal Time (UTC)
+# Coordinated Universal Time
+
+Rather than use a terminator as in
+<a href="#tbl-time" class="quarto-xref">Table 3</a>, Dec expresses one
+<a href="#heh" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Hipparchian equinoctial hour">heh</a> in
+<a href="#dd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decidays">dd</a> as a single
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> digit:
+0.41<span class="color6by9 mono">♄</span> =
+<span class="color1by24 mono">β</span>. If we add
+<span class="color1by24 mono">β</span>
+<a href="#dd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciday">dd</a> to the Zone <span class="color0">0</span>
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a>, we get the
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> associated with the [UTC+1
+offset](https://en.wikipedia.org/wiki/UTC%2B01:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B01%3A00):
+0.${zeroTpadHsl()} + <span class="color1by24 mono">β</span> ÷ 10 =
+0.${utc1tintHsl()}. Currently, the Zone <span class="color0">0</span>
+Dec time is ${zeroTpadHsl()}−<span class="color0">0</span> and the UTC+1
+Dec time is ${utc1tpadHsl()}−<span class="color1by24 mono">β</span>. Dec
+times consist of a <a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a>, a minus sign (−), and an offset.
 
 There are 12 <a href="#utc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</a> offsets that become a
-[terminating
-decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits)
-in <a href="#b10" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base10">b10</a> after being converted from hours to days
-and therefore could be displayed in either
+data-bs-title="Coordinated Universal Time">UTC</a> offsets that become
+terminating decimals after being converted from hours to days and
+therefore could be displayed in either
 <a href="#b10" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base10">b10</a> or
 <a href="#b24" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base24">b24</a>. Although it has only ten time zones, Dec
-can match the time in any
-<a href="#utc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</a> time zone with one or
+can express any <a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a> offset using one or
 two non-negative <a href="#b24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a> digits. There are 27 UTC offsets that
-require only one <a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> digits. There are 27
+<a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a> offsets that require
+only one <a href="#b24" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base24">b24</a> digit and 11 that need two
 <a href="#b24" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base24">b24</a> digits.
@@ -1861,13 +2234,12 @@ data-bs-title="Coordinated Universal Time">UTC</a>). The
 data-bs-title="Coordinated Universal Time">UTC</a> time zone with [the
 most negative
 offset](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00#:~:text=a%20nautical%20time%20zone%20comprising%20the%20high%20seas%20between%20180%C2%B0%20and%20172%C2%B030%E2%80%B2W%20longitude)
-is completely uninhabited. The bar chart below visualizes [Socioeconomic
-Data and Applications
-Center](https://www.earthdata.nasa.gov/centers/sedac-daac) data from
-2020 regarding the population of each
-<a href="#utc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</a> time zone. The vast
-majority of all people live in
+is completely uninhabited. The bar chart below visualizes the population
+of each <a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a> time zone based on
+2020 [Socioeconomic Data and Applications
+Center](https://www.earthdata.nasa.gov/centers/sedac-daac) data. The
+vast majority of all people live in
 <a href="#utc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</a> time zones with
 ≥<a href="#utc" class="tool" data-bs-toggle="tooltip"
@@ -1892,6 +2264,7 @@ viewof sortParams = Inputs.form([
 {
   await whenVisible("timezonepopstackedbar");
   return Plot.plot({
+    ariaDescription: "Stacked bar chart of world population by UTC offset, with one bar for negative offsets and one for non-negative offsets",
     width: Math.min(width, 1000),
     height: 100 + Math.min(width / 25, 20),
     marginBottom: 50,
@@ -1938,8 +2311,8 @@ after a “year month day”
 data-bs-title="year month day">ymd</a>) triplet is converted into a Dec
 date.
 
-If we do know whether Day <span class="color364by365">364</span> belongs
-to a common or leap year, adding one day to it yields either Day
+If we do not know whether Day <span class="color364by365">364</span>
+belongs to a common or leap year, adding one day to it yields either Day
 <span class="color0">0</span> or Day
 <span class="color365by366">365</span> and this uncertainty is expressed
 as a [multiplication
@@ -1955,7 +2328,7 @@ either <span class="color365by366">365</span> if `leap` is 1 or
 passing any year
 (<a href="#y" id="year" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year">y</a>) to
-<a href="#eq-leap" class="quarto-xref">Equation 13</a> below.
+<a href="#eq-leap" class="quarto-xref">Equation 14</a> below.
 
 <div id="equationgroup07" class="equationgroup">
 
@@ -1963,16 +2336,16 @@ data-bs-title="year">y</a>) to
 $$
 \text{leap}=\begin{cases}
   1&{\begin{aligned}
-    &\text{ if } (\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} \\\\\\\\4=0\\
-    &\href{https://en.wikipedia.org/wiki/Logical_conjunction}{\land}(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 100\neq0\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 400=0\end{aligned}}\\\\
+    &\text{ if } (\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} \\\\\\\\4=0\\
+    &\href{https://en.wikipedia.org/wiki/Logical_conjunction}{\land}(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 100\neq0\\
+    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 400=0\end{aligned}}\\\\
   0&{\text{ otherwise}}\end{cases}
- \qquad(13)$$
+ \qquad(14)$$
 </span>
 
 </div>
 
-# Day of week
+# Day of week (dow)
 
 Adding one day to the
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
@@ -1996,7 +2369,7 @@ data-bs-title="days of week">dow</a> from the current
 data-bs-title="day of year">doy</a> if a location in the Americas is
 provided without an offset or with a negative offset.
 
-# Time zone offset
+# Time zone offset (tzo)
 
 In Dec, “time zone offsets”
 (<a href="#tzo" id="timezoneoffset" class="tool" data-bs-toggle="tooltip"
@@ -2006,14 +2379,14 @@ longitude. Dec measures
 in
 [wěi](https://en.wiktionary.org/wiki/%E7%B7%AF#:~:text=(geography)-,latitude,-coordinate%20terms%C2%A0%E2%96%B2)
 (<a href="#w" id="wei" class="tool" data-bs-toggle="tooltip"
-data-bs-title="horizontal lines on a map">w</a>), arcbeats
+data-bs-title="wěi">w</a>), arcbeats
 (<a href="#a" id="arcbeat" class="tool" data-bs-toggle="tooltip"
 data-bs-title="arcbeats">a</a>), or submultiples thereof. If we travel
 East or West until we reach our starting point, we will cover 1
 <a href="#w" class="tool" data-bs-toggle="tooltip"
-data-bs-title="horizontal line on a map">w</a> or 100000
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a hundred thousand">10<sup>5</sup></span>)
+data-bs-title="wěi">w</a> or 100000 (<span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="one hundred thousand">10<sup>5</sup></span>)
 <a href="#a" class="tool" data-bs-toggle="tooltip"
 data-bs-title="arcbeats">a</a>. A
 <a href="#tzo" class="tool" data-bs-toggle="tooltip"
@@ -2027,14 +2400,187 @@ data-bs-title="base10">b10</a> integer via
 [truncation](https://en.wikipedia.org/wiki/Truncation#Truncation_and_floor_function:~:text=truncation%20is%20limiting%20the%20number%20of%20digits%20right%20of%20the%20decimal%20point)
 or
 [flooring](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=takes%20as%20input%20a%20real%20number%20x%2C%20and%20gives%20as%20output%20the%20greatest%20integer%20less%20than%20or%20equal%20to%20x):
-⌊${longInputHsl} ÷ 100⌋ = ${longFloorHsl}.
+⌊${longInputHsl} ÷ 100⌋ = ${longFloorHsl()}.
 
 ``` {ojs}
 //| echo: false
 //| label: loninput
 //| class: slider
-viewof lonInput = Inputs.range([0, 999], {label: "Milliwěi", value: 500, step: 1})
+viewof lonInput = Inputs.range([0, 999], {label: "Longitude", value: 500, step: 1})
 ```
+
+``` {ojs}
+//| echo: false
+//| label: dstinput
+//| class: interval
+// https://observablehq.com/@mootari/range-slider
+viewof dstspan = interval([0, 366], {
+  step: 1,
+  value: [7, 246],
+  label: "Span",
+})
+```
+
+The range input above selects a milliwěi
+(<a href="#mw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliwěi">mw</a>) longitude and the
+[interval](https://observablehq.com/@mootari/range-slider) input beneath
+it determines the start and end of “[daylight saving
+time](https://en.wikipedia.org/wiki/Daylight_saving_time#:~:text=the%20practice%20of%20advancing%20clocks)”
+(<a href="#dst" id="daylightsavingtime" class="tool"
+data-bs-toggle="tooltip" data-bs-title="daylight saving time">dst</a>)
+by selecting the “<a href="#dst" class="tool" data-bs-toggle="tooltip"
+data-bs-title="daylight saving time">dst</a> initiation
+<a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a>”
+(<a href="#did" id="dstinitdoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="daylight saving time initiation day of year">did</a>),
+which is the last <a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a> before
+<a href="#dst" class="tool" data-bs-toggle="tooltip"
+data-bs-title="daylight saving time">dst</a>, and the
+“<a href="#dst" class="tool" data-bs-toggle="tooltip"
+data-bs-title="daylight saving time">dst</a> expiration
+<a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of year">doy</a>”
+(<a href="#ded" id="dstexpdoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="daylight saving time expiration day of year">ded</a>),
+which is the first <a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of year">doy</a> after
+<a href="#dst" class="tool" data-bs-toggle="tooltip"
+data-bs-title="daylight saving time">dst</a>. Dec represents
+<a href="#dst" class="tool" data-bs-toggle="tooltip"
+data-bs-title="daylight saving time">dst</a> by appending a minus sign,
+and [square
+brackets](https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise)
+that contain an
+[inequality](https://en.wikipedia.org/wiki/Inequality_%28mathematics%29#:~:text=a%20non%2Dequal%20comparison%20between%20two%20numbers%20or%20other%20mathematical%20expressions)
+to an a <a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a>, :
+<a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a>−\[<a href="#did" class="tool" data-bs-toggle="tooltip"
+data-bs-title="daylight saving time initiation day of year">did</a>\<<a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a>\<<a href="#ded" class="tool" data-bs-toggle="tooltip"
+data-bs-title="daylight saving time expiration day of year">ded</a>\].
+
+where <a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a> is the current
+<a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a> associated with the
+<a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a> to which we are applying
+<a href="#dst" class="tool" data-bs-toggle="tooltip"
+data-bs-title="daylight saving time">dst</a>:
+${longFloorHsl()}−${dstBracketHsl()}.
+
+When we combine with the current tod-tzo Dec time with the is
+${longTimeHsl()}−${longFloorHsl()} if the inequality is true or
+${saveTimeHsl()}−${saveFloorHsl()} if the inequality is false, based on
+the selections above:
+${currTimeHsl()}−${longFloorHsl()}−${dstBracketHsl()}.
+
+fall back doy (fbd)
+
+<a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a> selected above: , the
+<a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a> adjusted by :
+<a href="#dst" id="daylightsavingtime" class="tool"
+data-bs-toggle="tooltip" data-bs-title="daylight saving time">dst</a>,
+and the unadjusted <a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a> and the
+<a href="#dst" class="tool" data-bs-toggle="tooltip"
+data-bs-title="daylight saving time">dst</a> expression:
+${currTimeHsl()}−${longFloorHsl()}−${dstBracketHsl()}.
+
+Together, the square brackets and the inequality represent either zero
+if the inequality is false or one if the inequality is true: 1 =
+\[true\]; 0 = \[false\].
+
+with is based ${currTimeHsl()}−${currFloorHsl()} , on the selections
+above either with the adjusted
+<a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a>:
+${currTimeHsl()}−${currFloorHsl()}, or with the unadjusted
+<a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a> and the
+<a href="#dst" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of year">dst</a>:
+
+<span class="color1by9 mono">☿</span> in
+<a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a>, <span class="color0">1</span> in
+<a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a>, <span class="color1by24 mono">β</span>
+in <a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> true bracket is
+<span class="color1by24 mono">β</span> and a false one is
+<span class="color0 mono">α</span>. In general, the Iverson bracket
+always matches the base of the offset that it adjusts. refers to
+intervals as spans and the terms minuend and subtrahend instead of start
+and end.
+
+For example, if we want our
+<a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a> to change from
+<span class="color008by365">8</span> gains 1
+<a href="#dd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciday">dd</a> from Day
+<span class="color008by365">8</span> to Day
+<span class="color245by365">245</span> can be written as
+<span class="color8">8</span>−\[<span class="color007by365">7</span>${lt}${zeroDotyHsl()}${lt}<span class="color246by365">246</span>\],
+which currently . Hour offsets work the same way:
+500−<span class="color19by24 mono">υ</span>−\[7\<257\<245\] is
+500−<span class="color19by24 mono">υ</span> when the inequality is false
+and
+541−<span class="color19by24 mono">υ</span>−<span class="color1by24 mono">β</span>
+= 541−<span class="color20by24 mono">φ</span> when it is true, which
+matches the shift from UTC−5 to UTC−4 in the eastern United States.
+
+If we want the <a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a> selected above to change from
+${longFloorHsl()} to ${saveFloorHsl()} in between Day
+<span class="color007by365">7</span> and Day
+<span class="color245by365">245</span>, we can express it as
+${longFloorHsl()}−\[<span class="color007by365">7</span>${lt}${zeroDotyHsl()}${lt}<span class="color245by365">245</span>\].
+If the
+[inequality](https://en.wikipedia.org/wiki/Inequality_%28mathematics%29#:~:text=a%20non%2Dequal%20comparison%20between%20two%20numbers%20or%20other%20mathematical%20expressions)
+is true, inside the [Iverson
+bracket](https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=1%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise)
+The current using this adjusted
+<a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a> is
+${currTimeHsl()}−${currFloorHsl()}, because the
+[inequality](https://en.wikipedia.org/wiki/Inequality_%28mathematics%29#:~:text=a%20non%2Dequal%20comparison%20between%20two%20numbers%20or%20other%20mathematical%20expressions)
+inside the [Iverson
+bracket](https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=1%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise)
+is ${longTest}. Instead of a
+<a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a>, we can use a different offset
+500−<span class="color19by24 mono">υ</span>−\[7\<257\<245\] is
+500−<span class="color19by24 mono">υ</span> when the inequality is false
+and
+541−<span class="color19by24 mono">υ</span>−<span class="color1by24 mono">β</span>
+= 541−<span class="color20by24 mono">φ</span> when it is true, which
+matches the shift from UTC−5 to UTC−4 in the eastern United States.
+
+# Daylight saving time
+
+Although Dec time zones never change their respective
+<a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a>, Dec can express [daylight
+saving
+time](https://en.wikipedia.org/wiki/Daylight_saving_time#:~:text=the%20practice%20of%20advancing%20clocks)
+using the [Iverson
+bracket](https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise).
+In <a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a>, an Iverson bracket evaluates to one if
+the inequality inside it is true and zero otherwise. In
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a>, a true bracket is
+<span class="color1by24 mono">β</span> and a false one is
+<span class="color0 mono">α</span>. In general, the Iverson bracket
+always matches the base of the offset that it adjusts.
 
 The
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20Hemispheres)
@@ -2046,7 +2592,7 @@ data-bs-title="taur">c</a>) or <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span><span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="a hundred thousand">10<sup>5</sup></span>
+data-bs-title="one hundred thousand">10<sup>5</sup></span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of zone equatorial meters">kilozem</span>
 (<a href="#kz" id="kilozem" class="tool" data-bs-toggle="tooltip"
@@ -2081,7 +2627,7 @@ coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=
 in <a href="#ma" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliarcbeats">ma</a>, but we are unlikely to need
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a> or
+data-bs-title="seconds">s</a> or
 <a href="#cmd" class="tool" data-bs-toggle="tooltip"
 data-bs-title="centimillidays">cmd</a> when displaying the [solar
 time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky)
@@ -2098,213 +2644,216 @@ the “solar time offset”
 data-bs-toggle="tooltip" data-bs-title="solar time offset">sto</a>) used
 to produce it.
 
-# Solar time offset
+# Solar time offset (sto)
 
-Dec never forces anyone to change their offset and therefore has nothing
-like [daylight saving
-time](https://en.wikipedia.org/wiki/Daylight_saving_time). In Dec, any
-offset can be referred to as a
+In Dec, any offset can be called a
 <a href="#sto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offset">sto</a>, even if it is not used to
-match solar time, but there are only 10
+data-bs-title="solar time offset">sto</a> or a
+<a href="#uto" class="tool" data-bs-toggle="tooltip"
+data-bs-title="universal time offset">uto</a>, because there will always
+be a longitude at which the sum of the given offset and the Zone
+<span class="color0">0</span>
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> will yield solar time or
+<a href="#ut" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Universal Time">UT</a>. In contrast, Dec has only ten
 <a href="#tzo" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offsets">tzo</a>, because there are only 10 Dec
-time zones. Dec translates
+data-bs-title="time zone offsets">tzo</a>, one for each of its ten time
+zones. Dec translates
 <a href="#utc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</a> to Zone
-<span class="color0">0</span> and UTC−12:00 or UTC+12:00 to Zone
-<span class="color5">5</span>, but all other
-<a href="#utc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</a> offsets are
-considered <a href="#sto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offsets">sto</a> and not
-<a href="#tzo" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offsets">tzo</a>.
+<span class="color0">0</span> and UTC−12 or UTC+12 to Zone
+<span class="color5">5</span>, but does not categorize any other UTC
+offset as a <a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</a>.
 
-Anyone can use any offset at any time, as long as they provide the
-offset after the <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>. A Dec time is
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>−offset, just like a [Dec
-date](../../dec/date) is year+day. For example, when I wrote this
-paragraph, my Dec date was 2026+242 and my Dec time was
-.520−<span class="color8">8</span>. Like Dec dates, Dec times are
-truncated math expressions. When we evaluate the expression represented
-by a Dec time, we get a Zone <span class="color0">0</span>
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>, as shown in
-<a href="#eq-zone0tod" class="quarto-xref">Equation 14</a>. Unlike a
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>, which can be written without a dot
-in the unit of its last digit, an offset never has a dot but is always
-read as if it were preceded by one, so its first digit is in
-<a href="#dd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</a>. The offset
-<span class="color8">8</span> is 0.8
-<a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a>, and 700−<span class="color8">8</span> is the
-same time as 900−<span class="color0">0</span>. If my current time is
-.520−<span class="color8">8</span>, the time in Zone
-<span class="color0">0</span> is .720−<span class="color0">0</span>:
-(.520 − 0.8) mod 1 = .720.
-
-<div id="equationgroup08" class="equationgroup">
-
-<span id="eq-zone0tod">
-zone0tod = (tod − .offset) mod  1   (14)
-</span>
-
-</div>
-
-The default offset is like a user preference that Dec can remember and
-update as needed. If a user does not select a default offset, Dec will
-try to infer their default offset from their longitude, and if offset
-inference fails, the final fallback is a default offset of
-<span class="color0">0</span>. If someone wants to change their default
-offset for a certain period of time, Dec supports automatic offset
-changes based on user instructions. Users can share automatic offset
-changes, but they have to opt in to any change to their default offset
-instead of opting out of a required change. The [Dec
-span](../../dec/span) article will describe automatic offset changes in
-more detail.
-
-A default offset can have up to six digits that mix
+Dec permits any non-negative offset that is less than one day and can be
+written with a finite number of
+<a href="#b6" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base6">b6</a>,
 <a href="#b9" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base9">b9</a>,
 <a href="#b10" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base10">b10</a>, and
+data-bs-title="base10">b10</a>,
 <a href="#b24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a> as desired. This flexibility is meant to
-support scientific and technical purposes, so users are advised to
-choose one of the ten
-<a href="#tzo" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offsets">tzo</a>, which requires only one
-<a href="#b10" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base10">b10</a> digit. Dec may simplify the selected
-default offset. For example, <span class="color0">α</span> and
-<span class="color0">☉</span> are the same as
-<span class="color0">0</span>, and there is not much point in displaying
-<span class="color0">α</span> or <span class="color0">☉</span> when
-<span class="color0">0</span> is easier to understand. Dec stores the
-default offset as both a string and a decimal number. The string is
-displayed to the user and the decimal number is used to adjust the
+data-bs-title="base24">b24</a>, and
+<a href="#b25" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base25">b25</a> digits. When a
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>. Swatch Internet Time, for instance,
-would be displayed as
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>−<span class="color1by24">β</span>,
-because its time zone is 1 hour or 1/24 of a day ahead of Zone
-<span class="color0">0</span>.
+data-bs-title="time of day">tod</a> or an offset does not have a decimal
+separator, its measurement unit is a submultiple of a day equal to
+10<sup>-<a href="#til" id="timeintegerlength" class="tool"
+data-bs-toggle="tooltip" data-bs-title="time integer length">til</a></sup>
+days, where <a href="#til" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time integer length">til</a> is its “time integer
+length”, its [level of
+precision](https://simple.wikipedia.org/wiki/Precision_(numbers)#:~:text=level%20of%20exactness%20in%20a%20number%27s%20digits),
+or its digit count including any [leading
+zeros](https://en.wikipedia.org/wiki/Leading_zero#:~:text=any%200%20digit%20that%20comes%20before%20the%20first%20nonzero%20digit).
 
-China is a good example of the difference between a
+[Stockholm](https://en.wikipedia.org/wiki/Stockholm#:~:text=the%20capital%20and%20most%20populous%20city%20of%20Sweden),
+the capital city of
+[Sweden](https://en.wikipedia.org/wiki/Sweden#:~:text=a%20Nordic%20country%20located%20on%20the%20Scandinavian%20Peninsula%20in%20Northern%20Europe)🇸🇪,
+is located at <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span><span class="color1">1</span>
+<a href="#dw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciwěi">dw</a>, almost exactly on the border between
+Zones <span class="color0">0</span> and <span class="color1">1</span>. A
+longitude of <span class="color1">1</span>
+<a href="#dw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciwěi">dw</a> corresponds to a
 <a href="#sto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offset">sto</a> and a
-<a href="#tzo" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offset">tzo</a>. The territory of China spans
-three Dec time zones, Zones <span class="color2">2</span>,
-<span class="color3">3</span>, and <span class="color4">4</span>, but
-the government of China has decided that everyone in China should use
-UTC+08:00, which is Earth (<span class="color3by9">♁</span>) in
-<a href="#b9" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9">b9</a> or iota (<span class="color8by24">ι</span>)
-in <a href="#b24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a>. Dec does not enforce the use of any
-offset, but it would suggest that users in China consider a
-<a href="#tzo" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offset">tzo</a> of
-<span class="color3">3</span>
-<a href="#dd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</a>, which is not far off from 8/24, 1/3,
-<span class="color3by9">♁</span>, or <span class="color8by24">ι</span>.
-Zone <span class="color3">3</span> may actually be closer to the
-<a href="#sto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offset">sto</a> of most people in China,
-because the center of Zone <span class="color3">3</span>, 350
-<a href="#mw" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliwěi">mw</a>, is close to the geographic center of
-China, <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>337
-<a href="#mw" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliwěi">mw</a>, whereas the central longitude of
-UTC+08:00, <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>383
-<a href="#mw" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliwěi">mw</a>, is much further East.
+data-bs-title="solar time offset">sto</a> of
+<span class="color05">05</span>. The
+<a href="#til" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time integer length">til</a> of
+<span class="color05">05</span> is 2 and therefore its measurement unit
+is the centiday
+(<a href="#cd" id="centiday" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centiday">cd</a>), which is 10<sup>-2</sup> days. We can
+use a multiplicative [conversion
+factor](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=changes%20the%20unit%20without%20changing%20the%20quantity)
+of 10<sup>-2</sup> to convert
+<a href="#cd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centiday">cd</a> to
+<a href="#d" id="day" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>: 5 × 10<sup>-2</sup> =
+0.<span class="color05">05</span>.
 
-To get a local solar time, we add a
+Dec uses
+[currency](https://en.wikipedia.org/wiki/Currency#:~:text=a%20standardized%20form%20of%20money%20used%20as%20a%20medium%20of%20exchange)
+names for <a href="#dd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decidays">dd</a>:
+[dimes](https://en.wikipedia.org/wiki/Dime#Coins:~:text=coin%29%2C%20a-,ten%2Dcent%20coin,-and%20subunit%20of),
+<a href="#cd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centiday">cd</a>:
+[cents](https://en.wikipedia.org/wiki/Cent#Currency:~:text=a%20one%2Dhundredth%20subdivision%20of%20several%20units%20of%20currency)
+(¢), and <a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliday">md</a>:
+[mils](https://en.wikipedia.org/wiki/Mill_(currency)#:~:text=a%20subunit%20of%20currency%2C%20used%20in%20several%20countries%20as%201%E2%81%841000%20of%20the%20base%20unit)
+(<span class="mono">₥</span>). Drawing inspiration from music and
+writing, Dec refers to
+<a href="#dmd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decimilliday">dmd</a> as “lines”
+(<a href="#l" id="line" class="tool" data-bs-toggle="tooltip"
+data-bs-title="lines">l</a>) and
+<a href="#cmd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimillidays">cmd</a> as “beats”
+(<a href="#b" id="beat" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</a>). In
+[poetry](https://en.wikipedia.org/wiki/Poetry#:~:text=a%20form%20of%20literary%20art%20that%20uses%20aesthetic%20and%20often%20rhythmic%5B1%5D%5B2%5D%5B3%5D%20qualities%20of%20language%20to%20evoke%20meanings)
+and
+[playwriting](https://en.wikipedia.org/wiki/Playwright#:~:text=For%20the%20ancient%20Greeks%2C%20playwriting%20involved%20po%C3%AFesis%2C%20%22the%20act%20of%20making%22.%20This%20is%20the%20source%20of%20the%20English%20word%20poet.),
+notably the
+[works](https://en.wikipedia.org/wiki/List_of_works_by_William_Shakespeare#:~:text=39%20plays%20and%20154%20sonnets)
+of [William
+Shakespeare](https://en.wikipedia.org/wiki/William_Shakespeare#:~:text=an%20English%20playwright%2C%20poet%20and%20actor),
+[decasyllable](https://en.wikipedia.org/wiki/Decasyllable#:~:text=a%20poetic%20meter%20of%20ten%20syllables)
+and [iambic
+pentameter](https://en.wikipedia.org/wiki/Iambic_pentameter#:~:text=the%20rhythm%2C%20or%20meter%2C%20established%20by%20the%20words%20in%20each%20line)
+mandate ten
+[syllables](https://en.wikipedia.org/wiki/Syllable#:~:text=a%20basic%20unit%20of%20organization%20within%20a%20sequence%20of%20speech%20sounds)
+per
+[line](https://en.wikipedia.org/wiki/Line_%28poetry%29#:~:text=a%20unit%20of%20writing%20into%20which%20a%20poem%20or%20play%20is%20divided%3A%20literally%2C%20a%20single%20row%20of%20text).
+In music,
+[line](https://en.wikipedia.org/wiki/Line#Terminology_2:~:text=a%20strand%20or%20melody%20of%20music%20played%20by%20an%20individual%20instrument%20or%20voice),
+[melody](https://en.wikipedia.org/wiki/Melody#:~:text=a%20linear%20succession%20of%20musical%20tones%20that%20the%20listener%20perceives%20as%20a%20single%20entity),
+[part](https://en.wikipedia.org/wiki/Part_%28music%29#:~:text=a%20component%20of%20a%20musical%20composition),
+and
+[tune](https://en.wikipedia.org/wiki/Folk_music#Tune:~:text=a%20short%20instrumental%20piece)
+are synonyms.
+
+<div>
+
+> **Bad Pun Alert**
+>
+> It took me forever and a **deciday** to come up with a pun for
+> Declock⏰. I kept **second**-guessing myself and got really **wound**
+> up, so I decided to take a **beat**. Then, I **zoned** out until it
+> finally **struck** me: it’s about **time**!
+
+</div>
+
+# Mean solar time
+
+Outside of Dec, longitudes are often provided in
+[Greenwich](https://en.wikipedia.org/wiki/Prime_meridian_&28Greenwich&29#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England)
+[degrees](https://en.wikipedia.org/wiki/Degree_%28angle%29#:~:text=a%20unit%20of%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20assigned%20the%20value%20of%20360%20degrees)
+(<a href="#gdeg" id="greenwichdegrees" class="tool"
+data-bs-toggle="tooltip" data-bs-title="Greenwich degrees">g°</a>).
+<a href="#eq-deg2wei" class="quarto-xref">Equation 15</a> converts
+<a href="#gdeg" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Greenwich degrees">g°</a> to
+<a href="#w" class="tool" data-bs-toggle="tooltip"
+data-bs-title="wěi">w</a> and
+<a href="#eq-wei2deg" class="quarto-xref">Equation 16</a> does the
+opposite. To obtain a
 <a href="#sto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offset">sto</a> to a Zone
+data-bs-title="solar time offset">sto</a>, we can pass
+<a href="#w" class="tool" data-bs-toggle="tooltip"
+data-bs-title="wěi">w</a> to
+<a href="#eq-wei2sto" class="quarto-xref">Equation 17</a> or
+<a href="#gdeg" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Greenwich degrees">g°</a> to
+<a href="#eq-deg2sto" class="quarto-xref">Equation 18</a> below. As
+shown in <a href="#eq-mst" class="quarto-xref">Equation 19</a> below, we
+can sum an <a href="#sto" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar time offset">sto</a> with the Zone
 <span class="color0">0</span>
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>. If the
-<a href="#sto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offset">sto</a> accounts only for longitude,
-the result is an <a href="#mst" class="tool" data-bs-toggle="tooltip"
-data-bs-title="mean solar time">mst</a>. If it also includes the
-<a href="#eot" class="tool" data-bs-toggle="tooltip"
-data-bs-title="equation of time">eot</a>, the result is an
-<a href="#ast" class="tool" data-bs-toggle="tooltip"
-data-bs-title="apparent solar time">ast</a>. Whereas a Dec time zone
-spans a <a href="#dw" class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciwěi">dw</a>, a
-<a href="#sto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offset">sto</a> represents a single longitude.
-In <a href="#eq-mst" class="quarto-xref">Equation 17</a> below, the
-<a href="#sto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offset">sto</a> of a longitude in
-<a href="#w" class="tool" data-bs-toggle="tooltip"
-data-bs-title="horizontal lines on a map">w</a> is (0.95 +
-<a href="#w" class="tool" data-bs-toggle="tooltip"
-data-bs-title="horizontal lines on a map">w</a>) mod 1.
-
-# Equation of time
-
-The two types of [solar
-time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky)
-are [“mean solar
-time”](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year)
+data-bs-title="time of day">tod</a> to get a yearly average of solar
+time called “[mean solar
+time](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year)”
 (<a href="#mst" id="meansolartime" class="tool" data-bs-toggle="tooltip"
-data-bs-title="mean solar time">mst</a>) and [“apparent solar
-time”](https://en.wikipedia.org/wiki/Solar_time#Apparent_solar_time:~:text=the%20apparent%20motion%20of%20the%20actual%20Sun)
-(<a href="#ast" id="apparentsolartime" class="tool"
-data-bs-toggle="tooltip" data-bs-title="apparent solar time">ast</a>).
-To calculate an <a href="#mst" class="tool" data-bs-toggle="tooltip"
-data-bs-title="mean solar time">mst</a>, we keep only the decimal part
-of the sum of 0.95, the Zone <span class="color0">0</span>
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> measured in days, and a longitude
-measured in <a href="#w" class="tool" data-bs-toggle="tooltip"
-data-bs-title="horizontal lines on a map">w</a>. If we want
-<a href="#ast" class="tool" data-bs-toggle="tooltip"
-data-bs-title="apparent solar time">ast</a> instead of
-<a href="#mst" class="tool" data-bs-toggle="tooltip"
-data-bs-title="mean solar time">mst</a>, the sum needs to include the
-result of plugging the “time of year”
-(<a href="#toy" id="timeofyear" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of year">toy</a>) into the [“equation of
-time”](https://en.wikipedia.org/wiki/Equation_of_time#:~:text=the%20discrepancy%20between%20two%20kinds%20of%20solar%20time)
-(<a href="#eot" id="equationoftime" class="tool" data-bs-toggle="tooltip"
-data-bs-title="equation of time">eot</a>).
+data-bs-title="mean solar time">mst</a>).
 
 <div id="equationgroup09" class="equationgroup">
 
-<span id="eq-syl">
-syl = leap + 365   (15)
+<span id="eq-deg2wei">
+$$\text{w} = (\text{g}^\circ + 378) \div 360 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \qquad(15)$$
 </span>
 
-<span id="eq-toy">
-toy = ada ÷ syl   (16)
+<span id="eq-wei2deg">
+$$\text{g}^\circ = (\text{w} + 0.45) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 360 - 180 \qquad(16)$$
+</span>
+
+<span id="eq-wei2sto">
+$$\text{sto} = (0.95 + \text{w}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \qquad(17)$$
+</span>
+
+<span id="eq-deg2sto">
+$$\text{sto} = (\text{g}^\circ + 360) \div 360 \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \qquad(18)$$
 </span>
 
 <span id="eq-mst">
-mst = (0.95 + tod + w) mod  1   (17)
-</span>
-
-<span id="eq-ast">
-ast = (0.95 + tod + w + eot) mod  1   (18)
+$$\text{mst} = (\text{tod} + \text{sto}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \qquad(19)$$
 </span>
 
 </div>
+
+# Equation of time (eot)
+
+If we want to tailor our solar time calculations to a specific
+<a href="#ada" class="tool" data-bs-toggle="tooltip"
+data-bs-title="annual day aggregate">ada</a> instead of an average for
+the entire year, we can calculate “[apparent solar
+time](https://en.wikipedia.org/wiki/Solar_time#Apparent_solar_time:~:text=the%20apparent%20motion%20of%20the%20actual%20Sun)”
+(<a href="#ast" id="apparentsolartime" class="tool"
+data-bs-toggle="tooltip" data-bs-title="apparent solar time">ast</a>) by
+summing <a href="#mst" class="tool" data-bs-toggle="tooltip"
+data-bs-title="mean solar time">mst</a> with the “[equation of
+time](https://en.wikipedia.org/wiki/Equation_of_time#:~:text=the%20discrepancy%20between%20two%20kinds%20of%20solar%20time)”
+(<a href="#eot" id="equationoftime" class="tool" data-bs-toggle="tooltip"
+data-bs-title="equation of time">eot</a>), as shown in
+<a href="#eq-ast" class="quarto-xref">Equation 20</a>. Obtaining the
+<a href="#eot" class="tool" data-bs-toggle="tooltip"
+data-bs-title="equation of time">eot</a> requires a “time of year”
+(<a href="#toy" id="timeofyear" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of year">toy</a>), which is an
+<a href="#ada" class="tool" data-bs-toggle="tooltip"
+data-bs-title="annual day aggregate">ada</a> that was converted from
+days to years as displayed in
+<a href="#eq-toy" class="quarto-xref">Equation 21</a>.
 
 To obtain a <a href="#toy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of year">toy</a>, we divide an
@@ -2315,14 +2864,14 @@ data-bs-toggle="tooltip" data-bs-title="solar year length">syl</a>),
 which is the number of days in the year. Dec passes the
 <a href="#toy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of year">toy</a> directly from
-<a href="#eq-toy" class="quarto-xref">Equation 16</a> to the
+<a href="#eq-toy" class="quarto-xref">Equation 21</a> to the
 <a href="#eot" class="tool" data-bs-toggle="tooltip"
 data-bs-title="equation of time">eot</a> function in
-<a href="#eq-eot" class="quarto-xref">Equation 19</a> without first
+<a href="#eq-eot" class="quarto-xref">Equation 23</a> without first
 multiplying it by 2𝜋 or 𝜏 to convert it from
 [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
-(<a href="#t" id="turn" class="tool" data-bs-toggle="tooltip"
-data-bs-title="turns">t</a>) to
+(<a href="#T" id="turn" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">T</a>) to
 [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units)
 (<a href="#rad" id="radian" class="tool" data-bs-toggle="tooltip"
 data-bs-title="radians">rad</a>) because the
@@ -2332,35 +2881,47 @@ and
 [trigonometric
 functions](https://en.wikipedia.org/wiki/Trigonometric_functions#:~:text=functions%20which%20relate%20an%20angle%20of%20a%20right%2Dangled%20triangle%20to%20ratios%20of%20two%20side%20lengths)
 used by Dec are designed for
-<a href="#t" class="tool" data-bs-toggle="tooltip"
-data-bs-title="turns">t</a> instead of
+<a href="#T" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">T</a> instead of
 <a href="#rad" class="tool" data-bs-toggle="tooltip"
 data-bs-title="radians">rad</a>.
 
 <div id="equationgroup10" class="equationgroup">
 
+<span id="eq-ast">
+$$\text{ast} = (0.95 + \text{tod} + \text{w} +  \text{eot}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \qquad(20)$$
+</span>
+
+<span id="eq-toy">
+toy = ada ÷ syl   (21)
+</span>
+
+<span id="eq-syl">
+syl = leap + 365   (22)
+</span>
+
 <span id="eq-eot">
 $$\begin{split}
-\text{eot} & = \beta_0 \\
-& + \beta_1 \ast \text{cos(toy)} \\
-& + \beta_2 \ast \text{sin(toy)} \\
-& + \beta_3 \ast \text{cos(2} \ast \text{toy)} \\
-& + \beta_4 \ast \text{sin(2} \ast \text{toy)}
-\end{split} \qquad(19)$$
+\text{eot} & = \text{a}\_0 \\
+& + \text{a}\_1 \times \text{cos(toy)} \\
+& + \text{a}\_2 \times \text{sin(toy)} \\
+& + \text{a}\_3 \times \text{cos(2} \times \text{toy)} \\
+& + \text{a}\_4 \times \text{sin(2} \times \text{toy)}
+\end{split} \qquad(23)$$
 </span>
 
 </div>
 
 By comparing the `sincost` and `sincos` functions, the code below
 demonstrates that using
-<a href="#t" class="tool" data-bs-toggle="tooltip"
-data-bs-title="turns">t</a> rather than
+<a href="#T" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">T</a> rather than
 <a href="#rad" class="tool" data-bs-toggle="tooltip"
 data-bs-title="radians">rad</a> can [yield more accurate
 results](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=Representing%20angles%20in%20turns%20or%20half%2Dturns%20has%20accuracy%20advantages).
 Whereas `sincost` expects to receive
-<a href="#t" class="tool" data-bs-toggle="tooltip"
-data-bs-title="turns">t</a> and is always correct, `sincos` assumes that
+<a href="#T" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">T</a> and is always correct, `sincos` assumes that
 it will get <a href="#rad" class="tool" data-bs-toggle="tooltip"
 data-bs-title="radians">rad</a> and generates the slightly incorrect [E
 notation](https://en.wikipedia.org/wiki/Scientific_notation#E_notation)
@@ -2582,7 +3143,9 @@ data-bs-title="National Oceanic and Atmospheric Administration">NOAA</a>
 [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html),
 Dec divides <a href="#eot" class="tool" data-bs-toggle="tooltip"
 data-bs-title="equation of time">eot</a> values by 1.44 to convert
-minutes to <a href="#md" class="tool" data-bs-toggle="tooltip"
+<a href="#bem" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Birunian equinoctial minutes">bem</a> to
+<a href="#md" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millidays">md</a>, converts
 <a href="#ymd" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year month day">ymd</a> triplet dates and
@@ -2618,6 +3181,7 @@ data-notebook-cellId="cell-eotcoef">
     getEot, -365, 365, { N: 150 }
   );
   let plot = Plot.plot({
+    ariaDescription: "Line chart of the equation of time in millidays over a common year followed by a leap year, ranging from about -9.8 to 11.4 millidays",
     marginLeft: 60,
     width: w,
     height: h,
@@ -2679,14 +3243,14 @@ estimate the <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="times of day">tod</a> of [solar
 noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow),
 sunrise, and sunset.
-<a href="#eq-solarnoon" class="quarto-xref">Equation 20</a> below
+<a href="#eq-solarnoon" class="quarto-xref">Equation 24</a> below
 creates a [solar
 noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow)
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> by keeping only the decimal part of
 the result of subtracting a
 <a href="#w" class="tool" data-bs-toggle="tooltip"
-data-bs-title="horizontal lines on a map">w</a> longitude and an
+data-bs-title="wěi">w</a> longitude and an
 <a href="#eot" class="tool" data-bs-toggle="tooltip"
 data-bs-title="equation of time">eot</a> value that is measured in days
 from the sum of 9.55 and a
@@ -2696,7 +3260,7 @@ data-bs-title="time zone offset">tzo</a> that is measured in days.
 <div id="equationgroup11" class="equationgroup">
 
 <span id="eq-solarnoon">
-solarnoon = (9.55 + tzo − w − eot) mod  1   (20)
+$$\text{solarnoon} = \left(9.55 + \text{tzo} - \text{w} - \text{eot}\right) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \qquad(24)$$
 </span>
 
 </div>
@@ -2707,9 +3271,9 @@ To compare the solar noon
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> in two cities, we can plug the
 longitude of each city into
-<a href="#eq-solarnoon" class="quarto-xref">Equation 20</a> above. If
+<a href="#eq-solarnoon" class="quarto-xref">Equation 24</a> above. If
 all of the variables other than longitude in
-<a href="#eq-solarnoon" class="quarto-xref">Equation 20</a> are set to
+<a href="#eq-solarnoon" class="quarto-xref">Equation 24</a> are set to
 zero, the resulting solar noon
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> is almost five <span class="tool"
@@ -2727,11 +3291,11 @@ States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primar
 <div id="equationgroup12" class="equationgroup">
 
 <span id="eq-cambridgeuk">
-4.99635 = (9.55 − 0.050365) mod  1 \* 10   (21)
+$$4.99635 = (9.55 - 0.050365) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 10 \qquad(25)$$
 </span>
 
 <span id="eq-cambridgema">
-6.97517 = (9.55 − 0.852484) mod  1 \* 10   (22)
+$$6.97516 = (9.55 - 0.852484) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 10 \qquad(26)$$
 </span>
 
 </div>
@@ -2755,16 +3319,16 @@ Cambridge, UK.
 <div id="equationgroup13" class="equationgroup">
 
 <span id="eq-cambridgeuk8">
-2.99635 = (9.55 + 0.8 − 0.050365) mod  1 \* 10   (23)
+$$2.99635 = (9.55 + 0.8 - 0.050365) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 10 \qquad(27)$$
 </span>
 
 <span id="eq-cambridgema8">
-4.97517 = (9.55 + 0.8 − 0.852484) mod  1 \* 10   (24)
+$$4.97516 = (9.55 + 0.8 - 0.852484) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 \times 10 \qquad(28)$$
 </span>
 
 </div>
 
-# Light arc whole
+# Light arc whole (law)
 
 The path in the sky that the Sun appears to follow from a sunrise to a
 sunset is a “light
@@ -2793,33 +3357,7 @@ data-bs-title="light arc half">lah</a> is a sunrise
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a>.
 
-<div id="equationgroup14" class="equationgroup">
-
-<span id="eq-law">
-law = lah \* 2   (25)
-</span>
-
-<span id="eq-sunrise">
-$$\begin{split}
-\text{sunrise}
-& = \text{solarmidnight} + \text{nah} \\
-& = \text{solarnoon} - \text{lah} \\
-& = \text{sunset} - \text{law}
-\end{split} \qquad(26)$$
-</span>
-
-<span id="eq-sunset">
-$$\begin{split}
-\text{sunset}
-& = \text{solarmidnight} + \text{nah} + \text{law} \\
-& = \text{sunrise} + \text{law} \\
-& = \text{solarnoon} + \text{lah} \\
-\end{split} \qquad(27)$$
-</span>
-
-</div>
-
-## Night arc whole
+## Night arc whole (naw)
 
 The Sun continues its path after it disappears below the horizon, moving
 from sunset to sunrise along a “night arc whole”
@@ -2841,18 +3379,44 @@ that form a semicircle from solar noon to the
 data-bs-title="night arc whole">naw</a> midpoint: [solar
 midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%20to%20solar%20noon%2C%20when%20the%20Sun%20is%20closest%20to%20the%20nadir%2C%20and%20the%20night%20is%20equidistant%20from%20dusk%20and%20dawn).
 
-<div id="equationgroup15" class="equationgroup">
+<div id="equationgroup14" class="equationgroup">
+
+<span id="eq-law">
+law = lah × 2   (29)
+</span>
+
+<span id="eq-sunrise">
+$$\begin{split}
+\text{sunrise}
+& = \text{solarmidnight} + \text{nah} \\
+& = \text{solarnoon} - \text{lah} \\
+& = \text{sunset} - \text{law}
+\end{split} \qquad(30)$$
+</span>
+
+<span id="eq-sunset">
+$$\begin{split}
+\text{sunset}
+& = \text{solarmidnight} + \text{nah} + \text{law} \\
+& = \text{sunrise} + \text{law} \\
+& = \text{solarnoon} + \text{lah} \\
+\end{split} \qquad(31)$$
+</span>
 
 <span id="eq-naw">
-naw = nah \* 2   (28)
+naw = nah × 2   (32)
 </span>
 
 <span id="eq-day">
 $$\begin{split}
 \text{day}
 & = \text{law} + \text{naw} \\
-& = (\text{lah} + \text{nah}) \ast 2
-\end{split} \qquad(29)$$
+& = (\text{lah} + \text{nah}) \times 2
+\end{split} \qquad(33)$$
+</span>
+
+<span id="eq-nah">
+nah = 0.5 − lah   (34)
 </span>
 
 <span id="eq-solarmidnight">
@@ -2861,7 +3425,7 @@ $$\begin{split}
 &= \text{sunrise} - \text{nah} \\
 &= \text{solarnoon} - \text{lah} - \text{nah} \\
 &= \text{sunset} - \text{law} - \text{nah}
-\end{split} \qquad(30)$$
+\end{split} \qquad(35)$$
 </span>
 
 </div>
@@ -2871,11 +3435,15 @@ The range input below controls the yellow
 data-bs-title="light arc whole">law</a> and the blue
 <a href="#naw" class="tool" data-bs-toggle="tooltip"
 data-bs-title="night arc whole">naw</a> in the diagram beneath it. At
-the Equator, the sun always rises about a quarter turn from North and
-sets around three quarter turns from North, resulting in a
+the Equator, the <a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> is always roughly half a day.
+During an equinox, the Sun rises a quarter turn from North and sets
+three quarter turns from North, so its sunrise and sunset azimuths
+happen to differ by the same half: 75% − 25% = 50%. On other days,
+sunrise and sunset shift toward North or South, but the
 <a href="#law" class="tool" data-bs-toggle="tooltip"
-data-bs-title="light arc whole">law</a> of roughly half a day: 75% − 25%
-= 50%. If the <a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> at the Equator stays about half
+a day. If the <a href="#law" class="tool" data-bs-toggle="tooltip"
 data-bs-title="light arc whole">law</a> is zero, a [polar
 night](https://en.wikipedia.org/wiki/Polar_night#:~:text=the%20Sun%20remains%20below%20the%20horizon%20for%20more%20than%2024%C2%A0hours)
 occurs. A day without a
@@ -2894,7 +3462,7 @@ viewof dayArcSouth = Inputs.radio(new Map([["Northern", false], ["Southern", tru
 //| echo: false
 //| label: dayarcinput
 //| class: slider
-viewof dayArcInput = Inputs.range([0, 1000], {label: "Light arc whole", value: 375, step: 1})
+viewof dayArcInput = Inputs.range([0, 1000], {label: "Light arc", value: 375, step: 1})
 ```
 
 ``` {ojs}
@@ -2976,48 +3544,61 @@ viewof dayArcInput = Inputs.range([0, 1000], {label: "Light arc whole", value: 3
 }
 ```
 
-The numbers in the diagram above are [“solar azimuth
-angle”](https://en.wikipedia.org/wiki/Solar_azimuth_angle#:~:text=horizontal%20angle%20with%20respect%20to%20north)
+# Solar azimuth angle (saa)
+
+The numbers in the diagram above are “[solar azimuth
+angle](https://en.wikipedia.org/wiki/Solar_azimuth_angle#:~:text=horizontal%20angle%20with%20respect%20to%20north)”
 (<a href="#saa" id="solarazimuthangle" class="tool"
 data-bs-toggle="tooltip" data-bs-title="solar azimuth angle">saa</a>)
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a turn">milliturns</span>
-(<a href="#mt" id="milliturn" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliturns">mt</a>). At solar noon, the
+(<a href="#mt" id="milliturn" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a>). At solar noon, the
 <a href="#saa" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar azimuth angle">saa</a> is 0
-<a href="#mt" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliturns">mt</a> in the [Southern
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a> if the latitude is less than the “solar
+[declination](https://en.wikipedia.org/wiki/Declination#:~:text=the%20angular%20distance%20from%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
+angle” (<a href="#sda" id="solardeclinationangle" class="tool"
+data-bs-toggle="tooltip" data-bs-title="solar declination angle">sda</a>),
+as it always is outside the
+[tropics](https://en.wikipedia.org/wiki/Tropics#:~:text=the%20regions%20of%20Earth%20surrounding%20the%20equator)
+in the [Southern
 Hemisphere](https://en.wikipedia.org/wiki/Southern_Hemisphere#:~:text=the%20half%20%28hemisphere%29%20of%20Earth%20that%20is%20south%20of%20the%20equator)
-and 500 <a href="#mt" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliturns">mt</a> in the [Northern
+and 500 <a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a> if the latitude is greater than the
+<a href="#sda" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar declination angle">sda</a>, as it always is outside
+the tropics in the [Northern
 Hemisphere](https://en.wikipedia.org/wiki/Northern_Hemisphere#:~:text=the%20half%20of%20Earth%20that%20is%20north%20of%20the%20equator).
 The
 [radio](https://observablehq.github.io/framework/inputs/radio#:~:text=allows%20the%20user%20to%20choose%20one%20of%20a%20given%20set%20of%20values)📻input
 above controls whether the midpoint of the
 <a href="#law" class="tool" data-bs-toggle="tooltip"
 data-bs-title="light arc whole">law</a> is 0 or 500
-<a href="#mt" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliturns">mt</a>. To measure the
+<a href="#mt" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">₥</a>. To measure the
 <a href="#saa" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar azimuth angle">saa</a> during the
 [daytime](https://en.wikipedia.org/wiki/Daytime#:~:text=the%20period%20of%20the%20day%20in%20which%20the%20Sun%20is%20above%20the%20local%20horizon%20in%20a%20given%20location),
 point a compass🧭at the spot on the horizon below the Sun.
+
+# Solar elevation angle (sea)
 
 During an
 [equinox](https://en.wikipedia.org/wiki/Equinox#:~:text=a%20moment%20in%20time%20when%20the%20Sun%20appears%20directly%20above%20the%20equator)
 at the Equator, the Sun goes from East to West directly overhead, the
 <a href="#saa" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar azimuth angle">saa</a> flips like a switch from
-0.25 <a href="#t" class="tool" data-bs-toggle="tooltip"
-data-bs-title="turns">t</a> to 0.75
-<a href="#t" class="tool" data-bs-toggle="tooltip"
-data-bs-title="turns">t</a> at solar noon, the “[solar elevation
+0.25 <a href="#T" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">T</a> to 0.75
+<a href="#T" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">T</a> at solar noon, the “[solar elevation
 angle](https://en.wikipedia.org/wiki/Solar_zenith_angle#Summary_of_special_angles:~:text=For%20example%2C%20the-,solar,-elevation%20angle%20is)”
 (<a href="#sea" id="solarelevationangle" class="tool"
 data-bs-toggle="tooltip" data-bs-title="solar elevation angle">sea</a>)
-peaks at 0.25 <a href="#t" class="tool" data-bs-toggle="tooltip"
-data-bs-title="turns">t</a>, and
+peaks at 0.25 <a href="#T" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">T</a>, and
 <a href="#ast" class="tool" data-bs-toggle="tooltip"
 data-bs-title="apparent solar time">ast</a> is 0.5 −
 sin(<a href="#saa" class="tool" data-bs-toggle="tooltip"
@@ -3030,6 +3611,8 @@ of a vertical rod on a level surface and the length (L) of its shadow:
 <a href="#sea" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar elevation angle">sea</a> = atan2(h, L).
 
+# Inverse trigonometric functions
+
 In addition to determining the
 <a href="#sea" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar elevation angle">sea</a>, the
@@ -3037,7 +3620,7 @@ data-bs-title="solar elevation angle">sea</a>, the
 function can also be used to calculate
 <a href="#ast" class="tool" data-bs-toggle="tooltip"
 data-bs-title="apparent solar time">ast</a>, as shown in
-<a href="#eq-astjing" class="quarto-xref">Equation 31</a>, where
+<a href="#eq-astjing" class="quarto-xref">Equation 36</a>, where
 <a href="#j" id="jing" class="tool" data-bs-toggle="tooltip"
 data-bs-title="jīng">j</a> is a latitude measured in turns called
 [jīng](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)
@@ -3046,13 +3629,13 @@ data-bs-title="jīng">j</a>). In Dec, [inverse
 trigonometric](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#:~:text=obtain%20an%20angle%20from%20any%20of%20the%20angle%27s%20trigonometric%20ratios)
 functions like
 [atan2](https://en.wikipedia.org/wiki/Atan2#:~:text=function%20atan2%20is-,the%202%2Dargument%20arctangent,-.%20By%20definition%2C)
-yield <a href="#t" class="tool" data-bs-toggle="tooltip"
-data-bs-title="turns">t</a> as opposed to
+yield <a href="#T" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">T</a> as opposed to
 <a href="#rad" class="tool" data-bs-toggle="tooltip"
 data-bs-title="radians">rad</a>. At the Equator
 (<a href="#j" class="tool" data-bs-toggle="tooltip"
 data-bs-title="jīng">j</a> = 0), the latitude is zero and
-<a href="#eq-astjing" class="quarto-xref">Equation 31</a> simplifies to
+<a href="#eq-astjing" class="quarto-xref">Equation 36</a> simplifies to
 <a href="#ast" class="tool" data-bs-toggle="tooltip"
 data-bs-title="apparent solar time">ast</a> = 0.5 +
 atan2(-sin(<a href="#saa" class="tool" data-bs-toggle="tooltip"
@@ -3061,7 +3644,7 @@ data-bs-title="solar elevation angle">sea</a>),
 sin(<a href="#sea" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar elevation angle">sea</a>)).
 
-<div id="equationgroup16" class="equationgroup">
+<div id="equationgroup15" class="equationgroup">
 
 <span id="eq-astjing">
 $$
@@ -3072,7 +3655,7 @@ $$
 & \text{cos(saa)cos(sea)sin(j)}
 \end{aligned}
 \right)
- \qquad(31)$$
+ \qquad(36)$$
 </span>
 
 <span id="eq-extremes">
@@ -3080,10 +3663,10 @@ $$
 \text{ast} =
 \begin{cases}
 \text{saa} & \text{j} = 0.25 \\
-\text{atan2(-sin(saa)cos(sea), sin(sea))} & \text{j} = 0 \\
-(1.5 - \text{saa}) \bmod 1 & \text{j} = -0.25
+0.5 + \text{atan2(-sin(saa)cos(sea), sin(sea))} & \text{j} = 0 \\
+(1.5 - \text{saa}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 1 & \text{j} = -0.25
 \end{cases}
- \qquad(32)$$
+ \qquad(37)$$
 </span>
 
 </div>
@@ -3092,7 +3675,7 @@ At the North Pole (<a href="#j" class="tool" data-bs-toggle="tooltip"
 data-bs-title="jīng">j</a> = 0.25), the latitude is 0.25
 <a href="#j" class="tool" data-bs-toggle="tooltip"
 data-bs-title="jīng">j</a> and
-<a href="#eq-astjing" class="quarto-xref">Equation 31</a> simplifies to
+<a href="#eq-astjing" class="quarto-xref">Equation 36</a> simplifies to
 <a href="#ast" class="tool" data-bs-toggle="tooltip"
 data-bs-title="apparent solar time">ast</a> =
 <a href="#saa" class="tool" data-bs-toggle="tooltip"
@@ -3101,7 +3684,7 @@ data-bs-title="solar azimuth angle">saa</a>. At the South Pole
 data-bs-title="jīng">j</a> = -0.25), the latitude is -0.25
 <a href="#j" class="tool" data-bs-toggle="tooltip"
 data-bs-title="jīng">j</a> and
-<a href="#eq-astjing" class="quarto-xref">Equation 31</a> simplifies to
+<a href="#eq-astjing" class="quarto-xref">Equation 36</a> simplifies to
 <a href="#ast" class="tool" data-bs-toggle="tooltip"
 data-bs-title="apparent solar time">ast</a> = 0.5 −
 <a href="#saa" class="tool" data-bs-toggle="tooltip"
@@ -3115,39 +3698,23 @@ the Equator and the South or North Pole (-0.25 \<
 data-bs-title="jīng">j</a> \< 0 ∨ 0 \<
 <a href="#j" class="tool" data-bs-toggle="tooltip"
 data-bs-title="jīng">j</a> \< 0.25), we should use Equation
-<a href="#eq-ast" class="quarto-xref">18</a>,
-<a href="#eq-astjing" class="quarto-xref">31</a>, or
-<a href="#eq-astsha" class="quarto-xref">33</a>.
+<a href="#eq-ast" class="quarto-xref">20</a>,
+<a href="#eq-astjing" class="quarto-xref">36</a>, or
+<a href="#eq-astsha" class="quarto-xref">38</a>.
 
-<div id="equationgroup17" class="equationgroup">
-
-<span id="eq-astsha">
-$$
-\text{ast} = 0.5 + \text{arccos}\\\\\left(\dfrac{\text{sin(sea)} - \text{sin(j)sin(sda)}}{\text{cos(j)cos(sda)}}\right) \ast
-\begin{cases}
-\text{-}1 & 0 \le \text{saa} \< 0.5 \\
-1 & 0.5 \le \text{saa} \< 1
-\end{cases}
- \qquad(33)$$
-</span>
-
-</div>
-
-Unlike <a href="#eq-astjing" class="quarto-xref">Equation 31</a>,
-<a href="#eq-astsha" class="quarto-xref">Equation 33</a> requires a
-“solar declination angle”
-(<a href="#sda" id="solardeclinationangle" class="tool"
-data-bs-toggle="tooltip" data-bs-title="solar declination angle">sda</a>).
-Whereas latitude is the angle from the Equator in the [geographic
-coordinate
+Unlike <a href="#eq-astjing" class="quarto-xref">Equation 36</a>,
+<a href="#eq-astsha" class="quarto-xref">Equation 38</a> requires a
+<a href="#sda" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar declination angle">sda</a>. Whereas latitude is the
+angle from the Equator in the [geographic coordinate
 system](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=a%20spherical%20or%20geodetic%20coordinate%20system%20for%20measuring%20and%20communicating%20positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude),
-[declination](https://en.wikipedia.org/wiki/Declination#:~:text=the%20angular%20distance%20from%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
-is the angle from the [celestial
+declination is the angle from the [celestial
 equator](https://en.wikipedia.org/wiki/Celestial_equator) in the
 [equatorial coordinate
 system](https://en.wikipedia.org/wiki/Equatorial_coordinate_system#:~:text=a%20celestial%20coordinate%20system%20widely%20used%20to%20specify%20the%20positions%20of%20celestial%20objects).
-For simplicity, we can use
-<a href="#eq-eot" class="quarto-xref">Equation 19</a> for both the
+For simplicity, we can use the harmonic model in
+<a href="#eq-eot" class="quarto-xref">Equation 23</a>, with a separate
+set of fitted coefficients, for both the
 <a href="#eot" class="tool" data-bs-toggle="tooltip"
 data-bs-title="equation of time">eot</a> and
 <a href="#sda" class="tool" data-bs-toggle="tooltip"
@@ -3155,6 +3722,30 @@ data-bs-title="solar declination angle">sda</a>. The line plot below
 shows <a href="#sda" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar declination angles">sda</a> over the course of a
 year.
+
+<div id="equationgroup16" class="equationgroup">
+
+<span id="eq-astsha">
+$$
+\text{ast} = 0.5 + \text{arccos}\\\\\left(\dfrac{\text{sin(sea)} - \text{sin(j)sin(sda)}}{\text{cos(j)cos(sda)}}\right) \times
+\begin{cases}
+\text{-}1 & 0 \le \text{saa} \< 0.5 \\
+1 & 0.5 \le \text{saa} \< 1
+\end{cases}
+ \qquad(38)$$
+</span>
+
+<span id="eq-sda">
+$$\begin{split}
+\text{sda} & = \text{a}\_0 \\
+& + \text{a}\_1 \times \text{cos(toy)} \\
+& + \text{a}\_2 \times \text{sin(toy)} \\
+& + \text{a}\_3 \times \text{cos(2} \times \text{toy)} \\
+& + \text{a}\_4 \times \text{sin(2} \times \text{toy)}
+\end{split} \qquad(39)$$
+</span>
+
+</div>
 
 ``` {ojs}
 //| echo: false
@@ -3183,6 +3774,7 @@ year.
     {doy: south, name: "Southern solstice", dx: -36, dy: 0, anchor: "end"}
   ].map((e) => ({...e, sda: sdaMt(e.doy)}));
   let plot = Plot.plot({
+    ariaDescription: "Line chart of the solar declination angle in milliturns over a year, with dots marking the northward equinox, northern solstice, southward equinox, and southern solstice",
     marginLeft: 60,
     marginTop: 30,
     marginBottom: 30,
@@ -3228,14 +3820,13 @@ are
 From the northward to the southward equinox, the
 <a href="#sda" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar declination angle">sda</a> is positive and every
-latitude in the Northern Hemisphere has a
 <a href="#law" class="tool" data-bs-toggle="tooltip"
-data-bs-title="light arc whole">law</a> that is longer than the
-<a href="#law" class="tool" data-bs-toggle="tooltip"
-data-bs-title="light arc whole">law</a> at the Equator, whereas every
-latitude in the Southern Hemisphere has a shorter one. This pattern is
-reversed when the <a href="#sda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar declination angle">sda</a> is negative.
+data-bs-title="light arc whole">law</a> in the Northern Hemisphere is
+longer than the <a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> at the Equator, which is longer
+than every <a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> in the Southern Hemisphere. The
+opposite is true from the southward to the northward equinox.
 
 The chart below splits the [Socioeconomic Data and Applications
 Center](https://www.earthdata.nasa.gov/centers/sedac-daac) population
@@ -3244,7 +3835,7 @@ and then further divides each bar by
 <a href="#utc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</a> offset. Nearly 7
 billion out of a total of almost 8 billion people live in the Northern
-Hemisphere and thus experience the longest
+Hemisphere and therefore experience the longest
 <a href="#law" class="tool" data-bs-toggle="tooltip"
 data-bs-title="light arc whole">law</a> of the year at the [northern
 solstice](https://en.wikipedia.org/wiki/June_solstice#:~:text=In%20the%20Northern%20Hemisphere%2C%20the%20June%20solstice%20is%20the%20summer%20solstice%20%28the%20day%20with%20the%20longest%20period%20of%20daylight%29%2C%20while%20in%20the%20Southern%20Hemisphere%20it%20is%20the%20winter%20solstice%20%28the%20day%20with%20the%20shortest%20period%20of%20daylight%29).
@@ -3267,6 +3858,7 @@ viewof sortParamsHemi = Inputs.form([
 {
   await whenVisible("hemipopstackedbar");
   return Plot.plot({
+    ariaDescription: "Stacked bar chart of the populations of the Northern and Southern Hemispheres, each divided by UTC offset",
     width: Math.min(width, 1000),
     height: 100 + Math.min(width / 25, 20),
     marginBottom: 50,
@@ -3284,7 +3876,7 @@ viewof sortParamsHemi = Inputs.form([
 
 The top range input below picks the
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</a> that we will convert into a
+data-bs-title="day of year">doy</a> that we will turn into a
 <a href="#toy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of year">toy</a> and then pass to our
 <a href="#sda" class="tool" data-bs-toggle="tooltip"
@@ -3295,26 +3887,51 @@ coordinates needed to find the sunrise and sunset
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="times of day">tod</a>. While the sunrise and sunset
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="times of day">tod</a> rely on the
-<a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</a> and both geographic coordinates, the
+data-bs-title="times of day">tod</a> rely on all three range inputs, the
 <a href="#law" class="tool" data-bs-toggle="tooltip"
 data-bs-title="light arc whole">law</a> depends on the
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</a> and latitude but not on longitude.
-The default latitude, 118
-<a href="#mj" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millijīng">mj</a>, is that of Cambridge, Massachusetts.
-At the Equator, the <a href="#law" class="tool" data-bs-toggle="tooltip"
-data-bs-title="light arc whole">law</a> is about 0.505
-<a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a> all year long, so the
-<a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</a> input changes the
-<a href="#law" class="tool" data-bs-toggle="tooltip"
-data-bs-title="light arc whole">law</a> only away from the Equator:
+data-bs-title="day of year">doy</a> and latitude but not on longitude:
 ${selectedSunset.toFixed(3)} − ${selectedSunrise.toFixed(3)} =
 ${parseFloat(daytimeDuration.toFixed(3))}.
+
+<div id="equationgroup17" class="equationgroup">
+
+<span id="eq-lawdiff">
+sunset − sunrise = law   (40)
+</span>
+
+<span id="eq-lah">
+lah = arccos(max (-1, min (1, x)))   (41)
+</span>
+
+<span id="eq-lahx">
+$$\text{x} = \dfrac{\text{sin(-0.002314)} - \text{sin(j)sin(sda)}}{\text{cos(j)cos(sda)}} \qquad(42)$$
+</span>
+
+</div>
+
+<a href="#eq-lah" class="quarto-xref">Equation 41</a> computes the
+<a href="#lah" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc half">lah</a> from the latitude
+(<a href="#j" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a>) and the
+<a href="#sda" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar declination angle">sda</a>. At sunrise and sunset,
+the center of the Sun is about 0.002314
+<a href="#T" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">T</a> (0.833 degrees) below the horizon, because
+the atmosphere bends sunlight and the top edge of the Sun appears before
+its center, so <a href="#eq-lah" class="quarto-xref">Equation 41</a>
+puts a <a href="#sea" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar elevation angle">sea</a> of -0.002314
+<a href="#T" class="tool" data-bs-toggle="tooltip"
+data-bs-title="turns">T</a> into the arccos part of
+<a href="#eq-astsha" class="quarto-xref">Equation 38</a>. Limiting the
+fraction to the range from -1 to 1 makes the
+<a href="#lah" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc half">lah</a> 0 during a polar night and 0.5
+during a polar day.
 
 ``` {ojs}
 //| echo: false
@@ -3327,31 +3944,34 @@ viewof doyInput = Inputs.range([0, 365], {label: "Day of year", value: 183, step
 //| echo: false
 //| label: latinput
 //| class: slider
-viewof latInput = Inputs.range([-250, 250], {label: "Latitude", value: 118, step: 1})
+viewof latInput = Inputs.range([-250, 250], {label: "Latitude", value: 0, step: 1})
 ```
 
 ``` {ojs}
 //| echo: false
 //| label: loninput1
 //| class: slider
-Inputs.bind(Inputs.range([0, 1000], {step: 1, label: "Longitude"}), viewof lonInput)
+Inputs.bind(Inputs.range([0, 1000], {label: "Longitude", value: 500, step: 1}), viewof lonInput)
 ```
 
-The equation above can be summarized as sunset − sunrise =
-<a href="#law" class="tool" data-bs-toggle="tooltip"
-data-bs-title="light arc whole">law</a> or
-[minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted)
-−
-[subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted)
-=
-[difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference).
-If we replace the minuend (sunset
+In the equation above, the sunset
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>) with the current
+data-bs-title="time of day">tod</a> is the
+[minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted),
+the sunrise <a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> is the
+[subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted),
+and the <a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a> is the
+[difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference):
+sunset − sunrise = <a href="#law" class="tool" data-bs-toggle="tooltip"
+data-bs-title="light arc whole">law</a>. If we replace the sunset
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> and the subtrahend (sunrise
+data-bs-title="time of day">tod</a> with the current
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>) with the sunset
+data-bs-title="time of day">tod</a> and the sunrise
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> with the sunset
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a>, the difference will no longer be
 the <a href="#law" class="tool" data-bs-toggle="tooltip"
@@ -3361,162 +3981,453 @@ ${selectedCurrent.toFixed(3)} = ${selectedSunset.toFixed(3)}
 <span class="mono">${selectedDifference \< 0 ? “-” : “+”}</span>
 ${parseFloat(Math.abs(selectedDifference).toFixed(3))}.
 
+# Current elapsed remaining
+
 In general, the subtrahend is the time of an event such as a
 rocket🚀launch and the difference is the negative [remaining
 time](https://en.wikipedia.org/wiki/Countdown#:~:text=the%20time%20remaining%20before%20an%20event)
 if the minuend is less than the subtrahend or the positive [elapsed
 time](https://en.wikipedia.org/wiki/Mission_Elapsed_Time) if the minuend
 is greater than the subtrahend. When the minuend is the current time,
-the difference acts as a [“T minus (T−)
-countdown”](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining)
-or [“T plus (T+)
-countup”](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time).
+the difference acts as a “[T minus (T−)
+countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining)”
+or “[T plus (T+)
+countup](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time)”.
 
 <div id="equationgroup18" class="equationgroup">
 
 <span id="eq-difference">
-$$\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \qquad(34)$$
+$$\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \qquad(43)$$
 </span>
 
 </div>
 
-Dec uses the term “minuend expansion” to describe the replacement of a
-minuend with a subtrahend and a difference. We can replace the current
+# Webpage load time
+
+The difference between a minuend and subtrahend is intended to be a
+duration, whereas the minuend and subtrahend themselves are supposed to
+be <a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> that represent [time
+points](https://en.wikipedia.org/wiki/Time_point#:~:text=an%20instant%2C%20analogous%20to%20a%20geometrical%20point%20in%20space).
+If the minuend is the current
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> with the sum of either zero and a
-“positive interval <a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> and the subtrahend is the
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> when this webpage loaded, the
+difference will be the duration since this webpage loaded:
+${zeroTintHsl()} = ${loadTimeHsl()} + ${elaTimeHsl()}.
+
+# Positive interval tod (pit)
+
+A <a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> can be either a “positive interval
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a>”
 (<a href="#pit" id="positiveintervaltod" class="tool"
-data-bs-toggle="tooltip" data-bs-title="positive interval tod">pit</a>),
-which is the time since the start of the current day (the previous
-midnight), or 1 day
-(<a href="#d" id="day" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a>) and a “negative interval
+data-bs-toggle="tooltip" data-bs-title="positive interval tod">pit</a>)
+that counts up the time since the “beginning of day”
+(<a href="#bod" id="beginningofday" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beginning of day">bod</a>) or a “negative interval
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a>”
 (<a href="#nit" id="negativeintervaltod" class="tool"
-data-bs-toggle="tooltip" data-bs-title="negative interval tod">nit</a>),
-which is the negative of the time until the start of the next day (the
-next midnight), as shown in
-<a href="#eq-todexpansion" class="quarto-xref">Equation 35</a> below. At
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">Tod</a> <span class="color7">7</span>, the
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> and
+data-bs-toggle="tooltip" data-bs-title="negative interval tod">nit</a>)
+that counts down the time until the “end of day”
+(<a href="#eod" id="endofday" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of day">eod</a>). The difference between a
 <a href="#pit" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive interval tod">pit</a> are both 0.7
-<a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a> and the
+data-bs-title="positive interval tod">pit</a> and an
+<a href="#eod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of day">eod</a> is a
 <a href="#nit" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative interval tod">nit</a> is -0.3
-<a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a>: 0.7 = 0 + 0.7 = 1 + (-0.3).
+data-bs-title="negative interval tod">nit</a>:
+<a href="#pit" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive interval tod">pit</a> −
+<a href="#eod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of day">eod</a> =
+<a href="#nit" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative interval tod">nit</a>. The
+<a href="#eod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of day">eod</a> is equal to one day or
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="one hundred thousand">10<sup>5</sup></span>
+<a href="#cmd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimillidays">cmd</a>. In
+<a href="#cmd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimillidays">cmd</a>, the current Zone
+<span class="color0">0</span>
+<a href="#nit" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative interval tod">nit</a> is ${zeroTintHsl()} −
+<span class="color0"><span data-bs-toggle="tooltip"
+data-bs-title="one hundred thousand">10<sup>5</sup></span></span> =
+${negaTintHsl()}.
 
-Likewise, a “positive interval
+# Positive integer doy (pid)
+
+Similarly, a <a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a> can be either a “positive integer
+<a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a>”
+(<a href="#pid" id="positiveintegerdoy" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a>) that counts up the
+days since the “beginning of year”
+(<a href="#boy" id="beginningofyear" class="tool"
+data-bs-toggle="tooltip" data-bs-title="beginning of year">boy</a>) or a
+“negative integer <a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a>”
+(<a href="#nid" id="negativeintegerdoy" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="negative integer day of year">nid</a>) that counts down
+the days until the “end of year”
+(<a href="#eoy" id="endofyear" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a>) and an
 <a href="#ada" class="tool" data-bs-toggle="tooltip"
+data-bs-title="annual day aggregate">ada</a> can be either a “positive
+interval <a href="#ada" class="tool" data-bs-toggle="tooltip"
 data-bs-title="annual day aggregate">ada</a>”
 (<a href="#pia" id="positiveintervalada" class="tool"
 data-bs-toggle="tooltip" data-bs-title="positive interval ada">pia</a>)
-is the time since the start of the current year and a “negative interval
+that joins a <a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a> and
+<a href="#pit" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive interval tod">pit</a> or a “negative interval
 <a href="#ada" class="tool" data-bs-toggle="tooltip"
 data-bs-title="annual day aggregate">ada</a>”
 (<a href="#nia" id="negativeintervalada" class="tool"
 data-bs-toggle="tooltip" data-bs-title="negative interval ada">nia</a>)
-is the time until the start of the next year. A
-<a href="#pia" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive interval ada">pia</a> equals the current
-<a href="#ada" class="tool" data-bs-toggle="tooltip"
-data-bs-title="annual day aggregate">ada</a>, and a
+that links a <a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer day of year">nid</a> and
+<a href="#nit" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative interval tod">nit</a>:
 <a href="#nia" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative interval ada">nia</a> is the
+data-bs-title="negative interval ada">nia</a> =
+<a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer day of year">nid</a> +
+<a href="#nit" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative interval tod">nit</a> =
 <a href="#pia" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive interval ada">pia</a> minus the
-<a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year length">syl</a>, just as a “negative integer
+data-bs-title="positive interval ada">pia</a> −
+<a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a>.
+
+When a <a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a> and a
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> are in the same equation, we
+multiply the <a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> by a conversion factor or divide it
+by an inverse conversion factor so that its measurement unit matches
+that of the <a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a>: ${zeroDotyHsl()}.${zeroTpadHsl()} =
+${zeroDotyHsl()} + ${zeroTintHsl()} ÷
+<span class="color0"><span data-bs-toggle="tooltip"
+data-bs-title="one hundred thousand">10<sup>5</sup></span></span> =
+${nextDotyHsl()} + ${negaTintHsl()} ÷
+<span class="color0"><span data-bs-toggle="tooltip"
+data-bs-title="one hundred thousand">10<sup>5</sup></span></span>. If
+the subtrahend is an
+<a href="#eod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of day">eod</a>, it disappears after advancing the
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</a>”
-(<a href="#nid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer day of year">nid</a>) is a “positive
-integer <a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</a>”
-(<a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a>) minus the
-<a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year length">syl</a>.
-<a href="#eq-adaexpansion" class="quarto-xref">Equation 36</a> applies
-minuend expansion to the
+data-bs-title="day of year">doy</a> by one day and turning the
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> from a
+<a href="#pit" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive interval tod">pit</a> into a
+<a href="#nit" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative interval tod">nit</a>.
+
+# Year of era (yoe)
+
+Likewise, a subtrahend that is an
+<a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a> is not displayed as part of a
+<a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a> or an
 <a href="#ada" class="tool" data-bs-toggle="tooltip"
-data-bs-title="annual day aggregate">ada</a>.
+data-bs-title="annual day aggregate">ada</a> because it becomes
+incorporated into the “year of era”
+(<a href="#yoe" id="yearofera" class="tool" data-bs-toggle="tooltip"
+data-bs-title="year of era">yoe</a>): ${zeroYearHsl()} +
+${zeroDotyHsl()}.${zeroTpadHsl()} ÷
+<span class="color0">${zeroNdaysInYear}</span> = ${nextYearHsl()} +
+${zeroNidHsl()}.${negaTendHsl()} ÷
+<span class="color0">${zeroNdaysInYear}</span>. Essentially, the
+<a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a> takes up any amount of time that
+spills over from the
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> and the
+<a href="#yoe" class="tool" data-bs-toggle="tooltip"
+data-bs-title="year of era">yoe</a> absorbs any amount of time that does
+not fit into the <a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a>.
 
-<div id="equationgroup19" class="equationgroup">
+The <a href="#ada" class="tool" data-bs-toggle="tooltip"
+data-bs-title="annual day aggregate">ada</a> is like a
+[sōzu](https://en.wikipedia.org/wiki/Shishi-odoshi#:~:text=a%20type%20of%20water%20fountain%20used%20in%20Japanese%20gardens),
+a Japanese garden fountain that fills until it reaches a tipping point,
+empties out, and then begins to fill up again. In this analogy, time
+flows like water from the
+<a href="#ada" class="tool" data-bs-toggle="tooltip"
+data-bs-title="annual day aggregate">ada</a> to the
+<a href="#yoe" class="tool" data-bs-toggle="tooltip"
+data-bs-title="year of era">yoe</a>, the
+<a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a> is the total volume of the sōzu, the
+<a href="#pia" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive interval ada">pia</a> is the volume that is
+filled with water, and the absolute value of the
+<a href="#nia" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative interval ada">nia</a> is the volume that is
+empty: <a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a> =
+<a href="#pia" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive interval ada">pia</a> −
+<a href="#nia" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative interval ada">nia</a>.
 
-<span id="eq-todexpansion">
-tod = 0 + pit = 1 + nit   (35)
-</span>
+<div id="sozu" class="column-margin gif" data-fig-align="center">
 
-<span id="eq-adaexpansion">
-ada = 0 + pia = syl + nia   (36)
-</span>
+<img
+src="../../asset/Higashiyama_Botanical_Garden_Shishiodoshi_20170617.gif"
+data-fig-alt="A bamboo sōzu at Higashiyama Botanical Garden slowly fills with water, tips forward to empty it, and swings back up to fill again"
+loading="lazy" /> <span id="sozulabel"
+class="giflabel">[Wikimedia](https://commons.wikimedia.org/wiki/File:Higashiyama_Botanical_Garden_Shishiodoshi_20170617.gif)</span>
 
 </div>
+
+# Time of milliday (tom)
+
+Just as we can divide an
+<a href="#ada" class="tool" data-bs-toggle="tooltip"
+data-bs-title="annual day aggregates">ada</a> into a
+<a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of year">doy</a> and
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="times of day">tod</a>, we can split a
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> into a “milliday of day”
+(<a href="#mod" id="millidayofday" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliday of day">mod</a>) and a “time of milliday”
+(<a href="#tom" id="timeofmilliday" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of milliday">tom</a>):
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> =
+<a href="#mod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliday of day">mod</a> × 100 +
+<a href="#tom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of milliday">tom</a>. Multiplying a
+<a href="#mod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliday of day">mod</a> by 100 converts it from
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliday">md</a> to
+<a href="#cmd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimillidays">cmd</a>. To distinguish the
+<a href="#tom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of milliday">tom</a> from the
+<a href="#mod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliday of day">mod</a>, we can express the first digit
+of the <a href="#tom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of milliday">tom</a> in
+<a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a> rather than
+<a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a>: ${zeroTmonHsl()}${zeroTtopHsl()} =
+${zeroTmonHsl()} × 100 + ${zeroTtonHsl()} ≈
+${zeroTmonHsl()}${decsepHsl()} = ${zeroTmonHsl()} × 100 +
+${decsecHsl()}.
+
+# Simulated watch face
+
+The range input below sets the
+<a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offsets">tzo</a> for the watch
+[face](https://en.wikipedia.org/wiki/Clock_face#:~:text=displays%20time%20through%20the%20use%20of%20a%20flat%20dial%20with%20reference%20marks)
+simulation beneath it. The radio inputs in between the range input and
+simulation determine whether the simulated watch face is circular or
+rectangular and whether it has 90
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="seconds">s</a> or 100
+<a href="#cmd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimillidays">cmd</a>
+[marks](https://en.wikipedia.org/wiki/Hatch_mark#Unit_and_value_marks:~:text=The%20distance%20between%20adjacent%20marks%20is%20one%20unit).
+An <a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliday">md</a> divides evenly into thirds, sixths, or
+ninths with <a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="seconds">s</a>, quarters with
+<a href="#cmd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimillidays">cmd</a>, and halves, fifths, or tenths
+with either unit.
+
+``` {ojs}
+//| echo: false
+//| class: slider
+//| label: zoneinput
+viewof zoneInput = Inputs.range([0, 9], {label: "Zone", value: 5, step: 1})
+```
+
+<div class="radiorow">
+
+``` {ojs}
+//| echo: false
+//| class: radio
+//| label: shapeinput
+viewof shapeInput = Inputs.radio(new Map([["Circle", true], ["Rectangle", false]]), {label: "Shape", value: true})
+```
+
+``` {ojs}
+//| echo: false
+//| class: radio
+//| label: unitinput
+viewof unitInput = Inputs.radio(new Map([["90", true], ["100", false]]), {label: "Ticks", value: true})
+```
+
+</div>
+
+``` {ojs}
+//| echo: false
+//| class: watch
+//| label: decwatch
+// https://observablehq.com/@ldgrp/apple-watch-solar-dial-simulation
+decWatch = {
+  const circle = shapeInput;                  // true: circle, false: rectangle
+  const count = unitInput ? 90 : 100;         // 90 Dec s or 100 cmd per md
+  const period = 86400 / count;               // 960 ms per Dec s, 864 ms per cmd
+  // long ticks, circle: 0, 15, 30, 45, 60, 75 (90) or 0, 25, 50, 75 (100);
+  // rectangle: 15, 30, 60, 75 (90) or 25, 75 (100), skipping each row's start
+  const isMajor = d => circle
+    ? d % (unitInput ? 15 : 25) === 0
+    : d % (unitInput ? 15 : 25) === 0 && d % (count / 2) !== 0;
+
+  const svg = d3.create("svg").style("max-width", "200px");
+
+  let ticks;
+  if (circle) {
+    const radius = 100;
+    svg.attr("viewBox", [-radius, -radius, radius * 2, radius * 2]);
+
+    svg.append("circle")
+      .attr("r", radius)
+      .style("fill", "rgb(10,34,58)");
+
+    ticks = svg.selectAll(".watch-tick")
+      .data(d3.range(0, count))
+      .join("line")
+        .attr("class", "watch-tick")
+        .attr("x1", 0)
+        .attr("x2", 0)
+        .attr("y1", radius - 5)
+        .attr("y2", d => radius - (isMajor(d) ? 16 : 10))
+        .attr("stroke-width", 3)
+        .attr("stroke-linecap", "round")
+        .attr("transform", d => `rotate(${180 + d * 360 / count})`);
+  } else {
+    const width = 200, height = 125;
+    const perRow = count / 2;                 // 45 or 50 ticks per row
+    const spacing = 176 / perRow;             // rows ≈ 176 px wide
+    const rowY = 50;                          // row centres at y = ±50
+    const tickLength = d => isMajor(d) ? 16 : 10;
+    const x0 = -((perRow - 1) * spacing) / 2; // centre each row
+    svg.attr("viewBox", [-width / 2, -height / 2, width, height]);
+
+    svg.append("rect")
+      .attr("x", -width / 2)
+      .attr("y", -height / 2)
+      .attr("width", width)
+      .attr("height", height)
+      .style("fill", "rgb(10,34,58)");
+
+    // first half of the ticks above the number, second half below, left to right
+    ticks = svg.selectAll(".watch-tick")
+      .data(d3.range(0, count))
+      .join("line")
+        .attr("class", "watch-tick")
+        .attr("x1", d => x0 + (d % perRow) * spacing)
+        .attr("x2", d => x0 + (d % perRow) * spacing)
+        .attr("y1", d => (d < perRow ? -rowY : rowY) - tickLength(d) / 2)
+        .attr("y2", d => (d < perRow ? -rowY : rowY) + tickLength(d) / 2)
+        .attr("stroke-width", 2)
+        .attr("stroke-linecap", "round");
+  }
+
+  const label = svg.append("text")
+    .attr("y", 32)
+    .attr("fill", "white")
+    .attr("text-anchor", "middle")
+    .attr("font-family", "Helvetica, Arial, sans-serif")
+    .attr("font-weight", 600)
+    .attr("font-size", "90px")
+    .style("font-variant-numeric", "tabular-nums");
+
+  while (true) {
+    // ms since midnight in the selected Dec zone (1 zone = 1 dd = 8 640 000 ms)
+    const ms = (Date.now() + zoneInput * 8640000) % 86400000;
+    const millidays = ms / 86400;                        // 86 400 ms per milliday
+    const tick = Math.floor((millidays % 1) * count);    // Dec s 0–89 or cmd 0–99
+
+    label.text(String(Math.floor(millidays)).padStart(3, "0"));
+    ticks.attr("stroke", d => (d > tick ? "#555" : "white"));
+
+    yield svg.node();
+    await Promises.delay(period - (ms % period));        // next Dec s or cmd
+  }
+}
+```
+
+The “Ticks” radio input above refers to the tick marks on the simulated
+watch face above and how many times the simulated watch ticks per
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliday">md</a>
+(<a href="#permil" id="permilliday" class="mono tool"
+data-bs-toggle="tooltip" data-bs-title="per milliday">‰</a>). I used the
+[`librosa`](https://librosa.org) [Python](https://www.python.org)
+[library](https://en.wikipedia.org/wiki/Library_%28computing%29#:~:text=a%20collection%20of%20resources%20that%20can%20be%20used%20during%20software%20development)
+to determine that the
+[tempo](https://en.wikipedia.org/wiki/Tempo#:~:text=pace%20of%20a%20given%20composition)
+of the <span class="color88by100">1988</span> song “[Don’t Worry, Be
+Happy](https://en.wikipedia.org/wiki/Don%27t_Worry,_Be_Happy#:~:text=a%201988%20song%20by%20Bobby%20McFerrin)”
+is <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span>100.566
+<a href="#permil" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="per milliday">‰</a> or <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1.00566
+per <a href="#cmd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimillidays">cmd</a>
+(<a href="#per" id="perbeat" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeat">þ</a>). Whereas
+<a href="#permil" class="mono tool" data-bs-toggle="tooltip"
+data-bs-title="per milliday">‰</a> and
+<a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeat">þ</a> measure
+[rates](https://en.wikipedia.org/wiki/Rate_%28mathematics%29#:~:text=the%20denominator%20is%20a%20time%20duration),
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliday">md</a> and
+<a href="#cmd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimillidays">cmd</a> measure
+[durations](https://en.wikipedia.org/wiki/Duration#:~:text=amount%20of%20time%20elapsed%20between%20two%20events).
 
 Dec is not the first system to use [decimal
 time](https://en.wikipedia.org/wiki/Decimal_time#France). During the
 [French Revolution](https://en.wikipedia.org/wiki/French_Revolution),
 decimal time was mandatory for French public records for 197 days
-(<a href="#d" id="day" class="tool" data-bs-toggle="tooltip"
+(<a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a>), from
 <span class="color94by100">1794</span>+<span class="color205by365">205</span>
 to
 <span class="color95by100">1795</span>+<span class="color037by365">037</span>.
 On
-<span class="color98by100">1998</span>+<span class="color247by365">247</span>,
+<span class="color98by100">1998</span>+<span class="color236by365">236</span>,
 the Swatch corporation announced [Swatch Internet
 Time](https://en.wikipedia.org/wiki/Swatch_Internet_Time), which divides
-the day into 1000 “.beats”, only has one time zone, and is displayed by
-Dec as <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>−β.
-
-Declock measures time in fractional days. A single decimal
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> replaces the three parts of an
-<a href="#hms" class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour minute second">hms</a> triplet and can be shown at
-any precision by changing its metric prefix. With one
-<a href="#b9" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9">b9</a> digit and one
-<a href="#b24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a> digit after four
-<a href="#b10" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base10">b10</a> digits, a
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> can match any
-<a href="#hms" class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour minute second">hms</a> triplet exactly, and a
-<a href="#uto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="universal time offset">uto</a> keeps Dec in step with
-<a href="#ut" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Universal Time">ut</a> without leap seconds. Dec derives
-its ten <a href="#tzo" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offsets">tzo</a> from longitude and never uses
-negative offsets, but it lets anyone write any
-<a href="#sto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offset">sto</a> after a
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> without forcing them to change it.
-With the <a href="#eot" class="tool" data-bs-toggle="tooltip"
-data-bs-title="equation of time">eot</a> and
-<a href="#sda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar declination angle">sda</a>, we can turn a Zone
-<span class="color0">0</span>
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> into solar time and estimate the
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="times of day">tod</a> of sunrise, solar noon, and sunset.
-Finally, minuend expansion turns any
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> into a countdown or countup relative
-to an event, such as midnight, sunset, or the start of the year.
+the day into 1000 “.beats” (a Swatch .beat is 1
+<a href="#md" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliday">md</a>, whereas a beat is 1
+<a href="#cmd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimilliday">cmd</a>), only has one time zone, and is
+displayed by Dec as <a href="#mod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliday of day">mod</a>−<span class="color1by24">β</span>.
 
 # Next
 
@@ -3660,9 +4571,8 @@ the bottom of this article. You may also want to cite the Observable
 notebooks that I adapted into the clock🕓, bar📊chart, map🗺️, and
 daylight☀️plot visualizations in this article or the 2014 blog post
 which proposed a system of 20 decimal time zones, each 5
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hundredths of a day">centidays</span> wide, based on the
-[Greenwich
+<a href="#cd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centidays">cd</a> wide, based on the [Greenwich
 Meridian](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England):
 
 - [Pearson, Tom](https://www.2x2.graphics). <u>2013</u><u>+124</u>.
@@ -3813,14 +4723,34 @@ additional files or configuration. A Quarto output file can have both a
   per minute, 1000 beats per day
 - <a href="#bodymassindex" id="bmi">BMI</a>: body mass index, kilograins
   of body mass divided by height in zem squared (kg/z²)
+- <a href="#base6" id="b6">b6</a>: base6, senary, 6 digits written as
+  counting rods, 𝍠 𝍮 𝍯 𝍰 𝍱 𝍭, whose number of horizontal strokes is the
+  value of the digit; the first digit of a minute or second counts tens
+  of minutes or seconds
 - <a href="#base9" id="b9">b9</a>: base9, nonary, 9 digits written as
   the astronomical symbols of the Sun and the eight planets, ☉ ☿ ♀ ♁ ♂ ♃
-  ♄ ♅ ♆; the first digit after a tod with Dec seconds appended counts
-  tens of Dec seconds
+  ♄ ♅ ♆; the first digit after a tod with seconds appended counts tens
+  of seconds
 - <a href="#base10" id="b10">b10</a>: base10, decimal, the digits 0 to 9
 - <a href="#base24" id="b24">b24</a>: base24, 24 digits written as the
-  lowercase Greek letters α to ω; counts sid after a number of Dec
-  seconds or hours after a UTC offset
+  lowercase Greek letters α to ω; counts sid after a number of seconds
+  or heh after a UTC offset
+- <a href="#base25" id="b25">b25</a>: base25, pentavigesimal, 25 digits
+  written as Ogham letters; zero-based digits run from the Ogham space
+  mark (<span class="ogham"> </span>) for 0 through ᚁ (Beith) for 1 to ᚘ
+  (Ifin) for 24, and one-based digits put ᚙ (Eamhancholl) for 25 in
+  place of the space mark; counts hours
+- <a href="#hectoday" id="baekil">ﾲ</a>: bǎi, a hundred turns; as a
+  duration, a Dec season, 1 hectoday, 10 decadays, or one hundred days;
+  ﾲ, the halfwidth Hangul letter pieup (U+FFB2), looks like a capital H
+  with a line at the bottom; the inspiration for ﾲ is Baek-il (백일),
+  the Korean celebration of the first 100 days of a baby’s life, whose
+  first letter is pieup (ㅂ), and 百日宴 (bǎi rì yàn), the Chinese
+  banquet for the same occasion
+  - <a href="#positiveintegerhectoday" id="pibaekil">piﾲ</a>: positive
+    integer hectoday, ⌊pid ÷ 100⌋, 0 to 3
+  - <a href="#negativeintegerhectoday" id="nibaekil">niﾲ</a>: negative
+    integer hectoday, ⌊nid ÷ 100⌋, -4 to -1
 - <a href="#taur" id="c">c</a>: taur, 𝜏*r*, 100000 kilozem, 40000
   kilometers, nearly the circumference of the Earth, roughly the product
   of 𝜏 and the radius of the Earth, approximately the dividend of the
@@ -3837,9 +4767,9 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#cubicnanotaur" id="nc3">nc³</a>: cubic nanotaur, *n*𝜏*r*³,
     1 cubic decizem
 - <a href="#day" id="d">d</a>: day, a tenth of a decaday, a seventh of a
-  week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays,
-  1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse
-  of a quotidie
+  week, a fifth of a pentaday, 10 decidays, 24 heh, 25 hours, 100
+  centidays, 1000 millidays, 1440 bem, 1500 minutes, 86400 SI seconds,
+  90000 seconds, 100000 beats, the inverse of a quotidie
   - <a href="#dayofxun" id="dox">dox</a>: day of xún
   - <a href="#dayofpentaday" id="dop">dop</a>: day of pentaday
   - <a href="#dayofmonth" id="dom">dom</a>: day of month
@@ -3847,6 +4777,12 @@ additional files or configuration. A Quarto output file can have both a
     months or 0 to 29 in Venusian long months
   - <a href="#dayofweek" id="dow">dow</a>: day of week
   - <a href="#dayofyear" id="doy">doy</a>: day of year, xún \* 10 + dox
+    - <a href="#daylightsavingtime" id="dst">dst</a>: daylight saving
+      time
+    - <a href="#dstinitdoy" id="did">did</a>: dst initiation doy, the
+      last doy before dst
+    - <a href="#dstexpdoy" id="ded">ded</a>: dst expiration doy, the
+      first doy after dst
   - <a href="#positiveintegerdoy" id="pid">pid</a>: positive integer day
     of year, days elapsed since the beginning of the year, 0 to 364 or
     365
@@ -3871,39 +4807,46 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#negativeintervalada" id="nia">nia</a>: negative interval
     ada, pia − syl, the negative of the time until the start of the next
     year
-  - <a href="#dayofcycle" id="doc">doc</a>: day of cycle, days since the
-    start of the current 400-year Gregorian cycle, 0 to 146096
-  - doc<sub>♀</sub>: Decyther day of cycle, days since the start of the
-    current 467-day Venusian cycle, doe mod 467, 0 to 466
-  - <a href="#dayofhectoday" id="doh">doh</a>: day of hectoday, doy mod
-    100, the percent of a hectoday that has elapsed
+  - <a href="#dayofquadricentennial" id="doq">doq</a>: day of
+    quadricentennial, days since the start of the current Gregorian
+    quadricentennial, 0 to 146096
+  - <a href="#dayofhexadecimester" id="dohvenus">doh<sub>♀</sub></a>:
+    Decyther day of hexadecimester, days since the start of the current
+    467-day Decyther hexadecimester, doe <span class="hyphen">−⌊</span>
+    467, 0 to 466
+  - <a href="#dayofhectoday" id="dobaekil">doﾲ</a>: day of hectoday, doy
+    <span class="hyphen">−⌊</span> 100, the percent of a hectoday that
+    has elapsed
   - <a href="#dayofbimester" id="dob">dob</a>: day of bimester, 0 to 58
     in common bimesters or 0 to 59 in leap bimesters
   - dob<sub>♀</sub>: Decyther day of bimester, 0 to 57 in antes and the
-    post of Qoc 2 or 0 to 58 in the other posts
+    post of Qoh 2 or 0 to 58 in the other posts
   - <a href="#dayoftricennium" id="dot">dot</a>: day of tricennium, days
     since the start of the current 30-year lunar cycle, 0 to 10630
-  - <a href="#dayofquadrimester" id="doq">doq</a>: day of quadrimester,
-    days since the beginning of a Decyther quadrimester, 0 to 115 or 116
+  - <a href="#dayofquadrimester" id="doqvenus">doq<sub>♀</sub></a>:
+    Decyther day of quadrimester, days since the beginning of a Decyther
+    quadrimester, 0 to 115 or 116
   - <a href="#beginningofquadrimester" id="boq">boq</a>: beginning of
-    quadrimester, the pid of Doq 0, pid − doq
-  - <a href="#quadrimesterofcycle" id="qoc">qoc</a>: quadrimester of
-    cycle, zero-based index of a Decyther quadrimester, 0 to 3
+    quadrimester, the pid of Doq<sub>♀</sub> 0, pid − doq<sub>♀</sub>
+  - <a href="#quadrimesterofhexadecimester" id="qoh">qoh</a>:
+    quadrimester of hexadecimester, zero-based index of a Decyther
+    quadrimester, 0 to 3
   - <a href="#beginningofbimester" id="bob">bob</a>: beginning of
     bimester, the pid of Dob 0, pid − dob
   - <a href="#beginningofmonth" id="bom">bom</a>: beginning of month,
     the pid of the day before the first day of the month, pid − dom
-  - <a href="#monthofcycle" id="moc">moc</a>: month of cycle, zero-based
-    index of a Venusian month, 0 to 15
+  - <a href="#monthofhexadecimester" id="mohvenus">moh<sub>♀</sub></a>:
+    Decyther month of hexadecimester, zero-based index of a Venusian
+    month, 0 to 15
   - <a href="#beginningofweek" id="bow">bow</a>: beginning of week, the
     pid of Dow 0, pid − dow
   - <a href="#beginningofyear" id="boy">boy</a>: beginning of year,
     midnight at the start of Day 0
   - <a href="#beginningofera" id="boe">boe</a>: beginning of era,
     midnight at the start of Day 0 of Year 0
-  - <a href="#beginningofcycle" id="boc">boc</a>: beginning of cycle,
-    the start of Doc<sub>♀</sub> 0 and of the first ante in a Decyther
-    cycle
+  - <a href="#beginningofhexadecimester" id="boh">boh</a>: beginning of
+    hexadecimester, the start of Doh<sub>♀</sub> 0 and of the first ante
+    in a Decyther hexadecimester
   - <a href="#endofyear" id="eoy">eoy</a>: end of year, midnight at the
     end of Day 364 or 365
   - <a href="#Juliandaynumber" id="jdn">JDN</a>: Julian day number, days
@@ -3913,19 +4856,19 @@ additional files or configuration. A Quarto output file can have both a
     leap years, -1063 to -1
   - <a href="#venusianextracalationdifference" id="ved">ved</a>:
     Venusian extracalation difference, days until the end of
-    Doc<sub>♀</sub> 349, the last day of the one-day-shorter Qoc 2,
-    Bimester 5, and Moc 11, (doc<sub>♀</sub> + 117) mod 467 − 467, -467
-    to -1
+    Doh<sub>♀</sub> 349, the last day of the one-day-shorter Qoh 2,
+    Bimester 5, and Moh<sub>♀</sub> 11, (doh<sub>♀</sub> + 117)
+    <span class="hyphen">−⌊</span> 467 − 467, -467 to -1
   - <a href="#misalignedunitdifference" id="mud">mud</a>: misaligned
     unit difference, pid − dom − dow
   - <a href="#deciday" id="dd">dd</a>: deciday, a tenth of a day, 2.4
-    hours, 144 minutes
+    heh, 2.5 hours, 144 bem, 150 minutes
   - <a href="#centiday" id="cd">cd</a>: centiday, a hundredth of a day,
-    0.24 hours, 14.4 minutes
+    0.24 heh, 0.25 hours, 14.4 bem, 15 minutes
   - <a href="#milliday" id="md">md</a>: milliday, a thousandth of a day,
-    1.44 minutes
+    1.44 bem, 1.5 minutes, 90 seconds
   - <a href="#decimilliday" id="dmd">dmd</a>: decimilliday, a ten
-    thousandth of a day, 10 beats, 8640 milliseconds
+    thousandth of a day, a line of time, 10 beats, 8640 milliseconds
   - <a href="#centimilliday" id="cmd">cmd</a>: centimilliday, a hundred
     thousandth of a day, 1 beat, 864 milliseconds
   - <a href="#microday" id="ud">µd</a>: microday, a millionth of a day,
@@ -3935,24 +4878,30 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#degree" id="deg">°</a>: degree, 1/360 turns, 180/𝜋 or 360/𝜏
   radians
   - <a href="#compassdegree" id="cdeg">c°</a>: compass degree
+  - <a href="#greenwichdegrees" id="gdeg">g°</a>: Greenwich degree, a
+    longitude in degrees East (positive) or West (negative) of the
+    Greenwich meridian, -180 to 180
   - <a href="#huedegree" id="hdeg">h°</a>: hue degree
 - <a href="#egg" id="e">e</a>: egg, 1000 grains, 2 ounces, 64 grams
 - <a href="#equationoftime" id="eot">eot</a>: equation of time, ast −
   mst as a function of toy, about -9.8 to 11.4 millidays
 - <a href="#cubit" id="ell">ℓ</a>: ell, cubit, 10/9 zem
-- <a href="#foot" id="f">f</a>: foot, 0.75 zem, 75 millimeters
+- <a href="#foot" id="f">f</a>: foot, 75 centizem, 0.75 zem, 300
+  millimeters
+- <a href="#gig" id="G">G</a>: gig, gigaturn, a billion turns
 - <a href="#gutta" id="g">g</a>: drop (gutta in Latin) or grain (granum
   in Latin), 64 microliters or 64 milligrams
   - <a href="#kilograin" id="kg">kg</a>: kilograin or kilodrop, 64 grams
     or 64 milliliters
   - <a href="#megagrain" id="Mg">Mg</a>: megagrain or megadrop, 64
     kilograms or 64 liters
-- <a href="#hectoday" id="h">h</a>: a Dec season, 1 ***h***ectoday, 10
-  decadays, or one ***h***undred days
-  - <a href="#positiveintegerhectoday" id="pih">pih</a>: positive
-    integer hectoday, ⌊pid ÷ 100⌋, 0 to 3
-  - <a href="#negativeintegerhectoday" id="nih">nih</a>: negative
-    integer hectoday, ⌊nid ÷ 100⌋, -4 to -1
+- <a href="#dechour" id="h">h</a>: hour, a twenty-fifth of a day, 40
+  millidays, 60 minutes, 3600 seconds, 0.96 heh, 57.6 bem; written as
+  one b25 digit
+  - <a href="#hehour" id="heh">heh</a>: Hipparchian equinoctial hour, a
+    twenty-fourth of a day, 41.<span class="tool"
+    data-bs-toggle="tooltip" data-bs-title="base9 digit 6">♄</span>
+    millidays, 25/24 hours, 60 bem, 3600 SI seconds
 - <a href="#hexadecimal" id="hex">hex</a>: hexadecimal, base 16
 - <a href="#huesaturationlightness" id="hsl">HSL</a>: hue saturation
   lightness
@@ -3978,25 +4927,38 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#decijing" id="dj">dj</a>: decijīng, a tenth of a jīng (经)
   - <a href="#millijing" id="mj">mj</a>: millijīng, a thousandth of a
     jīng (经)
-- <a href="#keg" id="k">k</a>: keg, cubic zem, 64 liters, 1000 wine
-  glasses, a million drops, half a barrel
-- <a href="#kilometer" id="km">km</a>: kilometer, 1000 meters, 2500 zem,
-  2.5 kilozem
-- <a href="#kilometersperhour" id="kmph">kmph</a>: kilometers per hour,
-  thousands of meters per hour, 1 kmph = 0.6 mv
+- <a href="#kilo" id="k">k</a>: kilo, a thousand turns
+- <a href="#kilometer" id="km">ksim</a>: kilometer, kilo SI meter, 1000
+  meters, 2500 zem, 2.5 kilozem
+- <a href="#kilometersperhour" id="kmph">ksim/h</a>: kilometers per
+  hour, 1 ksim/h = 0.625 mv
+- <a href="#line" id="l">l</a>: line, a ten-thousandth of a turn, a
+  tenth of a mil; as a duration, 1 decimilliday
 - <a href="#liter" id="L">L</a>: liter, 15625 drops, a cubic decimeter
   - <a href="#milliliter" id="mL">mL</a>: milliliter, a cubic
     centimeter, a thousandth of a liter, 15.625 drops
   - <a href="#microliter" id="uL">µL</a>: microliter, a cubic
     millimeter, a millionth of a liter, 0.015625 drops
-- <a href="#squaremeter" id="m2">m²</a>: square meter, 6.25 square zem
-  - <a href="#squarecentimeter" id="cm2">cm²</a>: square centimeter,
+- <a href="#meg" id="M">M</a>: meg, megaturn, a million turns
+- <a href="#decminute" id="m">m</a>: minute, a fifteen-hundredth of a
+  day, a sixtieth of a hour, 60 seconds, 0.<span class="tool"
+  data-bs-toggle="tooltip" data-bs-title="base9 digit 6">♄</span>
+  millidays, 0.96 bem, 57.6 SI seconds; written as one b6 digit followed
+  by one b10 digit
+  - <a href="#birunianequinoctialminute" id="bem">bem</a>: Birunian
+    equinoctial minute, a sixtieth of a heh, a fourteen-hundred-fortieth
+    of a day, 0.<span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="base9 digit 6">♄</span><span class="tool"
+    data-bs-toggle="tooltip" data-bs-title="base24 digit 6">η</span>
+    millidays, 25/24 minutes, 60 SI seconds
+- <a href="#squaremeter" id="m2">sim²</a>: square meter, 6.25 square zem
+  - <a href="#squarecentimeter" id="cm2">csim²</a>: square centimeter,
     6.25 square centizem
-  - <a href="#squaredecimeter" id="dm2">dm²</a>: square decimeter, 6.25
-    square decizem
-  - <a href="#squarekilometer" id="km2">km²</a>: square kilometer, 6.25
-    square kilozem
-  - <a href="#cubiccentimeter" id="cm3">cm³</a>: cubic centimeter, 1
+  - <a href="#squaredecimeter" id="dm2">dsim²</a>: square decimeter,
+    6.25 square decizem
+  - <a href="#squarekilometer" id="km2">ksim²</a>: square kilometer,
+    6.25 square kilozem
+  - <a href="#cubiccentimeter" id="cm3">csim³</a>: cubic centimeter, 1
     milliliter, a thousandth of a liter, 15.625 drops
 - <a href="#pentaday" id="p">p</a>: pentaday, a group of five days, half
   a decaday
@@ -4009,6 +4971,9 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#liminalinterconnectingmargin" id="lim">lim</a>: liminal
     interconnecting margin, the pair of days between two pir, Dop 4 and
     the following Dop 0
+- <a href="#multiplicativeinversepair" id="mip">mip</a>: multiplicative
+  inverse pair, two units whose product is 1, such as b and þ, d and q,
+  or v and ʌ
 - <a href="#note" id="n">n</a>: note, a specific frequency within an
   octave
 - <a href="#nationaloceanicandatmosphericadministration"
@@ -4020,11 +4985,13 @@ additional files or configuration. A Quarto output file can have both a
     fold change in frequency
 - <a href="#perbeat" id="per">þ</a>: perbeat, the inverse of a beat,
   1/beat, once per beat, every beat, 100000 q; symbolized by thorn (þ),
-  which looks like a combination of the letters “p” and “b”; not to be
-  confused with a picobeat (pb)
-  - <a href="#teraperbeat" id="Tpb">Tþ</a>: teraperbeat, 10<sup>12</sup>
-    perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat,
-    every picobeat
+  which looks like a combination of the letters “p” and “b”
+  - <a href="#permilliday" id="permil">‰</a>: per milliday, the inverse
+    of a milliday, once per milliday, 1000 q, a hundredth of a perbeat
+- <a href="#parallaxmicroturn" id="parmic">parmic</a>: parallax
+  microturn, the distance at which 1 astronomical unit spans a
+  microturn, 3.74 gigataur ÷ 𝜏, about 595.239 megataur or 2.51667 light
+  years
 - <a href="#quotidie" id="q">q</a>: quotidie, the inverse of a day, a
   hundred thousandth of a perbeat; the letter “q” in quotidie can be
   flipped vertically to produce the letter “d” in day
@@ -4034,19 +5001,21 @@ additional files or configuration. A Quarto output file can have both a
     the direction of the Sun along the horizon measured clockwise from
     North
   - <a href="#millirose" id="mr">mr</a>: compass millirose, a thousandth
-    of a *r*otation along the horizon, .36 compass degrees
+    of a *r*otation along the horizon, 0.36 compass degrees
 - <a href="#radian" id="rad">rad</a>: radian, 1/𝜏 turns, 360/𝜏 degrees,
   1/𝜋 turns, 180/𝜋 degrees
 - <a href="#redgreenblue" id="rgb">RGB</a>: red green blue
-- <a href="#second" id="s">s</a>: second, 1/90 millidays, 10/9 beats, 1
-  Dec second = 0.96 SI seconds
-  - <a href="#decisecond" id="ds">ds</a>: decisecond, a tenth of a Dec
+- <a href="#second" id="s">s</a>: second, a sixtieth of a minute, 1/90
+  millidays, 10/9 beats, 1 second = 0.96 SI seconds
+  - <a href="#decasecond" id="decasec">Ds</a>: decasecond, ten seconds,
+    1/9 millidays, 9.6 SI seconds
+  - <a href="#decisecond" id="ds">ds</a>: decisecond, a tenth of a
     second, 1/900 millidays, 1/9 beats, 96 milliseconds
   - <a href="#secondintervaldifference" id="sid">sid</a>: second
-    interval difference, 1 SI second − 1 Dec second, 1/24 Dec second,
-    1/25 SI second, 40 milliseconds
-  - <a href="#sisecond" id="sis">sis</a>: SI second, 25/24 Dec seconds,
-    1/86.4 millidays, 1/86400 days
+    interval difference, 1 SI second − 1 second, 1/24 second, 1/25 SI
+    second, 40 milliseconds
+  - <a href="#sisecond" id="sis">sis</a>: SI second, a sixtieth of a
+    bem, 25/24 seconds, 1/86.4 millidays, 1/86400 days
 - <a href="#spinorbitinterval" id="soi">soi</a>: spin orbit interval, a
   lunar day, 1.03505 days
   - <a href="#soiofyear" id="soy">soy</a>: soi of year
@@ -4054,10 +5023,13 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#internationalsystemofunits" id="si">SI</a>: [International
   System of
   Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
+- <a href="#simeter" id="sim">sim</a>: SI meter, the base unit of length
+  in the International System of Units, 2.5 zem, 10 decimeters
 - <a href="#speedoflight" id="sol">sol</a>: speed of light, 647.55170928
   kiloomegar, 299792458 meters per second
-- <a href="#speedofsound" id="sos">sos</a>: speed of sound, 735.048
-  milliomegar, 340.3 meters per second
+- <a href="#speedofsound" id="sos">sos</a>: speed of sound at 15 degrees
+  Celsius, 735.048 milliomegar, 326.688 meters per second, 340.3 meters
+  per SI second
 - <a href="#solardeclinationangle" id="sda">sda</a>: solar declination
   angle, the latitude at which the Sun is directly overhead
 - <a href="#solarelevationangle" id="sea">sea</a>: solar elevation
@@ -4069,12 +5041,11 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#taudividedby900" id="sampi">ϡ</a>: sampi, the Greek
     numeral for 900, 𝜏/900 or approximately 0.0069813 radians, 0.4
     degrees
-- <a href="#tenequaltemperament" id="tenet">Tenet</a>: ten equal
-  temperament
-  - <a href="#10et" id="xet">Xet</a>: Tenet
-  - <a href="#twelveequaltemperament" id="12et">12et</a>: twelve equal
-    temperament
 - <a href="#timeofday" id="tod">tod</a>: time of day
+  - <a href="#beginningofday" id="bod">bod</a>: beginning of day,
+    midnight at the start of the day, Tod 0
+  - <a href="#endofday" id="eod">eod</a>: end of day, midnight at the
+    end of the day, 1 day or 10<sup>5</sup> beats after the bod
   - <a href="#positiveintervaltod" id="pit">pit</a>: positive interval
     tod, the time since the start of the current day (previous
     midnight), equal to the tod
@@ -4082,17 +5053,29 @@ additional files or configuration. A Quarto output file can have both a
     tod, pit − 1, the negative of the time until the start of the next
     day (next midnight)
   - <a href="#hourminutesecond" id="hms">hms</a>: hour minute second, a
-    tod written as an hod, moh, and som triplet
-  - <a href="#dailysecondaggregate" id="dsa">dsa</a>: daily second
-    aggregate, seconds since midnight, tod × 86400
-  - <a href="#hourlysecondaggregate" id="hsa">hsa</a>: hourly second
-    aggregate, seconds since the top of the hour, dsa mod 3600
-  - <a href="#hourofday" id="hod">hod</a>: hour of day, ⌊dsa ÷ 3600⌋, 0
-    to 23
-  - <a href="#minuteofhour" id="moh">moh</a>: minute of hour, ⌊hsa ÷
-    60⌋, 0 to 59
-  - <a href="#secondofminute" id="som">som</a>: second of minute, ⌊hsa
-    mod 60⌋, 0 to 59
+    tod written as an hod, moh, and sisom triplet
+  - <a href="#dailysisecondaggregate" id="dsisa">dsisa</a>: daily SI
+    second aggregate, SI seconds since midnight, tod × 86400
+  - <a href="#hourlysisecondaggregate" id="hsisa">hsisa</a>: hourly SI
+    second aggregate, SI seconds since the top of the hour, dsisa
+    <span class="hyphen">−⌊</span> 3600
+  - <a href="#hourofday" id="hod">hod</a>: hour of day in heh, ⌊dsisa ÷
+    3600⌋, 0 to 23
+  - <a href="#minuteofhour" id="moh">moh</a>: minute of hour in bem,
+    ⌊hsisa ÷ 60⌋, 0 to 59
+  - <a href="#sisecondofminute" id="sisom">sisom</a>: SI second of
+    minute, ⌊hsisa <span class="hyphen">−⌊</span> 60⌋, 0 to 59
+  - <a href="#millidayofday" id="mod">mod</a>: milliday of day, ⌊tod ×
+    1000⌋, 0 to 999
+  - <a href="#timeofmilliday" id="tom">tom</a>: time of milliday, the
+    part of a tod left after its mod, tod × 1000
+    <span class="hyphen">−⌊</span> 1 millidays, 0 to under 100 beats
+  - <a href="#timeintegerlength" id="til">til</a>: time integer length,
+    the digit count of a tod or offset written without a decimal
+    separator, including leading zeros; its unit is 10<sup>-til</sup>
+    days
+  - <a href="#secondofmilliday" id="som">som</a>: second of milliday, 0
+    to 89
   - <a href="#meansolartime" id="mst">mst</a>: mean solar time, solar
     time based only on longitude and the Zone 0 tod
   - <a href="#apparentsolartime" id="ast">ast</a>: apparent solar time,
@@ -4105,13 +5088,18 @@ additional files or configuration. A Quarto output file can have both a
     from sunset to sunrise, 1 − law
   - <a href="#nightarchalf" id="nah">nah</a>: night arc half, naw/2, the
     time from sunset to solar midnight or from solar midnight to sunrise
-- <a href="#turn" id="t">t</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians
-  - <a href="#centiturn" id="ct">ct</a>: centiturn, a hundredth of a
-    turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
-  - <a href="#deciturn" id="dt">dt</a>: deciturn, a tenth of a turn, 36
-    degrees, 𝜏/10 or 𝜋/5 radians
-  - <a href="#milliturn" id="mt">mt</a>: milliturn, a thousandth of a
-    turn, .36 degrees, 𝜏/1000 or 𝜋/500 radians
+- <a href="#turn" id="T">T</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians; as a
+  dimension, shared by quantities measured in turns, such as days (d)
+  and omegar (v)
+  - <a href="#inverseturn" id="inverset" class="big">ꓕ</a>: inverse
+    turn, 1/T, a T turned upside down, the dimension shared by quotidie,
+    perbeat, and upsilonr
+  - <a href="#centiturn" id="ct" class="mono">¢</a>: cent, centiturn, a
+    hundredth of a turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
+  - <a href="#deciturn" id="dt" class="iosevka">⅒</a>: dime, deciturn, a
+    tenth of a turn, 36 degrees, 𝜏/10 or 𝜋/5 radians
+  - <a href="#milliturn" id="mt" class="mono">₥</a>: mil, milliturn, a
+    thousandth of a turn, 0.36 degrees, 𝜏/1000 or 𝜋/500 radians
 - <a href="#timezoneoffset" id="tzo">tzo</a>: time zone offset
 - <a href="#ounce" id="u">u</a>: ounce (uncia in Latin), 500 grains, 32
   grams, 500 drops, 32 milliliters
@@ -4130,27 +5118,23 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#universaltime" id="ut">UT</a>: [Universal
   Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation),
   a time standard based on the rotation of the Earth
-- <a href="#omegar" id="v">v</a>: omegar, ωr, 1041.<span class="tool"
-  data-bs-toggle="tooltip" data-bs-title="base9 digit 6">♄</span> miles
-  per hour, 1.<span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="base9 digit 6">♄</span> megameters per hour,
-  0.4<span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="base9 digits 5 and 6">♃♄</span> kilometers per second,
-  roughly 1.36 times the speed of sound
+- <a href="#omegar" id="v">v</a>: omegar, ωr, 1000 mph, 1000 miles per
+  hour, 1.6 megameters per hour, 0.<span class="tool"
+  data-bs-toggle="tooltip" data-bs-title="base9 digit 4">♂</span>
+  kilometers per second, roughly 1.36 times the speed of sound
   - <a href="#kiloomegar" id="kv">kv</a>: kiloomegar, kωr,
     1.<span class="tool" data-bs-toggle="tooltip"
     data-bs-title="base9 digit 6">♄</span> gigameters per hour,
     0.4<span class="tool" data-bs-toggle="tooltip"
     data-bs-title="base9 digits 5 and 6">♃♄</span> megameters per
     second, approximately 0.1544% of the speed of light
-  - <a href="#milliomegar" id="mv">mv</a>: milliomegar, mωr,
-    1.041<span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="base9 digit 6">♄</span> miles per hour,
-    1.<span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="base9 digit 6">♄</span> kilometers per hour,
-    0.4<span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="base9 digits 5 and 6">♃♄</span> meters per second,
-    approximately 0.136% of the speed of sound
+  - <a href="#milliomegar" id="mv">mv</a>: milliomegar, mωr, 1 mph, 1
+    mile per hour, 1.6 kilometers per hour, 0.<span class="tool"
+    data-bs-toggle="tooltip" data-bs-title="base9 digit 4">♂</span>
+    meters per second, 1 zem per beat, approximately 0.136% of the speed
+    of sound
+- <a href="#upsilonr" id="ur">ʌ</a>: upsilonr, the inverse of an omegar,
+  1/v, d/c, b/kz, a unit of slowness; symbolized by a turned v (ʌ)
 - <a href="#wei" id="w">w</a>: wěi (纬), parallel, a full circle around
   the Earth moving East or West at the same latitude, a measure of
   longitude; short for 纬圈 (wěiquān), “latitude circle”; can be thought
@@ -4172,7 +5156,9 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#negativeintegerxun" id="nix">nix</a>: negative integer
     xún, ⌊nid ÷ 10⌋, -37 to -1
   - <a href="#mixedintegerxun" id="mix">mix</a>: mixed integer xún, the
-    first two digits of an nih mid
+    first two digits of an niﾲ mid: a negative niﾲ digit under a
+    vinculum followed by the xún elapsed in that hectoday, which
+    together equal an nix, e.g. 2̄3 = -20 + 3 = -17
   - <a href="#xuninterdecilerange" id="xir">xir</a>: xún interdecile
     range, Dox 1 to 8, the days between Dox 0 and 9
 - <a href="#year" id="y">y</a>: year
@@ -4184,7 +5170,8 @@ additional files or configuration. A Quarto output file can have both a
     aggregate, yoe + toy, years since the Dec epoch including the
     fraction of the current year
   - <a href="#timeofyear" id="toy">toy</a>: time of year, the fraction
-    of the year that has elapsed, eya mod 1, ada ÷ syl
+    of the year that has elapsed, eya <span class="hyphen">−⌊</span> 1,
+    ada ÷ syl
   - <a href="#yearmonthday" id="ymd">ymd</a>: year month day, a
     Gregorian calendar date triplet
   - <a href="#solaryearlength" id="syl">syl</a>: solar year length, 365
@@ -4193,23 +5180,27 @@ additional files or configuration. A Quarto output file can have both a
     or 355 days
   - <a href="#commonerayear" id="cey">cey</a>: common era year, an ISO
     8601 (Gregorian calendar) year number
-  - <a href="#cycleofera" id="coe">coe</a>: cycle of era, 400-year
-    cycles since the Dec epoch
-  - <a href="#yearofcycle" id="yoc">yoc</a>: year of cycle, years since
-    the start of the current 400-year cycle, 0 to 399
+  - <a href="#quadricentennialofera" id="qoe">qoe</a>: quadricentennial
+    of era, quadricentennials since the Dec epoch
+  - <a href="#yearofquadricentennial" id="yoq">yoq</a>: year of
+    quadricentennial, years since the start of the current
+    quadricentennial, 0 to 399
   - <a href="#yearoftricennium" id="yot">yot</a>: year of tricennium,
     lunar years since the start of the current 30-year lunar cycle, 0 to
     29
   - <a href="#monthofyear" id="moy">moy</a>: month of year, zero-based,
     Moy 0 is March
   - <a href="#weekofyear" id="woy">woy</a>: week of year, (boydow + bow)
-    ÷ 7, 0 to 53
+    ÷ 7, 0 to 53, where boydow (beginning of year day of week) is the
+    dow of Day 0
   - <a href="#weekofmonth" id="wom">wom</a>: week of month
 - <a href="#zoneequatorialmeter" id="z">z</a>: zem, zone equatorial
   meter, 4 decimeters, 16 inches
   - <a href="#squarekilozem" id="kz2">kz²</a>: square kilozem, a million
     square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600
     ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
+  - <a href="#baizem" id="bzem" class="mono">ﾲz</a>: bǎizem, a hundred
+    zem, 1 microtaur, 40 meters
   - <a href="#kilozem" id="kz">kz</a>: kilozem, 1000 zem, 400 meters, a
     quarter mile
   - <a href="#squarezem" id="z2">z²</a>: square zem, hexamilliare, 16
@@ -4300,6 +5291,30 @@ function unix2b9b24(unix) {
   return tick2b9b24(Math.floor(
     ((unix ?? Date.now()) % 86400000 + 86400000) % 86400000 / 40)).join("")
 }
+function tod2b9b24(tod) {
+  // tod is a fraction of a day (0.37530 → "375♀7"); whole days wrap away.
+  // The b9 digit is recomputed rather than swapped for the dmd digit,
+  // since dmd counts tenths of a md and b9 counts ninths. The 1e-6 sid
+  // absorbs float error (0.3753 * 2160000 = 810647.99…), like sis2arr.
+  return tick2b9b24(Math.floor((tod % 1 + 1) % 1 * 2160000 + 1e-6)).join("")
+}
+function tod2b9(tod) {
+  // Like tod2b9b24, but stops at the second (0.3753 → "375♀7"),
+  // rounding down any leftover sids instead of adding a b24 digit.
+  return tick2b9b24(Math.floor((tod % 1 + 1) % 1 * 90000 + 1e-6) * 24)
+    .slice(0, 2).join("")
+}
+function b9b10pad(b9b10) {
+  // Pads a tod2b9 string to its full width: "375" → "375☉0". A b9 glyph
+  // must follow all 3 decimal digits, as tick2b9b24 only trims a tod that
+  // has none, and the second digit is only read after it. A b24 sid is
+  // rejected rather than silently dropped (use b9b24pad for those).
+  const match = b9b10.match(/^(?:(\d{3})([☉☿♀♁♂♃♄♅♆])\s*(\d)?|(\d{1,3}))$/u);
+  if (!match) throw new RangeError(`not a b9b10 tod: ${b9b10}`);
+  const [, full, dec = "☉", sec = "0", trimmed] = match,
+  tod = full ?? trimmed;
+  return tod.padEnd(3, "0") + dec + sec
+}
 function b9b24pad(b9b24) {
   const [, tod, dec = "☉", sec = "0", sid = "α"] = b9b24.match(
     /^(\d{1,3})([☉☿♀♁♂♃♄♅♆])?\s*(\d)?([α-ω])?$/u);
@@ -4356,9 +5371,9 @@ shaDegrMapPlot = shaHalfMapPlot * 180
 eotTurnMapPlot = getEot(selAda) / 1000
 lonTurnMapPlot = long2turn(location[0], 0)
 latTurnMapPlot = lati2turn(location[1], 0)
-astDecMapPlot = (0.95 + zeroTime + lonTurnMapPlot + eotTurnMapPlot) % 1 * 10
-astDegMapPlot = astDecMapPlot * 36
-astDegMapHalf = (astDecMapPlot * 36 + 180) % 360
+astDecMapPlot = (0.95 + zeroTime + lonTurnMapPlot + eotTurnMapPlot) % 1
+astDegMapPlot = astDecMapPlot * 360
+astDegMapHalf = (astDegMapPlot + 180) % 360
 shaDoyInput = getSha(latInput / 1000, getSda(doyInput))
 daytimeDuration = shaDoyInput / Math.PI
 noonDiff = daytimeDuration / 2
@@ -4387,30 +5402,78 @@ nDaysInYear = 365 + year2leap(decYear + 1)
 fullfracYear = decYear + ydz[1] / nDaysInYear
 decDoty = Math.floor(ydz[1])
 zeroDote = unix2dote(beatNow, 0)[0]
+nextDote = zeroDote + 1
 zeroTime = zeroDote % 1
 zeroDate = dote2date(zeroDote)
+nextDate = dote2date(nextDote)
 zeroYear = zeroDate[0]
-zeroAda = zeroDate[1]
-zeroDoy = Math.floor(zeroAda)
+nextYear = zeroYear + 1
 zeroIsLeap = isLeapYear(zeroYear)
-zeroAdaHsl = textcolor(zeroAda.toFixed(5), piecewiseColor(zeroAda / (365 + zeroIsLeap)))
-zeroAdaHsl1 = textcolor(zeroAda.toFixed(5), piecewiseColor(zeroAda / (365 + zeroIsLeap)))
+zeroNdaysInYear = 365 + zeroIsLeap
+zeroAda = zeroDate[1]
+nextAda = nextDate[1]
+zeroDoy = Math.floor(zeroAda)
+nextDoy = Math.floor(nextAda)
+zeroNid = zeroDoy - zeroNdaysInYear
+zeroNia = zeroAda - zeroNdaysInYear
+zeroNidHsl = () => textcolor(-Math.abs(zeroNid).toString().padStart(3, "0"), zeroDotyPiece)
+zeroAdaPiece = piecewiseColor(zeroAda / zeroNdaysInYear)
+zeroAdaHsl = () => textcolor(zeroAda.toFixed(5), zeroAdaPiece)
+zeroNiaHsl = () => textcolor("-" + Math.abs(zeroNia).toFixed(5).toString().padStart(3, "0"), zeroAdaPiece)
 zeroTimePiece = piecewiseColor(zeroTime)
-zeroTimeHsl0 = textcolor(zeroTime.toFixed(5).slice(2), zeroTimePiece)
-zeroTimeHsl1 = textcolor(zeroTime.toFixed(5).slice(2), zeroTimePiece)
-zeroTimeHsl2 = textcolor(zeroTime.toFixed(5).slice(2), zeroTimePiece)
-zeroTimeHsl3 = textcolor(zeroTime.toFixed(5).slice(2), zeroTimePiece)
-zeroDotyPiece = piecewiseColor(zeroDoy / (365 + zeroIsLeap))
+zeroTimeCss = ({background: zeroTimePiece, fontFamily: monofonts})
+zeroDotyPiece = piecewiseColor(zeroDoy / zeroNdaysInYear)
+nextDotyPiece = piecewiseColor(nextDoy / zeroNdaysInYear)
 zeroDotyPad = zeroDoy.toString().padStart(3, "0")
-zeroDotyHsl = textcolor(zeroDotyPad, zeroDotyPiece)
-zeroDotyHsl1 = textcolor(zeroDotyPad, zeroDotyPiece)
+nextDotyPad = nextDoy.toString().padStart(3, "0")
+zeroDotyHsl = () => textcolor(zeroDotyPad, zeroDotyPiece)
+nextDotyHsl = () => textcolor(nextDotyPad, nextDotyPiece)
 zeroDoteHsl = textcolor(Math.floor(zeroDote), piecewiseColor(zeroDote % 146097 / 146097))
-zeroYearHsl = textcolor(zeroYear, piecewiseColor(zeroYear % 1000 / 1000))
+zeroYearHsl = () => textcolor(zeroYear, piecewiseColor(zeroYear % 100 / 100))
+nextYearHsl = () => textcolor(nextYear, piecewiseColor(nextYear % 100 / 100))
 browserDote = unix2dote(beatNow)
 browserTime = browserDote[0] % 1 * 10
 browserZone = browserDote[1]
 browserSign = browserZone > 0 ? "-" : "+"
-zone0time = (browserTime - browserZone + 10) % 10
+zoneInputHsl = () => textcolor(zoneInput, piecewiseColor(zoneInput / 10))
+negaTime = zeroTime - 1
+utc1time = (zeroTime + 1/24) % 1
+dec1time = (zeroTime + .1) % 1
+dec2time = (zeroTime + .2) % 1
+utc3time = (zeroTime + .125) % 1
+zeroTpad = zeroTime.toFixed(5).slice(2)
+zeroTsec = b9b10pad(tod2b9(zeroTime))
+negaTpad = Math.abs(negaTime).toFixed(5).slice(2)
+negaTend = parseInt(negaTpad)
+zeroTmod = parseInt(zeroTpad.slice(0, 3))
+zeroTtom = parseInt(zeroTpad.slice(3))
+decsecond = Math.floor(zeroTime * 1000 % 1 * 90)
+decsecPie = piecewiseColor(decsecond / 90)
+decsecCss = ({background: decsecPie, fontFamily: monofonts})
+decsecHsl = () => textcolor(String(decsecond).length === 1 ? decsecond : dec2b9(decsecond), decsecCss)
+decsepHsl = () => textcolor(dec2b9(decsecond), decsecCss)
+zeroTpadHsl = () => textcolor(zeroTpad, zeroTimePiece)
+zeroTintHsl = () => textcolor(parseInt(zeroTpad), zeroTimePiece)
+zeroTmntHsl = () => textcolor(parseInt(zeroTpad), zeroTimeCss)
+zeroTmodPie = piecewiseColor(zeroTmod / 1000)
+zeroTmodCss = ({background: zeroTmodPie, fontFamily: monofonts})
+zeroTmodHsl = () => textcolor(zeroTmod, zeroTmodPie)
+zeroTmonHsl = () => textcolor(zeroTmod, zeroTmodCss)
+zeroTtomPie = piecewiseColor(zeroTtom / 100)
+zeroTtonCss = ({background: zeroTtomPie, fontFamily: monofonts})
+zeroTtomHsl = () => textcolor(zeroTtom, zeroTtomPie)
+zeroTtonHsl = () => textcolor(zeroTtom, zeroTtonCss)
+zeroTtopHsl = () => textcolor(String(zeroTtom).padStart(2, "0"), zeroTtonCss)
+zeroTsecHsl = () => textcolor(zeroTsec, zeroTimePiece)
+negaTendHsl = () => textcolor(negaTend, zeroTimePiece)
+negaTintHsl = () => textcolor(-negaTend, zeroTimePiece)
+dec1timeHsl = () => textcolor(dec1time.toFixed(5).slice(2), piecewiseColor(dec1time))
+dec2timeHsl = () => textcolor(dec2time.toFixed(5).slice(2), piecewiseColor(dec2time))
+utc1pad = utc1time.toFixed(5).slice(2)
+utc1piece = piecewiseColor(utc1time)
+utc1tpadHsl = () => textcolor(utc1pad, utc1piece)
+utc1tintHsl = () => textcolor(parseInt(utc1pad), utc1piece)
+utc3timeHsl = () => textcolor(utc3time.toFixed(5).slice(2), piecewiseColor(utc3time))
 hours = browserTime * 2.4
 minutes = hours % 1 * 60
 seconds = minutes % 1 * 60
@@ -4419,14 +5482,17 @@ selectedExact = selectedDote[0] % 1
 selectedExactN = (1 - selectedExact) % 1
 selectedZone = selectedDote[1]
 ydz = dote2date(...selectedDote)
-decTime = (selectedExact * 10).toFixed(4)
-decTimeN = (selectedExactN * 10).toFixed(4)
+selectedExactPiece = piecewiseColor(selectedExact)
+decTime = selectedExact.toFixed(5).slice(2)
+decTimeN = selectedExactN.toFixed(5).slice(2)
+decPosHsl = () => textcolor(decTime, selectedExactPiece)
+decNegHsl = () => textcolor("-" + decTimeN, selectedExactPiece)
 barDD = decTime[0]
 barDDN = decTimeN[0]
-barMils = decTime.slice(2, 4)
-barMilsN = decTimeN.slice(2, 4)
-barBeats = decTime.slice(4, 6)
-barBeatsN = decTimeN.slice(4, 6)
+barMils = decTime.slice(1, 3)
+barMilsN = decTimeN.slice(1, 3)
+barBeats = decTime.slice(3, 5)
+barBeatsN = decTimeN.slice(3, 5)
 function lati2turn(degrees = -180, e = 3) {
   const base = 10 ** e, limit = base / 4;
   return Math.max(-limit, Math.min(limit, (degrees / 360) * base));
@@ -5193,8 +6259,8 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.stroke();
       context.lineWidth = width < 1000 ? 1 : width < 2000 ? 2 : width < 3000 ? 3 : width < 4000 ? 4 : width < 5000 ? 5 : 6;
     }
-    table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10, "positive")
-    table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5, lat < 0 ? "negative" : "positive")
+    table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10, long2turn(lon) % 1000 / 1000)
+    table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5, (lati2turn(lat) + 1000) % 1000 / 1000)
     context.lineWidth = 1;
   }
   let drag = d3.drag()
@@ -5229,22 +6295,32 @@ function worldMapCoordinates(config = {}, dimensions) {
     draw();
     canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
   }
-  table.onkeyup = function(ev) {
-   if ([
-    // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
-      8, 9, 13, 27, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 109, 189
-    ].includes(ev.which)) {
-      const newLon = parseInt(liveTable[0].Milliwěi)
-      const newLat = parseInt(liveTable[0].Millijīng)
-      lon = newLon != null || !isNaN(newLon) ? turn2long(newLon) : lon;
-      lat = newLat != null || !isNaN(newLat) ? turn2lati(newLat) : lat;
-      table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10, "positive")
-      table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5, lat < 0 ? "negative" : "positive")
-      draw();
-      canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
-    }
+  // Apply typed coordinates on Tab, Enter, or Esc, or when focus leaves the
+  // table, not on every key: redrawing a cell while typing moves the caret.
+  function applyTable() {
+    const newLon = parseInt(table.rows[1].cells[0].innerText)
+    const newLat = parseInt(table.rows[1].cells[1].innerText)
+    lon = isNaN(newLon) ? lon : turn2long(newLon);
+    lat = isNaN(newLat) ? lat : turn2lati(newLat);
+    table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10, long2turn(lon) % 1000 / 1000)
+    table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5, (lati2turn(lat) + 1000) % 1000 / 1000)
+    draw();
+    canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
   }
+  table.onkeyup = function(ev) {
+    // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
+    if ([9, 13, 27].includes(ev.which)) applyTable();
+  }
+  table.addEventListener("focusout", (ev) => {
+    if (!table.contains(ev.relatedTarget)) applyTable();
+  });
   rstbtn.on('click', resetlatlon);
+  document.getElementsByClassName("quarto-color-scheme-toggle")[0].onclick = function (e) {
+    window.quartoToggleColorScheme();
+    window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
+    draw();
+    return false;
+  };
   const form = input({
     type: "worldMapCoordinates",
     title,
@@ -5263,13 +6339,19 @@ function worldMapCoordinates(config = {}, dimensions) {
   return form;
 }
 window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
-document.getElementsByClassName("quarto-color-scheme-toggle")[0].onclick = function (e) {
-  window.quartoToggleColorScheme();
-  window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
-  worldMapCoordinates.draw();
-  app.drawEarth();
-  return false;
-};
+// true while the page uses the dark theme; cells that read it (the Earth orbit
+// diagram) redraw when the theme changes
+darkmode = Generators.observe(notify => {
+  let last;
+  const check = () => {
+    const dark = document.body.classList.contains("quarto-dark");
+    if (dark !== last) notify(last = dark);
+  };
+  const observer = new MutationObserver(check);
+  observer.observe(document.body, {attributes: true, attributeFilter: ["class"]});
+  check();
+  return () => observer.disconnect();
+})
 sun = {
   const now = new Date;
   const day = new Date(+now).setUTCHours(0, 0, 0, 0);
@@ -5386,15 +6468,22 @@ piecewiseColor = d3.piecewise(d3.interpolateRgb, [
   "#f00",    //  0        0 red
 ])
 slStr = `, 100%, 50%)`
+// Fill for a bar clock bar: the Dec color of its value, tinted by the theme's
+// --cell-s and --cell-l. Negative values wrap around, so -7 dd is colored as 3/10.
+barFill = (value, radix) => `hsl(${d3.hsl(piecewiseColor((value % radix + radix) % radix / radix)).h}, var(--cell-s, 100%), var(--cell-l, 87%))`
 elaTime = elapsed % 1e5
-elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 1000)).h}` + slStr)
+elaTimeHsl = () => textcolor(elaTime, piecewiseColor(elaTime % 1000 / 1000))
 loadDote = unix2dote(Date.now(), 0)
 loadydz = dote2date(...loadDote)
 loadYear = loadydz[0]
 loadYearHsl = textcolor(loadYear, piecewiseColor(loadYear % 1000 / 1000))
 loadAda = loadydz[1]
 loadIsLeap = isLeapYear(loadYear)
-loadAdaHsl = textcolor(loadAda.toFixed(5).padStart(9, "0"), piecewiseColor(loadAda / (365 + loadIsLeap)))
+loadNdaysInYear = 365 + loadIsLeap
+loadAdaHsl = () => textcolor(loadAda.toFixed(5).padStart(9, "0"), piecewiseColor(loadAda / loadNdaysInYear))
+loadDate = Math.floor(loadAda)
+loadTime = loadAda % 1
+loadTimeHsl = () => textcolor(parseInt(loadTime.toFixed(5).slice(2)), piecewiseColor(loadTime))
 decDate = Math.floor(ydz[1])
 decMoty = Math.floor((5 * decDate + 2) / 153)
 isoYear = decYear + (decMoty > 9)
@@ -5422,17 +6511,14 @@ decDateHsl = textcolor(decDate.toString().padStart(3, "0"), piecewiseColor(decDa
 decTimeHsl = textcolor(decTime, piecewiseColor(decTime / 10))
 selDatePiece = piecewiseColor(selDate / 365)
 selDatePad = selDate.toString().padStart(3, "0")
-selDateHsl = textcolor(selDate, selDatePiece)
-selDateHsl1 = textcolor(selDate, selDatePiece)
-selDateHsl2 = textcolor(selDatePad, selDatePiece)
+selDateHsl = () => textcolor(selDate, selDatePiece)
+selDatePadHsl = () => textcolor(selDatePad, selDatePiece)
 selLatiHsl = textcolor(selLati.toFixed(0), piecewiseColor((selLati + 1000) % 1000 / 1000))
 selTimeDayPiece = piecewiseColor(selTime)
 selTimeInt = parseInt(selTimeMil)
-selTimeDay = textcolor(selTimeInt, selTimeDayPiece)
-selTimeDay1 = textcolor(selTimeInt, selTimeDayPiece)
-selTimeDay2 = textcolor(selTimeMil, selTimeDayPiece)
-selTimeHsl0 = textcolor(selTimeTen.toFixed(4), piecewiseColor(selTime))
-selTimeHsl1 = textcolor(selTimeTen.toFixed(4), piecewiseColor(selTime))
+selTimeDay = () => textcolor(selTimeInt, selTimeDayPiece)
+selTimeMilDay = () => textcolor(selTimeMil, selTimeDayPiece)
+selTimeHsl = () => textcolor(selTimeTen.toFixed(4), piecewiseColor(selTime))
 selZoneHsl = textcolor(selectedZone, piecewiseColor(selectedZone / 10))
 selAdaDay = textcolor(selAda.toFixed(3).padStart(6, "0"), piecewiseColor(selAda / 365))
 selAdaDec = textcolor((selAda * 10).toFixed(4).padStart(9, "0"), piecewiseColor(selAda / 365))
@@ -5530,9 +6616,7 @@ leapColor = piecewiseColor(leapCount / 86400)
 leapCountHsl = textcolor(leapCount, leapColor)
 frac = require("fraction.js")
 leapFrac = frac(leapCount).div(8640).toFraction()
-leapTzoHsl0 = textcolor(leapFrac, leapColor)
-leapTzoHsl1 = textcolor(leapFrac, leapColor)
-leapTzoHsl2 = textcolor(leapFrac, leapColor)
+leapTzoHsl = () => textcolor(leapFrac, leapColor)
 leapSarr = sis2arr(leapCount)
 leapSdec = leapSarr[0]
 leapSsid = leapSarr[1]
@@ -5541,13 +6625,8 @@ leapSb24col = piecewiseColor(leapSsid % 24 / 24)
 leapSdecCol = piecewiseColor(leapSdec % 90000 / 90000)
 monofonts = "Menlo, Monaco, Consolas, monospace"
 leapSb24css = ({background: leapSb24col, fontFamily: monofonts})
-leapSb24hsl = textcolor(leapSb24, leapSb24css)
-leapSb24hsl1 = textcolor(leapSb24, leapSb24css)
-leapSb24hsl2 = textcolor(leapSb24, leapSb24css)
-leapSdecHsl = textcolor(leapSdec, leapSdecCol)
-leapSdecHsl1 = textcolor(leapSdec, leapSdecCol)
-leapSdecHsl2 = textcolor(leapSdec, leapSdecCol)
-leapSdecHsl3 = textcolor(leapSdec, leapSdecCol)
+leapSb24hsl = () => textcolor(leapSb24, leapSb24css)
+leapSdecHsl = () => textcolor(leapSdec, leapSdecCol)
 leapSsidHsl = textcolor(leapSsid % 24, leapSb24col)
 b24hod = sid2b24(hmsinput[0])
 b24hodHsl = textcolor(sid2b24(hmsinput[0]), ({background: piecewiseColor(hmsinput[0] / 24), fontFamily: monofonts}))
@@ -5556,14 +6635,54 @@ hmsB9b24 = tick2b9b24(hmsTick)
 hmsTodHsl = textcolor(hmsB9b24[0], piecewiseColor(hmsTick / 2160000))
 hmsSecHsl = hmsB9b24[1] && textcolor(hmsB9b24[1], ({background: piecewiseColor(hmsTick % 2160 / 2160), fontFamily: monofonts}))
 hmsSidHsl = hmsB9b24[2] && textcolor(hmsB9b24[2], ({background: piecewiseColor(hmsTick % 24 / 24), fontFamily: monofonts}))
+// hour minute second: one b25 Ogham digit (hours), then a b6 counting
+// rod and a b10 digit for minutes and again for seconds, then a b24 sid
+// digit if the time doesn't land on a whole second. hmsTick counts
+// 1/24 seconds: 86400 per hour, 1440 per minute, 24 per second.
+oghamDigits = [" ", ..."ᚁᚂᚃᚄᚅᚆᚇᚈᚉᚊᚋᚌᚍᚎᚏᚐᚑᚒᚓᚔᚕᚖᚗᚘ"]
+rodDigits = ["𝍠", "𝍮", "𝍯", "𝍰", "𝍱", "𝍭"]
+oghamFonts = "'Noto Sans Ogham', 'Segoe UI Historic', 'Apple Symbols', Geneva, sans-serif"
+decHmsHsl = () => {
+  const hour = Math.floor(hmsTick / 86400)
+  const minute = Math.floor(hmsTick % 86400 / 1440)
+  const second = Math.floor(hmsTick % 1440 / 24)
+  const sid = hmsTick % 24
+  const span = (text, frac, fontFamily = monofonts) => textcolor(text, ({background: piecewiseColor(frac), fontFamily}))
+  return htl.html`<span class="nowrap">${[
+    span(oghamDigits[hour], hour / 25, oghamFonts),
+    span(rodDigits[Math.floor(minute / 10)] + minute % 10, minute / 60),
+    span(rodDigits[Math.floor(second / 10)] + second % 10, second / 60),
+    sid ? span(sid2b24(sid), sid / 24) : ""
+  ]}</span>`
+}
 leapTod = (zeroTime + leapCount / 86400) % 1
 leapDecidayTod = (leapTod * 10).toFixed(4)
-leapTodHsl0 = textcolor(leapDecidayTod, piecewiseColor(leapTod))
-leapTodHsl1 = textcolor(leapDecidayTod, piecewiseColor(leapTod))
+leapTodHsl = () => textcolor(leapDecidayTod, piecewiseColor(leapTod))
 longPiece = piecewiseColor(lonInput / 1000)
 longInputHsl = textcolor(lonInput, longPiece)
 longFloor = Math.floor(lonInput / 100)
-longFloorHsl = textcolor(longFloor, piecewiseColor(longFloor / 10))
+saveFloor = (longFloor + 1) % 10
+longFloorHsl = () => textcolor(longFloor, piecewiseColor(longFloor / 10))
+saveFloorHsl = () => textcolor(saveFloor, piecewiseColor(saveFloor / 10))
+currFloor = longTest ? saveFloor : longFloor
+currFloorHsl = () => textcolor(currFloor, piecewiseColor(currFloor / 10))
+longAda = (zeroAda + longFloor / 10) % zeroNdaysInYear
+saveAda = (zeroAda + saveFloor / 10) % zeroNdaysInYear
+longDate = Math.floor(longAda)
+longDateHsl = () => textcolor(longDate, piecewiseColor(longDate / zeroNdaysInYear))
+minuDateHsl = () => textcolor(dstspan[0], piecewiseColor(dstspan[0] / zeroNdaysInYear))
+subsDateHsl = () => textcolor(dstspan[1], piecewiseColor(dstspan[1] / zeroNdaysInYear))
+// A literal "<" next to an inline ${…} in markdown is read by htl as the start of an HTML tag
+// ("invalid binding"), so the bracket is built here and "<" is interpolated as text.
+lt = "<"
+dstBracketHsl = () => htl.html`<span>[${minuDateHsl()}${lt}${longDateHsl()}${lt}${subsDateHsl()}]</span>`
+longTime = longAda % 1
+saveTime = saveAda % 1
+longTest = dstspan[0] < longDate && longDate < dstspan[1]
+longTimeHsl = () => textcolor(longTime.toFixed(5).slice(2), piecewiseColor(longTime))
+saveTimeHsl = () => textcolor(saveTime.toFixed(5).slice(2), piecewiseColor(saveTime))
+currTime = longTest ? saveTime : longTime
+currTimeHsl = () => textcolor(currTime.toFixed(5).slice(2), piecewiseColor(currTime))
 eot = getEot(leapSecondDate)
 astTzo = eot + lonInput
 astTzoHsl = textcolor(astTzo.toFixed(4), piecewiseColor((astTzo + 1000) % 1000 / 1000))
@@ -5683,8 +6802,10 @@ function createTable(data, options) {
 table.setAttribute("class", "table")
 tableify = import("https://cdn.jsdelivr.net/npm/tableify@1.1.1/+esm")
 xss = import("https://cdn.jsdelivr.net/npm/xss@1.0.14/+esm")
-function createCellDiv(value, max, posorneg) {
-  return `<div class="${posorneg}" style="
+// The bar's hue is the Dec color of the value; theme files set --cell-s and --cell-l
+function createCellDiv(value, max, color) {
+  return `<div style="
+    background: hsl(${d3.hsl(piecewiseColor(color)).h}, var(--cell-s, 100%), var(--cell-l, 87%));
     width: ${Math.abs(value) / max}%;
     float: left;
     padding: 0px 0px 0px 2px;
@@ -5857,8 +6978,11 @@ function parseTableData(table) {
 function focusCell(td) {
   const s = window.getSelection();
   const r = document.createRange();
-  let textNode = td.childNodes[0];
-  const i = td.innerText.length;
+  // The cell may hold a value bar <div>, so put the caret after its last text node
+  let textNode = td;
+  while (textNode.lastChild) textNode = textNode.lastChild;
+  if (textNode === td || textNode.nodeType !== Node.TEXT_NODE) textNode = null;
+  const i = textNode ? textNode.length : 0;
   td.focus();
   if (textNode) {
     r.setStart(textNode, i);
@@ -5919,6 +7043,286 @@ hsla10 = [
 ]
 borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== b)
 countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
+// https://observablehq.com/@mootari/range-slider
+function interval(range = [], options = {}) {
+  const [min = 0, max = 1] = range;
+  const {
+    step = .001,
+    label = null,
+    value = [min, max],
+    collide = true,
+    format = ([start, end]) => `${start}=${end}\u2212${Math.abs(start-end)}`,
+    color,
+    width = 360,
+    theme,
+    __ns__ = randomScope(),
+  } = options;
+  const css = `
+#${__ns__} {
+  font: 13px/1.2 var(--sans-serif);
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: auto;
+}
+@media only screen and (min-width: 30em) {
+  #${__ns__} {
+    flex-wrap: nowrap;
+    width: ${cssLength(width)};
+  }
+}
+#${__ns__} .label {
+  width: 120px;
+  padding: 5px 0 4px 0;
+  margin-right: 6.5px;
+  flex-shrink: 0;
+}
+#${__ns__} .form {
+  display: flex;
+  width: 100%;
+}
+#${__ns__} .range {
+  flex-shrink: 1;
+  width: 100%;
+}
+#${__ns__} .range-slider {
+  width: 100%;
+}
+  `;
+  const $range = rangeInput({min, max, value: [value[0], value[1]], step, collide, color, width: "100%", theme});
+  const $output = htl.html`<output>`;
+  const $view = htl.html`<div id=${__ns__}>
+${label == null ? '' : htl.html`<div class="label">${label}`}
+<div class=form>
+  <div class=range>
+    ${$range}<div class=range-output>${$output}</div>
+  </div>
+</div>
+${htl.html`<style>${css}`}
+  `;
+  const update = () => {
+    const content = format([$range.value[0], $range.value[1]]);
+    if(typeof content === 'string') $output.value = content;
+    else {
+      while($output.lastChild) $output.lastChild.remove();
+      $output.appendChild(content);
+    }
+  };
+  $range.oninput = update;
+  update();
+  return Object.defineProperty($view, 'value', {
+    get: () => $range.value,
+    set: ([a, b]) => {
+      $range.value = [a, b];
+      update();
+    },
+  });
+}
+function randomScope(prefix = 'scope-') {
+  return prefix + (performance.now() + Math.random()).toString(32).replace('.', '-');
+}
+cssLength = v => v == null ? null : typeof v === 'number' ? `${v}px` : `${v}`
+function rangeInput(options = {}) {
+  const {
+    min = 0,
+    max = 100,
+    step = 'any',
+    value: defaultValue = [min, max],
+    color,
+    collide = true,
+    width,
+    theme = theme_Flat,
+  } = options;
+  const controls = {};
+  const scope = randomScope();
+  const clamp = (a, v, b) => v < a ? a : v > b ? b : v;
+  const dom = htl.html`<div class=${`${scope} range-slider`} style=${{
+    color,
+    width: cssLength(width),
+  }}>
+    ${controls.track = htl.html`<div class="range-track">
+      ${controls.zone = htl.html`<div class="range-track-zone">
+        ${controls.range = htl.html`<div class="range-select" tabindex=0>
+          ${controls.min = htl.html`<div class="thumb thumb-min" tabindex=0>`}
+          ${controls.max = htl.html`<div class="thumb thumb-max" tabindex=0>`}
+        `}
+      `}
+    `}
+    ${htl.html`<style>${theme.replace(/:scope\b/g, '.'+scope)}`}
+  </div>`;
+  let value = [], changed = false;
+  Object.defineProperty(dom, 'value', {
+    get: () => [...value],
+    set: ([a, b]) => {
+      value = sanitize(a, b);
+      updateRange();
+    },
+  });
+  // Stays detached, only used to sanitize values while avoiding floating point issues.
+  const input = htl.html`<input type=range ${{min, max, step}}>`;
+  const sanitize = (a, b) => {
+    a = isNaN(a) ? min : ((input.value = a), input.valueAsNumber);
+    b = isNaN(b) ? max : ((input.value = b), input.valueAsNumber);
+    return [Math.min(a, b), Math.max(a, b)];
+  }
+  const updateRange = () => {
+    const ratio = v => (v - min) / (max - min);
+    dom.style.setProperty('--range-min', `${ratio(value[0]) * 100}%`);
+    dom.style.setProperty('--range-max', `${ratio(value[1]) * 100}%`);
+  };
+  const dispatch = name => {
+    dom.dispatchEvent(new Event(name, {bubbles: true}));
+  };
+  const setValue = (vmin, vmax) => {
+    const [pmin, pmax] = value;
+    value = sanitize(vmin, vmax);
+    updateRange();
+    // Only dispatch if values have changed.
+    if(pmin === value[0] && pmax === value[1]) return;
+    dispatch('input');
+    changed = true;
+  };
+  setValue(...defaultValue);
+  // Mousemove handlers.
+  const handlers = new Map([
+    [controls.min, (dt, ov) => {
+      const v = ov[0] + dt * (max - min);
+      setValue(collide ? clamp(min, v, ov[1]) : v, ov[1]);
+    }],
+    [controls.max, (dt, ov) => {
+      const v = ov[1] + dt * (max - min);
+      setValue(ov[0], collide ? clamp(ov[0], v, max) : v);
+    }],
+    [controls.range, (dt, ov) => {
+      const d = ov[1] - ov[0];
+      const v = clamp(min, ov[0] + dt * (max - min), max - d);
+      setValue(v, v + d);
+    }],
+  ]);
+  // Returns client offset object.
+  const pointer = e => e.touches ? e.touches[0] : e;
+  // Note: Chrome defaults "passive" for touch events to true.
+  const on  = (e, fn) => e.split(' ').map(e => document.addEventListener(e, fn, {passive: false}));
+  const off = (e, fn) => e.split(' ').map(e => document.removeEventListener(e, fn, {passive: false}));
+  let initialX, initialV, target, dragging = false;
+  function handleDrag(e) {
+    // Gracefully handle exit and reentry of the viewport.
+    if(!e.buttons && !e.touches) {
+      handleDragStop();
+      return;
+    }
+    dragging = true;
+    const w = controls.zone.getBoundingClientRect().width;
+    e.preventDefault();
+    handlers.get(target)((pointer(e).clientX - initialX) / w, initialV);
+  }
+  function handleDragStop(e) {
+    off('mousemove touchmove', handleDrag);
+    off('mouseup touchend', handleDragStop);
+    if(changed) dispatch('change');
+  }
+  invalidation.then(handleDragStop);
+  dom.ontouchstart = dom.onmousedown = e => {
+    dragging = false;
+    changed = false;
+    if(!handlers.has(e.target)) return;
+    on('mousemove touchmove', handleDrag);
+    on('mouseup touchend', handleDragStop);
+    e.preventDefault();
+    e.stopPropagation();
+    target = e.target;
+    initialX = pointer(e).clientX;
+    initialV = value.slice();
+  };
+  controls.track.onclick = e => {
+    if(dragging) return;
+    const r = controls.zone.getBoundingClientRect();
+    const t = clamp(0, (pointer(e).clientX - r.left) / r.width, 1);
+    const v = min + t * (max - min);
+    const [vmin, vmax] = value, d = vmax - vmin;
+    changed = false;
+    if(v < vmin) setValue(v, v + d);
+    else if(v > vmax) setValue(v - d, v);
+    if(changed) dispatch('change');
+  };
+  return dom;
+}
+theme_Flat = `
+/* Options */
+:scope {
+  color: #3b99fc;
+  width: 240px;
+}
+
+:scope {
+  position: relative;
+  display: inline-block;
+  --thumb-size: 15px;
+  --thumb-radius: calc(var(--thumb-size) / 2);
+  padding: var(--thumb-radius) 0;
+  margin: 2px;
+  vertical-align: middle;
+}
+:scope .range-track {
+  box-sizing: border-box;
+  position: relative;
+  height: 7px;
+  background-color: hsl(0, 0%, 80%);
+  overflow: visible;
+  border-radius: 4px;
+  padding: 0 var(--thumb-radius);
+}
+:scope .range-track-zone {
+  box-sizing: border-box;
+  position: relative;
+}
+:scope .range-select {
+  box-sizing: border-box;
+  position: relative;
+  left: var(--range-min);
+  width: calc(var(--range-max) - var(--range-min));
+  cursor: ew-resize;
+  background: currentColor;
+  height: 7px;
+  border: inherit;
+}
+/* Expands the hotspot area. */
+:scope .range-select:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: var(--thumb-size);
+  left: 0;
+  top: calc(2px - var(--thumb-radius));
+}
+:scope .range-select:focus,
+:scope .thumb:focus {
+  outline: none;
+}
+:scope .thumb {
+  box-sizing: border-box;
+  position: absolute;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+
+  background: #fcfcfc;
+  top: -4px;
+  border-radius: 100%;
+  border: 1px solid hsl(0,0%,55%);
+  cursor: default;
+  margin: 0;
+}
+:scope .thumb:active {
+  box-shadow: inset 0 var(--thumb-size) #0002;
+}
+:scope .thumb-min {
+  left: calc(-1px - var(--thumb-radius));
+}
+:scope .thumb-max {
+  right: calc(-1px - var(--thumb-radius));
+}
+`
 ```
 
 ``` {ojs}
@@ -6067,10 +7471,10 @@ posclock = {
       .attr("transform", d => `rotate(${d.scale(d.value)})`);
   }
   function updateData() {
-    const dote = readDote(), exact = readExact(dote), time = (exact * 10).toFixed(4);
+    const dote = readDote(), exact = readExact(dote), time = exact.toFixed(5).slice(2);
     handData[0].value = !fancySecondsOFF ? Math.floor(exact * 10) : time[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(exact * 10 % 1 * 100) : time.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? exact * 10 % 1 * 100 % 1 * 100 : time.slice(4, 6);
+    handData[1].value = !fancySecondsOFF ? Math.floor(exact * 10 % 1 * 100) : time.slice(1, 3);
+    handData[2].value = !fancySecondsOFF ? exact * 10 % 1 * 100 % 1 * 100 : time.slice(3, 5);
     const text = `+${time}-${dote[1]}`;
     if (label && text !== label.text()) label.text(text);
   }
@@ -6272,10 +7676,10 @@ negclock = {
       .attr("transform", d => `rotate(${d.scale(d.value)})`);
   }
   function updateData() {
-    const dote = readDote(), exact = readExact(dote), time = (exact * 10).toFixed(4);
+    const dote = readDote(), exact = readExact(dote), time = exact.toFixed(5).slice(2);
     handData[0].value = !fancySecondsOFF ? Math.floor(exact * 10) : time[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(exact * 10 % 1 * 100) : time.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? exact * 10 % 1 * 100 % 1 * 100 : time.slice(4, 6);
+    handData[1].value = !fancySecondsOFF ? Math.floor(exact * 10 % 1 * 100) : time.slice(1, 3);
+    handData[2].value = !fancySecondsOFF ? exact * 10 % 1 * 100 % 1 * 100 : time.slice(3, 5);
     const text = `-${time}-${dote[1]}`;
     if (label && text !== label.text()) label.text(text);
   }
@@ -6478,7 +7882,7 @@ dotclock = {
     .attr("id", "topclock");
   svg
     .append("text")
-    .text(`+${selTimeTen.toFixed(4)}`)
+    .text(selTimeCmd)
     .attr("x", clockRadius + margin)
     .attr("y", clockRadius * 2 + margin * 2.1)
     .attr("text-anchor", "middle")
@@ -6593,7 +7997,7 @@ sunclock = {
     .style("opacity", 1)
     .attr("font-weight", 600)
     .attr("font-size", "75px")
-    .text(astDecMapPlot.toFixed(2));
+    .text(astDecMapPlot.toFixed(3).slice(2));
   const ticks = face
     .selectAll(".tick")
     .data(d3.range(0, 20))
@@ -7021,7 +8425,7 @@ html`
   padding: 0px .5px;
   border-radius: 4px;
 }
-${d3.range(1, 24).map(i => `.color${i}by24`).concat(d3.range(1, 9).map(i => `.color${i}by9`)).map(c => {
+${[[24, 24], [9, 9], [25, 25], [6, 6]].flatMap(([n, base]) => d3.range(1, n).map(i => `.color${i}by${base}`)).map(c => {
   const [i, base] = c.slice(6).split("by").map(Number), hex = d3.color(piecewiseColor(i / base)).formatHex();
   return `${c} {
   background: ${hex};
@@ -7072,7 +8476,7 @@ html, body {
     max-width: 100%;
 }
 div.cell:has(svg.barclock) {
-  margin-top: -28px;
+  margin-top: -12px;
 }
 div.cell:has(form#formEl) {
   max-width: 100%;
@@ -7201,7 +8605,7 @@ div.cell-output:has(#formEl) {
   z-index: 99;
 }
 @media (max-width: 767.98px) {
-  #onlymargin, #lonlatable {
+  #onlymargin {
     display: none;
   }
 }
@@ -7210,29 +8614,31 @@ div#distmap {
   justify-content: center;
   overflow-x: visible;
 }
-.marginInputs {
-  position: relative;
-  top: -220px;
-  z-index: 99;
-  line-height: 1;
-}
-#lonlatable {
-  overflow: visible;
+div#maptable {
   display: flex;
   justify-content: center;
+  overflow-x: visible;
   line-height: 1.5;
+  padding-bottom: 9px;
 }
 #projselect > div {
   margin-top: -4px;
 }
-#lonlatable > div {
-  margin-top: -14px;
-}
-#lonlatable table * {
-  font-size: 21px;
+#maptable table * {
+  font-size: 18px;
   padding: 0px 5px 0px 5px;
 }
-div#lonlatable form {
+@media (max-width: 425px) {
+  #maptable table th {
+    font-size: 17px;
+  }
+}
+@media (max-width: 405px) {
+  #maptable table th {
+    font-size: 16px;
+  }
+}
+div#maptable form {
   padding: 0px;
 }
 #projselect {
@@ -7242,7 +8648,7 @@ div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput >
   overflow-x: clip;
 }
 div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
-  width: 35px;
+  width: 45px;
 }
 button#rstbtn:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
@@ -7265,8 +8671,8 @@ div#toggles {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  margin-top: -20px;
-  margin-bottom: 9px;
+  margin-top: 4px;
+  margin-bottom: -9px;
 }
 div#toggles * {
   overflow: visible;
@@ -7305,13 +8711,6 @@ div#toggles button#rstbtn {
   overflow: visible;
   margin-top: -6px;
 }
-div#lonlatable form {
-  padding: 0px;
-}
-#lonlatable table * {
-  font-size: 15px;
-  padding: 0px 4px 0px 4px;
-}
 div.cell:has(.barclock) * {
   pointer-events: none;
 }
@@ -7345,8 +8744,8 @@ mjx-container[jax="CHTML"][display="true"] {
 #tbl-time td, #tbl-time th {
   white-space: nowrap;
 }
-/* Gap between the right-aligned q column and the left-aligned 1/q column. */
-#tbl-time td:nth-child(3), #tbl-time th:nth-child(3) {
+/* Gap between the right-aligned q column and the left-aligned d columns. */
+#tbl-time :is(td, th):is(:nth-child(3), :nth-child(4)) {
   padding-left: 4em;
 }
 /* Gaps between the digit pairs (instead of empty spacer columns). */
@@ -7384,6 +8783,26 @@ div.slider input[type="number"] {
 }
 div.slider input[type="range"] {
   width: 100%;
+}
+/* Shape and Ticks radio inputs (class: radio) share one row, each
+   label sized to its text; the row wraps only if it can't fit. */
+div.radiorow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+div.radiorow > div.radio form {
+  width: auto;
+  max-width: none;
+  margin-bottom: 0;
+}
+div.radiorow > div.radio form > label {
+  width: auto;
+  margin-right: 0.5em;
+}
+#sozu {
+  text-align: center;
 }
 </style>
 

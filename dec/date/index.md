@@ -41,7 +41,7 @@ Martin Laptev
     a vinculum and a grave
     accent](#leap-year-examples-of-doy-with-or-without-a-double-acute-accent-or-a-vinculum-and-a-grave-accent)
   - [Base32](#b32)
-- [Day of hectoday (doh)](#sec-doh)
+- [Day of hectoday (doﾲ)](#sec-doh)
 - [Day of era (doe)](#sec-doe)
 - [Year of era (yoe)](#sec-yoe)
 - [Day of week (dow)](#sec-dow)
@@ -261,14 +261,14 @@ to compare the Dec and Gregorian calendars. In contrast, day Decolors
 can help us organize days into groups of 100 called <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="hundreds of days">hectodays</span>
-(<a href="#h" id="hectoday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a>) and groups of 10 named
+(<a href="#baekil" id="hectoday" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a>) and groups of 10 named
 [xún](https://en.wikipedia.org/wiki/Chinese_calendar#:~:text=into%20nine%2D%20or-,ten%2Dday%20weeks,-known%20as%20x%C3%BAn)
 (<a href="#x" id="xun" class="tool" data-bs-toggle="tooltip"
 data-bs-title="groups of ten days">x</a>). Dec defines [meteorological
 seasons](https://en.wikipedia.org/wiki/Season#Meteorological:~:text=reckoned%20by%20temperature)
-in terms of <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a> and uses
+in terms of <a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a> and uses
 <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="groups of ten days">x</a> in place of Gregorian calendar
 months and weeks.
@@ -595,20 +595,20 @@ data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a>) is the number of
 days left in the year, and their
 [difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference)
-is the “solar year length”
-(<a href="#syl" id="solaryearlength" class="tool"
-data-bs-toggle="tooltip" data-bs-title="solar year length">syl</a>),
-which can be either <span class="color364by365">365</span> or
+is the “end of year”
+(<a href="#eoy" id="endofyear" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a>), which can be either
+<span class="color364by365">365</span> or
 <span class="color365by366">366</span>.
 
 <div id="equationgroup00" class="equationgroup">
 
 <span id="eq-pid">
-pid = x \* 10 + dox   (1)
+pid = x × 10 + dox   (1)
 </span>
 
 <span id="eq-nid">
-nid = pid − syl   (2)
+nid = pid − eoy   (2)
 </span>
 
 </div>
@@ -623,9 +623,9 @@ programming](https://en.wikipedia.org/wiki/Computer_programming#:~:text=the%20co
 If we think of a year as an
 [array](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=a%20data%20structure%20consisting%20of%20a%20collection%20of%20elements%20(values%20or%20variables)%2C%20of%20same%20memory%20size%2C%20each%20identified%20by%20at%20least%20one%20array%20index)
 and each day as an array element, a
-<a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year length">syl</a> is the number of elements in
-the array, <a href="#pid" class="tool" data-bs-toggle="tooltip"
+<a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a> is the number of elements in the
+array, <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> is a [positive
 index](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00),
 and <a href="#nid" class="tool" data-bs-toggle="tooltip"
@@ -638,11 +638,11 @@ or in groups via [array
 slicing](https://en.wikipedia.org/wiki/Array_slicing#:~:text=an%20operation%20that%20extracts%20a%20subset%20of%20elements%20from%20an%20array).
 
 The year+day Dec date format is short for
-<span class="nowrap">year+day/<a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year length">syl</a></span>. Dec truncates dates
-because the <a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year length">syl</a> is not needed to specify a
-date, remains constant for 366, 1095, or 2555
+<span class="nowrap">year+day/<a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a></span>. Dec truncates dates because
+the <a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a> is not needed to specify a date,
+remains constant for 366, 1095, or 2555
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a>, has only 2 possible values:
 <span class="color364by365">365</span> or
@@ -654,24 +654,31 @@ data-bs-title="negative integer day of year">nid</a> via
 <a href="#eq-nid" class="quarto-xref">Equation 2</a> above or by passing
 Year <a href="#y" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year">y</a> to
-<a href="#eq-leap" class="quarto-xref">Equation 3</a> and then its
-result to <a href="#eq-syl" class="quarto-xref">Equation 4</a> below.
+<a href="#eq-leap" class="quarto-xref">Equation 4</a> and then its
+result to <a href="#eq-eoy" class="quarto-xref">Equation 5</a> below.
 
 <div id="equationgroup01" class="equationgroup">
+
+<span id="eq-modulus">
+$$
+\text{dividend} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} \text{modulus} = \text{dividend} - \text{modulus} \times \left\lfloor\dfrac{\text{dividend}}{\text{modulus}}\right\rfloor
+ \qquad(3)$$
+</span>
 
 <span id="eq-leap">
 $$
 \text{leap}=\begin{cases}
-  1&{\begin{aligned}
-    &\text{ if } (\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} \\\\\\\\4=0\\
-    &\href{https://en.wikipedia.org/wiki/Logical_conjunction}{\land}(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 100\neq0\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 400=0\end{aligned}}\\\\
-  0&{\text{ otherwise}}\end{cases}
- \qquad(3)$$
+  1&{\begin{alignedat}{2}
+    \text{if}\\&(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}}{}&4&{}=0\\
+    \href{https://en.wikipedia.org/wiki/Logical_conjunction}{\land}\\&(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}}{}&100&{}\neq0\\
+    \href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\\&(\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}}{}&400&{}=0
+  \end{alignedat}}\\\\
+  0&{\text{otherwise}}\end{cases}
+ \qquad(4)$$
 </span>
 
-<span id="eq-syl">
-syl = 365 + leap   (4)
+<span id="eq-eoy">
+eoy = 365 + leap   (5)
 </span>
 
 </div>
@@ -758,17 +765,17 @@ data-bs-title="year">y</a> or counts **down** the days **until** Year
 data-bs-title="year">y</a>+1. The current year+day
 <a href="#utc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</a> date,
-<span class="nowrap">${decYearColor}<span class="mono">+</span>${decDotyPadColor}</span>,
-informs us that Year ${decYearColor1} began ${decDotyColor}
+<span class="nowrap">${decYearColor()}<span class="mono">+</span>${decDotyPadColor()}</span>,
+informs us that Year ${decYearColor()} began ${decDotyColor()}
 ${decDotyDays} ago, whereas its countdown equivalent,
-<span class="nowrap">${nextYearColor}−${TminusPaddedColor}</span>, tells
-us that Year ${nextYearColor1} will begin in ${TminusColor}
+<span class="nowrap">${nextYearColor()}−${TminusPaddedColor()}</span>,
+tells us that Year ${nextYearColor()} will begin in ${TminusColor()}
 ${TminusDays}.
 
 <div id="equationgroup02" class="equationgroup">
 
 <span id="eq-updown">
-$$\text{y}+\dfrac{\text{pid}}{\text{syl}} = \text{y} + 1 + \dfrac{\text{nid}}{\text{syl}} \qquad(5)$$
+$$\text{y}+\dfrac{\text{pid}}{\text{eoy}} = \text{y} + 1 + \dfrac{\text{nid}}{\text{eoy}} \qquad(6)$$
 </span>
 
 </div>
@@ -897,10 +904,10 @@ beneath the plots selects the
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a> for
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a>${january1doyColor}, the first day of the
+data-bs-title="day">d</a>${january1doyColor()}, the first day of the
 Gregorian calendar year. Changing the
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a>${january1doyColor1}
+data-bs-title="day">d</a>${january1doyColor()}
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a> shifts every Gregorian calendar date
 by 1 to 6 <a href="#d" class="tool" data-bs-toggle="tooltip"
@@ -931,11 +938,11 @@ data-bs-title="day">d</a><span class="color365by366">365</span> in leap
 years, every year has the same
 <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="groups of ten days">x</a>,
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a>, and months, but not
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a>, and months, but not
 the same weeks. It takes 5, 6, 7, 11, or 12 years for a
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a>${january1doyColor2}
+data-bs-title="day">d</a>${january1doyColor()}
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a> to recur.
 
@@ -944,7 +951,7 @@ product of 7 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of week">dow</a> and 2 year lengths. If we set aside
 an extra copy of a printed🖨️Gregorian calendar on
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a>${january1doyColor3}, we would have to wait 6,
+data-bs-title="day">d</a>${january1doyColor()}, we would have to wait 6,
 11, 12, 28, or 40 years to use it. We can make the leap year form of
 Decalendar apply to any year by putting an [multiplication
 sign](https://en.wikipedia.org/wiki/Multiplication_sign) above the
@@ -956,7 +963,7 @@ In Dec, <span class="color0">36<span class="acutegrave">5̽</span></span>
 stands for <span class="color0">365</span>×`leap`, where `leap` is the
 [left-hand
 side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20expression%20on%20the%20left%20of%20the%20%22%3D%22%20is%20the%20left%20side%20of%20the%20equation)
-of <a href="#eq-leap" class="quarto-xref">Equation 3</a>. If `leap` is
+of <a href="#eq-leap" class="quarto-xref">Equation 4</a>. If `leap` is
 1, Year <a href="#y" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year">y</a> is a leap year and
 <span class="color0">36<span class="acutegrave">5̽</span></span> is
@@ -1015,12 +1022,12 @@ data-bs-title="pentaday">p</a>, we divide the current
 data-bs-title="positive integer days of year">pid</a> by 5 and then use
 the [floor
 function](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20function%20that%20takes%20a%20real%20number%20x%20as%20input%20and%20returns%20the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
-as in <a href="#eq-poy" class="quarto-xref">Equation 9</a> to discard
+as in <a href="#eq-poy" class="quarto-xref">Equation 10</a> to discard
 the [fractional
 part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
 of the quotient: ${decPentColor} = <a
 href="https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part"
-class="nounder">⌊</a>${decDotyColor1} ÷ 5<a
+class="nounder">⌊</a>${decDotyColor()} ÷ 5<a
 href="https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part"
 class="nounder">⌋</a>. If we divide a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
@@ -1030,22 +1037,22 @@ data-bs-title="days of xún">dox</a> by 5, the remainder will be its
 corresponding “day of pentaday”
 (<a href="#dop" id="dayofpentaday" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of pentaday">dop</a>): ${decDotpColor} =
-${decDotyColor2}
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+${decDotyColor()}
+[<span class="hyphen">−⌊</span>](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 5.
 
 <div id="equationgroup03" class="equationgroup">
 
 <span id="eq-xun">
-$$\text{x} = \left\lfloor\dfrac{\text{pid}}{10}\right\rfloor \qquad(6)$$
+$$\text{x} = \left\lfloor\dfrac{\text{pid}}{10}\right\rfloor \qquad(7)$$
 </span> <span id="eq-dox">
-$$\text{dox} = \text{pid} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 10 \qquad(7)$$
+$$\text{dox} = \text{pid} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 10 \qquad(8)$$
 </span> <span id="eq-pox">
-$$\text{pox} = \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{dox} \> 4\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]} \qquad(8)$$
+$$\text{pox} = \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{dox} \> 4\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]} \qquad(9)$$
 </span> <span id="eq-poy">
-$$\text{p} = \left\lfloor\dfrac{\text{pid}}{5}\right\rfloor \qquad(9)$$
+$$\text{p} = \left\lfloor\dfrac{\text{pid}}{5}\right\rfloor \qquad(10)$$
 </span> <span id="eq-dop">
-$$\text{dop = dox} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 5 \qquad(10)$$
+$$\text{dop = dox} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 5 \qquad(11)$$
 </span>
 
 </div>
@@ -1436,11 +1443,11 @@ all denote the last day of the Dec year:
 <span class="color364by365"><span class="overline">1̅</span></span> =
 <span class="color364by365"><span class="overline">1̅</span>9</span> =
 -10 + 9. The current Dec countdown date can be written as
-${nextYearColor2}−${TminusPaddedColor1},
-${nextYearColor3}+<span class="overline">${TminusPaddedColor2}</span>,
-${nextYearColor4}+<span class="overline">${decNixAbsColor}</span>${decDoxNidMidColor},
+${nextYearColor()}−${TminusPaddedColor()},
+${nextYearColor()}+<span class="overline">${TminusPaddedColor()}</span>,
+${nextYearColor()}+<span class="overline">${decNixAbsColor()}</span>${decDoxNidMidColor()},
 or
-${nextYearColor5}+<span class="overline">${decNihAbsColor}</span>${decDohNidMidPadColor}.
+${nextYearColor()}+<span class="overline">${decNihAbsColor()}</span>${decDohNidMidPadColor()}.
 
 <div class="centered">
 
@@ -2475,8 +2482,9 @@ is Set <span class="color14by32 tool" data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>,
 a
 [set](https://en.wikipedia.org/wiki/Set_(mathematics)#:~:text=a%20set%20is-,a%20collection%20of%20different%20things,-%5B1%5D)
-which contains all of the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of pentaday">dop</span> that are Schedule
+which contains all of the
+<a href="#dop" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of pentaday">dop</a> that are Schedule
 <span class="color14by32 tool" data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>
 work days. The Schedule <span class="color14by32 tool"
@@ -2491,8 +2499,9 @@ in common years, of the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year"><span class="overline">m̅i̅</span><span class="grave">d̀</span></span>
 or <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year">ni<span class="doubleacute">d̋</span></span>
-in leap years, or of the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer days of year">pid</span> in all years.
+in leap years, or of the
+<a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer days of year">pid</a> in all years.
 
 ## Base32
 
@@ -2928,8 +2937,9 @@ data-bs-title="days of xún">Dox</a> <span class="color0">0</span> to
 <span class="color8">8</span>, we can switch between Dec schedules as
 needed.
 
-Over the course of a Dec cycle, which consists of 400 years, 20871
-weeks, or 146097 <a href="#d" class="tool" data-bs-toggle="tooltip"
+Over the course of a Dec quadricentennial, which consists of 400 years,
+20871 weeks, or 146097
+<a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a>, a five-day workweek provides an average of
 260.8875 work days per year. If we round 260.8875 to 261 and then
 subtract the 11 US Federal holidays, we get an annual total of 250 work
@@ -2984,16 +2994,16 @@ data-bs-title="day">d</a><span class="color299by365">299</span>, which
 is the last day of <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundreds of days">Hectoday</span>
 <span class="color200by365">2</span>
-(<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color200by365">2</span>),
+(<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a><span class="color200by365">2</span>),
 Christmas is likely to be celebrated on
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color300by365">300</span>, the
 first day of <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundreds of days">Hectoday</span>
 <span class="color300by365">3</span>
-(<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color300by365">3</span>),
+(<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a><span class="color300by365">3</span>),
 by people who do not use Dec and live in a
 <a href="#utc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</a> time zone with a
@@ -3002,10 +3012,10 @@ season](https://en.wikipedia.org/wiki/Christmas_and_holiday_season#:~:text=an%20
 is <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundreds of days">Hectoday</span>
 <span class="color265by365">-1</span>
-(<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>).
+(<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a><span class="color265by365"><span class="overline">1̅</span></span>).
 
-# Day of hectoday (doh)
+# Day of hectoday (doﾲ)
 
 [Astronomical
 seasons](https://en.wikipedia.org/wiki/Season#Astronomical) vary in
@@ -3028,8 +3038,8 @@ calendar, 13 weeks or 91
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a> in the [World Season
 Calendar](https://en.wikipedia.org/wiki/Isaac_Asimov#Calendar:~:text=divides%20the%20year%20into%20four%20seasons%20%28named%20A%E2%80%93D%29%20of%2013%20weeks%20%2891%20days%29%20each),
-and 1 <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a>, 10
+and 1 <a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a>, 10
 <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="groups of ten days">x</a>, 20
 <a href="#p" class="tool" data-bs-toggle="tooltip"
@@ -3039,23 +3049,23 @@ data-bs-title="days">d</a> in Decalendar.
 
 As opposed to seasons in other calendars, the 4 Dec seasons are chosen
 from 2 overlapping sets of 4 consecutive
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a>, called “positive
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a>, called “positive
 integer hectodays”
-(<a href="#pih" id="positiveintegerhectoday" class="tool"
+(<a href="#pibaekil" id="positiveintegerhectoday" class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="positive integer hectodays">pih</a>) and “negative
+data-bs-title="positive integer hectodays">piﾲ</a>) and “negative
 integer hectodays”
-(<a href="#nih" id="negativeintegerhectoday" class="tool"
+(<a href="#nibaekil" id="negativeintegerhectoday" class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="negative integer hectodays">nih</a>), to match [daily
+data-bs-title="negative integer hectodays">niﾲ</a>), to match [daily
 global mean temperature](https://pulse.climate.copernicus.eu) patterns.
 Every <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of year">doy</a> is simultaneously a member of a
-<a href="#pih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer hectoday">pih</a>, <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="negative integer hectoday">nih</span>, “positive integer
+<a href="#pibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer hectoday">piﾲ</a>,
+<a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectoday">niﾲ</a>, “positive integer
 xún” (<a href="#pix" id="positiveintegerxun" class="tool"
 data-bs-toggle="tooltip" data-bs-title="positive integer xún">pix</a>),
 and “negative integer xún”
@@ -3065,58 +3075,57 @@ data-bs-toggle="tooltip" data-bs-title="negative integer xún">nix</a>).
 <div id="equationgroup04" class="equationgroup">
 
 <span id="eq-pih">
-$$\text{pih} = \left\lfloor\dfrac{\text{pid}}{100}\right\rfloor \qquad(11)$$
+$$\text{piﾲ} = \left\lfloor\dfrac{\text{pid}}{100}\right\rfloor \qquad(12)$$
 </span> <span id="eq-nih">
-$$\text{nih} = \left\lfloor\dfrac{\text{nid}}{100}\right\rfloor \qquad(12)$$
+$$\text{niﾲ} = \left\lfloor\dfrac{\text{nid}}{100}\right\rfloor \qquad(13)$$
 </span> <span id="eq-pix">
-$$\text{pix} = \left\lfloor\dfrac{\text{pid}}{10}\right\rfloor \qquad(13)$$
+$$\text{pix} = \left\lfloor\dfrac{\text{pid}}{10}\right\rfloor \qquad(14)$$
 </span> <span id="eq-nix">
-$$\text{nix} = \left\lfloor\dfrac{\text{nid}}{10}\right\rfloor \qquad(14)$$
+$$\text{nix} = \left\lfloor\dfrac{\text{nid}}{10}\right\rfloor \qquad(15)$$
 </span>
 
 </div>
 
 Day <span class="color0">0</span> is in
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color0">0</span>,
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color0">0</span>,
 <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of ten days">x</a><span class="color0">0</span>,
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color330by365"><span class="overline">4̅</span></span>,
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color330by365"><span class="overline">4̅</span></span>,
 and <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of ten days">x</a><span class="color360by365"><span class="overline">3̅7̅</span></span>.
 Days <span class="color364by365">364</span> and
 <span class="color365by366">365</span> are in
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color300by365">3</span>,
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color300by365">3</span>,
 <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of ten days">x</a><span class="color360by365">36</span>,
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>,
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color265by365"><span class="overline">1̅</span></span>,
 and <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of ten days">x</a><span class="color355by365"><span class="overline">1̅</span></span>.
-While <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color0">0</span>
+While <a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color0">0</span>
 and <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of ten days">x</a><span class="color0">0</span>
 start at the “beginning of year”
 (<a href="#boy" id="beginningofyear" class="tool"
 data-bs-toggle="tooltip" data-bs-title="beginning of year">boy</a>),
-both <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color300by365">3</span>
+both <a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color300by365">3</span>
 and <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of ten days">x</a><span class="color360by365">36</span>
-extend beyond the “end of year”
-(<a href="#eoy" id="endofyear" class="tool" data-bs-toggle="tooltip"
-data-bs-title="end of year">eoy</a>). In contrast,
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color330by365"><span class="overline">4̅</span></span>
+extend beyond the <a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a>. In contrast,
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color330by365"><span class="overline">4̅</span></span>
 and <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of ten days">x</a><span class="color360by365"><span class="overline">3̅7̅</span></span>
 begin before the <a href="#boy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of year">boy</a> but
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color265by365"><span class="overline">1̅</span></span>
 and <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of ten days">x</a><span class="color355by365"><span class="overline">1̅</span></span>
 do not continue past the
@@ -3126,8 +3135,8 @@ Decolor as its first
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of year">doy</a>, regardless of its length.
 
-For example, <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color200by365">2</span>,
+For example, <a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color200by365">2</span>,
 <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of ten days">x</a><span class="color200by365">20</span>,
 and <a href="#d" class="tool" data-bs-toggle="tooltip"
@@ -3135,18 +3144,18 @@ data-bs-title="day">d</a><span class="color200by365">200</span> all have
 the same Decolor even though their lengths vary by [powers of
 ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten).
 Day <span class="color365by366">365</span> does not affect
-<a href="#pih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer hectoday">pih</a> and
+<a href="#pibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer hectoday">piﾲ</a> and
 <a href="#pix" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer xún">pix</a> Decolors but shifts
-<a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectodays">nih</a> and
+<a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectodays">niﾲ</a> and
 <a href="#nix" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer xún">nix</a> Decolors by 1 day. If the
-<a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year length">syl</a> is unknown,
-<a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectoday">nih</a> and
+<a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a> is unknown,
+<a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectoday">niﾲ</a> and
 <a href="#nix" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer xún">nix</a> have common year Decolors.
 Depending on the year,
@@ -3158,29 +3167,31 @@ data-bs-title="days">d</a>. If the year is unknown,
 data-bs-title="week of year">woy</a> are Decolorless.
 
 The [line](https://observablehq.com/plot/marks/line) chart below labels
-the 4 Dec seasons, <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color0">0</span>,
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color100">1</span>,
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color200by365">2</span>,
-and <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>,
+the 4 Dec seasons,
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a><span class="color0">0</span>,
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a><span class="color100">1</span>,
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a><span class="color200by365">2</span>,
+and <a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a><span class="color265by365"><span class="overline">1̅</span></span>,
 with their respective colors: <span class="color0">red</span>,
 <span class="color100">chartreuse</span>,
 <span class="color200by365">blue</span>, and
 <span class="color265by365">violet</span>. The
 <span class="color200by365">blue</span> area denoting
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color200by365">2</span>
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a><span class="color200by365">2</span>
 is truncated to hide its overlap with the
 <span class="color265by365">violet</span> area signifying
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>.
-Coincidentally, the <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color200by365">2</span>
-and <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a><span class="color265by365"><span class="overline">1̅</span></span>.
+Coincidentally, the
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a><span class="color200by365">2</span>
+and <a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a><span class="color265by365"><span class="overline">1̅</span></span>
 overlap begins 1 or 2 days before the soonest possible date of
 [Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃and
 ends with
@@ -3415,7 +3426,7 @@ for every <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</a>. If we think of the method for
 assigning <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of year">doy</a> to Dec seasons in
-<a href="#eq-season" class="quarto-xref">Equation 15</a> as a
+<a href="#eq-season" class="quarto-xref">Equation 16</a> as a
 [classification](https://en.wikipedia.org/wiki/Classification#:~:text=the%20activity%20of%20assigning%20objects%20to%20some%20pre%2Dexisting%20classes%20or%20categories)
 [model](https://en.wikipedia.org/wiki/Statistical_model#:~:text=a%20mathematical%20model%20that%20embodies%20a%20set%20of%20statistical%20assumptions%20concerning%20the%20generation%20of%20sample%20data),
 its “[goodness of
@@ -3425,22 +3436,22 @@ is supported by the fact that the hottest
 data-bs-title="days of year">doy</a> on average,
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color149by365">149</span>, is near
-the middle of <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color100">1</span>
+the middle of <a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a><span class="color100">1</span>
 and the coldest <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of year">doy</a> on average,
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color316by365">316</span>, is
 close to the center of
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>:
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a><span class="color265by365"><span class="overline">1̅</span></span>:
 <span class="color316by365">316</span> − 365 =
 <span class="color316by365">-49</span>.
 
 <div id="equationgroup05" class="equationgroup">
 
 <span id="eq-season">
-$$\text{season} = \left\lfloor\dfrac{\text{pid} - \text{syl} \* \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{nid} \ge -100\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}}{100}\right\rfloor \qquad(15)$$
+$$\text{season} = \left\lfloor\dfrac{\text{pid} - \text{eoy} \* \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{nid} \ge -100\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}}{100}\right\rfloor \qquad(16)$$
 </span>
 
 </div>
@@ -3499,26 +3510,26 @@ id="segme-2" loading="lazy" width="720" height="360" />
 </div>
 
 In general, the hottest days are in
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color100">1</span>,
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color100">1</span>,
 the coldest days are in
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>,
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color265by365"><span class="overline">1̅</span></span>,
 temperatures increase with time in
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color0">0</span>,
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color0">0</span>,
 and temperatures decrease with time in
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color200by365">2</span>.
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color200by365">2</span>.
 Therefore, we can refer to
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color0">0</span>,
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color100">1</span>,
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color200by365">2</span>,
-and <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color0">0</span>,
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color100">1</span>,
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color200by365">2</span>,
+and <a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a><span class="color265by365"><span class="overline">1̅</span></span>
 as the rise📈,
 [crest](https://en.wikipedia.org/wiki/Crest_and_trough#:~:text=is%20the%20highest%20point%20of%20the%20wave)🔥,
 fall📉, and
@@ -3542,17 +3553,17 @@ and
 <thead>
 <tr>
 <th>Hemisphere</th>
-<th><a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span
+<th><a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span
 class="color0">0</span></th>
-<th><a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span
+<th><a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span
 class="color100">1</span></th>
-<th><a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span
+<th><a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span
 class="color200by365">2</span></th>
-<th><a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span
+<th><a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span
 class="color265by365"><span class="overline">1̅</span></span></th>
 </tr>
 </thead>
@@ -3577,44 +3588,44 @@ class="color265by365"><span class="overline">1̅</span></span></th>
 When we keep the remainder after dividing a
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</a> by 100, we obtain a “day of
-hectoday”
-(<a href="#doh" id="dayofhectoday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of hectoday">doh</a>), which is the percent of an
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a> that has elapsed. If the
+hectoday” (<a href="#dobaekil" id="dayofhectoday" class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of hectoday">doﾲ</a>), which
+is the percent of an
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a> that has elapsed. If the
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</a> is a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a>, the
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a> is a
-<a href="#pih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer hectoday">pih</a>: ${decDotyColor3} mod
-100 = ${decDohPidColor}, but if it is an
-<a href="#nid" class="tool" data-bs-toggle="tooltip"
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a> is a
+<a href="#pibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer hectoday">piﾲ</a>: ${decDotyColor()}
+<span class="hyphen">−⌊</span> 100 = ${decDohPidColor()}, but if it is
+an <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a>, the
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a> is an
-<a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectoday">nih</a>:
-<span class="overline">${TminusColor1}</span> mod 100 =
-${decDohNidMidColor}. The [radix
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a> is an
+<a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectoday">niﾲ</a>:
+<span class="overline">${TminusColor()}</span>
+<span class="hyphen">−⌊</span> 100 = ${decDohNidMidColor()}. The [radix
 complement](https://en.wikipedia.org/wiki/Method_of_complements#:~:text=The%20radix%20complement%20of,is%20defined%20as)
-of the <a href="#doh" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of hectoday">doh</a>
-(100−<a href="#doh" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of hectoday">doh</a>) is the percent of the
-<a href="#pih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer hectoday">pih</a>, 100 −
-${decDohPidColor1} = ${decDohPidMidColor}, or the
-<a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectoday">nih</a>, 100 −
-${decDohNidMidColor1} = ${decDohNidColor}, that is left.
+of the <a href="#dobaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of hectoday">doﾲ</a>
+(100−<a href="#dobaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of hectoday">doﾲ</a>) is the percent of the
+<a href="#pibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer hectoday">piﾲ</a>, 100 −
+${decDohPidColor()} = ${decDohPidMidColor()}, or the
+<a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectoday">niﾲ</a>, 100 −
+${decDohNidMidColor()} = ${decDohNidColor()}, that is left.
 
 <div id="equationgroup06" class="equationgroup">
 
 <span id="eq-doh">
-$$\text{doh} = \text{doy} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 100 \qquad(16)$$
+$$\text{doﾲ} = \text{doy} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 100 \qquad(17)$$
 </span>
 
 </div>
@@ -3637,11 +3648,12 @@ to three digits. If the three-digit
 data-bs-title="day of year">doy</a> is a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a>:
-${decDotyPadColor1}, its first digit is a
-<a href="#pih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer hectoday">pih</a>: ${decPih}, its last
-two digits are a <a href="#doh" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of hectoday">doh</a>: ${decDohPidColor2}, its first
+${decDotyPadColor()}, its first digit is a
+<a href="#pibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer hectoday">piﾲ</a>: ${decPih}, its last
+two digits are a
+<a href="#dobaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of hectoday">doﾲ</a>: ${decDohPidColor()}, its first
 two digits are a <a href="#pix" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer xún">pix</a>: ${decDekColor}, and its
 final digit is a <a href="#dox" class="tool" data-bs-toggle="tooltip"
@@ -3652,80 +3664,82 @@ data-bs-title="positive integer day of year">pid</a> gives us
 information on the current
 <a href="#pix" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer xún">pix</a> and
-<a href="#pih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer hectoday">pih</a>, an
+<a href="#pibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer hectoday">piﾲ</a>, an
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a> tells us about the
 <a href="#nix" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer xún">nix</a> and
-<a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectoday">nih</a> that either are coming
+<a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectoday">niﾲ</a> that either are coming
 up next or began today. The three-digit
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a> in a year+day Dec
-date, <span class="overline">${TminusColor2}</span>, presents an
-<a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectoday">nih</a> with its first digit:
-<span class="overline">${decNihPlus1Color}</span>, the days until that
-<a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectoday">nih</a> with its last two
-digits: <span class="overline">${decDohNidColor1}</span>, an
+date, <span class="overline">${TminusColor()}</span>, presents an
+<a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectoday">niﾲ</a> with its first digit:
+<span class="overline">${decNihPlus1Color()}</span>, the days until that
+<a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectoday">niﾲ</a> with its last two
+digits: <span class="overline">${decDohNidPadColor()}</span>, an
 <a href="#nix" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer xún">nix</a> with its first two digits:
-<span class="overline">${decNixPlus1Color}</span>, and the days until
+<span class="overline">${decNixPlus1Color()}</span>, and the days until
 that <a href="#nix" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer xún">nix</a> with its final digit:
 <span class="overline">${decDoxNidColor}</span>.
 
-An <a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectoday">nih</a>
+An <a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectoday">niﾲ</a>
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year">mid</a>,
-<span class="overline">${decNihAbsColor1}</span>${decDohNidMidPadColor1},
-shows the current <a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectoday">nih</a> with its first digit:
-<span class="overline">${decNihAbsColor2}</span>, a
-<a href="#doh" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of hectoday">doh</a> with its final two digits:
-${decDohNidMidPadColor2}, an
-<a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectoday">nih</a> “mixed integer xún”
+<span class="overline">${decNihAbsColor()}</span>${decDohNidMidPadColor()},
+shows the current
+<a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectoday">niﾲ</a> with its first digit:
+<span class="overline">${decNihAbsColor()}</span>, a
+<a href="#dobaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of hectoday">doﾲ</a> with its final two digits:
+${decDohNidMidPadColor()}, an
+<a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectoday">niﾲ</a> “mixed integer xún”
 (<a href="#mix" id="mixedintegerxun" class="tool"
 data-bs-toggle="tooltip" data-bs-title="mixed integer xún">mix</a>) with
 its first two digits:
-<span class="overline">${decNihAbsColor3}</span>${decDohNidMidFirstColor},
+<span class="overline">${decNihAbsColor()}</span>${decDohNidMidFirstColor()},
 and a <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a> with its last digit:
-${decDoxNidMidColor1}. During
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>,
+${decDoxNidMidColor()}. During
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="color265by365"><span class="overline">1̅</span></span>,
 Dec recommends using
-<a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectoday">nih</a>
+<a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectoday">niﾲ</a>
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year">mid</a> in lieu of
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> for personal
-timekeeping because <a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectodays">nih</a>
+timekeeping because
+<a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectodays">niﾲ</a>
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year">mid</a> take into account the
-<a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year length">syl</a> and thus avoid any uncertainty
-regarding the <a href="#eoy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="end of year">eoy</a>.
+<a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a> and thus avoid any uncertainty
+regarding when the year will end.
 
-Conversion of an <a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectoday">nih</a>
+Conversion of an
+<a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectoday">niﾲ</a>
 <a href="#mix" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer xún">mix</a> to an
 <a href="#nix" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer xún">nix</a> only requires simple
 arithmetic:
-<span class="overline">${decNihAbsColor4}</span>${decDohNidMidFirstColor1}
-= -${decNihAbsColor5}<span class="color0">0</span> +
-${decDohNidMidFirstColor2} =
-<span class="overline">${decNixAbsColor1}</span>. If we then append a
+<span class="overline">${decNihAbsColor()}</span>${decDohNidMidFirstColor()}
+= -${decNihAbsColor()}<span class="color0">0</span> +
+${decDohNidMidFirstColor()} =
+<span class="overline">${decNixAbsColor()}</span>. If we then append a
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a>, we get an
 <a href="#nix" class="tool" data-bs-toggle="tooltip"
@@ -3733,73 +3747,74 @@ data-bs-title="negative integer xún">nix</a>
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year">mid</a> like those in
 <a href="#tbl-vincommon" class="quarto-xref">Table 2</a>:
-<span class="overline">${decNixAbsColor2}</span>${decDoxNidMidColor2}.
+<span class="overline">${decNixAbsColor()}</span>${decDoxNidMidColor()}.
 During a leap year, we should put a grave accent above the
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a> in
-<a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectoday">nih</a> and
+<a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectoday">niﾲ</a> and
 <a href="#nix" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer xún">nix</a>
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer days of year">mid</a> as in
 <a href="#tbl-vinculeap" class="quarto-xref">Table 3</a> to facilitate
 classification of work and rest days according to Dec schedules:
-<span class="overline">${decNihGraveColor}</span>${decDohGraveFirstColor}<span class="grave">${decDoxGraveColor}</span>
+<span class="overline">${decNihGraveColor}</span>${decDohGraveFirstColor}<span class="grave">${decDoxGraveColor()}</span>
 =
-<span class="overline">${decNixGraveColor}</span><span class="grave">${decDoxGraveColor1}</span>
+<span class="overline">${decNixGraveColor}</span><span class="grave">${decDoxGraveColor()}</span>
 =
-<span class="overline">${decNihAbsColor6}</span>${decDohNidMidPadColor3}
-= <span class="overline">${decNixAbsColor3}</span>${decDoxNidMidColor3}.
+<span class="overline">${decNihAbsColor()}</span>${decDohNidMidPadColor()}
+=
+<span class="overline">${decNixAbsColor()}</span>${decDoxNidMidColor()}.
 
-We can see that <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a>${decPihColor} is
-${decDohPidColor3}% done from the current
+We can see that <a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a>${decPihColor} is
+${decDohPidColor()}% done from the current
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a>: ${decDotyColor4},
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a>${decPihPlus1Color} will
-begin after the remaining ${decDohPidMidColor1}% of
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a>${decPih} expires from
-the current <a href="#pih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer hectoday">pih</a>
+data-bs-title="positive integer day of year">pid</a>: ${decDotyColor()},
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a>${decPihPlus1Color()}
+will begin after the remaining ${decDohPidMidColor()}% of
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a>${decPih} expires from
+the current <a href="#pibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer hectoday">piﾲ</a>
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year">mid</a>:
-${decPihPlus1Color1}<span class="overline">${decDohPidMidPadColor}</span>,
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="overline">${decNihPlus1Color1}</span>
-will start once the residual ${decDohNidColor2}% of
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="overline">${decNihAbsColor7}</span>
+${decPihPlus1Color()}<span class="overline">${decDohPidMidPadColor}</span>,
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="overline">${decNihPlus1Color()}</span>
+will start once the residual ${decDohNidColor()}% of
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="overline">${decNihAbsColor()}</span>
 elapses from the current
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a>:
-<span class="overline">${TminusColor3}</span>, and
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="overline">${decNihAbsColor8}</span>
-is ${decDohNidMidPadColor4}% finished from the current
-<a href="#nih" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer hectoday">nih</a>
+<span class="overline">${TminusColor()}</span>, and
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a><span class="overline">${decNihAbsColor()}</span>
+is ${decDohNidMidPadColor()}% finished from the current
+<a href="#nibaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer hectoday">niﾲ</a>
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year">mid</a>:
-<span class="overline">${decNihAbsColor9}</span>${decDohNidMidPadColor5}.
+<span class="overline">${decNihAbsColor()}</span>${decDohNidMidPadColor()}.
 The last digit of the
-<a href="#doh" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of hectoday">doh</a> is the
+<a href="#dobaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of hectoday">doﾲ</a> is the
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a> and the final digit of the
-100−<a href="#doh" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of hectoday">doh</a> is (10 −
+100−<a href="#dobaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of hectoday">doﾲ</a> is (10 −
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a>)
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+[<span class="hyphen">−⌊</span>](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 10.
 
 <div id="equationgroup07" class="equationgroup">
 
 <span id="eq-doh2dox">
-$$\text{dox} = \text{doh} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 10 \qquad(17)$$
+$$\text{dox} = \text{doﾲ} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 10 \qquad(18)$$
 </span>
 
 </div>
@@ -3810,10 +3825,10 @@ data-bs-title="days of year">doy</a> can be split into either an
 data-bs-title="group of ten days">x</a> and
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a> or an
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a> and
-<a href="#doh" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of hectoday">doh</a>, but the vinculum in a
+<a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of one hundred days">ﾲ</a> and
+<a href="#dobaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of hectoday">doﾲ</a>, but the vinculum in a
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year">mid</a> can be used to
 emphasize one of these two options. If we want to categorize work and
@@ -3900,11 +3915,11 @@ such as finding the
 data-bs-title="day of week">dow</span>](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday))
 of a date. This year, the
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</a> of Christmas is ${xmasDotwColor}
-according to <a href="#eq-dow" class="quarto-xref">Equation 18</a>:
+data-bs-title="day of week">dow</a> of Christmas is ${xmasDotwColor()}
+according to <a href="#eq-dow" class="quarto-xref">Equation 19</a>:
 (${xmasDote} + ${3 - nOffInput})
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-7 = ${xmasDotwColor1}. Unlike
+[<span class="hyphen">−⌊</span>](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+7 = ${xmasDotwColor()}. Unlike
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of week">dow</a>,
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
@@ -3916,35 +3931,35 @@ data-bs-title="positive integer day of year">pid</a> or equivalently the
 remainder after dividing the
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> by 10 as per
-<a href="#eq-dox" class="quarto-xref">Equation 7</a>:
+<a href="#eq-dox" class="quarto-xref">Equation 8</a>:
 <span class="color299by365">299</span>
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+[<span class="hyphen">−⌊</span>](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 10 = <span class="color9">9</span>.
 
 <div id="equationgroup08" class="equationgroup">
 
 <span id="eq-dow">
-$$\text{dow} = (\text{doe} + 3 - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{UTC offset} \< 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 7 \qquad(18)$$
+$$\text{dow} = (\text{doe} + 3 - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{UTC offset} \< 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 7 \qquad(19)$$
 </span>
 
 </div>
 
-<a href="#eq-dow" class="quarto-xref">Equation 18</a> is adapted from
+<a href="#eq-dow" class="quarto-xref">Equation 19</a> is adapted from
 [Howard Hinnant](https://howardhinnant.github.io)’s
 [`weekday_from_days`](https://howardhinnant.github.io/date_algorithms.html#weekday_from_days)
 algorithm (2021+185). The Dec epoch
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a> is <span class="color3by7">3</span>
 = (0 + 3)
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+[<span class="hyphen">−⌊</span>](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7. The [UNIX
 epoch](https://en.wikipedia.org/wiki/Unix_time#:~:text=00%3A00%3A00%20UTC%20on%201%C2%A0January%201970)
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a> is <span class="color4by7">4</span>
 = (719468 + 3)
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+[<span class="hyphen">−⌊</span>](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7. Depending on how
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+[<span class="hyphen">−⌊</span>](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 is
 [defined](https://en.wikipedia.org/wiki/Modulo#Variants_of_the_definition),
 a negative <a href="#doe" class="tool" data-bs-toggle="tooltip"
@@ -4009,10 +4024,10 @@ Christmas is an anchored⚓️holiday because it occurs on the same
 data-bs-title="positive integer day of year">pid</a> every year. In
 contrast, floating🛟holidays like Thanksgiving are always planned for
 the same <a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</a> and thus can fall on various
+data-bs-title="day of week">dow</a> and therefore can fall on various
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer days of year">pid</a>. We can use
-<a href="#eq-dowdif" class="quarto-xref">Equation 19</a>, which is
+<a href="#eq-dowdif" class="quarto-xref">Equation 20</a>, which is
 derived from [Howard Hinnant](https://howardhinnant.github.io)’s
 [`weekday_difference`](https://howardhinnant.github.io/date_algorithms.html#weekday_difference)
 algorithm (2021+185), to find the floating holiday date in a given year.
@@ -4020,12 +4035,12 @@ algorithm (2021+185), to find the floating holiday date in a given year.
 <div id="equationgroup09" class="equationgroup">
 
 <span id="eq-dowdif">
-$$\text{dow}\_\Delta = (\text{dow}\_\text{M} - \text{dow}\_\text{S} + 7) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 7 \qquad(19)$$
+$$\text{dow}\_\Delta = (\text{dow}\_\text{M} - \text{dow}\_\text{S} + 7) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 7 \qquad(20)$$
 </span>
 
 </div>
 
-In <a href="#eq-dowdif" class="quarto-xref">Equation 19</a>,
+In <a href="#eq-dowdif" class="quarto-xref">Equation 20</a>,
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a><sub>M</sub> is the
 [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted),
@@ -4054,12 +4069,12 @@ data-bs-title="day of week">dow</a> of
 data-bs-title="day">d</a><span class="color267by365">267</span> as
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a><sub>S</sub> into
-<a href="#eq-dowdif" class="quarto-xref">Equation 19</a>,
-${day266dotwDiffColor} = (<span class="color4by7">4</span> −
+<a href="#eq-dowdif" class="quarto-xref">Equation 20</a>,
+${day266dotwDiffColor()} = (<span class="color4by7">4</span> −
 ${day266dotwColor} + 7)
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+[<span class="hyphen">−⌊</span>](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7, and then add 267: ${day266dotwDiffPlus267Color} =
-${day266dotwDiffColor1} + <span class="color267by365">267</span>.
+${day266dotwDiffColor()} + <span class="color267by365">267</span>.
 
 <div>
 
@@ -4084,34 +4099,34 @@ data-bs-title="day">d</a><span class="color299by365">299</span> if it is
 negative or the days *since*
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color299by365">299</span> if it is
-positive. The current difference tells us that ${xmasDiffColor}
+positive. The current difference tells us that ${xmasDiffColor()}
 ${xmasDiffDays} ${xmasDiffSince}
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color299by365">299</span> of this
 year:
-${decYearColor2}+<span class="color299by365">299</span><span class="mono">${xmasDiffSign}</span>${xmasDiffColor1}.
+${decYearColor()}+<span class="color299by365">299</span><span class="mono">${xmasDiffSign}</span>${xmasDiffColor()}.
 We can then subtract the
-<a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year length">syl</a> to find the number of days
-until <a href="#d" class="tool" data-bs-toggle="tooltip"
+<a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a> to find the number of days until
+<a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color299by365">299</span> of next
 year:
-${nextYearColor6}+<span class="color299by365">299</span>−${xmasNextColor}.
+${nextYearColor()}+<span class="color299by365">299</span>−${xmasNextColor}.
 
 # Year of era (yoe)
 
 To obtain a <a href="#doe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of era">doe</a> that we can plug into
-<a href="#eq-dow" class="quarto-xref">Equation 18</a>, we can use the
+<a href="#eq-dow" class="quarto-xref">Equation 19</a>, we can use the
 two components of a Dec year+day date, namely a “year of era”
 (<a href="#yoe" id="yearofera" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">yoe</a>) and a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a>, to solve Equations
-<a href="#eq-yoe2coe" class="quarto-xref">20</a>,
-<a href="#eq-yoe2yoc" class="quarto-xref">21</a>,
-<a href="#eq-date2doc" class="quarto-xref">22</a>, and
-<a href="#eq-doe" class="quarto-xref">23</a>, which are based on [Howard
+<a href="#eq-yoe2qoe" class="quarto-xref">21</a>,
+<a href="#eq-yoe2yoq" class="quarto-xref">22</a>,
+<a href="#eq-date2doq" class="quarto-xref">23</a>, and
+<a href="#eq-doe" class="quarto-xref">24</a>, which are based on [Howard
 Hinnant](https://howardhinnant.github.io)’s <a
 href="https://howardhinnant.github.io/date_algorithms.html#days_from_civil"
 class="mono under"><code>days_from_civil</code></a> algorithm that he
@@ -4122,20 +4137,20 @@ Algorithms](https://howardhinnant.github.io/date_algorithms.html)
 
 <div id="equationgroup10" class="equationgroup">
 
-<span id="eq-yoe2coe">
-$$\text{coe} = \biggl \lfloor \frac{\text{yoe}-399\ast\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{yoe} \geq 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}}{400} \biggr \rfloor \qquad(20)$$
+<span id="eq-yoe2qoe">
+$$\text{qoe} = \biggl \lfloor \frac{\text{yoe}-399\times\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{yoe} \geq 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}}{400} \biggr \rfloor \qquad(21)$$
 </span>
 
-<span id="eq-yoe2yoc">
-yoc = yoe − coe \* 400   (21)
+<span id="eq-yoe2yoq">
+yoq = yoe − qoe × 400   (22)
 </span>
 
-<span id="eq-date2doc">
-$$\text{doc} = \text{yoc} \ast 365 + \left\lfloor\frac{\text{yoc}}{4}\right\rfloor - \left\lfloor\frac{\text{yoc}}{100}\right\rfloor + \text{pid} \qquad(22)$$
+<span id="eq-date2doq">
+$$\text{doq} = \text{yoq} \times 365 + \left\lfloor\frac{\text{yoq}}{4}\right\rfloor - \left\lfloor\frac{\text{yoq}}{100}\right\rfloor + \text{pid} \qquad(23)$$
 </span>
 
 <span id="eq-doe">
-doe = coe \* 146097 + doc   (23)
+doe = qoe × 146097 + doq   (24)
 </span>
 
 </div>
@@ -4146,9 +4161,9 @@ doe = coe \* 146097 + doc   (23)
 
 ``` julia
 function doe(year = 1969, pid = 306)
-    coe = fld(year, 400)
-    yoe = year - coe * 400
-    return coe * 146097 +
+    qoe = fld(year, 400)
+    yoe = year - qoe * 400
+    return qoe * 146097 +
            yoe * 365 +
            fld(yoe, 4) -
            fld(yoe, 100) +
@@ -4168,9 +4183,9 @@ doe()
 
 ``` {ojs}
 function doe(year = 1969, pid = 306) {
-  const coe = Math.floor(year / 400),
-        yoe = year - coe * 400;
-  return coe * 146097 +
+  const qoe = Math.floor(year / 400),
+        yoe = year - qoe * 400;
+  return qoe * 146097 +
     yoe * 365 +
     Math.floor(yoe / 4) -
     Math.floor(yoe / 100) +
@@ -4183,10 +4198,10 @@ doe()
 
 ``` python
 def doe(year=1969, pid=306):
-    coe = year // 400
-    yoe = year - coe * 400
+    qoe = year // 400
+    yoe = year - qoe * 400
     return (
-        coe * 146097
+        qoe * 146097
         + yoe * 365
         + yoe // 4
         - yoe // 100
@@ -4201,9 +4216,9 @@ doe()
 
 ``` r
 doe <- function(year = 1969, pid = 306) {
-  coe <- year %/% 400
-  yoe <- year - coe * 400
-  coe * 146097 +
+  qoe <- year %/% 400
+  yoe <- year - qoe * 400
+  qoe * 146097 +
     yoe * 365 +
     yoe %/% 4 -
     yoe %/% 100 +
@@ -4216,11 +4231,11 @@ doe()
 
 </div>
 
-Equations <a href="#eq-doe2coe" class="quarto-xref">24</a>,
-<a href="#eq-doe2doc" class="quarto-xref">25</a>,
-<a href="#eq-doe2yoc" class="quarto-xref">26</a>,
-<a href="#eq-yoe" class="quarto-xref">27</a>, and
-<a href="#eq-doe2pid" class="quarto-xref">28</a> below are based on
+Equations <a href="#eq-doe2qoe" class="quarto-xref">25</a>,
+<a href="#eq-doe2doq" class="quarto-xref">26</a>,
+<a href="#eq-doe2yoq" class="quarto-xref">27</a>,
+<a href="#eq-yoe" class="quarto-xref">28</a>, and
+<a href="#eq-doe2pid" class="quarto-xref">29</a> below are based on
 [Howard Hinnant](https://howardhinnant.github.io)’s <a
 href="https://howardhinnant.github.io/date_algorithms.html#civil_from_days"
 class="mono"><code>civil_from_days</code></a> algorithm and useful for
@@ -4238,35 +4253,37 @@ data-bs-title="positive integer day of year">pid</a> to a
 <a href="#doe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of era">doe</a> or *vice versa*, along the way we
 calculate the
-“[cycle](https://en.wikipedia.org/wiki/Solar_cycle_(calendar)#:~:text=the%20Gregorian%20cycle%20of%20400%20years%20has%20exactly%20146%2C097%20days%2C%20i.e.%20exactly%2020%2C871%20weeks%2C%20one%20can%20say%20that%20the%20Gregorian%20so%2Dcalled%20solar%20cycle%20lasts%20400%20years)
-of era”
-(<a href="#coe" id="cycleofera" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cycle of era">coe</a>), “year of cycle”
-(<a href="#yoc" id="yearofcycle" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year of cycle">yoc</a>), and “day of cycle”
-(<a href="#doc" id="dayofcycle" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of cycle">doc</a>).
+“[quadricentennial](https://en.wikipedia.org/wiki/Solar_cycle_(calendar)#:~:text=the%20Gregorian%20cycle%20of%20400%20years%20has%20exactly%20146%2C097%20days%2C%20i.e.%20exactly%2020%2C871%20weeks%2C%20one%20can%20say%20that%20the%20Gregorian%20so%2Dcalled%20solar%20cycle%20lasts%20400%20years)
+of era” (<a href="#qoe" id="quadricentennialofera" class="tool"
+data-bs-toggle="tooltip" data-bs-title="quadricentennial of era">qoe</a>),
+“year of quadricentennial”
+(<a href="#yoq" id="yearofquadricentennial" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="year of quadricentennial">yoq</a>), and “day of
+quadricentennial”
+(<a href="#doq" id="dayofquadricentennial" class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of quadricentennial">doq</a>).
 
 <div id="equationgroup11" class="equationgroup">
 
-<span id="eq-doe2coe">
-$$\text{coe} = \left \lfloor \frac{\text{doe}-146096\ast\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{doe} \geq 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}}{146097} \right \rfloor \qquad(24)$$
+<span id="eq-doe2qoe">
+$$\text{qoe} = \left \lfloor \frac{\text{doe}-146096\times\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{doe} \geq 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}}{146097} \right \rfloor \qquad(25)$$
 </span>
 
-<span id="eq-doe2doc">
-doc = doe − coe \* 146097   (25)
+<span id="eq-doe2doq">
+doq = doe − qoe × 146097   (26)
 </span>
 
-<span id="eq-doe2yoc">
-$$\text{yoc} = \Biggl \lfloor \frac{\text{doc} - \left\lfloor \dfrac{\text{doc}}{1460} \right\rfloor + \left\lfloor \dfrac{\text{doc}}{36524} \right\rfloor - \left\lfloor \dfrac{\text{doc}}{146096} \right\rfloor}{365} \Biggr \rfloor \qquad(26)$$
+<span id="eq-doe2yoq">
+$$\text{yoq} = \Biggl \lfloor \frac{\text{doq} - \left\lfloor \dfrac{\text{doq}}{1460} \right\rfloor + \left\lfloor \dfrac{\text{doq}}{36524} \right\rfloor - \left\lfloor \dfrac{\text{doq}}{146096} \right\rfloor}{365} \Biggr \rfloor \qquad(27)$$
 </span>
 
 <span id="eq-yoe">
-yoe = yoc + coe \* 400   (27)
+yoe = yoq + qoe × 400   (28)
 </span>
 
 <span id="eq-doe2pid">
-$$\text{pid} = \text{doc} - \text{yoc} \ast 365 - \left \lfloor \frac{\text{yoc}}{4} \right \rfloor + \left \lfloor \frac{\text{yoc}}{100} \right \rfloor \qquad(28)$$
+$$\text{pid} = \text{doq} - \text{yoq} \times 365 - \left \lfloor \frac{\text{yoq}}{4} \right \rfloor + \left \lfloor \frac{\text{yoq}}{100} \right \rfloor \qquad(29)$$
 </span>
 
 </div>
@@ -4277,21 +4294,21 @@ $$\text{pid} = \text{doc} - \text{yoc} \ast 365 - \left \lfloor \frac{\text{yoc}
 
 ``` julia
 function date(doe = 719468)
-    coe = fld(doe, 146097)
-    doc = doe - coe * 146097
-    yoc = fld(
-        doc -
-        fld(doc, 1460) +
-        fld(doc, 36524) -
-        fld(doc, 146096),
+    qoe = fld(doe, 146097)
+    doq = doe - qoe * 146097
+    yoq = fld(
+        doq -
+        fld(doq, 1460) +
+        fld(doq, 36524) -
+        fld(doq, 146096),
         365
     )
     return (
-        yoc + coe * 400,
-        doc - (
-            yoc * 365 +
-            fld(yoc, 4) -
-            fld(yoc, 100)
+        yoq + qoe * 400,
+        doq - (
+            yoq * 365 +
+            fld(yoq, 4) -
+            fld(yoq, 100)
         )
     )
 end
@@ -4309,22 +4326,22 @@ date()
 
 ``` {ojs}
 function date(doe = 719468) {
-  const coe = Math.floor(doe / 146097),
-    doc = doe - coe * 146097,
-    yoc = Math.floor(
+  const qoe = Math.floor(doe / 146097),
+    doq = doe - qoe * 146097,
+    yoq = Math.floor(
       (
-        doc
-        - Math.floor(doc / 1460)
-        + Math.floor(doc / 36524)
-        - Math.floor(doc / 146096)
+        doq
+        - Math.floor(doq / 1460)
+        + Math.floor(doq / 36524)
+        - Math.floor(doq / 146096)
       ) / 365
     );
   return [
-    yoc + coe * 400,
-    doc - (
-      yoc * 365 +
-      Math.floor(yoc / 4) -
-      Math.floor(yoc / 100)
+    yoq + qoe * 400,
+    doq - (
+      yoq * 365 +
+      Math.floor(yoq / 4) -
+      Math.floor(yoq / 100)
     )
   ];
 }
@@ -4335,20 +4352,20 @@ date()
 
 ``` python
 def date(doe=719468):
-    coe = doe // 146097
-    doc = doe - coe * 146097
-    yoc = (
-        doc
-        - doc // 1460
-        + doc // 36524
-        - doc // 146096
+    qoe = doe // 146097
+    doq = doe - qoe * 146097
+    yoq = (
+        doq
+        - doq // 1460
+        + doq // 36524
+        - doq // 146096
     ) // 365
     return (
-        yoc + coe * 400,
-        doc - (
-            yoc * 365 +
-            yoc // 4 -
-            yoc // 100
+        yoq + qoe * 400,
+        doq - (
+            yoq * 365 +
+            yoq // 4 -
+            yoq // 100
         )
     )
 date()
@@ -4360,20 +4377,20 @@ date()
 
 ``` r
 date <- function(doe = 719468) {
-  coe <- doe %/% 146097
-  doc <- doe - coe * 146097
-  yoc <- (
-    doc -
-    doc %/% 1460 +
-    doc %/% 36524 -
-    doc %/% 146096
+  qoe <- doe %/% 146097
+  doq <- doe - qoe * 146097
+  yoq <- (
+    doq -
+    doq %/% 1460 +
+    doq %/% 36524 -
+    doq %/% 146096
   ) %/% 365
   c(
-    yoc + coe * 400,
-    doc - (
-      yoc * 365 +
-      yoc %/% 4 -
-      yoc %/% 100
+    yoq + qoe * 400,
+    doq - (
+      yoq * 365 +
+      yoq %/% 4 -
+      yoq %/% 100
     )
   )
 }
@@ -4385,11 +4402,11 @@ date()
 </div>
 
 Dates generated by Equations
-<a href="#eq-doe2coe" class="quarto-xref">24</a>,
-<a href="#eq-doe2doc" class="quarto-xref">25</a>,
-<a href="#eq-doe2yoc" class="quarto-xref">26</a>,
-<a href="#eq-yoe" class="quarto-xref">27</a>, and
-<a href="#eq-doe2pid" class="quarto-xref">28</a> are guaranteed to be in
+<a href="#eq-doe2qoe" class="quarto-xref">25</a>,
+<a href="#eq-doe2doq" class="quarto-xref">26</a>,
+<a href="#eq-doe2yoq" class="quarto-xref">27</a>,
+<a href="#eq-yoe" class="quarto-xref">28</a>, and
+<a href="#eq-doe2pid" class="quarto-xref">29</a> are guaranteed to be in
 the standard <a href="#yoe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">yoe</a>+<a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> format. Therefore,
@@ -4402,14 +4419,14 @@ data-bs-title="day of era">doe</a> to date” conversion ensures that the
 <a href="#yoe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">yoe</a> is an integer and the
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a> is a positive
+data-bs-title="positive integer day of year">pid</a> is a non-negative
 integer less than the
-<a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year length">syl</a>: <span class="color0">0</span>
-≤ <a href="#pid" class="tool" data-bs-toggle="tooltip"
+<a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a>: <span class="color0">0</span> ≤
+<a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> \<
-<a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year length">syl</a>.
+<a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a>.
 
 # Day of week (dow)
 
@@ -4441,18 +4458,18 @@ data-bs-title="day of week">dow</a>. According to the current Zone
 data-bs-title="year of era">yoe</a>+<a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of week">bow</a>+<a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a></span> date,
-<span class="nowrap">${decYearColor3}<span class="mono">${dotw0sign}</span>${dotw0dotyColor1}+${dotwColor}</span>,
+<span class="nowrap">${decYearColor()}<span class="mono">${dotw0sign}</span>${dotw0dotyPadColor()}+${dotwColor()}</span>,
 the most recent <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of week">Dow</a> <span class="color0">0</span> was
 on <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a>${dotw0dotyColor2} and today is
+data-bs-title="day">d</a>${dotw0dotyColor()} and today is
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">Dow</a> ${dotwColor1}.
+data-bs-title="days of week">Dow</a> ${dotwColor()}.
 
 <div id="equationgroup12" class="equationgroup">
 
 <span id="eq-bow">
-$$\text{yoe} + \frac{\text{pid}}{\text{syl}} = \text{yoe} + \frac{\text{bow + dow}}{\text{syl}} \qquad(29)$$
+$$\text{yoe} + \frac{\text{pid}}{\text{eoy}} = \text{yoe} + \frac{\text{bow + dow}}{\text{eoy}} \qquad(30)$$
 </span>
 
 </div>
@@ -4461,9 +4478,9 @@ A Dec <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of week">bow</a> date can have a countup or a
 countdown <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of week">bow</a>. The countdown equivalent of
-<span class="nowrap">${decYearColor4}<span class="mono">${dotw0sign}</span>${dotw0dotyColor3}+${dotwColor2}</span>
+<span class="nowrap">${decYearColor()}<span class="mono">${dotw0sign}</span>${dotw0dotyPadColor()}+${dotwColor()}</span>
 is
-<span class="nowrap">${nextYearColor7}−${dotw0dotyNegColor}+${dotwColor3}</span>.
+<span class="nowrap">${nextYearColor()}−${dotw0dotyNegColor}+${dotwColor()}</span>.
 Like <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a>, countdown
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
@@ -4475,15 +4492,15 @@ account the length of the year. The sum of 52 weeks and the last
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of week">bow</a>+<a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of week">dow</a> of this year is 52 × 7 +
-${decYearLastBowNegColor} + ${decYearLastDowColor} =
-${decYearLastBowSumColor} + ${decYearLastDowColor1}.
+${decYearLastBowNegColor} + ${decYearLastDowColor()} =
+${decYearLastBowSumColor} + ${decYearLastDowColor()}.
 
 Based on the calculation above, the Dec
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of week">bow</a> date which is 52 weeks after
-<span class="nowrap">${nextYearColor8}−${decYearLastBowNegColor1}<span class="mono">+</span>${decYearLastDowColor2}</span>
+<span class="nowrap">${nextYearColor()}−${decYearLastBowNegColor1}<span class="mono">+</span>${decYearLastDowColor()}</span>
 is
-<span class="nowrap">${nextYearColor9}<span class="mono">+</span>${decYearLastBowSumColor1}<span class="mono">+</span>${decYearLastDowColor3}</span>.
+<span class="nowrap">${nextYearColor()}<span class="mono">+</span>${decYearLastBowSumColor1}<span class="mono">+</span>${decYearLastDowColor()}</span>.
 When we see the same
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of week">dow</a> in two dates, we know that their
@@ -4493,9 +4510,9 @@ data-bs-title="beginning of week">bow</a> can be used to identify a
 <a href="#woy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="week of year">woy</a> in phrases like “the week of
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a>${dotw0dotyColor4}” or “the week that begins on
-<a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a>${dotw0dotyColor5}”. Years with the same
+data-bs-title="day">d</a>${dotw0dotyPadColor()}” or “the week that
+begins on <a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day">d</a>${dotw0dotyPadColor()}”. Years with the same
 <a href="#boy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of year">boy</a><a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a> also have matching
@@ -4514,10 +4531,10 @@ data-bs-title="beginning of year">boy</a><a href="#dow" class="tool" data-bs-tog
 data-bs-title="day of week">dow</a> with the
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of week">bow</a> then divide by 7 as in
-<a href="#eq-woy" class="quarto-xref">Equation 30</a>: ${woyColor} =
-(${doty0dotwColor} + ${dotw0dotyColor6}) ÷ 7. Like the
-<a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year length">syl</a>, the
+<a href="#eq-woy" class="quarto-xref">Equation 31</a>: ${woyColor()} =
+(${doty0dotwColor} + ${dotw0dotyPadColor()}) ÷ 7. Like the
+<a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a>, the
 <a href="#boy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of year">boy</a><a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a> is omitted from Dec dates, because
@@ -4537,7 +4554,7 @@ data-bs-title="day of week">dow</a>.
 <div id="equationgroup13" class="equationgroup">
 
 <span id="eq-woy">
-$$\text{woy} = \dfrac{\text{bow}+\text{boydow}}{7} \qquad(30)$$
+$$\text{woy} = \dfrac{\text{bow}+\text{boydow}}{7} \qquad(31)$$
 </span>
 
 </div>
@@ -4548,7 +4565,7 @@ data-bs-title="beginning of week">bow</a> into a
 <a href="#boy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of year">boy</a><a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a> using
-<a href="#eq-boydow" class="quarto-xref">Equation 31</a>. If
+<a href="#eq-boydow" class="quarto-xref">Equation 32</a>. If
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of week">dow</a> were like
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
@@ -4575,12 +4592,12 @@ data-bs-title="beginning of week">bow</a> dates.
 <div id="equationgroup14" class="equationgroup">
 
 <span id="eq-boydow">
-$$\text{boydow} = (7 - \text{bow}\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod}7)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod}7 \qquad(31)$$
+$$\text{boydow} = (7 - \text{bow}\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}}7)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}}7 \qquad(32)$$
 </span>
 
 </div>
 
-By rearranging <a href="#eq-woy" class="quarto-xref">Equation 30</a>, we
+By rearranging <a href="#eq-woy" class="quarto-xref">Equation 31</a>, we
 can see that <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginnings of week">bow</a> should expand to
 <span class="nowrap">7×<a href="#woy" class="tool" data-bs-toggle="tooltip"
@@ -4657,11 +4674,11 @@ data-bs-title="septenary">base7</span>). Likewise,
 and last eleven <a href="#woy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="week of year">woy</a> as <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="base10">b10</span> integers:
-${decYearColor6}<span class="mono">+</span>${woyColor2}<span class="mono">+</span>${dotwColor5},
+${decYearColor()}<span class="mono">+</span>${woyPadColor()}<span class="mono">+</span>${dotwColor()},
 quadraquinquagesimal (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="quadraquinquagesimal">base54</span>) [playing
 cards](https://en.wikipedia.org/wiki/Standard_52-card_deck#Terminology:~:text=52%20playing%20cards%3B-,13%20of%20each%20suit,-%3A%20clubs%2C%20diamonds%2C%20hearts):
-${decYearColor7}<span class="playingcard">${woyColor3}</span><span class="halfdomino">${dotwColor6}</span>,
+${decYearColor()}<span class="playingcard">${woyCardColor()}</span><span class="halfdomino">${dotwDiceColor()}</span>,
 and [mixed
 radix](https://en.wikipedia.org/wiki/Mixed_radix#:~:text=non%2Dstandard%20positional%20numeral%20systems%20in%20which%20the%20numerical%20base%20varies%20from%20position%20to%20position)
 pairs of
@@ -4672,9 +4689,12 @@ suits](https://en.wikipedia.org/wiki/Playing_card_suit#:~:text=the%20categories%
 and
 [tridecimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#Standard_positional_numeral_systems:~:text=Tredecimal%2C-,tridecimal,-%5B40%5D)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tridecimal">base13</span>) [counting
-rods](https://en.wikipedia.org/wiki/Counting_rods#:~:text=small%20bars%2C%20typically%203%E2%80%9314%C2%A0cm%20(1%22%20to%206%22)%20long%2C%20that%20were%20used%20by%20mathematicians%20for%20calculation%20in%20ancient%20East%20Asia):
-${decYearColor8}<span class="playingcardsuit">${woySuitColor}</span><span class="countingrod">${woySignColor}</span><span class="halfdomino">${dotwColor7}</span>.
+data-bs-title="tridecimal">base13</span>) [zodiac
+signs](https://en.wikipedia.org/wiki/Astrological_sign) (with
+[Ophiuchus](https://en.wikipedia.org/wiki/Ophiuchus_(astrology)) as the
+thirteenth
+sign)%20long%2C%20that%20were%20used%20by%20mathematicians%20for%20calculation%20in%20ancient%20East%20Asia):
+${decYearColor()}<span class="playingcardsuit">${woySuitColor}</span><span class="zodiacsign">${woySignColor}</span><span class="halfdomino">${dotwDiceColor()}</span>.
 
 <div class="d-block d-xl-none">
 
@@ -4702,31 +4722,31 @@ data-bs-title="tridecimal">b13</span></th>
 <td>0</td>
 <td><span class="bigcard">🂡</span></td>
 <td>♤</td>
-<td><span class="bigsign">𝍠</span></td>
+<td><span class="bigsign">♈︎</span></td>
 </tr>
 <tr>
 <td>1</td>
 <td><span class="bigcard">🂢</span></td>
 <td>♤</td>
-<td><span class="bigsign">𝍡</span></td>
+<td><span class="bigsign">♉︎</span></td>
 </tr>
 <tr>
 <td>2</td>
 <td><span class="bigcard">🂣</span></td>
 <td>♤</td>
-<td><span class="bigsign">𝍢</span></td>
+<td><span class="bigsign">♊︎</span></td>
 </tr>
 <tr>
 <td>3</td>
 <td><span class="bigcard">🂤</span></td>
 <td>♤</td>
-<td><span class="bigsign">𝍣</span></td>
+<td><span class="bigsign">♋︎</span></td>
 </tr>
 <tr>
 <td>4</td>
 <td><span class="bigcard">🂥</span></td>
 <td>♤</td>
-<td><span class="bigsign">𝍤</span></td>
+<td><span class="bigsign">♌︎</span></td>
 </tr>
 <tr>
 <td>5</td>
@@ -4756,13 +4776,13 @@ data-bs-title="tridecimal">b13</span></th>
 <td>9</td>
 <td><span class="bigcard">🂪</span></td>
 <td>♤</td>
-<td><span class="bigsign">𝍥</span></td>
+<td><span class="bigsign">♑︎</span></td>
 </tr>
 <tr>
 <td>10</td>
 <td><span class="bigcard">🂫</span></td>
 <td>♤</td>
-<td><span class="bigsign">𝍦</span></td>
+<td><span class="bigsign">♒︎</span></td>
 </tr>
 <tr>
 <td>…</td>
@@ -4774,7 +4794,7 @@ data-bs-title="tridecimal">b13</span></th>
 <td>43</td>
 <td><span class="bigcard">🃕</span></td>
 <td>♧</td>
-<td><span class="bigsign">𝍤</span></td>
+<td><span class="bigsign">♌︎</span></td>
 </tr>
 <tr>
 <td>44</td>
@@ -4804,37 +4824,37 @@ data-bs-title="tridecimal">b13</span></th>
 <td>48</td>
 <td><span class="bigcard">🃚</span></td>
 <td>♧</td>
-<td><span class="bigsign">𝍥</span></td>
+<td><span class="bigsign">♑︎</span></td>
 </tr>
 <tr>
 <td>49</td>
 <td><span class="bigcard">🃛</span></td>
 <td>♧</td>
-<td><span class="bigsign">𝍦</span></td>
+<td><span class="bigsign">♒︎</span></td>
 </tr>
 <tr>
 <td>50</td>
 <td><span class="bigcard">🃝</span></td>
 <td>♧</td>
-<td><span class="bigsign">𝍧︎</span></td>
+<td><span class="bigsign">♓︎</span></td>
 </tr>
 <tr>
 <td>51</td>
 <td><span class="bigcard">🃞</span></td>
 <td>♧</td>
-<td><span class="bigsign">𝍨︎</span></td>
+<td><span class="bigsign">⛎︎</span></td>
 </tr>
 <tr>
 <td>52</td>
 <td><span class="bigcard">🃟</span></td>
 <td>☆</td>
-<td><span class="bigsign">𝍠︎</span></td>
+<td><span class="bigsign">♈︎</span></td>
 </tr>
 <tr>
 <td>53</td>
 <td><span class="bigcard">🂠</span></td>
 <td>☆</td>
-<td><span class="bigsign">𝍡︎</span></td>
+<td><span class="bigsign">♉︎</span></td>
 </tr>
 </tbody>
 </table>
@@ -4879,17 +4899,17 @@ data-bs-title="tridecimal">b13</span></th>
 <td>0</td>
 <td><span class="bigcard">🂡</span></td>
 <td>♤</td>
-<td><span class="bigsign">𝍠</span></td>
+<td><span class="bigsign">♈︎</span></td>
 <td>43</td>
 <td><span class="bigcard">🃕</span></td>
 <td>♧</td>
-<td><span class="bigsign">𝍤</span></td>
+<td><span class="bigsign">♌︎</span></td>
 </tr>
 <tr>
 <td>1</td>
 <td><span class="bigcard">🂢</span></td>
 <td>♤</td>
-<td><span class="bigsign">𝍡</span></td>
+<td><span class="bigsign">♉︎</span></td>
 <td>44</td>
 <td><span class="bigcard">🃖</span></td>
 <td>♧</td>
@@ -4899,7 +4919,7 @@ data-bs-title="tridecimal">b13</span></th>
 <td>2</td>
 <td><span class="bigcard">🂣</span></td>
 <td>♤</td>
-<td><span class="bigsign">𝍢</span></td>
+<td><span class="bigsign">♊︎</span></td>
 <td>45</td>
 <td><span class="bigcard">🃗</span></td>
 <td>♧</td>
@@ -4909,7 +4929,7 @@ data-bs-title="tridecimal">b13</span></th>
 <td>3</td>
 <td><span class="bigcard">🂤</span></td>
 <td>♤</td>
-<td><span class="bigsign">𝍣</span></td>
+<td><span class="bigsign">♋︎</span></td>
 <td>46</td>
 <td><span class="bigcard">🃘</span></td>
 <td>♧</td>
@@ -4919,7 +4939,7 @@ data-bs-title="tridecimal">b13</span></th>
 <td>4</td>
 <td><span class="bigcard">🂥</span></td>
 <td>♤</td>
-<td><span class="bigsign">𝍤</span></td>
+<td><span class="bigsign">♌︎</span></td>
 <td>47</td>
 <td><span class="bigcard">🃙</span></td>
 <td>♧</td>
@@ -4933,7 +4953,7 @@ data-bs-title="tridecimal">b13</span></th>
 <td>48</td>
 <td><span class="bigcard">🃚</span></td>
 <td>♧</td>
-<td><span class="bigsign">𝍥</span></td>
+<td><span class="bigsign">♑︎</span></td>
 </tr>
 <tr>
 <td>6</td>
@@ -4943,7 +4963,7 @@ data-bs-title="tridecimal">b13</span></th>
 <td>49</td>
 <td><span class="bigcard">🃛</span></td>
 <td>♧</td>
-<td><span class="bigsign">𝍦</span></td>
+<td><span class="bigsign">♒︎</span></td>
 </tr>
 <tr>
 <td>7</td>
@@ -4953,7 +4973,7 @@ data-bs-title="tridecimal">b13</span></th>
 <td>50</td>
 <td><span class="bigcard">🃝</span></td>
 <td>♧</td>
-<td><span class="bigsign">𝍧︎</span></td>
+<td><span class="bigsign">♓︎</span></td>
 </tr>
 <tr>
 <td>8</td>
@@ -4963,27 +4983,27 @@ data-bs-title="tridecimal">b13</span></th>
 <td>51</td>
 <td><span class="bigcard">🃞</span></td>
 <td>♧</td>
-<td><span class="bigsign">𝍨︎</span></td>
+<td><span class="bigsign">⛎︎</span></td>
 </tr>
 <tr>
 <td>9</td>
 <td><span class="bigcard">🂪</span></td>
 <td>♤</td>
-<td><span class="bigsign">𝍥</span></td>
+<td><span class="bigsign">♑︎</span></td>
 <td>52</td>
 <td><span class="bigcard">🃟</span></td>
 <td>☆</td>
-<td><span class="bigsign">𝍠︎</span></td>
+<td><span class="bigsign">♈︎</span></td>
 </tr>
 <tr>
 <td>10</td>
 <td><span class="bigcard">🂫</span></td>
 <td>♤</td>
-<td><span class="bigsign">𝍦</span></td>
+<td><span class="bigsign">♒︎</span></td>
 <td>53</td>
 <td><span class="bigcard">🂠</span></td>
 <td>☆</td>
-<td><span class="bigsign">𝍡︎</span></td>
+<td><span class="bigsign">♉︎</span></td>
 </tr>
 </tbody>
 </table>
@@ -5006,7 +5026,7 @@ are represented in mixed radix
 data-bs-title="week of year">woy</a> by <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="tridecimal">base13</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tridecimal">b13</span>) counting rods: ♔ = 𝍨, and
+data-bs-title="tridecimal">b13</span>) zodiac signs: ♔ = ⛎︎, and
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="quinary">b5</span> playing card suits can be interpreted
 as meteorological seasons in the Northern or Southern Hemisphere, as
@@ -5064,7 +5084,7 @@ data-bs-title="base7">b7</span>), and split the
 data-bs-title="week of year">woy</a> into a <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="quinary">b5</span> suit and a
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tridecimal">b13</span> rod. The result is similar to a
+data-bs-title="tridecimal">b13</span> sign. The result is similar to a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> in that the first
 of its three digits represents a season, its second digit tallies weeks
@@ -5101,8 +5121,8 @@ Standardization](https://en.wikipedia.org/wiki/International_Organization_for_St
 (<a href="#iso" id="internationalorganizationforstandardization"
 class="tool" data-bs-toggle="tooltip"
 data-bs-title="International Organization for Standardization">ISO</a>)
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of month">dom</span>. We can think of the
+<a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</a>. We can think of the
 <a href="#bom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of month">bom</a> as
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
@@ -5125,7 +5145,7 @@ data-bs-title="beginning of month">bom</a>, we can subtract a
 data-bs-title="day of month">dom</a> from a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a>:
-${monthNumberColor} = ${dotyInputColor7} − ${dayofmonthColor}.
+${monthNumberColor} = ${dotyInputColor7} − ${dayofmonthColor()}.
 
 ``` {ojs}
 //| echo: false
@@ -5139,7 +5159,7 @@ Inputs.bind(Inputs.range([-365 - leapInput, -1], {step: 1, label: "Day of year"}
 <div id="equationgroup15" class="equationgroup">
 
 <span id="eq-bom">
-bom = pid − dom   (32)
+bom = pid − dom   (33)
 </span>
 
 </div>
@@ -5160,9 +5180,15 @@ year”
 (<a href="#moy" id="monthofyear" class="tool" data-bs-toggle="tooltip"
 data-bs-title="month of year">moy</a>):
 <a href="#moy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="month of year">Moy</a> <span class="color0">0</span>. To
-cover 12 months with only 10 fingers, the first and last finger each
-represent 2 months.
+data-bs-title="month of year">Moy</a> <span class="color0">0</span>.
+Starting the year in March restores the meaning of the last four month
+names: September, from the Latin *septem* (seven), is the seventh month,
+<a href="#moy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of year">Moy</a> 6, and December, from *decem*
+(ten), is the tenth,
+<a href="#moy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of year">Moy</a> 9. To cover 12 months with only 10
+fingers, the first and last finger each represent 2 months.
 
 <div class="hand">
 
@@ -5186,8 +5212,8 @@ tables,
 [dactylonomy](https://en.wikipedia.org/wiki/Finger-counting#:~:text=counting%20using%20the%20fingers),
 or [mental
 calculations](https://en.wikipedia.org/wiki/Mental_calculation#:~:text=arithmetical%20calculations%20made%20by%20the%20mind%2C%20within%20the%20brain%2C%20with%20no%20help%20from%20any%20supplies)
-to use <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a> or
+to use <a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a> or
 <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="groups of ten days">x</a>, because all of the required
 information is plainly visible in the
@@ -5223,31 +5249,31 @@ Month 3. We can obtain a
 data-bs-title="month of year">moy</a> by plugging a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> into
-<a href="#eq-pid2moy" class="quarto-xref">Equation 33</a> or an
+<a href="#eq-pid2moy" class="quarto-xref">Equation 34</a> or an
 <a href="#iso" class="tool" data-bs-toggle="tooltip"
 data-bs-title="International Organization for Standardization">ISO</a>
-month into <a href="#eq-month2moy" class="quarto-xref">Equation 34</a>.
+month into <a href="#eq-month2moy" class="quarto-xref">Equation 35</a>.
 
 <div id="equationgroup16" class="equationgroup">
 
 <span id="eq-pid2moy">
-$$\text{moy} = \left\lfloor\dfrac{\text{pid} \ast 5 + 2}{153}\right\rfloor \qquad(33)$$
+$$\text{moy} = \left\lfloor\dfrac{\text{pid} \times 5 + 2}{153}\right\rfloor \qquad(34)$$
 </span>
 
 <span id="eq-month2moy">
-$$\text{moy} = (\text{isomonth} + 9) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 12 \qquad(34)$$
+$$\text{moy} = (\text{isomonth} + 9) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 12 \qquad(35)$$
 </span>
 
 <span id="eq-moy2month">
-$$\text{isomonth} = (\text{moy} + 2) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 12 + 1 \qquad(35)$$
+$$\text{isomonth} = (\text{moy} + 2) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}}} 12 + 1 \qquad(36)$$
 </span>
 
 <span id="eq-moy2bom">
-$$\text{bom} = \left\lfloor\dfrac{\text{moy} \ast 153 + 2}{5}\right\rfloor - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{UTC offset} \ge 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]} \qquad(36)$$
+$$\text{bom} = \left\lfloor\dfrac{\text{moy} \times 153 + 2}{5}\right\rfloor - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{UTC offset} \ge 0\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]} \qquad(37)$$
 </span>
 
 <span id="eq-dom">
-dom = pid − bom   (37)
+dom = pid − bom   (38)
 </span>
 
 </div>
@@ -5266,14 +5292,14 @@ data-bs-title="International Organization for Standardization">ISO</a>
 [Year
 0](https://en.wikipedia.org/wiki/ISO_8601#Years:~:text=1%20BC%20is%20labelled%20%2B0000):
 <span class="color99by100">-0001</span>+<span class="color306by365">306</span>.
-To convert between <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="years of era">yoe</span> and “[common
+To convert between <a href="#yoe" class="tool" data-bs-toggle="tooltip"
+data-bs-title="years of era">yoe</a> and “[common
 era](https://en.wikipedia.org/wiki/Common_Era#:~:text=conventions%20used%20in%20the%20Gregorian%20or%20Julian%20calendar%20to%20specify%20whether%20the%20year%20is%20before%20or%20after%20the%20epoch)
 years”
 (<a href="#cey" id="commonerayear" class="tool" data-bs-toggle="tooltip"
 data-bs-title="common era year">cey</a>), we add 1 to the
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="year of era">yoe</span> or subtract 1 from the
+<a href="#yoe" class="tool" data-bs-toggle="tooltip"
+data-bs-title="year of era">yoe</a> or subtract 1 from the
 <a href="#cey" class="tool" data-bs-toggle="tooltip"
 data-bs-title="common era year">cey</a> if the
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
@@ -5296,7 +5322,7 @@ $$
     &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{moy}\\\\\\\gt 9\\
     &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{isomonth}\lt 3\end{aligned}}\\\\
   0&{\text{ otherwise}}\end{cases}
- \qquad(38)$$
+ \qquad(39)$$
 </span>
 
 </div>
@@ -5310,7 +5336,7 @@ data-bs-title="time zone offsets">tzo</a>) to be negative and therefore
 adds one day to every negative
 <a href="#tzo" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time zone offset">tzo</a>.
-<a href="#eq-moy2bom" class="quarto-xref">Equation 36</a> takes into
+<a href="#eq-moy2bom" class="quarto-xref">Equation 37</a> takes into
 account the possibility of a negative
 <a href="#utc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</a> offset and adjusts
@@ -5341,9 +5367,9 @@ Algorithms](https://howardhinnant.github.io/date_algorithms.html)
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</a> were zero-based rather than
 one-based, we would add one to the right-hand side of
-<a href="#eq-moy2bom" class="quarto-xref">Equation 36</a>.
+<a href="#eq-moy2bom" class="quarto-xref">Equation 37</a>.
 
-According to <a href="#eq-moy2bom" class="quarto-xref">Equation 36</a>,
+According to <a href="#eq-moy2bom" class="quarto-xref">Equation 37</a>,
 a <a href="#bom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of month">bom</a> should expand to
 ⌊(<a href="#moy" class="tool" data-bs-toggle="tooltip"
@@ -5404,10 +5430,10 @@ method](https://en.wikipedia.org/wiki/Method_%28computer_programming%29#:~:text=
 for every potential output that is not an instance variable. Instance
 methods can use instance variables to produce their output. For example,
 a method based on Equations
-<a href="#eq-pid2moy" class="quarto-xref">33</a>,
-<a href="#eq-moy2month" class="quarto-xref">35</a>,
-<a href="#eq-moy2bom" class="quarto-xref">36</a>, and
-<a href="#eq-dom" class="quarto-xref">37</a> could turn a
+<a href="#eq-pid2moy" class="quarto-xref">34</a>,
+<a href="#eq-moy2month" class="quarto-xref">36</a>,
+<a href="#eq-moy2bom" class="quarto-xref">37</a>, and
+<a href="#eq-dom" class="quarto-xref">38</a> could turn a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> into a month and
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
@@ -5426,13 +5452,13 @@ data-bs-title="day of month">dom</a>, and
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a>. For simplicity,
 <a href="#fig-conv" class="quarto-xref">Diagram 7</a> omits the
-<a href="#coe" class="under tool" data-bs-toggle="tooltip"
-data-bs-title="cycle of era">coe</a>,
-<a href="#yoc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year of cycle">yoc</a>, and
-<a href="#doc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of cycle">doc</a> needed to convert a Dec date into a
-<a href="#doe" class="tool" data-bs-toggle="tooltip"
+<a href="#qoe" class="under tool" data-bs-toggle="tooltip"
+data-bs-title="quadricentennial of era">qoe</a>,
+<a href="#yoq" class="tool" data-bs-toggle="tooltip"
+data-bs-title="year of quadricentennial">yoq</a>, and
+<a href="#doq" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of quadricentennial">doq</a> needed to convert a Dec
+date into a <a href="#doe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of era">doe</a>, the
 <a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="months of year">moy</a> and
@@ -5780,7 +5806,7 @@ $$
            &= \text{bom} - \text{dow} \\
            &= \text{bow} - \text{dom}
 \end{aligned}
- \qquad(39)$$
+ \qquad(40)$$
 </span>
 
 </div>
@@ -6022,34 +6048,34 @@ data-bs-title="beginning of month">bom</a>, and
 data-bs-title="positive integer days of year">pid</a> via
 simplification, and <a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="months of year">moy</a> per
-<a href="#eq-mud2moy" class="quarto-xref">Equation 40</a> below. Instead
+<a href="#eq-mud2moy" class="quarto-xref">Equation 41</a> below. Instead
 of adding 7 to <a href="#mud" class="tool" data-bs-toggle="tooltip"
 data-bs-title="misaligned unit difference">mud</a> as in
-<a href="#eq-mud2moy" class="quarto-xref">Equation 40</a>, we can sum
+<a href="#eq-mud2moy" class="quarto-xref">Equation 41</a>, we can sum
 <a href="#mud" class="tool" data-bs-toggle="tooltip"
 data-bs-title="misaligned unit difference">mud</a> with
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of week">dow</a> to get
 <a href="#bom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginnings of month">bom</a> for
-<a href="#eq-bom2moy" class="quarto-xref">Equation 41</a>. Either
+<a href="#eq-bom2moy" class="quarto-xref">Equation 42</a>. Either
 approach is easier than obtaining
 <a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="months of year">moy</a> from
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer days of year">pid</a> using
-<a href="#eq-pid2moy" class="quarto-xref">Equation 33</a>.
+<a href="#eq-pid2moy" class="quarto-xref">Equation 34</a>.
 
 <div id="equationgroup19" class="equationgroup">
 
 <span id="eq-mud2moy">
 $$
 \text{moy} = \left\lfloor\dfrac{\text{mud+7}}{30}\right\rfloor
- \qquad(40)$$
+ \qquad(41)$$
 </span> <span id="eq-bom2moy">
 $$
 \text{moy} = \left\lfloor\dfrac{\text{bom}}{30}\right\rfloor
- \qquad(41)$$
+ \qquad(42)$$
 </span>
 
 </div>
@@ -6241,7 +6267,7 @@ as long as a
 and a week is almost as long as one of the four major [lunar
 phases](https://en.wikipedia.org/wiki/Lunar_phase#:~:text=the%20new%20moon%2C%20the%20first%20quarter%2C%20the%20full%20moon%2C%20and%20the%20last%20quarter),
 Gregorian calendar months and weeks are misaligned with the lunar cycle
-and thus cannot estimate
+and therefore cannot estimate
 [moonlight](https://en.wikipedia.org/wiki/Moonlight#:~:text=light%20from%20the%20surface%20of%20the%20Moon%2C%20consisting%20mostly%20of%20reflected%20sunlight%2C%20and%20some%20earthlight)
 levels.
 
@@ -6285,11 +6311,11 @@ of the `year_month_day`
 in the [`islamic.h`](https://howardhinnant.github.io/date/islamic)
 [library](https://en.wikipedia.org/wiki/Library_%28computing%29#:~:text=a%20collection%20of%20resources%20that%20can%20be%20used%20during%20software%20development)
 created by [Howard Hinnant](https://howardhinnant.github.io) (2021+185).
-Equations <a href="#eq-dot" class="quarto-xref">42</a>,
-<a href="#eq-yot" class="quarto-xref">43</a>,
-<a href="#eq-leapcount" class="quarto-xref">44</a>,
-<a href="#eq-lunarpid" class="quarto-xref">45</a>, and
-<a href="#eq-dob" class="quarto-xref">46</a> below produce a “day of
+Equations <a href="#eq-dot" class="quarto-xref">43</a>,
+<a href="#eq-yot" class="quarto-xref">44</a>,
+<a href="#eq-leapcount" class="quarto-xref">45</a>,
+<a href="#eq-lunarpid" class="quarto-xref">46</a>, and
+<a href="#eq-dob" class="quarto-xref">47</a> below produce a “day of
 [tricennium](https://en.wiktionary.org/wiki/tricennium#:~:text=A%20period%20of%20thirty%20years)”
 (<a href="#dot" id="dayoftricennium" class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of tricennium">dot</a>), a
@@ -6306,29 +6332,31 @@ data-bs-title="day of bimester">dob</a>.
 <div id="equationgroup20" class="equationgroup">
 
 <span id="eq-dot">
-dot = (doe + 8) mod  10631   (42)
+$$
+\text{dot} = (\text{doe} + 8) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 10631
+ \qquad(43)$$
 </span>
 
 <span id="eq-yot">
 $$
-\text{yot} = \left\lfloor\dfrac{30\ast\text{dot}+15}{10631}\right\rfloor
- \qquad(43)$$
+\text{yot} = \left\lfloor\dfrac{30\times\text{dot}+15}{10631}\right\rfloor
+ \qquad(44)$$
 </span>
 
 <span id="eq-leapcount">
 $$
-\text{leapcount} = \left\lfloor\dfrac{11\ast\text{yot} + 14}{30}\right\rfloor
- \qquad(44)$$
+\text{leapcount} = \left\lfloor\dfrac{11\times\text{yot} + 14}{30}\right\rfloor
+ \qquad(45)$$
 </span>
 
 <span id="eq-lunarpid">
-lunarpid = dot − 354 \* yot − leapcount   (45)
+lunarpid = dot − 354 × yot − leapcount   (46)
 </span>
 
 <span id="eq-dob">
 $$
-\text{dob} = \text{lunarpid} - 59 \ast \left\lfloor\dfrac{5\ast\text{lunarpid} + 5}{296}\right\rfloor
- \qquad(46)$$
+\text{dob} = \text{lunarpid} - 59 \times \left\lfloor\dfrac{5\times\text{lunarpid} + 5}{296}\right\rfloor
+ \qquad(47)$$
 </span>
 
 </div>
@@ -6432,9 +6460,9 @@ According to the current Zone <span class="color0">0</span>
 data-bs-title="years of era">yoe</a>+<a href="#bob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of bimester">bob</a>+<a href="#dob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of bimester">dob</a> Dec date:
-${decYearColor11}<span class="mono">${decBobSign}</span>${decBobColor}<span class="mono">+</span>${decDobColor},
-the current bimester began ${decDobColor1} ${decDobDays} ago on Day
-<span class="mono">${decBobSign1}</span>${decBobColor1}. A common
+${decYearColor()}<span class="mono">${decBobSign}</span>${decBobColor()}<span class="mono">+</span>${decDobColor()},
+the current bimester began ${decDobColor()} ${decDobDays} ago on Day
+<span class="mono">${decBobSign1}</span>${decBobColor()}. A common
 bimester is made up of
 <a href="#dob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of bimester">Dob</a> <span class="color0">0</span>
@@ -6603,10 +6631,11 @@ data-bs-title="beginning of bimester">bob</a> and
 data-bs-title="day of bimester">dob</a> to identify dates using
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a>, identify seasons
-using <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a>, gauge progress through
-the seasons using <a href="#doh" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of hectoday">doh</a>, or classify days as work or
+using <a href="#baekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">ﾲ</a>, gauge progress through
+the seasons using
+<a href="#dobaekil" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of hectoday">doﾲ</a>, or classify days as work or
 rest days using <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a>. Just as we can split a solar common
 year into 73 <a href="#p" class="tool" data-bs-toggle="tooltip"
@@ -6618,7 +6647,7 @@ data-bs-toggle="tooltip" data-bs-title="pentadays of bimester">pob</a>).
 <div id="equationgroup21" class="equationgroup">
 
 <span id="eq-pob">
-$$\text{pob} = \left\lfloor\dfrac{\text{dob}}{5}\right\rfloor \qquad(47)$$
+$$\text{pob} = \left\lfloor\dfrac{\text{dob}}{5}\right\rfloor \qquad(48)$$
 </span>
 
 </div>
@@ -6674,50 +6703,49 @@ data-bs-title="days of month">dom</a>, the analogous Dec dates comprise
 solar years, <a href="#bob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginnings of bimester">bob</a>, and
 <a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of bimester">dob</a>. An advantage of solar years is
-that it is easier to calculate the
-<a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year length">syl</a> via Equations
-<a href="#eq-leap" class="quarto-xref">3</a> and
-<a href="#eq-syl" class="quarto-xref">4</a> than the “lunar year length”
-(<a href="#lyl" id="lunaryearlength" class="tool"
-data-bs-toggle="tooltip" data-bs-title="lunar year length">lyl</a>) with
-Equations <a href="#eq-lunarleap" class="quarto-xref">48</a> and
-<a href="#eq-leap2lyl" class="quarto-xref">49</a> below.
+data-bs-title="days of bimester">dob</a>. It is easier to calculate the
+<a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a> for a solar year, which is called a
+“solar year length” (<a href="#syl" id="solaryearlength" class="tool"
+data-bs-toggle="tooltip" data-bs-title="solar year length">syl</a>),
+than the <a href="#eoy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="end of year">eoy</a> of a lunar year, which is called a
+“lunar year length” (<a href="#lyl" id="lunaryearlength" class="tool"
+data-bs-toggle="tooltip" data-bs-title="lunar year length">lyl</a>).
 
 <div id="equationgroup22" class="equationgroup">
 
 <span id="eq-lunarleap">
 $$
-\text{lunarleap} = \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}(11 \ast \text{yot} + 14) \bmod 30 \ge 19\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
- \qquad(48)$$
+\text{lunarleap} = \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}(11 \times \text{yot} + 14) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 30 \ge 19\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
+ \qquad(49)$$
 </span>
 
 <span id="eq-leap2lyl">
-lyl = 354 + lunarleap   (49)
+lyl = 354 + lunarleap   (50)
 </span>
 
 <span id="eq-lunardif">
-lyl = lunarpid − lunarnid   (50)
+lyl = lunarpid − lunarnid   (51)
 </span>
 
 </div>
 
-Instead of Equations <a href="#eq-lunarleap" class="quarto-xref">48</a>
-and <a href="#eq-leap2lyl" class="quarto-xref">49</a>, we can obtain the
+Instead of Equations <a href="#eq-lunarleap" class="quarto-xref">49</a>
+and <a href="#eq-leap2lyl" class="quarto-xref">50</a>, we can obtain the
 <a href="#lyl" class="tool" data-bs-toggle="tooltip"
 data-bs-title="lunar year length">lyl</a> by plugging the lunar
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> and
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a> into
-<a href="#eq-lunardif" class="quarto-xref">Equation 50</a>, which is
+<a href="#eq-lunardif" class="quarto-xref">Equation 51</a>, which is
 similar to <a href="#eq-nid" class="quarto-xref">Equation 2</a>. We can
 also use lunar <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer days of year">pid</a> to find zero-based
 indexes for bimesters via
-<a href="#eq-bimester" class="quarto-xref">Equation 51</a> or for lunar
-months via <a href="#eq-lunarmonth" class="quarto-xref">Equation 52</a>
+<a href="#eq-bimester" class="quarto-xref">Equation 52</a> or for lunar
+months via <a href="#eq-lunarmonth" class="quarto-xref">Equation 53</a>
 below. Unlike lunar <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> and
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
@@ -6730,26 +6758,26 @@ data-bs-title="lunar year lengths">lyl</a>.
 
 <span id="eq-bimester">
 $$
-\text{bimester} = \left\lfloor\dfrac{5\ast\text{lunarpid} + 5}{296}\right\rfloor
- \qquad(51)$$
+\text{bimester} = \left\lfloor\dfrac{5\times\text{lunarpid} + 5}{296}\right\rfloor
+ \qquad(52)$$
 </span>
 
 <span id="eq-lunarmonth">
 $$
-\text{lunarmonth} = \left\lfloor\dfrac{11\ast\text{lunarpid} + 5}{325}\right\rfloor
- \qquad(52)$$
+\text{lunarmonth} = \left\lfloor\dfrac{11\times\text{lunarpid} + 5}{325}\right\rfloor
+ \qquad(53)$$
 </span>
 
 <span id="eq-month2bimester">
 $$
 \text{bimester} = \left\lfloor\dfrac{\text{lunarmonth}}{2}\right\rfloor
- \qquad(53)$$
+ \qquad(54)$$
 </span>
 
 <span id="eq-bimester2month">
 $$
-\text{lunarmonth} = 2\ast\text{bimester} + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{dob} \ge 30\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
- \qquad(54)$$
+\text{lunarmonth} = 2\times\text{bimester} + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{dob} \ge 30\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
+ \qquad(55)$$
 </span>
 
 </div>
@@ -6797,10 +6825,10 @@ data-bs-title="negative integer days of year">nid</a> range from -355 to
 -1. Bimester length changes from 59 to 60 when the
 <a href="#lid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="lunar intercalation difference">lid</a> reaches -60. We
-can use Equations <a href="#eq-dot" class="quarto-xref">42</a>,
-<a href="#eq-yot" class="quarto-xref">43</a>,
-<a href="#eq-leapcount" class="quarto-xref">44</a>, and
-<a href="#eq-lid" class="quarto-xref">55</a> to turn
+can use Equations <a href="#eq-dot" class="quarto-xref">43</a>,
+<a href="#eq-yot" class="quarto-xref">44</a>,
+<a href="#eq-leapcount" class="quarto-xref">45</a>, and
+<a href="#eq-lid" class="quarto-xref">56</a> to turn
 <a href="#doe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of era">doe</a> into
 <a href="#lid" class="tool" data-bs-toggle="tooltip"
@@ -6818,13 +6846,13 @@ lunar leap day: ${decDob59yColor}+${decDob59dColor}−${decLidColor}.
 
 <span id="eq-lid">
 $$
-\text{lid} = \text{dot} - \text{leapcount} - 354\ast\left\lfloor\dfrac{30\ast\text{leapcount} + 15}{11}\right\rfloor - 355
- \qquad(55)$$
+\text{lid} = \text{dot} - \text{leapcount} - 354\times\left\lfloor\dfrac{30\times\text{leapcount} + 15}{11}\right\rfloor - 355
+ \qquad(56)$$
 </span>
 
 <span id="eq-lid2lyl">
 $$
-\text{lyl} = 355 - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{lid} \< -355\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}  \qquad(56)$$
+\text{lyl} = 355 - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{lid} \< -355\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}  \qquad(57)$$
 </span>
 
 </div>
@@ -6856,7 +6884,7 @@ of the Moon around the Earth.
 <span id="eq-soi">
 $$
 \dfrac{1}{1\div\href{https://en.wikipedia.org/wiki/Day#:~:text=4.09%20seconds%28%2C%20or-,0.99726968,-of%20a%20solar}{0.99726968}-1\div\href{https://en.wikipedia.org/wiki/Lunar_month#:~:text=stars%20%28Latin:%20sidera%29:-,27.321661,-days%20%2827%20d%29}{27.321661}} = 1.03505011
- \qquad(57)$$
+ \qquad(58)$$
 </span>
 
 </div>
@@ -6878,15 +6906,15 @@ data-bs-title="spin orbit intervals">soi</a> otherwise: 7 ÷ 8 −
 0.87391999 = 0.00108001 ≈ 1 ÷ 926. For greater precision, the Decalunar
 <a href="#syl" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar year length">syl</a> could be calculated as in
-<a href="#eq-lunarsyl" class="quarto-xref">Equation 58</a>.
+<a href="#eq-lunarsyl" class="quarto-xref">Equation 59</a>.
 
 <div id="equationgroup26" class="equationgroup">
 
 <span id="eq-lunarsyl">
 $$
-353 - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{y} \bmod 8 = 0 \href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor} \text{y} \bmod 926 = 463
+353 - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{y} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 8 = 0 \href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor} \text{y} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 926 = 463
 \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
- \qquad(58)$$
+ \qquad(59)$$
 </span>
 
 </div>
@@ -6899,8 +6927,8 @@ data-bs-title="day of year">doy</a> and the
 “<a href="#soi" class="tool" data-bs-toggle="tooltip"
 data-bs-title="spin orbit interval">soi</a> of year”
 (<a href="#soy" id="soiofyear" class="tool" data-bs-toggle="tooltip"
-data-bs-title="soi of year">soy</a>) would have a common origin and thus
-be easier to compare. The initial Decalunar epoch is the
+data-bs-title="soi of year">soy</a>) would have a common origin and
+therefore be easier to compare. The initial Decalunar epoch is the
 <a href="#boy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of year">boy</a> of
 <span class="color76by100">1976</span>, the year of the [last lunar
@@ -6954,19 +6982,19 @@ is nearly identical for days and
 data-bs-title="spin orbit intervals">soi</a>:
 [29.53059](https://en.wikipedia.org/wiki/Lunar_month#Synodic_month:~:text=synodic%20month%29%20is-,29.53059%20days,-or%2029%20d)
 × 12
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+[<span class="hyphen">−⌊</span>](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 ≈ 354.367
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+[<span class="hyphen">−⌊</span>](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 ≈ 354.367 ÷ 1.03505
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+[<span class="hyphen">−⌊</span>](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 ≈ 342.367
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+[<span class="hyphen">−⌊</span>](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1.
 
-Both Decalendar and Decalunar rely on the
+Decalunar relies on the same
 <a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year length">syl</a> for precise timekeeping over
-long periods, and thus can adapt whenever the
+data-bs-title="solar year length">syl</a> as Decalendar for precise
+timekeeping over long periods, and therefore can adapt whenever the
 <a href="#lyl" class="tool" data-bs-toggle="tooltip"
 data-bs-title="lunar year length">lyl</a> diverges from observed
 lunations. If needed, we can move a day or two between the
@@ -6985,17 +7013,17 @@ observations without affecting the
 data-bs-title="day of year">doy</a> or
 <a href="#soy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="soi of year">soy</a> as per Equations
-<a href="#eq-sob" class="quarto-xref">59</a> and
-<a href="#eq-bobplusdob" class="quarto-xref">60</a>.
+<a href="#eq-sob" class="quarto-xref">60</a> and
+<a href="#eq-bobplusdob" class="quarto-xref">61</a>.
 
 <div id="equationgroup27" class="equationgroup">
 
 <span id="eq-sob">
-soy = bob<sub>s</sub> + sob   (59)
+soy = bob<sub>s</sub> + sob   (60)
 </span>
 
 <span id="eq-bobplusdob">
-doy = bob<sub>d</sub> + dob   (60)
+doy = bob<sub>d</sub> + dob   (61)
 </span>
 
 </div>
@@ -7075,25 +7103,25 @@ its L1 and L2 [Lagrange
 points](https://en.wikipedia.org/wiki/Lagrange_point#:~:text=points%20of%20equilibrium%20for%20small%2Dmass%20objects%20under%20the%20gravitational%20influence%20of%20two%20massive%20orbiting%20bodies)
 will form the central hub for spaceflight. The proximity of the Moon
 allows for efficient communication with Earth. At light speed, radio
-signals can travel from Earth to the Moon in 1.24 to 1.41 Dec seconds
+signals can travel from Earth to the Moon in 1.24 to 1.41 seconds
 (<a href="#s" id="second" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>), Venus in 132 to 907
+data-bs-title="seconds">s</a>), Venus in 132 to 907
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>, or Mars in 190 to 1390
+data-bs-title="seconds">s</a>, or Mars in 190 to 1390
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>.
+data-bs-title="seconds">s</a>.
 
 To put these numbers in context, the speed of light is around 7.195
 [taur](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6)
 (<a href="#c" id="taur" class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</a>) per
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>, the
+data-bs-title="seconds">s</a>, the
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20Hemispheres)
 is about 1 <a href="#c" class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</a>, there are exactly 90000
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a> or 86400 [International System of
+data-bs-title="seconds">s</a> or 86400 [International System of
 Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
 (<a href="#si" id="internationalsystemofunits" class="tool"
 data-bs-toggle="tooltip"
@@ -7148,7 +7176,7 @@ that is just
 [7.3](https://en.wikipedia.org/wiki/Venus#:~:text=the%20axial%20tilt-,177.36%C2%B0,-.)
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a turn">milliturns</span> short of a half
-turn and thus has no seasons. Without the need to monitor seasonal
+turn and therefore has no seasons. Without the need to monitor seasonal
 changes on Venus, the
 [Venusian](https://en.wikipedia.org/wiki/List_of_adjectivals_and_demonyms_of_astronomical_bodies#Planets:~:text=%5B7%5D-,Venusian,-%2C%20Cytherean)
 Decalendar
@@ -7159,7 +7187,7 @@ On Venus, a solar year is 224.7
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a> and a solar day is 116.75
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a>. A Decyther cycle lasts 467
+data-bs-title="days">d</a>. A Decyther hexadecimester lasts 467
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a> and can be split into 4 quadrimesters that
 are 116.75 <a href="#d" class="tool" data-bs-toggle="tooltip"
@@ -7174,22 +7202,24 @@ data-bs-title="days">d</a>, but posts can be 58 or 59
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a> long.
 
-Each Decyther cycle comprises four antes and four posts. Any ante or the
-third post in every Decyther cycle can be evenly split into two Venusian
-short months: 58 ÷ 2 = 29. The other three posts consist of a Venusian
-short month and a Venusian long month: 59 = 29 + 30. Decalendar and
-Decyther have the same epoch and both derive their units from
-<a href="#doe" class="tool" data-bs-toggle="tooltip"
+Each Decyther hexadecimester comprises four antes and four posts. Any
+ante or the third post in every Decyther hexadecimester can be evenly
+split into two Venusian short months: 58 ÷ 2 = 29. The other three posts
+consist of a Venusian short month and a Venusian long month: 59 = 29 +
+30. Decalendar and Decyther have the same epoch and both derive their
+units from <a href="#doe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of era">doe</a>.
 
-Equations <a href="#eq-venusdoc" class="quarto-xref">61</a> to
-<a href="#eq-venusdom" class="quarto-xref">64</a> below turn
+Equations <a href="#eq-venusdoh" class="quarto-xref">62</a> to
+<a href="#eq-venusdom" class="quarto-xref">65</a> below turn
 <a href="#doe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of era">doe</a> into Decyther
-<a href="#doc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of cycle">doc</a>, “days of quadrimester”
-(<a href="#doq" id="dayofquadrimester" class="tool"
-data-bs-toggle="tooltip" data-bs-title="days of quadrimester">doq</a>),
+<a href="#dohvenus" id="dayofhexadecimester" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="days of hexadecimester">doh<sub>♀</sub></a>, “days of
+quadrimester” (<a href="#doqvenus" id="dayofquadrimester" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="days of quadrimester">doq<sub>♀</sub></a>),
 <a href="#dob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of bimester">dob</a>, and
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
@@ -7201,107 +7231,115 @@ of quadrimester”
 (<a href="#boq" id="beginningofquadrimester" class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="beginning of quadrimester">boq</a>) and
-<a href="#doq" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of quadrimester">doq</a> as shown in
-<a href="#eq-venusboq" class="quarto-xref">Equation 65</a>. The
+<a href="#doqvenus" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of quadrimester">doq<sub>♀</sub></a> as shown in
+<a href="#eq-venusboq" class="quarto-xref">Equation 66</a>. The
 <a href="#boq" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of quadrimester">boq</a> is the Venusian
 equivalent of midnight on Earth, the start of
-<a href="#doq" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of quadrimester">Doq</a> 0, and the boundary between
-quadrimesters.
+<a href="#doqvenus" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of quadrimester">Doq<sub>♀</sub></a> 0, and the
+boundary between quadrimesters.
 
 <div id="equationgroup28" class="equationgroup">
 
-<span id="eq-venusdoc">
-doc<sub>♀</sub> = doe mod  467   (61)
+<span id="eq-venusdoh">
+$$
+\text{doh}\_♀ = \text{doe} \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 467
+ \qquad(62)$$
 </span>
 
-<span id="eq-doq">
+<span id="eq-venusdoq">
 $$
-\text{doq}\_♀ = (\text{doc}\_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{doc}\_♀ \ge 350\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}) \bmod 117
- \qquad(62)$$
+\text{doq}\_♀ = (\text{doh}\_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{doh}\_♀ \ge 350\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 117
+ \qquad(63)$$
 </span>
 
 <span id="eq-venusdob">
 $$
-\text{dob}\_♀ = \text{doq}\_♀ - 58 \ast \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{doq}\_♀ \ge 58\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
- \qquad(63)$$
+\text{dob}\_♀ = \text{doq}\_♀ - 58 \times \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{doq}\_♀ \ge 58\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
+ \qquad(64)$$
 </span>
 
 <span id="eq-venusdom">
 $$
-\text{dom}\_♀ = \text{dob}\_♀ - 29 \ast \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{dob}\_♀ \ge 29\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
- \qquad(64)$$
+\text{dom}\_♀ = \text{dob}\_♀ - 29 \times \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{dob}\_♀ \ge 29\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
+ \qquad(65)$$
 </span>
 
 <span id="eq-venusboq">
-pid = boq<sub>♀</sub> + doq<sub>♀</sub>   (65)
+pid = boq<sub>♀</sub> + doq<sub>♀</sub>   (66)
 </span>
 
 </div>
 
 Similarly, the beginning of
-<a href="#doq" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of quadrimester">Doq</a> 58 is the Venusian
-equivalent of noon on Earth and separates an ante from the post that
-follows it. Apart from its North and South poles, the surface of Venus
-receives sunlight during the second half of an ante and the first half
-of a post
+<a href="#doqvenus" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of quadrimester">Doq<sub>♀</sub></a> 58 is the
+Venusian equivalent of noon on Earth and separates an ante from the post
+that follows it. Apart from its North and South poles, the surface of
+Venus receives sunlight during the second half of an ante and the first
+half of a post
 ([daytime](https://en.wikipedia.org/wiki/Daytime#:~:text=the%20period%20of%20the%20day%20in%20which%20the%20Sun%20is%20above%20the%20local%20horizon%20in%20a%20given%20location)),
 but not during the second half of a post and the first half of an ante
 ([nighttime](https://en.wikipedia.org/wiki/Night#:~:text=the%20period%20of%20darkness%20when%20the%20Sun%20is%20below%20the%20horizon)).
 
 Regardless of whether we start the zero-based indexing of bimesters from
 the <a href="#boe" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of era">boe</a>, the “beginning of cycle”
-(<a href="#boc" id="beginningofcycle" class="tool"
-data-bs-toggle="tooltip" data-bs-title="beginning of cycle">boc</a>), or
+data-bs-title="beginning of era">boe</a>, the “beginning of
+hexadecimester”
+(<a href="#boh" id="beginningofhexadecimester" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="beginning of hexadecimester">boh</a>), or
 <a href="#boq" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of quadrimester">boq</a>, a Decyther bimester
 is an ante if its index is even or a post if its index is odd. Equations
-<a href="#eq-qoc" class="quarto-xref">66</a> to
-<a href="#eq-moc" class="quarto-xref">68</a> below transform Decyther
-<a href="#doc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of cycle">doc</a> into “quadrimesters of cycle”
-(<a href="#qoc" id="quadrimesterofcycle" class="tool"
-data-bs-toggle="tooltip" data-bs-title="quadrimesters of cycle">qoc</a>),
-cycle-based bimester indexes, and “months of cycle”
-(<a href="#moc" id="monthofcycle" class="tool" data-bs-toggle="tooltip"
-data-bs-title="months of cycle">moc</a>).
+<a href="#eq-venusqoh" class="quarto-xref">67</a> to
+<a href="#eq-venusmoh" class="quarto-xref">69</a> below transform
+Decyther <a href="#dohvenus" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of hexadecimester">doh<sub>♀</sub></a> into
+“quadrimesters of hexadecimester”
+(<a href="#qoh" id="quadrimesterofhexadecimester" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="quadrimesters of hexadecimester">qoh</a>),
+hexadecimester-based bimester indexes, and “months of hexadecimester”
+(<a href="#mohvenus" id="monthofhexadecimester" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="months of hexadecimester">moh<sub>♀</sub></a>).
 
 <div id="equationgroup29" class="equationgroup">
 
-<span id="eq-qoc">
+<span id="eq-venusqoh">
 $$
-\text{qoc}\_♀ = \left\lfloor\dfrac{4\ast\text{doc}\_♀ + 1}{467}\right\rfloor
- \qquad(66)$$
+\text{qoh}\_♀ = \left\lfloor\dfrac{4\times\text{doh}\_♀ + 1}{467}\right\rfloor
+ \qquad(67)$$
 </span>
 
 <span id="eq-venusbimester">
 $$
-\text{bimester}\_♀ = 2\ast\text{qoc}\_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{doq}\_♀ \ge 58\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
- \qquad(67)$$
+\text{bimester}\_♀ = 2\times\text{qoh}\_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{doq}\_♀ \ge 58\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
+ \qquad(68)$$
 </span>
 
-<span id="eq-moc">
+<span id="eq-venusmoh">
 $$
-\text{moc}\_♀ = 2\ast\text{bimester}\_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{dob}\_♀ \ge 29\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
- \qquad(68)$$
+\text{moh}\_♀ = 2\times\text{bimester}\_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{dob}\_♀ \ge 29\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
+ \qquad(69)$$
 </span>
 
 </div>
 
-<a href="#qoc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="quadrimester of cycle">Qoc</a> 2 is one day shorter than
-the other three <a href="#qoc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="quadrimesters of cycle">qoc</a>, because its post,
-Bimester 5, is one day shorter than the other three posts in a cycle.
-The missing day is called an extracalation and can be attributed to
-<a href="#moc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="month of cycle">Moc</a> 11, the second month of Bimester
-5. Instead of indexes, Decyther tells us when a day will go missing
-using “Venusian extracalation differences”
+<a href="#qoh" class="tool" data-bs-toggle="tooltip"
+data-bs-title="quadrimester of hexadecimester">Qoh</a> 2 is one day
+shorter than the other three
+<a href="#qoh" class="tool" data-bs-toggle="tooltip"
+data-bs-title="quadrimesters of hexadecimester">qoh</a>, because its
+post, Bimester 5, is one day shorter than the other three posts in a
+hexadecimester. The missing day is called an extracalation and can be
+attributed to <a href="#mohvenus" class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of hexadecimester">Moh<sub>♀</sub></a> 11, the
+second month of Bimester 5. Instead of indexes, Decyther tells us when a
+day will go missing using “Venusian extracalation differences”
 (<a href="#ved" id="venusianextracalationdifference" class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="Venusian extracalation differences">ved</a>).
@@ -7309,23 +7347,23 @@ data-bs-title="Venusian extracalation differences">ved</a>).
 In Decyther, <a href="#ved" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Venusian extracalation differences">ved</a> count down
 the days until the end of
-<a href="#doc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of cycle">Doc</a> 349, the final day of
-<a href="#qoc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="quadrimester of cycle">Qoc</a> 2, Bimester 5, and
-<a href="#moc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="month of cycle">Moc</a> 11. Therefore,
-<a href="#ved" class="tool" data-bs-toggle="tooltip"
+<a href="#dohvenus" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of hexadecimester">Doh<sub>♀</sub></a> 349, the final
+day of <a href="#qoh" class="tool" data-bs-toggle="tooltip"
+data-bs-title="quadrimester of hexadecimester">Qoh</a> 2, Bimester 5,
+and <a href="#mohvenus" class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of hexadecimester">Moh<sub>♀</sub></a> 11.
+Therefore, <a href="#ved" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Venusian extracalation differences">ved</a> are the
 Decyther analog of Decalendar
 <a href="#lid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="lunar intercalation differences">lid</a>. Equations
-<a href="#eq-ved2doc" class="quarto-xref">69</a> and
-<a href="#eq-doc2ved" class="quarto-xref">70</a> below convert between
+<a href="#eq-ved2doh" class="quarto-xref">70</a> and
+<a href="#eq-doh2ved" class="quarto-xref">71</a> below convert between
 <a href="#ved" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Venusian extracalation differences">ved</a> and Decyther
-<a href="#doc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of cycle">doc</a>. To produce a
+<a href="#dohvenus" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of hexadecimester">doh<sub>♀</sub></a>. To produce a
 <a href="#ved" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Venusian extracalation difference">ved</a> date, we
 append a <a href="#ved" class="tool" data-bs-toggle="tooltip"
@@ -7333,21 +7371,25 @@ data-bs-title="Venusian extracalation difference">ved</a> to the
 <a href="#yoe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">yoe</a>+<a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> of Decyther
-<a href="#doc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of cycle">Doc</a> 350, the first day of
-<a href="#qoc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="quadrimester of cycle">Qoc</a> 3, Bimester 6, and
-<a href="#moc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="month of cycle">Moc</a> 12.
+<a href="#dohvenus" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of hexadecimester">Doh<sub>♀</sub></a> 350, the first
+day of <a href="#qoh" class="tool" data-bs-toggle="tooltip"
+data-bs-title="quadrimester of hexadecimester">Qoh</a> 3, Bimester 6,
+and <a href="#mohvenus" class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of hexadecimester">Moh<sub>♀</sub></a> 12.
 
 <div id="equationgroup30" class="equationgroup">
 
-<span id="eq-ved2doc">
-doc<sub>♀</sub> = (ved + 817) mod  467   (69)
+<span id="eq-ved2doh">
+$$
+\text{doh}\_♀ = (\text{ved} + 817) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 467
+ \qquad(70)$$
 </span>
 
-<span id="eq-doc2ved">
-ved = (doc<sub>♀</sub> + 117) mod  467 − 467   (70)
+<span id="eq-doh2ved">
+$$
+\text{ved} = (\text{doh}\_♀ + 117) \mathbin{-\mkern-3.5mu\raise{0.073em}{\scriptstyle\lfloor}} 467 - 467
+ \qquad(71)$$
 </span>
 
 </div>
@@ -7631,7 +7673,7 @@ data-bs-title="days of era">doe</a> is [Hinnant,
 Howard](https://howardhinnant.github.io). <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="2021-09-01">2021+185</span>.
 “`chrono`-Compatible Low-Level Date Algorithms.”
-${decYearColor12}+${decDotyPadColor3}.
+${decYearColor()}+${decDotyPadColor()}.
 <https://howardhinnant.github.io/date_algorithms.html>.
 
 # Cite
@@ -7766,14 +7808,34 @@ additional files or configuration. A Quarto output file can have both a
   per minute, 1000 beats per day
 - <a href="#bodymassindex" id="bmi">BMI</a>: body mass index, kilograins
   of body mass divided by height in zem squared (kg/z²)
+- <a href="#base6" id="b6">b6</a>: base6, senary, 6 digits written as
+  counting rods, 𝍠 𝍮 𝍯 𝍰 𝍱 𝍭, whose number of horizontal strokes is the
+  value of the digit; the first digit of a minute or second counts tens
+  of minutes or seconds
 - <a href="#base9" id="b9">b9</a>: base9, nonary, 9 digits written as
   the astronomical symbols of the Sun and the eight planets, ☉ ☿ ♀ ♁ ♂ ♃
-  ♄ ♅ ♆; the first digit after a tod with Dec seconds appended counts
-  tens of Dec seconds
+  ♄ ♅ ♆; the first digit after a tod with seconds appended counts tens
+  of seconds
 - <a href="#base10" id="b10">b10</a>: base10, decimal, the digits 0 to 9
 - <a href="#base24" id="b24">b24</a>: base24, 24 digits written as the
-  lowercase Greek letters α to ω; counts sid after a number of Dec
-  seconds or hours after a UTC offset
+  lowercase Greek letters α to ω; counts sid after a number of seconds
+  or heh after a UTC offset
+- <a href="#base25" id="b25">b25</a>: base25, pentavigesimal, 25 digits
+  written as Ogham letters; zero-based digits run from the Ogham space
+  mark (<span class="ogham"> </span>) for 0 through ᚁ (Beith) for 1 to ᚘ
+  (Ifin) for 24, and one-based digits put ᚙ (Eamhancholl) for 25 in
+  place of the space mark; counts hours
+- <a href="#hectoday" id="baekil">ﾲ</a>: bǎi, a hundred turns; as a
+  duration, a Dec season, 1 hectoday, 10 decadays, or one hundred days;
+  ﾲ, the halfwidth Hangul letter pieup (U+FFB2), looks like a capital H
+  with a line at the bottom; the inspiration for ﾲ is Baek-il (백일),
+  the Korean celebration of the first 100 days of a baby’s life, whose
+  first letter is pieup (ㅂ), and 百日宴 (bǎi rì yàn), the Chinese
+  banquet for the same occasion
+  - <a href="#positiveintegerhectoday" id="pibaekil">piﾲ</a>: positive
+    integer hectoday, ⌊pid ÷ 100⌋, 0 to 3
+  - <a href="#negativeintegerhectoday" id="nibaekil">niﾲ</a>: negative
+    integer hectoday, ⌊nid ÷ 100⌋, -4 to -1
 - <a href="#taur" id="c">c</a>: taur, 𝜏*r*, 100000 kilozem, 40000
   kilometers, nearly the circumference of the Earth, roughly the product
   of 𝜏 and the radius of the Earth, approximately the dividend of the
@@ -7790,9 +7852,9 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#cubicnanotaur" id="nc3">nc³</a>: cubic nanotaur, *n*𝜏*r*³,
     1 cubic decizem
 - <a href="#day" id="d">d</a>: day, a tenth of a decaday, a seventh of a
-  week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays,
-  1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse
-  of a quotidie
+  week, a fifth of a pentaday, 10 decidays, 24 heh, 25 hours, 100
+  centidays, 1000 millidays, 1440 bem, 1500 minutes, 86400 SI seconds,
+  90000 seconds, 100000 beats, the inverse of a quotidie
   - <a href="#dayofxun" id="dox">dox</a>: day of xún
   - <a href="#dayofpentaday" id="dop">dop</a>: day of pentaday
   - <a href="#dayofmonth" id="dom">dom</a>: day of month
@@ -7800,6 +7862,12 @@ additional files or configuration. A Quarto output file can have both a
     months or 0 to 29 in Venusian long months
   - <a href="#dayofweek" id="dow">dow</a>: day of week
   - <a href="#dayofyear" id="doy">doy</a>: day of year, xún \* 10 + dox
+    - <a href="#daylightsavingtime" id="dst">dst</a>: daylight saving
+      time
+    - <a href="#dstinitdoy" id="did">did</a>: dst initiation doy, the
+      last doy before dst
+    - <a href="#dstexpdoy" id="ded">ded</a>: dst expiration doy, the
+      first doy after dst
   - <a href="#positiveintegerdoy" id="pid">pid</a>: positive integer day
     of year, days elapsed since the beginning of the year, 0 to 364 or
     365
@@ -7824,39 +7892,46 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#negativeintervalada" id="nia">nia</a>: negative interval
     ada, pia − syl, the negative of the time until the start of the next
     year
-  - <a href="#dayofcycle" id="doc">doc</a>: day of cycle, days since the
-    start of the current 400-year Gregorian cycle, 0 to 146096
-  - doc<sub>♀</sub>: Decyther day of cycle, days since the start of the
-    current 467-day Venusian cycle, doe mod 467, 0 to 466
-  - <a href="#dayofhectoday" id="doh">doh</a>: day of hectoday, doy mod
-    100, the percent of a hectoday that has elapsed
+  - <a href="#dayofquadricentennial" id="doq">doq</a>: day of
+    quadricentennial, days since the start of the current Gregorian
+    quadricentennial, 0 to 146096
+  - <a href="#dayofhexadecimester" id="dohvenus">doh<sub>♀</sub></a>:
+    Decyther day of hexadecimester, days since the start of the current
+    467-day Decyther hexadecimester, doe <span class="hyphen">−⌊</span>
+    467, 0 to 466
+  - <a href="#dayofhectoday" id="dobaekil">doﾲ</a>: day of hectoday, doy
+    <span class="hyphen">−⌊</span> 100, the percent of a hectoday that
+    has elapsed
   - <a href="#dayofbimester" id="dob">dob</a>: day of bimester, 0 to 58
     in common bimesters or 0 to 59 in leap bimesters
   - dob<sub>♀</sub>: Decyther day of bimester, 0 to 57 in antes and the
-    post of Qoc 2 or 0 to 58 in the other posts
+    post of Qoh 2 or 0 to 58 in the other posts
   - <a href="#dayoftricennium" id="dot">dot</a>: day of tricennium, days
     since the start of the current 30-year lunar cycle, 0 to 10630
-  - <a href="#dayofquadrimester" id="doq">doq</a>: day of quadrimester,
-    days since the beginning of a Decyther quadrimester, 0 to 115 or 116
+  - <a href="#dayofquadrimester" id="doqvenus">doq<sub>♀</sub></a>:
+    Decyther day of quadrimester, days since the beginning of a Decyther
+    quadrimester, 0 to 115 or 116
   - <a href="#beginningofquadrimester" id="boq">boq</a>: beginning of
-    quadrimester, the pid of Doq 0, pid − doq
-  - <a href="#quadrimesterofcycle" id="qoc">qoc</a>: quadrimester of
-    cycle, zero-based index of a Decyther quadrimester, 0 to 3
+    quadrimester, the pid of Doq<sub>♀</sub> 0, pid − doq<sub>♀</sub>
+  - <a href="#quadrimesterofhexadecimester" id="qoh">qoh</a>:
+    quadrimester of hexadecimester, zero-based index of a Decyther
+    quadrimester, 0 to 3
   - <a href="#beginningofbimester" id="bob">bob</a>: beginning of
     bimester, the pid of Dob 0, pid − dob
   - <a href="#beginningofmonth" id="bom">bom</a>: beginning of month,
     the pid of the day before the first day of the month, pid − dom
-  - <a href="#monthofcycle" id="moc">moc</a>: month of cycle, zero-based
-    index of a Venusian month, 0 to 15
+  - <a href="#monthofhexadecimester" id="mohvenus">moh<sub>♀</sub></a>:
+    Decyther month of hexadecimester, zero-based index of a Venusian
+    month, 0 to 15
   - <a href="#beginningofweek" id="bow">bow</a>: beginning of week, the
     pid of Dow 0, pid − dow
   - <a href="#beginningofyear" id="boy">boy</a>: beginning of year,
     midnight at the start of Day 0
   - <a href="#beginningofera" id="boe">boe</a>: beginning of era,
     midnight at the start of Day 0 of Year 0
-  - <a href="#beginningofcycle" id="boc">boc</a>: beginning of cycle,
-    the start of Doc<sub>♀</sub> 0 and of the first ante in a Decyther
-    cycle
+  - <a href="#beginningofhexadecimester" id="boh">boh</a>: beginning of
+    hexadecimester, the start of Doh<sub>♀</sub> 0 and of the first ante
+    in a Decyther hexadecimester
   - <a href="#endofyear" id="eoy">eoy</a>: end of year, midnight at the
     end of Day 364 or 365
   - <a href="#Juliandaynumber" id="jdn">JDN</a>: Julian day number, days
@@ -7866,19 +7941,19 @@ additional files or configuration. A Quarto output file can have both a
     leap years, -1063 to -1
   - <a href="#venusianextracalationdifference" id="ved">ved</a>:
     Venusian extracalation difference, days until the end of
-    Doc<sub>♀</sub> 349, the last day of the one-day-shorter Qoc 2,
-    Bimester 5, and Moc 11, (doc<sub>♀</sub> + 117) mod 467 − 467, -467
-    to -1
+    Doh<sub>♀</sub> 349, the last day of the one-day-shorter Qoh 2,
+    Bimester 5, and Moh<sub>♀</sub> 11, (doh<sub>♀</sub> + 117)
+    <span class="hyphen">−⌊</span> 467 − 467, -467 to -1
   - <a href="#misalignedunitdifference" id="mud">mud</a>: misaligned
     unit difference, pid − dom − dow
   - <a href="#deciday" id="dd">dd</a>: deciday, a tenth of a day, 2.4
-    hours, 144 minutes
+    heh, 2.5 hours, 144 bem, 150 minutes
   - <a href="#centiday" id="cd">cd</a>: centiday, a hundredth of a day,
-    0.24 hours, 14.4 minutes
+    0.24 heh, 0.25 hours, 14.4 bem, 15 minutes
   - <a href="#milliday" id="md">md</a>: milliday, a thousandth of a day,
-    1.44 minutes
+    1.44 bem, 1.5 minutes, 90 seconds
   - <a href="#decimilliday" id="dmd">dmd</a>: decimilliday, a ten
-    thousandth of a day, 10 beats, 8640 milliseconds
+    thousandth of a day, a line of time, 10 beats, 8640 milliseconds
   - <a href="#centimilliday" id="cmd">cmd</a>: centimilliday, a hundred
     thousandth of a day, 1 beat, 864 milliseconds
   - <a href="#microday" id="ud">µd</a>: microday, a millionth of a day,
@@ -7888,24 +7963,30 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#degree" id="deg">°</a>: degree, 1/360 turns, 180/𝜋 or 360/𝜏
   radians
   - <a href="#compassdegree" id="cdeg">c°</a>: compass degree
+  - <a href="#greenwichdegrees" id="gdeg">g°</a>: Greenwich degree, a
+    longitude in degrees East (positive) or West (negative) of the
+    Greenwich meridian, -180 to 180
   - <a href="#huedegree" id="hdeg">h°</a>: hue degree
 - <a href="#egg" id="e">e</a>: egg, 1000 grains, 2 ounces, 64 grams
 - <a href="#equationoftime" id="eot">eot</a>: equation of time, ast −
   mst as a function of toy, about -9.8 to 11.4 millidays
 - <a href="#cubit" id="ell">ℓ</a>: ell, cubit, 10/9 zem
-- <a href="#foot" id="f">f</a>: foot, 0.75 zem, 75 millimeters
+- <a href="#foot" id="f">f</a>: foot, 75 centizem, 0.75 zem, 300
+  millimeters
+- <a href="#gig" id="G">G</a>: gig, gigaturn, a billion turns
 - <a href="#gutta" id="g">g</a>: drop (gutta in Latin) or grain (granum
   in Latin), 64 microliters or 64 milligrams
   - <a href="#kilograin" id="kg">kg</a>: kilograin or kilodrop, 64 grams
     or 64 milliliters
   - <a href="#megagrain" id="Mg">Mg</a>: megagrain or megadrop, 64
     kilograms or 64 liters
-- <a href="#hectoday" id="h">h</a>: a Dec season, 1 ***h***ectoday, 10
-  decadays, or one ***h***undred days
-  - <a href="#positiveintegerhectoday" id="pih">pih</a>: positive
-    integer hectoday, ⌊pid ÷ 100⌋, 0 to 3
-  - <a href="#negativeintegerhectoday" id="nih">nih</a>: negative
-    integer hectoday, ⌊nid ÷ 100⌋, -4 to -1
+- <a href="#dechour" id="h">h</a>: hour, a twenty-fifth of a day, 40
+  millidays, 60 minutes, 3600 seconds, 0.96 heh, 57.6 bem; written as
+  one b25 digit
+  - <a href="#hehour" id="heh">heh</a>: Hipparchian equinoctial hour, a
+    twenty-fourth of a day, 41.<span class="tool"
+    data-bs-toggle="tooltip" data-bs-title="base9 digit 6">♄</span>
+    millidays, 25/24 hours, 60 bem, 3600 SI seconds
 - <a href="#hexadecimal" id="hex">hex</a>: hexadecimal, base 16
 - <a href="#huesaturationlightness" id="hsl">HSL</a>: hue saturation
   lightness
@@ -7931,25 +8012,38 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#decijing" id="dj">dj</a>: decijīng, a tenth of a jīng (经)
   - <a href="#millijing" id="mj">mj</a>: millijīng, a thousandth of a
     jīng (经)
-- <a href="#keg" id="k">k</a>: keg, cubic zem, 64 liters, 1000 wine
-  glasses, a million drops, half a barrel
-- <a href="#kilometer" id="km">km</a>: kilometer, 1000 meters, 2500 zem,
-  2.5 kilozem
-- <a href="#kilometersperhour" id="kmph">kmph</a>: kilometers per hour,
-  thousands of meters per hour, 1 kmph = 0.6 mv
+- <a href="#kilo" id="k">k</a>: kilo, a thousand turns
+- <a href="#kilometer" id="km">ksim</a>: kilometer, kilo SI meter, 1000
+  meters, 2500 zem, 2.5 kilozem
+- <a href="#kilometersperhour" id="kmph">ksim/h</a>: kilometers per
+  hour, 1 ksim/h = 0.625 mv
+- <a href="#line" id="l">l</a>: line, a ten-thousandth of a turn, a
+  tenth of a mil; as a duration, 1 decimilliday
 - <a href="#liter" id="L">L</a>: liter, 15625 drops, a cubic decimeter
   - <a href="#milliliter" id="mL">mL</a>: milliliter, a cubic
     centimeter, a thousandth of a liter, 15.625 drops
   - <a href="#microliter" id="uL">µL</a>: microliter, a cubic
     millimeter, a millionth of a liter, 0.015625 drops
-- <a href="#squaremeter" id="m2">m²</a>: square meter, 6.25 square zem
-  - <a href="#squarecentimeter" id="cm2">cm²</a>: square centimeter,
+- <a href="#meg" id="M">M</a>: meg, megaturn, a million turns
+- <a href="#decminute" id="m">m</a>: minute, a fifteen-hundredth of a
+  day, a sixtieth of a hour, 60 seconds, 0.<span class="tool"
+  data-bs-toggle="tooltip" data-bs-title="base9 digit 6">♄</span>
+  millidays, 0.96 bem, 57.6 SI seconds; written as one b6 digit followed
+  by one b10 digit
+  - <a href="#birunianequinoctialminute" id="bem">bem</a>: Birunian
+    equinoctial minute, a sixtieth of a heh, a fourteen-hundred-fortieth
+    of a day, 0.<span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="base9 digit 6">♄</span><span class="tool"
+    data-bs-toggle="tooltip" data-bs-title="base24 digit 6">η</span>
+    millidays, 25/24 minutes, 60 SI seconds
+- <a href="#squaremeter" id="m2">sim²</a>: square meter, 6.25 square zem
+  - <a href="#squarecentimeter" id="cm2">csim²</a>: square centimeter,
     6.25 square centizem
-  - <a href="#squaredecimeter" id="dm2">dm²</a>: square decimeter, 6.25
-    square decizem
-  - <a href="#squarekilometer" id="km2">km²</a>: square kilometer, 6.25
-    square kilozem
-  - <a href="#cubiccentimeter" id="cm3">cm³</a>: cubic centimeter, 1
+  - <a href="#squaredecimeter" id="dm2">dsim²</a>: square decimeter,
+    6.25 square decizem
+  - <a href="#squarekilometer" id="km2">ksim²</a>: square kilometer,
+    6.25 square kilozem
+  - <a href="#cubiccentimeter" id="cm3">csim³</a>: cubic centimeter, 1
     milliliter, a thousandth of a liter, 15.625 drops
 - <a href="#pentaday" id="p">p</a>: pentaday, a group of five days, half
   a decaday
@@ -7962,6 +8056,9 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#liminalinterconnectingmargin" id="lim">lim</a>: liminal
     interconnecting margin, the pair of days between two pir, Dop 4 and
     the following Dop 0
+- <a href="#multiplicativeinversepair" id="mip">mip</a>: multiplicative
+  inverse pair, two units whose product is 1, such as b and þ, d and q,
+  or v and ʌ
 - <a href="#note" id="n">n</a>: note, a specific frequency within an
   octave
 - <a href="#nationaloceanicandatmosphericadministration"
@@ -7973,11 +8070,13 @@ additional files or configuration. A Quarto output file can have both a
     fold change in frequency
 - <a href="#perbeat" id="per">þ</a>: perbeat, the inverse of a beat,
   1/beat, once per beat, every beat, 100000 q; symbolized by thorn (þ),
-  which looks like a combination of the letters “p” and “b”; not to be
-  confused with a picobeat (pb)
-  - <a href="#teraperbeat" id="Tpb">Tþ</a>: teraperbeat, 10<sup>12</sup>
-    perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat,
-    every picobeat
+  which looks like a combination of the letters “p” and “b”
+  - <a href="#permilliday" id="permil">‰</a>: per milliday, the inverse
+    of a milliday, once per milliday, 1000 q, a hundredth of a perbeat
+- <a href="#parallaxmicroturn" id="parmic">parmic</a>: parallax
+  microturn, the distance at which 1 astronomical unit spans a
+  microturn, 3.74 gigataur ÷ 𝜏, about 595.239 megataur or 2.51667 light
+  years
 - <a href="#quotidie" id="q">q</a>: quotidie, the inverse of a day, a
   hundred thousandth of a perbeat; the letter “q” in quotidie can be
   flipped vertically to produce the letter “d” in day
@@ -7987,19 +8086,21 @@ additional files or configuration. A Quarto output file can have both a
     the direction of the Sun along the horizon measured clockwise from
     North
   - <a href="#millirose" id="mr">mr</a>: compass millirose, a thousandth
-    of a *r*otation along the horizon, .36 compass degrees
+    of a *r*otation along the horizon, 0.36 compass degrees
 - <a href="#radian" id="rad">rad</a>: radian, 1/𝜏 turns, 360/𝜏 degrees,
   1/𝜋 turns, 180/𝜋 degrees
 - <a href="#redgreenblue" id="rgb">RGB</a>: red green blue
-- <a href="#second" id="s">s</a>: second, 1/90 millidays, 10/9 beats, 1
-  Dec second = 0.96 SI seconds
-  - <a href="#decisecond" id="ds">ds</a>: decisecond, a tenth of a Dec
+- <a href="#second" id="s">s</a>: second, a sixtieth of a minute, 1/90
+  millidays, 10/9 beats, 1 second = 0.96 SI seconds
+  - <a href="#decasecond" id="decasec">Ds</a>: decasecond, ten seconds,
+    1/9 millidays, 9.6 SI seconds
+  - <a href="#decisecond" id="ds">ds</a>: decisecond, a tenth of a
     second, 1/900 millidays, 1/9 beats, 96 milliseconds
   - <a href="#secondintervaldifference" id="sid">sid</a>: second
-    interval difference, 1 SI second − 1 Dec second, 1/24 Dec second,
-    1/25 SI second, 40 milliseconds
-  - <a href="#sisecond" id="sis">sis</a>: SI second, 25/24 Dec seconds,
-    1/86.4 millidays, 1/86400 days
+    interval difference, 1 SI second − 1 second, 1/24 second, 1/25 SI
+    second, 40 milliseconds
+  - <a href="#sisecond" id="sis">sis</a>: SI second, a sixtieth of a
+    bem, 25/24 seconds, 1/86.4 millidays, 1/86400 days
 - <a href="#spinorbitinterval" id="soi">soi</a>: spin orbit interval, a
   lunar day, 1.03505 days
   - <a href="#soiofyear" id="soy">soy</a>: soi of year
@@ -8007,10 +8108,13 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#internationalsystemofunits" id="si">SI</a>: [International
   System of
   Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
+- <a href="#simeter" id="sim">sim</a>: SI meter, the base unit of length
+  in the International System of Units, 2.5 zem, 10 decimeters
 - <a href="#speedoflight" id="sol">sol</a>: speed of light, 647.55170928
   kiloomegar, 299792458 meters per second
-- <a href="#speedofsound" id="sos">sos</a>: speed of sound, 735.048
-  milliomegar, 340.3 meters per second
+- <a href="#speedofsound" id="sos">sos</a>: speed of sound at 15 degrees
+  Celsius, 735.048 milliomegar, 326.688 meters per second, 340.3 meters
+  per SI second
 - <a href="#solardeclinationangle" id="sda">sda</a>: solar declination
   angle, the latitude at which the Sun is directly overhead
 - <a href="#solarelevationangle" id="sea">sea</a>: solar elevation
@@ -8022,12 +8126,11 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#taudividedby900" id="sampi">ϡ</a>: sampi, the Greek
     numeral for 900, 𝜏/900 or approximately 0.0069813 radians, 0.4
     degrees
-- <a href="#tenequaltemperament" id="tenet">Tenet</a>: ten equal
-  temperament
-  - <a href="#10et" id="xet">Xet</a>: Tenet
-  - <a href="#twelveequaltemperament" id="12et">12et</a>: twelve equal
-    temperament
 - <a href="#timeofday" id="tod">tod</a>: time of day
+  - <a href="#beginningofday" id="bod">bod</a>: beginning of day,
+    midnight at the start of the day, Tod 0
+  - <a href="#endofday" id="eod">eod</a>: end of day, midnight at the
+    end of the day, 1 day or 10<sup>5</sup> beats after the bod
   - <a href="#positiveintervaltod" id="pit">pit</a>: positive interval
     tod, the time since the start of the current day (previous
     midnight), equal to the tod
@@ -8035,17 +8138,29 @@ additional files or configuration. A Quarto output file can have both a
     tod, pit − 1, the negative of the time until the start of the next
     day (next midnight)
   - <a href="#hourminutesecond" id="hms">hms</a>: hour minute second, a
-    tod written as an hod, moh, and som triplet
-  - <a href="#dailysecondaggregate" id="dsa">dsa</a>: daily second
-    aggregate, seconds since midnight, tod × 86400
-  - <a href="#hourlysecondaggregate" id="hsa">hsa</a>: hourly second
-    aggregate, seconds since the top of the hour, dsa mod 3600
-  - <a href="#hourofday" id="hod">hod</a>: hour of day, ⌊dsa ÷ 3600⌋, 0
-    to 23
-  - <a href="#minuteofhour" id="moh">moh</a>: minute of hour, ⌊hsa ÷
-    60⌋, 0 to 59
-  - <a href="#secondofminute" id="som">som</a>: second of minute, ⌊hsa
-    mod 60⌋, 0 to 59
+    tod written as an hod, moh, and sisom triplet
+  - <a href="#dailysisecondaggregate" id="dsisa">dsisa</a>: daily SI
+    second aggregate, SI seconds since midnight, tod × 86400
+  - <a href="#hourlysisecondaggregate" id="hsisa">hsisa</a>: hourly SI
+    second aggregate, SI seconds since the top of the hour, dsisa
+    <span class="hyphen">−⌊</span> 3600
+  - <a href="#hourofday" id="hod">hod</a>: hour of day in heh, ⌊dsisa ÷
+    3600⌋, 0 to 23
+  - <a href="#minuteofhour" id="moh">moh</a>: minute of hour in bem,
+    ⌊hsisa ÷ 60⌋, 0 to 59
+  - <a href="#sisecondofminute" id="sisom">sisom</a>: SI second of
+    minute, ⌊hsisa <span class="hyphen">−⌊</span> 60⌋, 0 to 59
+  - <a href="#millidayofday" id="mod">mod</a>: milliday of day, ⌊tod ×
+    1000⌋, 0 to 999
+  - <a href="#timeofmilliday" id="tom">tom</a>: time of milliday, the
+    part of a tod left after its mod, tod × 1000
+    <span class="hyphen">−⌊</span> 1 millidays, 0 to under 100 beats
+  - <a href="#timeintegerlength" id="til">til</a>: time integer length,
+    the digit count of a tod or offset written without a decimal
+    separator, including leading zeros; its unit is 10<sup>-til</sup>
+    days
+  - <a href="#secondofmilliday" id="som">som</a>: second of milliday, 0
+    to 89
   - <a href="#meansolartime" id="mst">mst</a>: mean solar time, solar
     time based only on longitude and the Zone 0 tod
   - <a href="#apparentsolartime" id="ast">ast</a>: apparent solar time,
@@ -8058,13 +8173,18 @@ additional files or configuration. A Quarto output file can have both a
     from sunset to sunrise, 1 − law
   - <a href="#nightarchalf" id="nah">nah</a>: night arc half, naw/2, the
     time from sunset to solar midnight or from solar midnight to sunrise
-- <a href="#turn" id="t">t</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians
-  - <a href="#centiturn" id="ct">ct</a>: centiturn, a hundredth of a
-    turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
-  - <a href="#deciturn" id="dt">dt</a>: deciturn, a tenth of a turn, 36
-    degrees, 𝜏/10 or 𝜋/5 radians
-  - <a href="#milliturn" id="mt">mt</a>: milliturn, a thousandth of a
-    turn, .36 degrees, 𝜏/1000 or 𝜋/500 radians
+- <a href="#turn" id="T">T</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians; as a
+  dimension, shared by quantities measured in turns, such as days (d)
+  and omegar (v)
+  - <a href="#inverseturn" id="inverset" class="big">ꓕ</a>: inverse
+    turn, 1/T, a T turned upside down, the dimension shared by quotidie,
+    perbeat, and upsilonr
+  - <a href="#centiturn" id="ct" class="mono">¢</a>: cent, centiturn, a
+    hundredth of a turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
+  - <a href="#deciturn" id="dt" class="iosevka">⅒</a>: dime, deciturn, a
+    tenth of a turn, 36 degrees, 𝜏/10 or 𝜋/5 radians
+  - <a href="#milliturn" id="mt" class="mono">₥</a>: mil, milliturn, a
+    thousandth of a turn, 0.36 degrees, 𝜏/1000 or 𝜋/500 radians
 - <a href="#timezoneoffset" id="tzo">tzo</a>: time zone offset
 - <a href="#ounce" id="u">u</a>: ounce (uncia in Latin), 500 grains, 32
   grams, 500 drops, 32 milliliters
@@ -8083,27 +8203,23 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#universaltime" id="ut">UT</a>: [Universal
   Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation),
   a time standard based on the rotation of the Earth
-- <a href="#omegar" id="v">v</a>: omegar, ωr, 1041.<span class="tool"
-  data-bs-toggle="tooltip" data-bs-title="base9 digit 6">♄</span> miles
-  per hour, 1.<span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="base9 digit 6">♄</span> megameters per hour,
-  0.4<span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="base9 digits 5 and 6">♃♄</span> kilometers per second,
-  roughly 1.36 times the speed of sound
+- <a href="#omegar" id="v">v</a>: omegar, ωr, 1000 mph, 1000 miles per
+  hour, 1.6 megameters per hour, 0.<span class="tool"
+  data-bs-toggle="tooltip" data-bs-title="base9 digit 4">♂</span>
+  kilometers per second, roughly 1.36 times the speed of sound
   - <a href="#kiloomegar" id="kv">kv</a>: kiloomegar, kωr,
     1.<span class="tool" data-bs-toggle="tooltip"
     data-bs-title="base9 digit 6">♄</span> gigameters per hour,
     0.4<span class="tool" data-bs-toggle="tooltip"
     data-bs-title="base9 digits 5 and 6">♃♄</span> megameters per
     second, approximately 0.1544% of the speed of light
-  - <a href="#milliomegar" id="mv">mv</a>: milliomegar, mωr,
-    1.041<span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="base9 digit 6">♄</span> miles per hour,
-    1.<span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="base9 digit 6">♄</span> kilometers per hour,
-    0.4<span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="base9 digits 5 and 6">♃♄</span> meters per second,
-    approximately 0.136% of the speed of sound
+  - <a href="#milliomegar" id="mv">mv</a>: milliomegar, mωr, 1 mph, 1
+    mile per hour, 1.6 kilometers per hour, 0.<span class="tool"
+    data-bs-toggle="tooltip" data-bs-title="base9 digit 4">♂</span>
+    meters per second, 1 zem per beat, approximately 0.136% of the speed
+    of sound
+- <a href="#upsilonr" id="ur">ʌ</a>: upsilonr, the inverse of an omegar,
+  1/v, d/c, b/kz, a unit of slowness; symbolized by a turned v (ʌ)
 - <a href="#wei" id="w">w</a>: wěi (纬), parallel, a full circle around
   the Earth moving East or West at the same latitude, a measure of
   longitude; short for 纬圈 (wěiquān), “latitude circle”; can be thought
@@ -8125,7 +8241,9 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#negativeintegerxun" id="nix">nix</a>: negative integer
     xún, ⌊nid ÷ 10⌋, -37 to -1
   - <a href="#mixedintegerxun" id="mix">mix</a>: mixed integer xún, the
-    first two digits of an nih mid
+    first two digits of an niﾲ mid: a negative niﾲ digit under a
+    vinculum followed by the xún elapsed in that hectoday, which
+    together equal an nix, e.g. 2̄3 = -20 + 3 = -17
   - <a href="#xuninterdecilerange" id="xir">xir</a>: xún interdecile
     range, Dox 1 to 8, the days between Dox 0 and 9
 - <a href="#year" id="y">y</a>: year
@@ -8137,7 +8255,8 @@ additional files or configuration. A Quarto output file can have both a
     aggregate, yoe + toy, years since the Dec epoch including the
     fraction of the current year
   - <a href="#timeofyear" id="toy">toy</a>: time of year, the fraction
-    of the year that has elapsed, eya mod 1, ada ÷ syl
+    of the year that has elapsed, eya <span class="hyphen">−⌊</span> 1,
+    ada ÷ syl
   - <a href="#yearmonthday" id="ymd">ymd</a>: year month day, a
     Gregorian calendar date triplet
   - <a href="#solaryearlength" id="syl">syl</a>: solar year length, 365
@@ -8146,23 +8265,27 @@ additional files or configuration. A Quarto output file can have both a
     or 355 days
   - <a href="#commonerayear" id="cey">cey</a>: common era year, an ISO
     8601 (Gregorian calendar) year number
-  - <a href="#cycleofera" id="coe">coe</a>: cycle of era, 400-year
-    cycles since the Dec epoch
-  - <a href="#yearofcycle" id="yoc">yoc</a>: year of cycle, years since
-    the start of the current 400-year cycle, 0 to 399
+  - <a href="#quadricentennialofera" id="qoe">qoe</a>: quadricentennial
+    of era, quadricentennials since the Dec epoch
+  - <a href="#yearofquadricentennial" id="yoq">yoq</a>: year of
+    quadricentennial, years since the start of the current
+    quadricentennial, 0 to 399
   - <a href="#yearoftricennium" id="yot">yot</a>: year of tricennium,
     lunar years since the start of the current 30-year lunar cycle, 0 to
     29
   - <a href="#monthofyear" id="moy">moy</a>: month of year, zero-based,
     Moy 0 is March
   - <a href="#weekofyear" id="woy">woy</a>: week of year, (boydow + bow)
-    ÷ 7, 0 to 53
+    ÷ 7, 0 to 53, where boydow (beginning of year day of week) is the
+    dow of Day 0
   - <a href="#weekofmonth" id="wom">wom</a>: week of month
 - <a href="#zoneequatorialmeter" id="z">z</a>: zem, zone equatorial
   meter, 4 decimeters, 16 inches
   - <a href="#squarekilozem" id="kz2">kz²</a>: square kilozem, a million
     square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600
     ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
+  - <a href="#baizem" id="bzem" class="mono">ﾲz</a>: bǎizem, a hundred
+    zem, 1 microtaur, 40 meters
   - <a href="#kilozem" id="kz">kz</a>: kilozem, 1000 zem, 400 meters, a
     quarter mile
   - <a href="#squarezem" id="z2">z²</a>: square zem, hexamilliare, 16
@@ -8429,47 +8552,20 @@ december31doyColor = textcolor(december31doy, piecewiseColor(december31doy / nDa
 january1doy = 306 + nOffInput
 january1doyByNdaysInput = january1doy / nDaysInput
 january1doyPiece = piecewiseColor(january1doyByNdaysInput)
-january1doyColor = textcolor(january1doy, january1doyPiece)
-january1doyColor1 = textcolor(january1doy, january1doyPiece)
-january1doyColor2 = textcolor(january1doy, january1doyPiece)
-january1doyColor3 = textcolor(january1doy, january1doyPiece)
+january1doyColor = () => textcolor(january1doy, january1doyPiece)
 decYear = ydz[0]
 decYearOfCenturyBy100 = decYear % 100 / 100
 decYearPiece = piecewiseColor(decYearOfCenturyBy100)
-decYearColor = textcolor(decYear, decYearPiece)
-decYearColor1 = textcolor(decYear, decYearPiece)
-decYearColor2 = textcolor(decYear, decYearPiece)
-decYearColor3 = textcolor(decYear, decYearPiece)
-decYearColor4 = textcolor(decYear, decYearPiece)
-decYearColor5 = textcolor(decYear, decYearPiece)
-decYearColor6 = textcolor(decYear, decYearPiece)
-decYearColor7 = textcolor(decYear, decYearPiece)
-decYearColor8 = textcolor(decYear, decYearPiece)
-decYearColor9 = textcolor(decYear, decYearPiece)
-decYearColor10 = textcolor(decYear, decYearPiece)
-decYearColor11 = textcolor(decYear, decYearPiece)
-decYearColor12 = textcolor(decYear, decYearPiece)
+decYearColor = () => textcolor(decYear, decYearPiece)
 nextYear = decYear + 1
 nextYearOfCenturyBy100 = nextYear % 100 / 100
 nextYearPiece = piecewiseColor(nextYearOfCenturyBy100)
-nextYearColor = textcolor(nextYear, nextYearPiece)
-nextYearColor1 = textcolor(nextYear, nextYearPiece)
-nextYearColor2 = textcolor(nextYear, nextYearPiece)
-nextYearColor3 = textcolor(nextYear, nextYearPiece)
-nextYearColor4 = textcolor(nextYear, nextYearPiece)
-nextYearColor5 = textcolor(nextYear, nextYearPiece)
-nextYearColor6 = textcolor(nextYear, nextYearPiece)
-nextYearColor7 = textcolor(nextYear, nextYearPiece)
-nextYearColor8 = textcolor(nextYear, nextYearPiece)
-nextYearColor9 = textcolor(nextYear, nextYearPiece)
+nextYearColor = () => textcolor(nextYear, nextYearPiece)
 decYearLastDoy = nDaysInYear - 1
 decYearLastDoe = date2dote(decYear, decYearLastDoy)[0]
 decYearLastDow = (decYearLastDoe + 3) % 7
 decYearLastDowPiece = piecewiseColor(decYearLastDow / 7)
-decYearLastDowColor = textcolor(decYearLastDow, decYearLastDowPiece)
-decYearLastDowColor1 = textcolor(decYearLastDow, decYearLastDowPiece)
-decYearLastDowColor2 = textcolor(decYearLastDow, decYearLastDowPiece)
-decYearLastDowColor3 = textcolor(decYearLastDow, decYearLastDowPiece)
+decYearLastDowColor = () => textcolor(decYearLastDow, decYearLastDowPiece)
 decYearLastBow = decYearLastDoy - decYearLastDow
 decYearLastBowPiece = piecewiseColor(decYearLastBow / nDaysInYear)
 decYearLastBowNeg = decYearLastBow - nDaysInYear
@@ -8486,16 +8582,9 @@ decDoty = Math.floor(ydz[1])
 decDotyDays = decDoty === 1 ? "day" : "days"
 decDotyByNdaysInput = decDoty / nDaysInput
 decDotyPiece = piecewiseColor(decDotyByNdaysInput)
-decDotyColor = textcolor(decDoty, decDotyPiece)
-decDotyColor1 = textcolor(decDoty, decDotyPiece)
-decDotyColor2 = textcolor(decDoty, decDotyPiece)
-decDotyColor3 = textcolor(decDoty, decDotyPiece)
-decDotyColor4 = textcolor(decDoty, decDotyPiece)
+decDotyColor = () => textcolor(decDoty, decDotyPiece)
 decDotyPad = String(decDoty).padStart(3, "0")
-decDotyPadColor = textcolor(decDotyPad, decDotyPiece)
-decDotyPadColor1 = textcolor(decDotyPad, decDotyPiece)
-decDotyPadColor2 = textcolor(decDotyPad, decDotyPiece)
-decDotyPadColor3 = textcolor(decDotyPad, decDotyPiece)
+decDotyPadColor = () => textcolor(decDotyPad, decDotyPiece)
 decNid = decDoty - nDaysInYear
 decNidPlus1 = decNid + 1
 decNixGrave = Math.abs(Math.floor(decNidPlus1 / 10))
@@ -8513,8 +8602,7 @@ decDohGraveFirstDigit = Math.floor(decDohGrave / 10)
 decDohGraveFirstPiece = piecewiseColor(decDohGraveFirstDigit / 10)
 decDohGraveFirstColor = textcolor(decDohGraveFirstDigit, decDohGraveFirstPiece)
 decDoxGravePiece = piecewiseColor(decDoxGrave / 10)
-decDoxGraveColor = textcolor(decDoxGrave, decDoxGravePiece)
-decDoxGraveColor1 = textcolor(decDoxGrave, decDoxGravePiece)
+decDoxGraveColor = () => textcolor(decDoxGrave, decDoxGravePiece)
 decNidPad = decNid.toString().padStart(3, "0")
 decNidAbs = Math.abs(decNid)
 decNidAbsPad = decNidAbs.toString().padStart(3, "0")
@@ -8528,8 +8616,7 @@ decPihColor = textcolor(decPih, decPihPiece)
 decPihPlus1 = decPih + 1
 decPihPlus1Boh = decPihPlus1 * 100
 decPihPlus1Piece = piecewiseColor(decPihPlus1Boh / nDaysInput)
-decPihPlus1Color = textcolor(decPihPlus1, decPihPlus1Piece)
-decPihPlus1Color1 = textcolor(decPihPlus1, decPihPlus1Piece)
+decPihPlus1Color = () => textcolor(decPihPlus1, decPihPlus1Piece)
 decNix = Math.floor(decNid / 10)
 decNih = Math.floor(decNid / 100)
 decNixAbs = Math.abs(decNix)
@@ -8542,41 +8629,23 @@ decNixPlus1Box = decNixPlus1 * 10 % nDaysInput + nDaysInput
 decNihPlus1Boh = decNihPlus1 * 100 % nDaysInput + nDaysInput
 decNixPlus1Piece = piecewiseColor(decNixPlus1Box / nDaysInput)
 decNihPlus1Piece = piecewiseColor(decNihPlus1Boh / nDaysInput)
-decNixPlus1Color = textcolor(decNixPlus1Abs, decNixPlus1Piece)
-decNixPlus1Color1 = textcolor(decNixPlus1Abs, decNixPlus1Piece)
-decNihPlus1Color = textcolor(decNihPlus1Abs, decNihPlus1Piece)
-decNihPlus1Color1 = textcolor(decNihPlus1Abs, decNihPlus1Piece)
+decNixPlus1Color = () => textcolor(decNixPlus1Abs, decNixPlus1Piece)
+decNihPlus1Color = () => textcolor(decNihPlus1Abs, decNihPlus1Piece)
 decNihBoh = decNih * 100 % nDaysInput + nDaysInput
 decNihAbsPiece = piecewiseColor(decNihBoh / nDaysInput)
-decNihAbsColor = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor1 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor2 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor3 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor4 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor5 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor6 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor7 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor8 = textcolor(decNihAbs, decNihAbsPiece)
-decNihAbsColor9 = textcolor(decNihAbs, decNihAbsPiece)
+decNihAbsColor = () => textcolor(decNihAbs, decNihAbsPiece)
 decNixBox = decNix * 10 % nDaysInput + nDaysInput
 decNixAbsPiece = piecewiseColor(decNixBox / nDaysInput)
-decNixAbsColor = textcolor(decNixAbs, decNixAbsPiece)
-decNixAbsColor1 = textcolor(decNixAbs, decNixAbsPiece)
-decNixAbsColor2 = textcolor(decNixAbs, decNixAbsPiece)
-decNixAbsColor3 = textcolor(decNixAbs, decNixAbsPiece)
+decNixAbsColor = () => textcolor(decNixAbs, decNixAbsPiece)
 decDohPid = decDoty % 100
 decDohPidBy100 = decDohPid / 100
 decDohPidPiece = piecewiseColor(decDohPidBy100)
-decDohPidColor = textcolor(decDohPid, decDohPidPiece)
-decDohPidColor1 = textcolor(decDohPid, decDohPidPiece)
-decDohPidColor2 = textcolor(decDohPid, decDohPidPiece)
-decDohPidColor3 = textcolor(decDohPid, decDohPidPiece)
+decDohPidColor = () => textcolor(decDohPid, decDohPidPiece)
 decDohNid = Math.abs(decNid % 100)
 decDohNidBy100 = decDohNid / 100
 decDohNidPiece = piecewiseColor(decDohNidBy100)
-decDohNidColor = textcolor(decDohNid, decDohNidPiece)
-decDohNidColor1 = textcolor(decDohNid.toString().padStart(2, "0"), decDohNidPiece)
-decDohNidColor2 = textcolor(decDohNid, decDohNidPiece)
+decDohNidColor = () => textcolor(decDohNid, decDohNidPiece)
+decDohNidPadColor = () => textcolor(decDohNid.toString().padStart(2, "0"), decDohNidPiece)
 decDoxNid = decNid % 10
 decDoxNidPiece = piecewiseColor(Math.abs(decDoxNid) / 10)
 decDoxNidColor = textcolor(Math.abs(decDoxNid), decDoxNidPiece)
@@ -8585,35 +8654,23 @@ decDohNidPad = decDohNid.toString().padStart(2, "0")
 decDohPidMid = (100 - decDohPid) % 100
 decDohPidMidBy100 = decDohPidMid / 100
 decDohPidMidPiece = piecewiseColor(decDohPidMidBy100)
-decDohPidMidColor = textcolor(decDohPidMid, decDohPidMidPiece)
-decDohPidMidColor1 = textcolor(decDohPidMid, decDohPidMidPiece)
+decDohPidMidColor = () => textcolor(decDohPidMid, decDohPidMidPiece)
 decDohNidMid = (100 - decDohNid) % 100
 decDohNidMidBy100 = decDohNidMid / 100
 decDohNidMidPiece = piecewiseColor(decDohNidMidBy100)
-decDohNidMidColor = textcolor(decDohNidMid, decDohNidMidPiece)
-decDohNidMidColor1 = textcolor(decDohNidMid, decDohNidMidPiece)
+decDohNidMidColor = () => textcolor(decDohNidMid, decDohNidMidPiece)
 decDoxPidMid = decDohPidMid % 10
 decDoxNidMid = decDohNidMid % 10
 decDoxPidMidColor = textcolor(decDoxPidMid, piecewiseColor(decDoxPidMid / 10))
 decDoxNidMidPiece = piecewiseColor(decDoxNidMid / 10)
-decDoxNidMidColor = textcolor(decDoxNidMid, decDoxNidMidPiece)
-decDoxNidMidColor1 = textcolor(decDoxNidMid, decDoxNidMidPiece)
-decDoxNidMidColor2 = textcolor(decDoxNidMid, decDoxNidMidPiece)
-decDoxNidMidColor3 = textcolor(decDoxNidMid, decDoxNidMidPiece)
+decDoxNidMidColor = () => textcolor(decDoxNidMid, decDoxNidMidPiece)
 decDohPidMidPad = decDohPidMid.toString().padStart(2, "0")
 decDohPidMidPadColor = textcolor(decDohPidMidPad, decDohPidMidPiece)
 decDohNidMidPad = decDohNidMid.toString().padStart(2, "0")
-decDohNidMidPadColor = textcolor(decDohNidMidPad, decDohNidMidPiece)
-decDohNidMidPadColor1 = textcolor(decDohNidMidPad, decDohNidMidPiece)
-decDohNidMidPadColor2 = textcolor(decDohNidMidPad, decDohNidMidPiece)
-decDohNidMidPadColor3 = textcolor(decDohNidMidPad, decDohNidMidPiece)
-decDohNidMidPadColor4 = textcolor(decDohNidMidPad, decDohNidMidPiece)
-decDohNidMidPadColor5 = textcolor(decDohNidMidPad, decDohNidMidPiece)
+decDohNidMidPadColor = () => textcolor(decDohNidMidPad, decDohNidMidPiece)
 decDohNidMidFirstDigit = Math.floor(decDohNidMid / 10) 
 decDohNidMidFirstPiece = piecewiseColor(decDohNidMidFirstDigit / 10)
-decDohNidMidFirstColor = textcolor(decDohNidMidFirstDigit, decDohNidMidFirstPiece)
-decDohNidMidFirstColor1 = textcolor(decDohNidMidFirstDigit, decDohNidMidFirstPiece)
-decDohNidMidFirstColor2 = textcolor(decDohNidMidFirstDigit, decDohNidMidFirstPiece)
+decDohNidMidFirstColor = () => textcolor(decDohNidMidFirstDigit, decDohNidMidFirstPiece)
 decNihMix = decNihAbs * 10 + decDohNidMidFirstDigit
 decDotd = decDoty % 10
 decDotdColor = textcolor(decDotd, piecewiseColor(decDotd / 10))
@@ -8646,10 +8703,8 @@ NegDob = decDob - nDaysInBim
 decBob = decDoty - decDob
 decBobPiece = piecewiseColor(decBob / nDaysInYear)
 decDobPiece = piecewiseColor(decDob / nDaysInBim)
-decBobColor = textcolor(decBob, decBobPiece)
-decBobColor1 = textcolor(decBob, decBobPiece)
-decDobColor = textcolor(decDob, decDobPiece)
-decDobColor1 = textcolor(decDob, decDobPiece)
+decBobColor = () => textcolor(decBob, decBobPiece)
+decDobColor = () => textcolor(decDob, decDobPiece)
 decDobPad = decDob.toString().padStart(2, "0")
 decBobPad = Math.abs(decBob).toString().padStart(3, "0")
 decBobSign = decBob < 0 ? "-" : "+"
@@ -8661,8 +8716,7 @@ xmasDiff = decDoty - 299
 xmasDiffPos = (xmasDiff + nDaysInput) % nDaysInput
 xmasDiffPiece = piecewiseColor(xmasDiffPos / nDaysInput)
 xmasDiffAbs = Math.abs(xmasDiff)
-xmasDiffColor = textcolor(xmasDiffAbs, xmasDiffPiece)
-xmasDiffColor1 = textcolor(xmasDiffAbs, xmasDiffPiece)
+xmasDiffColor = () => textcolor(xmasDiffAbs, xmasDiffPiece)
 xmasNext = xmasDiff - nDaysInput
 xmasNextColor = textcolor(Math.abs(xmasNext), xmasDiffPiece)
 xmasDiffSign = xmasDiff < 0 ? "-" : "+"
@@ -8674,8 +8728,7 @@ xmasDiffResult = xmasDiff < 0 ? "-" : ""
 xmasDote = date2dote(decYear, 299)[0]
 xmasDotw = dote2dotw(xmasDote)
 xmasDotwPiece = piecewiseColor(xmasDotw / 7)
-xmasDotwColor = textcolor(xmasDotw, xmasDotwPiece)
-xmasDotwColor1 = textcolor(xmasDotw, xmasDotwPiece)
+xmasDotwColor = () => textcolor(xmasDotw, xmasDotwPiece)
 gregBoyDote = date2dote(loadYdz[0] - (loadYdz[1] < 306), 306)[0]
 gregBoyDotw = (gregBoyDote + 3) % 7
 loadDateStr = loadDate.toUTCString().split(" ", 4).join(" ")
@@ -8683,40 +8736,26 @@ dotwArr = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 gregBoyDotwStr = dotwArr[gregBoyDotw]
 dotw = Math.floor(dote2dotw(dz[0]))
 dotwPiece = piecewiseColor(dotw / 7)
-dotwColor = textcolor(dotw, dotwPiece)
-dotwColor1 = textcolor(dotw, dotwPiece)
-dotwColor2 = textcolor(dotw, dotwPiece)
-dotwColor3 = textcolor(dotw, dotwPiece)
-dotwColor4 = textcolor(dotw, dotwPiece)
-dotwColor5 = textcolor(dotw, dotwPiece)
-dotwColor6 = textcolor(dowDice[dotw], dotwPiece)
-dotwColor7 = textcolor(dowDice[dotw], dotwPiece)
-dotwColor8 = textcolor(dotw, dotwPiece)
+dotwColor = () => textcolor(dotw, dotwPiece)
+dotwDiceColor = () => textcolor(dowDice[dotw], dotwPiece)
 day266dotw = dote2dotw(date2dote(decYear, 266)[0])
 day266dotwColor = textcolor(day266dotw, piecewiseColor(day266dotw / 7))
 day266dotwDiff = dotw2diff(4, day266dotw)
 day266dotwDiffPiece = piecewiseColor(day266dotwDiff / 7)
-day266dotwDiffColor = textcolor(day266dotwDiff, day266dotwDiffPiece)
-day266dotwDiffColor1 = textcolor(day266dotwDiff, day266dotwDiffPiece)
+day266dotwDiffColor = () => textcolor(day266dotwDiff, day266dotwDiffPiece)
 day266dotwDiffPlus267 = day266dotwDiff + 267
 day266dotwDiffPlus267Color = textcolor(day266dotwDiffPlus267, piecewiseColor(day266dotwDiffPlus267 / nDaysInput))
 motyInput = Math.floor((5 * dotyInput + 2) / 153)
 botmInput = Math.floor((153 * motyInput + 2) / 5) - 1
 dayofmonthInput = dotyInput - botmInput 
 dayofmonthPiece = piecewiseColor(dayofmonthInput / motyLens[motyInput])
-dayofmonthColor = textcolor(dayofmonthInput, dayofmonthPiece)
-dayofmonthColor1 = textcolor(dayofmonthInput, dayofmonthPiece)
+dayofmonthColor = () => textcolor(dayofmonthInput, dayofmonthPiece)
 monthNumber = dotyInput - dayofmonthInput
 monthNumberColor = textcolor(monthNumber, piecewiseColor(monthNumber / nDaysInput))
 dotw0doty = Math.floor(ydz[1]) - dotw
 dotw0dotyPiece = piecewiseColor(dotw0doty / nDaysInYear)
-dotw0dotyColor = textcolor(dotw0doty, dotw0dotyPiece)
-dotw0dotyColor1 = textcolor(dotw0dotyPad, dotw0dotyPiece)
-dotw0dotyColor2 = textcolor(dotw0doty, dotw0dotyPiece)
-dotw0dotyColor3 = textcolor(dotw0dotyPad, dotw0dotyPiece)
-dotw0dotyColor4 = textcolor(dotw0dotyPad, dotw0dotyPiece)
-dotw0dotyColor5 = textcolor(dotw0dotyPad, dotw0dotyPiece)
-dotw0dotyColor6 = textcolor(dotw0dotyPad, dotw0dotyPiece)
+dotw0dotyColor = () => textcolor(dotw0doty, dotw0dotyPiece)
+dotw0dotyPadColor = () => textcolor(dotw0dotyPad, dotw0dotyPiece)
 dotw0dotyNeg = Math.abs(dotw0doty - nDaysInput)
 dotw0dotyPad = dotw0doty.toString().padStart(3, "0")
 dotw0dotyNegPad = dotw0dotyNeg.toString().padStart(3, "0")
@@ -8734,30 +8773,24 @@ woySuitColor = textcolor(woySuits[woySuit], woySuitPiece)
 woySignPiece = piecewiseColor(woySign / 13)
 woySignColor = textcolor(woySigns[woySign], woySignPiece)
 woyPad = weekofyear.toString().padStart(2, "0")
-woyColor = textcolor(weekofyear, dotw0dotyPiece)
-woyColor1 = textcolor(woyPad, dotw0dotyPiece)
-woyColor2 = textcolor(woyPad, dotw0dotyPiece)
-woyColor3 = textcolor(woyCards[weekofyear], dotw0dotyPiece)
+woyColor = () => textcolor(weekofyear, dotw0dotyPiece)
+woyPadColor = () => textcolor(woyPad, dotw0dotyPiece)
+woyCardColor = () => textcolor(woyCards[weekofyear], dotw0dotyPiece)
 dotw0sign = dotw0doty < 0 ? "-" : "+"
 dotw0signIfNeg = dotw0doty < 0 ? "-" : ""
 nDaysInYear = 365 + year2leap(decYear + 1)
 Tminus = nDaysInYear - decDoty
 TminusDays = Tminus === 1 ? "day" : "days"
-TminusColor = textcolor(Tminus, decDotyPiece)
-TminusColor1 = textcolor(Tminus, decDotyPiece)
-TminusColor2 = textcolor(Tminus, decDotyPiece)
-TminusColor3 = textcolor(Tminus, decDotyPiece)
+TminusColor = () => textcolor(Tminus, decDotyPiece)
 TminusPadded = Tminus.toString().padStart(3, "0")
-TminusPaddedColor = textcolor(TminusPadded, decDotyPiece)
-TminusPaddedColor1 = textcolor(TminusPadded, decDotyPiece)
-TminusPaddedColor2 = textcolor(TminusPadded, decDotyPiece)
+TminusPaddedColor = () => textcolor(TminusPadded, decDotyPiece)
 TminusPaddedNeg = "-" + TminusPadded
 fracYear = decYear + ydz[1] / nDaysInYear
 fullfracYear = (fracYear).toFixed(4)
 mod1FracYear = (fracYear % 1).toFixed(4)
 woyCards = ["🂡", "🂢", "🂣", "🂤", "🂥", "🂦", "🂧", "🂨", "🂩", "🂪", "🂫", "🂭", "🂮", "🂱", "🂲", "🂳", "🂴", "🂵", "🂶", "🂷", "🂸", "🂹", "🂺", "🂻", "🂽", "🂾", "🃁", "🃂", "🃃", "🃄", "🃅", "🃆", "🃇", "🃈", "🃉", "🃊", "🃋", "🃍", "🃎", "🃑", "🃒", "🃓", "🃔", "🃕", "🃖", "🃗", "🃘", "🃙", "🃚", "🃛", "🃝", "🃞", "🃟", "🂠"]
 woySuits = ["♤", "♡", "♢", "♧", "☆"]
-woySigns = ["𝍠", "𝍡", "𝍢", "𝍣", "𝍤", "𝍮", "𝍯", "𝍰", "𝍱", "𝍥", "𝍦", "𝍧", "𝍨"]
+woySigns = ["♈︎", "♉︎", "♊︎", "♋︎", "♌︎", "♍︎", "♎︎", "♏︎", "♐︎", "♑︎", "♒︎", "♓︎", "⛎︎"]
 dowDice = ["☐", "⚀", "⚁", "⚂", "⚃", "⚄", "⚅"]
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 motyLens = [31, 30, 31, 30, 31, 31, 30, 31, 30, 31, 31, 28 + leapInput];
@@ -8893,16 +8926,16 @@ easySumColor = textcolor(easySum, piecewiseColor(easySum / nDaysInput))
 // (719468 + 8) % 10631 = 7199
 function unix2dob(unix) {
   const doe = unix / 86400000 + 7199,
-  doc = doe % 10631,
-  yoc = Math.floor((30 * doc + 10646) / 10631) - 1,
-  doy = Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30)))
+  dot = doe % 10631,
+  yot = Math.floor((30 * dot + 10646) / 10631) - 1,
+  doy = Math.floor(dot - (yot * 354 + Math.floor((11 * (yot + 1) + 3) / 30)))
   return doy === 354 ? "0\u0300" : doy % 59;
   }
 function unix2dobSort(unix) {
   const doe = unix / 86400000 + 7199,
-  doc = doe % 10631,
-  yoc = Math.floor((30 * doc + 10646) / 10631) - 1;
-  return Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30)));
+  dot = doe % 10631,
+  yot = Math.floor((30 * dot + 10646) / 10631) - 1;
+  return Math.floor(dot - (yot * 354 + Math.floor((11 * (yot + 1) + 3) / 30)));
   }
 function doly2dob(doly) {
   return doly === 354 ? "0\u0300" : doly % 59;
@@ -10027,7 +10060,7 @@ code {
 #moonplot {
   overflow: visible;
 }
-/* Die faces, playing cards, half-dominoes, counting rods, and suit
+/* Die faces, playing cards, half-dominoes, zodiac signs, and suit
    symbols are all rare Unicode symbol-block characters. Some mobile
    browsers (notably iOS Safari) render them with emoji presentation —
    larger and with different metrics than the plain text glyph desktop
@@ -10038,7 +10071,7 @@ code {
 .playingcard span:not(:has(*)),
 .halfdomino span:not(:has(*)),
 .playingcardsuit span:not(:has(*)),
-.countingrod span:not(:has(*)) {
+.zodiacsign span:not(:has(*)) {
   font-variant-emoji: text;
   /* The padding below is tuned for Tahoma metrics. iOS has no Tahoma, so
      when the Google Fonts Tahoma import fails or is slow, the page falls
@@ -10096,7 +10129,7 @@ code {
   justify-content: center;
   align-items: center;
 }
-.countingrod span:not(:has(*)) {
+.zodiacsign span:not(:has(*)) {
   padding-bottom: 6px !important;
   padding-left: 0.5px !important;
   position: relative;
